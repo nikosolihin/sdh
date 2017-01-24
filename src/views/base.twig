@@ -1,0 +1,19 @@
+{% include 'global/header.twig' %}
+
+<body class="{{body_class}}">
+
+	{% include 'global/navbar.twig' %}
+	{% include 'global/svg.twig' %}
+	{% include 'components/modal.twig' %}
+
+	{% if 'post-type-archive-event' in body_class %}
+		{% include 'components/popover.twig' %}
+	{% endif %}
+
+	{% block content %}
+	{% endblock %}
+
+	{% include 'global/footer.twig' %}
+	{{ function('wp_footer') }}
+</body>
+</html>

@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '5.11'
+addons:
+  ssh_known_hosts: my.host.name.com
+before_install:
+- bash _travis/install.sh
+script:
+- bash _travis/build.sh
+after_success:
+- bash _travis/deploy.sh
+notifications:
+  webhooks: https://hooks.zapier.com/hooks/catch/12345
