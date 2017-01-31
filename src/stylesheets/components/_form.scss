@@ -1,0 +1,15 @@
+.Form {
+  overflow: hidden;
+
+  @include to(sm) {
+    @include fullwidth;
+  }
+
+  &-embed {
+    @include from(xl) {
+      // Help hide the annoying colored masthead
+      position: relative;
+      top: -$single*8.75;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{% if announcement %}
+  <div class="{{'Announcement'|modifiers("#{announcement.position}")}}" data-component="announcement" data-options='{ "dte": "{{announcement.dte}}" }'>
+    <div class="container">
+      <p class="Announcement-message">
+        {{announcement.message}}
+        <a href="{{announcement.url}}" class="Announcement-button Button Button--small Button--announcement">{{announcement.button|title}}</a>
+      </p>
+      <a href="" class="Announcement-close">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+{% endif %}

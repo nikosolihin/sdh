@@ -1,0 +1,25 @@
+<section class="Hero" data-component="hero">
+  {% for item in hero %}
+    <div class="Hero-cell">
+      {% set image = item.image %}
+      {% if item.type == "single" %}
+        {% set url = item.single_url %}
+      {% elseif item.type == "external" %}
+        {% set url = item.external_url %}
+      {% else %}
+        {% set url = item.search_url %}
+      {% endif %}
+
+      <a href="{{url}}" class="Hero-image lazyload" data-bgset="{{image[xlarge]}} [(min-width: {{xxl}})] | {{image[xlarge]}} [(min-width: {{lg}})] | {{image[large]}} [(min-width: {{md}})] | {{image[medium]}} [(min-width: {{sm}})] | {{image[middle]}}">
+      </a>
+      <div class="Hero-caption">
+        <div class="Hero-captionBody">
+          <h4 class="white">{{item.headline}}</h4>
+        </div>
+        <div class="Hero-captionCTA">
+          <a href="{{url}}" class="Button Button--small">{{item.label|title}}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>

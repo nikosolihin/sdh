@@ -1,0 +1,201 @@
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@at-root {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+abbr[title] {
+  text-decoration: initial;
+  border-bottom: 1px dotted #999;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+caption {
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: left;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: $half;
+}
+
+button,
+button:focus,
+button:active {
+  outline: 0 !important;
+  outline: none !important;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  display: block;
+  font-size: inherit;
+  padding: $quarter $threefourth;
+  line-height: 1.5;
+  color: $gray;
+  display: block;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  &:focus {
+    outline: none;
+  }
+}
+input {
+  font-size: .95rem;
+  padding: $threefourth $threefourth;
+  line-height: 1;
+  font-weight: $font-weight-medium;
+  transition: all .1s ease-out;
+  &:focus {
+    border: 1px solid $yellow;
+  }
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #555;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #555;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #555;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: #555;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: radio-container;
+  -moz-user-focus: ignore;
+  -moz-appearance: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0 0 $single;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+svg {
+  fill: $svg-fill;
+  size: $svg-size;
+}

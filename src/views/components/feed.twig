@@ -1,0 +1,17 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set type = data.post_type %}
+{% else %}
+  {% set type = data.manual_posts|first.post_type %}
+{% endif %}
+
+{# Do logic in PHP #}
+{% set list = populatelist(data) %}
+
+<ul class="{{'Feed'|modifiers("#{style}, #{type}")}}">
+  {% for post in list %}
+    <li class="Feed-item">
+      {% include 'components/feed-' ~ type ~ '.twig' with data %}
+    </li>
+  {% endfor %}
+</ul>

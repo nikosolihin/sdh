@@ -1,0 +1,39 @@
+{# This file loops through the components in a page and pass it to the right blocks #}
+
+{% extends 'layout/' ~ column ~ '-columns.twig' %}
+
+{% block left %}
+  {% for component in left %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}
+
+{% block mid %}
+  {% for component in mid %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}
+
+{% block mid_left %}
+  {% for component in mid_left %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}
+
+{% block mid_right %}
+  {% for component in mid_right %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}
+
+{% block right %}
+  {% for component in right %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}
+
+{% block full %}
+  {% for component in full %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component, 'colummn': column} %}
+  {% endfor %}
+{% endblock %}

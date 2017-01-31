@@ -1,0 +1,29 @@
+.List {
+  @include normalist;
+  margin-bottom: 0;
+
+  // Nested list
+  .List {
+    @include normalist;
+    margin-left: $threefourth;
+  }
+
+  // Alignments
+  &--inline {
+    box: vertical;
+    text-align: center;
+    @include from(lg) {
+      box: horizontal;
+      text-align: left;
+    }
+    a {
+      display: block;
+    }
+  }
+  &--inlineLeft {
+    justify-content: flex-start;
+  }
+  &--inlineRight {
+    justify-content: flex-end;
+  }
+}

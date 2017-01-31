@@ -1,0 +1,14 @@
+<div class="SingleMedia-video">
+  <div class="SingleMedia-videoHeading container">
+    <h1 class="SingleMedia-title h2 white">{{post.title}}</h1>
+    {% include 'components/social-share.twig' with {'color': 'brand'}%}
+  </div>
+  <div class="SingleMedia-videoWrapper container">
+    {% if media_type == 'video'%}
+      <div class="Embed">{{acf.video|modest}}</div>
+    {% endif %}
+    {% if media_type == 'audio'%}
+      <div class="Embed">{{acf.audio|modest}}</div>
+    {% endif %}
+  </div>
+</div>

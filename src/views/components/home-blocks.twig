@@ -1,0 +1,7 @@
+<section class="block-carousel" data-component="home-carousel">
+  {% for item in carousel %}
+    <div class="block-carousel-cell">
+      {% include 'components/block.twig' with {'data': {'block': item}} %}
+    </div>
+  {% endfor %}
+</section>

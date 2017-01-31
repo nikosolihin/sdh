@@ -1,0 +1,23 @@
+{% for id in data %}
+  {% set post = TimberPost(id) %}
+  {% set style = post.get_field('style') %}
+  {% set image = post.get_field('image')|first.url_n %}
+  {% set description = post.get_field('description') %}
+  {% set alignment = post.get_field('alignment') %}
+
+  {% if post.link_type == "single" %}
+    {% set url = post.get_field('link_single_url') %}
+  {% elseif post.link_type == "external" %}
+    {% set url = post.get_field('link_external_url') %}
+  {% else %}
+    {% set url = post.get_field('link_search_url') %}
+  {% endif %}
+
+  <div class="Block Block--panel {% if alignment %}Block--left{% endif %}" style="background-image:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.90)),url({{image}})">
+    <a href="{{url}}" class="Block-link"></a>
+    <div class="Block-body">
+      <h4 class="h3 Block-heading">{{post.title}}</h4>
+      {% if description|trim is not empty %}<p>{{description|trim}}</p>{% endif %}
+    </div>
+  </div>
+{% endfor %}

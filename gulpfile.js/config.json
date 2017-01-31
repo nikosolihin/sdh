@@ -1,19 +1,29 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./public"
+    "de_st": "./public",
+    "dest": "./htdocs/wp-content/themes/sdh"
   },
 
   "tasks": {
     "browserSync": {
-      "server": {
-        "baseDir": "public"
-      }
+      "browser": "google chrome",
+      "proxy": "sdh.dev",
+      "notify": false
     },
 
     "static": {
       "src": "static",
       "dest": "./"
+    },
+
+    "wp": {
+      "files": ["style.css", "screenshot.png"]
+    },
+
+    "acf": {
+      "src": "acf-json",
+      "dest": "acf-json"
     },
 
     "js": {
@@ -29,6 +39,7 @@
       },
       "extractSharedJs": false
     },
+
     "css": {
       "src": "stylesheets",
       "dest": "stylesheets",
@@ -36,23 +47,33 @@
         "browsers": ["last 3 versions"]
       },
       "sass": {
-        "indentedSyntax": true,
+        "indentedSyntax": false,
+        "errLogToConsole": true,
+        "outputStyle": "compressed",
         "includePaths": [
-          "./node_modules/normalize.css"
+          "./node_modules/normalize.css",
+          "./node_modules/flickity/css"
         ]
       },
-      "extensions": ["sass", "scss", "css"]
+      "extensions": ["scss", "css"]
     },
 
-    "html": {
-      "src": "html",
+    "twig": {
+      "src": "views",
+      "dest": "views",
+      "extensions": ["twig"]
+    },
+
+    "php": {
+      "src": "php",
       "dest": "./",
-      "dataFile": "data/global.json",
-      "htmlmin": {
-        "collapseWhitespace": true
-      },
-      "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "extensions": ["php"]
+    },
+
+    "languages": {
+      "src": "languages",
+      "dest": "languages",
+      "extensions": ["mo", "po"]
     },
 
     "images": {
@@ -67,16 +88,10 @@
       "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
     },
 
-    "iconFont": {
-      "src": "icons",
-      "dest": "fonts",
-      "sassDest": "generated",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
-
     "svgSprite": {
       "src": "icons",
-      "dest": "images",
+      "dest": "utility",
+      "injectTo": "svg.twig",
       "extensions": ["svg"]
     },
 

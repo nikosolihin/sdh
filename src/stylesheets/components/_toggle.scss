@@ -1,0 +1,49 @@
+.Toggle {
+  box: horizontal center wrap;
+  &-item {
+    @include square;
+    color: #aaa;
+    position: relative;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    margin: 0 $half $single;
+    transition: all .125s ease-in-out;
+    cursor: pointer;
+    width: 6.5625rem;
+    @include from(lg) {
+      width: 5.6875rem;
+    }
+    &:hover {
+      background-color: #eee;
+    }
+    &--selected {
+      border: 1px solid $brand-secondary !important;
+      background-color: $brand-secondary !important;
+      .Toggle-link {
+        @include white;
+      }
+    }
+  }
+  &-link {
+    box: vertical center middle;
+    position: absolute 0 auto auto 0;
+    color: #999;
+    size: 100%;
+    padding: $single;
+    transition: all .125s ease-in-out;
+    & > svg,
+    & > p {
+      pointer-events: none;
+    }
+    svg {
+      size: $single*1.25;
+      fill: currentColor;
+      margin-bottom: .1rem;
+    }
+    p {
+      color: #777;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-h6;
+    }
+  }
+}

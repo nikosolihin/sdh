@@ -1,120 +1,101 @@
 <?php
 /**
- * The template for displaying front page.
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since    Timber 0.1
+ * Description: Page template for home
  */
-
 $context = Timber::get_context();
-$post = new TimberPost();
 
-// Get hero items
-$heroes = $post->get_field('home_hero');
-$context['heroes'] = array();
-foreach ($heroes as $hero) {
-  array_push($context['heroes'], array(
-    'image' => reset(reset($hero['home_hero_image']))['large'],
-    'title' => $hero['home_hero_title'],
-    'label' => $hero['home_hero_label'],
-    'link' => $hero['home_hero_link']
-  ));
-}
+// // Hero
+// $context['hero'] = get_field('hero', 'option');
+//
+// // Prospective Section
+// $context['prospective'] = array(
+//   'statement' => get_field('prospective_statement', 'option'),
+//   'cta' => get_field('prospective_cta', 'option'),
+//   'cta_type' => get_field('prospective_cta_link_type', 'option'),
+//   'cta_single_url' => get_field('prospective_cta_link_single_url', 'option'),
+//   'cta_external_url' => get_field('prospective_cta_link_external_url', 'option'),
+//   'cta_search_url' => get_field('prospective_cta_link_search_url', 'option'),
+//   'image' => get_field('prospective_bg', 'option'),
+//   'label' => get_field('prospective_cta_label', 'option'),
+//   'links' => get_field('prospective_links', 'option'),
+// );
+//
+// // Welcome Video
+// $context['welcome'] = array(
+//   'quote' => get_field('welcome_quote', 'option'),
+//   'byline' => get_field('welcome_by', 'option'),
+//   'url' => get_field('welcome_video', 'option')
+// );
+//
+// // News & Events
+// $news_events = Timber::get_posts(get_field('stream_news_events', 'option'));
+// if ($news_events) {
+//   $news_events = array_slice($news_events, 0, 3);
+//   $context['news_events'] = array();
+//   foreach ($news_events as $post) {
+//     array_push($context['news_events'], array(
+//       'title' => $post->title,
+//       'link' => $post->link,
+//       'type' => $post->type->slug,
+//       'image' => $post->get_field('image'),
+//       'date' => $post->post_date
+//     ));
+//   }
+//   $context['news_events']['first'] = array_slice($context['news_events'], 0, 1)[0];
+//   $context['news_events']['rest'] = array_slice($context['news_events'], 1, 2);
+// }
+//
+// // Custom Posts
+// $custom = Timber::get_posts(get_field('stream_custom_posts', 'option'));
+// if ($custom) {
+//   $custom = array_slice($custom, 0, 3);
+//   $context['custom_posts'] = array();
+//   foreach ($custom as $post) {
+//     // If of page post type, get root parent's name
+//     $parent = array();
+//     if ($post->type->slug == 'page') {
+//       $clone = $post;
+//       while( $clone->get_parent ) {
+//       	$clone = $clone->get_parent();
+//       	array_push( $parent, array(
+//           'title' => $clone->title
+//         ));
+//       }
+//       $parent = array_reverse($parent)[0];
+//     }
+//     array_push($context['custom_posts'], array(
+//       'title' => $post->title,
+//       'link' => $post->link,
+//       'type' => $post->type->slug,
+//       'image' => $post->get_field('image'),
+//       'parent' => $parent,
+//       'date' => $post->post_date
+//     ));
+//   }
+// }
+//
+// // Stream Media Box
+// $media = Timber::get_post(get_field('stream_media', 'option'));
+// if ($media) {
+//   $context['media'] = array(
+//     'title' => $media->title,
+//     'link' => $media->link,
+//     'type' => $media->get_terms('media_type')[0]->slug,
+//     'name' => $media->get_terms('media_type')[0]->name,
+//     'archive' => $context['site']->url. '/' .'media',
+//     'teaser' => $media->get_field('teaser'),
+//     'image' => $media->get_field('image'),
+//   );
+// }
+//
+// // Custom Control Area
+// $context['control_cta'] = array(
+//   'description' => get_field('stream_custom_description', 'option'),
+//   'buttons' => get_field('stream_custom_buttons', 'option'),
+//   'image' => get_field('stream_custom_bg', 'option'),
+// );
+//
+// // Blocks Carousel
+// $context['carousel'] = get_field('home_carousel_blocks', 'option');
 
-// Get promo blocks
-$blocks = $post->get_field('home_blocks');
-$context['blocks'] = array();
-foreach ($blocks as $block) {
-  $block_item = Timber::get_post($block['block']);
-  array_push($context['blocks'], array(
-    'type' => $block_item->get_field('block_type'),
-    'file' => $block_item->get_field('block_file'),
-    'instruction' => $block_item->get_field('block_instruction'),
-    'icon' => $block_item->get_field('block_icon'),
-    'overlay' => $block_item->get_field('block_tint'),
-    // 'title' => $block_item->get_field('block_title'),
-    'title_text' => $block_item->get_field('block_title_text'),
-    'link' => $block_item->get_field('block_link'),
-    'image' => reset(reset($block_item->get_field('block_image')))['thumb'],
-    'button' => $block_item->get_field('block_button'),
-    'button_type' => $block_item->get_field('block_button_type'),
-    'button_label' => $block_item->get_field('block_button_label')
-  ));
-}
-
-// Get recent news
-$recent_news_args = array(
-  'post_type' => 'news',
-  'numberposts' => $post->get_field('home_recent_news'),
-  'order' => DESC,
-  'orderby' => 'date'
-);
-$context['recent_news'] = array();
-$recent_news = Timber::get_posts($recent_news_args);
-foreach ($recent_news as $recent_news_item) {
-  array_push($context['recent_news'], array(
-    'title' => $recent_news_item->title(),
-    'link' => $recent_news_item->link(),
-    'date' => $recent_news_item->date()
-  ));
-}
-
-// Get upcoming events
-$upcoming_events_args = array(
-  'post_type' => 'event',
-  'numberposts' => 3,
-  'meta_query' => array(
-    'relation' => 'OR',
-    array(
-      'key'		     => 'start_date',
-      'compare'	   => '>=',
-      'value'		   => date('Ymd')
-    ),
-    array(
-      'key'		     => 'end_date',
-      'compare'	   => '>=',
-      'value'		   => date('Ymd')
-    )
-  ),
-  'order' => ASC,
-  'orderby' => 'start_date'
-);
-$context['upcoming_events'] = array();
-$upcoming_events = Timber::get_posts($upcoming_events_args);
-foreach ($upcoming_events as $upcoming_event) {
-  array_push($context['upcoming_events'], array(
-    'type' => 'promo',
-    'title' => true,
-    'title_text' => $upcoming_event->title(),
-    'link' => $upcoming_event->link(),
-    'image' => reset(reset($upcoming_event->get_field('event_image')))['thumb'],
-    'date' => date_format(date_create_from_format('mdY', $upcoming_event->get_field('start_date')), 'M j, Y')
-  ));
-}
-
-// Get latest sermon
-$latest_sermon = Timber::get_post('post_type=sermon&numberposts=1&orderby=date&order=DESC');
-$context['latest_sermon'] = array(
-  'title' => $latest_sermon->title(),
-  'link' => $latest_sermon->link(),
-  'date' => $latest_sermon->date(),
-  'blurb' => $latest_sermon->get_field('sermon_blurb'),
-  'image' => reset(reset($latest_sermon->get_field('sermon_image')))['thumb'],
-  'speaker' => reset($latest_sermon->terms('speaker'))->title(),
-  'speaker_link' => reset($latest_sermon->terms('speaker'))->link(),
-  'series' => reset($latest_sermon->terms('series'))->title(),
-  'series_link' => reset($latest_sermon->terms('series'))->link()
-);
-
-// Get newsletter
-$context['newsletter'] = array(
-  'image' => reset(reset($post->get_field('home_news_image')))['large'],
-  'signup_title' => $post->get_field('home_signup_title'),
-  'signup_blurb' => $post->get_field('home_signup_blurb'),
-  'archive_title' => $post->get_field('home_past_title'),
-  'archive_blurb' => $post->get_field('home_past_description'),
-  'archive_link' => $post->get_field('home_past_link')
-);
-
-Timber::render( 'pages/front-page.twig' , $context );
+Timber::render( 'page/front-page.twig' , $context );

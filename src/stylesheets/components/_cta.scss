@@ -1,0 +1,36 @@
+.Cta {
+  // @include white;
+  position: relative;
+  box: horizontal middle;
+  background-color: #F5F9FC;
+  // background-color: #25427C;
+  margin-bottom: 4px;
+
+  .flex-wrapper {
+    width: 70%;
+    padding-top: $single*3.25;
+    padding-bottom: $single*3.25;
+    h2 {
+      color: #26427C;
+      // color: $white;
+      font-size: 1.5rem;
+    }
+  }
+
+  &-buttons {
+    @include left-slant;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 30%;
+    background-color: #1F2D6A;
+    padding-left: $single*2.5;
+    padding-top: $single*3.75; // Must be .5 more than CTA's padding
+    padding-bottom: $single*3.75;
+    z-index: $zindex-footer-main;
+
+    .Button:first-child {
+      margin-right: $single;
+    }
+  }
+}

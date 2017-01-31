@@ -1,0 +1,58 @@
+.Media {
+  box: horizontal;
+  padding: $single*1.25 0;
+  border-bottom: 1px solid #ddd;
+  &:last-of-type {
+    border: 0;
+  }
+
+  .Link {
+    margin-bottom: 0;
+  }
+
+  &-image {
+    display: none;
+    flex: 0 0 auto;
+    position: relative;
+    @include from(md) {
+      display: block;
+      width: 25%;
+    }
+  }
+  &-body {
+    width: 100%;
+    @include from(md) {
+      width: 77%;
+      padding-left: $single*1.75;
+    }
+    h3 a {
+      @include hover($brand-primary);
+    }
+    p {
+      margin-bottom: $threefourth;
+    }
+  }
+  &-cta {
+    box: horizontal right;
+    margin-top: $quarter;
+    padding-right: $single;
+  }
+  &-date {
+    @include white;
+    position: absolute;
+    box: horizontal middle space-between;
+    top: 7px;
+    left: -5px;
+    background-color: $brand-highlight;
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    padding: .4rem $threefourth;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    svg {
+      size: 13px;
+      margin-right: $half;
+    }
+  }
+}

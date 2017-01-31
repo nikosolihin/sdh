@@ -1,0 +1,128 @@
+html {
+  font-family: $font-family;
+  font-size: $font-size-root;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+body {
+  text: $body-color $font-weight-normal left none $font-size $line-height normal;
+}
+
+.h1 {
+  text: $font-weight-light left none $headings-color $font-size-h1 1 normal;
+}
+
+.h2 {
+  text: $font-weight-light left none $headings-color $font-size-h2 1.275 .4px;
+}
+
+.h3 {
+  text: $font-weight-light left none $headings-color $font-size-h3 1.54 normal;
+}
+
+.h4 {
+  text: $font-weight-medium left none $headings-color $font-size-h4 $line-height normal;
+}
+
+.h5 {
+  text: $font-weight-medium left none $headings-color $font-size-h5 $line-height normal;
+}
+
+.h6 {
+  text: left none $font-size-h6 $line-height normal;
+}
+
+.h7 {
+  text: left none $font-size-h7 $line-height normal;
+}
+
+.light {
+  font-weight: $font-weight-light;
+}
+.normal {
+  font-weight: $font-weight-normal;
+}
+.medium {
+  font-weight: $font-weight-medium;
+}
+strong, .bold {
+  font-weight: $font-weight-bold;
+}
+
+ul,
+ol {
+  padding-left: $list-padding-left;
+}
+
+ul {
+  list-style-type: $list-style-type-ul-first;
+  ul {
+    list-style-type: $list-style-type-ul-second;
+    ul {
+      list-style-type: $list-style-type-ul-third;
+    }
+  }
+}
+
+ol {
+  list-style-type: $list-style-type-ol-first;
+  ol {
+    list-style-type: $list-style-type-ol-second;
+    ol {
+      list-style-type: $list-style-type-ol-third;
+    }
+  }
+}
+
+// All Links
+a, a[href] {
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Default Links
+a[href]:not([class]) {
+  @include hover($headings-color, $link-hover-color);
+  display: inline;
+}
+
+a[href^="mailto"]:not([class]) {
+  @include hover($headings-color, $link-hover-color);
+  // @include underlink;
+  display: inline;
+}
+
+// No margin for only-child paragraph
+p:only-child,
+p:last-child,
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+hr {
+  width: $single*3;
+  height: 3px;
+  // background-color: $brand-primary;
+  border: 0;
+  margin: $single*4 0;
+  position: relative;
+  @include from(lg) {
+    left: -$single*1.25;
+  }
+}
+
+blockquote {
+  color: $gray;
+  font-size: $font-size-h3;
+  font-weight: $font-weight-light;
+  margin: $single*3 auto;
+  p {
+    line-height: 1.45 !important;
+    text-align: center;
+  }
+}

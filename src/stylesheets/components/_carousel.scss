@@ -1,0 +1,38 @@
+.Carousel {
+  .Button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    border-radius: 0;
+    background-color: $brand-primary;
+  }
+  .Pill {
+    margin-bottom: $threefourth;
+  }
+  .flickity-prev-next-button.previous {
+    left: -50px;
+  }
+  .flickity-prev-next-button.next {
+    right: -50px;
+  }
+  .flickity-page-dots {
+    bottom: -60px;
+  }
+  &-item {
+    @include square;
+    position: relative;
+    box: vertical;
+    justify-content: space-between;
+    width: 25%;
+    margin-right: $single*1.75;
+    background-color: $white;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+  }
+  &-body {
+    position: absolute;
+    padding: $single*1.25;
+    padding-bottom: 0;
+    box-item: flex-1;
+  }
+}

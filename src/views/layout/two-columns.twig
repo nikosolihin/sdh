@@ -1,0 +1,50 @@
+{% set isLandingCallout = landingCallout ? 'landing' : '' %}
+{% set withCalloutTheme = landingCalloutTheme ? landingCalloutTheme ~ 'Theme' : '' %}
+
+{% if landingCalloutBg %}
+  {% set withBg = true %}
+  {% set withCalloutBg = 'fullbleed' %}
+  {% set bgset = 'data-bgset="' ~
+    landingCalloutBg[xlarge] ~
+    ' [(min-width: ' ~ lg ~ ')] | ' ~
+    landingCalloutBg[large] ~
+    ' [(min-width: ' ~ md ~ ')] | ' ~
+    landingCalloutBg[medium] ~ '"' %}
+{% endif %}
+
+{% if landingCallout %}
+<div class="{{'Callout'|modifiers("#{isLandingCallout}, #{withCalloutBg}, #{withCalloutTheme}")}}{{withBg ? ' lazyload' : ''}}" {{withBg ? bgset : ''}}>
+  <div class="container">
+{% endif %}
+    <div class="row row--of-2">
+
+      {# Don't create column div if there's no content #}
+      {% if left %}
+      <div class="column column-left">
+        {% if leftCallout %}
+          <div class="Callout Callout--column">
+        {% endif %}
+        {% block left %}{% endblock %}
+        {% if leftCallout %}
+          </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if right %}
+      <div class="column column-right">
+        {% if rightCallout %}
+          <div class="Callout Callout--column">
+        {% endif %}
+        {% block right %}{% endblock %}
+        {% if rightCallout %}
+          </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+{% if landingCallout %}
+  </div>
+</div>
+{% endif %}

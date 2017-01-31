@@ -1,0 +1,308 @@
+.FeaturedNews {
+  position: relative;
+  padding-top: $single*4;
+  margin-bottom: $single*5;
+  @include at(md) {
+    margin-bottom: $single*7;
+  }
+  @include from(lg) {
+    padding-top: $single*6;
+    margin-bottom: $single*12;
+  }
+
+  .Lead {
+    margin-bottom: $single*1.5;
+    @include from(lg) {
+      margin-bottom: $single*2.5;
+    }
+  }
+  .Arrows {
+    @include from(md) {
+      top: $single*8;
+      right: 0;
+    }
+    @include from(lg) {
+      top: $single*6.5;
+      right: $single*3;
+    }
+  }
+
+  &-caption {
+    @include white;
+    position: absolute;
+    bottom: $single*2;
+    padding: 0 $single;
+    @include from(md) {
+      padding: 0 $single*2;
+    }
+    @include from(lg) {
+      bottom: $single*2.25;
+      left: 0;
+    }
+    @include from(xl) {
+      bottom: $single*2.25;
+      left: $single*3;
+    }
+    h2 {
+      font-size: 1.45rem;
+      @include at(md) {
+        font-size: 1.65rem;
+      }
+      @include from(lg) {
+        font-size: 1.9rem;
+      }
+    }
+    .meta {
+      font-size: $font-size-h6;
+      font-weight: $font-weight-medium;
+      @include from(md) {
+        font-size: $font-size-h5;
+      }
+    }
+  }
+  &-captionTitle {
+    font-size: 1.9rem;
+  }
+
+  //Flickity cells
+  &-image {
+    @include cover;
+    @include white;
+    @include overlay(false, (rgba(0,0,0,0) 45%, rgba(0,0,0,1) 95%));
+    display: block;
+    left: 0 !important;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.35s ease-in-out;
+    &.is-selected {
+      opacity: 1;
+      z-index: 0
+    }
+    width: 100%;
+    height: $single*21;
+    @include at(sm) {
+      height: $single*24;
+    }
+    @include at(md) {
+      height: $single*30;
+    }
+    @include from(lg) {
+      width: 76%;
+      height: $single*34;
+    }
+    @include from(xl) {
+      width: 71%;
+      height: $single*37;
+    }
+  }
+  // Override flickity slider for fade to work
+  .flickity-slider {
+    transform: none !important;
+  }
+  &-body {
+    top: $single*8;
+    right: 0;
+    background-color: #fafafa;
+    border-bottom: 2px solid #eee;
+    width: 100%;
+    @include from(lg) {
+      position: absolute;
+      width: 36%;
+    }
+    .news {
+      width: 100%;
+      padding: $single;
+      @include from(md) {
+        padding: $single*1.5 $single*2 $single*1.5 $single*2.35;
+      }
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      &--active {
+        border-right: 5px solid $brand-secondary;
+      }
+    }
+    .news-topic {
+      color: $brand-primary;
+    }
+  }
+}
+
+.CarouselNews {
+  display: none;
+  @include from(lg) {
+    display: block;
+  }
+  background-color: $callout-bg;
+  margin-bottom: $single*6;
+  .container {
+    position: relative;
+  }
+  .Lead {
+    position: relative;
+    top: -$single*4.5;
+    margin-bottom: 0;
+  }
+
+  &-wrapper {
+    padding-top: $single*1.5;
+    padding-bottom: $single*4;
+  }
+  &-card {
+    width: 31%;
+    margin: 0 $single*1.25;
+    .tag {
+      margin-bottom: $single;
+    }
+  }
+  &-image {
+    @include white;
+    @include cover;
+    @include overlay(true, rgba(0,0,0,.5));
+    display: block;
+    position: relative;
+    height: $card-height*1.25;
+    padding: $single*1.5 $single*2;
+    transition: all .12s ease-out;
+    > * {
+      position: relative;
+    }
+    &:hover {
+      @include overlay(true, rgba(0,0,0,.7));
+    }
+  }
+  &-body {
+    background-color: $white;
+    padding: $threefourth $single*2 $single;
+    article {
+      border-bottom: 1px solid #eee;
+      padding: $single 0;
+      &:last-child {
+        border: 0;
+      }
+    }
+    h5 {
+      font-weight: $font-weight-bold;
+      margin-bottom: $quarter;
+    }
+  }
+}
+
+.ArchiveNews {
+  position: relative;
+  text-align: center;
+  .Lead {
+    margin-bottom: $single*1.25;
+    @include from(md) {
+      margin-bottom: $single*4.5;
+    }
+  }
+  .Loader {
+    top: $single*12;
+    @include from(md) {
+      top: $single*7;
+    }
+    @include from(lg) {
+      top: $single*8;
+    }
+  }
+  &-control {
+    box: horizontal middle wrap;
+    margin-bottom: $single*1.25;
+    @include from(md) {
+      position: absolute;
+      top: 0;
+      right: $single;
+    }
+    h5 {
+      color: #888;
+      font-weight: $font-weight-normal;
+      margin-bottom: 0;
+      @include to(sm) {
+        width: 100%;
+        margin-bottom: $threefourth;
+      }
+    }
+    .Button {
+      margin-bottom: 0;
+    }
+  }
+  &-topics {
+    box: horizontal middle space-between;
+    color: $brand-primary;
+    width: $single*13;
+    padding: .85rem $single*1.25;
+    background-color: $callout-bg;
+    cursor: pointer;
+    position: relative;
+    svg {
+      fill: #888;
+      size: .6rem;
+    }
+    margin: 0 $threefourth 0 0;
+    @include from(md) {
+      margin: 0 $threefourth 0 $single*1.5;
+    }
+    @include to(md) {
+      flex: 1 0 auto;
+    }
+  }
+  &-topicsDropdown {
+    display: none;
+    position: absolute;
+    background-color: $callout-bg;
+    // width: $single*13;
+    width: 100%;
+    right: 0;
+    top: $single*3;
+    text-align: left;
+    a {
+      @include hover($body-color, $brand-primary);
+      display: block;
+      text-transform: capitalize;
+      font-size: 15px;
+      letter-spacing: 0;
+      padding: .8rem $single*1.25;
+      border-top: 1px solid #eee;
+    }
+    &--show {
+      display: block;
+    }
+  }
+  &-content {
+    box: horizontal wrap space-between;
+    margin-bottom: $single*3;
+    @include from(md) {
+      padding: 0 $single;
+    }
+    @include from(xl) {
+      padding: 0;
+    }
+    &--fadeOut {
+      opacity: .3;
+    }
+  }
+}
+
+.news {
+  width: 100%;
+  @include from(md) {
+    width: 47.5%;
+  }
+  flex: 0 0 auto;
+  border-bottom: 1px solid #eee;
+  padding: $single*1.25 0;
+  text-align: left;
+  &-bar {
+    box: horizontal top;
+  }
+  &-share {
+    display: block;
+    size: $single*1.25;
+    margin-right: $single;
+    svg {
+      fill: $brand-primary;
+      size: $single;
+    }
+  }
+}

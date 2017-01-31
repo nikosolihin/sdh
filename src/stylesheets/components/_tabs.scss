@@ -1,0 +1,61 @@
+.Tabs {
+  padding-top: $half;
+  &-list {
+    @include normalist;
+    box: horizontal wrap center;
+    @include from(md) {
+      box: horizontal wrap left;
+    }
+    overflow: hidden;
+    position: relative;
+    margin-bottom: $single*1.5;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: #ddd;
+      left: 0;
+      bottom: 0;
+      z-index: -99999;
+    }
+    li {
+      line-height: 1.4;
+      margin-top: $half;
+    }
+  }
+  &-tab {
+    @include hover($gray-light, $brand-primary);
+    @include no-outline;
+    float: left;
+    padding: 0 $single $threefourth;∑
+    &.selected,
+    &[aria-selected = "true"] {
+      color: $brand-primary;
+      font-weight: $font-weight-bold;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: lighten($brand-primary,3%);
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+  &-panel {
+    overflow: scroll;
+    margin-top: $single;
+    opacity: 0;
+    &--show {
+      opacity: 1;
+    }
+  }
+  div[aria-hidden='true'] {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+.Header {
+  box: horizontal middle;
+  border-bottom: 1px solid $line;
+
+  &-logo {
+    width: 15%;
+    box: horizontal middle;
+    color: $navy;
+    svg {
+      height: 3.75rem;
+    }
+  }
+  &-nav {
+    width: 85%;
+  }
+
+  &-primary {
+    box: horizontal space-between middle;
+    border-left: 1px solid $line;
+    padding: 0 $single*2.75 0 $single*1.25;
+  }
+  &-primaryList {
+    box: horizontal space-around;
+    width: 85%;
+  }
+  &-primaryLink {
+    @include hover(#777, $navy);
+    padding: $single*1.75 $single;
+  }
+
+  &-secondary {
+    color: white;
+    background-color: $navy;
+    box: horizontal space-between;
+    .flex-wrapper {
+      box: horizontal;
+    }
+  }
+  &-secondaryList {
+    border-left: 1px solid #26427C;
+  }
+  &-secondaryLink {
+    @include hover(inherit, $yellow);
+    padding: .6rem $half;
+    margin: 0 $half;
+  }
+
+  &-languages {
+    background-color: #26427C;
+    cursor: pointer;
+    box: horizontal middle space-between;
+    size: 100%;
+    padding: 0 $single*1.5;
+    svg:first-child { // Globe
+      size: 20px;
+    }
+    svg:last-child { // Chevron
+      size: 15px;
+    }
+    span {
+      margin: 0 $half;
+    }
+  }
+
+  &-quicklinks {
+    box: horizontal middle;
+    color: $yellow;
+    margin-right: $single*1.25;
+    svg {
+      size: 17px;
+      margin-right: $half;
+    }
+  }
+
+  &-search {
+    box: horizontal middle center;
+    transition: background-color .15s ease-in-out;
+    color: white;
+    background-color: $orange;
+    padding-left: $single*1.5;
+    padding-right: $single*2;
+    margin-left: $single*3;
+    svg {
+      size: 22px;
+    }
+    &:hover {
+      background-color: darken($orange, 2.5%);
+    }
+  }
+}

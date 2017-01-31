@@ -1,0 +1,32 @@
+<div class="SingleMedia-gallery">
+  <div class="SingleMedia-galleryHeading container">
+    <h1 class="SingleMedia-title h2 white">{{post.title}}</h1>
+    {% include 'components/social-share.twig' with {'color': 'brand'}%}
+  </div>
+  <div class="Gallery" data-component="gallery">
+    <div class="container">
+      <div class="Gallery-nav">
+        {% for photo in acf.gallery %}
+          <img src="{{photo[square]}}" alt="{{photo.title}}" class="Gallery-cell">
+        {% endfor %}
+      </div>
+      <div class="Gallery-body">
+        {% for photo in acf.gallery %}
+          <img data-flickity-lazyload="{{photo[xlarge]}}" alt="{{photo.title}}" class="Gallery-cell">
+        {% endfor %}
+      </div>
+      <div class="Gallery-caption container container--text">
+        {% for photo in acf.gallery %}
+        <div class="Gallery-caption-item" data-caption-id="{{loop.index}}">
+          {% if photo.title %}
+            <h5>{{photo.title|title}}</h5>
+          {% endif %}
+          {% if photo.description %}
+            <p>{{photo.description}}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

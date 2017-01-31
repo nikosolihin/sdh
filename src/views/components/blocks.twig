@@ -1,0 +1,88 @@
+{% for block in data.blocks %}
+  {% set post = TimberPost(block) %}
+  {% set style = post.get_field('style') %}
+
+  {% if style != "download" %}
+    {% set image = post.get_field('image') %}
+    {% set description = post.get_field('description') %}
+    {% set alignment = post.get_field('text_alignment') %}
+    {% set link_type = post.get_field('type') %}
+    {% set notitle = post.get_field('notitle') %}
+    {% set overlay = notitle ? '' : 'overlay' %}
+
+    {% if link_type == "single" %}
+      {% set url = post.get_field('single_url') %}
+    {% elseif link_type == "external" %}
+      {% set url = post.get_field('external_url') %}
+    {% else %}
+      {% set url = post.get_field('search_url') %}
+    {% endif %}
+  {% endif %}
+
+  {% if style == "download" %}
+    {% set url = post.get_field('file') %}
+    {% set icon = post.get_field('icon') %}
+    {% set extension = post.get_field('extension')|upper %}
+    <a href="{{url}}" class="Download">
+      <div class="Download-icon">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{icon}}"></use>
+        </svg>
+      </div>
+      <div>
+        <h5 class="brand">{{post.title}}</h5>
+        <span>{{extension}}</span>
+      </div>
+    </a>
+
+  {% elseif style == "bookmark" %}
+    <div class="{{'Block'|modifiers('bookmark')}}" style="width:{{image.originalwidth}}px; height:{{image.originalheight}}px;">
+      <a href="{{url}}">
+        <img class="lazyload" data-src="{{image[original]}}" alt="{{image.title}}">
+      </a>
+    </div>
+
+  {% elseif style == "card" %}
+    {% set card_style = post.get_field('card_style') %}
+    {% if card_style %}
+      {% set bg = post.get_field('card_bg') %}
+      {% set fg = post.get_field('card_fg') %}
+    {% endif %}
+
+    <div class="{{'Block'|modifiers("card, #{alignment}")}}">
+      <a href="{{url}}" class="Block-link">
+        <div class="Block-head lazyload" data-bgset="{{image[medium]}} 1x, {{image[large]}} 2x"></div>
+        {% if card_style %}
+          <div class="Block-body" style="background-color: {{bg}};">
+            <h4 style="color: {{fg}};">{{post.title}}</h4>
+            {% if description|trim is not empty %}
+              <p style="color: {{fg}};">{{description|trim}}</p>
+            {% endif %}
+          </div>
+        {% else %}
+          <div class="Block-body">
+            <h4 class="brand">{{post.title}}</h4>
+            {% if description|trim is not empty %}
+              <p>{{description|trim}}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+
+  {% else %} {# Panel #}
+    <div class="{{'Block'|modifiers("panel, #{alignment}, #{overlay}")}} lazyload" data-bgset="{{image[medium]}} 1x, {{image[large]}} 2x">
+      <a href="{{url}}" class="Block-link">
+      {% if not notitle %}
+        <div class="Block-body">
+          <h4>{{post.title}}</h4>
+          {% if description|trim is not empty %}
+            <p>{{description|trim}}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      </a>
+    </div>
+
+  {% endif %}
+{% endfor %}

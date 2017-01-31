@@ -1,0 +1,33 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set meta = data.news_metadata %}
+{% else %}
+  {% set meta = data.manual_metadata %}
+{% endif %}
+
+{% if style != 'list' %}
+  <div class="Feed-image">
+    <a href="{{post.link}}" class="Feed-imageLink lazyload" data-bgset="{{post.image[small]}}"></a>
+  </div>
+{% endif %}
+
+<div class="Feed-body">
+  <h5><a href="{{post.link}}">{{post.title}}</a></h5>
+  {% if 'teaser' in meta %}
+    <p>{{post.teaser|slice(0,60)~'...'}}</p>
+  {% endif %}
+  <div class="Feed-meta">
+    <div class="meta">
+      <span>{{post.date|date('j M, Y')}}</span>
+    </div>
+    {% if 'topic' in meta %}
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <svg aria-hidden="true" role="presentation" title="News Topic">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <span>{{post.topic}}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>

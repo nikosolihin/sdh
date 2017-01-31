@@ -1,0 +1,49 @@
+.Figure {
+  display: inline-block;
+  margin: 0 auto; // Client asked for no margin
+  width: 100%;
+  picture, img {
+    margin: 0 auto;
+  }
+
+  &-caption {
+    font-size: $font-size-h6;
+    color: $figure-caption-color;
+    line-height: $figure-caption-line-height;
+    padding: 12px 25px 0;
+    @at-root .Sidebar-section #{&} {
+      padding: 0 $quarter;
+    }
+  }
+
+  // Alignment
+  &--center {
+    .Figure-caption {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  &--left {
+    @include from($desktop) {
+      float: left;
+      margin: $half $single*2.5 $half 0;
+      max-width: 50%;
+    }
+  }
+  &--right {
+    @include from($desktop) {
+      float: right;
+      margin: $half -25px $half $single * 1.75;
+      max-width: 50%;
+    }
+  }
+  @at-root .Sidebar-section #{&} {
+    margin: $threefourth 0;
+  }
+  @at-root .row--of-2 #{&} {
+    margin: $single 0;
+  }
+  @at-root .row--of-3 #{&} {
+    margin: $single 0;
+  }
+}

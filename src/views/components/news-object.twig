@@ -1,0 +1,44 @@
+<script id="NewsObject" type="x-tmpl-mustache">
+{% verbatim %}
+
+{{#error}}
+  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{error}}</h3>
+{{/error}}
+{{#empty}}
+  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{empty}}</h3>
+{{/empty}}
+
+{{#title}}
+  <article class="news">
+    <div class="news-bar">
+      {{#topic}}
+        <h5 class="tag">{{topic}}</h5>
+      {{/topic}}
+      {{#facebook}}
+        <a href="{{facebook}}" class="news-share share">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+          </svg>
+        </a>
+      {{/facebook}}
+      {{#twitter}}
+        <a href="{{twitter}}" class="news-share share">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+          </svg>
+        </a>
+      {{/twitter}}
+    </div>
+    <h5><a href="{{link}}">{{title}}</a></h5>
+    <p class="meta">
+      <span>{{date}}</span>
+      {{#authors}}
+        <span class="meta-dot">•</span>
+        <span>{{authors}}</span>
+      {{/authors}}
+    </p>
+  </article>
+{{/title}}
+
+{% endverbatim %}
+</script>

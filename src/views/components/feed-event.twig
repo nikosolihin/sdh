@@ -1,0 +1,49 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set meta = data.event_metadata %}
+{% else %}
+  {% set meta = data.manual_metadata %}
+{% endif %}
+
+{% if style == 'list' %}
+  <div class="Feed-date">
+    <div>
+      <span class="date-day">{{post.date|date('d M')[0:2]}}</span>
+      <span class="date-month">{{post.date|date('d M')[3:3]|upper}}</span>
+    </div>
+  </div>
+{% endif %}
+
+{% if style != 'list' %}
+  <div class="Feed-image">
+    <a href="{{post.link}}" class="Feed-imageLink lazyload" data-bgset="{{post.image[small]}}"></a>
+  </div>
+{% endif %}
+
+<div class="Feed-body">
+  <h5><a href="{{post.link}}">{{post.title}}</a></h5>
+  {% if 'teaser' in meta %}
+    <p>{{post.teaser|slice(0,60)~'...'}}</p>
+  {% endif %}
+  <div class="Feed-meta">
+    {% if 'date' in meta and style != 'list' %}
+      <div class="meta meta--icon">
+        <svg aria-hidden="true" role="presentation" title="Event Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+        </svg>
+        <span>{{post.date|date('j M, Y')}}</span>
+      </div>
+    {% endif %}
+    {% if 'category' in meta %}
+      <div class="meta meta--icon meta--withDot">
+        {% if style != 'list' %}
+          <span class="meta-dot">•</span>
+        {% endif %}
+        <svg aria-hidden="true" role="presentation" title="Event Category">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <span>{{post.term}}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>

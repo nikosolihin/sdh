@@ -1,0 +1,31 @@
+{% set postlink = post.link|url_encode %}
+{% set posttitle = post.title|url_encode %}
+{% set appID = analytics.facebook_app_id %}
+{% set handle = analytics.twitter_analytics_id %}
+{% set facebook = 'https://www.facebook.com/dialog/share?app_id='~appID~'&display=popup&href='~postlink %}
+{% set twitter = 'https://twitter.com/intent/tweet?text='~posttitle~'&url='~postlink~'&via='~handle %}
+{% set whatsapp = 'whatsapp://send?text='~posttitle~' '~postlink %}
+{% set email = 'mailto:?subject='~posttitle~'&body='~postlink %}
+
+<div class="{{'Share'|modifiers("#{color}")}}">
+	<a href="{{facebook}}" class="Share-button" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+		</svg>
+	</a>
+	<a href="{{twitter}}" class="Share-button" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+		</svg>
+	</a>
+	<a href="{{whatsapp}}" class="Share-button">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#whatsapp"></use>
+		</svg>
+	</a>
+	<a href="{{email}}" class="Share-button" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#email"></use>
+		</svg>
+	</a>
+</div>

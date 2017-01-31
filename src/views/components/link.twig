@@ -1,0 +1,22 @@
+{% if data.type == "single" %}
+  {% set url = data.single_url %}
+{% elseif data.type == "external" %}
+  {% set url = data.external_url %}
+{% else %}
+  {% set url = data.search_url %}
+{% endif %}
+
+{% if data.form == "text" %}
+  {# Text links #}
+  <a href="{{url}}" class="Link">
+    {{data.label|title}}
+    <svg aria-hidden="true" role="presentation" title="Visit Link">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+    </svg>
+  </a>
+{% else %}
+  {# Button Link #}
+  <a href="{{url}}" class="{{'Button'|modifiers("#{data.display}")}}">
+  {{data.label|title}}
+  </a>
+{% endif %}

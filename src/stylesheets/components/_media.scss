@@ -1,0 +1,27 @@
+.Media {
+  padding-bottom: $single*2;
+  margin-bottom: $single*2;
+  border-bottom: 1px solid $gray-lighter;
+  &:last-child {
+    border-bottom: none;
+  }
+  &-head {
+    margin-bottom: $single*1.25;
+  }
+  &-tag {
+    margin-bottom: $threefourth;
+  }
+  &-title a {
+    color: $brand-primary;
+  }
+  &-body {
+    box: horizontal center space-between;
+  }
+  &-content {
+    width: 65%;
+    padding-right: $single*1.5;
+  }
+  &-image {
+    width: 35%;
+  }
+}

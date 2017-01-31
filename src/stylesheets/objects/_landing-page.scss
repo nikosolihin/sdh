@@ -1,0 +1,179 @@
+.landing-page {
+  box: horizontal space-around wrap;
+  &-teaser {
+    margin-top: $single*4.5;
+    @include from(lg) {
+      margin-top: $single*7;
+    }
+    .Lead {
+      font-size: $font-size-h3;
+      @include from(md) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  &-content {
+    h2.brand {
+      margin-bottom: $single;
+    }
+    .Lead--body {
+      font-size: $font-size-h4;
+      @include from(lg) {
+        font-size: $font-size-h3;
+      }
+    }
+  }
+  &--grid {
+    margin-top: $single*7;
+    margin-bottom: $single*7;
+    .Twin-box {
+      @include square(70%);
+      border-bottom: 2px solid $white;
+      @include from(sm) {
+        @include square(50%);
+      }
+      @include from(md) {
+        @include square(30%);
+      }
+    }
+  }
+}
+
+.Twin {
+  box: vertical;
+  @include from(lg) {
+    box: horizontal wrap;
+  }
+
+  .Button {
+    margin-top: $single;
+    margin-bottom: 0;
+  }
+
+  &-frame, &-box {
+    width: 100%;
+    @include from(lg) {
+      width: 50%;
+    }
+  }
+  &-frame .Twin-box {
+    // If box has 1 item, square the item.
+    &:only-child {
+      flex: 1 0 auto;
+    }
+    @include from(lg) {
+      // If box has 2 items, make em horizontal
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .Twin-box {
+        @include square(50%);
+        width: 100%;
+      }
+      // If box has 3 items, expand last item.
+      + .Twin-box + .Twin-box {
+        @include square(50%);
+        width: 100%;
+      }
+      // If box has 4 items, make square grid
+      &:first-child:nth-last-child(4),
+      &:first-child:nth-last-child(4) ~ .Twin-box {
+        @include square(100%);
+        width: 50%;
+      }
+    }
+  }
+  &-box {
+    @include overlay(true);
+    @include cover;
+    @include square(60%);
+    @include from(sm) {
+      @include square(40%);
+    }
+    @include from(md) {
+      @include square(20%);
+    }
+    @include from(lg) {
+      @include square;
+    }
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    &--popout {
+      position: relative;
+      @include from(lg) {
+        transform: scale(1.1);
+        transform-origin: top left;
+        top: -40px;
+      }
+      @include to(sm) {
+        .Twin-content {
+          h3 {
+            font-size: $font-size-h3;
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    box: vertical bottom;
+    position: absolute;
+    size: 100%;
+    padding: $single*2;
+    p {
+      max-width: 29rem;
+      margin-bottom: $single;
+    }
+  }
+
+  // Alignment
+  &--alternate {
+    > div:first-child {
+      order: 2;
+    }
+    > .Twin-frame {
+      box: horizontal right wrap;
+    }
+  }
+}
+
+.Solo {
+  box: vertical;
+  margin-bottom: $single*3;
+  flex: 0 0 auto;
+  width: 100%;
+  @include from(md) {
+    width: 50%;
+    border: $single solid transparent;
+  }
+  @include from(lg) {
+    border: $single*1.5 solid transparent;
+  }
+
+  &-image {
+    @include white;
+    @include cover;
+    @include overlay(false);
+    @include promote;
+    position: relative;
+    box: vertical bottom;
+    min-height: $single*19;
+    @include from(md) {
+      min-height: $single*22;
+    }
+    padding: $single*2;
+  }
+  &-content {
+    box: horizontal wrap;
+    margin-top: $single*1.5;
+    padding-bottom: $single*2;
+    border-bottom: 4px solid #f5f5f5;
+    a {
+      display: block;
+      padding: $half $single;
+      width: 50%;
+      @include from(md) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+}

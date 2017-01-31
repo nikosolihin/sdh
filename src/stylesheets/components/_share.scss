@@ -1,0 +1,48 @@
+.Share {
+  box: horizontal center;
+  @include from(md) {
+    box: horizontal left;
+  }
+
+  &-button {
+    box: vertical middle center;
+    display: block;
+    background-color: #eee;
+    border-radius: 2px;
+    margin-right: 10px;
+    transition: all .08s ease-in-out;
+    size: 45px;
+    @include from(md) {
+      size: 55px;
+    }
+    &:hover {
+      background-color: $brand-secondary;
+      svg {
+        fill: $white;
+      }
+    }
+    // Whatsapp
+    &:nth-child(3) {
+      @include from(lg) {
+        display: none;
+      }
+    }
+  }
+  svg {
+    fill: #444;
+    size: .9rem;
+    @include from(md) {
+      size: $single;
+    }
+    transition: all .05s ease-in-out;
+  }
+
+  &--brand {
+    .Share-button {
+      background-color: $brand-highlight;
+    }
+    svg {
+      fill: $white;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<ol class="{{'Breadcrumb'|modifiers("#{style}, #{trailing}")}}">
+  <li class="Breadcrumb-item">
+    <a class="Breadcrumb-home" href="{{site.url}}">
+      <svg aria-hidden="true" role="presentation" title="{{site.title}} Homepage">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#home"></use>
+      </svg>
+    </a>
+  </li>
+  {% for item in data %}
+    <li class="Breadcrumb-item">
+      <a class="Breadcrumb-link" href="{{item.link}}">{{item.title|title}}</a>
+    </li>
+  {% endfor %}
+</ol>

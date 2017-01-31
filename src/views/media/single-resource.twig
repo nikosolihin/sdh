@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {% if media_type == 'gallery' %}
+    {% include 'media/gallery.twig' %}
+  {% endif %}
+
+  {% if media_type == 'video' or media_type == 'audio' %}
+    {% include 'media/video.twig' %}
+  {% endif %}
+
+  {% if media_type == 'document' %}
+    {% set cover = acf.image %}
+    {% if acf.with_toc %}
+      <div class="SingleMedia-document--withTOC">
+    {% endif %}
+    {% include 'media/document-header.twig' %}
+    {% include 'media/document.twig' %}
+    {% include 'media/document-footer.twig' %}
+    {% if acf.with_toc %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if media_type == 'gallery' or media_type == 'video' or media_type == 'audio' %}
+    {% include 'media/media-body.twig' %}
+  {% endif %}
+
+{% endblock %}

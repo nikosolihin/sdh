@@ -1,16 +1,19 @@
 /*=============================================*/
-/* Replace WP Login Logo
+/* Replace WP Login Logo and BG
 /*=============================================*/
 #login h1 a {
-	background-image: url('images/login-logo.png');
+	background-image: url('https://c2.staticflickr.com/6/5544/30400840815_1e8f9ff350_o.png');
 	background-size: contain;
-	width: 100%;
-	height: 65px;
+	width: 120px;
+	height: 120px;
+}
+body.login.login-action-login {
+	background: url('https://c2.staticflickr.com/6/5751/30405449271_5a8ca632d3_o.jpg') no-repeat center center/cover;
 }
 
 /*=============================================*/
 /* Remove "Lost your passowrd?" and
-/* "Back to KPC" link
+/* "Back to SAAT" link
 /*=============================================*/
 p#nav,
 p#backtoblog {
@@ -18,81 +21,120 @@ p#backtoblog {
 }
 
 /*=============================================*/
+/* Remove unnecessary fields from the
+/* Page Attributes box
+/*=============================================*/
+#pageparentdiv .inside p:nth-child(1),
+#pageparentdiv .inside p:nth-child(4) {
+	margin-bottom: 4px;
+}
+
+/*=============================================*/
+/* Remove the default WP custom taxonomy box
+/* and replace with the acf one
+/*=============================================*/
+#tagsdiv-role.postbox {
+	display: none;
+}
+
+/*=============================================*/
 /* Use icomoon in the dashboard
 /*=============================================*/
 @font-face {
-	font-family: 'icomoon';
-	src:    url('fonts/icomoon.eot?9vb6qw');
-	src:    url('fonts/icomoon.eot?9vb6qw#iefix') format('embedded-opentype'),
-			url('fonts/icomoon.ttf?9vb6qw') format('truetype'),
-			url('fonts/icomoon.woff?9vb6qw') format('woff'),
-			url('fonts/icomoon.svg?9vb6qw#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-qna:before {
-    content: "\e900";
-}
-.icon-map:before {
-    content: "\e567";
-}
-.icon-form:before {
-    content: "\e834";
-}
-.icon-editor:before {
-    content: "\e254";
-}
-.icon-image:before {
-    content: "\e410";
-}
-.icon-embed:before {
-    content: "\e04a";
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?z67cuf');
+  src:  url('fonts/icomoon.eot?z67cuf#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?z67cuf') format('truetype'),
+    url('fonts/icomoon.woff?z67cuf') format('woff'),
+    url('fonts/icomoon.svg?z67cuf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*=============================================*/
 /* Add icons to ACF Flex content
 /*=============================================*/
+.acf-fc-popup [data-layout="resources"]::before {
+	content: "\e2cc";
+}
+.acf-fc-popup [data-layout="people"]::before {
+	content: "\e7fe";
+}
+.acf-fc-popup [data-layout="feed"]::before {
+	content: "\e90c";
+}
+.acf-fc-popup [data-layout="list"]::before {
+	content: "\e910";
+}
 .acf-fc-popup [data-layout="editor"]::before {
-	content: "\e254";
+	content: "\e907";
+}
+.acf-fc-popup [data-layout="textarea"]::before {
+	content: "\e907";
+}
+.acf-fc-popup [data-layout="link"]::before {
+	content: "\e157";
 }
 .acf-fc-popup [data-layout="image"]::before {
-	content: "\e410";
+	content: "\e905";
 }
 .acf-fc-popup [data-layout="accordion"]::before {
 	content: "\e900";
 }
 .acf-fc-popup [data-layout="form"]::before {
-	content: "\e834";
+	content: "\e909";
 }
 .acf-fc-popup [data-layout="embed"]::before {
 	content: "\e04a";
 }
 .acf-fc-popup [data-layout="map"]::before {
-	content: "\e567";
+	content: "\e908";
+}
+.acf-fc-popup [data-layout="block"]::before {
+	content: "\e906";
+}
+.acf-fc-popup [data-layout="blocks"]::before {
+	content: "\e906";
+}
+.acf-fc-popup [data-layout="spacer"]::before {
+	content: "\e904";
+}
+.acf-fc-popup [data-layout="tabs"]::before {
+	content: "\e2c8";
+}
+.acf-fc-popup [data-layout="table"]::before {
+	content: "\e90b";
+}
+.acf-fc-popup [data-layout="one_column"]::before {
+	content: "\e903";
+}
+.acf-fc-popup [data-layout="two_columns"]::before {
+	content: "\e902";
+}
+.acf-fc-popup [data-layout="three_columns"]::before {
+	content: "\e901";
+}
+.acf-fc-popup [data-layout="four_columns"]::before {
+	content: "\e90a";
+}
+
+/*=============================================*/
+/* Float some ACF buttons
+/*=============================================*/
+#acf-sidebar-builder .acf-actions li {
+	float: left;
 }
 
 /*=============================================*/
 /* Change Flex content popup to grid
 /*=============================================*/
 .acf-fc-popup ul {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	display: flex;
-	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
 	width: 245px; /* 80*3+2+3 */
 }
 .acf-fc-popup	ul li {
@@ -108,10 +150,18 @@ p#backtoblog {
 	border-top: 1px solid #444;
 }
 .acf-fc-popup ul li a {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex !important;
+	-webkit-flex-flow: column nowrap;
+	    -ms-flex-flow: column nowrap;
+	        flex-flow: column nowrap;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 100%;
 	padding: 15px;
 	box-sizing: border-box;
@@ -135,4 +185,152 @@ p#backtoblog {
 }
 .flickr_field.type_photostream {
 	max-height: 280px !important;
+}
+.acf-short {
+	min-height: 100px !important;
+}
+.acf-field-flickr-browser {
+	padding: 0!important;
+}
+/* Reusable Field group plugin doesn't allow custom classes
+/* so we do it this way */
+#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields,
+#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields,
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+}
+#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
+#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"] {
+	width: 50%;
+}
+#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
+#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"],
+#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_components"] {
+	width: 33.333%;
+}
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"],
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_left_components"],
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_right_components"] {
+	width: 25%;
+}
+#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"],
+#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"],
+#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"] {
+	width: 100%;
+}
+
+/* Because of the above custom column percentage stylings,
+   we need to restore the collapse styling */
+#acf-layout-builder .acf-flexible-content .layout.-collapsed > .acf-fields, #acf-layout-builder .acf-flexible-content .layout.-collapsed > .acf-table {
+    display: none;
+}
+
+/*=============================================*/
+/* ACF Service Details Option Page
+/*=============================================*/
+.essentials-description {
+	color: #777777;
+  font-size: 12px;
+  line-height: 1.4em;
+  font-style: normal;
+  margin: 3px 0 0 !important;
+  padding: 0 !important;
+}
+.essentials {
+  display: block;
+  width: 100%;
+  overflow-x: scroll;
+}
+.essentials td {
+  padding-right: 20px;
+}
+.essentials th {
+  text-align: left;
+  background-color: #f2f2f2;
+  padding: 6px 10px;
+}
+.essentials td {
+  vertical-align: top;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/*=============================================*/
+/* ACF Image Select Radio Button
+/*=============================================*/
+.acf-image-select label input {
+	display: none;
+}
+.acf-image-select label p {
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+}
+.acf-image-select label img {
+	border: solid 6px #ddd;
+}
+.acf-image-select label.selected img {
+	border: solid 6px #999;
+}
+
+/*=============================================*/
+/* ACF Instructions style for message fields
+/*=============================================*/
+.acf-instruction {
+	color: #777;
+	font-size: 12px;
+	line-height: 1.4em;
+	border: 0 !important;
+	background-color: #f8f8f8;
+  padding-left: 55px !important;
+	border-left: 3px solid #0085ba;
+}
+.acf-instruction::before {
+	font-family: dashicons;
+	content: "\f348";
+	font-size: 30px;
+	color: #bbb;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.acf-instruction + .acf-field {
+	border-top: 0 !important;
+}
+
+/*=============================================*/
+/* Get rid of unnecessary acf labels
+/*=============================================*/
+.acf-field-flickr-browser .acf-label,
+.acf-instruction .acf-label {
+	display: none;
+}
+.acf-field-flickr-browser--showlabel .acf-label {
+	display: block;
+}
+
+#parent_id option.level-2 {
+  display: none;
+}
+
+/*=============================================*/
+/* Hide weird Network dropdown menu items
+/*=============================================*/
+#wp-admin-bar-blog-1-n,
+#wp-admin-bar-blog-1-c,
+#wp-admin-bar-blog-2-n,
+#wp-admin-bar-blog-2-c,
+#wp-admin-bar-blog-3-n,
+#wp-admin-bar-blog-3-c,
+#wp-admin-bar-new-media,
+#wp-admin-bar-new-post,
+#wp-admin-bar-new-user, {
+  display: none;
 }

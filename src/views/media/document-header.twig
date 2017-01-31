@@ -1,0 +1,52 @@
+<div class="SingleArticle container">
+  <div class="SingleArticle-content">
+    {# Breadcrumb #}
+    {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
+
+    {# Headings #}
+    <h1 class="SingleArticle-title h2 brand">{{post.title}}</h1>
+
+    {# Subtitle #}
+    {% if acf.subtitle %}
+      <h4 class="SingleArticle-subtitle">{{acf.subtitle}}</h4>
+    {% endif %}
+
+    {# Metas #}
+    <div class="SingleArticle-meta">
+      <div class="meta">
+        <span>{{post.post_date|date('j M, Y')}}</span>
+      </div>
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <svg aria-hidden="true" role="presentation" title="News Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{media_type}}"></use>
+        </svg>
+        <a href="{{breadcrumb|first.link ~ '/?utf8=✓&page=1&types=' ~ media_type}}" class="meta-link">{{media_type|title}}</a>
+      </div>
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <svg aria-hidden="true" role="presentation" title="News Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <a href="{{breadcrumb|first.link ~ '/?utf8=✓&page=1&category=' ~ media_category.slug}}" class="meta-link">{{media_category.name}}</a>
+      </div>
+    </div>
+
+    {# Mobile Share #}
+    <div class="SingleArticle-share">
+      <h3 class="Lead brand">
+        {{__('Share this', 'saat')}}
+      </h3>
+      {% include 'components/social-share.twig' %}
+    </div>
+  </div>
+
+  <div class="SingleArticle-sidebar Sidebar">
+    <div class="Sidebar-section">
+      <h3 class="Sidebar-sectionHeading Lead brand">
+        {{__('Share Media', 'saat')}}
+      </h3>
+      {% include 'components/social-share.twig' %}
+    </div>
+  </div>
+</div>

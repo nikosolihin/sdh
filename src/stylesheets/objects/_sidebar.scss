@@ -1,0 +1,107 @@
+.Sidebar {
+  visibility: hidden;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  transform: translate3d(0, -2.5%, 0);
+  transition: max-height .15s ease-out, opacity .1s ease-in-out, transform .12s ease-out;
+  will-change: max-height, opacity, transform;
+  @include from(lg) {
+    visibility: visible;
+    width: 27%;
+    opacity: 1;
+    max-height: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+  flex: 0 0 auto;
+
+  // Table of contents
+  > .Sidebar-toc {
+    * { user-select: none }
+    @include from(lg) {
+      margin-bottom: $single*3;
+    }
+    a {
+      // Default links in the TOC
+      @include hover($gray-dark, $brand-primary);
+      display: block;
+      padding: $single*1.25 $single*1.5;
+      font-weight: $font-weight-medium;
+    }
+    > li > a {
+      border-bottom: 1px solid #eee;
+    }
+    .List {
+      // If not active, hide sub list
+      display: none;
+    }
+  }
+
+  .is-Active {
+    > a {
+      @include white;
+      @include hover($white);
+      background-color: $brand-highlight;
+      font-weight: $font-weight-bold;
+    }
+    > .List {
+      // If active, show sub list
+      display: block;
+      margin-left: 0;
+      padding-left: $threefourth;
+      background-color: #f9f9f9;
+      a {
+        color: $gray-light;
+        font-weight: $font-weight-normal;
+        font-size: .9375rem;
+      }
+      > .is-Active {
+        border-right: 3px solid $brand-primary;
+        a {
+          @include hover($gray-dark, $brand-primary);
+          color: $brand-primary;
+          background-color: transparent;
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+  }
+
+  &-section {
+    display: none;
+    @include from(lg) {
+      display: block;
+    }
+    overflow: hidden;
+    margin-bottom: $single*2.5;
+    .Button {
+      margin: 0;
+    }
+    &--center .Sidebar-sectionHeading {
+      text-align: center;
+    }
+    &--callout {
+      background-color: $callout-bg;
+      padding: $single*1.75 $single*2;
+    }
+    &--framed {
+      border: 1px solid #ddd;
+      padding: $single*2.5 $single*2;
+    }
+    &--accent {
+      border-top: 4px solid $brand-secondary;
+      padding-top: $single*2.5;
+    }
+  }
+  &-sectionHeading {
+    margin-bottom: $single;
+  }
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    max-height: 100%;
+    transform: translate3d(0, 0, 0);
+    margin-bottom: $single*3;
+  }
+}

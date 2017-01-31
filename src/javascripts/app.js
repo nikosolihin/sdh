@@ -1,3 +1,5 @@
-import './modules'
-
-console.log(`app.js has loaded!`)
+// import 'picturefill'
+// import 'lazysizes/plugins/bgset/ls.bgset'
+// import 'lazysizes'
+//
+// import './components'

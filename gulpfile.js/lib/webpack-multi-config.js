@@ -20,10 +20,24 @@ module.exports = function(env) {
 
   var webpackConfig = {
     context: jsSrc,
-    plugins: [],
+    plugins: [
+      // jQuery as global
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+      }),
+      // Disable moment.js locale languages requires
+      // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    ],
     resolve: {
       root: jsSrc,
-      extensions: [''].concat(extensions)
+      extensions: [''].concat(extensions),
+      alias: {
+        'eventEmitter/EventEmitter': 'wolfy87-eventemitter/EventEmitter',
+        'get-style-property': 'desandro-get-style-property',
+        'matches-selector': 'desandro-matches-selector',
+        'classie': 'desandro-classie'
+      }
     },
     module: {
       loaders: [

@@ -1,0 +1,50 @@
+<script id="MediaObject" type="x-tmpl-mustache">
+{% verbatim %}
+
+{{#error}}
+  <h3 class="h4 Lead center ArchiveEvent-error">{{error}}</h3>
+{{/error}}
+{{#empty}}
+  <h3 class="h4 Lead center ArchiveEvent-error">{{empty}}</h3>
+{{/empty}}
+
+{{#title}}
+  <div class="Media" data-id="{{id}}">
+    {{#image}}
+    <div class="Media-image">
+      <a href="{{link}}">
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source media="(min-width: {{lg}})" data-srcset="{{image}}">
+          <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{image}}">
+          <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{image}}">
+          <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{image}}">
+          <!--[if IE 9]></video><![endif]-->
+          <img alt="{{title}}" class="lazyload" data-src="{{image}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+        </picture>
+        <div class="Media-date">
+          <svg aria-hidden="true" role="presentation" title="Event Date">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+          </svg>{{date}}
+        </div>
+      </a>
+    </div>
+    {{/image}}
+
+    <div class="Media-body">
+      <h4><a href="{{link}}">{{title}}</a></h4>
+      {{#teaser}}<p>{{{teaser}}}</p>{{/teaser}}
+      {{#category}}<div class="Pill" style="background-color: {{color}};">{{category}}</div>{{/category}}
+      <div class="Media-cta">
+        <a href="{{link}}" class="Link">{{label}}
+          <svg aria-hidden="true" role="presentation" title="Visit Link">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+{{/title}}
+
+{% endverbatim %}
+</script>

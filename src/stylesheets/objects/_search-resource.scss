@@ -1,0 +1,85 @@
+.searchResource {
+  box: horizontal wrap right;
+  &-sidebar {
+    width: 30%;
+  }
+  &-body {
+    width: 70%;
+    position: relative;
+    padding-left: $single*2.5;
+    h1 {
+      margin-bottom: $single;
+    }
+  }
+  &-result {
+    transition: opacity .15s ease-in-out;
+    opacity: 1;
+  }
+  &-sort {
+    box: horizontal nowrap right;
+    border-bottom: 1px solid $gray-lighter;
+    margin-bottom: $single*2.5;
+    a {
+      @include hover(#777, #333);
+      transition: all .135s ease-in-out;
+      position: relative;
+      top: 1px;
+      padding: $threefourth $single;
+      &.sort-active {
+        color: $brand-primary;
+        font-weight: $font-weight-bold;
+        &::after {
+          content: '';
+          background: $brand-primary;
+          height: .2rem;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translatex(-50%);
+        }
+      }
+    }
+  }
+  &--fadeOut {
+    opacity: .3;
+  }
+}
+
+// Sidebar Components
+.Checkbox {
+  cursor: pointer;
+  box: horizontal middle;
+  font-size: $caps-heading-font-size;
+  svg {
+    border: 2px solid #888;
+    size: $single;
+    use { visibility: hidden; }
+  }
+  &--checked {
+    color: $sidebar-heading-color;
+    font-weight: $font-weight-bold;
+    svg {
+      border: 2px solid currentColor;
+      use { visibility: visible; }
+    }
+  }
+}
+
+.Dropdown {
+  position: relative;
+  margin-bottom: $half;
+  background-color: #fbfbfb;
+  select {
+    border: none;
+  }
+  svg {
+    position: absolute 50% $threefourth auto auto;
+    transform: translateY(-50%);
+    size: .6rem;
+    margin-right: 0;
+  }
+  &--hidden {
+    display: none;
+  }
+}

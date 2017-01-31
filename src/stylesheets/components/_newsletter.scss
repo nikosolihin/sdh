@@ -1,0 +1,21 @@
+.Newsletter {
+  padding: $single*1.5 0;
+  background-color: #EFEFEF;
+  background-repeat: no-repeat;
+  background-position: 17% 100%;
+  background-size: contain;
+
+  .container {
+    box: horizontal middle right;
+  }
+  .Button {
+    background-color: $sky;
+    margin: 0;
+  }
+  h3 {
+    margin: 0 $single 0 0;
+  }
+  span {
+    margin: 0 $single*2.5 0 0;
+  }
+}

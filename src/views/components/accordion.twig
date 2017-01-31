@@ -1,0 +1,20 @@
+<ul class="Accordion">
+  {% for item in data.items %}
+    <li class="Accordion-item">
+      <input class="Accordion-checkbox" id="accordion-item-{{loop.index}}" type="checkbox">
+      <label class="Accordion-head" for="accordion-item-{{loop.index}}">
+        {{item.head}}
+        <div class="Accordion-icon">
+          <svg aria-hidden="true" role="presentation" title="Expand item">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use>
+          </svg>
+        </div>
+      </label>
+      <div class="Accordion-body container--text-nosidebar" role="toggle">
+        {% for component in item.accordion_components %}
+          {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
+        {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

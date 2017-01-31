@@ -1,0 +1,62 @@
+.Gallery {
+  margin-top: $single*2;
+  &-cell {
+    width: 100%;
+    @at-root .Gallery-body #{&} {
+      transition: opacity 0.4s;
+      opacity: 0;
+      min-height: 300px;
+      &.flickity-lazyloaded,
+      &.flickity-lazyerror {
+        opacity: 1;
+      }
+    }
+  }
+  &-nav {
+    margin-bottom: $single;
+    .Gallery-cell {
+      width: $gallery-thumbnail-size;
+      @include from(lg) {
+        width: $gallery-thumbnail-size;
+      }
+      margin: 0 $quarter;
+      &.is-nav-selected {
+        border: $gallery-selected-border;
+      }
+    }
+  }
+  &-caption {
+    margin: 0;
+    color: $gallery-color;
+    padding: $single*1.25 $half 0;
+    h5 {
+      color: $white;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &-caption-item {
+    display: none;
+    &--show {
+      display: block;
+    }
+  }
+  &-body {
+    .flickity-prev-next-button {
+      width: $single*2.75;
+      height: $single*5;
+      background-color: $brand-highlight;
+      border-radius: 0;
+      path {
+        fill: $white;
+      }
+      &.previous {
+        left: -$single*1.25;
+      }
+      &.next {
+        right: -$single*1.25;
+      }
+    }
+  }
+}

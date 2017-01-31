@@ -1,5 +1,4 @@
 <?php
-
 // Reset the allowed filetypes
 // Only allow non-image files to be uploaded
 // Full list here:

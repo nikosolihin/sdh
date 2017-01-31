@@ -1,0 +1,25 @@
+.Arrows {
+  display: none;
+  @include from(md) {
+    box: horizontal;
+  }
+  position: absolute;
+  top: -$single*1.5;
+  right: $single*1.5;
+  z-index: 1;
+  &-nav {
+    box: vertical middle center;
+    size: 55px;
+    background-color: $brand-highlight;
+    &:last-of-type {
+      border-left: 1px solid $callout-bg;
+    }
+    &:hover {
+      background-color: $brand-secondary;
+    }
+    svg {
+      fill: $white;
+      size: $single*2.25;
+    }
+  }
+}

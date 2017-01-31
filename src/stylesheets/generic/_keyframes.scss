@@ -1,0 +1,45 @@
+@keyframes expand {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: translate3d(0,-15px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes close {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: none;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0,-15px,0);
+  }
+}
+
+@keyframes drop {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    box: horizontal;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

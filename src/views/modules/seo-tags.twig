@@ -1,0 +1,15 @@
+{# Google Search Console Verification #}
+<meta name="google-site-verification" content="cOKWRVC7C3sOoe9GGxYyVwIsZg9GRxqpkvAv788Nzz8" />
+
+{# https://moz.com/blog/seo-cheat-sheet #}
+<link href="{{current_url}}" rel="canonical" />
+
+{# Annotate alternate language & region versions of content #}
+<link rel="alternate" hreflang="id" href="https://seabs.ac.id" />
+<link rel="alternate" hreflang="x-default" href="https://seabs.ac.id/en" />
+<link rel="alternate" hreflang="zh" href="https://seabs.ac.id/zh" />
+
+{# Google Custom Search Thumbnail #}
+{% if media_type %}
+  <meta name="thumbnail" content="{{acf.image[square2x]}}" />
+{% endif %}

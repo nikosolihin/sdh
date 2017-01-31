@@ -1,0 +1,56 @@
+.Table {
+  width: 100%;
+  max-width: 100%;
+  margin: $single 0;
+  border-collapse: collapse;
+  background-color: transparent;
+  font-size: .9rem;
+
+  @at-root .Tabs #{&} {
+    margin-top: 0;
+  }
+
+  th {
+    // Hide on mobile, switch to horizontal view
+    display: none;
+    @include caps;
+    font-size: $font-size-h7;
+    color: #999;
+    border-bottom: 1px solid #eee;
+  }
+  td {
+    display: block;
+    &:before {
+      content: attr(data-th)": ";
+      display: inline-block;
+      width: 45vw;
+      font-weight: $font-weight-bold;
+      @include from(sm) { display: none; }
+    }
+  }
+  th, td {
+    text-align: left;
+    border-top: 3px solid #eee;
+    padding: $quarter;
+    @include from(sm) {
+      display: table-cell;
+      padding: $single;
+    }
+  }
+
+  // Horizontal mobile view
+  tr {
+    border-top: $single*1.25 solid transparent;
+    border-bottom: $single*1.25 solid transparent;
+    @include from(sm) {
+      border: 0;
+    }
+    td {
+      border: none;
+    }
+    &:nth-of-type(even) {
+      background-color: $callout-bg;
+      // @include from(sm) { background-color: transparent; }
+    }
+  }
+}

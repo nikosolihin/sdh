@@ -1,0 +1,22 @@
+{% set header = data.table.header %}
+{% set body = data.table.body %}
+
+<table class="Table">
+  <thead>
+    <tr>
+      {% for item in header %}
+        <th>{{item.c}}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in body %}
+    <tr>
+      {% for item in row %}
+        {# The data-th attributes are for responsive table headings - http://codepen.io/nikosolihin/pen/kXAWpb #}
+        <td data-th="{{header[loop.index0].c}}">{{item.c}}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

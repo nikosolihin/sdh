@@ -1,0 +1,12 @@
+<ul class="List List--terms">
+  {% if data.post_type == 'event' %}
+    {% set term = listterms('event_category') %}
+  {% endif %}
+  {% if data.post_type == 'news' %}
+    {% set term = listterms('news_topic') %}
+  {% endif %}
+  {% if data.post_type == 'media' %}
+    {% set term = listterms('media_type') %}
+  {% endif %}
+  {{term}}
+</ul>

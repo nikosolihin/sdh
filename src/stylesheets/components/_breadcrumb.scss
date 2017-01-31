@@ -1,0 +1,47 @@
+.Breadcrumb {
+  @include normalist;
+  margin-bottom: .35rem;
+  &-item {
+    position: relative;
+    display: inline-block;
+    padding-right: $single;
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &::after {
+      content: '/';
+      position: relative 0 -8px auto auto;
+      font-weight: $font-weight-bold;
+      font-size: 1.125rem;
+      @at-root .Breadcrumb--brand #{&} {
+        color: #ddd;
+      }
+    }
+    &:last-child {
+      &::after {
+        @at-root .Breadcrumb--noTrail #{&} {
+          content: '';
+        }
+      }
+      .Breadcrumb-link {
+        font-weight: 600;
+      }
+    }
+  }
+  &-home {
+    position: relative 4px auto auto auto;
+    svg {
+      margin: 0;
+      size: 20px;
+      @at-root .Breadcrumb--brand #{&} {
+        fill: #777;
+      }
+    }
+  }
+  &-link {
+    text: $white $font-weight-normal left normal 1rem 1 .3px;
+    @at-root .Breadcrumb--brand #{&} {
+      color: $brand-primary;
+    }
+  }
+}

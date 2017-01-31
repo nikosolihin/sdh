@@ -1,0 +1,16 @@
+<div class="Tabs" data-component="tabs">
+  <ul role="tablist" class="Tabs-list">
+    {% for tab in data.tabs %}
+      {% set name = tab.title|replace({' ': "-"})|replace({'.': "-"})|lower %}
+      <li><a role="tab" aria-controls="{{name}}" class="Tabs-tab" href="#{{name}}">{{tab.title}}</a></li>
+    {% endfor %}
+  </ul>
+  {% for tab in data.tabs %}
+    {% set name = tab.title|replace({' ': "-"})|replace({'.': "-"})|lower %}
+    <div role="tabpanel" class="Tabs-panel" id="{{name}}">
+      {% for component in tab.tabs_components %}
+        {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

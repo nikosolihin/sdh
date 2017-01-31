@@ -1,0 +1,137 @@
+{% extends "base.twig" %}
+
+{% block before_content %}
+  {% include 'components/news-object.twig' %}
+{% endblock %}
+
+{% block content %}
+
+{# ----------------- Featured News ----------------- #}
+<div class="FeaturedNews wrapper wrapper--narrow">
+  <h2 class="Lead Lead--section brand container">{{__('Featured News', 'saat')}}</h2>
+  <div class="FeaturedNews-slides" data-component="featured-news">
+    {% for news in featured_news %}
+      {% if news.image[xxlarge] %}
+      <a href="{{news.link}}" class="FeaturedNews-image" data-flickity-bg-lazyload="{{news.image[xxlarge]}}">
+      {% else %}
+      <a href="{{news.link}}" class="FeaturedNews-image" data-flickity-bg-lazyload="{{news.image[original]}}">
+      {% endif %}
+        <div class="FeaturedNews-caption container--text">
+          <h2>{{news.title}}</h2>
+          <p class="meta">
+            <span>{{news.date|date('j M, Y')}}</span>
+            {% if news.authors %}
+              <span class="meta-dot">&#8226;</span>
+              <span>By {{news.authors}}</span>
+            {% endif %}
+          </p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <div class="Arrows">
+    <a class="Arrows-nav Flickity-prev" href="">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-left"></use>
+      </svg>
+    </a>
+    <a class="Arrows-nav Flickity-next" href="">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-right"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="FeaturedNews-body">
+    {% for news in featured_news %}
+    <article class="news">
+      <div class="news-bar">
+        <h5 class="tag brand">{{news.topic}}</h5>
+      </div>
+      <h5><a href="{{news.link}}">{{news.title}}</a></h5>
+      <p class="meta">
+        <span>{{news.date|date('j M, Y')}}</span>
+        {% if news.authors %}
+          <span class="meta-dot">&#8226;</span>
+          <span>{{news.authors}}</span>
+        {% endif %}
+      </p>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+{# ----------------- Latest News ----------------- #}
+<div class="CarouselNews">
+  <div class="container">
+    <h2 class="Lead Lead--section brand">{{__('Latest News', 'saat')}}</h2>
+    <div class="Arrows">
+      <a class="Arrows-nav Flickity-prev" href="">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-left"></use>
+        </svg>
+      </a>
+      <a class="Arrows-nav Flickity-next" href="">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-right"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="CarouselNews-wrapper container" data-component="carousel">
+    {% for topic, news in latest_news %}
+      <div class="CarouselNews-card">
+        <h5 class="tag brand">{{topic}}</h5>
+        {% for post in news %}
+          {% if loop.first %}
+            <a href="{{post.link}}" class="CarouselNews-image lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
+              <h3>{{post.title}}</h3>
+              {% if post.authors %}
+                <span>{{post.post_date|date('j M, Y')}}</span>
+              {% endif %}
+            </a>
+          {% else %}
+            {% if loop.index == 2 %}
+              <div class="CarouselNews-body">
+            {% endif %}
+            <article>
+              <h5><a href="{{post.link}}">{{post.title}}</a></h5>
+              <p class="meta meta--dot">
+                <span>{{post.post_date|date('j M, Y')}}</span>
+                {% if post.authors %}
+                  <span class="meta-dot">&#8226;</span>
+                  <span>{{post.authors}}</span>
+                {% endif %}
+              </p>
+            </article>
+            {% if loop.last %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{# ----------------- All News ----------------- #}
+<div class="ArchiveNews container" data-component="news" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "appId": "{{analytics.facebook_app_id}}", "handle": "{{analytics.twitter_analytics_id}}", "topics": {{topics_json}}, "emptyMsg": "{{empty_msg}}" }' >
+  <h2 class="Lead Lead--section brand">{{__('All Articles', 'saat')|title}}</h2>
+  <div class="ArchiveNews-control">
+    <h5>{{__('Filter News By Topic', 'saat')|title}}</h5>
+    <div class="ArchiveNews-topics caps" data-selected-topic="all">
+      <span>{{__('All Topics', 'saat')|title}}</span>
+      <svg aria-hidden="true" role="presentation" title="Select Language">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
+      </svg>
+      <div class="ArchiveNews-topicsDropdown">
+        <a href="" class="ArchiveNews-topic" data-topic-slug="all">{{__('All Topics', 'saat')|title}}</a>
+      </div>
+    </div>
+    <a href="" class="ArchiveNews-search Button Button--large">{{__('View', 'saat')}}</a>
+  </div>
+  {% include 'components/loader.twig' %}
+  <div class="ArchiveNews-content" data-component="share"></div>
+  <a href="" class="ArchiveNews-load Button Button--large">{{more_label}}</a>
+</div>
+
+{% endblock %}

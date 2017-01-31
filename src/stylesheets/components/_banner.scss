@@ -1,0 +1,53 @@
+.Banner {
+  @include cover;
+  @include white;
+  @include overlay(false, 'rgba(0,0,0,0) 30%, rgba(0,0,0,.7) 80%' );
+  box: vertical bottom;
+  position: relative;
+  padding-bottom: $single*2.25;
+
+  margin-bottom: $single*3;
+  @include from($desktop) {
+    margin-bottom: $single*5;
+  }
+
+  h1 {
+    font-size: $font-size-h2;
+    @include from($desktop) {
+      font-size: $font-size-h1;
+    }
+    line-height: 1.15;
+    letter-spacing: .5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  }
+
+  .container {
+    @include from(sm) {
+      // Pad sides on phablet
+      padding-left: $single*3;
+    }
+    @include from(md) {
+      // and tablet
+      padding-left: $single*5;
+    }
+    @include from(lg) {
+      padding-left: $single*2;
+    }
+    @include from(xl) {
+      min-width: $container-width;
+      margin: 0 auto;
+    }
+  }
+
+  // Styles
+  &--small { height: $banner-small-height; }
+  &--medium { height: $banner-medium-height; }
+  &--large { height: $banner-large-height; }
+
+  &--top {
+    background-position: top center;
+  }
+  &--bottom {
+    background-position: bottom center;
+  }
+}

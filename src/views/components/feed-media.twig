@@ -1,0 +1,37 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set meta = data.media_metadata %}
+{% else %}
+  {% set meta = data.manual_metadata %}
+{% endif %}
+
+{% if style != 'list' %}
+  <div class="Feed-image">
+    <a href="{{post.link}}" class="Feed-imageLink lazyload" data-bgset="{{post.image[small]}}"></a>
+  </div>
+{% endif %}
+
+<div class="Feed-body">
+  <h5><a href="{{post.link}}">{{post.title}}</a></h5>
+  {% if 'teaser' in meta %}
+    <p>{{post.teaser|slice(0,60)~'...'}}</p>
+  {% endif %}
+  <div class="Feed-meta">
+    {% if 'type' in meta %}
+      <div class="meta meta--icon">
+        <svg aria-hidden="true" role="presentation" title="Media Type">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{post.icon}}"></use>
+        </svg>
+        <span>{{post.type}}</span>
+      </div>
+    {% endif %}
+    {% if 'category' in meta %}
+      <div class="meta meta--icon">
+        <svg aria-hidden="true" role="presentation" title="Media Category">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <span>{{post.category}}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>

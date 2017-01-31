@@ -1,0 +1,78 @@
+<section class="Cta wrapper">
+  <div class="flex-wrapper">
+    <h2 class="h3 light noMargin">Be a part of our lifelong, transformative learning community today.</h3>
+  </div>
+  <div class="Cta-buttons">
+    <a href="" class="Button">Apply Today</a>
+    <a href="" class="Button Button--outline">Request a Brochure</a>
+  </div>
+</section>
+
+<footer class="Footer" style="background-image: url(https://www.obama.org/wp-content/uploads/Travel-I.jpg)">
+  <section class="Footer-main wrapper">
+    <div class="Footer-column">
+      <h5 class="h6 caps spaced navy medium center">Company</h5>
+      <ul class="List center">
+        <li><a href="" class="Footer-link h6 medium">FAQs</a></li>
+        <li><a href="" class="Footer-link h6 medium">Help</a></li>
+        <li><a href="" class="Footer-link h6 medium">Contact</a></li>
+        <li><a href="" class="Footer-link h6 medium">Terms</a></li>
+        <li><a href="" class="Footer-link h6 medium">Privacy</a></li>
+        <li><a href="" class="Footer-link h6 medium">Shop Themes</a></li>
+        <li><a href="" class="Footer-link h6 medium">Refunds</a></li>
+      </ul>
+    </div>
+    <div class="Footer-column">
+      <h5 class="h6 caps spaced navy medium center">Community</h5>
+      <ul class="List center">
+        <li><a href="" class="Footer-link h6 medium">Features</a></li>
+        <li><a href="" class="Footer-link h6 medium">Guides</a></li>
+        <li><a href="" class="Footer-link h6 medium">Theme Support</a></li>
+        <li><a href="" class="Footer-link h6 medium">StudioPress Blog</a></li>
+        <li><a href="" class="Footer-link h6 medium">Forums</a></li>
+        <li><a href="" class="Footer-link h6 medium">Showcase</a></li>
+      </ul>
+    </div>
+    <div class="Footer-column">
+      <h5 class="h6 caps spaced navy medium center">I'm a title</h5>
+      <ul class="List center">
+        <li><a href="" class="Footer-link h6 medium">Link One</a></li>
+        <li><a href="" class="Footer-link h6 medium">Link Two</a></li>
+        <li><a href="" class="Footer-link h6 medium">Link Three</a></li>
+      </ul>
+    </div>
+    <div class="Footer-column">
+      <h5 class="h6 caps spaced navy medium center">Connect</h5>
+      <ul class="List center">
+        <li><a href="" class="Footer-link h6 medium">Find Developers</a></li>
+        <li><a href="" class="Footer-link h6 medium">Affiliate Program</a></li>
+        <li><a href="" class="Footer-link h6 medium">Wordpress</a></li>
+        <li><a href="" class="Footer-link h6 medium">Twitter</a></li>
+        <li><a href="" class="Footer-link h6 medium">Facebook</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="Footer-secondary wrapper">
+    <div class="Footer-legal">
+      <span class="h7 medium faint">
+        Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
+      </span>
+      <span class="Footer-dot">●</span>
+
+      {% if policy %}
+        <a href="{{policy}}" class="legal-link">{{__('Privacy Policy', 'sdh')}}</a>
+        <span class="legal-dot">●</span>
+      {% endif %}
+
+      <a href="mailto:sdh.webteam@sdh.or.id" class="h7 medium faint">{{__('Feedback', 'sdh')}}</a>
+
+      {{__('Languages', 'sdh')}}:
+      {% if 'id' in languages.list %}
+        <a href="{{languages.id}}" class="h7 medium faint">ID</a>
+      {% endif %}
+      {% if 'en' in languages.list %}
+        <a href="{{languages.en}}" class="h7 medium faint">EN</a>
+      {% endif %}
+    </div>
+  </section>
+</footer>

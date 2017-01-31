@@ -1,0 +1,105 @@
+.SingleArticle {
+  box: vertical;
+  @include from(lg) {
+    box: horizontal left;
+  }
+  margin-top: $single*4;
+
+  // Layout
+  &-content {
+    // Pad content body for comfy reading
+    padding: 0;
+    margin: 0 auto;
+    // If we dont have teaser text on mobile, make it span 100%
+    width: 100%;
+    @include from(md) {
+      width: $container-text-width;
+    }
+    @include from(lg) {
+      padding: 0 $single*2.125;
+    }
+  }
+
+  // Components
+  &-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $quarter;
+  }
+  &-subtitle {
+    color: #999;
+    font-weight: $font-weight-normal;
+  }
+  &-teaser {
+    line-height: 1.54;
+    margin: $single*1.5 0 $single*.75;
+    font-size: $font-size-h4;
+    @include from(md) {
+      font-size: $font-size-h3;
+    }
+  }
+  &-meta {
+    box: horizontal wrap;
+    @include to(sm) {
+      // Multiple meta lines for repeating events
+      @at-root .SingleArticle-meta + #{&} {
+        border-top: 1px solid #eee;
+        margin-top: $threefourth;
+        padding-top: $threefourth;
+      }
+    }
+  }
+  &-image {
+    margin-bottom: $single*2.5;
+    @include from(md) {
+      margin: 0 -25px $single*2.5;
+    }
+  }
+  &-share {
+    box: horizontal middle center;
+    @include from(sm) {
+      box: horizontal middle space-between;
+    }
+    margin: $single*1.5 0 $single*1.75;
+    @include from(lg) {
+      display: none;
+    }
+    .Lead {
+      display: none;
+      margin-bottom: 0;
+      @include from(sm) {
+        display: block;
+      }
+    }
+    .Share-button {
+      width: 45px;
+    }
+  }
+
+  &-teaser + &-meta {
+    margin-top: $single*1;
+  }
+  .Breadcrumb {
+    margin-bottom: $single*1.75;
+  }
+  .meta {
+    font-size: $font-size-h5;
+    font-weight: $font-weight-medium;
+    margin-bottom: $quarter;
+  }
+  .meta-dot {
+    padding: 0 $half;
+    @include from(md) {
+      padding: 0 $single;
+    }
+  }
+  .content-body {
+    margin-top: $single;
+    padding-top: $single*2.5;
+    border-top: 1px solid #e1e1e1;
+  }
+  .content-body--plain {
+    border: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,10 @@
+{% set image = acf.image %}
+{% set size = acf.banner_size %}
+{% set alignment = acf.alignment %}
+
+<section class="{{'Banner'|modifiers("#{size}, #{alignment}")}} wrapper wrapper--narrow lazyload" data-bgset="{{image[xlarge]}} [(min-width: {{xxl}})] | {{image[xlarge]}} [(min-width: {{lg}})] | {{image[large]}} [(min-width: {{md}})] | {{image[medium]}}" style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
+  <div class="container container--left">
+    {% include 'components/breadcrumb.twig' with {data: breadcrumb} %}
+    <h1>{{post.title}}</h1>
+  </div>
+</section>

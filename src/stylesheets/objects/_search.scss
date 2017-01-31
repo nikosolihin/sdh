@@ -1,0 +1,215 @@
+.CustomSearch {
+  margin-top: $single*4.5;
+  box: vertical;
+  @include from(lg) {
+    box: horizontal;
+  }
+  &-sidebar {
+    border-right: 1px solid #eee;
+    padding-top: $single*3;
+    padding-right: $single*1.5;
+  }
+  &-sidebarBody {
+    margin-top: $single*8;
+    border-top: 1px solid #eee;
+    padding-top: $single;
+  }
+  &-result {
+    position: relative;
+    @include from(md) {
+      padding-left: $single*4;
+      padding-right: $single*4;
+    }
+  }
+  .Breadcrumb {
+    margin-bottom: $single*1.75;
+  }
+  .Lead {
+    margin-bottom: $single*2;
+  }
+
+  // Style GCSE
+  .gsc-control-cse.gsc-control-cse-id,
+  .gsc-webResult.gsc-result,
+  .gsc-search-box {
+    padding: 0;
+  }
+  .gsc-adBlock,
+  .gsc-clear-button {
+    display: none !important;
+  }
+  .gsc-above-wrapper-area {
+    @include to(md) {
+      margin-bottom: $single*4.5;
+    }
+  }
+  .gsc-refinementsArea {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    position: absolute;
+    top: $single*15.5;
+    // left: -$single*16.75;
+    @include from(lg) {
+      width: 250px;
+      top: $single*6.5;
+      left: -$single*16.75;
+    }
+    @include from(xl) {
+      left: -$single*19.75;
+    }
+    div {
+      box: horizontal;
+      @include from(lg) {
+        box: horizontal wrap space-between;
+      }
+    }
+    .gsc-refinementHeader {
+      line-height: 1;
+      text-decoration: none !important;
+      font-size: $font-size-h6;
+      font-weight: $font-weight-bold;
+      padding: $half $threefourth !important;
+      margin-bottom: $half;
+      border-radius: 3px;
+      margin-right: $threefourth;
+      @include from(lg) {
+        width: 47%;
+        margin-right: 0;
+      }
+      &.gsc-refinementhInactive {
+        color: #555 !important;
+        background-color: #eee;
+      }
+      &.gsc-refinementhActive {
+        color: $white !important;
+        background-color: $brand-secondary;
+      }
+    }
+  }
+  td.gsc-input {
+    position: relative;
+    padding-right: 0 !important;
+    input {
+      background-image: none !important;
+      width: 100%;
+      padding: $threefourth $single;
+      font-size: 16px;
+      border-color: #eeeeee;
+      color: #333;
+    }
+  }
+  td.gsc-search-button {
+    position: relative;
+    left: -10px;
+    input {
+      cursor: pointer;
+      color: transparent;
+      font-size: 0;
+      border: 0;
+      background-color: $brand-secondary;
+      size: 44px;
+      margin: 0;
+      padding: 0;
+      border-radius: 2px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &::before{
+      content:url('../search.svg');
+      display: block;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      pointer-events: none;
+      transform: translate3d(-50%, -42%, 0);
+    }
+  }
+  div.gs-title {
+    margin-bottom: 3px;
+  }
+  div.gs-snippet {
+    margin-bottom: 3px;
+  }
+  a.gs-title[href] {
+    color: $headings-color !important;
+    font-weight: $font-weight-bold !important;
+    &:hover {
+      color: $brand-primary !important;
+    }
+  }
+  .cse .gs-result .gs-title,
+  .gs-result .gs-title,
+  .cse .gs-result .gs-title *,
+  .gs-result .gs-title *,
+  .cse .gs-promotion a.gs-title,
+  .gs-promotion a.gs-title,
+  .cse .gs-promotion a.gs-title *,
+  .gs-promotion a.gs-title *,
+  .cse .gs-promotion .gs-snippet a,
+  .gs-promotion .gs-snippet a,
+  .cse .gs-spelling a,
+  .gs-spelling a {
+    text-decoration: none;
+  }
+
+  .gs-webResult.gs-result.gs-no-results-result .gs-snippet {
+    border: 1px solid #eeeeee;
+    font-size: $font-size-h5;
+    text-align: center;
+    padding: $single;
+    background-color: $white;
+  }
+
+  .gsc-expansionArea>.gsc-result {
+    margin-top: $single*1.5;
+  }
+
+  .gs-per-result-labels {
+    margin-top: 5px;
+  }
+
+  .gs-per-result-labels {
+    span:nth-child(1) {
+      display: none;
+    }
+    .gs-label {
+      border-radius: 3px;
+      color: #555 !important;
+      display: inline-block;
+      background-color: #eee;
+      text-decoration: none !important;
+      font-size: $font-size-h7;
+      font-weight: $font-weight-bold;
+      padding: $quarter $half !important;
+    }
+  }
+  .gsc-table-cell-thumbnail {
+    padding-right: $single;
+  }
+  .gsc-cursor-box {
+    padding: 0;
+    margin: 0;
+    margin-top: $single*3.5;
+  }
+  .gsc-cursor {
+    display: block !important;
+    .gsc-cursor-page {
+      border: 0 !important;
+      background-color: $callout-bg !important;
+      color: #777 !important;
+      font-size: .925rem;
+      font-weight: $font-weight-bold;
+      padding: $threefourth $single;
+      text-decoration: none !important;
+      border-radius: 2px;
+      &.gsc-cursor-current-page {
+        color: $white !important;
+        text-shadow: none !important;
+        background-color: $brand-highlight !important;
+        padding: $threefourth $single;
+      }
+    }
+  }
+}

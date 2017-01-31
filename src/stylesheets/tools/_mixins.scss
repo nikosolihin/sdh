@@ -1,0 +1,177 @@
+//========================================================
+// Functions
+//========================================================
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+
+//========================================================
+// Mixins
+//========================================================
+@mixin white {
+  color: $white;
+  * { color: $white; }
+}
+@mixin cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@mixin promote {
+  > * {
+    z-index: 1;
+  }
+}
+@mixin overlay($full, $value: null) {
+  @include promote;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 100%;
+    transition: all .2s ease-out;
+    @if $full {
+      @if ($value) {
+        background: #{$value};
+      } @else {
+        background: rgba(0,0,0,.4);
+      }
+    } @else {
+      @if ($value) {
+        background: linear-gradient( #{$value} );
+      } @else {
+        background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
+      }
+    }
+  }
+}
+@mixin left-slant {
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -.8rem;
+    width: 50%;
+    height: 100%;
+    transform: skewX(-8.5deg);
+    background: inherit;
+    z-index: -1;
+  }
+}
+// @mixin underlink {
+//   line-height: 1.4;
+//   border-bottom: 1px dotted #bbb;
+//   transition: all .15s ease-out;
+//   &:focus,
+//   &:hover {
+//     border-bottom: 1px dotted $brand-primary;
+//   }
+// }
+@mixin no-outline {
+  outline: none !important;
+}
+@mixin tab-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+@mixin normalist {
+  list-style: none;
+  padding-left: 0;
+}
+@mixin square($height: 100%) {
+  // Based on https://spin.atomicobject.com/2015/07/14/css-responsive-square/
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $height;
+  }
+}
+@mixin noselect {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin hover($before: inherit, $after: $before) {
+  transition: all .11s ease-in-out;
+  color: $before;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $after;
+    text-decoration: none;
+  }
+}
+@mixin fullwidth {
+  // Based on https://css-tricks.com/full-width-containers-limited-width-parents/
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+@mixin gutter($multiplier: 1) {
+  > *:first-of-type {
+    padding-right: $multiplier*$single;
+  }
+  > *:last-of-type {
+    padding-left: $multiplier*$single;
+  }
+  > *:not(:first-of-type):not(:last-of-type) {
+    padding: 0 $multiplier*$single;
+  }
+}
+
+// BREAKPOINTS ////////////////////////////////////////////////
+@mixin from($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin to($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin at($name, $breakpoints: $grid-breakpoints) {
+  @include from($name, $breakpoints) {
+    @include to($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+@mixin between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  @include from($lower, $breakpoints) {
+    @include to($upper, $breakpoints) {
+      @content;
+    }
+  }
+}

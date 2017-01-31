@@ -1,0 +1,18 @@
+.TOC {
+  box: horizontal middle;
+  background-color: $callout-bg;
+  padding: $single $single*1.5;
+  border: 1px solid #eee;
+  cursor: pointer;
+  @include from(lg) {
+    display: none;
+  }
+  span {
+    font-size: .9375rem;
+  }
+  svg {
+    size: $single;
+    fill: #bbb;
+    margin-right: $single*1.25;
+  }
+}

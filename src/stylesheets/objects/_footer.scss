@@ -1,0 +1,33 @@
+.Footer {
+  @include cover;
+  position: relative;
+  padding: $single*5 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 60%, #FFFFFF);
+    // height: $single*20;
+  }
+
+  &-main {
+    box: horizontal space-around;
+    z-index: $zindex-footer-main;
+  }
+
+  &-link {
+    @include hover(#555, #222);
+  }
+
+  &-secondary {
+    margin-top: $single*5;
+    z-index: $zindex-footer-main;
+  }
+  &-legal {
+    border-top: 1px solid #ddd;
+    padding-top: $quarter;
+  }
+}

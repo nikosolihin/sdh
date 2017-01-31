@@ -1,0 +1,233 @@
+.ArchiveEvent {
+  box: vertical;
+  @include from(lg) {
+    box: horizontal space-between;
+  }
+
+  .Lead {
+    letter-spacing: .5px;
+  }
+
+  &-preferences {
+    box: horizontal middle;
+    background-color: $callout-bg;
+    padding: $single $single*1.5;
+    border: 1px solid #eee;
+    order: 1;
+    cursor: pointer;
+    svg {
+      size: $single*1.25;
+      fill: #999;
+      margin-right: $single*1.25;
+    }
+    span {
+      user-select: none;
+      font-size: .9375rem;
+    }
+    @include from(lg) {
+      display: none;
+    }
+  }
+  &-content {
+    width: 100%;
+    position: relative;
+    flex: 1 0 auto;
+    order: 3;
+    min-height: 100px;
+    @include at(sm) {
+      padding: 0 $single;
+    }
+    @include from(lg) {
+      width: 76%;
+      order: 1;
+      padding-right: $single*4;
+    }
+  }
+  &-sidebar {
+    @include to(md) {
+      order: 2;
+      padding: $single*1.5;
+      border: 1px solid #eee;
+      border-top: 0;
+    }
+    @include from(sm) {
+      padding: $single*1.5 $single*8;
+    }
+    @include from(md) {
+      padding: $single*1.5 $single*15;
+    }
+    @include from(lg) {
+      display: block;
+      width: 24%;
+      order: 2;
+      padding: 0;
+    }
+  }
+  &-sidebarSection {
+    position: relative;
+    padding: $single*1.5 0;
+    border-bottom: 1px solid #eee;
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: $single;
+    }
+
+    h5 {
+      @include caps;
+      color: #666;
+      letter-spacing: .75px;
+      font-weight: 600;
+      font-size: .775rem;
+      margin-bottom: $single;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  &-result--fadeOut {
+    opacity: .3;
+  }
+  &-resultGroup {
+    .Lead {
+      margin-bottom: 0;
+      text-align: center;
+      @include from(md) {
+        text-align: left;
+      }
+    }
+    &:not(:first-child) {
+      margin-top: $single*1.75;
+    }
+  }
+  &-error {
+    width: 100%;
+    text-align: center;
+    margin-top: $single*2;
+    @include from(lg) {
+      margin-top: $single*6;
+    }
+  }
+  &-search {
+    @include from(lg) {
+      margin-bottom: $single*4 !important;
+    }
+  }
+}
+
+.FeaturedEvents {
+  position: relative;
+  padding-top: $single*6;
+  margin-bottom: $single*3;
+  @include from(lg) {
+    margin-bottom: $single*7;
+  }
+
+  .Arrows {
+    box: horizontal;
+    right: 0;
+    @include from(md) {
+      right: $single*1.5;
+    }
+  }
+
+  //Flickity cells
+  &-image {
+    @include cover;
+    // margin-right: $threefourth;
+    left: 0 !important;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.35s ease-in-out;
+    &.is-selected {
+      opacity: 1;
+      z-index: 0
+    }
+    width: 100%;
+    height: $single*21;
+    @include from(md) {
+      height: $single*27;
+    }
+    @include from(lg) {
+      width: 85%;
+      height: $single*39;
+    }
+    @include from(xl) {
+      width: 75%;
+    }
+    @include from(xxl) {
+      width: 77%;
+      height: $single*40;
+    }
+  }
+
+  // Override flickity slider for fade to work
+  .flickity-slider {
+    transform: none !important;
+  }
+
+  &-body {
+    position: relative;
+    top: -$single*2;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fafafa;
+    width: 93%;
+    height: $single*24.5;
+    @include from(sm) {
+      width: 90%;
+      height: $single*23;
+    }
+    @include from(md) {
+      height: $single*20;
+    }
+    @include from(lg) {
+      @include square();
+      transform: translateX(0);
+      width: 43%;
+      height: auto;
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: 0;
+      bottom: $single*2.25;
+    }
+    @include from(xl) {
+      width: 37%;
+    }
+    @include from(xxl) {
+      width: 33%;
+    }
+  }
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease-in-out;
+    .Button {
+      margin: $single*2 0 0;
+    }
+    &--show {
+      opacity: 1;
+      visibility: visible;
+    }
+    padding: $single*1.5 $single*2;
+    @include from(lg) {
+      padding: $single*2.25 $single*3;
+    }
+    @include from(xl) {
+      padding: $single*3.25 $single*3.75;
+    }
+  }
+  &-meta {
+    box: horizontal;
+    margin-bottom: $single*1.5;
+    .meta {
+      font-size: .9375rem;
+      @include from(lg) {
+        font-size: $font-size-h5;
+      }
+    }
+  }
+}

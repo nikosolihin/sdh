@@ -1,0 +1,89 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  {% set layout = acf.landing_layout %}
+
+  {% if acf.teaser %}
+    <div class="container container--text-nosidebar landing-page-teaser">
+      <h5 class="tag brand center">{{post.title}}</h5>
+      <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
+    </div>
+  {% endif %}
+
+  {% if acf.position == 'before' %}
+    <div class="landing-page-content container container--spacedBottom">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
+
+  {% if layout == "extensive" %}
+    {# Card Layout #}
+    <section class="landing-page container">
+      {% for child in children %}
+        {% if child.image %}
+          {# Has image, render. If not, skip #}
+          <div class="Solo">
+            <a href="{{child.link}}" class="Solo-image lazyload" data-bgset="{{child.image[medium]}} 1x, {{child.image[large]}} 2x">
+              <h3>{{child.title}}</h3>
+              {% if child.teaser %}
+                <p>{{child.teaser}}</p>
+              {% endif %}
+            </a>
+            {% if child.children %}
+              <div class="Solo-content">
+                {% for grandchild in child.children %}
+                  <a href="{{grandchild.link}}" class="h5 Lead">{{grandchild.title}}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% else %}
+    {# Grid Layout #}
+    <section class="landing-page--grid container">
+      {% for boxes in children|batch(5) %}
+        <div class="Twin">
+          {% for box in boxes %}
+            {% if loop.first %}
+              <div class="Twin-box Twin-box--popout lazyload" data-bgset="
+                {{box.image[xlarge]}} [(min-width: {{lg}})] |
+                {{box.image[large]}} [(min-width: {{md}})] |
+                {{box.image[medium]}} [(min-width: {{sm}})] |
+                {{box.image[small]}}">
+                <div class="Twin-content">
+                  <h3 class="h2 white">{{box.title|title}}</h3>
+                  {% if box.teaser|trim is not empty %}
+                    <p class="white">{{box.teaser|trim}}</p>
+                  {% endif %}
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
+                </div>
+              </div>
+              <div class="Twin-frame Twin">
+            {% else %}
+              <div class="Twin-box lazyload" data-bgset="
+              {{box.image[large]}} [(min-width: {{md}})] |
+              {{box.image[medium]}} [(min-width: {{sm}})] |
+              {{box.image[small]}}">
+                <div class="Twin-content">
+                  <h3 class="Lead white">{{box.title|title}}</h3>
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
+                </div>
+              </div>
+            {% endif %}
+            {% if loop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if acf.position == 'after' %}
+    <div class="landing-page-content container container--spacedTop">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
+{% endblock %}

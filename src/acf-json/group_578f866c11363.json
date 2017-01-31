@@ -1,0 +1,221 @@
+{
+    "key": "group_578f866c11363",
+    "title": "Header & Footer Settings",
+    "fields": [
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_57906ab00a905",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1,
+                    "key": "field_57f3355d3a0fd",
+                    "label": "Choose Page",
+                    "name": "parent",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Parent Page",
+            "collapsed": "field_57f3355d3a0fd",
+            "key": "field_57f3347e3a0fc",
+            "label": "Primary Menu",
+            "name": "primary_menu",
+            "type": "repeater",
+            "instructions": "Pick <strong><em>parent pages<\/em><\/strong> to set as primary menu items. You may choose up to 6 parent pages to display in the menu bar. After selecting, drag the menu items up or down to change the order they appear. Additionally, you may also pick up to 2 blocks to feature within the dropdown.<br><strong>TIP: Do not include a bookmark block here.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1,
+            "key": "field_57f1f17dc9afd",
+            "label": "Secondary Menu",
+            "name": "secondary_menu",
+            "type": "post_object",
+            "instructions": "The secondary menu appears within a bar above the primary and under \"Quicklinks\" on mobile. It provides a more direct shortcuts to non-parents pages of the site. Additionally, links to listing pages for dynamic contents will be displayed automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_57906abc0a906",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "min": 1,
+            "max": 7,
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "return_format": "id",
+            "key": "field_579065c46ad69",
+            "label": "Footer",
+            "name": "footer",
+            "type": "relationship",
+            "instructions": "Pick parent pages to show in footers. Children of these pages as well as dynamic post types will automatically be pulled.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_57f3ba80fcca0",
+            "label": "Background",
+            "name": "footer_bg",
+            "type": "flickr_browser",
+            "instructions": "This is the faint photo of the seal in the dark background. Keep file size in mind when changing this to something else.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_z",
+                "url_c",
+                "url_l",
+                "url_o"
+            ],
+            "flickr_extras": ""
+        },
+        {
+            "placement": "left",
+            "endpoint": 0,
+            "key": "field_57f23feafe364",
+            "label": "Mobile Menu",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "message": "Here you may pick 2 blocks to show within the dropdown menu in mobile. Useful to quickly get visitors to certain parts of the site. <br><strong>TIP: Do not include a bookmark block here.<\/strong>",
+            "esc_html": 0,
+            "new_lines": "",
+            "key": "field_57f2402aa2167",
+            "label": "Featured Blocks",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_57f23f85fe363",
+            "label": "Choose Blocks",
+            "name": "mobile_blocks",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_5799c139c255f",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "header-footer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Header & Footer",
+    "modified": 1485322727
+}

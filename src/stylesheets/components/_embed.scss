@@ -1,0 +1,16 @@
+.Embed {
+  // http://embedresponsively.com/
+  position: relative;
+  padding-bottom: 56.25%;
+  margin: $single*2 0;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  iframe, object, embed {
+    position: absolute 0 auto auto 0;
+    size: 100%;
+  }
+  &--instagram {
+    padding-bottom: 112%;
+  }
+}

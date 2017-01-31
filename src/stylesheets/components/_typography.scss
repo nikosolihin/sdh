@@ -1,0 +1,114 @@
+// .Lead {
+//   color: $gray-dark;
+//   font-weight: $font-weight-light;
+//   letter-spacing: .4px;
+//
+//   &--intro {
+//     margin-top: 0;
+//   }
+//   &--spaced {
+//     margin-top: $single*4;
+//     margin-bottom: $single*5.5;
+//   }
+//   &--section {
+//     margin-bottom: $single*2.5;
+//     letter-spacing: .4px;
+//   }
+//   &--landing {
+//     margin: $single 0 $single*6;
+//     font-size: 1.8rem;
+//     line-height: 1.45;
+//   }
+//   &--body {
+//     letter-spacing: .3px;
+//   }
+// }
+//
+
+.white {
+  @include white;
+}
+.yellow {
+  color: $yellow;
+}
+.navy {
+  color: $navy;
+}
+.faint {
+  color: $gray-lighter;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.spaced {
+  letter-spacing: 2.2px;
+}
+
+.center {
+  text-align: center;
+}
+//
+// .tag {
+//   @extend .caps;
+//   color: #777;
+//   flex: 1 0 auto;
+//   margin-bottom: $half;
+// }
+//
+// .meta {
+//   color: #777;
+//   font-size: .9375rem;
+//   font-weight: $font-weight-medium;
+//   margin-bottom: 0;
+//   &-dot {
+//     color: #ccc;
+//     padding: 0 $half;
+//     display: inline-block;
+//   }
+//   &-link {
+//     @include hover(#777, $brand-primary);
+//     @include underlink;
+//   }
+//   &--icon {
+//     box: horizontal middle;
+//     font-size: .9375rem;
+//     font-weight: $font-weight-medium;
+//     margin-right: $single*2;
+//     svg {
+//       size: $single*1.125;
+//       fill: $brand-primary;
+//       margin-right: $half;
+//     }
+//   }
+//   &--withDot {
+//     margin-right: 0;
+//   }
+// }
+//
+// .content-body {
+//   h2 {
+//     color: $brand-primary;
+//     margin-bottom: $single;
+//   }
+//   p {
+//     margin-bottom: $single*1.5;
+//     line-height: 1.6875;
+//     a[href]:not([class]) {
+//       @include hover($brand-primary);
+//       @include underlink;
+//       font-weight: $font-weight-medium;
+//     }
+//   }
+//   li:not([class]) {
+//     line-height: 1.6875;
+//     margin-top: $threefourth;
+//   }
+//   ul ul > li:not([class]),
+//   ol ol > li:not([class]),
+//   ul ol > li:not([class]),
+//   ol ul > li:not([class]) {
+//     margin-top: $half;
+//   }
+// }

@@ -1,0 +1,97 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="SingleArticle SingleNews container">
+  <div class="SingleArticle-content">
+    {# Breadcrumb #}
+    {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
+
+    {# Headings #}
+    <h1 class="SingleArticle-title h2 brand">{{post.title}}</h1>
+
+    {# Subtitle #}
+    {% if acf.subtitle %}
+      <h4 class="SingleArticle-subtitle">{{acf.subtitle}}</h4>
+    {% endif %}
+
+    {# Teaser #}
+    {% if acf.teaser %}
+      <h3 class="SingleArticle-teaser Lead">{{acf.teaser}}</h3>
+    {% endif %}
+
+    {# Metas #}
+    <div class="SingleArticle-meta">
+      <div class="meta">
+        <span>{{post.post_date|date('j M, Y')}}</span>
+      </div>
+      {% if authors %}
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <span>{{authors|title}}</span>
+      </div>
+      {% endif %}
+      {% if topic %}
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <svg aria-hidden="true" role="presentation" title="News Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <a href="{{site.url ~ '/news/?utf8=%E2%9C%93&page=1&topic=' ~ topic.slug}}" class="meta-link">{{topic.name}}</a>
+      </div>
+      {% endif %}
+    </div>
+
+    {# Mobile Share #}
+    <div class="SingleArticle-share">
+      <h3 class="Lead brand">
+        {{__('Share this event', 'saat')}}
+      </h3>
+      {% include 'components/social-share.twig' %}
+    </div>
+
+    {# Page Builder #}
+    {% if sections %}
+      <div class="content-body">
+
+        {# Teaser Image #}
+        {% if acf.image %}
+          <div class="SingleArticle-image">
+            {% set image = acf.image %}
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              {# Desktops - load 1024px #}
+              <source media="(min-width: {{lg}})" data-srcset="{{image[xlarge]}}">
+              {# Tablets - load 800px #}
+              <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{image[large]}}">
+              {# Landscape phones - load 640px #}
+              <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{image[medium]}}">
+              {# Portrait phones - load 320px #}
+              <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{image[small]}}">
+              <!--[if IE 9]></video><![endif]-->
+              {# Fallback with transparent LQIP #}
+              <img alt="{{image.title}}" class="lazyload" data-src="{{image[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            </picture>
+          </div>
+        {% endif %}
+
+        {% include 'layout/base.twig' %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="SingleArticle-sidebar Sidebar">
+    {# Common Sidebar Sections #}
+    <div class="Sidebar-section">
+      <h3 class="Sidebar-sectionHeading Lead brand">
+        {{__('Share this news', 'saat')}}
+      </h3>
+      {% include 'components/social-share.twig' %}
+    </div>
+
+    {# Sidebar Builder #}
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

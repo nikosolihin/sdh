@@ -1,0 +1,84 @@
+{# {% if locale == 'id_ID' %}
+  {% set language = 'id' %}
+{% elseif locale == 'en_US' %}
+  {% set language = 'en' %}
+{% else %}
+  {% set language = 'zh' %}
+{% endif %} #}
+
+<header class="Header">
+
+<!-- <div class="SearchBar">
+  <form class="SearchBar-form container" role="form" action="{{site.url}}/search" accept-charset="UTF-8" method="get">
+    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
+    <label class="SearchBar-label" for="SearchBar-input">{{__('Search events, media or keywords', 'saat')}}</label>
+  </form>
+</div> -->
+
+<div class="Header-logo">
+  <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+  </svg>
+</div>
+
+<div class="Header-nav">
+
+  <nav class="Header-secondary" role="navigation">
+    <div class="flex-wrapper">
+      <div class="Header-languages">
+        <svg aria-hidden="true" role="presentation" title="Select Language">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+        </svg>
+        <span class="h7 medium white">English</span>
+        <svg aria-hidden="true" role="presentation" title="Select Language">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+        </svg>
+      </div>
+    </div>
+
+    <div class="flex-wrapper">
+      <div class="flex-wrapper">
+        <a href="" class="Header-quicklinks h7 medium yellow">
+          <svg aria-hidden="true" role="presentation" title="See our school news">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
+          </svg>School News
+        </a>
+        <a href="" class="Header-quicklinks h7 medium yellow">
+          <svg aria-hidden="true" role="presentation" title="See our events">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+          </svg>Event Calendar
+        </a>
+      </div>
+      <ul class="Header-secondaryList List List--inline">
+        <li><a href="" class="Header-secondaryLink h7 caps medium white">For Students</a></li>
+        <li><a href="" class="Header-secondaryLink h7 caps medium  white">For Parents</a></li>
+        <li><a href="" class="Header-secondaryLink h7 caps medium  white">For Alumni</a></li>
+      </ul>
+      <a href="" class="Header-search">
+        <svg aria-hidden="true" role="presentation" title="Search SDH Website">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <nav class="Header-primary" role="navigation">
+    <ul class="Header-primaryList List List--inline">
+      <li><a href="" class="Header-primaryLink h5 medium">About</a></li>
+      <li><a href="" class="Header-primaryLink h5 medium">Admissions</a></li>
+      <li><a href="" class="Header-primaryLink h5 bold navy">Teaching and Learning</a></li>
+      <li><a href="" class="Header-primaryLink h5 medium">Community in Action</a></li>
+      <li><a href="" class="Header-primaryLink h5 medium">Visit Our School</a></li>
+    </ul>
+    <div class="flex-wrapper">
+      <a href="" class="Button Button--icon">
+        <svg aria-hidden="true" role="presentation" title="See Our Campuses">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+        </svg>
+        Our Campuses
+      </a>
+    </div>
+  </nav>
+</div>
+
+</header>

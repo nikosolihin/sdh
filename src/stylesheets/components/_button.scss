@@ -1,0 +1,86 @@
+.Button {
+  border: 0;
+  border-radius: 3px;
+  display: inline-block;
+  padding: $half $threefourth;
+  background-color: $button-bg;
+  border: 2px solid $button-bg;
+  transition: all .1s ease-in-out;
+  text: $white $font-weight-bold left none $font-size-h7 $line-height;
+
+  // Pseudo
+  &:hover {
+    background-color: darken($button-bg, 2.5%);
+  }
+
+  // Style
+  &--block {
+    width: 100%;
+    text-align: center;
+  }
+  // &--light {
+  //   color: $brand-primary;
+  //   background-color: $white;
+  //   border: 1px solid $white;
+  //   &:hover {
+  //     color: $white;
+  //     background-color: $brand-primary;
+  //     border: 1px solid $brand-primary;
+  //   }
+  // }
+  &--outline {
+    color: $white;
+    border: 2px solid $white;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  // &--outline-light {
+  //   color: $white;
+  //   border: 1px solid $white;
+  //   background-color: transparent;
+  // }
+  // &--outline-dark {
+  //   color: $body-color;
+  //   border: 1px solid #ccc;
+  //   background-color: transparent;
+  //   &:hover {
+  //     color: $white;
+  //     background-color: $brand-secondary;
+  //     border: 1px solid transparent;
+  //   }
+  // }
+  // &--utility {
+  //   font-size: 13px;
+  //   color: #666;
+  //   position: absolute;
+  //   right: 0;
+  //   top: $single*1.125;
+  //   padding: $pill-padding;
+  //   background-color: #eee;
+  //   border: 1px solid #eee;
+  //   &:hover {
+  //     color: $white;
+  //     background-color: #666;
+  //     border: 1px solid #e6
+  //   }
+  // }
+  &--icon {
+    > * {
+      vertical-align: middle;
+    }
+    svg {
+      size: $single;
+      margin-right: $quarter;
+    }
+  }
+
+  // Sizes
+  &--small {
+    padding: .65rem $single*1.1;
+  }
+  &--large {
+    padding: $single $single*1.75;
+  }
+}

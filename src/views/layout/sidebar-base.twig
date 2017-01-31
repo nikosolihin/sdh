@@ -1,0 +1,14 @@
+{% for section in sidebar_sections %}
+  {% set alignment = section.sidebar_section_alignment %}
+  {% set callout = section.sidebar_section_options %}
+  {% set accent = section.sidebar_section_border %}
+
+  <div class="{{'Sidebar-section'|modifiers("#{alignment}, #{callout}, #{accent}")}}">
+    {% if section.title %}
+      <h3 class="Sidebar-sectionHeading Lead brand">{{section.title|title}}</h3>
+    {% endif %}
+    {% for component in section.sidebar_components %}
+      {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
+    {% endfor %}
+  </div>
+{% endfor %}
