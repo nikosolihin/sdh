@@ -1,6 +1,6 @@
 .Form {
   overflow: hidden;
-
+  
   @include to(sm) {
     @include fullwidth;
   }

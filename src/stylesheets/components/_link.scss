@@ -1,13 +1,11 @@
 .Link {
-  @include hover($brand-primary);
-  @include caps;
   display: inline-block;
   margin-bottom: $single;
 
   svg {
     display: inline-block;
-    size: $threefourth;
-    margin-left: $half;
+    size: $half;
+    margin-left: $quarter;
     vertical-align: middle;
     transition: all .1s ease-out;
     position: relative -1px;
@@ -17,12 +15,5 @@
     svg {
       transform: translate3d(5px, 0, 0);
     }
-  }
-
-  &--white {
-    @include hover($white);
-  }
-  &--lowercase {
-    text-transform: capitalize;
   }
 }

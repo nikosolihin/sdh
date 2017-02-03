@@ -1,0 +1,210 @@
+{
+    "key": "group_57b0a764a1961",
+    "title": "Site Announcement",
+    "fields": [
+        {
+            "message": "The announcement bar is used to notify an important message to site visitors. The message will be displayed on any page a visitor visits as long as it has never been closed previously. Closing the message will prevent it from being shown for that particular visitor for 7 days unless the announcement is turned off. If after a week the announcement status is still on, the message will be shown again.\r\n<br><br>\r\n<strong>TIP:<\/strong> Keep the sentence very short. For example: <em>Please note that we will be performing scheduled maintenance on Monday, Jan 1, 2016.<\/em>",
+            "esc_html": 0,
+            "new_lines": "",
+            "key": "field_57b0a7b89786c",
+            "label": "Announcement Bar",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "on": "ON",
+                "off": "OFF"
+            },
+            "default_value": "off",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_57b0ad9652af6",
+            "label": "Status",
+            "name": "announcement_status",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 7,
+            "min": 1,
+            "max": 30,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_57b1e094c4a4f",
+            "label": "Days to Expiration",
+            "name": "announcement_dte",
+            "type": "number",
+            "instructions": "How many days should the cookie stay in the user's browser?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b0ad9652af6",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "top": "Top",
+                "bottom": "Bottom"
+            },
+            "default_value": "top",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_57b0b30f7f720",
+            "label": "Bar Position",
+            "name": "announcement_position",
+            "type": "radio",
+            "instructions": "The bar can be positioned at the top (below the menu bar) or along the bottom of the browser window.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b0ad9652af6",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 65,
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 2,
+            "key": "field_57b0b1959a2b8",
+            "label": "Message",
+            "name": "announcement_message",
+            "type": "textarea",
+            "instructions": "Again, keep it short. <strong>TIP:<\/strong> You may insert HTML tags here. For example, insert a link using <em>&lt;a href=\"http:\/\/example.com\">My Link&lt;\/a><\/em>. Other available tags include &lt;strong>, &lt;em> and &lt;br>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b0ad9652af6",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "More Info",
+            "prepend": "",
+            "append": "",
+            "key": "field_57b0b29775118",
+            "label": "Button Label",
+            "name": "announcement_button",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b0ad9652af6",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57b0b1fc9a2b9",
+            "label": "Button Link",
+            "name": "announcement_link",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b0ad9652af6",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_5773382ac6cac",
+            "name_prefix": 1,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-site-announcement"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Site Settings",
+    "modified": 1486051915
+}

@@ -1,0 +1,84 @@
+{
+    "key": "group_576013cd18088",
+    "title": "Image",
+    "fields": [
+        {
+            "google_photos_user_id": "",
+            "key": "field_576013cd1ea7c",
+            "label": "",
+            "name": "figure",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 1
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
+            },
+            "default_value": "center",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_576019289e04a",
+            "label": "Float Direction",
+            "name": "direction",
+            "type": "radio",
+            "instructions": "Images are floated items, meaning that other text-based contents will wrap around them. This option changes the direction of the float. Center floated images spans a full width. <strong><em>Only use center alignment for images within the sidebar and non-single column layout.<\/em><\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 3,
+            "key": "field_576017e9204a4",
+            "label": "Caption",
+            "name": "caption",
+            "type": "textarea",
+            "instructions": "Leave blank for no caption.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "65",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Image",
+    "modified": 1486021349
+}

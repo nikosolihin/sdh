@@ -1,15 +1,15 @@
-<section class="Cta wrapper">
+<section class="Cta container">
   <div class="flex-wrapper">
-    <h2 class="h3 light noMargin">Be a part of our lifelong, transformative learning community today.</h3>
+    <h3 class="h3 light white noMargin">{{cta}}</h3>
   </div>
   <div class="Cta-buttons">
-    <a href="" class="Button">Apply Today</a>
+    <a href="" class="Button">Apply Now</a>
     <a href="" class="Button Button--outline">Request a Brochure</a>
   </div>
 </section>
 
-<footer class="Footer" style="background-image: url(https://www.obama.org/wp-content/uploads/Travel-I.jpg)">
-  <section class="Footer-main wrapper">
+<footer class="Footer" style="background-image: url({{footer_bg|serveImage}});">
+  <section class="Footer-primary container">
     <div class="Footer-column">
       <h5 class="h6 caps spaced navy medium center">Company</h5>
       <ul class="List center">
@@ -42,6 +42,10 @@
       </ul>
     </div>
     <div class="Footer-column">
+      <h5 class="h6 caps spaced navy medium center">Head Office</h5>
+
+    </div>
+    <div class="Footer-column">
       <h5 class="h6 caps spaced navy medium center">Connect</h5>
       <ul class="List center">
         <li><a href="" class="Footer-link h6 medium">Find Developers</a></li>
@@ -52,27 +56,53 @@
       </ul>
     </div>
   </section>
-  <section class="Footer-secondary wrapper">
-    <div class="Footer-legal">
-      <span class="h7 medium faint">
-        Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
-      </span>
-      <span class="Footer-dot">●</span>
 
-      {% if policy %}
-        <a href="{{policy}}" class="legal-link">{{__('Privacy Policy', 'sdh')}}</a>
-        <span class="legal-dot">●</span>
-      {% endif %}
-
-      <a href="mailto:sdh.webteam@sdh.or.id" class="h7 medium faint">{{__('Feedback', 'sdh')}}</a>
-
-      {{__('Languages', 'sdh')}}:
-      {% if 'id' in languages.list %}
-        <a href="{{languages.id}}" class="h7 medium faint">ID</a>
-      {% endif %}
-      {% if 'en' in languages.list %}
-        <a href="{{languages.en}}" class="h7 medium faint">EN</a>
-      {% endif %}
+    <div class="Footer-secondary container">
+      <div class="Footer-essentials">
+        <a href="{{policy}}" class="Footer-secondaryLink">{{__('Privacy Policy', 'sdh')}}</a>
+        <span class="Footer-dot">●</span>
+        {% if policy %}
+          <a href="{{policy}}" class="Footer-secondaryLink">{{__('Privacy Policy', 'sdh')}}</a>
+          <span class="Footer-dot">●</span>
+        {% endif %}
+        <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink">{{__('Feedback', 'sdh')}}</a>
+        <span class="Footer-dot">●</span>
+        <div class="Footer-languages">
+          <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
+          <a href="{{languages.en}}" class="Footer-secondaryLink Footer-secondaryLink--active">English</a>
+          <a href="{{languages.en}}" class="Footer-secondaryLink">Indonesian</a>
+          {% if 'id' in languages.list %}
+            <a href="{{languages.id}}" class="Footer-secondaryLink">Indonesian</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="Footer-legal">
+        <span class="h7 medium faint">
+          Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
+        </span>
+      </div>
+      <div class="Footer-social">
+        <a href="" class="Footer-socialIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+          </svg>
+        </a>
+        <a href="" class="Footer-socialIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+          </svg>
+        </a>
+        <a href="" class="Footer-socialIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+          </svg>
+        </a>
+        <a href="" class="Footer-socialIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
+          </svg>
+        </a>
+      </div>
     </div>
-  </section>
+
 </footer>

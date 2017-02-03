@@ -1,48 +1,39 @@
 .Share {
-  box: horizontal center;
-  @include from(md) {
-    box: horizontal left;
-  }
+  box: vertical top center;
+  flex: 0 0 auto;
 
+  &-title {
+    text-align: center;
+    margin-bottom: $threefourth !important;
+  }
   &-button {
-    box: vertical middle center;
-    display: block;
-    background-color: #eee;
-    border-radius: 2px;
-    margin-right: 10px;
-    transition: all .08s ease-in-out;
-    size: 45px;
-    @include from(md) {
-      size: 55px;
-    }
-    &:hover {
-      background-color: $brand-secondary;
-      svg {
-        fill: $white;
-      }
-    }
-    // Whatsapp
-    &:nth-child(3) {
-      @include from(lg) {
-        display: none;
-      }
+    @include hover(#aaa, $navy);
+    box: horizontal middle;
+    padding: $quarter;
+    margin-bottom: $half;
+    svg {
+      size: $single*1.125;
     }
   }
-  svg {
-    fill: #444;
-    size: .9rem;
-    @include from(md) {
-      size: $single;
-    }
-    transition: all .05s ease-in-out;
+}
+
+.Banner {
+  @include cover(50% 27%);
+  @include overlay(false);
+  height: 675px;
+
+  &-container {
+    box: vertical bottom right;
+    size: 100%;
+    padding-bottom: $single*2.5;
   }
 
-  &--brand {
-    .Share-button {
-      background-color: $brand-highlight;
-    }
-    svg {
-      fill: $white;
+  &-copy {
+    width: 60%;
+    font-size: 1.6rem;
+    line-height: 1.375;
+    span {
+      margin-bottom: $threefourth;
     }
   }
 }

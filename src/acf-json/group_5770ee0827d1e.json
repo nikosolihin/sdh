@@ -274,7 +274,7 @@
             "taxonomy": [],
             "allow_null": 0,
             "multiple": 0,
-            "allow_archives": 1,
+            "allow_archives": 0,
             "key": "field_57999abdced1d",
             "label": "Privacy policy page",
             "name": "policy",
@@ -433,39 +433,6 @@
             "name_prefix": 1,
             "key_prefix": 1,
             "label_prefix": 0
-        },
-        {
-            "placement": "top",
-            "endpoint": 0,
-            "key": "field_588b3bbdbec62",
-            "label": "Google Sign-In",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "message": "<div class=\"g-signin2\" data-onsuccess=\"onSignIn\"><\/div>\r\n<script src=\"\/\/cdnjs.cloudflare.com\/ajax\/libs\/bootstrap-table\/1.8.1\/bootstrap-table.min.js\"><\/script>",
-            "esc_html": 0,
-            "new_lines": "",
-            "key": "field_588b3acd1e199",
-            "label": "Login to allow the retreival of Google Photos",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
         }
     ],
     "location": [
@@ -485,5 +452,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1485625088
+    "modified": 1485929504
 }

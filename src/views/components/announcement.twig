@@ -1,9 +1,9 @@
 {% if announcement %}
-  <div class="{{'Announcement'|modifiers("#{announcement.position}")}}" data-component="announcement" data-options='{ "dte": "{{announcement.dte}}" }'>
+  <div class="{{'Announcement'|modifiers("#{announcement.position}")}} white" data-component="announcement" data-options='{ "dte": "{{announcement.dte}}" }'>
     <div class="container">
-      <p class="Announcement-message">
+      <p class="Announcement-message h5 white normal noMargin">
         {{announcement.message}}
-        <a href="{{announcement.url}}" class="Announcement-button Button Button--small Button--announcement">{{announcement.button|title}}</a>
+        <a href="{{announcement.url}}" class="Announcement-button Button Button--small">{{announcement.button|title}}</a>
       </p>
       <a href="" class="Announcement-close">
         <svg aria-hidden="true" role="presentation" title="">

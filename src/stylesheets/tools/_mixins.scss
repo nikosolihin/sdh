@@ -22,13 +22,14 @@
   color: $white;
   * { color: $white; }
 }
-@mixin cover {
+@mixin cover($pos: center center) {
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: $pos;
   background-size: cover;
 }
 @mixin promote {
   > * {
+    position: relative;
     z-index: 1;
   }
 }
@@ -52,12 +53,15 @@
       @if ($value) {
         background: linear-gradient( #{$value} );
       } @else {
-        background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
+        background-color: rgba(13, 4, 0, 0.07);
+        background-image: linear-gradient(-15deg, rgba(0, 0, 0, 0.66) 0%, rgba(2, 2, 2, 0.66) 12%, rgba(13, 13, 13, 0) 66%, rgba(19, 19, 19, 0) 97%);
       }
     }
   }
 }
 @mixin left-slant {
+  position: relative;
+  z-index: 1;
   &::after {
     content: '';
     display: block;
@@ -66,7 +70,23 @@
     left: -.8rem;
     width: 50%;
     height: 100%;
-    transform: skewX(-8.5deg);
+    transform: skewX(-7.5deg);
+    background: inherit;
+    z-index: -1;
+  }
+}
+@mixin right-slant {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -.8rem;
+    width: 50%;
+    height: 100%;
+    transform: skewX(-7.5deg);
     background: inherit;
     z-index: -1;
   }

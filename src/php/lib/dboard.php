@@ -1,12 +1,17 @@
 <?php
 /*=============================================*/
-/* Inject a meta tag to the dashboard head area.
-/* Used for OAuth client ID for Google Photos
+/* Remove nag from acf plugins
 /*=============================================*/
-function my_custom_admin_head() {
-	echo '<meta name="google-signin-scope" content="https://picasaweb.google.com/data/"><meta name="google-signin-client_id" content="273648969461-obgo20v9hjpv5n875a0lldbhkbkvhmfc.apps.googleusercontent.com"><script src="https://apis.google.com/js/platform.js" async defer></script>';
+add_filter('remove_hube2_nag', '__return_true');
+
+/*=============================================*/
+/* Change medium editor theme
+/*=============================================*/
+add_filter('medium-editor-theme', 'my_medium_editor_theme_function');
+function my_medium_editor_theme_function($theme) {
+  $theme = 'beagle';
+  return $theme;
 }
-add_action( 'admin_head', 'my_custom_admin_head' );
 
 // /*=============================================*/
 // /* Prevent TinyMCE format dropdown

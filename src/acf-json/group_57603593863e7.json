@@ -1,0 +1,59 @@
+{
+    "key": "group_57603593863e7",
+    "title": "Embed",
+    "fields": [
+        {
+            "width": "",
+            "height": "",
+            "key": "field_576035938c57c",
+            "label": "",
+            "name": "embed",
+            "type": "oembed",
+            "instructions": "Embed media objects such as videos or social media posts. For a list of embeddable objects, click <a target=\"_blank\" href=\"https:\/\/codex.wordpress.org\/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F\">here<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_578f38e36544c",
+            "label": "Are you embedding from Instagram?",
+            "name": "instagram",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Embed",
+    "modified": 1486051780
+}

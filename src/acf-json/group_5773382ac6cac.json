@@ -1,0 +1,129 @@
+{
+    "key": "group_5773382ac6cac",
+    "title": "URL",
+    "fields": [
+        {
+            "layout": "horizontal",
+            "choices": {
+                "single": "Single Resource Post\/Page",
+                "search": "Filtered Resource Listing",
+                "external": "External URL"
+            },
+            "default_value": "",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_57715f2ceaa16",
+            "label": "Link Type",
+            "name": "type",
+            "type": "radio",
+            "instructions": "Does this block link to a single resource post\/page, a custom search filtered page or an external URL?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "allow_archives": 0,
+            "key": "field_577164437f04d",
+            "label": "Choose a single post\/page",
+            "name": "single_url",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57715f2ceaa16",
+                        "operator": "==",
+                        "value": "single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_57715d004646e",
+            "label": "URL",
+            "name": "external_url",
+            "type": "text",
+            "instructions": "A valid URL must start with \"http:\/\/\", \"https:\/\/\", or \"mailto:\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57715f2ceaa16",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "placeholder": "",
+            "key": "field_57716240387bb",
+            "label": "URL",
+            "name": "search_url",
+            "type": "url",
+            "instructions": "To generate the URL of a filtered resource search, head over to the resource <a href=\"\/resources\/search\">search page<\/a>. The URL of the page will update as you set\/unset search filters. When finished, paste the URL here.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57715f2ceaa16",
+                        "operator": "==",
+                        "value": "search"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Link",
+    "modified": 1486089068
+}

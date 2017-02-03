@@ -1,0 +1,59 @@
+{
+    "key": "group_576233ecd0b59",
+    "title": "Form",
+    "fields": [
+        {
+            "key": "field_576233ecd60f2",
+            "label": "Embed Google Form",
+            "name": "form",
+            "type": "google_forms_field",
+            "instructions": "Click <a href=\"https:\/\/docs.google.com\/forms\/u\/0\/\">here<\/a> to create a new form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58131226b9673",
+            "label": "Form Height",
+            "name": "height",
+            "type": "number",
+            "instructions": "If your form is longer than the default height set by Google, a scrollbar will appear. To get rid of the scrollbar, provide a height enough to show the whole form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Form",
+    "modified": 1486050498
+}

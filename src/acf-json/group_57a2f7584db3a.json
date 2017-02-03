@@ -1,0 +1,39 @@
+{
+    "key": "group_57a2f7584db3a",
+    "title": "Table",
+    "fields": [
+        {
+            "key": "field_57a2f76a502ab",
+            "label": "",
+            "name": "table",
+            "type": "table",
+            "instructions": "<strong>TIP:<\/strong> You may insert HTML tags in the table cells. For example, insert a link using <em>&lt;a href=\"http:\/\/example.com\">My Link&lt;\/a><\/em>. Other available tags include &lt;strong>, &lt;em> and &lt;br>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "use_header": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Table",
+    "modified": 1474887669
+}

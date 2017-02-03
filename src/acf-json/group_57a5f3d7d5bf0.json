@@ -1,0 +1,258 @@
+{
+    "key": "group_57a5f3d7d5bf0",
+    "title": "Page Builder",
+    "fields": [
+        {
+            "layouts": [
+                {
+                    "key": "574d44caa3371",
+                    "name": "one_column",
+                    "label": "Full Width",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_57a5f3d7e19ff",
+                            "label": "Components",
+                            "name": "full",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "key": "field_57cc534612a59",
+                            "label": "Column Options",
+                            "name": "full",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57aa142c90cdd",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57a4779918275",
+                    "name": "two_columns",
+                    "label": "2 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_57a5f3d7e1b9d",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_57a5f3d7e1c76",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "key": "field_57aa12b4b6766",
+                            "label": "Column Options",
+                            "name": "left",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50%",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57aa142c90cdd",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57aa153b54121",
+                            "label": "Column Options",
+                            "name": "right",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50%",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57aa142c90cdd",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5892e8605788c",
+                    "name": "three_columns",
+                    "label": "3 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_5892e8815788d",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_5892e8895788f",
+                            "label": "Components",
+                            "name": "mid",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block",
+                            "key": "field_5892e8885788e",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ],
+            "min": "",
+            "max": "",
+            "button_label": "Add a section",
+            "key": "field_57a5f3d7deec5",
+            "label": "Start by adding a section",
+            "name": "sections",
+            "type": "flexible_content",
+            "instructions": "Each individual section is a <strong><em>horizontal row<\/em><\/strong> with varying number of columns in it. In each column, you may add different kinds of <strong><em>modules<\/em><\/strong> (Text editor, Cards, Buttons, Accordions, etc). If you need more screen space during editing, click the <strong><em>Screen Options<\/em><\/strong> button in the menu bar and toggle the <em>1 column<\/em> display layout. You may also collapse the sidebar menu on the right.<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-layout-builder"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Regular Page Builder",
+    "modified": 1486022830
+}

@@ -6,7 +6,7 @@ export default class Map {
   }
 
   newMap(el) {
-    GoogleMapsLoader.KEY = 'AIzaSyAMsLZxTH-d2FC5qDwSKWKhvCWjI2jbchE'
+    GoogleMapsLoader.KEY = 'AIzaSyCcqne1WUPeDEbyBfk9jurNKJ5ofAZlLIY'
     GoogleMapsLoader.load( google => {
       let $markers = $(el).find('.marker'),
         latlng = []
@@ -18,7 +18,7 @@ export default class Map {
         }
       })
       let args = {
-          zoom: 16,
+          zoom: 17,
           center: new google.maps.LatLng(0, 0),
           mapTypeId: google.maps.MapTypeId.ROADMAP
         },
@@ -59,7 +59,7 @@ export default class Map {
     })
     if( map.markers.length == 1 ) {
       map.setCenter( bounds.getCenter() )
-      map.setZoom( 16 )
+      map.setZoom( 17 )
     } else {
       map.fitBounds( bounds )
     }

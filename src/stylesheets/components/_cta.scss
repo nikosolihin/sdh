@@ -1,20 +1,17 @@
 .Cta {
-  // @include white;
-  position: relative;
   box: horizontal middle;
-  background-color: #F5F9FC;
-  // background-color: #25427C;
-  margin-bottom: 4px;
+  position: relative;
+  top: 4.25rem;
+  z-index: $zindex-footer-main;
+  border-radius: 3px;
+  max-width: 1400px;
+  background-color: #25427C;
+  margin-bottom: 3px;
+  box-shadow: 0px 7px 50px 0px rgba(38,50,56,0.15);
 
   .flex-wrapper {
     width: 70%;
-    padding-top: $single*3.25;
-    padding-bottom: $single*3.25;
-    h2 {
-      color: #26427C;
-      // color: $white;
-      font-size: 1.5rem;
-    }
+    padding: $single*2 $single*3;
   }
 
   &-buttons {
@@ -23,14 +20,14 @@
     top: -10px;
     right: 0;
     width: 30%;
+    border-radius: 3px;
     background-color: #1F2D6A;
-    padding-left: $single*2.5;
+    padding-left: $single*1.5;
     padding-top: $single*3.75; // Must be .5 more than CTA's padding
     padding-bottom: $single*3.75;
     z-index: $zindex-footer-main;
-
     .Button:first-child {
-      margin-right: $single;
+      margin-right: $threefourth;
     }
   }
 }

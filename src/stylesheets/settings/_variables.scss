@@ -40,7 +40,7 @@ $grid-breakpoints: (
 $desktop:                         'md' !default;
 $wrapper-width:                   1600px !default;
 $wrapper-narrow-width:            1400px !default;
-$container-width:                 1200px !default;
+$container-width:                 1280px !default;
 $container-text-width:            765px !default;
 $container-text-width:            685px !default;
 $container-text-nosidebar-width:  925px !default;
@@ -79,6 +79,7 @@ $svg-size:                      100% !default;
 // Typography
 //=============================================
 $font-size-root:               20px !default;
+$font-size-mini:               18px !default;
 $font-size:                    1rem !default;
 
 // Common properties //////////////////////////
@@ -92,6 +93,8 @@ $font-family:             "Proxima Nova", "Helvetica Neue", Helvetica, Arial, "L
 $font-size-h1:                 3rem !default;
 $font-size-h2:                 2.4rem !default;
 $font-size-h3:                 1.8rem !default;
+// $font-size-h3:                 1.6rem !default;
+// $font-size-h3:                 1.35rem !default;
 $font-size-h4:                 1rem !default;
 $font-size-h5:                 .9rem !default;
 $font-size-h6:                 .8rem !default;
@@ -105,6 +108,7 @@ $headings-line-height:         1.25 !default;
 //=============================================
 
 // Z-Index ///////////////////////////////////
+$zindex-announcement:            5000 !default;
 $zindex-primarynav:              3000 !default;
 $zindex-footer-bg:               2000 !default;
 $zindex-footer-main:             2100 !default;
@@ -120,7 +124,7 @@ $zindex-footer-main:             2100 !default;
 // $sidebar-border-top:            8px solid #ddd;
 //
 // // Callout ///////////////////////////////////
-// $callout-bg:                    lighten($black, 97%) !default;
+$callout-bg:                    lighten($black, 97%) !default;
 // $callout-padding:               $single*3.5 !default;
 
 // Buttons ///////////////////////////////////

@@ -125,11 +125,12 @@
             }
         },
         {
+            "google_photos_user_id": "",
             "key": "field_57f3ba80fcca0",
             "label": "Background",
             "name": "footer_bg",
-            "type": "flickr_browser",
-            "instructions": "This is the faint photo of the seal in the dark background. Keep file size in mind when changing this to something else.",
+            "type": "acf_google_photos_browser",
+            "instructions": "This is the faint photo of students in the background. Keep file size in mind when changing this to something else.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -137,16 +138,7 @@
                 "class": "acf-field-flickr-browser--showlabel",
                 "id": ""
             },
-            "flickr_api_key": "",
-            "flickr_user_id": "",
-            "flickr_limit": 1,
-            "flickr_sizes": [
-                "url_z",
-                "url_c",
-                "url_l",
-                "url_o"
-            ],
-            "flickr_extras": ""
+            "google_photos_limit": 1
         },
         {
             "placement": "left",
@@ -217,5 +209,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1485322727
+    "modified": 1486091580
 }

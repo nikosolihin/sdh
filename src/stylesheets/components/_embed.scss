@@ -7,10 +7,12 @@
   overflow: hidden;
   max-width: 100%;
   iframe, object, embed {
-    position: absolute 0 auto auto 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     size: 100%;
   }
   &--instagram {
-    padding-bottom: 112%;
+    padding-bottom: 85%;
   }
 }

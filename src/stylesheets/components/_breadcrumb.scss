@@ -41,7 +41,7 @@
   &-link {
     text: $white $font-weight-normal left normal 1rem 1 .3px;
     @at-root .Breadcrumb--brand #{&} {
-      color: $brand-primary;
+      color: $blue;
     }
   }
 }

@@ -1,7 +1,9 @@
 .Footer {
   @include cover;
   position: relative;
-  padding: $single*5 0;
+  // padding: $single*6 0 $single*2.25;
+  padding: $single*9 0 $single*2.25;
+  background-color: $white;
 
   &::after {
     content: '';
@@ -9,25 +11,69 @@
     top: 0;
     left: 0;
     size: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 60%, #FFFFFF);
-    // height: $single*20;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9) 60%, $white);
+    // background: linear-gradient(rgba(241, 242, 238, 1), rgba(255, 255, 255, 0.82) 60%, $white);
   }
 
-  &-main {
+  &-primary {
+    position: relative;
     box: horizontal space-around;
     z-index: $zindex-footer-main;
   }
 
   &-link {
-    @include hover(#555, #222);
+    @include hover(#888, $orange);
   }
 
   &-secondary {
+    position: relative;
+    box: horizontal middle space-between;
+    border-top: 1px solid #dedede;
     margin-top: $single*5;
-    z-index: $zindex-footer-main;
-  }
-  &-legal {
-    border-top: 1px solid #ddd;
     padding-top: $quarter;
+    z-index: $zindex-footer-main;
+    &Link {
+      @extend .h7, .medium;
+      @include hover(#bbb, $orange);
+      &--active {
+        @extend .bold;
+        @include hover($navy, $navy);
+      }
+    }
+  }
+
+  &-essentials {
+    box: horizontal middle space-between;
+  }
+
+  &-languages {
+    a {
+      margin: 0 .1rem;
+    }
+  }
+
+  &-legal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-social {
+    box: horizontal;
+    svg {
+      size: $single;
+    }
+    &Icon {
+      @include hover(#888, $navy);
+      padding: .125rem;
+      margin-right: $half;
+      box: horizontal middle;
+    }
+  }
+
+  &-dot {
+    font-size: .4rem;
+    color: #dadada;
+    margin: 0 $half;
   }
 }

@@ -1,6 +1,6 @@
 .Accordion {
   @include normalist;
-  border-top: 5px solid #f5f5f5;
+  border-top: 3px solid $yellow;
 
   &-checkbox {
     display: none;
@@ -24,7 +24,7 @@
     * { user-select: none }
     box: horizontal space-between;
     cursor: pointer;
-    color: $brand-primary;
+    color: $navy;
     font-weight: $font-weight-bold;
     padding: $single*1.5 0;
     margin-bottom: 0;
@@ -36,7 +36,7 @@
     size: 30px;
     transition: all .1025s ease-in-out;
     svg {
-      fill: #aaa;
+      fill: $orange;
     }
   }
 

@@ -47,12 +47,6 @@ class StarterSite extends TimberSite {
 		// // Layout Modules
 		// //=============================================
 		//
-		// // Logo
-		// $context['logo'] = array(
-		// 	'normal' => get_field('logo_1x', 'option'),
-		// 	'retina' => get_field('logo_2x', 'option')
-		// );
-		//
 		// // Primary - get 3 levels deep
 		// $primary_menu = get_field('primary_menu', 'option');
 		// $context['primary_menu'] = array();
@@ -136,27 +130,27 @@ class StarterSite extends TimberSite {
 		// 	$context['audience_label'] = get_field('audience_label', 'option');
 		// 	$context['audience_links'] = get_field('audience_links', 'option');
 		// }
-		//
-		// // Social Links
-		// $context['social'] = array(
-		// 	'facebook' => get_field('facebook', 'option'),
-		// 	'twitter' => get_field('twitter', 'option'),
-		// 	'youtube' => get_field('youtube', 'option'),
-		// 	'instagram' => get_field('instagram', 'option')
-		// );
-		//
-		// // Social Analytics
-		// $context['analytics'] = array(
-		// 	'facebook_app_id' => get_field('facebook_app_id', 'option'),
-		// 	'twitter_analytics_id' => get_field('twitter_analytics_id', 'option')
-		// );
-		//
-		// // 404 stuff
-		// $context['error'] = array(
-		// 	'title' => get_field('error_title', 'option'),
-		// 	'description' => get_field('error_description', 'option')
-		// );
-		//
+
+		// Social Links
+		$context['social'] = array(
+			'facebook' => get_field('facebook', 'option'),
+			'twitter' => get_field('twitter', 'option'),
+			'youtube' => get_field('youtube', 'option'),
+			'instagram' => get_field('instagram', 'option')
+		);
+
+		// Social Analytics
+		$context['analytics'] = array(
+			'facebook_app_id' => get_field('facebook_app_id', 'option'),
+			'twitter_analytics_id' => get_field('twitter_analytics_id', 'option')
+		);
+
+		// 404 stuff
+		$context['error'] = array(
+			'title' => get_field('error_title', 'option'),
+			'description' => get_field('error_description', 'option')
+		);
+
 		// Org Info
 		$context['org'] = array(
 			'name' => get_field('org_name', 'option'),
@@ -165,11 +159,14 @@ class StarterSite extends TimberSite {
 			// 'contacts' => get_field('org_contacts', 'option')
 		);
 
-		// // Policy Page
-		// $context['policy'] = get_field('policy', 'option');
-		//
-		// // Footer items
-		// $context['footer_bg'] = get_field('footer_bg', 'option');
+		// Policy Page
+		$context['policy'] = get_field('policy', 'option');
+
+		// CTA
+		$context['cta'] = get_field('cta_blurb', 'option');
+
+		// Footer items
+		$context['footer_bg'] = get_field('footer_bg', 'option');
 		// $footer_items = Timber::get_posts(get_field('footer', 'option'));
 		// $context['footer']['singles'] = array();
 		// $context['footer']['parents'] = array();
@@ -210,27 +207,27 @@ class StarterSite extends TimberSite {
 		// 	'title' => __('Media', 'saat'),
 		// 	'link' => $this->url . "/media/"
 		// ));
-		//
-		// // Site Announcement
-		// if ( get_field('announcement_status', 'option') == 'on' ) {
-		// 	$link_type = get_field('announcement_link_type', 'option');
-		// 	if ($link_type == "single") {
-		// 		$url = get_field('announcement_link_single_url', 'option');
-		// 	} elseif ($link_type == "external") {
-		// 		$url = get_field('announcement_link_external_url', 'option');
-		// 	} else {
-		// 		$url = get_field('announcement_link_search_url', 'option');
-		// 	}
-		// 	$context['announcement'] = array(
-		// 		'dte' => get_field('announcement_dte', 'option'),
-		// 		'position' => get_field('announcement_position', 'option'),
-		// 		'message' => get_field('announcement_message', 'option'),
-		// 		'button' => get_field('announcement_button', 'option'),
-		// 		'link_type' => $link_type,
-		// 		'url' => $url,
-		// 	);
-		// }
-		//
+
+		// Site Announcement
+		if ( get_field('announcement_status', 'option') == 'on' ) {
+			$link_type = get_field('announcement_link_type', 'option');
+			if ($link_type == "single") {
+				$url = get_field('announcement_link_single_url', 'option');
+			} elseif ($link_type == "external") {
+				$url = get_field('announcement_link_external_url', 'option');
+			} else {
+				$url = get_field('announcement_link_search_url', 'option');
+			}
+			$context['announcement'] = array(
+				'dte' => get_field('announcement_dte', 'option'),
+				'position' => get_field('announcement_position', 'option'),
+				'message' => get_field('announcement_message', 'option'),
+				'button' => get_field('announcement_button', 'option'),
+				'link_type' => $link_type,
+				'url' => $url,
+			);
+		}
+
 		// // Locale
 		// $context['locale'] = get_locale();
 		//
@@ -239,10 +236,10 @@ class StarterSite extends TimberSite {
 		// $context['languages']['en'] = "https://seabs.ac.id/en";
 		// $context['languages']['zh'] = "https://seabs.ac.id/zh";
 		// $context['languages']['list'] = get_field('languages', 'option');
-		//
-		// // Current URL
-		// global $wp;
-		// $context['current_url'] = home_url(add_query_arg(array(),$wp->request)).'/';
+
+		// Current URL
+		global $wp;
+		$context['current_url'] = home_url(add_query_arg(array(),$wp->request)).'/';
 
 		// Site default
 		$context['site'] = $this;
@@ -266,23 +263,31 @@ class StarterSite extends TimberSite {
 		// 	return listTerms($tax);
 		// });
 		// $twig->addFunction($termfunction);
-		//
-		// //=============================================
-		// // Generate classes from component options
-		// //=============================================
-		// $classfilter = new Twig_SimpleFilter('modifiers', function ($component, $options) {
-		// 	$classes = '';
-		// 	if ($options) {
-		// 		$classes = array();
-		// 		foreach (explode(", ", $options) as $option) {
-		// 			$classes[] = $component.'--'.$option;
-		// 		}
-		// 		$classes = implode(" ", $classes);
-		// 	}
-		// 	return $component." ".$classes;
-		// });
-		// $twig->addFilter($classfilter);
-		//
+
+		//=============================================
+		// Generate classes from component options
+		//=============================================
+		$classfilter = new Twig_SimpleFilter('modifiers', function ($component, $options) {
+			$classes = '';
+			if ($options) {
+				$classes = array();
+				foreach (explode(", ", $options) as $option) {
+					$classes[] = $component.'--'.$option;
+				}
+				$classes = implode(" ", $classes);
+			}
+			return $component." ".$classes;
+		});
+		$twig->addFilter($classfilter);
+
+		//=============================================
+		// Generate image url from Google Photos
+		//=============================================
+		$classfilter = new Twig_SimpleFilter('serveImage', function ($image, $size) {
+			return $image['base'] . 's1440/' . $image['title'];
+		});
+		$twig->addFilter($classfilter);
+
 		// //=============================================
 		// // Hide youtube controls
 		// //=============================================

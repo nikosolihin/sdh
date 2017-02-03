@@ -2,8 +2,8 @@
   // max-width: $wrapper-width; //1600px
   position: relative;
   margin: 0 auto;
-  padding-left: 6%;
-  padding-right: 6%;
+  // padding-left: 8%;
+  // padding-right: 8%;
   // &--narrow {
   //   max-width: $wrapper-narrow-width; // 1440px
   // }
@@ -14,48 +14,48 @@
 }
 
 .container {
-  max-width: $container-width;  // 1200px
   margin: 0 auto;
-  padding: 0 $single;
+  max-width: $container-width;  // 1280px
+  // padding: 0 $single;
 
-  &--max {
-    @include from($desktop) {
-      // min-width: $container-width;
-    }
-  }
-  &--nopadding {
-    padding: 0;
-  }
-
-  //=== Text Containers ===
-  &--text {
-    // max-width: $container-text-width;
-    width: $container-text-width;
-  }
-  &--text-max {
-    @include from(lg) {
-      min-width: $container-text-width;
-    }
-  }
-  &--text-nosidebar {
-    max-width: $container-text-nosidebar-width;
-  }
-
-  //=== Container Alignment ===
-  &--left {
-    margin: 0 auto 0 0;
-  }
-  &--right {
-    margin: 0 0 0 auto;
-  }
-
-  //=== Spacing ===
-  &--spacedTop {
-    margin-top: $single*4;
-  }
-  &--spacedBottom {
-    margin-bottom: $single*4;
-  }
+  // &--max {
+  //   @include from($desktop) {
+  //     // min-width: $container-width;
+  //   }
+  // }
+  // &--nopadding {
+  //   padding: 0;
+  // }
+  //
+  // //=== Text Containers ===
+  // &--text {
+  //   // max-width: $container-text-width;
+  //   width: $container-text-width;
+  // }
+  // &--text-max {
+  //   @include from(lg) {
+  //     min-width: $container-text-width;
+  //   }
+  // }
+  // &--text-nosidebar {
+  //   max-width: $container-text-nosidebar-width;
+  // }
+  //
+  // //=== Container Alignment ===
+  // &--left {
+  //   margin: 0 auto 0 0;
+  // }
+  // &--right {
+  //   margin: 0 0 0 auto;
+  // }
+  //
+  // //=== Spacing ===
+  // &--spacedTop {
+  //   margin-top: $single*4;
+  // }
+  // &--spacedBottom {
+  //   margin-bottom: $single*4;
+  // }
 }
 
 .row {

@@ -1,0 +1,40 @@
+{
+    "key": "group_57aa142c90cdd",
+    "title": "Column Options",
+    "fields": [
+        {
+            "key": "field_57aa1479bbb00",
+            "label": "Column Options",
+            "name": "column_options",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "message": "This is a callout column",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Column Options for Page Builders",
+    "modified": 1474887495
+}

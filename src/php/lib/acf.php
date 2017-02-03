@@ -1,15 +1,16 @@
 <?php
-// //=============================================
-// // Hide ACF from client
-// //=============================================
+//=============================================
+// Hide ACF from client
+//=============================================
 // add_filter('acf/settings/show_admin', '__return_false');
-//
-// //=============================================
-// // Add google maps api key
-// //=============================================
-// add_filter('acf/settings/google_api_key', function () {
-//   return 'AIzaSyAMsLZxTH-d2FC5qDwSKWKhvCWjI2jbchE';
-// });
+
+//=============================================
+// Add google maps api key
+//=============================================
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyCcqne1WUPeDEbyBfk9jurNKJ5ofAZlLIY');
+}
+add_action('acf/init', 'my_acf_init');
 
 //=============================================
 // Change local JSON path for load and save
@@ -155,14 +156,21 @@ if( function_exists('acf_add_options_page') ) {
     'icon_url' 		=> 'dashicons-admin-generic',
     'redirect' 		=> false
   ));
-//
-//   // Announcement Sub Page //////////////////////
-//   acf_add_options_sub_page(array(
-//     'page_title' 	=> '', // No page title since acf already has
-//     'menu_title'	=> 'Site Announcement',
-//     'parent_slug'	=> 'settings',
-//   ));
-//
+
+  // Announcement Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Site Announcement',
+    'parent_slug'	=> 'settings',
+  ));
+
+  // Call to Action Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Call To Action',
+    'parent_slug'	=> 'settings',
+  ));
+
 //   // Event Settings //////////////////////
 //   acf_add_options_sub_page(array(
 // 		'page_title' 	=> 'Event Settings',

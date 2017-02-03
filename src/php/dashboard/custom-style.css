@@ -13,7 +13,7 @@ body.login.login-action-login {
 
 /*=============================================*/
 /* Remove "Lost your passowrd?" and
-/* "Back to SAAT" link
+/* "Back to SDH" link
 /*=============================================*/
 p#nav,
 p#backtoblog {
@@ -38,15 +38,26 @@ p#backtoblog {
 }
 
 /*=============================================*/
+/* Make text editor bigger
+/*=============================================*/
+/*.medium-editor-element,
+.medium-editor-placeholder {
+	min-height: 150px;
+}*/
+[data-type="medium_editor"] .acf-input span {
+	display: none;
+}
+
+/*=============================================*/
 /* Use icomoon in the dashboard
 /*=============================================*/
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?z67cuf');
-  src:  url('fonts/icomoon.eot?z67cuf#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?z67cuf') format('truetype'),
-    url('fonts/icomoon.woff?z67cuf') format('woff'),
-    url('fonts/icomoon.svg?z67cuf#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?oe99s0');
+  src:  url('fonts/icomoon.eot?oe99s0#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?oe99s0') format('truetype'),
+    url('fonts/icomoon.woff?oe99s0') format('woff'),
+    url('fonts/icomoon.svg?oe99s0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

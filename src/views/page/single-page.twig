@@ -1,30 +1,12 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% set with_sidebar = no_sidebar ? 'text-nosidebar' : '' %}
-  {% set slim_sidebar = slim_sidebar ? 'slimSidebar' : '' %}
-
-  {% include 'components/banner.twig' %}
-  <div class="container {{'SinglePage'|modifiers("#{sidebar_position}, #{slim_sidebar}")}}">
-    <div class="SinglePage-content content-body">
-      {% if acf.teaser %}
-        <h3 class="Lead">{{acf.teaser}}</h3>
-      {% endif %}
-      {% include 'layout/base.twig' %}
-    </div>
-
-    {% if not no_sidebar %}
-      <div class="TOC" data-component="toc">
-        <svg aria-hidden="true" role="presentation" title="Select Language">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#toc"></use>
-        </svg><span class="caps brand">{{breadcrumb|first.title}}</span>
-      </div>
-      <div class="SinglePage-sidebar Sidebar">
-        {% if hierarchy %}
-          <ul class="List Sidebar-toc">{{hierarchy}}</ul>
-        {% endif %}
-        {% include 'layout/sidebar-base.twig' %}
-      </div>
+<div class="SinglePage container">
+  <div class="SinglePage-content content-body">
+    {% if acf.teaser %}
+      <h3 class="h3 teaser">{{acf.teaser}}</h3>
     {% endif %}
+    {% include 'layout/base.twig' %}
   </div>
+</div>
 {% endblock %}

@@ -2,7 +2,9 @@ language: node_js
 node_js:
 - '5.11'
 addons:
-  ssh_known_hosts: my.host.name.com
+  ssh_known_hosts:
+  - new.sdh.or.id
+  - 139.59.216.194
 before_install:
 - bash _travis/install.sh
 script:
@@ -10,4 +12,4 @@ script:
 after_success:
 - bash _travis/deploy.sh
 notifications:
-  webhooks: https://hooks.zapier.com/hooks/catch/12345
+  webhooks: https://hooks.zapier.com/hooks/catch/1969538/hin54e/

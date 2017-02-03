@@ -1,0 +1,87 @@
+{
+    "key": "group_574d3d19743ad",
+    "title": "Accordion",
+    "fields": [
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_574d3e59b8e6e",
+                    "label": "Head",
+                    "name": "head",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "clone": [
+                        "group_57cc2c8823ce8"
+                    ],
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "display": "seamless",
+                    "layout": "block",
+                    "key": "field_574d3e71b8e6f",
+                    "label": "Body",
+                    "name": "body",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Accordion Item",
+            "collapsed": "field_574d3e59b8e6e",
+            "key": "field_574d3dbcb8e6d",
+            "label": "",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Accordion",
+    "modified": 1486024456
+}

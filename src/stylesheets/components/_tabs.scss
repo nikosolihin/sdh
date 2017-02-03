@@ -26,22 +26,21 @@
     }
   }
   &-tab {
-    @include hover($gray-light, $brand-primary);
+    // @include hover($orange, $navy);
     @include no-outline;
     float: left;
-    padding: 0 $single $threefourth;∑
+    padding: 0 $single $threefourth;
     &.selected,
     &[aria-selected = "true"] {
-      color: $brand-primary;
       font-weight: $font-weight-bold;
       position: relative;
       &::after {
         content: "";
         display: block;
         position: absolute;
-        height: 2px;
+        height: 3px;
         width: 100%;
-        background-color: lighten($brand-primary,3%);
+        background-color: $yellow;
         left: 0;
         bottom: 0;
       }

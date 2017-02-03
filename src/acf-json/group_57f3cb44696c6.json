@@ -15,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<p class=\"essentials-description\">This is a list of ongoing services associated with the Southeast Asia Bible Seminary website. Note: passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
+            "message": "<p class=\"essentials-description\">This is a list of ongoing services associated with the Sekolah Dian Harapan website. Note: passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
             "new_lines": "",
             "esc_html": 0
         },
         {
             "key": "field_5770fe3c3c908",
-            "label": "Flickr",
+            "label": "Google Photos",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -32,13 +32,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Image Hosting<\/td>\r\n      <td>Free storage up to 1 TB<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.flickr.com\/signin\">https:\/\/www.flickr.com\/signin<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n      <td>n\/a<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Image Hosting<\/td>\r\n      <td>Unlimited storage<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.photos.google.com\">https:\/\/www.photos.google.com<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
         {
             "key": "field_5770fe523c909",
-            "label": "DigitalOcean",
+            "label": "Digital Ocean",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -49,7 +49,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n      <td>n\/a<\/td>\r\n    <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: seabs.ac.id<br>\r\n        Static IP: 188.166.198.34\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: sdh.or.id<br>\r\n        Static IP: 139.59.216.194\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -66,7 +66,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Website Events<\/td>\r\n      <td>The events on the ID, EN and ZH sites are all under this Google account, just on different calendars.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/accounts.google.com\">https:\/\/accounts.google.com<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n      <td>n\/a<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Website Events<\/td>\r\n      <td>The events for each campus are all under this Google account, just on different calendars.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/accounts.google.com\">https:\/\/accounts.google.com<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -83,7 +83,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Analytics<\/td>\r\n      <td>Typically for multi-language sites, we separate the tracking data into different reporting views for each language (Indonesian, English, and Chinese).<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/analytics.google.com\/analytics\/web\/\">https:\/\/analytics.google.com\/analytics\/web\/<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Analytics<\/td>\r\n      <td>Typically for multi-language sites, we separate the tracking data into different reporting views for each language (English, Indonesian).<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/analytics.google.com\/analytics\/web\/\">https:\/\/analytics.google.com\/analytics\/web\/<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -100,24 +100,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Search<\/td>\r\n      <td>Customize the behavior of the website's search functionality such as adding new refinement labels. Current search labels: news, events and media.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cse.google.com\/cse\/all\">https:\/\/cse.google.com\/cse\/all<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
-            "key": "field_580226c2006e1",
-            "label": "Cloudflare",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>CDN & Security<\/td>\r\n      <td>Provides more caching and security. Change DNS records here.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.cloudflare.com\/a\/login\">https:\/\/www.cloudflare.com\/a\/login<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Search<\/td>\r\n      <td>Customize the behavior of the website's search functionality such as adding new refinement labels. Current search labels: news, events.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cse.google.com\/cse\/all\">https:\/\/cse.google.com\/cse\/all<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -134,7 +117,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>For everyting that Google crawls (SEO)<\/td>\r\n      <td>Site ownership, crawl errrors, stats, initiate re-crawl, sitemaps submission, search analytics, etc. <br>\r\n      <a href=\"https:\/\/support.google.com\/webmasters\/answer\/6258314?utm_source=wnc_376106&utm_medium=gamma&utm_campaign=wnc_376106&utm_content=msg_743502&hl=en\">Learn more<\/a>\r\n      <\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.google.com\/webmasters\/tools\/home\">https:\/\/www.google.com\/webmasters\/tools\/home<\/a>\r\n        <br>\r\n        Username: <em>seabs.saat<\/em>\r\n        <br>\r\n        Password: <em>$Da4RTkN3S<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>For everyting that Google crawls (SEO)<\/td>\r\n      <td>Site ownership, crawl errrors, stats, initiate re-crawl, sitemaps submission, search analytics, etc. <br>\r\n      <a href=\"https:\/\/support.google.com\/webmasters\/answer\/6258314?utm_source=wnc_376106&utm_medium=gamma&utm_campaign=wnc_376106&utm_content=msg_743502&hl=en\">Learn more<\/a>\r\n      <\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.google.com\/webmasters\/tools\/home\">https:\/\/www.google.com\/webmasters\/tools\/home<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         }

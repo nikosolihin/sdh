@@ -1,11 +1,10 @@
 .Announcement {
-  @include white;
   position: fixed;
   top: 0;
   left: 0;
   z-index: $zindex-announcement;
   min-width: 100%;
-  background-color: $brand-highlight;
+  background-color: $navy;
   padding: .63rem 0;
   opacity: 1;
   visibility: visible;
@@ -19,18 +18,11 @@
   }
 
   &-message {
-    // flex: 1 1 auto;
-    font-size: .95rem;
     line-height: 1.275;
-    margin-bottom: 0;
     padding: 0 $single;
   }
   &-button {
     flex: 0 0 auto;
-    margin: 0;
-    background-color: $brand-secondary;
-    font-size: $font-size-h7;
-    text-transform: capitalize;
     margin-left: $single;
   }
   &-close {

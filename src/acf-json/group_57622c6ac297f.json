@@ -1,0 +1,46 @@
+{
+    "key": "group_57622c6ac297f",
+    "title": "Spacer",
+    "fields": [
+        {
+            "default_value": 1,
+            "min": 1,
+            "max": "",
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_57622c6ac8aae",
+            "label": "Multiplier",
+            "name": "spacer",
+            "type": "number",
+            "instructions": "This is vertical spacing. Increase the multiplier to get a taller spacing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "=="
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Spacer",
+    "modified": 1486019100
+}

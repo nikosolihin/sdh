@@ -4,7 +4,7 @@
   margin: $single 0;
   border-collapse: collapse;
   background-color: transparent;
-  font-size: .9rem;
+  // font-size: .9rem;
 
   @at-root .Tabs #{&} {
     margin-top: 0;
@@ -13,9 +13,7 @@
   th {
     // Hide on mobile, switch to horizontal view
     display: none;
-    @include caps;
-    font-size: $font-size-h7;
-    color: #999;
+    // font-size: $font-size-h7;
     border-bottom: 1px solid #eee;
   }
   td {
@@ -30,7 +28,7 @@
   }
   th, td {
     text-align: left;
-    border-top: 3px solid #eee;
+    border-top: 3px solid $yellow;
     padding: $quarter;
     @include from(sm) {
       display: table-cell;

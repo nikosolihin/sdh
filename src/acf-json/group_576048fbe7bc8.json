@@ -1,0 +1,97 @@
+{
+    "key": "group_576048fbe7bc8",
+    "title": "Maps",
+    "fields": [
+        {
+            "height": "",
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "key": "field_576048fbed8e9",
+            "label": "",
+            "name": "map",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "Show an info bubble for the pinned location?",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_5761764a3565e",
+            "label": "",
+            "name": "with_info",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "standard_buttons": [
+                "bold",
+                "italic",
+                "underline",
+                "removeFormat"
+            ],
+            "other_options": [
+                "disableDoubleReturn",
+                "disableExtraSpaces"
+            ],
+            "placeholder": "",
+            "default_value": "",
+            "key": "field_576176af3565f",
+            "label": "Bubble Content",
+            "name": "info",
+            "type": "medium_editor",
+            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph. Highlight text for formatting options.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5761764a3565e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "custom_buttons": "",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Maps",
+    "modified": 1486047835
+}

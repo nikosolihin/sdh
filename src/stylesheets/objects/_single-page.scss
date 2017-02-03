@@ -1,83 +1,13 @@
 .SinglePage {
-  box: vertical;
-  overflow: hidden;
-  @include at(sm) {
-    // Pad sides on phablet
-    padding: 0 $single*3;
-  }
-  @include at(md) {
-    // and tablet
-    padding: 0 $single*5;
-  }
-  @include from(lg) {
-    box: horizontal;
+  box: horizontal;
+  padding: $single*5 0 $single*7;
+
+  &-share {
+    width: 10%;
+    padding: $single*1.5 $single*2.5 0 0;
   }
 
-  &-sidebar {
-    order: 1;
-  }
   &-content {
-    width: 100%;
-    order: 2;
-    .Lead {
-      margin-bottom: $single*2.5;
-    }
-    > .container {
-      padding: 0;
-    }
-    @include to(md) {
-      margin: $single*2 auto 0;
-    }
-  }
-
-  // Sidebar alignments for desktop up
-  @include from(lg) {
-    &--leftSidebar {
-      .SinglePage-sidebar {
-        order: 1;
-      }
-      .SinglePage-content {
-        order: 2;
-        @include from(lg) {
-          padding-left: $single*3;
-        }
-        @include from(xl) {
-          padding-left: $single*4;
-        }
-        @include from(xxl) {
-          padding-left: $single*5;
-        }
-      }
-    }
-
-    &--rightSidebar {
-      .SinglePage-sidebar {
-        order: 2;
-      }
-      .SinglePage-content {
-        order: 1;
-        @include from(lg) {
-          padding-right: $single*3;
-        }
-        @include from(xl) {
-          padding-right: $single*4;
-        }
-        @include from(xxl) {
-          padding-right: $single*5;
-        }
-      }
-    }
-
-    &--slimSidebar {
-      .SinglePage-content {
-        order: 1;
-        flex: 1 1 auto;
-        padding-right: $single*3;
-      }
-      .SinglePage-sidebar {
-        width: 24%;
-        order: 2;
-      }
-    }
+    flex: 1;
   }
 }

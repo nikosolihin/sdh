@@ -3,11 +3,7 @@
   {% if section.acf_fc_layout == 'one_column' %}
     {% include 'layout/columns.twig' with {
       'column': 'one',
-      'landingCallout': section.is_section_callout,
-      'landingCalloutTheme': section.section_callout_theme,
-      'landingCalloutBg': section.section_callout_bg_image,
-      'full': section.full_components,
-      'fullCallout': section.right_column_options
+      'full': section.full.components
     } %}
 
   {% elseif section.acf_fc_layout == 'two_columns' %}

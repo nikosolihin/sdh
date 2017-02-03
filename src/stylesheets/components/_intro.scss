@@ -1,0 +1,17 @@
+.Intro {
+  &-heading {
+    position: relative;
+    padding-bottom: $single*1.75;
+    margin-bottom: $single*3;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 2.75rem;
+      background-color: $yellow;
+    }
+  }
+}

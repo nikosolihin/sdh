@@ -1,89 +1,70 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% set layout = acf.landing_layout %}
 
-  {% if acf.teaser %}
-    <div class="container container--text-nosidebar landing-page-teaser">
-      <h5 class="tag brand center">{{post.title}}</h5>
-      <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
+{% if acf.position == 'before' %}
+  <div class="landing-page-content container container--spacedBottom">
+    {% include 'layout/base.twig' %}
+  </div>
+{% endif %}
+
+<div class="LandingPage">
+  <div class="LandingPage-banner" style="background-image: url(https://www.choate.edu/uploaded/images/Redesign_2016/main%20nav/nav-academics.jpg)">
+    <div class="LandingPage-bannerCopy">
+      <h1 class="h2 light navy">Teaching and Learning</h1>
+      <p class="h4 normal body">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
     </div>
-  {% endif %}
 
-  {% if acf.position == 'before' %}
-    <div class="landing-page-content container container--spacedBottom">
-      {% include 'layout/base.twig' %}
-    </div>
-  {% endif %}
-
-  {% if layout == "extensive" %}
-    {# Card Layout #}
-    <section class="landing-page container">
-      {% for child in children %}
-        {% if child.image %}
-          {# Has image, render. If not, skip #}
-          <div class="Solo">
-            <a href="{{child.link}}" class="Solo-image lazyload" data-bgset="{{child.image[medium]}} 1x, {{child.image[large]}} 2x">
-              <h3>{{child.title}}</h3>
-              {% if child.teaser %}
-                <p>{{child.teaser}}</p>
-              {% endif %}
-            </a>
-            {% if child.children %}
-              <div class="Solo-content">
-                {% for grandchild in child.children %}
-                  <a href="{{grandchild.link}}" class="h5 Lead">{{grandchild.title}}</a>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </section>
-  {% else %}
-    {# Grid Layout #}
-    <section class="landing-page--grid container">
-      {% for boxes in children|batch(5) %}
-        <div class="Twin">
-          {% for box in boxes %}
-            {% if loop.first %}
-              <div class="Twin-box Twin-box--popout lazyload" data-bgset="
-                {{box.image[xlarge]}} [(min-width: {{lg}})] |
-                {{box.image[large]}} [(min-width: {{md}})] |
-                {{box.image[medium]}} [(min-width: {{sm}})] |
-                {{box.image[small]}}">
-                <div class="Twin-content">
-                  <h3 class="h2 white">{{box.title|title}}</h3>
-                  {% if box.teaser|trim is not empty %}
-                    <p class="white">{{box.teaser|trim}}</p>
-                  {% endif %}
-                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
-                </div>
-              </div>
-              <div class="Twin-frame Twin">
-            {% else %}
-              <div class="Twin-box lazyload" data-bgset="
-              {{box.image[large]}} [(min-width: {{md}})] |
-              {{box.image[medium]}} [(min-width: {{sm}})] |
-              {{box.image[small]}}">
-                <div class="Twin-content">
-                  <h3 class="Lead white">{{box.title|title}}</h3>
-                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
-                </div>
-              </div>
-            {% endif %}
-            {% if loop.last %}
-              </div>
-            {% endif %}
-          {% endfor %}
+  </div>
+  <div class="LandingPage-content">
+    <div class="LandingPage-item">
+      <a href="" class="LandingPage-itemBody LandingPage-itemBody--white">
+        <div class="flex-wrapper">
+          <h2 class="h4">Bakery & Local Produce</h2>
+          <p class="h5 normal">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+          <div class="Button Button--small">Read More</div>
         </div>
-      {% endfor %}
-    </section>
-  {% endif %}
-
-  {% if acf.position == 'after' %}
-    <div class="landing-page-content container container--spacedTop">
-      {% include 'layout/base.twig' %}
+        <div class="LandingPage-itemBodyIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+      </a>
+      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/Redesign_2016/heros/hero-athletics-girls-hockey.jpg);">
+      </div>
     </div>
-  {% endif %}
+    <div class="LandingPage-item--alt">
+      <a href="" class="LandingPage-itemBody LandingPage-itemBody--white">
+        <div class="flex-wrapper">
+          <h2 class="h4 navy">Application Process</h2>
+          <p class="h5 normal body">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at.</p>
+          <div href="" class="Button Button--small">Read More</div>
+        </div>
+        <div class="LandingPage-itemBodyIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+      </a>
+      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/About/Matriculation_089.jpg)">
+      </div>
+    </div>
+    <div class="LandingPage-item">
+      <a href="" class="LandingPage-itemBody LandingPage-itemBody--navy">
+        <div class="flex-wrapper">
+          <h2 class="h4">Application Process</h2>
+          <p class="h5 normal">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque </p>
+          <div href="" class="Button Button--small">Read More</div>
+        </div>
+        <div class="LandingPage-itemBodyIcon">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+      </a>
+      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/About/Matriculation_089.jpg)">
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -1,0 +1,59 @@
+{
+    "key": "group_574dcc3bb7c20",
+    "title": "Text Editor",
+    "fields": [
+        {
+            "standard_buttons": [
+                "bold",
+                "italic",
+                "underline",
+                "anchor",
+                "quote",
+                "orderedlist",
+                "unorderedlist",
+                "justifyLeft",
+                "justifyCenter",
+                "justifyRight",
+                "removeFormat"
+            ],
+            "other_options": [
+                "disableDoubleReturn",
+                "disableExtraSpaces"
+            ],
+            "placeholder": "",
+            "default_value": "",
+            "key": "field_574dcc566c5f8",
+            "label": "",
+            "name": "editor",
+            "type": "medium_editor",
+            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph. Highlight text for formatting options.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "custom_buttons": "",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Text Editor",
+    "modified": 1486092518
+}

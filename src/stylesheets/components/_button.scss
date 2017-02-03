@@ -6,7 +6,7 @@
   background-color: $button-bg;
   border: 2px solid $button-bg;
   transition: all .1s ease-in-out;
-  text: $white $font-weight-bold left none $font-size-h7 $line-height;
+  text: $white $font-weight-bold left none $font-size-h6 $line-height;
 
   // Pseudo
   &:hover {
@@ -14,6 +14,10 @@
   }
 
   // Style
+  &--navy {
+    background-color: $navy;
+    border: 2px solid $navy;
+  }
   &--block {
     width: 100%;
     text-align: center;
@@ -33,7 +37,8 @@
     border: 2px solid $white;
     background-color: transparent;
     &:hover {
-      background-color: transparent;
+      border: 2px solid $orange;
+      background-color: $orange;
     }
   }
   // &--outline-light {
@@ -78,7 +83,7 @@
 
   // Sizes
   &--small {
-    padding: .65rem $single*1.1;
+    padding: $quarter $threefourth;
   }
   &--large {
     padding: $single $single*1.75;

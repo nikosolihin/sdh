@@ -1,0 +1,86 @@
+{
+    "key": "group_57623550ee5a3",
+    "title": "Tabs",
+    "fields": [
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_57ad9578fe7b4",
+                    "label": "Tab Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "clone": [
+                        "group_57ada5ceaa1e9"
+                    ],
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "display": "seamless",
+                    "layout": "block",
+                    "key": "field_57ada5a2db7a7",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Tab",
+            "collapsed": "field_57ad9578fe7b4",
+            "key": "field_57ad952ffe7b3",
+            "label": "",
+            "name": "tabs",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "=="
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Tabs",
+    "modified": 1486024893
+}

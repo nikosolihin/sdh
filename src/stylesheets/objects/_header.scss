@@ -46,11 +46,13 @@
   }
 
   &-languages {
+    @include right-slant;
     background-color: #26427C;
     cursor: pointer;
     box: horizontal middle space-between;
     size: 100%;
-    padding: 0 $single*1.5;
+    padding-left: $single*1.5;
+    padding-right: $half;
     svg:first-child { // Globe
       size: 20px;
     }
@@ -73,11 +75,12 @@
   }
 
   &-search {
+    @include left-slant;
     box: horizontal middle center;
     transition: background-color .15s ease-in-out;
     color: white;
     background-color: $orange;
-    padding-left: $single*1.5;
+    padding-left: $quarter;
     padding-right: $single*2;
     margin-left: $single*3;
     svg {

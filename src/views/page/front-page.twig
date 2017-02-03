@@ -1,6 +1,15 @@
 {% extends "base.twig" %}
 
 {% block before_content %}
+<div class="Banner" style="background-image: url(https://static.mailchimp.com/web/see-ya-later/snap@2x.jpg);">
+  <div class="Banner-container container">
+    <h2 class="Banner-copy white light right">
+      <span class="h6 block caps bold white spaced right">Teaching and Learning</span>
+      Amazing teachers and a cutting-edge curriculum transform how students learn.
+    </h2>
+  </div>
+</div>
+
 <nav class="Subnav" role="navigation">
   <ul class="Subnav-list List List--inline">
     <li><a href="" class="Subnav-link h6 medium">Students</a></li>
@@ -15,9 +24,27 @@
 {% endblock %}
 
 {% block content %}
-  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+<div class="SinglePage container">
+  <div class="SinglePage-share">
+    {% include 'components/social-share.twig' %}
+  </div>
+  <div class="SinglePage-content content-body">
+    <div class="Intro">
+      <h1 class="Intro-heading h2 light navy">This is a page title</h1>
+    </div>
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+  </div>
+  <div class="SinglePage-sidebar Sidebar">
+    <div class="Toc">
+      <h5 class="h7 caps spaced navy bold">In This Section</h5>
+      <ul class="List">
+        <li><a href="" class="Toc-link h6 medium">Core Values</a></li>
+        <li><a href="" class="Toc-link h6 medium">Essential Characteristics</a></li>
+        <li><a href="" class="Toc-link h6 medium">Who to Contact</a></li>
+        <li><a href="" class="Toc-link h6 medium">Direction to SDH</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -1,53 +1,38 @@
-// .Lead {
-//   color: $gray-dark;
-//   font-weight: $font-weight-light;
-//   letter-spacing: .4px;
-//
-//   &--intro {
-//     margin-top: 0;
-//   }
-//   &--spaced {
-//     margin-top: $single*4;
-//     margin-bottom: $single*5.5;
-//   }
-//   &--section {
-//     margin-bottom: $single*2.5;
-//     letter-spacing: .4px;
-//   }
-//   &--landing {
-//     margin: $single 0 $single*6;
-//     font-size: 1.8rem;
-//     line-height: 1.45;
-//   }
-//   &--body {
-//     letter-spacing: .3px;
-//   }
-// }
-//
-
 .white {
   @include white;
+}
+.body {
+  color: $body-color;
 }
 .yellow {
   color: $yellow;
 }
+.orange {
+  color: $orange;
+}
 .navy {
   color: $navy;
+}
+.blue {
+  color: $blue;
+}
+.sky {
+  color: $sky;
 }
 .faint {
   color: $gray-lighter;
 }
-
 .caps {
   text-transform: uppercase;
 }
-
 .spaced {
   letter-spacing: 2.2px;
 }
-
 .center {
   text-align: center;
+}
+.right {
+  text-align: right;
 }
 //
 // .tag {
@@ -86,29 +71,43 @@
 //     margin-right: 0;
 //   }
 // }
-//
-// .content-body {
-//   h2 {
-//     color: $brand-primary;
-//     margin-bottom: $single;
-//   }
-//   p {
-//     margin-bottom: $single*1.5;
-//     line-height: 1.6875;
-//     a[href]:not([class]) {
-//       @include hover($brand-primary);
-//       @include underlink;
-//       font-weight: $font-weight-medium;
-//     }
-//   }
-//   li:not([class]) {
-//     line-height: 1.6875;
-//     margin-top: $threefourth;
-//   }
-//   ul ul > li:not([class]),
-//   ol ol > li:not([class]),
-//   ul ol > li:not([class]),
-//   ol ul > li:not([class]) {
-//     margin-top: $half;
-//   }
-// }
+
+.content-body {
+  font-size: $font-size-h5;
+  padding: $single*1.25;
+  @include from($desktop) {
+    font-size: $font-size-h4;
+    padding: 0;
+  }
+  h2 {
+    color: $navy;
+    margin-bottom: $single;
+  }
+  // p {
+  //   margin-bottom: $single*1.5;
+  //   line-height: 1.6875;
+  //   a[href]:not([class]) {
+  //     @include hover($navy);
+  //     @include underlink;
+  //     font-weight: $font-weight-medium;
+  //   }
+  // }
+  // li:not([class]) {
+  //   line-height: 1.6875;
+  //   margin-top: $threefourth;
+  // }
+  // ul ul > li:not([class]),
+  // ol ol > li:not([class]),
+  // ul ol > li:not([class]),
+  // ol ul > li:not([class]) {
+  //   margin-top: $half;
+  // }
+}
+
+.teaser {
+  margin-bottom: $single*1.5;
+  font-size: 1.35rem;
+  @include from($desktop) {
+    font-size: 1.6rem;
+  }
+}
