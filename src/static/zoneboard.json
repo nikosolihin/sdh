@@ -1,0 +1,137 @@
+{
+  "logo_url":"zoneboard.svg",
+  "bricks":[
+    {
+      "label":"Home Page",
+      "icon":"fa-home",
+      "links":[
+        {
+          "label":"Scheduled Feb 24, 2017",
+          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340715552"
+        }
+      ]
+    },
+    {
+      "label":"Site-Wide",
+      "icon":"fa-sitemap",
+      "links":[
+        {
+          "label":"Modify basic organization info",
+          "url":"/wp-admin/admin.php?page=settings"
+        },
+        {
+          "label":"Change how page error is displayed",
+          "url":"/wp-admin/admin.php?page=settings"
+        },
+        {
+          "label":"Edit main menu items",
+          "url":"/wp-admin/admin.php?page=header-footer"
+        },
+        {
+          "label":"Edit footer items",
+          "url":"/wp-admin/admin.php?page=header-footer"
+        },
+        {
+          "label":"Setup a sitewide announcement",
+          "url":"/wp-admin/admin.php?page=acf-options-site-announcement"
+        },
+        {
+          "label":"Change the Call-to-Action blurb",
+          "url":"/wp-admin/admin.php?page=acf-options-call-to-action"
+        }
+      ]
+    },
+    {
+      "label":"Pages",
+      "icon":"fa-file-o",
+      "links":[
+        {
+          "label":"See all pages",
+          "url":"/wp-admin/edit.php?post_type=page"
+        },
+        {
+          "label":"Add a new page",
+          "url":"/wp-admin/post-new.php?post_type=page"
+        },
+        {
+          "label":"See all blocks",
+          "url":"/wp-admin/edit.php?post_type=block"
+        },
+        {
+          "label":"Create a new block",
+          "url":"/wp-admin/post-new.php?post_type=block"
+        }
+      ]
+    },
+    {
+      "label":"Events",
+      "icon":"fa-calendar",
+      "links":[
+        {
+          "label":"Scheduled Feb 17, 2017",
+          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340718053"
+        }
+      ]
+    },
+    {
+      "label":"News",
+      "icon":"fa-bullhorn",
+      "links":[
+        {
+          "label":"Scheduled Feb 17, 2017",
+          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340718053"
+        }
+      ]
+    },
+    {
+      "label":"Campuses",
+      "icon":"fa-map-marker",
+      "links":[
+        {
+          "label":"Scheduled Feb 10, 2017",
+          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340713883"
+        }
+      ]
+    },
+    {
+      "label":"Social Presence",
+      "icon":"fa-child",
+      "links":[
+        {
+          "label":"Change social media pages/URL",
+          "url":"/wp-admin/admin.php?page=settings"
+        },
+        {
+          "label":"See SDH Facebook Insights Analytics",
+          "url":"https://www.facebook.com/insights"
+        },
+        {
+          "label":"Debug Facebook related issues",
+          "url":"https://developers.facebook.com/tools/debug/sharing/"
+        },
+        {
+          "label":"See SDH Twitter analytics",
+          "url":"https://analytics.twitter.com/about"
+        },
+        {
+          "label":"Debug Twitter related issues",
+          "url":"https://cards-dev.twitter.com/validator"
+        }
+      ]
+    },
+    {
+      "label":"Tech Info",
+      "icon":"fa-key",
+      "links":[
+        {
+          "label":"See external services the website depends on",
+          "url":"/wp-admin/admin.php?page=service-details"
+        },
+        {
+          "label":"Setup and modify the website search engines",
+          "url":"/wp-admin/admin.php?page=settings"
+        }
+      ]
+    }
+  ]
+}

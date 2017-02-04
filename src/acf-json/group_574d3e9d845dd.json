@@ -1,0 +1,526 @@
+{
+    "key": "group_574d3e9d845dd",
+    "title": "Landing Page Builder",
+    "fields": [
+        {
+            "key": "field_574d3ecd72fc9",
+            "label": "Start by adding a section",
+            "name": "sections",
+            "type": "flexible_content",
+            "instructions": "Each individual section is a <strong><em>horizontal row<\/em><\/strong> with varying number of columns in it. In each column, you may add different kinds of <strong><em>modules<\/em><\/strong> (Text editor, Cards, Buttons, Accordions, etc). If you need more screen space during editing, click the <strong><em>Screen Options<\/em><\/strong> button in the menu bar and toggle the <em>1 column<\/em> display layout. You may also collapse the Wordpress sidebar on the left.<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-layout-builder"
+            },
+            "button_label": "Add a section",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "574d44caa3371",
+                    "name": "one_column",
+                    "label": "Full Width",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57a49c29a2aa7",
+                            "label": "Components",
+                            "name": "full",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57720e120468f",
+                            "label": "Section Options",
+                            "name": "is_section_callout",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is a callout section (spans full width)",
+                            "default_value": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57a4779918275",
+                    "name": "two_columns",
+                    "label": "2 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57a49c6da2aa9",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a49cde5755c",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4779918277",
+                            "label": "Section Options",
+                            "name": "is_section_callout",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is a callout section (spans full width)",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_5809d53e43bdd",
+                            "label": "Theme",
+                            "name": "section_callout_theme",
+                            "type": "radio",
+                            "instructions": "Dark theme is white text over opaque black. Light theme is dark text over light fill. Red theme is white text over the school's red color. The fill will extends to the edge of the image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4779918277",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "red": "Red",
+                                "transparent": "Transparent"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5809d54443bde",
+                            "label": "Include a background?",
+                            "name": "section_callout_bg",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4779918277",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57bd72b2e0e2c",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57a4c2970c85c",
+                    "name": "three_columns",
+                    "label": "3 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57a4c2980c85d",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2a10c860",
+                            "label": "Components",
+                            "name": "mid",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2980c85e",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2980c85f",
+                            "label": "Section Options",
+                            "name": "is_section_callout",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is a callout section (spans full width)",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_5809bc3c10fc3",
+                            "label": "Theme",
+                            "name": "section_callout_theme",
+                            "type": "radio",
+                            "instructions": "Dark theme is white text over opaque black. Light theme is dark text over light fill. Red theme is white text over the school's red color. The fill will extends to the edge of the image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2980c85f",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "red": "Red",
+                                "transparent": "Transparent"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5809bbba10fc1",
+                            "label": "Include a background?",
+                            "name": "section_callout_bg",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2980c85f",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57bd72b2e0e2c",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57a4c2d74efe4",
+                    "name": "four_columns",
+                    "label": "4 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57a4c2d74efe5",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2d74efe6",
+                            "label": "Components",
+                            "name": "mid_left",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2e34efe9",
+                            "label": "Components",
+                            "name": "mid_right",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2d74efe7",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57a4c2d74efe8",
+                            "label": "Section Options",
+                            "name": "is_section_callout",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is a callout section (spans full width)",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_580f84347c5e9",
+                            "label": "Theme",
+                            "name": "section_callout_theme",
+                            "type": "radio",
+                            "instructions": "Dark theme is white text over opaque black. Light theme is dark text over light fill. Red theme is white text over the school's red color. The fill will extends to the edge of the image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2d74efe8",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "red": "Red",
+                                "transparent": "Transparent"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_580f843b7c5ea",
+                            "label": "Include a background?",
+                            "name": "section_callout_bg",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2d74efe8",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57bd72b2e0e2c",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "landing-page.php"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Landing Page Builder",
+    "modified": 1477411948
+}

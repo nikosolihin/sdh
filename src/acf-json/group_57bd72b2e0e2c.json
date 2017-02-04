@@ -1,0 +1,127 @@
+{
+    "key": "group_57bd72b2e0e2c",
+    "title": "Background",
+    "fields": [
+        {
+            "key": "field_57bd72f5f6804",
+            "label": "Message",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "<strong>Important:<\/strong> We highly suggest optimizing your images to deliver a performant website experience. After Phothoshop, run your .jpeg and .png files through tools like <strong><a href=\"https:\/\/imageoptim.com\/mac\" target=\"_blank\">ImageOptim<\/a><\/strong> or <strong><a href=\"https:\/\/imageoptim.com\/mozjpeg\" target=\"_blank\">MozJPEG<\/a><\/strong> before uploading. Learn more about image optimization <strong><a href=\"http:\/\/designingforperformance.com\/optimizing-images\/\" target=\"_blank\">here.<\/a><\/strong>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57bd72dff6803",
+            "label": "Image",
+            "name": "image",
+            "type": "flickr_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_q",
+                "url_t",
+                "url_n",
+                "url_z",
+                "url_c",
+                "url_l",
+                "url_h",
+                "url_o"
+            ],
+            "flickr_extras": [
+                "description",
+                "o_dims"
+            ]
+        },
+        {
+            "key": "field_57740634e1728",
+            "label": "Vertical Alignment",
+            "name": "alignment",
+            "type": "radio",
+            "instructions": "Banner images will automatically try to span the current user's browser width. However, sometimes this process causes images to misalign vertically. Use this to correct that. <strong>NOTE: This setting applies for banner images only, not share images.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "middle": "Middle",
+                "bottom": "Bottom",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "middle",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_577408789163a",
+            "label": "Custom Value",
+            "name": "custom_alignment",
+            "type": "number",
+            "instructions": "Enter a custom percentage value. 0% being the topmost and 100% bottom of the y-axis.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57740634e1728",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "min": 1,
+            "max": 100,
+            "step": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Background",
+    "modified": 1476772221
+}

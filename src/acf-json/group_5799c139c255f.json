@@ -1,0 +1,46 @@
+{
+    "key": "group_5799c139c255f",
+    "title": "Multiple Blocks",
+    "fields": [
+        {
+            "key": "field_5799c139cb390",
+            "label": "",
+            "name": "blocks",
+            "type": "post_object",
+            "instructions": "Click <a href=\"post-new.php?post_type=block\">here<\/a> to create a new block, or the <strong>Blocks<\/strong> button in the left sidebar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "block"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Multiple Blocks",
+    "modified": 1474887559
+}

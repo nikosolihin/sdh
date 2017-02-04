@@ -29,13 +29,16 @@
   <link rel="dns-prefetch" href="//www.google-analytics.com">
 
   {# Favicons #}
-  {# include 'modules/favicons.twig' #}
+  {% include 'modules/favicons.twig' %}
 
   {# Social Tags #}
-  {# include 'modules/social-tags.twig' #}
+  {% include 'modules/social-tags.twig' %}
 
   {# SEO Tags #}
-  {# include 'modules/seo-tags.twig' #}
+  {% include 'modules/seo-tags.twig' %}
+
+  {# Critical FOFT With Data URI #}
+  {% include 'utility/foft.twig' %}
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

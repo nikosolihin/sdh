@@ -91,6 +91,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "fontfaceobserver": "^2.0.8",
     "normalize.css": "^5.0.0"
   }
 }

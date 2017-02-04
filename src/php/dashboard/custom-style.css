@@ -2,13 +2,13 @@
 /* Replace WP Login Logo and BG
 /*=============================================*/
 #login h1 a {
-	background-image: url('https://c2.staticflickr.com/6/5544/30400840815_1e8f9ff350_o.png');
+	background-image: url('https://lh3.googleusercontent.com/-B_PzAFJ3734/WJWg48rbeVI/AAAAAAAAAk0/ioNV5MyXSLACYCZ1hIt-6TTgoLZLQbRkQCHM/s400/sdh-logo-admin.png');
 	background-size: contain;
-	width: 120px;
-	height: 120px;
+	width: 219px;
+	height: 67px;
 }
 body.login.login-action-login {
-	background: url('https://c2.staticflickr.com/6/5751/30405449271_5a8ca632d3_o.jpg') no-repeat center center/cover;
+	background: url('https://lh3.googleusercontent.com/-8ZAjJHuSLEQ/WJWeCP2HdvI/AAAAAAAAAkc/ZcjaMGjGdUscORuj7rLh3aBHhZnsKZKAACHM/s1440/sdh-admin.jpg') no-repeat center center/cover;
 }
 
 /*=============================================*/

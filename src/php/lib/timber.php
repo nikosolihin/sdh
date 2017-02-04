@@ -228,9 +228,9 @@ class StarterSite extends TimberSite {
 			);
 		}
 
-		// // Locale
-		// $context['locale'] = get_locale();
-		//
+		// Locale
+		$context['locale'] = get_locale();
+
 		// // Languages
 		// $context['languages']['id'] = "https://seabs.ac.id/";
 		// $context['languages']['en'] = "https://seabs.ac.id/en";
@@ -284,7 +284,8 @@ class StarterSite extends TimberSite {
 		// Generate image url from Google Photos
 		//=============================================
 		$classfilter = new Twig_SimpleFilter('serveImage', function ($image, $size) {
-			return $image['base'] . 's1440/' . $image['title'];
+			$width = strval($size);
+			return $image['base'].'s'.$width.'/'.$image['title'];
 		});
 		$twig->addFilter($classfilter);
 
