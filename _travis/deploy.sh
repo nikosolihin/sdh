@@ -6,7 +6,6 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
   git init
 
   # Add remote destination and set email
-  git remote add deploy "deploy@host:/var/www/.git"
   git remote add deploy "webteam@139.59.216.194:/var/www/.git"
   git config user.name "Pipe & Pilcrow"
   git config user.email "hello@pipeandpilcrow.com"
