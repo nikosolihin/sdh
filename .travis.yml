@@ -12,4 +12,4 @@ script:
 after_success:
 - bash _travis/deploy.sh
 notifications:
-  # webhooks: https://hooks.zapier.com/hooks/catch/1969538/hin54e/
+  webhooks: https://hooks.zapier.com/hooks/catch/1969538/hin54e/
