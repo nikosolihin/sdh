@@ -4,105 +4,60 @@
   </div>
   <div class="Cta-buttons">
     <a href="" class="Button">Apply Now</a>
-    <a href="" class="Button Button--outline">Request a Brochure</a>
+    <a href="" class="Button Button--outline-light">Request a Brochure</a>
   </div>
 </section>
 
-<footer class="Footer" style="background-image: url({{footer_bg|serveImage(1440)}});">
-  <section class="Footer-primary container">
-    <div class="Footer-column">
-      <h5 class="h6 caps spaced navy medium center">Company</h5>
-      <ul class="List center">
-        <li><a href="" class="Footer-link h6 medium">FAQs</a></li>
-        <li><a href="" class="Footer-link h6 medium">Help</a></li>
-        <li><a href="" class="Footer-link h6 medium">Contact</a></li>
-        <li><a href="" class="Footer-link h6 medium">Terms</a></li>
-        <li><a href="" class="Footer-link h6 medium">Privacy</a></li>
-        <li><a href="" class="Footer-link h6 medium">Shop Themes</a></li>
-        <li><a href="" class="Footer-link h6 medium">Refunds</a></li>
-      </ul>
-    </div>
-    <div class="Footer-column">
-      <h5 class="h6 caps spaced navy medium center">Community</h5>
-      <ul class="List center">
-        <li><a href="" class="Footer-link h6 medium">Features</a></li>
-        <li><a href="" class="Footer-link h6 medium">Guides</a></li>
-        <li><a href="" class="Footer-link h6 medium">Theme Support</a></li>
-        <li><a href="" class="Footer-link h6 medium">StudioPress Blog</a></li>
-        <li><a href="" class="Footer-link h6 medium">Forums</a></li>
-        <li><a href="" class="Footer-link h6 medium">Showcase</a></li>
-      </ul>
-    </div>
-    <div class="Footer-column">
-      <h5 class="h6 caps spaced navy medium center">I'm a title</h5>
-      <ul class="List center">
-        <li><a href="" class="Footer-link h6 medium">Link One</a></li>
-        <li><a href="" class="Footer-link h6 medium">Link Two</a></li>
-        <li><a href="" class="Footer-link h6 medium">Link Three</a></li>
-      </ul>
-    </div>
-    <div class="Footer-column">
-      <h5 class="h6 caps spaced navy medium center">Head Office</h5>
+<footer class="Footer lazyload" data-bgset="{{footer_bg|serveImage(1440)}} [(min-width: {{xl}})] | {{footer_bg|serveImage(1440)}} [(min-width: {{lg}})] | {{footer_bg|serveImage(1440)}} [(min-width: {{md}})] |  {{footer_bg|serveImage(1440)}}">
 
-    </div>
-    <div class="Footer-column">
-      <h5 class="h6 caps spaced navy medium center">Connect</h5>
-      <ul class="List center">
-        <li><a href="" class="Footer-link h6 medium">Find Developers</a></li>
-        <li><a href="" class="Footer-link h6 medium">Affiliate Program</a></li>
-        <li><a href="" class="Footer-link h6 medium">Wordpress</a></li>
-        <li><a href="" class="Footer-link h6 medium">Twitter</a></li>
-        <li><a href="" class="Footer-link h6 medium">Facebook</a></li>
-      </ul>
-    </div>
+  <section class="Footer-primary container">
+    {% for parent in footer.parents %}
+      <div class="Footer-column">
+        <a href="{{parent.link}}" class="h6 caps spaced navy medium center">{{parent.title}}</a>
+        <ul class="List center">
+          {% for child in parent.children %}
+            <li><a href="{{child.link}}" class="Footer-link h6 medium">{{child.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
   </section>
 
-    <div class="Footer-secondary container">
-      <div class="Footer-essentials">
+  <div class="Footer-secondary container">
+    <div class="Footer-essentials">
+      {% if policy %}
         <a href="{{policy}}" class="Footer-secondaryLink">{{__('Privacy Policy', 'sdh')}}</a>
         <span class="Footer-dot">●</span>
-        {% if policy %}
-          <a href="{{policy}}" class="Footer-secondaryLink">{{__('Privacy Policy', 'sdh')}}</a>
-          <span class="Footer-dot">●</span>
+      {% endif %}
+
+      <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink">{{__('Feedback', 'sdh')}}</a>
+      <span class="Footer-dot">●</span>
+
+      <div class="Footer-languages">
+        <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
+        <a href="{{languages.en}}" class="Footer-secondaryLink Footer-secondaryLink--active">English</a>
+        {% if 'id' in languages.list %}
+          <a href="{{languages.id}}" class="Footer-secondaryLink">Indonesian</a>
         {% endif %}
-        <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink">{{__('Feedback', 'sdh')}}</a>
-        <span class="Footer-dot">●</span>
-        <div class="Footer-languages">
-          <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
-          <a href="{{languages.en}}" class="Footer-secondaryLink Footer-secondaryLink--active">English</a>
-          <a href="{{languages.en}}" class="Footer-secondaryLink">Indonesian</a>
-          {% if 'id' in languages.list %}
-            <a href="{{languages.id}}" class="Footer-secondaryLink">Indonesian</a>
-          {% endif %}
-        </div>
-      </div>
-      <div class="Footer-legal">
-        <span class="h7 medium faint">
-          Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
-        </span>
-      </div>
-      <div class="Footer-social">
-        <a href="" class="Footer-socialIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
-          </svg>
-        </a>
-        <a href="" class="Footer-socialIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-          </svg>
-        </a>
-        <a href="" class="Footer-socialIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
-          </svg>
-        </a>
-        <a href="" class="Footer-socialIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
-          </svg>
-        </a>
       </div>
     </div>
 
+    <div class="Footer-legal">
+      <span class="h7 medium faint">
+        Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
+      </span>
+    </div>
+
+    <div class="Footer-social">
+      {% for name, link in social %}
+        {% if link %}
+        <a href="{{link}}" class="Footer-socialIcon">
+          <svg aria-hidden="true" role="presentation" title="{{name}}">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+          </svg>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </footer>

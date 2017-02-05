@@ -87,14 +87,9 @@ a, a[href] {
 }
 
 // Default Links
-a[href]:not([class]) {
-  @include hover($headings-color, $link-hover-color);
-  display: inline;
-}
-
+a[href]:not([class]),
 a[href^="mailto"]:not([class]) {
-  @include hover($headings-color, $link-hover-color);
-  // @include underlink;
+  @include hover($link-color, $link-hover-color);
   display: inline;
 }
 

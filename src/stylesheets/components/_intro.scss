@@ -1,4 +1,6 @@
 .Intro {
+  padding: 0 $single*1.25;
+
   &-heading {
     position: relative;
     padding-bottom: $single*1.75;
@@ -12,6 +14,14 @@
       height: 3px;
       width: 2.75rem;
       background-color: $yellow;
+    }
+  }
+
+  &-teaser {
+    margin-bottom: $single*1.5;
+    font-size: 1.35rem;
+    @include from($desktop) {
+      font-size: 1.6rem;
     }
   }
 }

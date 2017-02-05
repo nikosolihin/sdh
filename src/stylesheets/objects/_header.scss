@@ -26,6 +26,10 @@
   &-primaryLink {
     @include hover(#777, $navy);
     padding: $single*1.75 $single;
+    &.is-Active {
+      @include hover($navy, $navy);
+      font-weight: $font-weight-bold;
+    }
   }
 
   &-secondary {

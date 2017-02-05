@@ -4,12 +4,15 @@
 $black:                        #000000 !default;
 $white:                        #ffffff !default;
 $blue:                         #42C1FF !default;
-$sky:                          #62B5E5 !default;
+// $sky:                          #62B5E5 !default;
+$sky:                          #24ACCE !default;
 $navy:                         #202F67 !default;
 $yellow:                       #FFD200 !default;
 $orange:                       #EEB111 !default;
 $teal:                         #3DB0B0 !default;
-$maroon:                       #830038 !default;
+$maroon:                       #820024 !default;
+$green:                        #679423 !default;
+$purple:                       #5B1E4B !default;
 $gray-darker:                  #111111 !default;
 $gray-dark:                    #111111 !default;
 $gray:                         #333333 !default;
@@ -36,13 +39,8 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 $desktop:                         'md' !default;
-$wrapper-width:                   1600px !default;
-$wrapper-narrow-width:            1400px !default;
 $container-width:                 1280px !default;
-$container-text-width:            765px !default;
-$container-text-width:            685px !default;
-$container-text-nosidebar-width:  925px !default;
-
+$container-landing-width:         1400px !default;
 
 //=============================================
 // Elements
@@ -53,8 +51,8 @@ $body-color:                   $gray !default;
 $headings-color:               $gray-darker !default;
 
 // Links //////////////////////////////////////
-$link-color:                    $body-color !default;
-$link-hover-color:              darken($blue, 20%) !default;
+$link-color:                    $sky !default;
+$link-hover-color:              darken($sky, 15%) !default;
 
 // List ///////////////////////////////////////
 $list-style-type-ul-first:      square !default;
@@ -132,25 +130,22 @@ $button-small-padding:          $half .625rem !default;
 // // Loader //////////////////////////////////////
 // $loader-size:                  $single*2 !default;
 // $loader-color:                 lighten($gray-light, 40%) !default;
-//
-// // Banner ///////////////////////////////////
-// $banner-small-height:          220px !default;
-// $banner-medium-height:         400px !default;
-// $banner-large-height:          570px !default;
-// $banner-margin-bottom:         $single*3 !default;
-// $banner-fallback:               repeating-linear-gradient(115deg,rgba(155,155,155,.15),rgba(155,155,155,0) 3px,rgba(155,155,155,0) 3px,rgba(155,155,155,0) 5px) !default;
-//
+
+// Banner ///////////////////////////////////
+$banner-small-height:          400px !default;
+$banner-large-height:          650px !default;
+
 // // Gallery //////////////////////////////////
 // $gallery-color:                 #ccc !default;
 // $gallery-bg-color:              #181818 !default;
 // $gallery-thumbnail-size:        60px !default;
 // $gallery-selected-border:       3px solid $white !default;
-//
-// // Figures //////////////////////////////////
-// $figure-caption-font-size:      90% !default;
-// $figure-caption-line-height:    1.4 !default;
-// $figure-caption-color:          #ababab !default;
-//
+
+// Figures //////////////////////////////////
+$figure-caption-font-size:      90% !default;
+$figure-caption-line-height:    1.4 !default;
+$figure-caption-color:          #ababab !default;
+
 // // Footer ////////////////////////////////
 // $footer-bg-color:               #171717 !default;
 // $footer-parent-color:           $white !default;

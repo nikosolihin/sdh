@@ -11,12 +11,18 @@
 
 .flex-wrapper {
   // Just an empty div
+  &--fixed {
+    flex: 0 0 auto;
+  }
 }
 
 .container {
   margin: 0 auto;
   max-width: $container-width;  // 1280px
-  // padding: 0 $single;
+
+  &--landing {
+    max-width: $container-landing-width;
+  }
 
   // &--max {
   //   @include from($desktop) {
@@ -49,13 +55,13 @@
   //   margin: 0 0 0 auto;
   // }
   //
-  // //=== Spacing ===
-  // &--spacedTop {
-  //   margin-top: $single*4;
-  // }
-  // &--spacedBottom {
-  //   margin-bottom: $single*4;
-  // }
+  //=== Spacing ===
+  &--spacedTop {
+    margin-top: $single*4;
+  }
+  &--spacedBottom {
+    margin-bottom: $single*4;
+  }
 }
 
 .row {
@@ -94,8 +100,8 @@
   width: 100%;
   // The column divs act as a flex child wrapper.
   @include from($desktop) {
-    border-left: 1.5rem solid transparent;
-    border-right: 1.5rem solid transparent;
+    border-left: 1.25rem solid transparent;
+    border-right: 1.25rem solid transparent;
     &:last-of-type {
       // The following keep single column in their place,
       // despite being only child

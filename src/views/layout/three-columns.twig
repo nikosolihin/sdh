@@ -1,15 +1,4 @@
-{% set isLandingCallout = landingCallout ? 'landing' : '' %}
-{% set withCalloutTheme = landingCalloutTheme ? landingCalloutTheme ~ 'Theme' : '' %}
 
-{% if landingCalloutBg %}
-  {% set withBg = true %}
-  {% set withCalloutBg = 'fullbleed' %}
-  {% set bgset = 'data-bgset="' ~
-    landingCalloutBg[xlarge] ~
-    ' [(min-width: ' ~ lg ~ ')] | ' ~
-    landingCalloutBg[large] ~
-    ' [(min-width: ' ~ md ~ ')] | ' ~ landingCalloutBg[medium] ~ '"' %}
-{% endif %}
 
 {% if landingCallout %}
 <div class="{{'Callout'|modifiers("#{isLandingCallout}, #{withCalloutBg}, #{withCalloutTheme}")}}{{withBg ? ' lazyload' : ''}}" {{withBg ? bgset : ''}}>

@@ -139,57 +139,6 @@
                 "id": ""
             },
             "google_photos_limit": 1
-        },
-        {
-            "placement": "left",
-            "endpoint": 0,
-            "key": "field_57f23feafe364",
-            "label": "Mobile Menu",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "message": "Here you may pick 2 blocks to show within the dropdown menu in mobile. Useful to quickly get visitors to certain parts of the site. <br><strong>TIP: Do not include a bookmark block here.<\/strong>",
-            "esc_html": 0,
-            "new_lines": "",
-            "key": "field_57f2402aa2167",
-            "label": "Featured Blocks",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "key": "field_57f23f85fe363",
-            "label": "Choose Blocks",
-            "name": "mobile_blocks",
-            "type": "reusable_field_group_field",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "group_key": "group_5799c139c255f",
-            "name_prefix": 0,
-            "key_prefix": 1,
-            "label_prefix": 0
         }
     ],
     "location": [
@@ -209,5 +158,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1486091580
+    "modified": 1486298681
 }

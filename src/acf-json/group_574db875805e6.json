@@ -1,0 +1,232 @@
+{
+    "key": "group_574db875805e6",
+    "title": "Sidebar Builder",
+    "fields": [
+        {
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_5783219804576",
+            "label": "Inherit from parents?",
+            "name": "inherit",
+            "type": "true_false",
+            "instructions": "<strong><em>If applicable<\/em><\/strong>, you may choose to have this page inherit its parent's sidebar, in addition to the sidebar contents below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "parent": "Parent's",
+                "this": "This Page's"
+            },
+            "default_value": "parent",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_57dd82d684eb8",
+            "label": "First in Order",
+            "name": "order",
+            "type": "radio",
+            "instructions": "Which sidebar should come first?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5783219804576",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_57aae2c9835ef",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "layout": "horizontal",
+                    "choices": {
+                        "left": "Left",
+                        "center": "Center"
+                    },
+                    "default_value": "",
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "allow_null": 0,
+                    "return_format": "value",
+                    "key": "field_57cce72eafc0c",
+                    "label": "Align title...",
+                    "name": "sidebar_section_alignment",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "clone": [
+                        "group_57ada267c5994"
+                    ],
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "display": "seamless",
+                    "layout": "block",
+                    "key": "field_57ada3771c11b",
+                    "label": "Sidebar Modules",
+                    "name": "sidebar_modules",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "layout": "horizontal",
+                    "choices": {
+                        "callout": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>",
+                        "framed": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-framed.png\"><p>Framed<\/p>",
+                        "plain": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>"
+                    },
+                    "default_value": "plain",
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "allow_null": 0,
+                    "return_format": "value",
+                    "key": "field_57ccec99ecd27",
+                    "label": "Callout Options",
+                    "name": "sidebar_section_options",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "acf-image-select",
+                        "id": ""
+                    }
+                },
+                {
+                    "layout": "horizontal",
+                    "choices": {
+                        "gray": "Gray",
+                        "navy": "Navy",
+                        "yellow": "Yellow",
+                        "blue": "Blue",
+                        "purple": "Purple",
+                        "maroon": "Maroon",
+                        "green": "Green"
+                    },
+                    "default_value": "gray",
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "allow_null": 0,
+                    "return_format": "value",
+                    "key": "field_5895fb84787a9",
+                    "label": "Callout Background",
+                    "name": "sidebar_section_color",
+                    "type": "radio",
+                    "instructions": "Choose one of the appropriate colors below",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_57ccec99ecd27",
+                                "operator": "==",
+                                "value": "callout"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Section",
+            "collapsed": "field_57aae2c9835ef",
+            "key": "field_574db9e40d9c6",
+            "label": "",
+            "name": "sidebar_sections",
+            "type": "repeater",
+            "instructions": "Similar to the page builder, you may add <strong><em>modules<\/em><\/strong> for the sidebar here.<br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-sidebar-builder"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "redirect-page.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "without-sidebar.php"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Sidebar Builder",
+    "modified": 1486303496
+}

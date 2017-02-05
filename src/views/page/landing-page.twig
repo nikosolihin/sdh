@@ -3,68 +3,47 @@
 {% block content %}
 
 {% if acf.position == 'before' %}
-  <div class="landing-page-content container container--spacedBottom">
+  <div class="container container--landing container--spacedBottom">
     {% include 'layout/base.twig' %}
   </div>
 {% endif %}
 
 <div class="LandingPage">
-  <div class="LandingPage-banner" style="background-image: url(https://www.choate.edu/uploaded/images/Redesign_2016/main%20nav/nav-academics.jpg)">
+  {% set image = acf.banner.image %}
+  <div class="LandingPage-banner lazyload" data-bgset="{{image|serveImage(1400)}} [(min-width: {{xxl}})] | {{image|serveImage(1400)}} [(min-width: {{lg}})] | {{image|serveImage(1400)}} [(min-width: {{md}})] | {{image|serveImage(1400)}}">
     <div class="LandingPage-bannerCopy">
-      <h1 class="h2 light navy">Teaching and Learning</h1>
-      <p class="h4 normal body">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+      <h1 class="h2 light navy">{{post.title}}</h1>
+      {% if acf.teaser %}
+        <p class="h4 normal body">{{acf.teaser}}</p>
+      {% endif %}
     </div>
 
   </div>
   <div class="LandingPage-content">
-    <div class="LandingPage-item">
-      <a href="" class="LandingPage-itemBody LandingPage-itemBody--white">
-        <div class="flex-wrapper">
-          <h2 class="h4">Bakery & Local Produce</h2>
-          <p class="h5 normal">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
-          <div class="Button Button--small">Read More</div>
+    {% for child in children %}
+      <div class="LandingPage-item{% if loop.index is even %} LandingPage-item--alt{% endif %}">
+        <a href="{{child.link}}" class="LandingPage-itemBody">
+          <div class="flex-wrapper">
+            <h2 class="h4 navy">{{child.title}}</h2>
+            <p class="h5 normal body">{{child.teaser}}</p>
+            <div class="Button Button--small">{{__('Learn More', 'sdh')}}</div>
+          </div>
+          <div class="LandingPage-itemBodyIcon">
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+            </svg>
+          </div>
+        </a>
+        <div class="LandingPage-itemImage lazyload" data-bgset="{{child.image|serveImage(512)}}">
         </div>
-        <div class="LandingPage-itemBodyIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
-          </svg>
-        </div>
-      </a>
-      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/Redesign_2016/heros/hero-athletics-girls-hockey.jpg);">
       </div>
-    </div>
-    <div class="LandingPage-item--alt">
-      <a href="" class="LandingPage-itemBody LandingPage-itemBody--white">
-        <div class="flex-wrapper">
-          <h2 class="h4 navy">Application Process</h2>
-          <p class="h5 normal body">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at.</p>
-          <div href="" class="Button Button--small">Read More</div>
-        </div>
-        <div class="LandingPage-itemBodyIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
-          </svg>
-        </div>
-      </a>
-      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/About/Matriculation_089.jpg)">
-      </div>
-    </div>
-    <div class="LandingPage-item">
-      <a href="" class="LandingPage-itemBody LandingPage-itemBody--navy">
-        <div class="flex-wrapper">
-          <h2 class="h4">Application Process</h2>
-          <p class="h5 normal">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque </p>
-          <div href="" class="Button Button--small">Read More</div>
-        </div>
-        <div class="LandingPage-itemBodyIcon">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
-          </svg>
-        </div>
-      </a>
-      <div class="LandingPage-itemImage" style="background-image: url(https://www.choate.edu/uploaded/images/About/Matriculation_089.jpg)">
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
+
+{% if acf.position == 'after' %}
+  <div class="container container--landing container--spacedTop">
+    {% include 'layout/base.twig' %}
+  </div>
+{% endif %}
 {% endblock %}

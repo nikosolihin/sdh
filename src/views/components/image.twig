@@ -1,74 +1,17 @@
 {% set image = data.figure %}
 
-{# Response image wrapper depending on columns #}
-{% if column == 'four'%}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{xl}})" data-srcset="{{image[small]}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image[middle]}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image[medium]}}">
-        <source data-srcset="{{image[middle]}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image[middle]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption container--text-nosidebar">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% endif %}
-
-{% if column == 'three'%}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{xl}})" data-srcset="{{image[middle]}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image[small]}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image[medium]}}">
-        <source data-srcset="{{image[middle]}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image[middle]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption container--text-nosidebar">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% endif %}
-
-{% if column == 'two'%}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{lg}})" data-srcset="{{image[medium]}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image[middle]}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image[medium]}}">
-        <source data-srcset="{{image[middle]}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image[middle]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption container--text-nosidebar">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% endif %}
-
-{% if column == 'one'%}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{lg}})" data-srcset="{{image[xlarge]}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image[large]}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image[medium]}}">
-        <source data-srcset="{{image[middle]}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image[middle]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption container--text-nosidebar">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% endif %}
+<figure class="{{'Figure'|modifiers("#{data.direction}")}}">
+  <picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+      <source media="(min-width: {{lg}})" data-srcset="{{image|serveImage(640)}}">
+      <source media="(min-width: {{md}})" data-srcset="{{image|serveImage(640)}}">
+      <source media="(min-width: {{sm}})" data-srcset="{{image|serveImage(640)}}">
+      <source data-srcset="{{image|serveImage(640)}}">
+    <!--[if IE 9]></video><![endif]-->
+    {# Fallback with transparent LQIP #}
+    <img alt="{{image.title}}" class="lazyload" data-src="{{image|serveImage(640)}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+  </picture>
+  <figcaption class="Figure-caption h6">
+    {{data.caption}}
+  </figcaption>
+</figure>

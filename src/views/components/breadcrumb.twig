@@ -1,15 +1,13 @@
-<!-- <ol class="{{'Breadcrumb'|modifiers("#{style}, #{trailing}")}}"> -->
-<ol class="Breadcrumb Breadcrumb--brand">
+<ol class="{{'Breadcrumb'|modifiers("#{style}, #{trailing}")}} container">
   <li class="Breadcrumb-item">
-    <a class="Breadcrumb-home" href="{{site.url}}">
-      <svg aria-hidden="true" role="presentation" title="{{site.title}} Homepage">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#home"></use>
-      </svg>
-    </a>
+    <a class="Breadcrumb-link h7 medium caps spaced" href="{{site.url}}">{{__('Home', 'sdh')}}</a>
   </li>
-  {% for item in data %}
+  {% for item in breadcrumb %}
     <li class="Breadcrumb-item">
-      <a class="Breadcrumb-link" href="{{item.link}}">{{item.title|title}}</a>
+      <a class="Breadcrumb-link h7 medium caps spaced" href="{{item.link}}">{{item.title}}</a>
     </li>
   {% endfor %}
+  <li class="Breadcrumb-item">
+    <a class="Breadcrumb-link h7 medium caps spaced" href="{{post.link}}">{{post.title}}</a>
+  </li>
 </ol>

@@ -1,5 +1,73 @@
 .Sidebar {
   flex: 0 0 auto;
   width: 33.3333%;
-  padding: 0 $single*3;
+  padding: 0 $single*2.75;
+
+  &-section {
+    font-size: $font-size-h5;
+    margin-bottom: $single;
+    > * {
+      margin-bottom: $single !important;
+    }
+
+    // Style
+    &--callout {
+      @include white;
+      border-radius: 3px;
+      padding: $single*1.5;
+    }
+    &--framed {
+      border: 1px solid $line;
+      border-top: 3px solid $yellow;
+      border-radius: 3px;
+      padding: $single*2;
+    }
+    &--plain {
+      padding-right: $single*1.25;
+    }
+
+    // Colors
+    &--navy {
+      background-color: $navy;
+    }
+    &--blue {
+      background-color: $sky;
+    }
+    &--purple {
+      background-color: $purple;
+    }
+    &--maroon {
+      background-color: $maroon;
+    }
+    &--yellow {
+      background-color: #ffc42a;
+      p {
+        color: $body-color !important;
+      }
+    }
+    &--green {
+      background-color: $green;
+    }
+    &--gray {
+      background-color: #f5f5f5;
+      p {
+        color: $body-color !important;
+      }
+    }
+  }
+
+  &-sectionHeading {
+    @at-root .Sidebar-section--left #{&} {
+      text-align: left;
+    }
+    @at-root .Sidebar-section--center #{&} {
+      text-align: center;
+    }
+    @at-root .Sidebar-section--yellow #{&} {
+      color: $headings-color;
+    }
+    @at-root .Sidebar-section--gray #{&} {
+      color: $headings-color;
+    }
+  }
 }

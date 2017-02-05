@@ -1,29 +1,28 @@
 .Subnav {
   background-color: #fbfbfb;
   border-bottom: 1px solid $line;
-
   &-list {
     box: horizontal middle center;
-  }
-
-  &-link {
-    @include hover(#888, $navy);
-    padding: .925rem $single*1.125;
-  }
-
-  &--active {
-    position: relative;
-    font-weight: $font-weight-bold;
-    color: $navy;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -1px;
-      height: 3px;
-      width: 90%;
-      transform: translate3d(-50%,0,0);
-      background-color: $yellow;
+    a {
+      @extend .h6, .medium;
+      color: #888 !important;
+      padding: .925rem $single*1.125;
+    }
+    .is-Active a {
+      display: block;
+      position: relative;
+      font-weight: $font-weight-bold;
+      color: $navy !important;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -1px;
+        height: 3px;
+        width: 90%;
+        transform: translate3d(-50%,0,0);
+        background-color: $yellow;
+      }
     }
   }
 }

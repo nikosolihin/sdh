@@ -50,9 +50,9 @@
         </a>
       </div>
       <ul class="Header-secondaryList List List--inline">
-        <li><a href="" class="Header-secondaryLink h7 caps medium white">For Students</a></li>
-        <li><a href="" class="Header-secondaryLink h7 caps medium  white">For Parents</a></li>
-        <li><a href="" class="Header-secondaryLink h7 caps medium  white">For Alumni</a></li>
+        {% for item in secondary_menu %}
+          <li><a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a></li>
+        {% endfor %}
       </ul>
       <a href="" class="Header-search">
         <svg aria-hidden="true" role="presentation" title="Search SDH Website">
@@ -64,13 +64,16 @@
 
   <nav class="Header-primary" role="navigation">
     <ul class="Header-primaryList List List--inline">
-      <li><a href="" class="Header-primaryLink h5 medium">About</a></li>
-      <li><a href="" class="Header-primaryLink h5 medium">Admissions</a></li>
-      <li><a href="" class="Header-primaryLink h5 bold navy">Teaching and Learning</a></li>
-      <li><a href="" class="Header-primaryLink h5 medium">Community in Action</a></li>
-      <li><a href="" class="Header-primaryLink h5 medium">Visit Our School</a></li>
+      {% for item in primary_menu %}
+        {% if item.link in current_url %}
+          {% set is_active = ' is-Active' %}
+        {% else %}
+          {% set is_active = '' %}
+        {% endif %}
+        <li><a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a></li>
+      {% endfor %}
     </ul>
-    <div class="flex-wrapper">
+    <div class="flex-wrapper--fixed">
       <a href="" class="Button Button--icon">
         <svg aria-hidden="true" role="presentation" title="See Our Campuses">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>

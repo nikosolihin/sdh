@@ -1,10 +1,13 @@
-{% set image = acf.image %}
+{% set image = acf.banner.image|serveImage(1440) %}
 {% set size = acf.banner_size %}
 {% set alignment = acf.alignment %}
 
-<section class="{{'Banner'|modifiers("#{size}, #{alignment}")}} wrapper wrapper--narrow lazyload" data-bgset="{{image[xlarge]}} [(min-width: {{xxl}})] | {{image[xlarge]}} [(min-width: {{lg}})] | {{image[large]}} [(min-width: {{md}})] | {{image[medium]}}" style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
-  <div class="container container--left">
-    {% include 'components/breadcrumb.twig' with {data: breadcrumb} %}
-    <h1>{{post.title}}</h1>
+<section class="{{'Banner'|modifiers("#{size}, #{alignment}")}} lazyload" data-bgset="{{image}} [(min-width: {{xxl}})] | {{image}} [(min-width: {{lg}})] | {{image}} [(min-width: {{md}})] | {{image}}" style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
+  <div class="Banner-container container">
+    {% if acf.teaser %}
+      <h2 class="Banner-copy white light right">
+        <span class="h6 block caps bold white spaced right">{{breadcrumb|first.title}}</span>{{acf.teaser}}
+      </h2>
+    {% endif %}
   </div>
 </section>

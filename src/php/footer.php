@@ -10,4 +10,4 @@ if ( ! isset( $timberContext ) ) {
 }
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-Timber::render( 'pages/events.twig', $timberContext );
+// Timber::render( 'pages/events.twig', $timberContext );

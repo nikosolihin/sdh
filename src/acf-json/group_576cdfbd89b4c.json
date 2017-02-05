@@ -54,11 +54,17 @@
             }
         },
         {
-            "google_photos_user_id": "",
+            "clone": [
+                "group_57bd72b2e0e2c"
+            ],
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "display": "seamless",
+            "layout": "block",
             "key": "field_576ce239e2ccc",
-            "label": "Image",
-            "name": "image",
-            "type": "acf_google_photos_browser",
+            "label": "Banner Image",
+            "name": "banner",
+            "type": "clone",
             "instructions": "This is the main banner and will also show up in list-based view like search result and feed list.",
             "required": 0,
             "conditional_logic": 0,
@@ -66,13 +72,12 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "google_photos_limit": 1
+            }
         },
         {
             "layout": "horizontal",
             "choices": {
-                "hidden": "No Banner",
+                "hidden": "Disable Banner",
                 "small": "Small",
                 "large": "Large"
             },
@@ -81,7 +86,7 @@
             "save_other_choice": 0,
             "allow_null": 0,
             "return_format": "value",
-            "key": "field_57b0951025539",
+            "key": "field_5896e4c0021ac",
             "label": "Banner Size",
             "name": "banner_size",
             "type": "radio",
@@ -152,6 +157,7 @@
         "custom_fields",
         "discussion",
         "comments",
+        "revisions",
         "slug",
         "author",
         "format",
@@ -162,5 +168,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Page",
-    "modified": 1486017205
+    "modified": 1486307718
 }

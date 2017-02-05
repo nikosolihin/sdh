@@ -30,24 +30,6 @@
                                 "class": "",
                                 "id": ""
                             }
-                        },
-                        {
-                            "key": "field_57cc534612a59",
-                            "label": "Column Options",
-                            "name": "full",
-                            "type": "reusable_field_group_field",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "group_key": "group_57aa142c90cdd",
-                            "name_prefix": 1,
-                            "key_prefix": 1,
-                            "label_prefix": 0
                         }
                     ],
                     "min": "",
@@ -100,42 +82,6 @@
                                 "class": "",
                                 "id": ""
                             }
-                        },
-                        {
-                            "key": "field_57aa12b4b6766",
-                            "label": "Column Options",
-                            "name": "left",
-                            "type": "reusable_field_group_field",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50%",
-                                "class": "",
-                                "id": ""
-                            },
-                            "group_key": "group_57aa142c90cdd",
-                            "name_prefix": 1,
-                            "key_prefix": 1,
-                            "label_prefix": 0
-                        },
-                        {
-                            "key": "field_57aa153b54121",
-                            "label": "Column Options",
-                            "name": "right",
-                            "type": "reusable_field_group_field",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50%",
-                                "class": "",
-                                "id": ""
-                            },
-                            "group_key": "group_57aa142c90cdd",
-                            "name_prefix": 1,
-                            "key_prefix": 1,
-                            "label_prefix": 0
                         }
                     ],
                     "min": "",
@@ -244,6 +190,18 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "without-sidebar.php"
+            }
         ]
     ],
     "menu_order": 2,
@@ -254,5 +212,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Regular Page Builder",
-    "modified": 1486022830
+    "modified": 1486308928
 }

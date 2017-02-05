@@ -74,10 +74,10 @@
 
 .content-body {
   font-size: $font-size-h5;
-  padding: $single*1.25;
+  // padding: $single*1.25;
   @include from($desktop) {
     font-size: $font-size-h4;
-    padding: 0;
+    // padding: 0;
   }
   h2 {
     color: $navy;
@@ -102,12 +102,4 @@
   // ol ul > li:not([class]) {
   //   margin-top: $half;
   // }
-}
-
-.teaser {
-  margin-bottom: $single*1.5;
-  font-size: 1.35rem;
-  @include from($desktop) {
-    font-size: 1.6rem;
-  }
 }

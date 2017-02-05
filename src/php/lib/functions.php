@@ -1,26 +1,26 @@
 <?php
-// //=============================================
-// // Remove classes from wp_list_pages
-// //=============================================
-//  function remove_page_class($wp_list_pages) {
-// 	$pattern = '/current_page_[a-z]+/';
-// 	$replace_with = 'is-Active';
-//   $first_phase = preg_replace($pattern, $replace_with, $wp_list_pages);
-//
-//   $pattern = '/\<li class="page_item[^>]*(?=is-Active)/';
-// 	$replace_with = '<li class="';
-//   $second_phase = preg_replace($pattern, $replace_with, $first_phase);
-//
-//   $pattern = '/\<li class="page_item[^>]*>/';
-// 	$replace_with = '<li>';
-//   $third_phase = preg_replace($pattern, $replace_with, $second_phase);
-//
-//   $pattern = "/\<ul class='children[^>]*>/";
-// 	$replace_with = '<ul class="List">';
-// 	return preg_replace($pattern, $replace_with, $third_phase);
-// }
-// add_filter('wp_list_pages', 'remove_page_class');
-//
+//=============================================
+// Remove classes from wp_list_pages
+//=============================================
+ function remove_page_class($wp_list_pages) {
+	$pattern = '/current_page_[a-z]+/';
+	$replace_with = 'is-Active';
+  $first_phase = preg_replace($pattern, $replace_with, $wp_list_pages);
+
+  $pattern = '/\<li class="page_item[^>]*(?=is-Active)/';
+	$replace_with = '<li class="';
+  $second_phase = preg_replace($pattern, $replace_with, $first_phase);
+
+  $pattern = '/\<li class="page_item[^>]*>/';
+	$replace_with = '<li>';
+  $third_phase = preg_replace($pattern, $replace_with, $second_phase);
+
+  $pattern = "/\<ul class='children[^>]*>/";
+	$replace_with = '<ul class="List">';
+	return preg_replace($pattern, $replace_with, $third_phase);
+}
+add_filter('wp_list_pages', 'remove_page_class');
+
 // //=============================================
 // // Edit links for wp_list_categories to work
 // // with our ajax search.

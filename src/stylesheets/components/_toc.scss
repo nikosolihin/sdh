@@ -3,6 +3,7 @@
   border-top: 3px solid $yellow;
   border-radius: 3px;
   padding: $single*2;
+  margin-bottom: $single*2.25;
 
   &-link {
     @include hover(#888, $gray);

@@ -1,6 +1,6 @@
 {
   "name": "sekolah-dian-harapan",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A website redesign project for Sekolah Dian Harapan",
   "engines": {
     "node": ">=0.12.0 ~5.9.0",
@@ -68,12 +68,14 @@
     "karma-nyan-reporter": "0.2.4",
     "karma-sinon-chai": "1.2.0",
     "karma-webpack": "1.7.0",
+    "lazysizes": "^3.0.0-rc3",
     "lodash": "4.6.1",
     "lolex": "1.4.0",
     "mocha": "2.4.5",
     "morgan": "1.7.0",
     "object-assign": "4.0.1",
     "open": "0.0.5",
+    "picturefill": "^3.0.2",
     "postcss-clearfix": "^1.0.0",
     "postcss-flexbox": "^1.0.2",
     "postcss-flexbugs-fixes": "^2.1.0",

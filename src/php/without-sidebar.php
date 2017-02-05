@@ -10,6 +10,21 @@ $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 $context['no_sidebar'] = true;
 
+// Find root ID - For sidebar TOC
+if ($post->post_parent)	{
+	$ancestors = get_post_ancestors($post->id);
+	$id = $ancestors[ count($ancestors)-1 ];
+} else {
+	$id = $post->id;
+}
+// and generate hierarchy
+$args = array(
+  'child_of' => $id,
+  'echo' => false,
+  'title_li' => null
+);
+$context['hierarchy'] = wp_list_pages($args);
+
 // Generate breadcrumb. Must be last.
 $context['breadcrumb'] = array();
 while( $post->get_parent ) {

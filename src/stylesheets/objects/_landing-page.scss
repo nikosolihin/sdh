@@ -4,21 +4,15 @@
   &-banner {
     @include cover;
     @include overlay(false);
-    position: relative;
     width: 45%;
-    padding: $single*3;
     border: 3px solid $white;
     border-left: 0;
-
+    box: vertical top left;
     &Copy {
-      position: absolute;
-      left: 0px;
-      top: 500px;
-      top: 53vh;
       width: 85%;
+      margin-top: $single*28;
       padding: $single*1.75 $single*2.75 $single*2.5;
       background-color: rgba(255, 255, 255, 0.9);
-      z-index: 2;
     }
   }
 
@@ -32,6 +26,17 @@
     box: horizontal space-between;
     &--alt {
       box: horizontal-reverse space-between;
+    }
+
+    // Colors
+    &:nth-child(3n+1) &Body {
+      @extend .LandingPage-itemBody--white;
+    }
+    &:nth-child(3n+2) &Body {
+      @extend .LandingPage-itemBody--navy;
+    }
+    &:nth-child(3n+3) &Body {
+      @extend .LandingPage-itemBody--orange;
     }
   }
 
@@ -89,7 +94,9 @@
       &::after {
         background-color: lighten($navy, 3.25%);
       }
-      // Default orange button
+      .Button {
+        @extend .Button--outline-light;
+      }
     }
     &--orange {
       @include white;
@@ -98,13 +105,16 @@
         background-color: lighten($orange, 4.75%);
       }
       .Button {
-        @extend .Button--navy;
+        @extend .Button--outline-light;
       }
     }
     &--white {
       background-color: #fafafa;
       .Button {
-        @extend .Button--navy;
+        @extend .Button--outline-dark;
+      }
+      svg {
+        fill: $navy;
       }
       &::after {
         background-color: darken($white, 4.75%);

@@ -9,43 +9,25 @@
   {% elseif section.acf_fc_layout == 'two_columns' %}
     {% include 'layout/columns.twig' with {
       'column': 'two',
-      'landingCallout': section.is_section_callout,
-      'landingCalloutTheme': section.section_callout_theme,
-      'landingCalloutBg': section.section_callout_bg_image,
-      'left': section.left_components,
-      'right': section.right_components,
-      'leftCallout': section.left_column_options,
-      'rightCallout': section.right_column_options
+      'left': section.left.components,
+      'right': section.right.components
     } %}
 
   {% elseif section.acf_fc_layout == 'three_columns' %}
     {% include 'layout/columns.twig' with {
       'column': 'three',
-      'landingCallout': section.is_section_callout,
-      'landingCalloutTheme': section.section_callout_theme,
-      'landingCalloutBg': section.section_callout_bg_image,
-      'left': section.left_components,
-      'mid': section.mid_components,
-      'right': section.right_components,
-      'leftCallout': section.left_column_options,
-      'midCallout': section.mid_column_options,
-      'rightCallout': section.right_column_options
+      'left': section.left.components,
+      'mid': section.mid.components,
+      'right': section.right.components
     } %}
 
   {% else %}
     {% include 'layout/columns.twig' with {
       'column': 'four',
-      'landingCallout': section.is_section_callout,
-      'landingCalloutTheme': section.section_callout_theme,
-      'landingCalloutBg': section.section_callout_bg_image,
-      'left': section.left_components,
-      'mid_left': section.mid_left_components,
-      'mid_right': section.mid_right_components,
-      'right': section.right_components,
-      'leftCallout': section.left_column_options,
-      'rightCallout': section.right_column_options,
-      'mid_leftCallout': section.mid_left_column_options,
-      'mid_rightCallout': section.mid_right_column_options
+      'left': section.left.components,
+      'mid_left': section.mid_left.components,
+      'mid_right': section.mid_right.components,
+      'right': section.right.components,
     } %}
 
   {% endif %}

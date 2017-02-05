@@ -1,29 +1,13 @@
 {
     "key": "group_57bd72b2e0e2c",
-    "title": "Background",
+    "title": "Banner",
     "fields": [
         {
-            "key": "field_57bd72f5f6804",
-            "label": "Message",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "acf-instruction",
-                "id": ""
-            },
-            "message": "<strong>Important:<\/strong> We highly suggest optimizing your images to deliver a performant website experience. After Phothoshop, run your .jpeg and .png files through tools like <strong><a href=\"https:\/\/imageoptim.com\/mac\" target=\"_blank\">ImageOptim<\/a><\/strong> or <strong><a href=\"https:\/\/imageoptim.com\/mozjpeg\" target=\"_blank\">MozJPEG<\/a><\/strong> before uploading. Learn more about image optimization <strong><a href=\"http:\/\/designingforperformance.com\/optimizing-images\/\" target=\"_blank\">here.<\/a><\/strong>",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
+            "google_photos_user_id": "",
             "key": "field_57bd72dff6803",
             "label": "Image",
             "name": "image",
-            "type": "flickr_browser",
+            "type": "acf_google_photos_browser",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,25 +16,21 @@
                 "class": "",
                 "id": ""
             },
-            "flickr_api_key": "",
-            "flickr_user_id": "",
-            "flickr_limit": 1,
-            "flickr_sizes": [
-                "url_q",
-                "url_t",
-                "url_n",
-                "url_z",
-                "url_c",
-                "url_l",
-                "url_h",
-                "url_o"
-            ],
-            "flickr_extras": [
-                "description",
-                "o_dims"
-            ]
+            "google_photos_limit": 1
         },
         {
+            "layout": "horizontal",
+            "choices": {
+                "top": "Top",
+                "middle": "Middle",
+                "bottom": "Bottom",
+                "custom": "Custom"
+            },
+            "default_value": "middle",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
             "key": "field_57740634e1728",
             "label": "Vertical Alignment",
             "name": "alignment",
@@ -59,24 +39,19 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "60",
                 "class": "",
                 "id": ""
-            },
-            "choices": {
-                "top": "Top",
-                "middle": "Middle",
-                "bottom": "Bottom",
-                "custom": "Custom"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "middle",
-            "layout": "horizontal",
-            "return_format": "value"
+            }
         },
         {
+            "default_value": "",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
             "key": "field_577408789163a",
             "label": "Custom Value",
             "name": "custom_alignment",
@@ -96,22 +71,15 @@
                 "width": "40",
                 "class": "",
                 "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "%",
-            "min": 1,
-            "max": 100,
-            "step": 1
+            }
         }
     ],
     "location": [
         [
             {
-                "param": "special",
+                "param": "post_type",
                 "operator": "==",
-                "value": "nowhere"
+                "value": "post"
             }
         ]
     ],
@@ -122,6 +90,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 0,
-    "description": "COMPONENTS : Background",
-    "modified": 1476772221
+    "description": "COMPONENTS : Banner",
+    "modified": 1486282849
 }

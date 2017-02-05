@@ -17,98 +17,79 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		// //=============================================
-		// // Globals
-		// //=============================================
-		// // Breakpoints - taken from variables.scss
-	  // $context['sm'] = '544px';
-	  // $context['md'] = '768px';
-	  // $context['lg'] = '992px';
-	  // $context['xl'] = '1200px';
-	  // $context['xxl'] = '1400px';
-		//
-		// // Height Breakpoints
-		// $context['short'] = '601px';
-	  // $context['tall'] = '700px';
-		//
-		// // Flicker Sizes
-		// $context['square'] = 'url_sq';	// 75
-		// $context['square2x'] = 'url_q';	// 150
-		// $context['thumb'] = 'url_t';		// 100
-		// $context['small'] = 'url_n';		// 320
-		// $context['middle'] = 'url_m';		// 500
-		// $context['medium'] = 'url_z';		// 640
-		// $context['large'] = 'url_c';		// 800
-		// $context['xlarge'] = 'url_l';		// 1024
-		// $context['xxlarge'] = 'url_h';	// 1600
-		// $context['original'] = 'url_o';	// Original
-		//
-		// //=============================================
-		// // Layout Modules
-		// //=============================================
-		//
-		// // Primary - get 3 levels deep
-		// $primary_menu = get_field('primary_menu', 'option');
-		// $context['primary_menu'] = array();
-		// foreach ($primary_menu as $menu) {
-		// 	$parent = Timber::get_post($menu['parent']);
-		//
-		// 	// At level 1, assume children
-		// 	$children = array();
-		// 	$singles = array();
-		// 	foreach ($parent->get_children() as $child) {
-		//
-		// 		// See if there are grand children
-		// 		$grandchildren = array();
-		// 		if ( !empty($child->get_children()) ) {
-		// 			foreach ($child->get_children() as $grandchild) {
-		// 				array_push($grandchildren, array(
-		// 					'title' => $grandchild->title,
-		// 					'link' => $grandchild->link
-		// 				));
-		// 			}
-		// 			array_push($children, array(
-		// 				'title' => $child->title,
-		// 				'link' => $child->link,
-		// 				'grandchildren' => $grandchildren
-		// 			));
-		// 		} else {
-		// 			// If empty put it in a different bucket
-		// 			array_push($singles, array(
-		// 				'title' => $child->title,
-		// 				'link' => $child->link
-		// 			));
-		// 		}
-		// 	}
-		//
-		// 	// If has blocks, get them
-		// 	if ($menu['blocks']) {
-		// 		$blocks = $menu['blocks'];
-		// 	} else {
-		// 		$blocks = array();
-		// 	}
-		// 	array_push($context['primary_menu'], array(
-		// 		'title' => $parent->title,
-		// 		'link' => $parent->link,
-		// 		'blocks' => $blocks,
-		// 		'children' => $children,
-		// 		'singles' => $singles
-		// 	));
-		// }
-		//
-		// // Secondary
-		// $secondary_menu = get_field('secondary_menu', 'option');
-		// $context['secondary_menu'] = array();
-		// if ($secondary_menu) {
-		// 	foreach ($secondary_menu as $item) {
-		// 		$post = Timber::get_post($item);
-		// 		array_push($context['secondary_menu'], array(
-		// 			'title' => $post->title,
-		// 			'link' => $post->link
-		// 		));
-		// 	}
-		// }
-		// // Add other post type arvhive links manually
+		//=============================================
+		// Globals
+		//=============================================
+		// Breakpoints - taken from variables.scss
+	  $context['sm'] = '544px';
+	  $context['md'] = '768px';
+	  $context['lg'] = '992px';
+	  $context['xl'] = '1200px';
+	  $context['xxl'] = '1400px';
+
+		// Height Breakpoints
+		$context['short'] = '601px';
+	  $context['tall'] = '700px';
+
+		//=============================================
+		// Layout Modules
+		//=============================================
+
+		// Primary - get 3 levels deep
+		$primary_menu = get_field('primary_menu', 'option');
+		$context['primary_menu'] = array();
+		foreach ($primary_menu as $menu) {
+			$parent = Timber::get_post($menu['parent']);
+
+			// At level 1, assume children
+			$children = array();
+			$singles = array();
+			foreach ($parent->get_children() as $child) {
+
+				// See if there are grand children
+				$grandchildren = array();
+				if ( !empty($child->get_children()) ) {
+					foreach ($child->get_children() as $grandchild) {
+						array_push($grandchildren, array(
+							'title' => $grandchild->title,
+							'link' => $grandchild->link
+						));
+					}
+					array_push($children, array(
+						'title' => $child->title,
+						'link' => $child->link,
+						'grandchildren' => $grandchildren
+					));
+				} else {
+					// If empty put it in a different bucket
+					array_push($singles, array(
+						'title' => $child->title,
+						'link' => $child->link
+					));
+				}
+			}
+			array_push($context['primary_menu'], array(
+				'title' => $parent->title,
+				'link' => $parent->link,
+				'children' => $children,
+				'singles' => $singles
+			));
+		}
+
+		// Secondary
+		$secondary_menu = get_field('secondary_menu', 'option');
+		$context['secondary_menu'] = array();
+		if ($secondary_menu) {
+			foreach ($secondary_menu as $item) {
+				$post = Timber::get_post($item);
+				array_push($context['secondary_menu'], array(
+					'title' => $post->title,
+					'link' => $post->link
+				));
+			}
+		}
+
+		// Quicklinks
 		// array_push($context['secondary_menu'], array(
 		// 	'title' => __('Events', 'saat'),
 		// 	'link' => $this->url . "/events/"
@@ -121,7 +102,7 @@ class StarterSite extends TimberSite {
 		// 	'title' => __('Media', 'saat'),
 		// 	'link' => $this->url . "/media/"
 		// ));
-		//
+
 		// // Menu Blocks
 		// $context['mobile_blocks'] = get_field('blocks', 'option');
 		//
@@ -167,33 +148,34 @@ class StarterSite extends TimberSite {
 
 		// Footer items
 		$context['footer_bg'] = get_field('footer_bg', 'option');
-		// $footer_items = Timber::get_posts(get_field('footer', 'option'));
-		// $context['footer']['singles'] = array();
-		// $context['footer']['parents'] = array();
-		// foreach ($footer_items as $item) {
-		// 	if ( empty($item->get_children()) ) {
-		// 		array_push($context['footer']['singles'], array(
-		//       'id' => $item->id,
-		//       'title' => $item->title,
-		//       'link' => $item->link
-		//     ));
-		// 	} else {
-		// 		$children = array();
-		// 		foreach ($item->get_children() as $child) {
-		// 			array_push($children, array(
-		// 				'id' => $child->id,
-		// 	      'title' => $child->title,
-		// 	      'link' => $child->link
-		// 			));
-		// 		}
-		// 		array_push($context['footer']['parents'], array(
-		// 			'id' => $item->id,
-		// 			'title' => $item->title,
-		// 			'link' => $item->link,
-		// 			'children' => $children
-		// 		));
-		// 	}
-		// }
+		$footer_items = Timber::get_posts(get_field('footer', 'option'));
+		$context['footer']['singles'] = array();
+		$context['footer']['parents'] = array();
+		foreach ($footer_items as $item) {
+			if ( empty($item->get_children()) ) {
+				array_push($context['footer']['singles'], array(
+		      'id' => $item->id,
+		      'title' => $item->title,
+		      'link' => $item->link
+		    ));
+			} else {
+				$children = array();
+				foreach ($item->get_children() as $child) {
+					array_push($children, array(
+						'id' => $child->id,
+			      'title' => $child->title,
+			      'link' => $child->link
+					));
+				}
+				array_push($context['footer']['parents'], array(
+					'id' => $item->id,
+					'title' => $item->title,
+					'link' => $item->link,
+					'children' => $children
+				));
+			}
+		}
+
 		// // Add post types archives to single footer list
 		// array_push($context['footer']['singles'], array(
 		// 	'title' => __('Events', 'saat'),

@@ -1,12 +1,38 @@
 {% extends "base.twig" %}
-
 {% block content %}
+
+{% include 'components/banner.twig' %}
+{% include 'components/subnav.twig' %}
+
 <div class="SinglePage container">
+  <div class="SinglePage-share">
+    {% include 'components/social-share.twig' %}
+  </div>
   <div class="SinglePage-content content-body">
-    {% if acf.teaser %}
-      <h3 class="h3 teaser">{{acf.teaser}}</h3>
-    {% endif %}
+    <div class="Intro">
+      <div class="Intro-breadcrumb">
+        {% include 'components/breadcrumb.twig' %}
+      </div>
+      <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+    </div>
     {% include 'layout/base.twig' %}
   </div>
+
+  {% if not no_sidebar %}
+    <div class="SinglePage-sidebar Sidebar">
+      <div class="Toc">
+        <h5 class="h7 caps spaced navy bold">In This Section</h5>
+        <ul class="List">
+          <li><a href="" class="Toc-link h6 medium">Core Values</a></li>
+          <li><a href="" class="Toc-link h6 medium">Essential Characteristics</a></li>
+          <li><a href="" class="Toc-link h6 medium">Who to Contact</a></li>
+        </ul>
+      </div>
+      {% if sidebar_sections %}
+        {% include 'layout/sidebar-base.twig' %}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
+
 {% endblock %}

@@ -3,6 +3,14 @@
     "title": "Multiple Blocks",
     "fields": [
         {
+            "post_type": [
+                "block"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1,
             "key": "field_5799c139cb390",
             "label": "",
             "name": "blocks",
@@ -14,23 +22,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "post_type": [
-                "block"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1
+            }
         }
     ],
     "location": [
         [
             {
-                "param": "special",
-                "operator": "==",
-                "value": "nowhere"
+                "param": "post_type",
+                "operator": "=="
             }
         ]
     ],
@@ -41,6 +40,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 0,
-    "description": "COMPONENTS : Multiple Blocks",
-    "modified": 1474887559
+    "description": "COMPONENTS : Blocks",
+    "modified": 1486218905
 }

@@ -1,11 +1,13 @@
 {% for section in sidebar_sections %}
   {% set alignment = section.sidebar_section_alignment %}
   {% set callout = section.sidebar_section_options %}
-  {% set accent = section.sidebar_section_border %}
+  {% if callout == 'callout' %}
+    {% set color = section.sidebar_section_color %}
+  {% endif %}
 
-  <div class="{{'Sidebar-section'|modifiers("#{alignment}, #{callout}, #{accent}")}}">
+  <div class="{{'Sidebar-section'|modifiers("#{alignment}, #{callout}, #{color}")}}">
     {% if section.title %}
-      <h3 class="Sidebar-sectionHeading Lead brand">{{section.title|title}}</h3>
+      <h3 class="Sidebar-sectionHeading h4 medium noMargin">{{section.title|title}}</h3>
     {% endif %}
     {% for component in section.sidebar_components %}
       {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}

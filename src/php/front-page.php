@@ -98,4 +98,6 @@ $context = Timber::get_context();
 // // Blocks Carousel
 // $context['carousel'] = get_field('home_carousel_blocks', 'option');
 
-Timber::render( 'page/front-page.twig' , $context );
+// Timber::render( 'page/front-page.twig' , $context );
+
+echo "Patience you must have, my young padawan.";
