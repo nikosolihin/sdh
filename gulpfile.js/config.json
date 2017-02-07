@@ -7,9 +7,11 @@
 
   "tasks": {
     "browserSync": {
+      "notify": false,
       "browser": "google chrome",
-      "proxy": "sdh.dev",
-      "notify": false
+      "proxy": {
+        "target": "http://sdh.dev"
+      }
     },
 
     "static": {

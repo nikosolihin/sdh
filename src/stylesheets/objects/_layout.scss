@@ -66,7 +66,7 @@
 
 .row {
   box: vertical;
-  + .row { margin-top: $single*1.5; }
+  + .row { margin-top: $single*2; }
   @include from(md) {
     // Flex on tablet up
     box: horizontal wrap;
@@ -100,8 +100,8 @@
   width: 100%;
   // The column divs act as a flex child wrapper.
   @include from($desktop) {
-    border-left: 1.25rem solid transparent;
-    border-right: 1.25rem solid transparent;
+    border-left: 1.125rem solid transparent;
+    border-right: 1.125rem solid transparent;
     &:last-of-type {
       // The following keep single column in their place,
       // despite being only child

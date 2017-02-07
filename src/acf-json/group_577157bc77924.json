@@ -22,9 +22,7 @@
             "layout": "horizontal",
             "choices": {
                 "panel": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
-                "bookmark": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
-                "card": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/card.png\"><p>Card<\/p>",
-                "download": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/download.png\"><p>Download<\/p>"
+                "card": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/card.png\"><p>Card<\/p>"
             },
             "default_value": "",
             "other_choice": 0,
@@ -128,31 +126,6 @@
             }
         },
         {
-            "message": "Unlike the other block types, bookmarks will not stretch to fit the parent container, such as sidebar or layout columns. The background image will be displayed in its original dimensions. Since there can be a variety of widths\/heights, the copy and CTA need to be part of the image itself. We recommend a width of <strong>300 px<\/strong> and height of <strong>550 to 650 px<\/strong> with a generous amount of side padding.",
-            "esc_html": 0,
-            "new_lines": "",
-            "key": "field_57bd238bccce9",
-            "label": "Bookmark Notice",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_57bc86a8ab7df",
-                        "operator": "==",
-                        "value": "bookmark"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "acf-instruction",
-                "id": ""
-            }
-        },
-        {
             "placement": "left",
             "endpoint": 0,
             "key": "field_577159bad2d3a",
@@ -184,81 +157,20 @@
             }
         },
         {
-            "default_value": 0,
-            "message": "Don't label this block",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "key": "field_57b6ddd06300a",
-            "label": "Block Title",
-            "name": "notitle",
-            "type": "true_false",
-            "instructions": "Check this if the image you selected already has a text on it. Otherwise, the title of this block will be used as a label.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
             "default_value": "",
             "new_lines": "",
             "maxlength": "",
             "placeholder": "",
             "rows": 3,
             "key": "field_57715bb61788a",
-            "label": "Description",
+            "label": "Overview",
             "name": "description",
             "type": "textarea",
             "instructions": "Will appear below the block title. Leave blank for a title-only block.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_57b6ddd06300a",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
-                "width": 65,
-                "class": "",
-                "id": ""
-            },
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "layout": "horizontal",
-            "choices": {
-                "left": "Left",
-                "center": "Center"
-            },
-            "default_value": "left",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
-            "key": "field_57cc40929c43d",
-            "label": "Text Alignment",
-            "name": "text_alignment",
-            "type": "radio",
-            "instructions": "By default, texts on blocks are left aligned.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_57b6ddd06300a",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
+                "width": "65",
                 "class": "",
                 "id": ""
             }
@@ -462,5 +374,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1486214565
+    "modified": 1486488930
 }
