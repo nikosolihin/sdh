@@ -20,6 +20,23 @@
             }
         },
         {
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Note<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Database (MariaDB)<\/td>\r\n      <td>Database: <em>SDHWeb_WP<\/em>\r\n        <br>\r\n        DB User: <em>sdh-sqladmin<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em><\/td>\r\n      <td>Root user also available with the same default password.<\/td>\r\n     <\/tr>\r\n    <tr>\r\n      <td>Backup<\/td>\r\n      <td>SQL backup happens every month and stored in \/etc\/mysql\/backups\/<\/td>\r\n      <td><strong>Use SSH to copy dump files to a local machine:<\/strong><br><pre>scp -r webteam@139.59.216.194:\/etc\/mysql\/backups\/ ~<\/pre><\/td>\r\n     <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "esc_html": 0,
+            "new_lines": "",
+            "key": "field_589aca1c5dcbc",
+            "label": "Wordpress",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Image Hosting<\/td>\r\n      <td>Unlimited storage<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.photos.google.com\">https:\/\/www.photos.google.com<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "esc_html": 0,
             "new_lines": "",
@@ -37,11 +54,28 @@
             }
         },
         {
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: sdh.or.id<br>\r\n        Static IP: 139.59.216.194\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: sdh.or.id<br>\r\n        Static IP: 139.59.216.194\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n<tr>\r\n      <td>Ubuntu Box<\/td>\r\n      <td>The user <em>webteam<\/em> is a superuser with password <em>TidfuK4y2=<\/em><\/td>\r\n      <td><strong>Note:<\/strong> root is also available with the same default password.<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "esc_html": 0,
             "new_lines": "",
             "key": "field_5770fe523c909",
             "label": "Digital Ocean",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Server's transactional emails<\/td>\r\n      <td>Postfix uses Mailgun's SMTP server to send server messages.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/mailgun.com\/sessions\/new\">https:\/\/mailgun.com\/sessions\/new<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "esc_html": 0,
+            "new_lines": "",
+            "key": "field_589acdc9dc2eb",
+            "label": "Mailgun",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -156,5 +190,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Service Details",
-    "modified": 1486538290
+    "modified": 1486540367
 }
