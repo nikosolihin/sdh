@@ -10,4 +10,15 @@
   &-content {
     flex: 1;
   }
+
+  &--noSidebar {
+    // Some components need smaller width when using
+    // the without-sidebar template
+
+    // One column layout
+    [class="row"] > .column > p {
+      max-width: $container-text-width;
+      margin: 0 auto;
+    }
+  }
 }

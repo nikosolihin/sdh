@@ -19,26 +19,21 @@
             }
         },
         {
-            "layout": "horizontal",
-            "choices": {
-                "panel": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
-                "card": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/card.png\"><p>Card<\/p>"
-            },
             "default_value": "",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "key": "field_57bc86a8ab7df",
             "label": "Block Style",
             "name": "style",
-            "type": "radio",
-            "instructions": "Blocks are essentially larger Call-to-Action buttons with a background image and a simple action verb encouraging visitors to visit the target link.<br><br>",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "acf-image-select",
+                "class": "",
                 "id": ""
             }
         },
@@ -374,5 +369,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1486488930
+    "modified": 1486575022
 }

@@ -1,0 +1,50 @@
+{
+    "key": "group_57de5ad238e33",
+    "title": "List",
+    "fields": [
+        {
+            "key": "field_57de5bc3b928b",
+            "label": "Post Type",
+            "name": "post_type",
+            "type": "select",
+            "instructions": "List displays all categories, topics or roles as a list of links.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "event": "Event",
+                "news": "News",
+                "media": "Media"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : List",
+    "modified": 1474887553
+}

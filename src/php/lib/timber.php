@@ -271,6 +271,12 @@ class StarterSite extends TimberSite {
 		});
 		$twig->addFilter($classfilter);
 
+		$classfilter = new Twig_SimpleFilter('serveSquareImage', function ($image, $size) {
+			$width = strval($size);
+			return $image['base'].'s'.$width.'-c/'.$image['title'];
+		});
+		$twig->addFilter($classfilter);
+
 		// //=============================================
 		// // Hide youtube controls
 		// //=============================================

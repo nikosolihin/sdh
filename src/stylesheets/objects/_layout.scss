@@ -66,7 +66,9 @@
 
 .row {
   box: vertical;
-  + .row { margin-top: $single*2; }
+  + .row {
+    margin-top: 0; // Dont change. Ex: full span heading before a 3-column layout.
+  }
   @include from(md) {
     // Flex on tablet up
     box: horizontal wrap;

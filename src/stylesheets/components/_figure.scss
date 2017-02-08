@@ -1,6 +1,7 @@
 .Figure {
   display: inline-block;
-  margin: 0 auto; // Client asked for no margin
+  margin: 0 auto;
+  margin-bottom: $single*2;
   width: 100%;
   picture, img {
     margin: 0 auto;
@@ -32,7 +33,7 @@
   &--right {
     @include from($desktop) {
       float: right;
-      margin: $half -25px $half $single * 1.75;
+      margin: $half 0 $half $single*2.5;
       max-width: 50%;
     }
   }

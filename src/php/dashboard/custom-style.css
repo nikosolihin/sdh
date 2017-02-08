@@ -52,12 +52,12 @@ p#backtoblog {
 /* Use icomoon in the dashboard
 /*=============================================*/
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?oe99s0');
-  src:  url('fonts/icomoon.eot?oe99s0#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?oe99s0') format('truetype'),
-    url('fonts/icomoon.woff?oe99s0') format('woff'),
-    url('fonts/icomoon.svg?oe99s0#icomoon') format('svg');
+	font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?eega0n');
+  src:  url('fonts/icomoon.eot?eega0n#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?eega0n') format('truetype'),
+    url('fonts/icomoon.woff?eega0n') format('woff'),
+    url('fonts/icomoon.svg?eega0n#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -78,9 +78,6 @@ p#backtoblog {
 	content: "\e910";
 }
 .acf-fc-popup [data-layout="editor"]::before {
-	content: "\e907";
-}
-.acf-fc-popup [data-layout="textarea"]::before {
 	content: "\e907";
 }
 .acf-fc-popup [data-layout="link"]::before {
@@ -115,6 +112,9 @@ p#backtoblog {
 }
 .acf-fc-popup [data-layout="table"]::before {
 	content: "\e90b";
+}
+.acf-fc-popup [data-layout="download"]::before {
+	content: "\e2c0";
 }
 .acf-fc-popup [data-layout="one_column"]::before {
 	content: "\e903";
@@ -344,4 +344,44 @@ p#backtoblog {
 #wp-admin-bar-new-post,
 #wp-admin-bar-new-user, {
   display: none;
+}
+
+/*=============================================*/
+/* Medium Editor Styling
+/*=============================================*/
+#poststuff .medium-editor-element > * {
+	padding: 0;
+	margin: 0;
+}
+#poststuff .medium-editor-element > * + * {
+	margin-top: 1em;
+}
+#poststuff .medium-editor-element h2 {
+	font-weight: bold;
+	font-size: 16px;
+}
+#poststuff .medium-editor-element h3 {
+	font-weight: bold;
+	font-size: 14px;
+}
+#poststuff .medium-editor-element p {
+	font-size: 14px;
+}
+#poststuff .medium-editor-element p > b {
+	font-weight: bold;
+}
+#poststuff .medium-editor-element blockquote {
+	font-style: italic;
+	padding-left: 1.5em;
+}
+#poststuff .medium-editor-element ul {
+	list-style: disc outside none;
+	padding-left: 1.4em;
+}
+#poststuff .medium-editor-element ol {
+	list-style: decimal outside none;
+	padding-left: 1.4em;
+}
+#poststuff .medium-editor-element li {
+	margin-bottom: 2px;
 }

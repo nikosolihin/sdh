@@ -4,7 +4,9 @@
 {% include 'components/banner.twig' %}
 {% include 'components/subnav.twig' %}
 
-<div class="SinglePage container">
+{% set sidebar = no_sidebar ? 'noSidebar' : '' %}
+
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
   <div class="SinglePage-share">
     {% include 'components/social-share.twig' %}
   </div>

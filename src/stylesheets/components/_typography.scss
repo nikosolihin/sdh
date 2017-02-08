@@ -34,72 +34,16 @@
 .right {
   text-align: right;
 }
-//
-// .tag {
-//   @extend .caps;
-//   color: #777;
-//   flex: 1 0 auto;
-//   margin-bottom: $half;
-// }
-//
-// .meta {
-//   color: #777;
-//   font-size: .9375rem;
-//   font-weight: $font-weight-medium;
-//   margin-bottom: 0;
-//   &-dot {
-//     color: #ccc;
-//     padding: 0 $half;
-//     display: inline-block;
-//   }
-//   &-link {
-//     @include hover(#777, $brand-primary);
-//     @include underlink;
-//   }
-//   &--icon {
-//     box: horizontal middle;
-//     font-size: .9375rem;
-//     font-weight: $font-weight-medium;
-//     margin-right: $single*2;
-//     svg {
-//       size: $single*1.125;
-//       fill: $brand-primary;
-//       margin-right: $half;
-//     }
-//   }
-//   &--withDot {
-//     margin-right: 0;
-//   }
-// }
 
 .content-body {
   font-size: $font-size-h5;
-  // padding: $single*1.25;
   @include from($desktop) {
     font-size: $font-size-h4;
-    // padding: 0;
   }
   h2 {
-    color: $navy;
-    margin-bottom: $single;
+    @extend .h3, .normal, .navy;
   }
-  // p {
-  //   margin-bottom: $single*1.5;
-  //   line-height: 1.6875;
-  //   a[href]:not([class]) {
-  //     @include hover($navy);
-  //     @include underlink;
-  //     font-weight: $font-weight-medium;
-  //   }
-  // }
-  // li:not([class]) {
-  //   line-height: 1.6875;
-  //   margin-top: $threefourth;
-  // }
-  // ul ul > li:not([class]),
-  // ol ol > li:not([class]),
-  // ul ol > li:not([class]),
-  // ol ul > li:not([class]) {
-  //   margin-top: $half;
-  // }
+  h3 {
+    @extend .h6, .medium, .caps, .spaced, .orange;
+  }
 }

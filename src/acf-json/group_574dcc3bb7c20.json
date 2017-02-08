@@ -14,7 +14,8 @@
                 "justifyLeft",
                 "justifyCenter",
                 "justifyRight",
-                "removeFormat"
+                "h2",
+                "h3"
             ],
             "other_options": [
                 "disableDoubleReturn",
@@ -55,5 +56,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Text Editor",
-    "modified": 1486092518
+    "modified": 1486565379
 }
