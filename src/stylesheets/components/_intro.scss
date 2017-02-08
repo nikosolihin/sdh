@@ -15,6 +15,11 @@
       width: 2.75rem;
       background-color: $yellow;
     }
+
+    &--center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &-teaser {
