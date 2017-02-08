@@ -1,128 +1,170 @@
 .Feed {
-  @include normalist;
 
-  // Components
-  &-item { // Display Style
-    padding-bottom: $single*1.125;
-    margin-bottom: $single*1.125;
-    border-bottom: 1px solid #eee;
-    @at-root .Feed--list #{&} {
-      box: vertical;
-    }
-    @at-root .Feed--object-list #{&} {
-      box: horizontal;
-    }
-    @at-root .Feed--card #{&} {
-      box: vertical;
-    }
-  }
-  &-image,
-  &-body {
-    width: 100%;
-  }
-  &-imageLink {
-    @include cover;
-    display: block;
-    width: 100%;
-  }
-  &-meta {
-    box: horizontal;
-    margin-top: $half;
-  }
-
-  // Elements
-  h5, p {
-    margin-bottom: $quarter;
-    line-height: 1.45;
-  }
-  h5 {
-    @at-root .column #{&} {
-      // In content body, make heading 18px
-      font-size: 1.125rem;
-    }
-  }
-  svg {
-    size: .9rem;
-    @at-root .column #{&} {
-      size: $single*1.125;
-    }
-  }
-
-  // Classes
-  .meta--icon {
-    margin-right: $half;
-  }
-
-  // Display Style
-  &--object-list {
-    .Feed-image {
-      flex: 0 0 auto;
-      width: 25%;
-      @at-root .column #{&} {
-        width: 30%;
-      }
-    }
-    .Feed-imageLink {
-      @at-root .column #{&} {
-        // In content body
-        height: $single*8;
-      }
-      @at-root .Sidebar-section #{&} {
-        // In sidebar section
-        @include square;
-      }
-    }
-    .Feed-body {
-      padding-left: $single;
-      width: 75%;
-      @at-root .column #{&} {
-        width: 70%;
-        padding-left: $single*1.5;
-      }
-    }
-  }
-  &--card {
-    .Feed-imageLink {
-      margin-bottom: $threefourth;
-      height: $single*8;
-      @at-root .column #{&} {
-        height: $single*10;
-      }
-    }
-    // In 1 column content body, card is laid horizontally, each at 30% width
-    @at-root .row #{&} {
-      box: horizontal wrap;
-      .Feed-item {
-        border-bottom: 0;
-        border: $single solid transparent;
-        padding-bottom: 0;
-        width: 100%;
-        @include from(sm) {
-          width: 50%;
+  &-social {
+    // Juicer.io custom styling
+    &.juicer-feed {
+      font-family: $font-family !important;
+      h1.referral { display: none; }
+      .j-stack {
+        .feed-item {
+          border: 1px solid #e5e5e5;
+          border-radius: 2px;
+          .j-message p a.auto {
+            @include hover($link-color, $link-hover-color);
+            font-weight: $font-weight-medium;
+          }
+          .j-meta {
+            .comments, .likes {
+              font-size: .75rem;
+            }
+            a::before {
+              font-size: .8rem !important;
+            }
+          }
+          &.juicer { // Ad feed
+            display: none !important;
+          }
         }
       }
-    }
-    // In any other columns, card is full width
-    @at-root .row.row--of-2 #{&},
-    .row.row--of-3 #{&},
-    .row.row--of-4 #{&} {
-      .Feed-item {
-        width: 100%;
+      .j-paginate.juicer-button {
+        margin-top: $single;
+        margin-bottom: $single;
+        border: 0;
+        border-radius: 3px;
+        background-color: $button-bg;
+        border: 2px solid $button-bg;
+        padding: $half $threefourth;
+        text-transform: none;
+        text: $white $font-weight-bold center none $font-size-h6 $line-height;
       }
     }
   }
 
-  // Reduce font size if we're within Sidebar
-  @at-root .Sidebar-section #{&} {
-    font-size: $font-size-h6;
-    h5 {
-      font-size: .9375rem;
-    }
-    .Feed-meta span {
-      font-size: $font-size-h6;
-    }
-    .Feed-item {
-      width: 100%;
-    }
-  }
+
+  // @include normalist;
+
+  // // Components
+  // &-item { // Display Style
+  //   padding-bottom: $single*1.125;
+  //   margin-bottom: $single*1.125;
+  //   border-bottom: 1px solid #eee;
+  //   @at-root .Feed--list #{&} {
+  //     box: vertical;
+  //   }
+  //   @at-root .Feed--object-list #{&} {
+  //     box: horizontal;
+  //   }
+  //   @at-root .Feed--card #{&} {
+  //     box: vertical;
+  //   }
+  // }
+  // &-image,
+  // &-body {
+  //   width: 100%;
+  // }
+  // &-imageLink {
+  //   @include cover;
+  //   display: block;
+  //   width: 100%;
+  // }
+  // &-meta {
+  //   box: horizontal;
+  //   margin-top: $half;
+  // }
+  //
+  // // Elements
+  // h5, p {
+  //   margin-bottom: $quarter;
+  //   line-height: 1.45;
+  // }
+  // h5 {
+  //   @at-root .column #{&} {
+  //     // In content body, make heading 18px
+  //     font-size: 1.125rem;
+  //   }
+  // }
+  // svg {
+  //   size: .9rem;
+  //   @at-root .column #{&} {
+  //     size: $single*1.125;
+  //   }
+  // }
+  //
+  // // Classes
+  // .meta--icon {
+  //   margin-right: $half;
+  // }
+  //
+  // // Display Style
+  // &--object-list {
+  //   .Feed-image {
+  //     flex: 0 0 auto;
+  //     width: 25%;
+  //     @at-root .column #{&} {
+  //       width: 30%;
+  //     }
+  //   }
+  //   .Feed-imageLink {
+  //     @at-root .column #{&} {
+  //       // In content body
+  //       height: $single*8;
+  //     }
+  //     @at-root .Sidebar-section #{&} {
+  //       // In sidebar section
+  //       @include square;
+  //     }
+  //   }
+  //   .Feed-body {
+  //     padding-left: $single;
+  //     width: 75%;
+  //     @at-root .column #{&} {
+  //       width: 70%;
+  //       padding-left: $single*1.5;
+  //     }
+  //   }
+  // }
+  // &--card {
+  //   .Feed-imageLink {
+  //     margin-bottom: $threefourth;
+  //     height: $single*8;
+  //     @at-root .column #{&} {
+  //       height: $single*10;
+  //     }
+  //   }
+  //   // In 1 column content body, card is laid horizontally, each at 30% width
+  //   @at-root .row #{&} {
+  //     box: horizontal wrap;
+  //     .Feed-item {
+  //       border-bottom: 0;
+  //       border: $single solid transparent;
+  //       padding-bottom: 0;
+  //       width: 100%;
+  //       @include from(sm) {
+  //         width: 50%;
+  //       }
+  //     }
+  //   }
+  //   // In any other columns, card is full width
+  //   @at-root .row.row--of-2 #{&},
+  //   .row.row--of-3 #{&},
+  //   .row.row--of-4 #{&} {
+  //     .Feed-item {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
+  //
+  // // Reduce font size if we're within Sidebar
+  // @at-root .Sidebar-section #{&} {
+  //   font-size: $font-size-h6;
+  //   h5 {
+  //     font-size: .9375rem;
+  //   }
+  //   .Feed-meta span {
+  //     font-size: $font-size-h6;
+  //   }
+  //   .Feed-item {
+  //     width: 100%;
+  //   }
+  // }
 }

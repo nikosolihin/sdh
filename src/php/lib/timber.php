@@ -233,18 +233,18 @@ class StarterSite extends TimberSite {
 		/* this is where you can add your own fuctions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 
-		// //=============================================
-		// // LIST COMPONENT & TERMS
-		// //=============================================
-		// $listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
-		// 	return populateList($options);
-		// });
-		// $twig->addFunction($listfunction);
-		//
-		// $termfunction = new Twig_SimpleFunction('listterms', function ($tax) {
-		// 	return listTerms($tax);
-		// });
-		// $twig->addFunction($termfunction);
+		//=============================================
+		// LIST COMPONENT & TERMS
+		//=============================================
+		$listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
+			return populateList($options);
+		});
+		$twig->addFunction($listfunction);
+
+		$termfunction = new Twig_SimpleFunction('listterms', function ($tax) {
+			return listTerms($tax);
+		});
+		$twig->addFunction($termfunction);
 
 		//=============================================
 		// Generate classes from component options

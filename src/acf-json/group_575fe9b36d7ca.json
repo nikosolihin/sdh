@@ -313,6 +313,68 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "58997aef8535f",
+                    "name": "block",
+                    "label": "Blocks",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "clone": [
+                                "group_5799c139c255f"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block",
+                            "key": "field_58997aef85360",
+                            "label": "Blocks",
+                            "name": "block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "589a9e9afa905",
+                    "name": "feed",
+                    "label": "Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "clone": [
+                                "group_574dc76280653"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block",
+                            "key": "field_589a9e9afa906",
+                            "label": "Feed",
+                            "name": "feed",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ],
             "min": "",
@@ -349,5 +411,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Components Parent",
-    "modified": 1486023805
+    "modified": 1486528180
 }

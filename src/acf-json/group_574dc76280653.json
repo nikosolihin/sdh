@@ -1,0 +1,180 @@
+{
+    "key": "group_574dc76280653",
+    "title": "Feed",
+    "fields": [
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_589a9f1ef11d6",
+            "label": "Source",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Web Items",
+            "ui_off_text": "Social Media",
+            "key": "field_589a9f3ff11d7",
+            "label": "",
+            "name": "internal",
+            "type": "true_false",
+            "instructions": "Are you trying to pull items internally from the website or external social media items?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "message": "Manage the sources of this social media feed at <a href=\"https:\/\/www.juicer.io\/log-in\" target=\"_blank\">Juicer<\/a>. Find details in the Services section.",
+            "esc_html": 0,
+            "new_lines": "",
+            "key": "field_589ab7e988b36",
+            "label": "Message",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_589a9f3ff11d7",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            }
+        },
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_57adb3acff5e5",
+            "label": "Feed Items",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_57db8e06d5781",
+            "label": "Taxonomies Selector",
+            "name": "taxonomies_selector",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_57db8340ef27b",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        },
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_57adb356ff5e4",
+            "label": "Feed Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 4,
+            "min": 1,
+            "max": 55,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_57ade7f1341f3",
+            "label": "Max number of items to display",
+            "name": "quantity",
+            "type": "number",
+            "instructions": "A feed that is too long might be okay on desktop, but ruin the experience of mobile users.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/list.png\"><p>List<\/p>",
+                "object-list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/object-list.png\"><p>Media Object<\/p>",
+                "card": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>"
+            },
+            "default_value": "list",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_5780e1043a1a4",
+            "label": "Display Style",
+            "name": "style",
+            "type": "radio",
+            "instructions": "Displaying resources as a list saves space and should be used if there are many resources to be displayed. The card display style will feature a larger teaser image and works best if there are fewer resources in the list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-image-select",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Feed",
+    "modified": 1486536656
+}
