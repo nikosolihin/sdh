@@ -1,1 +1,13 @@
-{{dump(data)}}
+<a href="{{data.file}}" class="Download">
+  <div class="flex-wrapper">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{data.icon}}"></use>
+    </svg>
+  </div>
+  <div class="Download-body">
+    <div class="Download-name h5 navy bold">{{data.filename|title}}</div>
+    {% if data.extension %}
+      <div class="Download-extension h6 caps medium spaced faint">{{data.extension}}</div>
+    {% endif %}
+  </div>
+</a>
