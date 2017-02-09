@@ -9,7 +9,7 @@ $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 
 // Get Sidebar
-$inherit = ($context['acf']['inherit'] === 'true');
+$inherit = ($context['acf']['inherit']);
 $sidebar = $post->get_field('sidebar_sections');
 if ($inherit) {
 	$order = $context['acf']['order'];

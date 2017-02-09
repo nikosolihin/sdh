@@ -101,14 +101,22 @@ a[href^="mailto"]:not([class]) {
 // }
 
 hr {
-  width: $single*3;
-  height: 3px;
-  // background-color: $brand-primary;
-  border: 0;
-  margin: $single*4 0;
   position: relative;
-  @include from(lg) {
-    left: -$single*1.25;
+  display: block;
+  width: 100%;
+  height: $single*3;
+  border: 0;
+  margin: $single*2 0;
+  &::after {
+    display: block;
+    position: absolute;
+    top: -22%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "...";
+    font-size: $font-size-h1;
+    line-height: 1;
+    color: $orange;
   }
 }
 

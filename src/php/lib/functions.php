@@ -1,5 +1,24 @@
 <?php
 //=============================================
+// Add user role class to body tag.
+// Used to hide zoneboard blocks for campus_manager role
+//=============================================
+if ( is_user_logged_in() ) {
+  add_filter('body_class','add_role_to_body');
+  add_filter('admin_body_class','add_role_to_body');
+}
+function add_role_to_body($classes) {
+  $current_user = new WP_User(get_current_user_id());
+  $user_role = array_shift($current_user->roles);
+  if (is_admin()) {
+    $classes .= 'role-'. $user_role;
+  } else {
+    $classes[] = 'role-'. $user_role;
+  }
+  return $classes;
+}
+
+//=============================================
 // Remove classes from wp_list_pages
 //=============================================
  function remove_page_class($wp_list_pages) {
@@ -20,6 +39,46 @@
 	return preg_replace($pattern, $replace_with, $third_phase);
 }
 add_filter('wp_list_pages', 'remove_page_class');
+
+//=========================================================
+// Automatically generates new terms for the Campus taxonomy
+// after each new Campus post type is created.
+// Based off: http://brennaobrien.com/blog/2013/11/autopopulating-wordpress-taxonomies.html
+//=========================================================
+function create_campus_terms($post_id) {
+  // only update terms if this is a campus post
+  if ('campus' != get_post_type($post_id)) return;
+
+  // don't create or update terms for system generated posts
+  if (get_post_status($post_id) == 'auto-draft') return;
+
+  // Grab the post title and slug to use as the new
+  // or updated term name and slug
+  $term_title = get_the_title($post_id);
+  $term_slug = get_post($post_id)->post_name;
+
+  // Check if a corresponding term already exists
+  $existing_terms = get_terms('campus', array('hide_empty' => false));
+  foreach($existing_terms as $term) {
+    if ($term->description == "SDH " . $term_title . " campus") {
+      //term already exists, so update it and we're done
+      wp_update_term($term->term_id, 'campus', array(
+        'name' => $term_title,
+        'slug' => $term_slug
+      ));
+      return;
+    }
+  }
+
+  // If not, this is a new post, so create a new term.
+  wp_insert_term($term_title, 'campus', array(
+    'slug' => $term_slug,
+    'description' => "SDH " . $term_title . " campus"
+  ));
+}
+//run the update function whenever a post is created or edited
+add_action('save_post', 'create_campus_terms');
+
 
 // //=============================================
 // // Edit links for wp_list_categories to work

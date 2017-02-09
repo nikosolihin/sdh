@@ -3,6 +3,21 @@
     "title": "Sidebar Components",
     "fields": [
         {
+            "key": "field_57ada2756271d",
+            "label": "Sidebar Modules",
+            "name": "sidebar_components",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": "",
             "layouts": [
                 {
                     "key": "57cce912c04f5",
@@ -11,13 +26,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_577225311bff5"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cce91ac04f6",
                             "label": "Link",
                             "name": "link",
@@ -29,7 +37,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_577225311bff5"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -42,13 +57,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_57622c6ac297f"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cce971d6dbc",
                             "label": "Spacer",
                             "name": "spacer",
@@ -60,7 +68,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_57622c6ac297f"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -73,13 +88,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_574dcc3bb7c20"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57ada29b6271e",
                             "label": "Text Editor",
                             "name": "editor",
@@ -91,7 +99,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_574dcc3bb7c20"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -104,11 +119,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57addadab1af8",
                             "label": "Feed",
                             "name": "feed",
@@ -120,7 +130,12 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -133,11 +148,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57debb97bcffe",
                             "label": "List",
                             "name": "list",
@@ -149,7 +159,12 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -162,13 +177,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_57623550ee5a3"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57ada2fbf1f9e",
                             "label": "Tabs",
                             "name": "tabs",
@@ -180,7 +188,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_57623550ee5a3"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -188,21 +203,14 @@
                 },
                 {
                     "key": "57bd405e76341",
-                    "name": "blocks",
+                    "name": "block",
                     "label": "Blocks",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_5799c139c255f"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57bd408a76342",
                             "label": "Blocks",
-                            "name": "blocks",
+                            "name": "block",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -211,7 +219,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_5799c139c255f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -224,13 +239,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_576048fbe7bc8"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57dae503d1435",
                             "label": "Maps",
                             "name": "map",
@@ -242,35 +250,59 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_576048fbe7bc8"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "589c8e294d8cb",
+                    "name": "download",
+                    "label": "Download",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_589c8e294d8cc",
+                            "label": "Download",
+                            "name": "download",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_589b54f499100"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
-            ],
-            "min": "",
-            "max": "",
-            "button_label": "Add Component",
-            "key": "field_57ada2756271d",
-            "label": "Sidebar Modules",
-            "name": "sidebar_components",
-            "type": "flexible_content",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            ]
         }
     ],
     "location": [
         [
             {
                 "param": "post_type",
-                "operator": "=="
+                "operator": "==",
+                "value": "post"
             }
         ]
     ],
@@ -282,5 +314,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1486218853
+    "modified": 1486655043
 }

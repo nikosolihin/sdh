@@ -1,6 +1,5 @@
 {% for block in data.blocks %}
   {% set post = TimberPost(block) %}
-  {% set style = post.get_field('style') %}
   {% set image = post.get_field('image') %}
   {% set description = post.get_field('description') %}
   {% set link_type = post.get_field('type') %}

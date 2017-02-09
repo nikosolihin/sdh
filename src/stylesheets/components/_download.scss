@@ -26,6 +26,15 @@
   }
 
   + .Download {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #eee;
+    &:hover {
+      border-color: #d9e9f5;
+    }
+  }
+
+  @at-root .Sidebar-section #{&} {
+    margin-bottom: 0 !important;
+    max-width: 100%;
+    width: 100%;
   }
 }
