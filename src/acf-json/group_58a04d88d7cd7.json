@@ -1,9 +1,9 @@
 {
-    "key": "group_57a5f3d7d5bf0",
-    "title": "Page Builder",
+    "key": "group_58a04d88d7cd7",
+    "title": "Article Builder",
     "fields": [
         {
-            "key": "field_57a5f3d7deec5",
+            "key": "field_58a04d88db11d",
             "label": "Start by adding a section",
             "name": "sections",
             "type": "flexible_content",
@@ -15,9 +15,9 @@
                 "class": "",
                 "id": "acf-layout-builder"
             },
+            "button_label": "Add a section",
             "min": "",
             "max": "",
-            "button_label": "Add a section",
             "layouts": [
                 {
                     "key": "574d44caa3371",
@@ -26,7 +26,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_57a5f3d7e19ff",
+                            "key": "field_58a04d88dcafc",
                             "label": "Components",
                             "name": "full",
                             "type": "clone",
@@ -41,10 +41,10 @@
                             "clone": [
                                 "group_575fe9b36d7ca"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "group",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -57,7 +57,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_57a5f3d7e1b9d",
+                            "key": "field_58a04d88dcba8",
                             "label": "Components",
                             "name": "left",
                             "type": "clone",
@@ -78,7 +78,7 @@
                             "layout": "block"
                         },
                         {
-                            "key": "field_57a5f3d7e1c76",
+                            "key": "field_58a04d88dcc48",
                             "label": "Components",
                             "name": "right",
                             "type": "clone",
@@ -93,83 +93,10 @@
                             "clone": [
                                 "group_575fe9b36d7ca"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 1,
                             "display": "group",
-                            "layout": "block"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "5892e8605788c",
-                    "name": "three_columns",
-                    "label": "3 Columns",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5892e8815788d",
-                            "label": "Components",
-                            "name": "left",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_575fe9b36d7ca"
-                            ],
+                            "layout": "block",
                             "prefix_label": 0,
-                            "prefix_name": 1,
-                            "display": "group",
-                            "layout": "block"
-                        },
-                        {
-                            "key": "field_5892e8895788f",
-                            "label": "Components",
-                            "name": "mid",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_575fe9b36d7ca"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 1,
-                            "display": "group",
-                            "layout": "block"
-                        },
-                        {
-                            "key": "field_5892e8885788e",
-                            "label": "Components",
-                            "name": "right",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_575fe9b36d7ca"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 1,
-                            "display": "group",
-                            "layout": "block"
+                            "prefix_name": 1
                         }
                     ],
                     "min": "",
@@ -183,24 +110,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "default"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "without-sidebar.php"
+                "value": "news"
             }
         ]
     ],
@@ -211,6 +121,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "Regular Page Builder",
-    "modified": 1486913339
+    "description": "Article Builder",
+    "modified": 1486900705
 }

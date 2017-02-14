@@ -131,11 +131,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
+                            "clone": [
+                                "group_574dc76280653"
+                            ],
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -314,5 +316,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1486655043
+    "modified": 1486991755
 }

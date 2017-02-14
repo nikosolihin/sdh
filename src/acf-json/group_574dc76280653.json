@@ -3,8 +3,6 @@
     "title": "Feed",
     "fields": [
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_589a9f1ef11d6",
             "label": "Source",
             "name": "",
@@ -16,14 +14,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "default_value": 1,
-            "message": "",
-            "ui": 1,
-            "ui_on_text": "Web Items",
-            "ui_off_text": "Social Media",
             "key": "field_589a9f3ff11d7",
             "label": "",
             "name": "internal",
@@ -35,12 +30,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Web Items",
+            "ui_off_text": "Social Media"
         },
         {
-            "message": "Manage the sources of this social media feed at <a href=\"https:\/\/www.juicer.io\/log-in\" target=\"_blank\">Juicer<\/a>. Find details in the Services section.",
-            "esc_html": 0,
-            "new_lines": "",
             "key": "field_589ab7e988b36",
             "label": "Message",
             "name": "",
@@ -60,29 +57,40 @@
                 "width": "",
                 "class": "acf-instruction",
                 "id": ""
-            }
+            },
+            "message": "Manage the sources of this social media feed at <a href=\"https:\/\/www.juicer.io\/log-in\" target=\"_blank\">Juicer<\/a>. Find details in the Services section.",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_57adb3acff5e5",
             "label": "Feed Items",
             "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_589a9f3ff11d7",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_57db8e06d5781",
-            "label": "Taxonomies Selector",
+            "label": "Select Metadata",
             "name": "taxonomies_selector",
-            "type": "reusable_field_group_field",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -91,60 +99,60 @@
                 "class": "",
                 "id": ""
             },
-            "group_key": "group_57db8340ef27b",
-            "name_prefix": 0,
-            "key_prefix": 1,
-            "label_prefix": 0
+            "clone": [
+                "group_57db8340ef27b"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_57adb356ff5e4",
             "label": "Feed Options",
             "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_589a9f3ff11d7",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "default_value": 4,
-            "min": 1,
-            "max": 55,
-            "step": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_57ade7f1341f3",
             "label": "Max number of items to display",
             "name": "quantity",
             "type": "number",
-            "instructions": "A feed that is too long might be okay on desktop, but ruin the experience of mobile users.",
+            "instructions": "A feed that is too long might be okay on desktop, but will ruin the experience of mobile users.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 4,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 55,
+            "step": 1
         },
         {
-            "layout": "horizontal",
-            "choices": {
-                "list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/list.png\"><p>List<\/p>",
-                "object-list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/object-list.png\"><p>Media Object<\/p>",
-                "card": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>"
-            },
-            "default_value": "list",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
             "key": "field_5780e1043a1a4",
             "label": "Display Style",
             "name": "style",
@@ -156,7 +164,17 @@
                 "width": "",
                 "class": "acf-image-select",
                 "id": ""
-            }
+            },
+            "choices": {
+                "list": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/list.png\"><p>List<\/p>",
+                "card": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/card.png\"><p>Card<\/p>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "list",
+            "layout": "horizontal",
+            "return_format": "value"
         }
     ],
     "location": [
@@ -176,5 +194,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Feed",
-    "modified": 1486536656
+    "modified": 1486992084
 }
