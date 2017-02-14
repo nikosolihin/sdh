@@ -1,7 +1,7 @@
 .Sidebar {
   flex: 0 0 auto;
   width: 31%;
-  padding: 0 $single*2.75;
+  padding: 0 $single*2;
 
   &-section {
     font-size: $font-size-h5;
@@ -20,7 +20,7 @@
       border: 1px solid $line;
       border-top: 3px solid $yellow;
       border-radius: 3px;
-      padding: $single*2;
+      padding: $single*1.5;
     }
     &--plain {
       padding-right: $single*1.25;
