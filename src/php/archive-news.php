@@ -8,7 +8,7 @@ $context['empty_msg'] = __('No news found. Please try again.', 'sdh');
 $ppp = $context['options']['news_listing_ppp'];
 
 // Get Sidebar. Listing pages can't inherit from any parents.
-$context['sidebar_sections'] = ['options']['news_listing_sidebar']['sidebar_sections'];
+$context['sidebar_sections'] = $context['options']['news_listing_sidebar']['sidebar_sections'];
 
 // Get After Listing page content
 $context['sections'] = $context['options']['news_content']['sections'];

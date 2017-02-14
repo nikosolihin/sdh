@@ -167,6 +167,7 @@
             },
             "choices": {
                 "list": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/list.png\"><p>List<\/p>",
+                "object": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/object.png\"><p>Media Object<\/p>",
                 "card": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/card.png\"><p>Card<\/p>"
             },
             "allow_null": 0,
@@ -194,5 +195,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Feed",
-    "modified": 1486992084
+    "modified": 1487041935
 }

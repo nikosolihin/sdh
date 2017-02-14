@@ -1,7 +1,11 @@
 .Feed {
 
   /// REMOVE THIS
-  width: 30%;
+  width: 33.333%;
+
+  &-heading {
+    @include line-divider($single*2.5);
+  }
 
   &-body {
     box: vertical;
@@ -9,47 +13,40 @@
   }
   &-item {
     display: block;
-    // padding-bottom: $single;
-    // margin-bottom: $single;
-    // border-bottom: 1px solid $line;
-    p {
-      margin-bottom: 0;
-    }
-
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      left: -7px;
-      bottom: -27px;
-      height: 3px;
-      width: 1.5rem;
-      background-color: $yellow;
-    }
-
+    margin-bottom: $single;
   }
   &-title {
     color: $gray;
     transition: color .125s ease-in-out;
+    margin-bottom: .325rem;
     @at-root .Feed-item:hover #{&} {
       color: $navy-light;
     }
   }
   &-teaser {
     color: #666;
-    margin-top: $quarter;
+    margin: $half 0 0;
+    line-height: 1.45;
   }
   &-meta {
+    display: block;
+    box: horizontal top;
+    line-height: 1.125;
     color: #888;
+    svg {
+      size: .85rem;
+      flex: 0 0 auto;
+      fill: $orange;
+      margin-right: $quarter;
+    }
+    & + & {
+      margin-top: $half;
+    }
   }
-  &-date {
+  &-media {
     box: vertical middle center;
     size: 65px;
-    background-color: $navy;
-    border-radius: 50%;
-    margin-top: $single;
     flex: 0 0 auto;
-
     &Day {
       line-height: 1;
       font-size: 22px;
@@ -58,9 +55,47 @@
       line-height: 1;
       text-transform: uppercase;
     }
+    &Image {
+      @include cover;
+      size: 100%;
+    }
   }
 
+  // Post types
   &--event {
+    .Feed-media {
+      background-color: $navy;
+      border-radius: 50%;
+      margin-top: $single;
+    }
+    &.Feed--card {
+      .Feed-media {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Display Styles
+  &--list {
+    .Feed-media {
+      display: none;
+    }
+  }
+  &--card {
+    .Feed-item {
+      box: vertical;
+      margin-bottom: $single*1.5;
+      .flex-wrapper {
+        padding-left: 0;
+      }
+    }
+    .Feed-media {
+      width: 100%;
+      height: 7.5rem;
+      margin-bottom: $quarter;
+    }
+  }
+  &--object {
     .Feed-item {
       box: horizontal;
       .flex-wrapper {
