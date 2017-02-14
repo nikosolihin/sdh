@@ -94,6 +94,19 @@
     z-index: -1;
   }
 }
+@mixin line-divider($space) {
+  margin-bottom: $space;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -7px;
+    bottom: -($space/1.75);
+    height: 3px;
+    width: 1.5rem;
+    background-color: $yellow;
+  }
+}
 @mixin underlink {
   line-height: 1.4;
   border-bottom: 1px dotted #bbb;
