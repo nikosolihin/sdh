@@ -13,7 +13,11 @@ function add_campus_manager_role() {
 }
 add_action('admin_init', 'add_campus_manager_role', 999);
 
-function add_campus_manager_role_caps() {
+//=============================================
+// Assigns users capabilities for
+// the campus post type
+//=============================================
+function add_campus_caps() {
 	// Add the roles you'd like to administer the Campus custom post types
 	$roles = array('campus_manager', 'administrator');
 
@@ -30,5 +34,11 @@ function add_campus_manager_role_caps() {
 		$role->add_cap( 'delete_private_campuses' );
 		$role->add_cap( 'delete_published_campuses' );
 	}
+
+	// Admin can see other users campus posts, but not
+	// campus manager
+	$admin = get_role('administrator');
+	$admin->add_cap( 'edit_others_campuses' );
+	$admin->add_cap( 'delete_others_campuses' );
 }
-add_action('admin_init', 'add_campus_manager_role_caps', 999);
+add_action('admin_init', 'add_campus_caps', 999);

@@ -1,24 +1,50 @@
 {% if data.internal %}
   {% set source = data.post_type %}
-  {% set style = data.style %}
-  {% if data.mode == 'automatic' %}
+  {% set style = 'event' %}
+  {# set style = data.style #}
+  {% if data.mode %}
     {% set type = data.post_type %}
+    {% if data.post_type == 'event' %}
+      {% set meta = data.event_metadata %}
+    {% else %}
+      {% set meta = data.news_metadata %}
+    {% endif %}
   {% else %}
     {% set type = data.manual_posts|first.post_type %}
+    {% set meta = data.manual_metadata %}
   {% endif %}
 
   {# Do logic in PHP #}
   {% set list = populatelist(data) %}
 
-  <ul class="{{'Feed'|modifiers("#{style}, #{type}")}}">
-    {% for post in list %}
-      <li class="Feed-item">
-        {% include 'components/feed-' ~ type ~ '.twig' with data %}
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="{{'Feed'|modifiers("#{style}, #{type}")}}">
+    <h3 class="h5 medium caps navy">{{data.post_type}}</h3>
+    <div class="Feed-body">
+      {% for post in list %}
+      <a class="Feed-item" href="{{post.link}}">
+        <div class="Feed-date">
+          <div class="Feed-dateMonth h7 medium caps white center">Jan</div>
+          <div class="Feed-dateDay medium white center">20</div>
+        </div>
+        <div class="flex-wrapper">
+          {% if 'campus' in meta %}
+            <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
+          {% endif %}
+
+          <p class="Feed-title h4 bold">{{post.title}}</p>
+          <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('M j, Y')}}</span>
+
+          {% if 'teaser' in meta %}
+            <p class="Feed-teaser h5 normal">{{post.teaser|slice(0,60)~'...'}}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
 {% else %}
   <ul class="Feed-social juicer-feed" data-feed-id="sekolah-dian-harapan" data-columns="3" data-per="10" data-style="user" data-overlay="false">
-    <h3 class="Intro-heading Intro-heading--center center h3 light navy">{{__('Stay Connected', 'sdh')}}</h3>
+    <h2 class="Intro-heading Intro-heading--center center h3 light navy">{{__('Stay Connected', 'sdh')}}</h3>
   </ul>
 {% endif %}

@@ -118,6 +118,10 @@
       }
     }
   }
+  @at-root .row > .column {
+    // Single column dont need borders
+    border: 0;
+  }
 }
 
 .four-o-four {

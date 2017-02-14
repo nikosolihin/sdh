@@ -1,3 +1,4 @@
+// Utilities
 .noScroll {
   overflow: hidden;
 }
@@ -12,4 +13,53 @@
 
 .block {
   display: block;
+}
+
+.icon {
+  box: horizontal;
+  padding: .125rem;
+  margin-right: $half;
+
+  svg {
+    size: $single;
+    fill: currentColor;
+  }
+}
+
+// Type Styling
+.white {
+  @include white;
+}
+.body {
+  color: $body-color;
+}
+.yellow {
+  color: $yellow;
+}
+.orange {
+  color: $orange;
+}
+.navy {
+  color: $navy;
+}
+.blue {
+  color: $blue;
+}
+.sky {
+  color: $sky;
+}
+.faint {
+  color: $gray-lighter;
+}
+.caps {
+  text-transform: uppercase;
+}
+.spaced {
+  letter-spacing: 2.2px;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
 }

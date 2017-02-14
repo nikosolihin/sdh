@@ -132,6 +132,7 @@ p#backtoblog {
 /*=============================================*/
 /* Float some ACF buttons
 /*=============================================*/
+#acf-sidebar-builder .acf-actions li,
 #acf-sidebar-builder .acf-actions li {
 	float: left;
 }
@@ -140,13 +141,14 @@ p#backtoblog {
 /* Change Flex content popup to grid
 /*=============================================*/
 .acf-fc-popup ul {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
 	-webkit-flex-flow: row wrap;
 	    -ms-flex-flow: row wrap;
 	        flex-flow: row wrap;
 	width: 245px; /* 80*3+2+3 */
+	padding: 0;
 }
 .acf-fc-popup	ul li {
 	display: block;
@@ -370,3 +372,10 @@ p#backtoblog {
 body.role-campus_manager .dashboard-grid .dashboard-panel:not(:nth-child(6)) {
 	display: none;
 }
+
+/*=============================================*/
+/* Modalize Flex Content
+/*=============================================*/
+/*.acf-layout-builder > .acf-input > .acf-flexible-content > .values > .layout[data-layout='two_columns'] > .acf-fields > .acf-field-clone[data-type='clone'] > .acf-label {
+  display: none;
+}*/

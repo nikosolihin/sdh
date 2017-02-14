@@ -3,7 +3,7 @@
  * The template for displaying a single news
  */
 $context = Timber::get_context();
-$post = new TimberPost();
+$post = Timber::query_post();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
@@ -27,28 +27,11 @@ if ($inherit) {
 	$context['sidebar_sections'] = $sidebar;
 }
 
-// Get Authors
-if ($post->get_field('authors')) {
-	$context['authors'] = array();
-	foreach ($post->get_field('authors') as $author) {
-		array_push($context['authors'], $author->name);
-	}
-	$context['authors'] = implode(", ", $context['authors']);
-}
-
-// Get topic
-if ($post->get_terms('news_topic')) {
-	$context['topic'] = array(
-		'slug'	=> $post->get_terms('news_topic')[0]->slug,
-		'name'	=> $post->get_terms('news_topic')[0]->name
-	);
-}
-
 // Generate breadcrumb. Must be last.
 // Breadcrumb for news
 $context['breadcrumb'] = array();
 array_push( $context['breadcrumb'], array(
-	'title' => __('News', 'saat'),
+	'title' => __('News', 'sdh'),
 	'link' => $context['site']->url. '/' .'news'
 ));
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );

@@ -1,0 +1,16 @@
+.Editor {
+  font-size: $font-size-h5;
+  @include from($desktop) {
+    font-size: $font-size-h4;
+  }
+  h2 {
+    @extend .h3, .normal, .navy;
+  }
+  h3 {
+    @extend .h6, .medium, .caps, .spaced, .orange;
+  }
+  b {
+    color: $headings-color;
+    font-weight: $font-weight-medium;
+  }
+}

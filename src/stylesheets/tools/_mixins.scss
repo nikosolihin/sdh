@@ -33,7 +33,7 @@
     z-index: 1;
   }
 }
-@mixin overlay($full, $value: null) {
+@mixin overlay($full, $value: null, $index: false) {
   @include promote;
   position: relative;
   &::before {
@@ -43,6 +43,9 @@
     left: 0;
     size: 100%;
     transition: all .2s ease-out;
+    @if $index {
+      z-index: #{$index};
+    }
     @if $full {
       @if ($value) {
         background: #{$value};
@@ -91,15 +94,15 @@
     z-index: -1;
   }
 }
-// @mixin underlink {
-//   line-height: 1.4;
-//   border-bottom: 1px dotted #bbb;
-//   transition: all .15s ease-out;
-//   &:focus,
-//   &:hover {
-//     border-bottom: 1px dotted $brand-primary;
-//   }
-// }
+@mixin underlink {
+  line-height: 1.4;
+  border-bottom: 1px dotted #bbb;
+  transition: all .15s ease-out;
+  &:focus,
+  &:hover {
+    border-bottom: 1px dotted $brand-primary;
+  }
+}
 @mixin no-outline {
   outline: none !important;
 }

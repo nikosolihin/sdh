@@ -100,150 +100,98 @@ add_action('save_post', 'create_campus_terms');
 //   return preg_replace($pattern, $replace_with, $remove_slashes);
 // }
 // add_filter('wp_list_categories', 'edit_category_links');
-//
-// //=============================================
-// // Feed component
-// //=============================================
-// function populateList($options) {
-//
-//   $posts = array();
-//   $type = '';
-//
-//   // Which mode are we on?
-//   if ($options['mode'] == 'automatic') {
-//
-//     // Media is actually resource, so call it that
-//     if ($options['post_type'] == 'media') {
-//       $options['post_type'] = 'resource';
-//     }
-//
-//     // Set up basic wp_query args
-//     $args = array(
-//       'numberposts'	=> $options['quantity'],
-//       'post_type'		=> $options['post_type'],
-//     );
-//
-//     // Get tax ids for the chosen post type
-//     switch ($options['post_type']) {
-//       case 'event':
-//         $tax = 'event_category';
-//         $term_ids = $options['event_categories'];
-//         // $metadata = $options['event_metadata'];
-//
-//         // If events, get upcoming posts instead of recent
-//         $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
-//         $args['order'] = 'ASC';
-//         $today = getdate();
-//         $args['date_query'] = array(
-//           array( 'after'  => array(
-//             'year'        => $today['year'],
-//             'month'       => $today['mon'],
-//             'day'         => $today['mday'],
-//           ))
-//         );
-//         break;
-//       case 'news':
-//         $tax = 'news_topic';
-//         $term_ids = $options['news_topics'];
-//         break;
-//       case 'resource':
-//         $tax = 'media_category';
-//         $term_ids = $options['media_categories'];
-//         break;
-//       case 'person':
-//         $tax = 'role';
-//         $term_ids = $options['roles'];
-//         $args['orderby'] = 'title';
-//         $args['order'] = 'ASC';
-//         break;
-//     }
-//
-//     // Add selected term ids
-//     $args['tax_query'] = array( 'relation' => 'AND', );
-//     array_push($args['tax_query'], array(
-//       'taxonomy'         => $tax,
-//       'field'            => 'term_id',
-//       'terms'            => $term_ids,
-//     ));
-//
-//     // Get the posts
-//     $posts = Timber::get_posts($args);
-//     $type = $options['post_type'];
-//
-//   } else { // Manual
-//
-//     // Get the posts and post type based of first element
-//     $posts = Timber::get_posts($options['manual_posts']);
-//     $type = $posts[0]->type->slug;
-//
-//     // Check the rest of the posts for junks
-//     foreach ($posts as $key => $post) {
-//       if( $post->type->slug != $type ) {
-//         unset($posts[$key]);
-//       }
-//     }
-//   }
-//
-//   // Discard excess info, depending on post types
-//   $filtered_posts = array();
-//   switch ($type) {
-//     case 'event':
-//       foreach ($posts as $post) {
-//         array_push($filtered_posts, array(
-//           'title'       => $post->title,
-//           'link'        => $post->link,
-//           'date'        => $post->post_date,
-//           'term'        => $post->get_terms('event_category')[0]->name,
-//           'teaser'      => $post->get_field('gcal')['description'],
-//           'image'       => $post->get_field('image'),
-//         ));
-//       }
-//       break;
-//     case 'news':
-//       foreach ($posts as $post) {
-//         array_push($filtered_posts, array(
-//           'title'       => $post->title,
-//           'link'        => $post->link,
-//           'date'        => $post->post_date,
-//           'topic'       => $post->get_terms('news_topic')[0]->name,
-//           'teaser'      => $post->get_field('teaser'),
-//           'image'       => $post->get_field('image'),
-//         ));
-//       }
-//       break;
-//     case 'resource':
-//       foreach ($posts as $post) {
-//         array_push($filtered_posts, array(
-//           'title'       => $post->title,
-//           'link'        => $post->link,
-//           'type'        => $post->get_terms('media_type')[0]->name,
-//           'icon'        => $post->get_terms('media_type')[0]->slug,
-//           'category'    => $post->get_terms('media_category')[0]->name,
-//           'teaser'      => $post->get_field('teaser'),
-//           'image'       => $post->get_field('image'),
-//         ));
-//       }
-//       break;
-//     case 'person':
-//       foreach ($posts as $post) {
-//         array_push($filtered_posts, array(
-//           'name'        => $post->name,
-//           'email'       => $post->get_field('email'),
-//           'bio'         => $post->get_field('bio'),
-//           'bio_title'   => $post->get_field('bio_title'),
-//           'title'       => $post->get_field('title'),
-//           'phone'       => $post->get_field('phone'),
-//           'photo'       => $post->get_field('image'),
-//           'facebook'    => $post->get_field('facebook'),
-//           'twitter'     => $post->get_field('twitter'),
-//           'instagram'   => $post->get_field('instagram'),
-//         ));
-//       }
-//       break;
-//   }
-//   return $filtered_posts;
-// }
-//
+
+//=============================================
+// Feed component
+//=============================================
+function populateList($options) {
+
+  $posts = array();
+  $type = '';
+
+  // Which mode are we on?
+  if ($options['mode']) {  // Automatic
+
+    // Set up basic wp_query args
+    $args = array(
+      'numberposts'	=> $options['quantity'],
+      'post_type'		=> $options['post_type'],
+    );
+
+    // If events, get upcoming posts instead of recent
+    if ($options['post_type'] == 'event') {
+      $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
+      $args['order'] = 'ASC';
+      $today = getdate();
+      $args['date_query'] = array(
+        array( 'after'  => array(
+          'year'        => $today['year'],
+          'month'       => $today['mon'],
+          'day'         => $today['mday'],
+        ))
+      );
+    }
+    
+    // Add selected term ids
+    if ($options['feed_campus']) {
+      $term_ids = $options['feed_campus'];
+      $args['tax_query'] = array( 'relation' => 'AND', );
+      array_push($args['tax_query'], array(
+        'taxonomy'         => 'campus',
+        'field'            => 'term_id',
+        'terms'            => $term_ids,
+      ));
+    }
+
+    // Get the posts
+    $posts = Timber::get_posts($args);
+    $type = $options['post_type'];
+
+  } else { // Manual
+
+    // Get the posts and post type based of first element
+    $posts = Timber::get_posts($options['manual_posts']);
+    $type = $posts[0]->type->slug;
+
+    // Check the rest of the posts for junks
+    foreach ($posts as $key => $post) {
+      if( $post->type->slug != $type ) {
+        unset($posts[$key]);
+      }
+    }
+  }
+
+  // Discard excess info, depending on post types
+  $filtered_posts = array();
+  switch ($type) {
+    // case 'event':
+    //   foreach ($posts as $post) {
+    //     array_push($filtered_posts, array(
+    //       'title'       => $post->title,
+    //       'link'        => $post->link,
+    //       'date'        => $post->post_date,
+    //       'term'        => $post->get_terms('event_category')[0]->name,
+    //       'teaser'      => $post->get_field('gcal')['description'],
+    //       'image'       => $post->get_field('image'),
+    //     ));
+    //   }
+    //   break;
+    case 'news':
+      foreach ($posts as $post) {
+        array_push($filtered_posts, array(
+          'title'       => $post->title,
+          'link'        => $post->link,
+          'date'        => $post->post_date,
+          'campus'      => $post->get_terms('campus')[0]->name,
+          'teaser'      => $post->get_field('teaser'),
+          'image'       => $post->get_field('image'),
+        ));
+      }
+      break;
+  }
+  return $filtered_posts;
+}
+
 // //================================================
 // // Set default terms for each custom taxonomies based on locale
 // // http://www.billerickson.net/code/default-term-for-taxonomy/
@@ -308,16 +256,16 @@ add_action('save_post', 'create_campus_terms');
 //     $data['post_status'] = 'publish';
 //   return $data;
 // }
-//
-// //=============================================
-// // Remove the meta tag showing WP version
-// // Source: https://kinsta.com/blog/wordpress-security/
-// //=============================================
-// function wpversion_remove_version() {
-//   return '';
-// }
-// add_filter('the_generator', 'wpversion_remove_version');
-//
+
+//=============================================
+// Remove the meta tag showing WP version
+// Source: https://kinsta.com/blog/wordpress-security/
+//=============================================
+function wpversion_remove_version() {
+  return '';
+}
+add_filter('the_generator', 'wpversion_remove_version');
+
 // //=============================================
 // // List Component
 // //=============================================

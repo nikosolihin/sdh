@@ -1,38 +1,26 @@
 .Select {
-  @extend .caps;
-  @extend .brand;
-  box: horizontal middle space-between;
-  padding: .85rem $single*1.25;
-  background-color: $callout-bg;
-  cursor: pointer;
-  position: relative;
-  > svg {
-    fill: #888;
-    size: .6rem;
-  }
-  &-item {
-    @include hover($body-color, $brand-primary);
-    display: block;
-    text-transform: capitalize;
-    font-size: $font-size-h6;
-    letter-spacing: 0;
-    padding: .8rem $single*1.25;
-    border-top: 1px solid #eee;
-  }
-  &-dropdown {
-    display: none;
-    position: absolute;
-    background-color: $callout-bg;
-    width: 100%;
-    right: 0;
-    top: $single*3;
-    text-align: left;
-    &--show {
-      display: block;
-      z-index: $zindex-modal;
-      .Select-item {
-        z-index: $zindex-modal !important;
-      }
+  box: horizontal middle center;
+  margin: 0;
+  padding: 0;
+  margin-left: $threefourth;
+  border-bottom: 3px solid $yellow;
+  padding-bottom: .1rem;
+
+  select {
+    font-family: inherit;
+    line-height: 1;
+    padding: $quarter;
+    padding-left: 0;
+    border: 0;
+    max-width: 3rem;
+
+    option {
+      background-color: pink;
     }
+  }
+
+  svg {
+    size: .85rem;
+    fill: $navy;
   }
 }

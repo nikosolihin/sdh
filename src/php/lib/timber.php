@@ -112,6 +112,12 @@ class StarterSite extends TimberSite {
 		// 	$context['audience_links'] = get_field('audience_links', 'option');
 		// }
 
+
+
+		$context['options'] = get_fields('option');
+		// REMOVE ALL BELOW
+
+
 		// Social Links
 		$context['social'] = array(
 			'facebook' => get_field('facebook', 'option'),
