@@ -70,12 +70,12 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_57622c6ac297f"
+                                "group_589ae2575c1b9"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -103,10 +103,10 @@
                             "clone": [
                                 "group_574dcc3bb7c20"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -163,10 +163,10 @@
                                 "id": ""
                             },
                             "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -194,10 +194,10 @@
                             "clone": [
                                 "group_57623550ee5a3"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -256,10 +256,10 @@
                             "clone": [
                                 "group_576048fbe7bc8"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -347,5 +347,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1487047107
+    "modified": 1487173919
 }

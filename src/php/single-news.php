@@ -9,11 +9,11 @@ $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 
 // Get Sidebar
-$inherit = ($context['acf']['inherit'] === 'true');
+$inherit = $context['acf']['inherit'];
 $sidebar = $post->get_field('sidebar_sections');
 if ($inherit) {
 	$order = $context['acf']['order'];
-	$parents_sidebar = get_field('news_sidebar_sections', 'option');
+	$parents_sidebar = $context['options']['news_sidebar']['sidebar_sections'];
 	if ($parents_sidebar) {
 		if ($sidebar) {
 			$context['sidebar_sections'] = $order == 'parent' ? array_merge($parents_sidebar, $sidebar) : array_merge($sidebar, $parents_sidebar);

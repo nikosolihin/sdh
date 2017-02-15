@@ -30,8 +30,10 @@
       {# Fallback with transparent LQIP #}
       <img alt="{{image.title}}" class="lazyload" data-src="{{image|serveImage(640)}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     </picture>
-    <figcaption class="Figure-caption h6">
-      {{data.caption}}
-    </figcaption>
+    {% if data.caption %}
+      <figcaption class="Figure-caption h6">
+        {{data.caption}}
+      </figcaption>
+    {% endif %}
   </figure>
 {% endif %}

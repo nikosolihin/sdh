@@ -118,7 +118,8 @@
       }
     }
   }
-  @at-root .row > .column {
+
+  @at-root [class="row"] > .column {
     // Single column dont need borders
     border: 0;
   }

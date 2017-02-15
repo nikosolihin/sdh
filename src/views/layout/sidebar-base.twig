@@ -2,6 +2,8 @@
   {% set callout = section.sidebar_section_options %}
   {% if callout == 'callout' %}
     {% set color = section.sidebar_section_color %}
+  {% else %}
+    {% set color = '' %}
   {% endif %}
 
   <div class="{{'Sidebar-section'|modifiers("#{callout}, #{color}")}}">

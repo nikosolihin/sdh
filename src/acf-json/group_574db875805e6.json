@@ -175,6 +175,20 @@
                 "operator": "!=",
                 "value": "without-sidebar.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
         ]
     ],
     "menu_order": 3,
@@ -185,5 +199,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Sidebar Builder",
-    "modified": 1487048972
+    "modified": 1487171035
 }

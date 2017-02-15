@@ -2,27 +2,35 @@
 
 {% block content %}
 
+{% set image = acf.image %}
+
 <div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
-  <div class="SinglePage-share">
+
+  <div class="SinglePage-share Share">
     {% include 'components/social-share.twig' %}
   </div>
   <div class="SinglePage-content content-body">
-    <div class="Intro">
+    <div class="Intro Intro--withMeta">
       <div class="Intro-breadcrumb">
         {% include 'components/breadcrumb.twig' %}
       </div>
       <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+      <div class="Intro-meta h7 caps spaced medium faint">Posted on Feb 12 2017</div>
+      {% if acf.teaser %}
+        <p class="Intro-teaser light">{{acf.teaser}}</p>
+      {% endif %}
+      {% if image %}
+        {% include 'components/image.twig' with {'data': {'figure': image}} %}
+      {% endif %}
     </div>
     {% include 'layout/base.twig' %}
   </div>
+  <div class="SinglePage-sidebar Sidebar">
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
+  </div>
 
-  {% if not no_sidebar %}
-    <div class="SinglePage-sidebar Sidebar">
-      {% if sidebar_sections %}
-        {% include 'layout/sidebar-base.twig' %}
-      {% endif %}
-    </div>
-  {% endif %}
 </div>
 
 {% endblock %}

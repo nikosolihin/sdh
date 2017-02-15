@@ -21,8 +21,33 @@
   }
 
   &-teaser {
-    @extend .light, .faint;
-    margin-bottom: $single*1.5;
-    font-size: 1.4rem / 1.45;
+    @extend .light;
+    color: #888;
+    margin-bottom: $single*2;
+    font-size: 1.35rem / 1.45;
+  }
+
+  &--withMeta {
+    .Intro-heading {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      &::after {
+        display: none;
+      }
+    }
+    .Intro-meta {
+      position: relative;
+      padding-bottom: $single*2.5;
+      margin-bottom: $single*2.5;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 2.75rem;
+        background-color: $yellow;
+      }
+    }
   }
 }

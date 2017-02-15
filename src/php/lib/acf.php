@@ -171,6 +171,13 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug'	=> 'settings',
   ));
 
+  // Google OAuth2 Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Authenticate Google',
+    'parent_slug'	=> 'settings',
+  ));
+
   // Event Settings //////////////////////
   acf_add_options_sub_page(array(
 		'page_title' 	=> 'Event Settings',
