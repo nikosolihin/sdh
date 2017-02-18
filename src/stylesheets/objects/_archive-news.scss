@@ -1,4 +1,5 @@
 .ArchiveNews {
+  position: relative;
   margin-top: $single*3;
 
   &-control {
@@ -16,5 +17,9 @@
 
   &-content {
     box: horizontal wrap top left;
+    min-height: 500px; // So loader don't overlap control area
+    &--fadeOut {
+      opacity: .3;
+    }
   }
 }

@@ -113,6 +113,9 @@ function events_post_type() {
 		'rewrite'               => $rewrite,
 		'capability_type'     	=> array('campus','campuses'),
     'map_meta_cap'        	=> true,
+		'show_in_rest'       		=> true,
+		'rest_base'          		=> 'events',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
 	register_post_type( 'event', $args );
 }
@@ -176,6 +179,9 @@ function news_post_type() {
 		'rewrite'               => $rewrite,
 		'capability_type'     	=> array('campus','campuses'),
     'map_meta_cap'        	=> true,
+		'show_in_rest'       		=> true,
+		'rest_base'          		=> 'news',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
 	register_post_type( 'news', $args );
 }
@@ -299,9 +305,9 @@ function campus_post_type() {
 		'capability_type'     	=> array('campus','campuses'),
     'map_meta_cap'        	=> true,
 	);
-	register_post_type( 'campus', $args );
+	// register_post_type( 'campus', $args );
 }
-add_action( 'init', 'campus_post_type', 0 );
+// add_action( 'init', 'campus_post_type', 0 );
 
 /**
  * Filters to enable %custom-taxonomy% in rewrites

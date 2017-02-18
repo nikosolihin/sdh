@@ -126,8 +126,8 @@ $button-bg:                     $orange !default;
 $button-small-padding:          $half .625rem !default;
 
 // // Loader //////////////////////////////////////
-// $loader-size:                  $single*2 !default;
-// $loader-color:                 lighten($gray-light, 40%) !default;
+$loader-size:                  $single*2 !default;
+$loader-color:                 $orange !default;
 
 // Banner ///////////////////////////////////
 $banner-small-height:          400px !default;

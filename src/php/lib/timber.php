@@ -112,12 +112,6 @@ class StarterSite extends TimberSite {
 		// 	$context['audience_links'] = get_field('audience_links', 'option');
 		// }
 
-
-
-		$context['options'] = get_fields('option');
-		// REMOVE ALL BELOW
-
-
 		// Social Links
 		$context['social'] = array(
 			'facebook' => get_field('facebook', 'option'),
@@ -271,15 +265,20 @@ class StarterSite extends TimberSite {
 		//=============================================
 		// Generate image url from Google Photos
 		//=============================================
+		// if(isset($manta_option['iso_format_recent_works']) && $manta_option['iso_format_recent_works'] == 1){
 		$classfilter = new Twig_SimpleFilter('serveImage', function ($image, $size) {
-			$width = strval($size);
-			return $image['base'].'s'.$width.'/'.$image['title'];
+			if(isset($image) && $image == 1) {
+				$width = strval($size);
+				return $image['base'].'s'.$width.'/'.$image['title'];
+			}
 		});
 		$twig->addFilter($classfilter);
 
 		$classfilter = new Twig_SimpleFilter('serveSquareImage', function ($image, $size) {
-			$width = strval($size);
-			return $image['base'].'s'.$width.'-c/'.$image['title'];
+			if(isset($image) && $image == 1) {
+				$width = strval($size);
+				return $image['base'].'s'.$width.'-c/'.$image['title'];
+			}
 		});
 		$twig->addFilter($classfilter);
 

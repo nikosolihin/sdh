@@ -1,119 +1,75 @@
 {% extends "base.twig" %}
 
 {% block before_content %}
-  {% include 'components/media-object.twig' %}
+  {% include 'components/news-object.twig' %}
 {% endblock %}
 
 {% block content %}
 
-{# ----------------- Featured Events ----------------- #}
-<div class="FeaturedEvents wrapper wrapper--narrow">
-  <h2 class="Lead Lead--section brand container">{{__('Featured Events', 'saat')}}</h2>
-  <div class="FeaturedEvents-carousel" data-component="featured-events">
-    {% for event in featured_events %}
-      <div class="FeaturedEvents-image" data-flickity-bg-lazyload="{{event.image[xlarge]}}"></div>
-    {% endfor %}
-  </div>
-  <div class="FeaturedEvents-body">
-    <div class="Arrows">
-      <a class="Arrows-nav Flickity-prev" href="">
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-left"></use>
-        </svg>
-      </a>
-      <a class="Arrows-nav Flickity-next" href="">
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-right"></use>
-        </svg>
-      </a>
+<div class="SinglePage ArchivePage container">
+  <div class="SinglePage-content content-body">
+    <div class="Intro">
+      <h1 class="Intro-heading h2 light navy">{{title|title}}</h1>
+      <p class="Intro-teaser light faint">{{teaser}}</p>
     </div>
-    {% for event in featured_events %}
-      <div class="FeaturedEvents-content" data-content-id="{{loop.index0}}">
-        <h5 class="tag">{{event.category|upper}}</h5>
-        <h3 class="brand">{{event.title}}</h3>
-        <div class="FeaturedEvents-meta">
-          <div class="meta meta--icon">
-            <svg aria-hidden="true" role="presentation" title="Event Date">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+
+    {# ----------------- News Archive ----------------- #}
+    <div class="ArchiveNews" data-component="news" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "appId": "{{analytics.facebook_app_id}}", "handle": "{{analytics.twitter_analytics_id}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}" }'>
+      <h2 class="h3 normal navy">{{__('News from Our Campuses', 'sdh')}}</h2>
+
+      <div class="ArchiveNews-control">
+        <div class="ArchiveNews-filter">
+          <span class="h7 medium caps spaced faint">Date:</span>
+          <div class="Select">
+      			<select class="ArchiveNews-dateFilter h6 medium navy">
+      				<option value="desc">{{__('Latest', 'sdh')}}</option>
+      				<option value="asc">{{__('Oldest', 'sdh')}}</option>
+      			</select>
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
             </svg>
-            <span>{{event.date|date('j M, Y')}}</span>
-          </div>
-          {% if event.location %}
-            <div class="meta meta--icon">
-              <svg aria-hidden="true" role="presentation" title="Event Date">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
-              </svg>
-              <span>{{event.location}}</span>
-            </div>
-          {% endif %}
+      		</div>
         </div>
-        {% if event.description %}
-          <p>{{event.description|slice(0,250)~'...'}}</p>
-        {% endif %}
-        <a href="{{event.link}}" class="Button">{{label}}</a>
+        <div class="ArchiveNews-filter">
+          <span class="h7 medium caps spaced faint">Campus:</span>
+          <div class="Select">
+      			<select class="ArchiveNews-campusFilter h6 medium navy">
+      				<option value="all" selected="selected">{{__('All', 'sdh')}}</option>
+              {% for campus in campuses %}
+                <option value="{{campus.slug}}">{{campus.name |title}}</option>
+              {% endfor %}
+      			</select>
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+            </svg>
+      		</div>
+        </div>
       </div>
-    {% endfor %}
-  </div>
-</div>
+      {% include 'components/loader.twig' %}
+      <div class="ArchiveNews-content" data-component="share"></div>
 
-{# ----------------- Upcoming Events ----------------- #}
-<h2 class="Lead Lead--section brand container">{{__('Upcoming Events', 'saat')}}</h2>
-<div class="ArchiveEvent container" data-component="event" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "label": "{{label|title}}", "categories": {{categories_json}}, "locale": "{{site.language}}", "emptyMsg": "{{empty_msg}}" }'>
-  <div class="ArchiveEvent-preferences" data-component="toc">
-    <svg aria-hidden="true" role="presentation" title="Select Language">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#settings"></use>
-    </svg>
-    <span class="caps brand">{{__('Show Filters', 'saat')}}</span>
-  </div>
-  <div class="ArchiveEvent-content">
-    {% include 'components/loader.twig' %}
-    <div class="ArchiveEvent-result"></div>
-    <div class="Pagination Pagination--hidden Pagination--hidePrevNext">
-      <a href="" class="Pagination-prev">
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
-        </svg>{{__('Prev', 'saat')}}
-      </a>
-      <ul class="Pagination-pages List List--inline"></ul>
-      <a href="" class="Pagination-next">
-        {{__('Next', 'saat')}}
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div class="ArchiveEvent-sidebar Sidebar">
-    <h3 class="Lead">{{__('Filter Events', 'saat')}}</h3>
-    <div class="ArchiveEvent-sidebarSection">
-      <h5>{{__('By Date', 'saat')}}</h5>
-      <a href="" class="Button Button--utility Datepicker-clear">{{__('Clear Date', 'saat')}}</a>
-      <div class="Datepicker"></div>
-    </div>
-    <div class="ArchiveEvent-sidebarSection">
-      <h5>{{__('By Keywords', 'saat')}}</h5>
-      <input type="text" placeholder="{{placeholder}}" tabindex="1">
-    </div>
-    <div class="ArchiveEvent-sidebarSection">
-      <h5>{{__('By Categories', 'saat')}}</h5>
-      <a href="" class="Button Button--utility Pill-clear">{{__('Clear All', 'saat')}}</a>
-      <ul class="List" data-component="pill">
-        {% for id, category in categories %}
-          <div class="Pill Pill--pointer Pill--inactive" data-category-id="{{id}}" data-category-slug="{{category.slug}}" style="background-color: {{category.color}};">{{category.name}}</div>
-        {% endfor %}
-      </ul>
-    </div>
-    <a href="" class="ArchiveEvent-search Button Button--block Button--large">{{__('Search', 'saat')}}</a>
+      <div class="Pagination">
+        <a class="Pagination-prev Pagination-nav Pagination--inactive" data-page="0">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
+          </svg>
+        </a>
+        <div class="Pagination-pages"></div>
+        <a class="Pagination-next Pagination-nav Pagination--inactive" data-page="0">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </a>
+      </div>
 
-    {# Calendar Export #}
-    <div class="Sidebar-section Sidebar-section--center Sidebar-section--framed Sidebar-section--accent">
-      <h3 class="Sidebar-sectionHeading Lead brand">{{__('Download Calendar', 'saat')}}</h3>
-      <p style="text-align: center;">
-        {{__('If you use your own calendar app, click here to download and import all of our events', 'saat')}}
-      </p>
-      <div class="Spacer"></div>
-      <a href="{{ics}}" class="Button Button--block">{{__('Download', 'saat')}}</a>
     </div>
+    {% include 'layout/base.twig' %}
+  </div>
+
+  <div class="SinglePage-sidebar Sidebar">
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
   </div>
 </div>
 

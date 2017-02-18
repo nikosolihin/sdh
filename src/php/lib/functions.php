@@ -131,7 +131,7 @@ function populateList($options) {
         ))
       );
     }
-    
+
     // Add selected term ids
     if ($options['feed_campus']) {
       $term_ids = $options['feed_campus'];
@@ -214,48 +214,48 @@ function populateList($options) {
 // 	}
 // }
 // add_action( 'save_post', 'set_default_object_terms', 100, 2 );
-//
-// //=============================================
-// // Set publish date according to
-// // Google Calendar start date
-// //=============================================
-// global $post;
-// global $wpdb;
-// function modify_event_date($post_id) {
-//   // Limit to only event post type
-//   if (get_post_type($post_id) == "event" && get_post_meta($post_id, 'gcal', true)) {
-//     $gcal = json_decode(get_post_meta($post_id, 'gcal', true), true);
-//     if (array_key_exists('dateTime', $gcal['start'])) {
-//       $datefield = $gcal['start']['dateTime'];
-//     } else {
-//       $datefield = $gcal['start']['date'];
-//     }
-//     date_default_timezone_set("Asia/Jakarta");
-//   	$post_date = date("Y-m-d H:i:s", strtotime($datefield));
-//   	$my_post = array();
-//   	$my_post['ID'] = $post_id;
-//   	$my_post['post_date'] = $post_date;
-//   	remove_action('save_post', 'modify_event_date');
-//     wp_update_post( $my_post );
-//   	add_action('save_post', 'modify_event_date');
-//   }
-// }
-// add_action('save_post', 'modify_event_date');
-//
-// //=========================================================
-// // Wordpress is a blogging platform, which means
-// // some tweaking must be done to do upcoming future events.
-// // This forces scheduled post to published status.
-// // http://wordpress.stackexchange.com/a/132238
-// //=========================================================
-// remove_action('future_post', '_future_post_hook');
-// add_filter( 'wp_insert_post_data', 'nacin_do_not_set_posts_to_future' );
-//
-// function nacin_do_not_set_posts_to_future( $data ) {
-//   if ( $data['post_status'] == 'future' && $data['post_type'] == 'event' )
-//     $data['post_status'] = 'publish';
-//   return $data;
-// }
+
+//=============================================
+// Set publish date according to
+// Google Calendar start date
+//=============================================
+global $post;
+global $wpdb;
+function modify_event_date($post_id) {
+  // Limit to only event post type
+  if (get_post_type($post_id) == "event" && get_post_meta($post_id, 'gcal', true)) {
+    $gcal = json_decode(get_post_meta($post_id, 'gcal', true), true);
+    if (array_key_exists('dateTime', $gcal['start'])) {
+      $datefield = $gcal['start']['dateTime'];
+    } else {
+      $datefield = $gcal['start']['date'];
+    }
+    date_default_timezone_set("Asia/Jakarta");
+  	$post_date = date("Y-m-d H:i:s", strtotime($datefield));
+  	$my_post = array();
+  	$my_post['ID'] = $post_id;
+  	$my_post['post_date'] = $post_date;
+  	remove_action('save_post', 'modify_event_date');
+    wp_update_post( $my_post );
+  	add_action('save_post', 'modify_event_date');
+  }
+}
+add_action('save_post', 'modify_event_date');
+
+//=========================================================
+// Wordpress is a blogging platform, which means
+// some tweaking must be done to do upcoming future events.
+// This forces scheduled post to published status.
+// http://wordpress.stackexchange.com/a/132238
+//=========================================================
+remove_action('future_post', '_future_post_hook');
+add_filter( 'wp_insert_post_data', 'nacin_do_not_set_posts_to_future' );
+
+function nacin_do_not_set_posts_to_future( $data ) {
+  if ( $data['post_status'] == 'future' && $data['post_type'] == 'event' )
+    $data['post_status'] = 'publish';
+  return $data;
+}
 
 //=============================================
 // Remove the meta tag showing WP version
@@ -309,8 +309,8 @@ add_filter('the_generator', 'wpversion_remove_version');
 // }
 // // Remove issues with prefetching adding extra views
 // remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-//
-// //=============================================
-// // Localization
-// //=============================================
-// load_theme_textdomain( 'saat', get_template_directory().'/languages' );
+
+//=============================================
+// Localization
+//=============================================
+load_theme_textdomain( 'sdh', get_template_directory().'/languages' );

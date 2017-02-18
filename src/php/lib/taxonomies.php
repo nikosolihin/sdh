@@ -74,7 +74,10 @@ function campus_taxonomy() {
 		'items_list_navigation'      => __( 'Items list navigation', 'sdh' ),
 	);
 	$rewrite = array(
-		'slug'                       => 'campuses',
+		// 'slug'                       => 'campus',
+		// 'slug'                       => 'news/?utf8=✓&date=desc&page=1&campus=',
+		'with_front'                 => false,
+		'hierarchical'               => false,
 	);
 	$caps = array(
     // allow anyone editing posts to assign terms
@@ -86,13 +89,21 @@ function campus_taxonomy() {
 	$args = array(
 		'labels'                     => $labels,
 		'hierarchical'               => false,
-		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => false,
 		'show_tagcloud'              => false,
-		'rewrite'                    => $rewrite,
+		// 'rewrite'                    => $rewrite,
+
+		'rewrite'                   => false,
+		'query_var'									=> true, // must be true if doing filter[xxx] api call
+		'publicly_queryable'				=> true, // must be true if doing filter[xxx] api call
+		'public'                    => false,
+
     'capabilities'               => $caps,
+		'show_in_rest'               => true,
+		'rest_base'                  => 'campus',
+		'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'campus', array( 'news' ), $args );
 }
