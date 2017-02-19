@@ -14,22 +14,6 @@
   }
 }
 
-@keyframes close {
-  0% {
-    display: block;
-    opacity: 1;
-  }
-  1% {
-    display: none;
-    opacity: 1;
-    transform: translate3d(0,0,0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(0,-15px,0);
-  }
-}
-
 @keyframes drop {
   0% {
     display: none;

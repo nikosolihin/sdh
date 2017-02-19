@@ -1,0 +1,58 @@
+{
+    "key": "group_58a7e4ccb7e1c",
+    "title": "Gallery",
+    "fields": [
+        {
+            "key": "field_58a7e816242ba",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "Pick a few photos to create a gallery. The first few image will be used as preview. The image title and description will automatically be pulled in from Google Photos. <strong>NOTE:<\/strong> Hyphens and underscores will be converted to spaces; Cases will stay.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "Pick some photos to create a gallery from. The first few images will be used as preview. The image titles and descriptions will automatically be pulled in from Google Photos. <strong>NOTE:<\/strong> Hyphens and underscores will be converted to spaces; Cases will stay.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58a7e4ea18ed8",
+            "label": "Choose Gallery Photos",
+            "name": "gallery",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 9999,
+            "google_photos_user_id": "",
+            "google_photos_access_token": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Gallery",
+    "modified": 1487399038
+}

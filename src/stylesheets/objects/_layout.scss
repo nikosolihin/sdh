@@ -119,6 +119,13 @@
     }
   }
 
+  &-left {
+    border-left: 0;
+  }
+  &-right {
+    border-right: 0;
+  }
+
   @at-root [class="row"] > .column {
     // Single column dont need borders
     border: 0;

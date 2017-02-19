@@ -39,6 +39,17 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 ) !default;
+$image-breakpoints: (
+  // Available Sizes: 94, 110, 128, 200, 220,
+  // 288, 320, 400, 512, 576, 640, 720, 800,
+  // 912, 1024, 1152, 1280, 1440, 1600.
+  xs: 576,
+  sm: 800,
+  md: 1024,
+  lg: 1280,
+  xl: 1440,
+  xxl: 1600
+) !default;
 $desktop:                         'md' !default;
 $container-width:                 1280px !default;
 $container-landing-width:         1400px !default;
@@ -103,6 +114,8 @@ $headings-line-height:         1.25 !default;
 
 // Z-Index ///////////////////////////////////
 $zindex-announcement:            5000 !default;
+$zindex-gallery:                 4100 !default;
+$zindex-modal:                   4000 !default;
 $zindex-primarynav:              3000 !default;
 $zindex-footer-bg:               2000 !default;
 $zindex-footer-main:             2100 !default;

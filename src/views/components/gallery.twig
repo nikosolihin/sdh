@@ -1,37 +1,55 @@
-{% set image = data.figure %}
+{% set image = acf.image|serveImage %}
 
-{% if data.crop %}
-  {# Square Image #}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{lg}})" data-srcset="{{image|serveSquareImage(400)}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image|serveSquareImage(400)}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image|serveSquareImage(400)}}">
-        <source data-srcset="{{image|serveSquareImage(400)}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image|serveSquareImage(400)}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption h6">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% else %}
-  {# Normal Image #}
-  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-    <picture>
-      <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{lg}})" data-srcset="{{image|serveImage(1024)}}">
-        <source media="(min-width: {{md}})" data-srcset="{{image|serveImage(640)}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{image|serveImage(640)}}">
-        <source data-srcset="{{image|serveImage(640)}}">
-      <!--[if IE 9]></video><![endif]-->
-      {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image|serveImage(640)}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    </picture>
-    <figcaption class="Figure-caption h6">
-      {{data.caption}}
-    </figcaption>
-  </figure>
-{% endif %}
+<div class="Gallery-preview">
+  {# Get first 3 photos as previews #}
+  {% for photo in data.gallery | slice(0,3) %}
+    {% set image = photo|serveSquareImage(400) %}
+    <div class="Gallery-previewImage lazyload" data-bgset="{{image}}"></div>
+  {% endfor %}
+  <div class="Gallery-previewButton Button">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fullscreen"></use>
+    </svg><span class="h7 caps spaced bold white">{{__('Launch Gallery', 'sdh')}}</span>
+  </div>
+</div>
+
+<div class="Gallery die" data-component="gallery">
+  <div class="Gallery-caption">
+    {% for photo in data.gallery %}
+      <div class="Gallery-caption-item{% if loop.index == 1 %} Gallery-caption-item--show{% endif %}" data-caption-id="{{loop.index}}">
+        {% if photo.title %}
+          {% set title = photo.title|spacify %}
+          <h4 class="h4 bold orange noMargin">{{title}}</h4>
+        {% endif %}
+        {% if photo.description %}
+          <p class="h5 light white">{{photo.description}}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="" class="Gallery-close Gallery-button">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+    </svg>
+  </a>
+
+  <a href="" class="Gallery-left Gallery-button">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use>
+    </svg>
+  </a>
+
+  <div class="Gallery-body">
+    {% for photo in data.gallery %}
+      {% set image = photo|serveImage %}
+      <div class="Gallery-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
+    {% endfor %}
+  </div>
+
+  <a href="" class="Gallery-right Gallery-button">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#forward"></use>
+    </svg>
+  </a>
+</div>
