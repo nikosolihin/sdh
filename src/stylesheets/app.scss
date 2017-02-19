@@ -22,7 +22,7 @@
 // // =====================================================
 @import "normalize";
 // @import "pikaday";
-// @import "flickity";
+@import "flickity";
 // @import "generic/datepicker";
 @import "generic/fontface";
 @import "generic/keyframes";
@@ -111,7 +111,7 @@
 // @import "components/arrows";
 // @import "components/feed-person";
 // @import "components/feed-event";
-// @import "components/gallery";
+@import "components/gallery";
 @import "components/select";
 // @import "components/toggle";
 // @import "components/hero";

@@ -1,61 +1,183 @@
 .Gallery {
-  margin-top: $single*2;
+  ////////////////////////////
+  // For fade in flickity, not slide in
+  ////////////////////////////
+  .flickity-slider {
+    transform: none !important;
+  }
   &-cell {
-    width: 100%;
-    @at-root .Gallery-body #{&} {
-      transition: opacity 0.4s;
-      opacity: 0;
-      min-height: 300px;
-      &.flickity-lazyloaded,
-      &.flickity-lazyerror {
-        opacity: 1;
-      }
+    left: 0 !important;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    z-index: -1;
+    &.is-selected {
+      opacity: 1;
+      z-index: 0;
     }
   }
-  &-nav {
-    margin-bottom: $single;
-    .Gallery-cell {
-      width: $gallery-thumbnail-size;
-      @include from(lg) {
-        width: $gallery-thumbnail-size;
-      }
-      margin: 0 $quarter;
-      &.is-nav-selected {
-        border: $gallery-selected-border;
-      }
+
+  ////////////////////////////
+  // The modal gallery
+  ////////////////////////////
+  box: horizontal center middle;
+  position: fixed;
+  top: 0;
+  left: 0;
+  size: 100%;
+  z-index: $zindex-gallery;
+  background-color: rgba(0,0,0,.88);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0,-15px,0);
+  transition: all .125s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+
+  &-button {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $orange;
+    padding: $half;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all .1s ease-in-out;
+    svg {
+      fill: $white;
+      size: $single*2.75;
+      vertical-align: middle;
+    }
+    &:hover {
+      background-color: darken($orange, 3.5%);
     }
   }
-  &-caption {
-    margin: 0;
-    color: $gallery-color;
-    padding: $single*1.25 $half 0;
-    h5 {
-      color: $white;
-    }
-    p {
-      margin-bottom: 0;
+
+  &-left {
+    left: $single*2.25;
+  }
+
+  &-right {
+    right: $single*2.25;
+  }
+
+  &-close {
+    top: $single*3;
+    right: $single*2.75;
+    svg {
+      size: $single*2;
     }
   }
-  &-caption-item {
-    display: none;
-    &--show {
-      display: block;
-    }
-  }
+
   &-body {
-    .flickity-prev-next-button {
-      width: $single*2.75;
-      height: $single*5;
-      background-color: $brand-highlight;
-      border-radius: 0;
-      path {
+    width: 90%;
+    height: 88%;
+  }
+
+  &-cell {
+    @include cover;
+    size: 100%;
+  }
+
+  &-caption {
+    position: absolute;
+    top: $single*3.75;
+    left: $single*3;
+    width: 25%;
+    background-color: $navy;
+    padding: $single*2;
+    z-index: 1;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -1rem;
+      width: 50%;
+      height: 100%;
+      transform: skewX(-6.5deg);
+      background: inherit;
+      z-index: -1;
+    }
+    &-item {
+      display: none;
+      p {
+        margin-top: $half;
+        margin-bottom: 0;
+      }
+      &--show {
+        display: block;
+      }
+    }
+  }
+
+  ////////////////////////////
+  // The preview area
+  ////////////////////////////
+  &-preview {
+    @include square;
+    position: relative;
+    cursor: zoom-in;
+
+    &Image {
+      @include square;
+      @include cover;
+      position: absolute;
+      box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.2);
+      &::after {
+        transition: background-color .2s ease-in-out;
+      }
+
+      // Stacking order
+      &:nth-child(1) {
+        width: 65%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-60%);
+        z-index: 3;
+        &::after {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0) 25%);
+        }
+      }
+      &:nth-child(2) {
+        width: 60%;
+        top: 7%;
+        right: 0;
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        width: 50%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+
+    &Button {
+      box: horizontal middle center;
+      position: absolute;
+      bottom: $single*1.5;
+      left: $single;
+      z-index: 4;
+      box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.2);
+      cursor: zoom-in;
+      svg {
         fill: $white;
+        size: $single*1.25;
+        margin-right: $half;
       }
-      &.previous {
-        left: -$single*1.25;
+    }
+
+    &:hover {
+      > .Gallery-previewImage::after {
+        background-color: rgba(0,0,0,0.15);
       }
-      &.next {
-        right: -$single*1.25;
+      > .Gallery-previewIcon {
+        @extend .Button--hover;
       }
     }
   }

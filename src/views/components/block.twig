@@ -12,7 +12,7 @@
     {% set url = post.get_field('search_url') %}
   {% endif %}
 
-  <div class="Block lazyload" data-component="block" data-url="{{url}}" data-bgset="{{image|serveImage(720)}}">
+  <div class="Block lazyload" data-component="block" data-url="{{url}}" data-bgset="{{image|serveImage}}">
     <div class="Block-title h4 bold white center">{{post.title}}</div>
     <a href="{{url}}" class="Block-body">
       <p class="Block-bodyTitle h4 bold white center">{{post.title}}</p>

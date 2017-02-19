@@ -10,7 +10,7 @@
 
 <div class="LandingPage">
   {% set image = acf.banner.image %}
-  <div class="LandingPage-banner lazyload" data-bgset="{{image|serveImage(1400)}} [(min-width: {{xxl}})] | {{image|serveImage(1400)}} [(min-width: {{lg}})] | {{image|serveImage(1400)}} [(min-width: {{md}})] | {{image|serveImage(1400)}}">
+  <div class="LandingPage-banner lazyload" data-bgset="{{image|serveImage}} [(min-width: {{xxl}})] | {{image|serveImage}} [(min-width: {{lg}})] | {{image|serveImage}} [(min-width: {{md}})] | {{image|serveImage}}">
     <div class="LandingPage-bannerCopy">
       <h1 class="h2 light navy">{{post.title}}</h1>
       {% if acf.teaser %}
