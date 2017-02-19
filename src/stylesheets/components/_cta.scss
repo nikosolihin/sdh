@@ -1,31 +1,28 @@
 .Cta {
   box: horizontal middle;
   position: relative;
-  top: 4.25rem;
   z-index: $zindex-footer-main;
-  border-radius: 3px;
-  max-width: 1400px;
   background-color: #25427C;
-  margin-bottom: 3px;
-  box-shadow: 0px 7px 50px 0px rgba(38,50,56,0.15);
+
+  h3.h3 {
+    font-size: 1.75rem / 1.5;
+  }
 
   .flex-wrapper {
-    width: 70%;
-    padding: $single*2 $single*3;
+    width: 63%;
+    padding: $single*3.25 $single*3 $single*3.25 $single*13;
   }
 
   &-buttons {
     @include left-slant;
     position: absolute;
-    top: -10px;
+    top: -8px;
     right: 0;
-    width: 30%;
-    border-radius: 3px;
+    width: 37%;
     background-color: #1F2D6A;
-    padding-left: $single*1.5;
-    padding-top: $single*3.75; // Must be .5 more than CTA's padding
-    padding-bottom: $single*3.75;
-    z-index: $zindex-footer-main;
+    padding-left: $single*2.5;
+    padding-top: $single*5.25;
+    padding-bottom: $single*4.75;
     .Button:first-child {
       margin-right: $threefourth;
     }

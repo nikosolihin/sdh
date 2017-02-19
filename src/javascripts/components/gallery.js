@@ -61,7 +61,7 @@ export default class Gallery {
     this.$el.removeClass('die')
     setTimeout(() => {
       this.$el.addClass('Gallery--open')
-    }, 2)
+    }, 10)
   }
 
   close() {
