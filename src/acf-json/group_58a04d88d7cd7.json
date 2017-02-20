@@ -1,0 +1,126 @@
+{
+    "key": "group_58a04d88d7cd7",
+    "title": "Article Builder",
+    "fields": [
+        {
+            "key": "field_58a04d88db11d",
+            "label": "Start by adding a section",
+            "name": "sections",
+            "type": "flexible_content",
+            "instructions": "Each individual section is a <strong><em>horizontal row<\/em><\/strong> with varying number of columns in it. In each column, you may add different kinds of <strong><em>modules<\/em><\/strong> (Text editor, Cards, Buttons, Accordions, etc). If you need more screen space during editing, click the <strong><em>Screen Options<\/em><\/strong> button in the menu bar and toggle the <em>1 column<\/em> display layout. You may also collapse the sidebar menu on the right.<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-layout-builder"
+            },
+            "button_label": "Add a section",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "574d44caa3371",
+                    "name": "one_column",
+                    "label": "Full Width",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58a04d88dcafc",
+                            "label": "Components",
+                            "name": "full",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57a4779918275",
+                    "name": "two_columns",
+                    "label": "2 Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58a04d88dcba8",
+                            "label": "Components",
+                            "name": "left",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 1,
+                            "display": "group",
+                            "layout": "block"
+                        },
+                        {
+                            "key": "field_58a04d88dcc48",
+                            "label": "Components",
+                            "name": "right",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_575fe9b36d7ca"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Article Builder",
+    "modified": 1486900705
+}

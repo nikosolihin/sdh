@@ -1,101 +1,65 @@
 .Pagination {
-  box: horizontal center;
-  font-size: $font-size-h6;
-  font-weight: $font-weight-medium;
-  border-top: 1px solid #dfdfdf;
-  margin-top: $single*4;
-  padding-top: $single;
-  transition: all .125s ease-in-out;
+  box: horizontal middle center;
+  margin-top: $single*1.5;
 
-  a {
-    @include hover($body-color, $brand-primary);
-  }
-
-  &-label {
-    margin-right: $half;
-    font-weight: $font-weight-bold;
-  }
   &-pages {
-    li {
-      position: relative;
-    }
-    a {
-      padding: 0 $single;
-    }
+    box: horizontal middle center;
   }
+
   &-prev,
   &-next {
-    font-weight: $font-weight-bold;
+    box: horizontal middle;
+    cursor: pointer;
+    color: $gray-lighter;
+    padding: $quarter $half;
+    margin: 0 $half;
     svg {
-      display: inline-block;
-      vertical-align: middle;
-      size: $single*1.12;
-      fill: #999;
-      transition: all .1s ease-in-out;
-    }
-    &:hover svg {
-      fill: $brand-primary;
+      size: .65rem;
+      transition: all .1s ease-out;
     }
   }
   &-prev {
-    margin-right: $single;
-    svg {
-      margin-right: .4rem;
-    }
-    &:hover svg {
-      transform: translate3d(-4px, 0, 0);
-    }
+    margin-right: $threefourth;
   }
   &-next {
-    margin-left: $single;
-    svg {
-      margin-left: .4rem;
-    }
-    &:hover svg {
-      transform: translate3d(4px, 0, 0);
-    }
+    margin-left: $threefourth;
   }
 
-  // Status
-  &--current {
-    a {
-      color: $brand-primary;
-      font-weight: $font-weight-bold;
+  &-page {
+    @include hover($gray-lighter, $navy);
+    box: horizontal middle;
+    cursor: pointer;
+    color: $gray-lighter;
+    padding: $quarter $half;
+    margin: 0 $half;
+  }
+
+  &--active {
+    color: $navy;
+    font-weight: $font-weight-bold;
+
+    &.Pagination-page {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 3px;
+        width: 65%;
+        transform: translateX(-50%);
+        background-color: $yellow;
+      }
     }
-    &::before {
-      content: '';
-      background: $brand-primary;
-      height: 3px;
-      width: 85%;
-      position: absolute;
-      top: -$single;
-      left: 50%;
-      transform: translatex(-50%);
+
+    &.Pagination-prev:hover svg {
+      transform: translate3d(-5px, 0, 0);
+    }
+    &.Pagination-next:hover svg {
+      transform: translate3d(5px, 0, 0);
     }
   }
-  &--hidden {
-    display: none;
-  }
-  &--hidePrevNext {
-    .Pagination-prev,
-    .Pagination-next {
-      display: none;
-    }
-  }
-  &--hidePrev {
-    .Pagination-prev {
-      display: none;
-    }
-    .Pagination-next {
-      display: inline-block;
-    }
-  }
-  &--hideNext {
-    .Pagination-prev {
-      display: inline-block;
-    }
-    .Pagination-next {
-      display: none;
-    }
+  &--inactive {
+    cursor: default;
   }
 }

@@ -1,72 +1,53 @@
 .Block {
-  @include cover;
-  position: relative;
+	@include cover;
+	@include overlay(false, "to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.65) 15%, transparent 50%, transparent 100%");
+	box: vertical bottom center;
+	position: relative;
+	height: $single*13;
+	border-radius: 3px;
+	overflow: hidden;
 
-  &-link {
-    box: vertical middle;
-    padding: $single*2;
-    position: absolute 0 auto auto 0;
-    size: 100%;
-    z-index: 1;
-    @at-root .Block--card #{&} {
-      position: relative;
-      display: block;
-      padding: 0;
-    }
-  }
-  &-head {
-    @include cover;
-    @include square(50%);
-  }
-  &-body {
-    @include white;
-    @at-root .Block--card #{&} {
-      background-color: #fff;
-      padding: $single*1.5 $single*2 $single*2.25;
-      p {
-        font-size: $font-size-h5;
-        color: $body-color;
-      }
-    }
-    @at-root .landing-page-content .Block--panel #{&} {
-      h4 {
-        font-size: $font-size-h2;
-        font-weight: $font-weight-light;
-      }
-      p {
-        font-size: 1.125rem;
-      }
-    }
-    @at-root .Callout--landing .Block--card #{&} {
-      background-color: $white;
-    }
-  }
+	&-title {
+		line-height: 1.3;
+		padding: $single $single*1.5 $single*1.25;
+	}
 
-  // Style
-  &--card {
-    border: 1px solid #eee;
-  }
-  &--bookmark {
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0;
-  }
-  &--panel {
-    @include square(54%);
-    @at-root .Sidebar-section #{&} {
-      @include square(75%);
-    }
-  }
-  &--overlay {
-    @include overlay(true, rgba(0,0,0,.55));
-    @include promote;
-    transition: all .12s ease-out;
-    &:hover {
-      @include overlay(true, rgba(0,0,0,.65));
-    }
-  }
-  &--center {
-    text-align: center;
-    h4 { text-align: center; }
-  }
+	&-body {
+		@include overlay(true, rgba(32,47,103,.92));
+		@include hover($white, $white);
+		position: absolute;
+		top: 0;
+		left: 0;
+		size: 100%;
+		box: vertical center middle;
+		padding: $single $single*1.25;
+		opacity: 0;
+		transform: translate3d(0, $single*4, 0);
+		transition: all .185s ease-out;
+
+		&Title {
+			line-height: 1.3;
+			margin-bottom: $half;
+		}
+		&Teaser {
+			margin-bottom: $half;
+		}
+		&Link {
+			box: horizontal middle center;
+			svg {
+				size: 10px;
+				margin-left: .35rem;
+			}
+		}
+	}
+
+	&--hover {
+		.Block-title {
+			opacity: 0;
+		}
+		.Block-body{
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
 }

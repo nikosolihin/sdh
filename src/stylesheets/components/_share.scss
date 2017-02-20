@@ -1,11 +1,18 @@
 .Share {
-  box: vertical top center;
-  flex: 0 0 auto;
+  width: 7%;
+  padding-top: $single*3.25;
+  margin-right: $single*1.5;
+
+  &-socialMedia {
+    box: vertical top center;
+    flex: 0 0 auto;
+  }
 
   &-title {
     text-align: center;
     margin-bottom: $threefourth !important;
   }
+
   &-button {
     @include hover(#aaa, $navy);
     box: horizontal middle;
@@ -15,4 +22,5 @@
       size: $single*1.125;
     }
   }
+
 }

@@ -4,8 +4,11 @@
 {% include 'components/banner.twig' %}
 {% include 'components/subnav.twig' %}
 
-<div class="SinglePage container">
-  <div class="SinglePage-share">
+{% set banner = acf.banner_size %}
+{% set sidebar = no_sidebar ? 'noSidebar' : '' %}
+
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
+  <div class="SinglePage-share Share">
     {% include 'components/social-share.twig' %}
   </div>
   <div class="SinglePage-content content-body">
@@ -14,6 +17,9 @@
         {% include 'components/breadcrumb.twig' %}
       </div>
       <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+      {% if banner == 'hidden' %}
+        <p class="Intro-teaser light">{{acf.teaser}}</p>
+      {% endif %}
     </div>
     {% include 'layout/base.twig' %}
   </div>

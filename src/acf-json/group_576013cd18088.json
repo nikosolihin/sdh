@@ -57,7 +57,26 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "65",
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "key": "field_589aee9b160cf",
+            "label": "Square",
+            "name": "crop",
+            "type": "true_false",
+            "instructions": "Do you want this image cropped into a square?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
                 "class": "",
                 "id": ""
             }
@@ -80,5 +99,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Image",
-    "modified": 1486021349
+    "modified": 1486548015
 }

@@ -3,30 +3,9 @@
     "title": "Embed",
     "fields": [
         {
-            "width": "",
-            "height": "",
-            "key": "field_576035938c57c",
-            "label": "",
-            "name": "embed",
-            "type": "oembed",
-            "instructions": "Embed media objects such as videos or social media posts. For a list of embeddable objects, click <a target=\"_blank\" href=\"https:\/\/codex.wordpress.org\/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F\">here<\/a>.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": 0,
-            "message": "",
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "key": "field_578f38e36544c",
-            "label": "Are you embedding from Instagram?",
-            "name": "instagram",
+            "key": "field_58a9b9d10993b",
+            "label": "Are you embedding an Issuu publication?",
+            "name": "issuu",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -35,7 +14,90 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_58a9ba2a0993c",
+            "label": "Issuu Embed code",
+            "name": "issuu_code",
+            "type": "textarea",
+            "instructions": "Get the publication code from Issuu and choose the default style - not iFrame or Link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a9b9d10993b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_576035938c57c",
+            "label": "",
+            "name": "embed",
+            "type": "oembed",
+            "instructions": "Embed media objects such as videos or social media posts. For a list of embeddable objects, click <a target=\"_blank\" href=\"https:\/\/codex.wordpress.org\/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F\">here<\/a>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a9b9d10993b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_578f38e36544c",
+            "label": "Are you embedding from Instagram?",
+            "name": "instagram",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a9b9d10993b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -55,5 +117,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Embed",
-    "modified": 1486051780
+    "modified": 1487517240
 }

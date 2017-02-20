@@ -1,0 +1,67 @@
+.Editor {
+  font-size: $font-size-h5;
+  @include from($desktop) {
+    font-size: $font-size-h4;
+  }
+  h2 {
+    @extend .h3, .normal, .navy;
+  }
+  h3 {
+    @extend .h6, .medium, .caps, .spaced, .orange;
+  }
+  b {
+    color: $headings-color;
+    font-weight: $font-weight-medium;
+  }
+
+  // General Sidebar
+  @at-root .Sidebar-section #{&} {
+    font-size: $font-size-h5;
+    h2 {
+      @extend .medium;
+      font-size: 1.1rem;
+    }
+  }
+
+  //Sidebar Callout Colors
+  @at-root .Sidebar-section--gray #{&} {
+    h2 {
+      color: $navy;
+    }
+    h3 {
+      color: $orange;
+    }
+    p {
+      color: #555;
+    }
+  }
+  @at-root .Sidebar-section--navy #{&} {
+    h2, p {
+      color: $white;
+    }
+  }
+  @at-root .Sidebar-section--yellow #{&} {
+    h2, h3 {
+      color: #001d88;
+    }
+    p {
+      color: $gray-dark;
+    }
+  }
+  @at-root .Sidebar-section--blue #{&} {
+    h2, h3, p {
+      color: $white;
+    }
+  }
+  @at-root .Sidebar-section--maroon #{&},
+  .Sidebar-section--purple #{&},
+  .Sidebar-section--green #{&} {
+    h2, p {
+      color: $white;
+    }
+    h3 {
+      color: $yellow;
+    }
+  }
+
+}

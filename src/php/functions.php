@@ -4,6 +4,7 @@ require_once('lib/taxonomies.php');
 require_once('lib/post-types.php');
 require_once('lib/plugs.php');
 require_once('lib/script-n-style.php');
+require_once('lib/users-n-roles.php');
 require_once('lib/functions.php');
 require_once('lib/routes.php');
 require_once('lib/api.php');

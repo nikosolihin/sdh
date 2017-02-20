@@ -46,7 +46,7 @@
             "layout": "horizontal",
             "choices": {
                 "default": "Default",
-                "outline": "Outline",
+                "outline-dark": "Outline",
                 "outline-light": "Outline (Light)",
                 "block": "Block"
             },
@@ -115,5 +115,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "modified": 1486088915
+    "modified": 1486574347
 }

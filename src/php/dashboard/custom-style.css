@@ -52,12 +52,12 @@ p#backtoblog {
 /* Use icomoon in the dashboard
 /*=============================================*/
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?oe99s0');
-  src:  url('fonts/icomoon.eot?oe99s0#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?oe99s0') format('truetype'),
-    url('fonts/icomoon.woff?oe99s0') format('woff'),
-    url('fonts/icomoon.svg?oe99s0#icomoon') format('svg');
+	font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?rftce3');
+  src:  url('fonts/icomoon.eot?rftce3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?rftce3') format('truetype'),
+    url('fonts/icomoon.woff?rftce3') format('woff'),
+    url('fonts/icomoon.svg?rftce3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -78,9 +78,6 @@ p#backtoblog {
 	content: "\e910";
 }
 .acf-fc-popup [data-layout="editor"]::before {
-	content: "\e907";
-}
-.acf-fc-popup [data-layout="textarea"]::before {
 	content: "\e907";
 }
 .acf-fc-popup [data-layout="link"]::before {
@@ -116,6 +113,12 @@ p#backtoblog {
 .acf-fc-popup [data-layout="table"]::before {
 	content: "\e90b";
 }
+.acf-fc-popup [data-layout="download"]::before {
+	content: "\e2c0";
+}
+.acf-fc-popup [data-layout="gallery"]::before {
+	content: "\e90d";
+}
 .acf-fc-popup [data-layout="one_column"]::before {
 	content: "\e903";
 }
@@ -132,6 +135,7 @@ p#backtoblog {
 /*=============================================*/
 /* Float some ACF buttons
 /*=============================================*/
+#acf-sidebar-builder .acf-actions li,
 #acf-sidebar-builder .acf-actions li {
 	float: left;
 }
@@ -140,13 +144,14 @@ p#backtoblog {
 /* Change Flex content popup to grid
 /*=============================================*/
 .acf-fc-popup ul {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
 	-webkit-flex-flow: row wrap;
 	    -ms-flex-flow: row wrap;
 	        flex-flow: row wrap;
 	width: 245px; /* 80*3+2+3 */
+	padding: 0;
 }
 .acf-fc-popup	ul li {
 	display: block;
@@ -189,25 +194,21 @@ p#backtoblog {
 /*=============================================*/
 /* ACF Utility classes
 /*=============================================*/
-.acf-left-fields {
+/*.acf-left-fields {
 	float: right!important;
 	clear: none!important;
 	min-height: 0!important;
 }
-.flickr_field.type_photostream {
-	max-height: 280px !important;
-}
 .acf-short {
 	min-height: 100px !important;
-}
-.acf-field-flickr-browser {
-	padding: 0!important;
-}
-/* Reusable Field group plugin doesn't allow custom classes
-/* so we do it this way */
-#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields,
-#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields,
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields {
+}*/
+
+/*=============================================*/
+/* For layout columns as horizontal rows
+/*=============================================*/
+.layout[data-layout='two_columns'] > .acf-fields,
+.layout[data-layout='three_columns'] > .acf-fields,
+.layout[data-layout='four_columns'] > .acf-fields {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -215,31 +216,14 @@ p#backtoblog {
     -ms-flex-flow: row wrap;
         flex-flow: row wrap;
 }
-#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
-#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"] {
+.layout[data-layout='two_columns'] > .acf-fields > .acf-field-clone {
 	width: 50%;
 }
-#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
-#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"],
-#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_components"] {
+.layout[data-layout='three_columns'] > .acf-fields > .acf-field-clone {
 	width: 33.333%;
 }
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="left_components"],
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="right_components"],
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_left_components"],
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-flexible-content[data-name="mid_right_components"] {
+.layout[data-layout='four_columns'] > .acf-fields > .acf-field-clone {
 	width: 25%;
-}
-#acf-layout-builder .layout[data-layout='two_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"],
-#acf-layout-builder .layout[data-layout='three_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"],
-#acf-layout-builder .layout[data-layout='four_columns'] > .acf-fields > .acf-field-true-false[data-name="is_section_callout"] {
-	width: 100%;
-}
-
-/* Because of the above custom column percentage stylings,
-   we need to restore the collapse styling */
-#acf-layout-builder .acf-flexible-content .layout.-collapsed > .acf-fields, #acf-layout-builder .acf-flexible-content .layout.-collapsed > .acf-table {
-    display: none;
 }
 
 /*=============================================*/
@@ -319,14 +303,13 @@ p#backtoblog {
 /*=============================================*/
 /* Get rid of unnecessary acf labels
 /*=============================================*/
-.acf-field-flickr-browser .acf-label,
+.acf-field-acf-google-photos-browser .acf-label,
 .acf-instruction .acf-label {
 	display: none;
 }
 .acf-field-flickr-browser--showlabel .acf-label {
 	display: block;
 }
-
 #parent_id option.level-2 {
   display: none;
 }
@@ -345,3 +328,57 @@ p#backtoblog {
 #wp-admin-bar-new-user, {
   display: none;
 }
+
+/*=============================================*/
+/* Medium Editor Styling
+/*=============================================*/
+#poststuff .medium-editor-element > * {
+	padding: 0;
+	margin: 0;
+}
+#poststuff .medium-editor-element > * + * {
+	margin-top: 1em;
+}
+#poststuff .medium-editor-element h2 {
+	font-weight: bold;
+	font-size: 16px;
+}
+#poststuff .medium-editor-element h3 {
+	font-weight: bold;
+	font-size: 14px;
+}
+#poststuff .medium-editor-element p {
+	font-size: 14px;
+}
+#poststuff .medium-editor-element p > b {
+	font-weight: bold;
+}
+#poststuff .medium-editor-element blockquote {
+	font-style: italic;
+	padding-left: 1.5em;
+}
+#poststuff .medium-editor-element ul {
+	list-style: disc outside none;
+	padding-left: 1.4em;
+}
+#poststuff .medium-editor-element ol {
+	list-style: decimal outside none;
+	padding-left: 1.4em;
+}
+#poststuff .medium-editor-element li {
+	margin-bottom: 2px;
+}
+
+/*=============================================*/
+/* Hide Zoneboard blocks for campus_manager role.
+/*=============================================*/
+body.role-campus_manager .dashboard-grid .dashboard-panel:not(:nth-child(6)) {
+	display: none;
+}
+
+/*=============================================*/
+/* Modalize Flex Content
+/*=============================================*/
+/*.acf-layout-builder > .acf-input > .acf-flexible-content > .values > .layout[data-layout='two_columns'] > .acf-fields > .acf-field-clone[data-type='clone'] > .acf-label {
+  display: none;
+}*/

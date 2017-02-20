@@ -1,3 +1,7 @@
 <div class="Embed {% if data.instagram %} Embed--instagram{% endif %}">
-  {{data.embed}}
+  {% if data.issuu %}
+    {{data.issuu_code}}
+  {% else %}
+    {{data.embed}}
+  {% endif %}
 </div>

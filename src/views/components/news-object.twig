@@ -2,42 +2,49 @@
 {% verbatim %}
 
 {{#error}}
-  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{error}}</h3>
+  <h3 class="h4 light navy ArchiveNews-error">{{error}}</h3>
 {{/error}}
 {{#empty}}
-  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{empty}}</h3>
+  <h3 class="h4 light navy ArchiveNews-error">{{empty}}</h3>
 {{/empty}}
 
 {{#title}}
-  <article class="news">
-    <div class="news-bar">
-      {{#topic}}
-        <h5 class="tag">{{topic}}</h5>
-      {{/topic}}
-      {{#facebook}}
-        <a href="{{facebook}}" class="news-share share">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
-          </svg>
-        </a>
-      {{/facebook}}
-      {{#twitter}}
-        <a href="{{twitter}}" class="news-share share">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-          </svg>
-        </a>
-      {{/twitter}}
+  <div class="Card">
+    <a href="{{link}}" class="Card-link">
+      <div class="Card-imageFrame">
+        <div class="Card-imageOverlay"></div>
+        {{#image}}
+          <div class="Card-image lazyload" data-bgset="{{image}}"></div>
+        {{/image}}
+      </div>
+      <div class="Card-body">
+        {{#campus}}
+          <span class="h7 medium caps spaced faint">{{campus}}</span>
+        {{/campus}}
+        <div class="Card-title h4 bold">{{title}}</div>
+        <span class="h6 medium faint">Posted on {{date}}</span>
+      </div>
+    </a>
+    <div class="Card-social">
+      <span class="h7 medium faint caps spaced">Share</span>
+      <div class="flex-wrapper">
+        {{#facebook}}
+          <a href="{{facebook}}" class="Card-share icon share">
+            <svg aria-hidden="true" role="presentation" title="Share on Facebook">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+            </svg>
+          </a>
+        {{/facebook}}
+        {{#twitter}}
+          <a href="{{twitter}}" class="Card-share icon share">
+            <svg aria-hidden="true" role="presentation" title="Share on Twitter">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+            </svg>
+          </a>
+        {{/twitter}}
+      </div>
     </div>
-    <h5><a href="{{link}}">{{title}}</a></h5>
-    <p class="meta">
-      <span>{{date}}</span>
-      {{#authors}}
-        <span class="meta-dot">•</span>
-        <span>{{authors}}</span>
-      {{/authors}}
-    </p>
-  </article>
+  </div>
 {{/title}}
 
 {% endverbatim %}

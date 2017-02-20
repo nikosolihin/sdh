@@ -1,0 +1,72 @@
+{
+    "key": "group_589ae2575c1b9",
+    "title": "Spacer",
+    "fields": [
+        {
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Space",
+            "ui_off_text": "Divider",
+            "key": "field_589ae305daa20",
+            "label": "Style",
+            "name": "style",
+            "type": "true_false",
+            "instructions": "Should this spacer be displayed as empty space or a horizontal divider?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 1,
+            "min": 1,
+            "max": "",
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_57622c6ac8aae",
+            "label": "Multiplier",
+            "name": "spacer",
+            "type": "number",
+            "instructions": "This is vertical spacing. Increase the multiplier to get a taller spacing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_589ae305daa20",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Spacer",
+    "modified": 1486545843
+}

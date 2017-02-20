@@ -1,16 +1,8 @@
 <?php
 //=============================================
-// Hide ACF from client
+// Uncomment to hide ACF from client
 //=============================================
-// add_filter('acf/settings/show_admin', '__return_false');
-
-//=============================================
-// Add google maps api key
-//=============================================
-function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyCcqne1WUPeDEbyBfk9jurNKJ5ofAZlLIY');
-}
-add_action('acf/init', 'my_acf_init');
+add_filter('acf/settings/show_admin', '__return_false');
 
 //=============================================
 // Change local JSON path for load and save
@@ -27,6 +19,15 @@ function acf_json_load_point( $paths ) {
   $paths[] = dirname(get_stylesheet_directory(), 4) . '/src/acf-json';
   return $paths;
 }
+
+//=============================================
+// Add google maps api key
+//=============================================
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyCcqne1WUPeDEbyBfk9jurNKJ5ofAZlLIY');
+}
+add_action('acf/init', 'my_acf_init');
+
 
 // //=============================================
 // // Add Post Taxonomy Ancestor Rule
@@ -171,20 +172,27 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug'	=> 'settings',
   ));
 
-//   // Event Settings //////////////////////
-//   acf_add_options_sub_page(array(
-// 		'page_title' 	=> 'Event Settings',
-// 		'menu_title'	=> 'Event Settings',
-// 		'parent_slug'	=> 'edit.php?post_type=event',
-// 	));
-//
-//   // News Settings //////////////////////
-//   acf_add_options_sub_page(array(
-// 		'page_title' 	=> 'News Settings',
-// 		'menu_title'	=> 'News Settings',
-// 		'parent_slug'	=> 'edit.php?post_type=news',
-// 	));
-//
+  // Google OAuth2 Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Authenticate Google',
+    'parent_slug'	=> 'settings',
+  ));
+
+  // Event Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Event Settings',
+		'menu_title'	=> 'Event Settings',
+		'parent_slug'	=> 'edit.php?post_type=event',
+	));
+
+  // News Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'News Settings',
+		'menu_title'	=> 'News Settings',
+		'parent_slug'	=> 'edit.php?post_type=news',
+	));
+
 //   // Media Settings //////////////////////
 //   acf_add_options_sub_page(array(
 // 		'page_title' 	=> 'Media Settings',

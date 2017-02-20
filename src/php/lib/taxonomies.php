@@ -46,56 +46,70 @@
 // 	register_taxonomy( 'event_category', array( 'event' ), $args );
 // }
 // add_action( 'init', 'event_category_taxonomy', 0 );
-//
-// /**
-//  * Register News Topic Taxonomy
-//  */
-// function news_topic_taxonomy() {
-// 	$labels = array(
-// 		'name'                       => _x( 'News Topics', 'Taxonomy General Name', 'text_domain' ),
-// 		'singular_name'              => _x( 'News Topic', 'Taxonomy Singular Name', 'text_domain' ),
-// 		'menu_name'                  => __( 'Topics', 'text_domain' ),
-// 		'all_items'                  => __( 'All Topics', 'text_domain' ),
-// 		'parent_item'                => __( 'Parent Topic', 'text_domain' ),
-// 		'parent_item_colon'          => __( 'Parent Topic:', 'text_domain' ),
-// 		'new_item_name'              => __( 'New Topic Name', 'text_domain' ),
-// 		'add_new_item'               => __( 'Add New Topic', 'text_domain' ),
-// 		'edit_item'                  => __( 'Edit Topic', 'text_domain' ),
-// 		'update_item'                => __( 'Update Topic', 'text_domain' ),
-// 		'view_item'                  => __( 'View Topic', 'text_domain' ),
-// 		'separate_items_with_commas' => __( 'Separate categories with commas', 'text_domain' ),
-// 		'add_or_remove_items'        => __( 'Add or remove topics', 'text_domain' ),
-// 		'choose_from_most_used'      => __( 'Choose from the most used topics', 'text_domain' ),
-// 		'popular_items'              => __( 'Popular Topics', 'text_domain' ),
-// 		'search_items'               => __( 'Search topics', 'text_domain' ),
-// 		'not_found'                  => __( 'Not Found', 'text_domain' ),
-// 		'no_terms'                   => __( 'No items', 'text_domain' ),
-// 		'items_list'                 => __( 'Items list', 'text_domain' ),
-// 		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
-// 	);
-// 	$rewrite = array(
-// 		'slug'                       => 'news/?utf8=✓&page=1&topic=',
-// 		'with_front'                 => true,
-// 		'hierarchical'               => false,
-// 	);
-// 	$args = array(
-// 		'labels'                     => $labels,
-// 		'hierarchical'               => false,
-// 		'public'                     => true,
-// 		'show_ui'                    => true,
-// 		'show_admin_column'          => true,
-// 		'show_in_nav_menus'          => true,
-// 		'show_tagcloud'              => false,
-// 		'rewrite'                    => $rewrite,
-//     'show_in_rest'               => true,
-//     'rest_base'                  => 'topics',
-//     'rest_controller_class'      => 'WP_REST_Terms_Controller',
-// 	);
-// 	register_taxonomy( 'news_topic', array( 'news' ), $args );
-// }
-// add_action( 'init', 'news_topic_taxonomy', 0 );
-//
-//
+
+/**
+ * Register News Topic Taxonomy
+ */
+function campus_taxonomy() {
+	$labels = array(
+		'name'                       => _x( 'Campuses', 'Taxonomy General Name', 'sdh' ),
+		'singular_name'              => _x( 'Campus', 'Taxonomy Singular Name', 'sdh' ),
+		'menu_name'                  => __( 'Campuses', 'sdh' ),
+		'all_items'                  => __( 'All Campuses', 'sdh' ),
+		'parent_item'                => __( 'Parent Campus', 'sdh' ),
+		'parent_item_colon'          => __( 'Parent Campus:', 'sdh' ),
+		'new_item_name'              => __( 'New Campus Name', 'sdh' ),
+		'add_new_item'               => __( 'Add New Campus', 'sdh' ),
+		'edit_item'                  => __( 'Edit Campus', 'sdh' ),
+		'update_item'                => __( 'Update Campus', 'sdh' ),
+		'view_item'                  => __( 'View Campus', 'sdh' ),
+		'separate_items_with_commas' => __( 'Separate categories with commas', 'sdh' ),
+		'add_or_remove_items'        => __( 'Add or remove campuses', 'sdh' ),
+		'choose_from_most_used'      => __( 'Choose from the most used campuses', 'sdh' ),
+		'popular_items'              => __( 'Popular Campuses', 'sdh' ),
+		'search_items'               => __( 'Search campuses', 'sdh' ),
+		'not_found'                  => __( 'Not Found', 'sdh' ),
+		'no_terms'                   => __( 'No items', 'sdh' ),
+		'items_list'                 => __( 'Items list', 'sdh' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'sdh' ),
+	);
+	$rewrite = array(
+		// 'slug'                       => 'campus',
+		// 'slug'                       => 'news/?utf8=✓&date=desc&page=1&campus=',
+		'with_front'                 => false,
+		'hierarchical'               => false,
+	);
+	$caps = array(
+    // allow anyone editing posts to assign terms
+    'assign_terms' => 'edit_campuses',
+    // but you probably don't want anyone except
+    // admins messing with what gets auto-generated!
+    'edit_terms' => 'administrator'
+  );
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'show_ui'                    => true,
+		'show_admin_column'          => false,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+		// 'rewrite'                    => $rewrite,
+
+		'rewrite'                   => false,
+		'query_var'									=> true, // must be true if doing filter[xxx] api call
+		'publicly_queryable'				=> true, // must be true if doing filter[xxx] api call
+		'public'                    => false,
+
+    'capabilities'               => $caps,
+		'show_in_rest'               => true,
+		'rest_base'                  => 'campus',
+		'rest_controller_class'      => 'WP_REST_Terms_Controller',
+	);
+	register_taxonomy( 'campus', array( 'news' ), $args );
+}
+add_action( 'init', 'campus_taxonomy', 0 );
+
+
 // /**
 //  * Register Media Type Taxonomy
 //  */

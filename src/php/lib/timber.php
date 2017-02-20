@@ -233,18 +233,18 @@ class StarterSite extends TimberSite {
 		/* this is where you can add your own fuctions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 
-		// //=============================================
-		// // LIST COMPONENT & TERMS
-		// //=============================================
-		// $listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
-		// 	return populateList($options);
-		// });
-		// $twig->addFunction($listfunction);
-		//
-		// $termfunction = new Twig_SimpleFunction('listterms', function ($tax) {
-		// 	return listTerms($tax);
-		// });
-		// $twig->addFunction($termfunction);
+		//=============================================
+		// LIST COMPONENT & TERMS
+		//=============================================
+		$listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
+			return populateList($options);
+		});
+		$twig->addFunction($listfunction);
+
+		$termfunction = new Twig_SimpleFunction('listterms', function ($tax) {
+			return listTerms($tax);
+		});
+		$twig->addFunction($termfunction);
 
 		//=============================================
 		// Generate classes from component options
@@ -263,11 +263,47 @@ class StarterSite extends TimberSite {
 		$twig->addFilter($classfilter);
 
 		//=============================================
-		// Generate image url from Google Photos
+		// Generate image URL from Google Photos
 		//=============================================
-		$classfilter = new Twig_SimpleFilter('serveImage', function ($image, $size) {
-			$width = strval($size);
-			return $image['base'].'s'.$width.'/'.$image['title'];
+		$classfilter = new Twig_SimpleFilter('serveImage', function ($image) {
+			if(isset($image) && is_array($image)) {
+				$base = $image['base']."s";
+				$name = "/".$image['title'];
+				$xs = $base . '576' . $name;
+				$sm = $base . '800' . $name;
+				$md = $base . '1024' . $name;
+				$lg = $base . '1280' . $name;
+				$xl = $base . '1440' . $name;
+				$xxl = $base . '1600' . $name;
+				return array(
+					'xs' => $xs,
+					'sm' => $sm,
+					'md' => $md,
+					'lg' => $lg,
+					'xl' => $xl,
+					'xxl' => $xxl,
+				);
+			}
+		});
+		$twig->addFilter($classfilter);
+
+		$classfilter = new Twig_SimpleFilter('serveSquareImage', function ($image, $size) {
+			if(isset($image) && is_array($image)) {
+				$width = strval($size);
+				return $image['base'].'s'.$width.'-c/'.$image['title'];
+			}
+		});
+		$twig->addFilter($classfilter);
+
+		//=============================================
+		// String replace _ and - with spaces
+		//=============================================
+		$classfilter = new Twig_SimpleFilter('spacify', function ($text) {
+			if(isset($text) && is_string($text)) {
+				$removeHyphen = str_replace("-", " ", $text);
+				$removeUnderscore = str_replace("_", " ", $removeHyphen);
+				return preg_replace('/\\.[^.\\s]{3,4}$/', '', $removeUnderscore);
+			}
 		});
 		$twig->addFilter($classfilter);
 

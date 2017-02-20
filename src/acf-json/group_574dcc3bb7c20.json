@@ -3,25 +3,6 @@
     "title": "Text Editor",
     "fields": [
         {
-            "standard_buttons": [
-                "bold",
-                "italic",
-                "underline",
-                "anchor",
-                "quote",
-                "orderedlist",
-                "unorderedlist",
-                "justifyLeft",
-                "justifyCenter",
-                "justifyRight",
-                "removeFormat"
-            ],
-            "other_options": [
-                "disableDoubleReturn",
-                "disableExtraSpaces"
-            ],
-            "placeholder": "",
-            "default_value": "",
             "key": "field_574dcc566c5f8",
             "label": "",
             "name": "editor",
@@ -34,7 +15,26 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "placeholder": "",
+            "standard_buttons": [
+                "bold",
+                "underline",
+                "anchor",
+                "quote",
+                "orderedlist",
+                "unorderedlist",
+                "justifyLeft",
+                "justifyCenter",
+                "justifyRight",
+                "h2",
+                "h3"
+            ],
             "custom_buttons": "",
+            "other_options": [
+                "disableDoubleReturn",
+                "disableExtraSpaces"
+            ],
             "delay": 0
         }
     ],
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Text Editor",
-    "modified": 1486092518
+    "modified": 1487172555
 }

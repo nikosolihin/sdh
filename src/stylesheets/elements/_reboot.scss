@@ -196,6 +196,5 @@ input[type="search"] {
 }
 
 svg {
-  fill: $svg-fill;
-  size: $svg-size;
+  fill: currentColor;
 }

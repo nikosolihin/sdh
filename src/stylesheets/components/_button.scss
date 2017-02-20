@@ -9,7 +9,8 @@
   text: $white $font-weight-bold left none $font-size-h6 $line-height;
 
   // Pseudo
-  &:hover {
+  &:hover,
+  &--hover {
     background-color: darken($button-bg, 2.5%);
   }
 

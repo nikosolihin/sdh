@@ -1,0 +1,40 @@
+{% set post = data %}
+{% set image = post.get_field('image') %}
+
+{# Social Share #}
+{% set postlink = post.link|url_encode %}
+{% set posttitle = post.title|title|url_encode %}
+{% set appID = analytics.facebook_app_id %}
+{% set handle = analytics.twitter_analytics_id %}
+{% set facebook = 'https://www.facebook.com/dialog/share?app_id='~appID~'&display=popup&href='~postlink %}
+{% set twitter = 'https://twitter.com/intent/tweet?text='~posttitle~'&url='~postlink~'&via='~handle %}
+
+<div class="Card">
+  <a href="{{post.link}}" class="Card-link">
+    <div class="Card-imageFrame">
+      <div class="Card-imageOverlay"></div>
+      <div class="Card-image lazyload" data-bgset="{{image|serveImage}}">
+      </div>
+    </div>
+    <div class="Card-body">
+      <span class="h7 medium caps spaced faint">{{post.terms('campus') | first}}</span>
+      <div class="Card-title h4 bold">{{post.title | title}}</div>
+      <span class="h6 medium faint">{{__('Posted', 'sdh')}} {{post.post_date|date('M j, Y')}}</span>
+    </div>
+  </a>
+  <div class="Card-social" data-component="share">
+    <span class="h7 medium faint caps spaced">Share</span>
+    <div class="flex-wrapper">
+      <a href="{{facebook}}" class="Card-share icon share">
+        <svg aria-hidden="true" role="presentation" title="Share on Facebook">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+        </svg>
+      </a>
+      <a href="{{twitter}}" class="Card-share icon share">
+        <svg aria-hidden="true" role="presentation" title="Share on Twitter">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

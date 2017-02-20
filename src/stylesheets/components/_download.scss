@@ -1,36 +1,40 @@
 .Download {
-  box: horizontal middle;
-  padding: $single;
-  padding-left: 0;
-  border: 1px solid transparent;
-  transition: all .12s ease-in-out;
-  h5 {
-    margin-bottom: 0;
+  box: horizontal middle left;
+  background-color: #F5F9FC;
+  font-size: $font-size-h5;
+  border-radius: 3px;
+  padding: $single $single $single $single*1.25;
+  max-width: 14.5rem;
+  border: 1px solid #F5F9FC;
+  transition: border-color .135s ease-in-out;
+
+  svg {
+    size: $single;
+    fill: $orange;
+  }
+
+  &-body {
+    margin-left: $single;
+  }
+
+  &-name {
     line-height: 1.3;
   }
-  h5 + span {
-    color: #999;
-    font-weight: $font-weight-medium;
-    font-size: $font-size-h6;
-  }
-  &-icon {
-    width: 25%;
-    flex: 0 0 auto;
-    box: horizontal center middle;
-    svg {
-      fill: $brand-primary;
-      size: $single*1.4;
-    }
-  }
-  & + & {
-    border-top: 1px solid #eee;
-  }
+
   &:hover {
-    background-color: #fdfdfd;
-    border: 1px solid #eee;
-    border-radius: 3px;
-    & + .Download {
-      border-top: 1px solid transparent;
+    border-color: #d9e9f5;
+  }
+
+  + .Download {
+    border-top: 1px solid #eee;
+    &:hover {
+      border-color: #d9e9f5;
     }
+  }
+
+  @at-root .Sidebar-section #{&} {
+    margin-bottom: 0 !important;
+    max-width: 100%;
+    width: 100%;
   }
 }

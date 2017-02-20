@@ -1,13 +1,18 @@
 .SinglePage {
   box: horizontal;
-  padding: $single*5 0 $single*7;
-
-  &-share {
-    width: 7%;
-    padding-top: $single*3.25;
-  }
+  padding: $single*5 0;
 
   &-content {
     flex: 1;
+  }
+
+  &--noSidebar {
+    // Some components need smaller width when using the without-sidebar template
+
+    [class="row"] > .column > .Editor {
+      // In a one column layout, slim out editor
+      max-width: $container-text-width;
+      margin: 0 auto;
+    }
   }
 }

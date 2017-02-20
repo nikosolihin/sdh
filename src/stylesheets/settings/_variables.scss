@@ -4,9 +4,9 @@
 $black:                        #000000 !default;
 $white:                        #ffffff !default;
 $blue:                         #42C1FF !default;
-// $sky:                          #62B5E5 !default;
 $sky:                          #24ACCE !default;
 $navy:                         #202F67 !default;
+$navy-light:                   #344896 !default;
 $yellow:                       #FFD200 !default;
 $orange:                       #EEB111 !default;
 $teal:                         #3DB0B0 !default;
@@ -38,9 +38,21 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 ) !default;
+$image-breakpoints: (
+  // Available Sizes: 94, 110, 128, 200, 220,
+  // 288, 320, 400, 512, 576, 640, 720, 800,
+  // 912, 1024, 1152, 1280, 1440, 1600.
+  xs: 576,
+  sm: 800,
+  md: 1024,
+  lg: 1280,
+  xl: 1440,
+  xxl: 1600
+) !default;
 $desktop:                         'md' !default;
 $container-width:                 1280px !default;
 $container-landing-width:         1400px !default;
+$container-text-width:            800px !default;
 
 //=============================================
 // Elements
@@ -67,10 +79,6 @@ $list-padding-left:             $single*1.125 !default;
 $hr-padding:                    $single*1.25 !default;
 $hr-color:                      #ccc !default;
 
-// SVG //////////////////////////////////////
-$svg-fill:                      currentColor !default;
-$svg-size:                      100% !default;
-
 //=============================================
 // Typography
 //=============================================
@@ -88,9 +96,7 @@ $font-weight-bold:             800 !default;
 $font-family:             "Proxima Nova", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 $font-size-h1:                 3rem !default;
 $font-size-h2:                 2.4rem !default;
-$font-size-h3:                 1.8rem !default;
-// $font-size-h3:                 1.6rem !default;
-// $font-size-h3:                 1.35rem !default;
+$font-size-h3:                 1.6rem !default;
 $font-size-h4:                 1rem !default;
 $font-size-h5:                 .9rem !default;
 $font-size-h6:                 .8rem !default;
@@ -105,6 +111,8 @@ $headings-line-height:         1.25 !default;
 
 // Z-Index ///////////////////////////////////
 $zindex-announcement:            5000 !default;
+$zindex-gallery:                 4100 !default;
+$zindex-modal:                   4000 !default;
 $zindex-primarynav:              3000 !default;
 $zindex-footer-bg:               2000 !default;
 $zindex-footer-main:             2100 !default;
@@ -128,8 +136,8 @@ $button-bg:                     $orange !default;
 $button-small-padding:          $half .625rem !default;
 
 // // Loader //////////////////////////////////////
-// $loader-size:                  $single*2 !default;
-// $loader-color:                 lighten($gray-light, 40%) !default;
+$loader-size:                  $single*2 !default;
+$loader-color:                 $orange !default;
 
 // Banner ///////////////////////////////////
 $banner-small-height:          400px !default;

@@ -1,17 +1,38 @@
-{% set image = data.figure %}
+{% set image = data.figure|serveImage %}
+{% set imageSquare = data.figure|serveSquareImage(512) %}
 
-<figure class="{{'Figure'|modifiers("#{data.direction}")}}">
-  <picture>
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-      <source media="(min-width: {{lg}})" data-srcset="{{image|serveImage(640)}}">
-      <source media="(min-width: {{md}})" data-srcset="{{image|serveImage(640)}}">
-      <source media="(min-width: {{sm}})" data-srcset="{{image|serveImage(640)}}">
-      <source data-srcset="{{image|serveImage(640)}}">
-    <!--[if IE 9]></video><![endif]-->
-    {# Fallback with transparent LQIP #}
-    <img alt="{{image.title}}" class="lazyload" data-src="{{image|serveImage(640)}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-  </picture>
-  <figcaption class="Figure-caption h6">
-    {{data.caption}}
-  </figcaption>
-</figure>
+{% if data.crop %}
+  {# Square Image #}
+  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source media="(min-width: {{lg}})" data-srcset="{{imageSquare}}">
+        <source media="(min-width: {{md}})" data-srcset="{{imageSquare}}">
+        <source media="(min-width: {{sm}})" data-srcset="{{imageSquare}}">
+        <source data-srcset="{{imageSquare}}">
+      <!--[if IE 9]></video><![endif]-->
+      {# Fallback with transparent LQIP #}
+      <img alt="{{image.title}}" class="lazyload" data-src="{{imageSquare}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    </picture>
+    <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>
+  </figure>
+{% else %}
+  {# Normal Image #}
+  <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source media="(min-width: {{xxl}})" data-srcset="{{image.xxl}}">
+        <source media="(min-width: {{xl}})" data-srcset="{{image.xl}}">
+        <source media="(min-width: {{lg}})" data-srcset="{{image.lg}}">
+        <source media="(min-width: {{md}})" data-srcset="{{image.md}}">
+        <source media="(min-width: {{sm}})" data-srcset="{{image.sm}}">
+        <source data-srcset="{{image.xs}}">
+      <!--[if IE 9]></video><![endif]-->
+      {# Fallback with transparent LQIP #}
+      <img alt="{{image.title}}" class="lazyload" data-src="{{image.xl}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    </picture>
+    {% if data.caption %}
+      <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

@@ -17,3 +17,13 @@
 // Routes::map('search', function($params){
 //   Routes::load('search.php');
 // });
+
+//=============================================
+// News Archive
+//=============================================
+// Routes::map('news', function($params){
+//   Routes::load('archive-news.php');
+// });
+// Routes::map('news/:article', function($params){
+//   Routes::load('single-news.php');
+// });

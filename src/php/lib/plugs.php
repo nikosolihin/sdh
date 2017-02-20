@@ -1,13 +1,9 @@
 <?php
-// //=============================================
-// // Radio Button for Taxonomies
-// //=============================================
-// // Disable the "No term" option on a the "resource_type" taxonomy
-// add_filter( "radio-buttons-for-taxonomies-no-term-event_category", "__return_FALSE" );
-// add_filter( "radio-buttons-for-taxonomies-no-term-news_topic", "__return_FALSE" );
-// add_filter( "radio-buttons-for-taxonomies-no-term-media_type", "__return_FALSE" );
-// add_filter( "radio-buttons-for-taxonomies-no-term-media_category", "__return_FALSE" );
-// add_filter( "radio-buttons-for-taxonomies-no-term-role", "__return_FALSE" );
+//=============================================
+// Radio Button for Taxonomies
+//=============================================
+// Disable the "No term" option on a the "resource_type" taxonomy
+add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 
 //==========================================================
 // Admin Columns Pro

@@ -1,5 +1,5 @@
 {
-    "key": "group_57f3cb44696c6",
+    "key": "group_589ac525a004c",
     "title": "Service Details",
     "fields": [
         {
@@ -16,6 +16,23 @@
                 "id": ""
             },
             "message": "<p class=\"essentials-description\">This is a list of ongoing services associated with the Sekolah Dian Harapan website. Note: passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
+            "esc_html": 0,
+            "new_lines": ""
+        },
+        {
+            "key": "field_589aca1c5dcbc",
+            "label": "Wordpress",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Note<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Database (MariaDB)<\/td>\r\n      <td>Database: <em>SDHWeb_WP<\/em>\r\n        <br>\r\n        DB User: <em>sdh-sqladmin<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em><\/td>\r\n      <td>Root user also available with the same default password.<\/td>\r\n     <\/tr>\r\n    <tr>\r\n      <td>Backup<\/td>\r\n      <td>SQL backup happens weekly via cron and stored in \/var\/www\/backups\/. Email notification will be sent after each successful backup.<\/td>\r\n      <td><strong>Use SSH to copy dump files to a local machine:<\/strong><br><pre>scp -r -i .ssh\/path\/to\/private\/key webteam@sdh.or.id:\/var\/www\/backups\/ ~<\/pre><\/td>\r\n     <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -33,8 +50,8 @@
                 "id": ""
             },
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Image Hosting<\/td>\r\n      <td>Unlimited storage<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.photos.google.com\">https:\/\/www.photos.google.com<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_5770fe523c909",
@@ -49,9 +66,43 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: sdh.or.id<br>\r\n        Static IP: 139.59.216.194\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>VPS<\/td>\r\n      <td>$5\/month, billed at the end of the month.<br><a href=\"https:\/\/www.digitalocean.com\/pricing\/\">Learn more<\/a><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cloud.digitalocean.com\/login\">https:\/\/cloud.digitalocean.com\/login<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n    <tr>\r\n      <td>SSH<\/td>\r\n      <td>Private keys only. Will be sorted out once the final payment clears.<\/td>\r\n      <td>\r\n        User: webteam<br>\r\n        Host: sdh.or.id<br>\r\n        Static IP: 139.59.216.194\r\n      <\/td>\r\n      <td><\/td>\r\n    <\/tr>\r\n<tr>\r\n      <td>Ubuntu Box<\/td>\r\n      <td>The user <em>webteam<\/em> is a superuser with password <em>TidfuK4y2=<\/em><\/td>\r\n      <td><strong>Note:<\/strong> root is also available with the same default password.<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "esc_html": 0,
+            "new_lines": ""
+        },
+        {
+            "key": "field_589acdc9dc2eb",
+            "label": "Mailgun",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Server's transactional emails<\/td>\r\n      <td>Postfix uses Mailgun's SMTP server to send server messages.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/mailgun.com\/sessions\/new\">https:\/\/mailgun.com\/sessions\/new<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "esc_html": 0,
+            "new_lines": ""
+        },
+        {
+            "key": "field_589ac28166524",
+            "label": "Juicer",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Social Media Feed<\/td>\r\n      <td>Add Social Media Sources, filter sources, etc.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.juicer.io\/log-in\">https:\/\/www.juicer.io\/log-in<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam@gmail.com<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_57fe69044ca18",
@@ -67,8 +118,8 @@
                 "id": ""
             },
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Website Events<\/td>\r\n      <td>The events for each campus are all under this Google account, just on different calendars.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/accounts.google.com\">https:\/\/accounts.google.com<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n          <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_580226703f207",
@@ -84,8 +135,8 @@
                 "id": ""
             },
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Analytics<\/td>\r\n      <td>Typically for multi-language sites, we separate the tracking data into different reporting views for each language (English, Indonesian).<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/analytics.google.com\/analytics\/web\/\">https:\/\/analytics.google.com\/analytics\/web\/<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_5802265b3f206",
@@ -101,8 +152,8 @@
                 "id": ""
             },
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Site Search<\/td>\r\n      <td>Customize the behavior of the website's search functionality such as adding new refinement labels. Current search labels: news, events.<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/cse.google.com\/cse\/all\">https:\/\/cse.google.com\/cse\/all<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_580226253f205",
@@ -118,8 +169,8 @@
                 "id": ""
             },
             "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>For everyting that Google crawls (SEO)<\/td>\r\n      <td>Site ownership, crawl errrors, stats, initiate re-crawl, sitemaps submission, search analytics, etc. <br>\r\n      <a href=\"https:\/\/support.google.com\/webmasters\/answer\/6258314?utm_source=wnc_376106&utm_medium=gamma&utm_campaign=wnc_376106&utm_content=msg_743502&hl=en\">Learn more<\/a>\r\n      <\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.google.com\/webmasters\/tools\/home\">https:\/\/www.google.com\/webmasters\/tools\/home<\/a>\r\n        <br>\r\n        Username: <em>sdh.webteam<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em>\r\n      <\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
-            "new_lines": "",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": ""
         }
     ],
     "location": [
@@ -139,5 +190,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Service Details",
-    "modified": 1476543972
+    "modified": 1486609428
 }
