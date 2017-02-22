@@ -1,0 +1,284 @@
+{
+    "key": "group_58abd9372bee4",
+    "title": "Campus Details",
+    "fields": [
+        {
+            "key": "field_58ac5dcbabdda",
+            "label": "Banner",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58ac6a16b72dd",
+            "label": "",
+            "name": "banner",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57bd72b2e0e2c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58abd94fff3c7",
+            "label": "Basic Info",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58abe5ad7bc56",
+            "label": "Default Language",
+            "name": "language",
+            "type": "radio",
+            "instructions": "What is the primary language spoken at this campus location?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "english": "Engligh",
+                "indonesian": "Indonesian"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_58ac0b1c6cb46",
+            "label": "Location",
+            "name": "maps",
+            "type": "google_map",
+            "instructions": "Pin where this campus is located.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "-6.2187765",
+            "center_lng": "106.6258711",
+            "zoom": "",
+            "height": ""
+        },
+        {
+            "key": "field_58abda1fff3c8",
+            "label": "Principal",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58abdb38ff3ca",
+            "label": "Profile Photo",
+            "name": "photo",
+            "type": "acf_google_photos_browser",
+            "instructions": "Choose a profile photo for the principal of this campus.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": ".acf-field-acf-google-photos-browser--showlabel",
+                "id": ""
+            },
+            "google_photos_limit": 1,
+            "google_photos_user_id": "",
+            "google_photos_access_token": "",
+            "google_photos_message": ""
+        },
+        {
+            "key": "field_58abda57ff3c9",
+            "label": "Message",
+            "name": "message",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58abddf84cef1",
+            "label": "About Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58abdcd5ff3cb",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "Each campus can create one additional page to feature information that uniquely belongs to that particular campus. A good example for this is displaying tuition, languages, activities, etc. The content you create here will be displayed under the label \"About\" and followed by the campus location (e.g. About SDH Lippo Village).",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58abe2983cfe6",
+            "label": "",
+            "name": "about",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58a04d88d7cd7"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58abe75fa90be",
+            "label": "Facilities",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58abe7b1a90bf",
+            "label": "Overview",
+            "name": "facilities_teaser",
+            "type": "clone",
+            "instructions": "Write a short blurb about how great your campus' facilities are.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_574dcc3bb7c20"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58abe853a90c0",
+            "label": "Slideshow",
+            "name": "facilities_gallery",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58a7e4ccb7e1c"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "campus"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487694529
+}

@@ -305,9 +305,9 @@ function campus_post_type() {
 		'capability_type'     	=> array('campus','campuses'),
     'map_meta_cap'        	=> true,
 	);
-	// register_post_type( 'campus', $args );
+	register_post_type( 'campus', $args );
 }
-// add_action( 'init', 'campus_post_type', 0 );
+add_action( 'init', 'campus_post_type', 0 );
 
 /**
  * Filters to enable %custom-taxonomy% in rewrites

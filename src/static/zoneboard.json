@@ -68,8 +68,16 @@
       "icon":"fa-calendar",
       "links":[
         {
-          "label":"Scheduled Feb 17, 2017",
-          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340718053"
+          "label":"Add a new event",
+          "url":"/wp-admin/post-new.php?post_type=event"
+        },
+        {
+          "label":"See all events",
+          "url":"/wp-admin/edit.php?post_type=event"
+        },
+        {
+          "label":"Edit an event you created",
+          "url":"/wp-admin/edit.php?post_type=event"
         }
       ]
     },
@@ -78,8 +86,16 @@
       "icon":"fa-bullhorn",
       "links":[
         {
-          "label":"Scheduled Feb 17, 2017",
-          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340718053"
+          "label":"Add a new news article",
+          "url":"/wp-admin/post-new.php?post_type=news"
+        },
+        {
+          "label":"See all news",
+          "url":"/wp-admin/edit.php?post_type=news"
+        },
+        {
+          "label":"Edit a news article you wrote",
+          "url":"/wp-admin/edit.php?post_type=news"
         }
       ]
     },
@@ -88,8 +104,16 @@
       "icon":"fa-map-marker",
       "links":[
         {
-          "label":"Scheduled Feb 10, 2017",
-          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340713883"
+          "label":"Add a new campus location. (Managed by current username)",
+          "url":"/wp-admin/post-new.php?post_type=campus"
+        },
+        {
+          "label":"See all campuses",
+          "url":"/wp-admin/edit.php?post_type=campus"
+        },
+        {
+          "label":"Edit a campus you own",
+          "url":"/wp-admin/edit.php?post_type=campus"
         }
       ]
     },

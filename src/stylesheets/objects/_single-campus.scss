@@ -1,0 +1,65 @@
+.SingleCampus {
+
+  &-message {
+    box: vertical center;
+    position: relative;
+    width: 100%;
+    margin-top: 9rem; // must be larger than photo's top value
+  }
+  &-photo {
+    @include cover;
+    position: absolute;
+    size: 9rem;
+    top: -4.5rem; // must be half of height
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+  &-messageBody {
+    background-color: #F5F9FC;
+    border-radius: 4px;
+    padding: $single*7 $single*5 $single*3;
+    h2 {
+      display: block;
+      position: relative;
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: $single*5.5;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -$single*2.5;
+        transform: translateX(-50%);
+        height: 3px;
+        width: 2.75rem;
+        background-color: $yellow;
+      }
+    }
+  }
+  &-news {
+    &:first-child {
+      border-bottom: 1px solid $line;
+      padding-bottom: $single*2;
+    }
+    &:last-child {
+      padding-top: $single;
+    }
+  }
+  &-maps {
+    &Overlay {
+      // Prevent mouse wheel scroll on maps
+      // Based on: http://stackoverflow.com/questions/21992498/disable-mouse-scroll-wheel-zoom-on-embedded-google-maps
+      background: transparent;
+      position: relative;
+      width: 100%;
+      height: $single*25;
+      top: $single*25;
+      margin-top: -$single*25;
+      z-index: 1;
+    }
+    #Map {
+      height: $single*25;
+    }
+  }
+}

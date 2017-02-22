@@ -18,7 +18,7 @@ export default class Map {
         }
       })
       let args = {
-          zoom: 17,
+          zoom: 16,
           center: new google.maps.LatLng(0, 0),
           mapTypeId: google.maps.MapTypeId.ROADMAP
         },

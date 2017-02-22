@@ -1,8 +1,8 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./public",
-    "des_t": "./htdocs/wp-content/themes/sdh"
+    "des_t": "./public",
+    "dest": "./htdocs/wp-content/themes/sdh"
   },
 
   "tasks": {

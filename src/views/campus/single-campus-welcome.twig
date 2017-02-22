@@ -1,0 +1,110 @@
+{% extends "base.twig" %}
+{% block content %}
+
+{% set principal_photo = photo|serveSquareImage(400) %}
+{% set image = banner.image|serveImage %}
+{% set alignment = banner.alignment %}
+{% set custom_alignment = banner.custom_alignment %}
+
+<section class="Banner Banner--small Banner--campus Banner--{{alignment}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}" style="{% if alignment == "custom" %}background-position: center {{custom_alignment}}%;{% endif %}">
+  <div class="Banner-container container">
+    <h2 class="Banner-copy h3 white light">
+      <span class="h6 block caps bold white spaced">{{breadcrumb|first.title}}</span>
+      {{__('Welcome to SDH', 'sdh')}} {{post.title|title}}
+    </h2>
+  </div>
+</section>
+
+{# Create subnav manually since wp_list_pages ain't gonna help here #}
+<nav class="Subnav" role="navigation">
+  <ul class="Subnav-list List">
+    <li class="is-Active"><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
+    <li><a href="{{post.link}}/about">{{__('Campus Details', 'sdh')}}</a></li>
+    <li><a href="{{post.link}}/facilities">{{__('Facilities', 'sdh')}}</a></li>
+  </ul>
+</nav>
+
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
+  <div class="SinglePage-content content-body">
+    <div class="Intro">
+      <div class="Intro-breadcrumb">
+        {% include 'components/breadcrumb.twig' %}
+      </div>
+    </div>
+    <div class="SingleCampus-message">
+      <div class="SingleCampus-photo lazyload" data-bgset="{{principal_photo}}"></div>
+      <div class="SingleCampus-messageBody">
+        <h2 class="h2 light navy">{{__('Message from the Principal', 'sdh')}}</h2>
+        {{message}}
+      </div>
+    </div>
+  </div>
+
+  <div class="SinglePage-sidebar Sidebar">
+    <div class="Sidebar-section Sidebar-section--framed">
+      <div class="SingleCampus-news">
+        <h3 class="h7 navy spaced medium caps">{{__('News', 'sdh')}}</h3>
+        <div class="Feed Feed--list Feed--news">
+          <div class="Feed-body">
+            {% for post in news %}
+              <a class="Feed-item" href="{{post.link}}">
+                <div class="flex-wrapper">
+                  <p class="Feed-title h5 bold">{{post.title}}</p>
+                  <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('M j, Y')}}</span>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        <a href="#" class="Button Button--gray Button--block">{{__('More News', 'sdh')}}</a>
+      </div>
+
+      <div class="SingleCampus-news">
+        <h3 class="h7 navy spaced medium caps">{{__('Events', 'sdh')}}</h3>
+        <div class="Feed Feed--object Feed--event">
+          <div class="Feed-body">
+            {% for post in news %}
+              <a class="Feed-item" href="{{post.link}}">
+                <div class="Feed-media">
+                  <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
+                  <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
+                </div>
+                <div class="flex-wrapper">
+                  <p class="Feed-title h5 bold">{{post.title}}</p>
+                  <span class="Feed-meta h6 medium faint">
+                    <svg aria-hidden="true" role="presentation" title="Event Date">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+                    </svg>{{post.date|date('j M, Y')}}
+                  </span>
+                  <span class="Feed-meta h6 medium faint">
+                    <svg aria-hidden="true" role="presentation" title="Event Location">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+                    </svg>SDH Holland Village Auditorium
+                  </span>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        <a href="#" class="Button Button--gray Button--block">{{__('Event Calendar', 'sdh')}}</a>
+      </div>
+    </div>
+
+    <div class="Sidebar-section Sidebar-section--callout Sidebar-section--navy">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+      </svg>
+      <h3 class="h3">Calendar</h3>
+    </div>
+
+  </div>
+</div>
+
+<div class="SingleCampus-maps">
+  <div class="SingleCampus-mapsOverlay" onClick="style.pointerEvents='none'"></div>
+  <div id="Map" class="Map" data-component="map">
+    <div class="marker" data-lat="{{location.lat}}" data-lng="{{location.lng}}"></div>
+  </div>
+</div>
+
+{% endblock %}

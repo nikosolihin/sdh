@@ -28,4 +28,12 @@
   &--bottom {
     background-position: bottom center;
   }
+  &--campus { // For campuses banners
+    > .container {
+      box: vertical bottom left;
+    }
+    .Banner-copy {
+      @extend .h2, .white;
+    }
+  }
 }
