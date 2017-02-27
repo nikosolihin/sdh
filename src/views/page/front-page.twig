@@ -1,27 +1,81 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="SinglePage container">
-  <div class="SinglePage-share">
-    {% include 'components/social-share.twig' %}
+{% set placeholder_image = placeholder|serveImage %}
+
+<div class="Home" data-component="home">
+
+{% include 'components/loader.twig' with {'style': 'light'} %}
+
+<div class="Home-background" style="background-image: url({{placeholder_image.sm}})">
+  {% for item in hero %}
+    {% if item.type == "single" %}
+      {% set url = item.single_url %}
+    {% elseif item.type == "external" %}
+      {% set url = item.external_url %}
+    {% else %}
+      {% set url = item.search_url %}
+    {% endif %}
+    {% set image = item.photo|serveImage %}
+    <div class="Home-backgroundItem lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}" data-button-url="{{url}}"></div>
+  {% endfor %}
+</div>
+
+<div class="Home-statements">
+  <div class="Home-sentences">
+    {% for item in hero %}
+      <p>{{item.statement}}</p>
+    {% endfor %}
   </div>
-  <div class="SinglePage-content content-body">
-    <div class="Intro">
-      <h1 class="Intro-heading h2 light navy">This is a page title</h1>
+  <div class="Home-statementsIntro white medium caps spaced h5">{{__('At Our Schools', 'sdh')}},</div>
+  <p class="Home-statementsItem white bold">{{__("We're commited to", 'sdh')}} <span class="Home-statementsUnderlined"></span></p>
+  <div class="flex-wrapper">
+    <a href="" class="Home-statementsButton Button Button--gray">{{__('Learn More', 'sdh')}}</a>
+  </div>
+</div>
+
+<div class="Home-news">
+  <div class="Home-newsPanel">
+    {% include 'page/front-page-news.twig' %}
+  </div>
+  <div class="Home-newsControl">
+    <div class="Home-newsLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
+      </svg>
+      <span class="h7 bold caps spaced navy">News</span>
     </div>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
-  </div>
-  <div class="SinglePage-sidebar Sidebar">
-    <div class="Toc">
-      <h5 class="h7 caps spaced navy bold">In This Section</h5>
-      <ul class="List">
-        <li><a href="" class="Toc-link h6 medium">Core Values</a></li>
-        <li><a href="" class="Toc-link h6 medium">Essential Characteristics</a></li>
-        <li><a href="" class="Toc-link h6 medium">Who to Contact</a></li>
-        <li><a href="" class="Toc-link h6 medium">Direction to SDH</a></li>
-      </ul>
+    <div class="Home-newsLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+      </svg>
+      <span class="h7 bold caps spaced navy">Events</span>
     </div>
   </div>
 </div>
+
+<!-- <div class="Home-quicklinks">
+  <div class="Home-quicklinksLeft Home-quicklinksItem">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+    </svg>
+    <h3 class="h6 medium caps spaced white">This is stuff</h3>
+  </div>
+  <div class="Home-quicklinksRight Home-quicklinksItem">
+    <h3 class="h6 medium caps spaced white">This is stuff</h3>
+  </div>
+</div> -->
+
+</div>
+
+<div class="FrontPage">
+  <div class="container">
+
+    <h1 class="h1">Other Suggestions</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+
+  </div>
+</div>
+
 {% endblock %}

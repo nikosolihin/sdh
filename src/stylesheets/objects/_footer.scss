@@ -1,6 +1,7 @@
 .Footer {
   @include cover;
   position: relative;
+  z-index: $zindex-footer-main;
   // padding: $single*6 0 $single*2.25;
   padding: $single*9 0 $single*2.25;
   background-color: $white;
@@ -18,7 +19,7 @@
   &-primary {
     position: relative;
     box: horizontal space-around;
-    z-index: $zindex-footer-main;
+    // z-index: $zindex-footer-main;
   }
 
   &-link {
@@ -75,5 +76,9 @@
     font-size: .4rem;
     color: #dadada;
     margin: 0 $half;
+  }
+
+  @at-root .home #{&} {
+    // margin-top: 100vh;
   }
 }

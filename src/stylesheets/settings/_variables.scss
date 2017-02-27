@@ -110,12 +110,18 @@ $headings-line-height:         1.25 !default;
 //=============================================
 
 // Z-Index ///////////////////////////////////
-$zindex-announcement:            5000 !default;
-$zindex-gallery:                 4100 !default;
-$zindex-modal:                   4000 !default;
-$zindex-primarynav:              3000 !default;
-$zindex-footer-bg:               2000 !default;
-$zindex-footer-main:             2100 !default;
+$zindex-announcement:            6100 !default;
+$zindex-loader:                  6000 !default;
+$zindex-home-content:            5300 !default;
+$zindex-news-panel:              5200 !default;
+$zindex-gallery:                 5100 !default;
+$zindex-modal:                   5000 !default;
+$zindex-footer-main:             4000 !default;
+$zindex-footer-bg:               4000 !default;
+$zindex-primarynav:              3200 !default;
+$zindex-hero-copy:               3100 !default;
+$zindex-hero:                    3000 !default;
+
 
 //=============================================
 // Components

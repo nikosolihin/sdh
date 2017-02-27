@@ -88,7 +88,7 @@
 @import "components/toc";
 @import "components/intro";
 @import "components/share";
-// @import "components/modal";
+@import "components/modal";
 @import "components/banner";
 @import "components/announcement";
 // @import "components/searchbar";
@@ -114,8 +114,8 @@
 @import "components/gallery";
 @import "components/select";
 // @import "components/toggle";
-// @import "components/hero";
-//
+@import "components/hero";
+
 // // Mustache Templates
 // @import "components/media-object";
 @import "components/card";

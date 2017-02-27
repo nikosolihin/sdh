@@ -3,7 +3,7 @@
   position: relative;
   z-index: $zindex-footer-main;
   background-color: #25427C;
-  margin-top: $single*3;
+  // margin-top: $single*3;
 
   h3.h3 {
     font-size: 1.75rem / 1.5;
@@ -27,5 +27,9 @@
     .Button:first-child {
       margin-right: $threefourth;
     }
+  }
+
+  @at-root .home #{&} {
+    // margin-top: 100vh;
   }
 }

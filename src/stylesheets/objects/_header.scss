@@ -1,5 +1,12 @@
 .Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-primarynav;
+  width: 100%;
+
   box: horizontal middle;
+  background-color: $white;
   border-bottom: 1px solid $line;
 
   &-logo {
