@@ -10,13 +10,26 @@
   border-bottom: 1px solid $line;
 
   &-logo {
-    width: 15%;
-    box: horizontal middle;
+    width: 17%;
+    box: horizontal middle space-between;
     color: $navy;
+    padding: 0 $single*1.25;
+  }
+  &-seal {
+    width: 35%;
     svg {
-      height: 3.75rem;
+      width: 100%;
+      max-height: 85px;
     }
   }
+  &-textLogo {
+    width: 60%;
+    svg {
+      width: 100%;
+      max-height: 70px;
+    }
+  }
+
   &-nav {
     width: 85%;
   }
@@ -32,7 +45,7 @@
   }
   &-primaryLink {
     @include hover(#777, $navy);
-    padding: $single*1.75 $single;
+    padding: $single*1.35 $single;
     &.is-Active {
       @include hover($navy, $navy);
       font-weight: $font-weight-bold;

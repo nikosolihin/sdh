@@ -55,7 +55,7 @@
 @import "objects/landing-page";
 @import "objects/single-page";
 @import "objects/single-campus";
-// @import "objects/front-page";
+@import "objects/front-page";
 //
 // // Article Layout
 // @import "objects/single-article";
@@ -95,6 +95,7 @@
 @import "components/link";
 @import "components/spacer";
 // @import "components/callout";
+@import "components/carousel";
 @import "components/embed";
 @import "components/figure";
 @import "components/map";
@@ -114,7 +115,6 @@
 @import "components/gallery";
 @import "components/select";
 // @import "components/toggle";
-@import "components/hero";
 
 // // Mustache Templates
 // @import "components/media-object";

@@ -24,7 +24,7 @@
 <div class="Home-statements">
   <div class="Home-sentences">
     {% for item in hero %}
-      <p>{{item.statement}}</p>
+      <p>{{item.statement~'.'}}</p>
     {% endfor %}
   </div>
   <div class="Home-statementsIntro white medium caps spaced h5">{{__('At Our Schools', 'sdh')}},</div>
@@ -57,25 +57,28 @@
 <!-- <div class="Home-quicklinks">
   <div class="Home-quicklinksLeft Home-quicklinksItem">
     <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
     </svg>
-    <h3 class="h6 medium caps spaced white">This is stuff</h3>
+    <h3 class="h5 bold white">Application Process</h3>
+  </div>
+  <div class="Home-quicklinksMid Home-quicklinksItem">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+    </svg>
+    <h3 class="h5 bold white">Application Process</h3>
   </div>
   <div class="Home-quicklinksRight Home-quicklinksItem">
-    <h3 class="h6 medium caps spaced white">This is stuff</h3>
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+    </svg>
+    <h3 class="h5 bold white">Application Process</h3>
   </div>
 </div> -->
 
 </div>
 
 <div class="FrontPage">
-  <div class="container">
-
-    <h1 class="h1">Other Suggestions</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-
-  </div>
+  {% include 'components/carousel.twig' %}
 </div>
 
 {% endblock %}
