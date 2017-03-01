@@ -1,4 +1,6 @@
-<div class="Carousel">
+<div class="Carousel" data-component="carousel">
+<div class="Carousel-items">
+
 {% for voice in voices %}
   {% if voice.link.type == "single" %}
     {% set url = voice.link.single_url %}
@@ -13,7 +15,7 @@
   {% set image = voice.image|serveImage %}
 
   <div class="{{'Carousel-item'|modifiers("#{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
-    <div class="container">
+    <div class="Carousel-container">
       <div class="Carousel-copy">
         <svg aria-hidden="true" role="presentation" title="Testimonials">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quotes"></use>
@@ -34,20 +36,21 @@
     </div>
   </div>
 {% endfor %}
+</div>
 
-  <div class="Carousel-nav container">
-  {% for voice in voices %}
-    {% set photo = voice.photo|serveSquareImage(94) %}
-    <div class="Carousel-navItem">
-      <div class="flex-wrapper">
-        <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
-      </div>
-      <div class="Carousel-navCopy">
-        <div class="h5 bold white">{{voice.title}}</div>
-        <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
-      </div>
+<div class="Carousel-nav container">
+{% for voice in voices %}
+  {% set photo = voice.photo|serveSquareImage(94) %}
+  <div class="Carousel-navItem{% if loop.first %} Carousel-navItem--active{% endif %}" data-nth="{{loop.index0}}">
+    <div class="flex-wrapper">
+      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
     </div>
-  {% endfor %}
+    <div class="Carousel-navCopy">
+      <div class="h5 bold white">{{voice.title}}</div>
+      <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
+    </div>
   </div>
+{% endfor %}
+</div>
 
 </div>
