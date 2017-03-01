@@ -7,68 +7,32 @@ export default class Carousel {
   constructor(el) {
     this.$el = $(el)
     this.$body = $(".Carousel-items")
+    this.button = '.Carousel-navItem'
     this.count = $(".Carousel-item").length
     this.flickity = this.initializeFlickity( this.count, this.$body, {
       wrapAround: true,
       pageDots: false,
       prevNextButtons: false,
       adaptiveHeight: false,
-      autoPlay: false,
-      setGallerySize: false
+      autoPlay: false
     })
-    // this.attachEvents()
+    this.attachEvents()
   }
 
   initializeFlickity(count, target, options) {
-    let galleryData = target.flickity(options).data('flickity')
-    // Flickity events need to be done like this since
-    // jQuery is encapsulated when used with Webpack
-    // https://github.com/metafizzy/flickity/issues/329
-    target.flickity( 'on', 'cellSelect', function() {
-      $(".Carousel-caption-item--show").removeClass('Carousel-caption-item--show')
-      $(".Carousel-caption-item").eq( galleryData.selectedIndex ).addClass('Carousel-caption-item--show')
-    })
-    return galleryData
+    let carouselData = target.flickity(options).data('flickity')
+    return carouselData
   }
 
   attachEvents() {
-    this.$el.on('click', '.Carousel-left', (event) => {
+    this.$el.on('click', this.button, (event) => {
       event.preventDefault()
-      this.flickity.previous()
+      this.$el.find('.Carousel-navItem--active').removeClass('Carousel-navItem--active')
+      let $suspect = $(event.target).closest(this.button),
+          index = parseInt($suspect.data('nth'))
+      $suspect.addClass('Carousel-navItem--active')
+      this.flickity.select(index,true,false)
     })
-    .on('click', '.Carousel-right', (event) => {
-      event.preventDefault()
-      this.flickity.next()
-    })
-    .on('click', '.Carousel-close', (event) => {
-      event.preventDefault()
-      this.close()
-    })
-    $(".Carousel-previewButton, .Carousel-preview").on('click', (event) => {
-      event.preventDefault()
-      this.open()
-    })
-    $(document).keyup( (event) => {
-      if(event.keyCode == 27) {
-        event.preventDefault()
-        this.close()
-      }
-    })
-  }
 
-  open() {
-    $("body").addClass('noScroll')
-    this.$el.removeClass('die')
-    setTimeout(() => {
-      this.$el.addClass('Carousel--open')
-    }, 10)
-  }
-
-  close() {
-    $("body").removeClass('noScroll')
-    this.$el.removeClass('Carousel--open')
-    setTimeout(() => {
-      this.$el.addClass('die')
-    }, 125)
   }
 }

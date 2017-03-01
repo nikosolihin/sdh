@@ -10,6 +10,7 @@
     @include cover;
     box: vertical left middle;
     padding: 0 $single*4;
+    width: 100%;
     min-height: $single*30;
 
     &--right {
@@ -103,14 +104,6 @@
       border: 2px solid transparent;
       transition: border-color .13s ease-in-out;
       cursor: pointer;
-
-      &:hover {
-        border: 2px solid $yellow;
-      }
-
-      @at-root .Carousel-navItem--active #{&} {
-        border: 4px solid $yellow;
-      }
     }
 
     &Item {
@@ -124,6 +117,10 @@
       }
       &:hover .Carousel-navPhoto {
         border: 2px solid $yellow;
+      }
+      &--active .Carousel-navPhoto,
+      &--active:hover .Carousel-navPhoto {
+        border: 4px solid $yellow;
       }
     }
   }

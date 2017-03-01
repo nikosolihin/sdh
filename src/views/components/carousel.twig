@@ -1,5 +1,5 @@
-<div class="Carousel">
-<div class="Carousel-items" data-component="carousel">
+<div class="Carousel" data-component="carousel">
+<div class="Carousel-items">
 
 {% for voice in voices %}
   {% if voice.link.type == "single" %}
@@ -38,19 +38,19 @@
 {% endfor %}
 </div>
 
-  <div class="Carousel-nav container">
-  {% for voice in voices %}
-    {% set photo = voice.photo|serveSquareImage(94) %}
-    <div class="Carousel-navItem">
-      <div class="flex-wrapper">
-        <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
-      </div>
-      <div class="Carousel-navCopy">
-        <div class="h5 bold white">{{voice.title}}</div>
-        <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
-      </div>
+<div class="Carousel-nav container">
+{% for voice in voices %}
+  {% set photo = voice.photo|serveSquareImage(94) %}
+  <div class="Carousel-navItem{% if loop.first %} Carousel-navItem--active{% endif %}" data-nth="{{loop.index0}}">
+    <div class="flex-wrapper">
+      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
     </div>
-  {% endfor %}
+    <div class="Carousel-navCopy">
+      <div class="h5 bold white">{{voice.title}}</div>
+      <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
+    </div>
   </div>
+{% endfor %}
+</div>
 
 </div>
