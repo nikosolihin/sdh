@@ -1,38 +1,126 @@
 .Carousel {
-  .Button {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin: 0;
-    border-radius: 0;
-    background-color: $brand-primary;
-  }
-  .Pill {
-    margin-bottom: $threefourth;
-  }
-  .flickity-prev-next-button.previous {
-    left: -50px;
-  }
-  .flickity-prev-next-button.next {
-    right: -50px;
-  }
-  .flickity-page-dots {
-    bottom: -60px;
-  }
+  background-color: #162231;
+
   &-item {
-    @include square;
+    @include cover;
+    box: vertical left middle;
+    padding: 0 $single*4;
+    min-height: $single*30;
+
+    &--right {
+      @include overlay(false);
+      .container {
+        box: vertical right middle;
+      }
+      svg {
+        top: -$single*2.125;
+        right: -$single*3;
+      }
+      blockquote {
+        text-align: right;
+      }
+      .Carousel-copy {
+        box: vertical right middle;
+      }
+      .Carousel-author {
+        text-align: right;
+        width: 100%;
+      }
+      .Carousel-button {
+        order: 1;
+        margin: 0 auto 0 $single*4.25;
+      }
+      .flex-wrapper {
+        order: 2;
+      }
+      .Carousel-photo {
+        order: 3;
+        margin-left: $single;
+      }
+    }
+    &--left {
+      @include overlay(false, null, true);
+      .container {
+        box: vertical left middle;
+      }
+      .Carousel-photo {
+        order: 1;
+        margin-right: $single;
+      }
+      .flex-wrapper {
+        order: 2;
+      }
+      .Carousel-button {
+        order: 3;
+        margin: 0 $single*4.25 0 auto;
+      }
+      svg {
+        top: -$single*2.125;
+        left: -$single*3;
+      }
+    }
+  }
+
+  &-author {
+    box: horizontal middle;
+  }
+
+  &-photo {
+    @include cover;
+    border-radius: 50%;
+    size: $single*2.5;
+  }
+
+  &-copy {
     position: relative;
-    box: vertical;
-    justify-content: space-between;
-    width: 25%;
-    margin-right: $single*1.75;
-    background-color: $white;
-    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    width: 45%;
+    svg {
+      position: absolute;
+      size: $single*6.5;
+      fill: rgba(255,255,255,.25);
+    }
+    blockquote {
+      font-size: 1.3rem / 1.5;
+      margin: $single*1.5 0;
+    }
   }
-  &-body {
-    position: absolute;
-    padding: $single*1.25;
-    padding-bottom: 0;
-    box-item: flex-1;
+
+  &-nav {
+    box: horizontal;
+    padding-bottom: $single;
+
+    &Photo {
+      @include cover;
+      position: relative;
+      top: -$single*1.5;
+      size: $single*4;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: border-color .13s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid $yellow;
+      }
+
+      @at-root .Carousel-navItem--active #{&} {
+        border: 4px solid $yellow;
+      }
+    }
+
+    &Item {
+      box: vertical;
+      width: $single*11;
+      padding: 0 $single $quarter;
+      border-right: 1px solid rgba(255,255,255,.2);
+      cursor: pointer;
+      .flex-wrapper {
+        box: horizontal center middle;
+      }
+      &:hover .Carousel-navPhoto {
+        border: 2px solid $yellow;
+      }
+    }
   }
+
 }

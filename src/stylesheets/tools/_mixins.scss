@@ -33,7 +33,7 @@
     z-index: 1;
   }
 }
-@mixin overlay($full, $value: null, $index: false) {
+@mixin overlay($full, $value: null, $reverse: false) {
   @include promote;
   position: relative;
   &::before {
@@ -43,9 +43,6 @@
     left: 0;
     size: 100%;
     transition: all .2s ease-out;
-    @if $index {
-      z-index: #{$index};
-    }
     @if $full {
       @if ($value) {
         background: #{$value};
@@ -56,8 +53,13 @@
       @if ($value) {
         background: linear-gradient( #{$value} );
       } @else {
-        background-color: rgba(13, 4, 0, 0.07);
-        background-image: linear-gradient(-15deg, rgba(0, 0, 0, 0.66) 0%, rgba(2, 2, 2, 0.66) 12%, rgba(13, 13, 13, 0) 66%, rgba(19, 19, 19, 0) 97%);
+        @if ($reverse) {
+          background-color: rgba(13, 4, 0, 0.07);
+          background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.66) 0%, rgba(2, 2, 2, 0.66) 12%, rgba(13, 13, 13, 0) 66%, rgba(19, 19, 19, 0) 97%);
+        } @else {
+          background-color: rgba(13, 4, 0, 0.07);
+          background-image: linear-gradient(-15deg, rgba(0, 0, 0, 0.66) 0%, rgba(2, 2, 2, 0.66) 12%, rgba(13, 13, 13, 0) 66%, rgba(19, 19, 19, 0) 97%);
+        }
       }
     }
   }

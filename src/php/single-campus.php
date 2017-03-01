@@ -19,8 +19,7 @@ $news_args = array(
     array(
       'taxonomy'    => 'campus',
       'field'       => 'slug',
-      'terms'       => 'manado'
-      // 'terms'       => $params['location']
+      'terms'       => $params['location']
     )
   ),
   'posts_per_page'  => 3,

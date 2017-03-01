@@ -110,23 +110,15 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url' 		=> 'dashicons-menu'
 	));
 
-//   // Home Page //////////////////////////////
-// 	acf_add_options_page(array(
-// 		'page_title' 	=> '', // No page title since acf already has
-// 		'menu_title'	=> 'Home Page',
-// 		'menu_slug' 	=> 'homepage',
-// 		'position' 		=> '201',
-// 		'icon_url' 		=> 'dashicons-admin-home',
-//     'redirect' 		=> true
-// 	));
-//
-//   // Hero Unit Sub Page //////////////////////
-//   acf_add_options_sub_page(array(
-//     'page_title' 	=> '',
-//     'menu_title'	=> 'Hero Unit',
-//     'parent_slug'	=> 'homepage',
-//   ));
-//
+  // Home Page //////////////////////////////
+	acf_add_options_page(array(
+		'page_title' 	=> '', // No page title since acf already has
+		'menu_title'	=> 'Home Page',
+		'menu_slug' 	=> 'homepage',
+		'position' 		=> '201',
+		'icon_url' 		=> 'dashicons-admin-home'
+	));
+
 //   // Prospective Students Sub Page ///////////
 //   acf_add_options_sub_page(array(
 //     'page_title' 	=> 'Home Page Settings',
