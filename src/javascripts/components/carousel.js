@@ -21,6 +21,13 @@ export default class Carousel {
 
   initializeFlickity(count, target, options) {
     let carouselData = target.flickity(options).data('flickity')
+    // Flickity events need to be done like this since
+    // jQuery is encapsulated when used with Webpack
+    // https://github.com/metafizzy/flickity/issues/329
+    target.flickity( 'on', 'cellSelect', function() {
+      $(".Carousel-navItem--active").removeClass('Carousel-navItem--active')
+      $(".Carousel-navItem").eq( carouselData.selectedIndex ).addClass('Carousel-navItem--active')
+    })
     return carouselData
   }
 
