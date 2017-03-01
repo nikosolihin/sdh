@@ -1,6 +1,11 @@
 .Carousel {
   background-color: #162231;
 
+  &-container {
+    width: 82%;
+    margin: 0 auto;
+  }
+
   &-item {
     @include cover;
     box: vertical left middle;
@@ -9,7 +14,7 @@
 
     &--right {
       @include overlay(false);
-      .container {
+      .Carousel-container {
         box: vertical right middle;
       }
       svg {
@@ -40,7 +45,7 @@
     }
     &--left {
       @include overlay(false, null, true);
-      .container {
+      .Carousel-container {
         box: vertical left middle;
       }
       .Carousel-photo {

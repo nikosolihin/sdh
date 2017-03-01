@@ -1,4 +1,6 @@
 <div class="Carousel">
+<div class="Carousel-items" data-component="carousel">
+
 {% for voice in voices %}
   {% if voice.link.type == "single" %}
     {% set url = voice.link.single_url %}
@@ -13,7 +15,7 @@
   {% set image = voice.image|serveImage %}
 
   <div class="{{'Carousel-item'|modifiers("#{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
-    <div class="container">
+    <div class="Carousel-container">
       <div class="Carousel-copy">
         <svg aria-hidden="true" role="presentation" title="Testimonials">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quotes"></use>
@@ -34,6 +36,7 @@
     </div>
   </div>
 {% endfor %}
+</div>
 
   <div class="Carousel-nav container">
   {% for voice in voices %}
