@@ -83,7 +83,6 @@ add_action('save_post', 'create_campus_terms');
 // Feed component
 //=============================================
 function populateList($options) {
-
   $posts = array();
   $type = '';
 
@@ -103,7 +102,7 @@ function populateList($options) {
       'post__not_in'  => $exclude,
     );
 
-    // If events, get upcoming posts instead of recent
+    // If events, get upcoming posts instead of past
     if ($options['post_type'] == 'event') {
       $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
       $args['order'] = 'ASC';
@@ -119,7 +118,7 @@ function populateList($options) {
     }
 
     // Add selected term ids
-    if ($options['feed_campus']) {
+    if (isset($options['feed_campus'])) {
       $term_ids = $options['feed_campus'];
       $args['tax_query'] = array();
       array_push($args['tax_query'], array(
@@ -150,18 +149,6 @@ function populateList($options) {
   // Discard excess info, depending on post types
   $filtered_posts = array();
   switch ($type) {
-    case 'event':
-      foreach ($posts as $post) {
-        array_push($filtered_posts, array(
-          'title'       => $post->title,
-          'link'        => $post->link,
-          'date'        => $post->post_date,
-          'campus'        => $post->get_terms('campus')[0]->name,
-          'teaser'      => $post->get_field('gcal')['description'],
-          'image'       => $post->get_field('image'),
-        ));
-      }
-      break;
     case 'news':
       foreach ($posts as $post) {
         array_push($filtered_posts, array(
@@ -170,12 +157,145 @@ function populateList($options) {
           'date'        => $post->post_date,
           'campus'      => $post->get_terms('campus')[0]->name,
           'teaser'      => $post->get_field('teaser'),
-          'image'       => $post->get_field('image'),
+          'image'       => serveImage($post->get_field('image')),
+        ));
+      }
+      break;
+    case 'event':
+      foreach ($posts as $post) {
+        $gcal = filterEvent($post);
+        array_push($filtered_posts, array(
+          'title'       => $post->title,
+          'link'        => $post->link,
+          'date'        => $post->post_date,
+          'campus'      => $post->get_terms('campus')[0]->name,
+          'teaser'      => $gcal['description'],
+          'location'    => $gcal['location'],
+          'image'       => serveImage($post->get_field('image')),
+          'dateTime'    => $gcal
         ));
       }
       break;
   }
   return $filtered_posts;
+}
+
+//=============================================
+// Filter Events
+// This gets date & time based on repeats
+//=============================================
+function filterEvent($post) {
+  $gcal = $post->get_field('gcal');
+  $return = array();
+
+  // Description
+  $return['description'] = $gcal['description'];
+
+  // Location
+  $return['location'] = $gcal['location'];
+
+  ///////////////////////////////////
+  // What kind of event do we have?
+  //
+  // ALL DAY - just grab date, no time
+  if (array_key_exists('date', $gcal['start'])) {
+  	$start = date_create($gcal['start']['date']);
+  	$startDate = date_format($start, 'j F Y' );
+  	$end = date_create($gcal['end']['date']);
+  	$endDate = date_format($end, 'j F Y' );
+
+  	// End on the same day?
+  	if ($startDate == $endDate) {
+  		$return['event_date'] = $startDate;
+  	} else {
+  		$return['event_date'] = $startDate . " - " . $endDate;
+  	}
+  }
+  // RANGE EVENT
+  else if (array_key_exists('dateTime', $gcal['start'])) {
+  	$start = date_create($gcal['start']['dateTime']);
+  	$startDate = date_format($start, 'j F Y' );
+  	$startTime = date_format($start, 'H:i' );
+  	$end = date_create($gcal['end']['dateTime']);
+  	$endDate = date_format($end, 'j F Y' );
+  	$endTime = date_format($end, 'H:i' );
+
+  	// End on the same day?
+  	if ($startDate == $endDate) {
+  		$return['event_date'] = $startDate;
+  	} else {
+  		$return['event_date'] = $startDate . " - " . $endDate;
+  	}
+  	// Time
+  	$return['event_time'] = $startTime . " - " . $endTime;
+  }
+
+  ///////////////////////////////////
+  // What kind of repeats do we have?
+  //
+  if (array_key_exists('children', $gcal)) {
+  	$return['event_children_date'] = array();
+  	$return['event_children_time'] = array();
+  	foreach ($gcal['children'] as $child) {
+  		if (array_key_exists('date', $child['start'])) {
+  			// All day - just grab date, no time
+  			$start = date_create($child['start']['date']);
+  			$startDate = date_format($start, 'j F Y' );
+  			$end = date_create($child['end']['date']);
+  			$endDate = date_format($end, 'j F Y' );
+
+  			// End on the same day?
+  			if ($startDate == $endDate) {
+  				array_push($return['event_children_date'], $startDate);
+  			} else {
+  				array_push($return['event_children_date'], $startDate . " - " . $endDate);
+  			}
+  		}
+  		else if (array_key_exists('dateTime', $child['start'])) {
+  			// Range event
+  			$start = date_create($child['start']['dateTime']);
+  			$startDate = date_format($start, 'j F Y' );
+  			$startTime = date_format($start, 'H:i' );
+  			$end = date_create($child['end']['dateTime']);
+  			$endDate = date_format($end, 'j F Y' );
+  			$endTime = date_format($end, 'H:i' );
+
+  			// End on the same day?
+  			if ($startDate == $endDate) {
+  				array_push($return['event_children_date'], $startDate);
+  			} else {
+  				array_push($return['event_children_date'], $startDate . " - " . $endDate);
+  			}
+  			// Time
+  			array_push($return['event_children_time'], $startTime . " - " . $endTime);
+  		}
+  	}
+  }
+  return $return;
+}
+
+//=============================================
+// Serve Image
+//=============================================
+function serveImage($image) {
+  if(isset($image) && is_array($image)) {
+    $base = $image['base']."s";
+    $name = "/".$image['title'];
+    $xs = $base . '576' . $name;
+    $sm = $base . '800' . $name;
+    $md = $base . '1024' . $name;
+    $lg = $base . '1280' . $name;
+    $xl = $base . '1440' . $name;
+    $xxl = $base . '1600' . $name;
+    return array(
+      'xs' => $xs,
+      'sm' => $sm,
+      'md' => $md,
+      'lg' => $lg,
+      'xl' => $xl,
+      'xxl' => $xxl,
+    );
+  }
 }
 
 //=============================================

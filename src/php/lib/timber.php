@@ -271,24 +271,7 @@ class StarterSite extends TimberSite {
 		// Generate image URL from Google Photos
 		//=============================================
 		$classfilter = new Twig_SimpleFilter('serveImage', function ($image) {
-			if(isset($image) && is_array($image)) {
-				$base = $image['base']."s";
-				$name = "/".$image['title'];
-				$xs = $base . '576' . $name;
-				$sm = $base . '800' . $name;
-				$md = $base . '1024' . $name;
-				$lg = $base . '1280' . $name;
-				$xl = $base . '1440' . $name;
-				$xxl = $base . '1600' . $name;
-				return array(
-					'xs' => $xs,
-					'sm' => $sm,
-					'md' => $md,
-					'lg' => $lg,
-					'xl' => $xl,
-					'xxl' => $xxl,
-				);
-			}
+			return serveImage($image);
 		});
 		$twig->addFilter($classfilter);
 
