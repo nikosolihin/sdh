@@ -21,9 +21,14 @@
 //=============================================
 // News Archive
 //=============================================
-// Routes::map('news', function($params){
-//   Routes::load('archive-news.php');
+Routes::map('campuses/:location/:section', function($params){
+  $params['wp_title'] = 'Welcome to';
+  Routes::load('single-campus.php', $params);
+  // Routes::load('single-campus-'.$params['section'].'.php', $params);
+});
+// Routes::map('campuses/:location/about', function($params){
+//   Routes::load('single-campus.php');
 // });
-// Routes::map('news/:article', function($params){
-//   Routes::load('single-news.php');
+// Routes::map('campuses/:location/facilities', function($params){
+//   Routes::load('single-campus.php');
 // });

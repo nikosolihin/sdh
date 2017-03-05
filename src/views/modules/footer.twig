@@ -1,15 +1,5 @@
 {% set footer_image = footer_bg|serveImage %}
 
-<section class="Cta">
-  <div class="flex-wrapper">
-    <h3 class="h3 light white noMargin">{{cta}}</h3>
-  </div>
-  <div class="Cta-buttons">
-    <a href="" class="Button">Apply Now</a>
-    <a href="" class="Button Button--outline-light">Request a Brochure</a>
-  </div>
-</section>
-
 <footer class="Footer lazyload" data-bgset="{{footer_image.xxl}} [(min-width: {{xxl}})] | {{footer_image.xl}} [(min-width: {{xl}})] | {{footer_image.lg}} [(min-width: {{lg}})] | {{footer_image.md}} [(min-width: {{md}})] | {{footer_image.sm}} [(min-width: {{sm}})] | {{footer_image.xs}}">
   <section class="Footer-primary container">
     {% for parent in footer.parents %}
@@ -27,18 +17,18 @@
   <div class="Footer-secondary container">
     <div class="Footer-essentials">
       {% if policy %}
-        <a href="{{policy}}" class="Footer-secondaryLink">{{__('Privacy Policy', 'sdh')}}</a>
+        <a href="{{policy}}" class="Footer-secondaryLink h7 medium">{{__('Privacy Policy', 'sdh')}}</a>
         <span class="Footer-dot">●</span>
       {% endif %}
 
-      <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink">{{__('Feedback', 'sdh')}}</a>
+      <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink h7 medium">{{__('Feedback', 'sdh')}}</a>
       <span class="Footer-dot">●</span>
 
       <div class="Footer-languages">
         <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
-        <a href="{{languages.en}}" class="Footer-secondaryLink Footer-secondaryLink--active">English</a>
+        <a href="{{languages.en}}" class="Footer-secondaryLink h7 medium  Footer-secondaryLink--active">English</a>
         {% if 'id' in languages.list %}
-          <a href="{{languages.id}}" class="Footer-secondaryLink">Indonesian</a>
+          <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">Indonesian</a>
         {% endif %}
       </div>
     </div>

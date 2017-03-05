@@ -1,31 +1,14 @@
 .Pill {
-  display: inline-block;
-  user-select: none;
+  color: #888;
+  line-height: 1;
+  background-color: #f5f5f5;
   border-radius: 3px;
-  text: $pill-color $pill-font-weight left normal $pill-font-size $pill-line-height normal;
-  padding: $pill-padding;
+  padding: .4rem $threefourth;
   margin: 0 $half $half 0;
-  transition: all .125s ease-in-out;
-
-  &--inactive {
-    background-color: transparent !important;
-    color: #666;
-    border: 1px solid #ccc;
-    &:hover {
-      border: 1px solid #999;
-    }
-  }
-
-  &--pointer {
-    cursor: pointer;
-  }
-
-  &--mini {
-    font-size: $font-size-h7;
-    padding: .25rem .45rem;
-  }
-
-  &--spaced {
-    margin: 0 $single;
+  cursor: pointer;
+  transition: all .075s ease-in-out;
+  &:hover {
+    color: $white;
+    background-color: $orange;
   }
 }

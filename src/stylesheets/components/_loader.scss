@@ -1,34 +1,56 @@
-.Loader {
-  transition: all .1s ease-in-out;
-  size: $loader-size;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  opacity: 0;
-  z-index: -99999;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-  &--show {
-    opacity: 1;
-    z-index: 99999;
+.Loader {
+  size: 64px;
+  position: absolute;
+  top: 47%;
+  left: 48%;
+  z-index: $zindex-loader;
+  opacity: 1;
+  visibility: visible;
+  transition: all .2s ease-in-out;
+
+  &-eagle {
+    position: absolute;
+    top: 14px;
+    left: 11px;
+    z-index: 2;
+    size: $single*2.5;
+    svg {
+      size: 40px;
+      fill: #26427C;
+    }
   }
-  &-cube {
-    float: left;
-    size: 33%;
-    background-color: $loader-color;
-    animation: loader-animation 1.05s infinite ease-in-out;
+  &-spin {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    size: 64px;
+    border: 3px solid #eee;
+    border-top-color: $yellow;
+    animation: spin .5s infinite linear;
   }
-  &-cube1 { animation-delay: 0.2s; }
-  &-cube2 { animation-delay: 0.3s; }
-  &-cube3 { animation-delay: 0.4s; }
-  &-cube4 { animation-delay: 0.1s; }
-  &-cube5 { animation-delay: 0.2s; }
-  &-cube6 { animation-delay: 0.3s; }
-  &-cube7 { animation-delay: 0s; }
-  &-cube8 { animation-delay: 0.1s; }
-  &-cube9 { animation-delay: 0.2s; }
-  @keyframes loader-animation {
-    0%, 70%, 100% { transform: scale3D(1, 1, 1); }
-    35% { transform: scale3D(0, 0, 1); }
+
+  &--light {
+    .Loader-eagle svg {
+      fill: rgba(255,255,255,.85);
+    }
+    .Loader-spin {
+      border: 3px solid rgba(255,255,255,.25);
+      border-top-color: $orange;
+    }
+  }
+
+  &--fadeOut {
+    transform: scale(1.25);
+    opacity: 0;
+    visibility: hidden;
   }
 }

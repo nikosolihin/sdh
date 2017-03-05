@@ -1,126 +1,99 @@
 {% extends "base.twig" %}
 
 {% block content %}
+{% include 'components/banner.twig' %}
 
-<div class="SingleArticle SingleEvent container">
-  <div class="SingleArticle-content {{'container'|modifiers("text")}}">
-    {# Breadcrumb #}
-    {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
+<div class="SingleEvent">
+  <div class="container">
+    <div class="Share">
+      {% include 'components/social-share.twig' %}
+    </div>
 
-    {# Pill #}
-    <div class="Pill" style="background-color: {{category.color}};">{{category.name}}</div>
+    <div class="SingleEvent-content content-body">
+      <div class="Intro Intro--withMeta">
+        <div class="Intro-breadcrumb">
+          {% include 'components/breadcrumb.twig' %}
+        </div>
+        <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+        <div class="Intro-meta h7 caps spaced medium faint">{{campus}}</div>
 
-    {# Headings #}
-    <h1 class="SingleArticle-title h2 brand">{{post.title}}</h1>
+        {% if acf.gcal.description %}
+          <p>{{acf.description}}</p>
+        {% endif %}
+      </div>
+    </div>
 
-    {# Subtitle #}
-    {% if acf.subtitle %}
-      <h4 class="SingleArticle-subtitle">{{acf.subtitle}}</h4>
-    {% endif %}
+    <div class="Sidebar">
+      <div class="SingleEvent-details">
+        <h5 class="h6 medium caps spaced white noMargin">Event Details</h5>
+      </div>
 
-    {# Teaser #}
-    {% if acf.gcal.description %}
-      <h3 class="SingleArticle-teaser Lead">{{acf.teaser}}</h3>
-    {% endif %}
+      <div class="SingleEvent-meta">
 
-    {# Metas #}
-    <div class="SingleArticle-meta">
-      {% if event_date %}
-        <div class="meta meta--icon">
+        {# Set up repeating event #}
+        {% set eventDate = "" %}
+        {% if event_children_date %}
+          {# If this event is repeating forever, only grab 4 repetitions (one month) #}
+          {% for repeat in event_children_date|slice(0, 4) %}
+            {% set eventDate = eventDate ~ repeat ~ "<br>"%}
+          {% endfor %}
+        {% else %}
+          {% set eventDate = event_date %}
+        {% endif %}
+
+        <div class="SingleEvent-metaItem">
           <svg aria-hidden="true" role="presentation" title="Event Date">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
           </svg>
-          <span>{{event_date}}</span>
+          <span class="h5 medium faint">{{eventDate}}</span>
         </div>
-      {% endif %}
-      {% if event_time %}
-        <div class="meta meta--icon">
-          <svg aria-hidden="true" role="presentation" title="Event Date">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-          </svg>
-          <span>{{event_time}}</span>
-        </div>
-      {% endif %}
-      {% if acf.gcal.location %}
-        <div class="meta meta--icon">
-          <svg aria-hidden="true" role="presentation" title="Event Date">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
-          </svg>
-          <span>{{acf.gcal.location}}</span>
-        </div>
-      {% endif %}
-    </div>
 
-    {# Metas for repeating event #}
-    {% if event_children_date %}
-      {% for repeat in event_children_date %}
-        <div class="SingleArticle-meta">
-          <div class="meta meta--icon">
-            <svg aria-hidden="true" role="presentation" title="Event Date">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
-            </svg>
-            <span>{{repeat}}</span>
-          </div>
-          <div class="meta meta--icon">
-            <svg aria-hidden="true" role="presentation" title="Event Date">
+        {% if event_time %}
+          <div class="SingleEvent-metaItem">
+            <svg aria-hidden="true" role="presentation" title="Event Time">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
             </svg>
-            <span>{{event_children_time[loop.index0]}}</span>
-          </div>
-        </div>
-      {% endfor %}
-    {% endif %}
-
-    {# Mobile Share #}
-    <div class="SingleArticle-share">
-      <h3 class="Lead brand">
-        {{__('Share this event', 'saat')}}
-      </h3>
-      {% include 'components/social-share.twig' %}
-    </div>
-
-    {# Page Builder #}
-    {% if sections %}
-      <div class="content-body">
-
-        {# Teaser Image #}
-        {% if acf.image %}
-          <div class="SingleArticle-image">
-            {% set image = acf.image %}
-            <picture>
-              <!--[if IE 9]><video style="display: none;"><![endif]-->
-              {# Desktops - load 1024px #}
-              <source media="(min-width: {{lg}})" data-srcset="{{image[xlarge]}}">
-              {# Tablets - load 800px #}
-              <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{image[large]}}">
-              {# Landscape phones - load 640px #}
-              <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{image[medium]}}">
-              {# Portrait phones - load 320px #}
-              <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{image[small]}}">
-              <!--[if IE 9]></video><![endif]-->
-              {# Fallback with transparent LQIP #}
-              <img alt="{{image.title}}" class="lazyload" data-src="{{image[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-            </picture>
+            <span class="h5 medium faint">{{event_time}}</span>
           </div>
         {% endif %}
 
-        {% include 'layout/base.twig' %}
+        {% if acf.gcal.location %}
+          <div class="SingleEvent-metaItem">
+            <svg aria-hidden="true" role="presentation" title="Event School">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+            </svg>
+            <span class="h5 medium faint">SDH {{campus}}<br>{{acf.gcal.location}}</span>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
-  </div>
-  <div class="SingleArticle-sidebar Sidebar">
-    {# Common Sidebar Sections #}
-    <div class="Sidebar-section">
-      <h3 class="Sidebar-sectionHeading Lead brand">
-        {{__('Share this news', 'saat')}}
-      </h3>
-      {% include 'components/social-share.twig' %}
-    </div>
 
-    {# Sidebar Builder #}
-    {% if sidebar_sections %}
-      {% include 'layout/sidebar-base.twig' %}
-    {% endif %}
+      {% if events %}
+      <h3 class="h7 navy spaced medium caps">{{__('Events at SDH', 'sdh')}} {{campus}}</h3>
+      <div class="Feed Feed--object Feed--event">
+        <div class="Feed-body">
+          {% for post in events %}
+            <a class="Feed-item" href="{{post.link}}">
+              <div class="Feed-media">
+                <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
+                <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
+              </div>
+              <div class="flex-wrapper">
+                <p class="Feed-title h5 bold">{{post.title}}</p>
+                <span class="Feed-meta h6 medium faint">
+                  <svg aria-hidden="true" role="presentation" title="Event Location">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+                  </svg>{{post.teaser|slice(0,60)~'...'}}
+                </span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      <a href="#" class="Button Button--gray Button--block">{{__('See All', 'sdh')}}</a>
+      {% endif %}
+
+    </div>
   </div>
 </div>
+
 {% endblock %}

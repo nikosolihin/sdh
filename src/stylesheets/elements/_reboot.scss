@@ -138,26 +138,14 @@ textarea {
   }
 }
 input {
-  font-size: .95rem;
+  font-family: inherit;
+  font-size: 1rem;
   padding: $threefourth $threefourth;
   line-height: 1;
-  font-weight: $font-weight-medium;
   transition: all .1s ease-out;
   &:focus {
-    border: 1px solid $yellow;
+    border: 0;
   }
-}
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #555;
-}
-input::-moz-placeholder { /* Firefox 19+ */
-  color: #555;
-}
-input:-ms-input-placeholder { /* IE 10+ */
-  color: #555;
-}
-input:-moz-placeholder { /* Firefox 18- */
-  color: #555;
 }
 
 select {
@@ -197,4 +185,19 @@ input[type="search"] {
 
 svg {
   fill: currentColor;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #777;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #777;
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #777;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #777;
 }

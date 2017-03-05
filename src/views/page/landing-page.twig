@@ -9,8 +9,8 @@
 {% endif %}
 
 <div class="LandingPage">
-  {% set image = acf.banner.image %}
-  <div class="LandingPage-banner lazyload" data-bgset="{{image|serveImage}} [(min-width: {{xxl}})] | {{image|serveImage}} [(min-width: {{lg}})] | {{image|serveImage}} [(min-width: {{md}})] | {{image|serveImage}}">
+  {% set image = acf.banner.image|serveImage %}
+  <div class="LandingPage-banner lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
     <div class="LandingPage-bannerCopy">
       <h1 class="h2 light navy">{{post.title}}</h1>
       {% if acf.teaser %}
@@ -21,6 +21,7 @@
   </div>
   <div class="LandingPage-content">
     {% for child in children %}
+      {% set childImage = child.image|serveImage %}
       <div class="LandingPage-item{% if loop.index is even %} LandingPage-item--alt{% endif %}">
         <a href="{{child.link}}" class="LandingPage-itemBody">
           <div class="flex-wrapper">
@@ -34,7 +35,7 @@
             </svg>
           </div>
         </a>
-        <div class="LandingPage-itemImage lazyload" data-bgset="{{child.image|serveImage(512)}}">
+        <div class="LandingPage-itemImage lazyload" data-bgset="{{childImage.sm}}">
         </div>
       </div>
     {% endfor %}

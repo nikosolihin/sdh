@@ -4,7 +4,7 @@
 //=============================================
 function sdh_admin_styles() {
 	wp_deregister_style( 'sdh-admin-style' );
-	wp_register_style( 'sdh-admin-style', get_template_directory_uri() . '/dashboard/custom-style.css', false, '1.0.0' );
+	wp_register_style( 'sdh-admin-style', get_template_directory_uri() . '/dashboard/custom-style.css', false, '1.0.1' );
 	wp_enqueue_style( 'sdh-admin-style' );
 }
 add_action( 'login_head', 'sdh_admin_styles' ); // For login logo

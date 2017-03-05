@@ -1,367 +1,187 @@
-// ---------------- Flickity Arrows -------------------
-.home {
-  .flickity-prev-next-button {
-    border-radius: 0;
-    background: $brand-highlight;
-    width: $single*2;
-    height: $single*3.75;
-    @include from(md) {
-      width: $single*3;
-      height: $single*5.75;
-    }
-    path {
-      fill: $white;
-    }
-    &.next {
-      right: 0;
-    }
-    &.previous {
-      left: 0;
-    }
-    &:hover {
-      background: darken($brand-highlight, 5%);
-    }
-  }
+.Home {
+  position: relative;
+  box: vertical;
+  size: 100%;
+  width: 100vw;
+  height: 100vh;
 
-  .flickity-page-dots {
-    bottom: $single*5.5;
-    .dot {
-      background: $white;
-      opacity: 1;
-      width: 11px;
-      height: 11px;
-      &.is-selected {
-        background: transparent;
-        border: 3px solid $white;
-        width: 13px;
-        height: 13px;
-      }
-    }
-  }
-}
-
-// ----------------- Stream Section -----------------
-.welcome {
-  @include fullwidth;
-  background-color: #F5F5F5;
-  padding: $single*5 0 2px;
-  @include from(lg) {
-    padding: $single*7 0 $single*9;
-  }
-
-  hr {
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ddd;
-    margin-top: 58px;
-    margin-bottom: 80px;
-    display: none;
-    @include from(lg) {
-      display: block;
-    }
-  }
-
-  .Lead--section {
-    font-size: $font-size-h3;
-    @include from(lg) {
-      font-size: $font-size-h2;
-    }
-  }
-  .Pill {
-    font-size: .925rem;
-    background-color: rgba(0,0,0,.6);
-    margin-bottom: $single;
-    svg {
-      size: .825rem;
-      margin-right: $quarter;
-    }
-  }
-  .Twin-frame {
-    border-top: 1px solid $white;
-    @include at(md) {
-      box: horizontal wrap;
-    }
-    > .Twin-box:not(.welcome-control) {
-      @include overlay(false, 'transparent 30%, #000 90%');
-      border-bottom: 1px solid $white;
-      border-right: 1px solid $white;
-      &:nth-child(n+3) {
-        border-bottom: 0;
-      }
-      &:hover {
-        &::before {
-          background-color: rgba(0,0,0,.3);
-        }
-        .Twin-content div:nth-child(2) {
-          transform: translate3d(0,-12%,0);
-        }
-      }
-    }
-    .Twin-content {
-      box: vertical space-between;
-      padding: $single*1.75;
-      div {
-        flex: 1;
-      }
-      h4 {
-        margin-bottom: $quarter;
-        line-height: 1.3;
-      }
-      span:not(.Pill) {
-        font-size: $font-size-h6;
-        font-weight: $font-weight-medium;
-      }
-      div:nth-child(2) {
-        box: vertical bottom left wrap;
-        transition: transform .2s ease-out;
-      }
-    }
-    > .Twin-box {
-      @include from(md) {
-        @include square(65%);
-        width: 50%;
-      }
-      @include from(lg) {
-        @include square;
-      }
-    }
-  }
-
-  &-box {
-    @include overlay(true, 'rgba(0,0,0,.5)');
-    border-right: 1px solid $white;
-    border-top: 1px solid $white;
-    &::before {
-      z-index: 2;
-    }
-    @include square;
-    @include from(sm) {
-      @include square(60%);
-    }
-    @include from(md) {
-      @include square(45%);
-    }
-    @include from(lg) {
-      @include square;
-    }
-  }
-  &-secondaryBox {
-    @include overlay(true, 'rgba(0,0,0,.65)');
-    border-top: 1px solid $white;
-    @include square;
-    @include from(sm) {
-      @include square(70%);
-    }
-    @include from(md) {
-      @include square(60%);
-    }
-    .Twin-content {
-      box: vertical middle;
-      padding: $single;
-      @include from(md) {
-        padding: $single*3;
-      }
-    }
-    .Button:nth-of-type(1) {
-      margin-right: $threefourth;
-    }
-    .Button:nth-of-type(2) {
-      // color: #333;
-    }
-    h3 {
-      line-height: 1.35;
-    }
-    p {
-      margin: $single 0 $single*1.5;
-      @include from(md) {
-        margin: $single 0 $single*2.5;
-      }
-    }
-  }
-  &-control {
-    @include overlay(true, 'rgba(138, 0, 0, .9)');
-    border-bottom: 1px solid $white;
-    border-right: 1px solid $white;
-    .Twin-content {
-      justify-content: center !important;
-      text-align: center;
-      font-weight: $font-weight-medium;
-    }
-    &--custom {
-      @include overlay(true, 'rgba(196, 136, 0, 0.9)');
-      .Button {
-        color: #795300;
-      }
-    }
-  }
-  &-content {
-    @include white;
-    box: vertical middle center;
-    padding: 0;
-    z-index: 3;
-    svg {
-      fill: #eee;
-      size: $single*3.5;
-      @include from(md) {
-        size: $single*5;
-      }
-    }
-  }
-  &-quote {
-    margin-top: $single;
-    padding: 0 $single;
-    @include from(sm) {
-      padding: 0 $single*2.5;
-    }
-    @include from(md) {
-      padding: 0 $single*4.5;
-    }
-    h4 {
-      font-weight: $font-weight-light;
-      font-size: $font-size-h4;
-      line-height: 1.4;
-      margin-bottom: $single;
-      @include from(md) {
-        font-size: 1.625rem;
-      }
-    }
-    p {
-      max-width: none;
-    }
-  }
-  &-video {
-    display: none;
-    @include from(lg) {
-      display: block;
-    }
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    transform: translateX(-50%);
-  }
-  &-poster {
+  &-background {
     @include cover;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $zindex-hero;
     size: 100%;
-    display: block;
-    @include from(lg) {
-      display: none;
+    width: 100vw;
+    height: 100vh;
+
+    &Item {
+      @include cover;
+      @include overlay(true, rgba(5,25,45,.85));
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      size: 100%;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0;
+      transition: opacity 1.75s cubic-bezier(0.2, 0.3, 0.25, 0.9), transform 23s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+      &--show {
+        opacity: 1;
+        transform: scale(1.15);
+        z-index: $zindex-hero;
+      }
+      &--out {
+        transform: scale(1);
+      }
+      &.lazyloaded {
+        visibility: visible;
+      }
     }
   }
-}
 
-
-// ----------------- Prospective Section -----------------
-.prospective {
-  @include cover;
-  @include fullwidth;
-  position: relative;
-  padding: $single*5 0;
-  margin-top: 3px;
-  overflow: hidden;
-
-  .container {
-    position: relative;
-  }
-
-  &-watermark {
+  &-statements {
     position: absolute;
-    left: $single*4;
-    bottom: -$single*4;
-    @include from(sm) {
-      left: $single*10;
+    top: $single*25;
+    left: $single*10;
+    box: vertical space-between left;
+    z-index: $zindex-hero-copy;
+    width: 55%;
+    font-size: $single*2;
+    transition: all .4s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    opacity: 0;
+    transform: scale(1.175);
+    &Intro {
+      margin-bottom: $threefourth;
     }
-    @include from(md) {
-      left: $single*20;
-      bottom: -$single*4;
+    &Button {
+      margin-top: $single*1.75;
     }
-    svg {
-      size: $single*15;
-      fill: #5a0003;
-      transform: rotate(9deg);
+    &Item {
+      line-height: 1.6;
+      margin-bottom: $half;
     }
-  }
-  &-wrapper {
-    box: vertical;
-    @include from(lg) {
-      box: horizontal space-between;
+    &Underlined {
+      border-bottom: 5px solid $orange;
+      transition: opacity .5s ease-in-out;
     }
-  }
-  &-statement {
-    @include white;
-    width: 100%;
-    margin-bottom: $single;
-    @include from(lg) {
-      width: 35%;
-      margin-bottom: 0;
+    &--show {
+      opacity: 1;
+      transform: scale(1);
     }
-  }
-  &-cta {
-    box: vertical center;
-    border-top: 2px solid rgba(255,255,255,.25);
-    margin-top: $single*2;
-    padding-top: $single*2;
-    p {
-      margin-bottom: $single;
+    &--static {
+      transition: none;
     }
   }
-  &-links {
-    @include white;
-    width: 100%;
-    box: horizontal center;
-    @include from(lg) {
-      width: 45%;
-      box: horizontal wrap top left;
-    }
-    .List {
-      margin-right: $single*2;
-      @include from(lg) {
-        margin-right: $single*5;
-      }
-      > li {
-        margin-bottom: $threefourth;
-      }
-    }
-  }
-  &-link {
-    @include hover(#ddd, $white);
-    display: block;
-    font-size: 1.125rem;
-    font-weight: $font-weight-medium;
-  }
-}
 
-// ----------------- Blocks Carousel -----------------
-.block-carousel {
-  @include fullwidth;
-  border-bottom: 2px solid $white;
-  .flickity-prev-next-button {
-    display: none;
-    @include from(lg) {
-      box: vertical center middle;
+  &-news {
+    box: horizontal space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: $zindex-panels;
+    transition: transform .19s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    transform: translate3d(-$single*16,0,0);
+    &Control {
+      box: vertical middle center;
+      width: $single*4.5;
+      position: absolute;
+      top: 50%;
+      right: -$single*4.5;
+      transform: translateY(-50%);
     }
-    width: $single*2.25;
-    height: $single*3.5;
-    svg {
-      position: static;
-      size: $single*1.25;
+    &Panel {
+      width: $single*16;
+      height: 100%;
+      height: 100vh;
+      background-color: $white;
+      overflow: scroll;
+    }
+    &Link {
+      box: vertical middle center;
+      color: $orange;
+      background-color: rgba(255,255,255,.92);
+      size: $single*4.5;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      margin-bottom: $half;
+      cursor: pointer;
+      svg {
+        size: $single;
+        margin-bottom: $quarter;
+      }
+    }
+    &--open {
+      transform: translate3d(0,0,0);
     }
   }
-  &-cell {
-    border-right: 2px solid $white;
-    width: 87%;
-    @include from(sm) {
-      width: 75%;
+
+  &-quicklinks {
+    box: vertical;
+    position: absolute;
+    top: 32%;
+    right: 0;
+    z-index: $zindex-hero-copy;
+    &Item {
+      box: horizontal middle left;
+      padding: $single $single*2.5 $single $single*1.5;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin-bottom: $half;
+      cursor: pointer;
+      transition: background-color .1s ease-in-out;
+      svg {
+        position: absolute;
+        left: -$half;
+        fill: rgba(255,255,255,.75);
+        size: .65rem;
+        opacity: 0;
+        transition: all .2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+      }
+      &:hover {
+        svg {
+          opacity: 1;
+          transform: translateX(-10px);
+        }
+      }
+      &:nth-child(1) {
+        background-color: rgba(32,47,103,.8);
+        &:hover {
+          background-color: rgba(32,47,103,1);
+        }
+      }
+      &:nth-child(2) {
+        background-color: rgba(36,172,206,.8);
+        &:hover {
+          background-color: rgba(36,172,206,1);
+        }
+      }
+      &:nth-child(3) {
+        background-color: rgba(238,177,17,.8);
+        &:hover {
+          background-color: rgba(238,177,17,1);
+        }
+      }
     }
-    @include from(md) {
-      width: 46%;
-    }
-    @include from(lg) {
-      width: 33.333%;
-    }
-    @include from(xl) {
-      width: 25%;
+  }
+
+  &-sentences {
+    display: none;
+  }
+
+  &-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-hero-copy;
+    padding-bottom: $single;
+
+    .container {
+      box: horizontal center space-between;
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding-top: $quarter;
     }
   }
 }

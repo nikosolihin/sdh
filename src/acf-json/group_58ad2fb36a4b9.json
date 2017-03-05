@@ -1,0 +1,211 @@
+{
+    "key": "group_58ad2fb36a4b9",
+    "title": "Hero Unit",
+    "fields": [
+        {
+            "key": "field_58ad302ef9224",
+            "label": "Hero Unit",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58af206cc8de4",
+            "label": "Create Hero Items",
+            "name": "hero",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 5,
+            "layout": "row",
+            "button_label": "Add a statement",
+            "sub_fields": [
+                {
+                    "key": "field_58af2078c8de5",
+                    "label": "Statement",
+                    "name": "statement",
+                    "type": "text",
+                    "instructions": "This is the animated sentence that comes after \"we're commited to...\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58af2094c8de6",
+                    "label": "Link To",
+                    "name": "link",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5773382ac6cac"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_58af20fac8de7",
+                    "label": "Background Photo",
+                    "name": "photo",
+                    "type": "acf_google_photos_browser",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "acf-field-acf-google-photos-browser--showlabel",
+                        "id": ""
+                    },
+                    "google_photos_limit": 1,
+                    "google_photos_user_id": "",
+                    "google_photos_access_token": "",
+                    "google_photos_message": ""
+                }
+            ]
+        },
+        {
+            "key": "field_58bbb36b6ee82",
+            "label": "Quicklinks",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58bbb37f6ee83",
+            "label": "Choose up to 3 links",
+            "name": "quicklinks",
+            "type": "relationship",
+            "instructions": "These are the links on the right side of the home page. We suggest putting Call-to-Action items here. 3 links max. If you need more, consider prioritizing and using the secondary menu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 3,
+            "return_format": "id"
+        },
+        {
+            "key": "field_58b2f2bdb1646",
+            "label": "Placeholder Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58b451b0fdd0b",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "This is the background image during the loading phase of the hero unit.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58b2f2c8b1647",
+            "label": "",
+            "name": "hero_placeholder",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 1,
+            "google_photos_user_id": "",
+            "google_photos_access_token": "",
+            "google_photos_message": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "homepage"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1488696977
+}

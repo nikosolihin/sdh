@@ -1,39 +1,56 @@
-<div class="Carousel">
+<div class="Carousel" data-component="carousel">
+<div class="Carousel-items">
 
-  <div class="Carousel-item">
-    <div class="Carousel-body">
-      <span class="Pill">Publication</span>
-      <h3 class="h5"><a href="" class="no-hover">When East Meets West and North Meets South: The Reconciling Mission of Global Christianity</a></h3>
-      <p class="meta">17 August, 2015</p>
-    </div>
-    <a href="" class="Button Button--block">Read More</a>
-  </div>
+{% for voice in voices %}
+  {% if voice.link.type == "single" %}
+    {% set url = voice.link.single_url %}
+  {% elseif voice.link.type == "external" %}
+    {% set url = voice.link.external_url %}
+  {% else %}
+    {% set url = voice.link.search_url %}
+  {% endif %}
 
-  <div class="Carousel-item">
-    <div class="Carousel-body">
-      <span class="Pill">Publication</span>
-      <h3 class="h5"><a href="" class="no-hover">Discerning What God is Doing among His People Today: A Personal Journal</a></h3>
-      <p class="meta">17 August, 2015</p>
-    </div>
-    <a href="" class="Button Button--block">Read More</a>
-  </div>
+  {% set alignment = voice.alignment %}
+  {% set photo = voice.photo|serveSquareImage(94) %}
+  {% set image = voice.image|serveImage %}
 
-  <div class="Carousel-item">
-    <div class="Carousel-body">
-      <span class="Pill">Publication</span>
-      <h3 class="h5"><a href="" class="no-hover">Tribute to Dr. George Vandervelde</a></h3>
-      <p class="meta">17 August, 2015</p>
+  <div class="{{'Carousel-item'|modifiers("#{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
+    <div class="Carousel-container">
+      <div class="Carousel-copy">
+        <svg aria-hidden="true" role="presentation" title="Testimonials">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quotes"></use>
+        </svg>
+        <blockquote class="white light">{{voice.quote}}</blockquote>
+        <div class="Carousel-author">
+          {% if url %}
+            <a href="{{url}}" class="Carousel-button Button Button--small">{{__('Read More', 'sdh')}}</a>
+          {% endif %}
+          <div class="flex-wrapper">
+            <div class="h5 bold white">{{voice.title}}</div>
+            <div class="h5 normal white">{{voice.info}}</div>
+            <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
+          </div>
+          <div class="Carousel-photo lazyload" data-bgset="{{photo}}"></div>
+        </div>
+      </div>
     </div>
-    <a href="" class="Button Button--block">Read More</a>
   </div>
+{% endfor %}
+</div>
 
-  <div class="Carousel-item">
-    <div class="Carousel-body">
-      <span class="Pill">Publication</span>
-      <h3 class="h5"><a href="" class="no-hover">Tribute to Dr. George Vandervelde</a></h3>
-      <p class="meta">17 August, 2015</p>
+<div class="Carousel-nav container">
+{% for voice in voices %}
+  {% set photo = voice.photo|serveSquareImage(94) %}
+  <div class="Carousel-navItem{% if loop.first %} Carousel-navItem--active{% endif %}" data-nth="{{loop.index0}}">
+    <div class="flex-wrapper">
+      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
     </div>
-    <a href="" class="Button Button--block">Read More</a>
+    <div class="Carousel-navCopy">
+      <div class="h5 bold white">{{voice.title}}</div>
+      <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
+    </div>
   </div>
+{% endfor %}
+</div>
 
 </div>

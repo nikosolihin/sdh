@@ -37,7 +37,7 @@
           {% endif %}
 
           {# Post Heading #}
-          <p class="Feed-title h4 bold">{{post.title}}</p>
+          <p class="Feed-title h5 bold">{{post.title}}</p>
 
           {# News date OR Event details #}
           {% if type == 'news' %}
@@ -45,13 +45,13 @@
           {% else %}
             <span class="Feed-meta h6 medium faint">
               <svg aria-hidden="true" role="presentation" title="Event Date">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-            </svg>{{post.date|date('j M, Y')}}
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+              </svg>{{post.date|date('j M, Y')}}
             </span>
             <span class="Feed-meta h6 medium faint">
               <svg aria-hidden="true" role="presentation" title="Event Location">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-            </svg>SDH Holland Village Auditorium
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+              </svg>SDH Holland Village Auditorium
             </span>
           {% endif %}
 

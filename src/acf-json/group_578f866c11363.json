@@ -3,8 +3,6 @@
     "title": "Header & Footer Settings",
     "fields": [
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_57906ab00a905",
             "label": "Header",
             "name": "",
@@ -16,38 +14,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "sub_fields": [
-                {
-                    "post_type": [
-                        "page"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1,
-                    "key": "field_57f3355d3a0fd",
-                    "label": "Choose Page",
-                    "name": "parent",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ],
-            "min": 0,
-            "max": 6,
-            "layout": "block",
-            "button_label": "Add Parent Page",
-            "collapsed": "field_57f3355d3a0fd",
             "key": "field_57f3347e3a0fc",
             "label": "Primary Menu",
             "name": "primary_menu",
@@ -59,17 +30,38 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "min": 0,
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Parent Page",
+            "collapsed": "field_57f3355d3a0fd",
+            "sub_fields": [
+                {
+                    "key": "field_57f3355d3a0fd",
+                    "label": "Choose Page",
+                    "name": "parent",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                }
+            ]
         },
         {
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1,
             "key": "field_57f1f17dc9afd",
             "label": "Secondary Menu",
             "name": "secondary_menu",
@@ -81,11 +73,36 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
         },
         {
-            "placement": "top",
-            "endpoint": 0,
+            "key": "field_58bbf80a32c2d",
+            "label": "Slogan",
+            "name": "slogan",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_57906abc0a906",
             "label": "Footer",
             "name": "",
@@ -97,20 +114,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "min": 1,
-            "max": 7,
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "return_format": "id",
             "key": "field_579065c46ad69",
             "label": "Footer",
             "name": "footer",
@@ -122,10 +130,20 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "min": 1,
+            "max": 7,
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "return_format": "id"
         },
         {
-            "google_photos_user_id": "",
             "key": "field_57f3ba80fcca0",
             "label": "Background",
             "name": "footer_bg",
@@ -138,7 +156,10 @@
                 "class": "acf-field-flickr-browser--showlabel",
                 "id": ""
             },
-            "google_photos_limit": 1
+            "google_photos_user_id": "",
+            "google_photos_limit": 1,
+            "google_photos_access_token": "",
+            "google_photos_message": ""
         }
     ],
     "location": [
@@ -158,5 +179,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1486298681
+    "modified": 1488713820
 }

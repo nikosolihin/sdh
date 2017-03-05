@@ -288,12 +288,13 @@ p#backtoblog {
 }
 .acf-instruction::before {
 	font-family: dashicons;
-	content: "\f348";
+	content: "\f348" !important;
 	font-size: 30px;
 	color: #bbb;
 	position: absolute;
-	left: 10px;
-	top: 50%;
+	left: 10px !important;
+	top: 50% !important;
+	bottom: auto  !important;
 	transform: translateY(-50%);
 }
 .acf-instruction + .acf-field {
@@ -307,7 +308,7 @@ p#backtoblog {
 .acf-instruction .acf-label {
 	display: none;
 }
-.acf-field-flickr-browser--showlabel .acf-label {
+.acf-field-acf-google-photos-browser--showlabel .acf-label {
 	display: block;
 }
 #parent_id option.level-2 {
@@ -372,7 +373,19 @@ p#backtoblog {
 /*=============================================*/
 /* Hide Zoneboard blocks for campus_manager role.
 /*=============================================*/
-body.role-campus_manager .dashboard-grid .dashboard-panel:not(:nth-child(6)) {
+body.role-campus_manager .dashboard-grid .dashboard-panel {
+	display: none;
+}
+body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(4),
+body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(5),
+body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(6) {
+	display: block;
+}
+
+/*=============================================*/
+/* Hide Clear cache for campus_manager role.
+/*=============================================*/
+body.role-campus_manager #wp-admin-bar-clear-timber-cache {
 	display: none;
 }
 

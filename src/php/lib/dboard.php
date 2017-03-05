@@ -160,6 +160,25 @@ add_filter('pre_site_transient_update_plugins','remove_other_updates');
 add_filter('pre_site_transient_update_themes','remove_other_updates');
 
 /*=============================================*/
+/* Hide thanks for creating with Wordpress in footer
+/*=============================================*/
+function wpse_edit_footer() {
+  add_filter( 'admin_footer_text', 'wpse_edit_text', 11 );
+}
+function wpse_edit_text($content) {
+  return "";
+}
+add_action( 'admin_init', 'wpse_edit_footer' );
+
+/*=============================================*/
+/* Hide Wordpress version in footer
+/*=============================================*/
+function my_footer_shh() {
+  remove_filter( 'update_footer', 'core_update_footer' );
+}
+add_action( 'admin_menu', 'my_footer_shh' );
+
+/*=============================================*/
 /* Increase `timeout` for `api.wordpress.org` requests
 /*=============================================*/
 add_filter( 'http_request_args', function( $request, $url ) {

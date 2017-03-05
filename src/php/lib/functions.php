@@ -79,49 +79,34 @@ function create_campus_terms($post_id) {
 //run the update function whenever a post is created or edited
 add_action('save_post', 'create_campus_terms');
 
-
-// //=============================================
-// // Edit links for wp_list_categories to work
-// // with our ajax search.
-// // By default the event_category taxonomy returns
-// // events/?utf8=✓&page=1&categories=/academic/
-// // this hook removes the slashes.
-// //=============================================
-// function edit_category_links($wp_list_categories) {
-//   $pattern = "/\/[^\/]+\/\"/";
-//   $remove_slashes = preg_replace_callback( $pattern,
-//     function($matches) {
-//       $value = str_replace('/', '', $matches[0]);
-//       return $value;
-//     }, $wp_list_categories );
-//
-//   $pattern = "/\<ul class='children[^>]*>/";
-//   $replace_with = '<ul class="List">';
-//   return preg_replace($pattern, $replace_with, $remove_slashes);
-// }
-// add_filter('wp_list_categories', 'edit_category_links');
-
 //=============================================
 // Feed component
 //=============================================
 function populateList($options) {
-
   $posts = array();
   $type = '';
 
   // Which mode are we on?
   if ($options['mode']) {  // Automatic
 
+    // Are we excluding any posts?
+    $exclude = array();
+    if (isset($options['exclude'])) {
+      array_push($exclude, $options['exclude']);
+    }
+
     // Set up basic wp_query args
     $args = array(
-      'numberposts'	=> $options['quantity'],
-      'post_type'		=> $options['post_type'],
+      'posts_per_page'	  => $options['quantity'],
+      'post_type'		  => $options['post_type'],
+      'post__not_in'  => $exclude,
     );
 
-    // If events, get upcoming posts instead of recent
+    // If events, get upcoming posts instead of past
     if ($options['post_type'] == 'event') {
       $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
       $args['order'] = 'ASC';
+      $args['orderby'] = 'date';
       $today = getdate();
       $args['date_query'] = array(
         array( 'after'  => array(
@@ -133,9 +118,9 @@ function populateList($options) {
     }
 
     // Add selected term ids
-    if ($options['feed_campus']) {
+    if (isset($options['feed_campus'])) {
       $term_ids = $options['feed_campus'];
-      $args['tax_query'] = array( 'relation' => 'AND', );
+      $args['tax_query'] = array();
       array_push($args['tax_query'], array(
         'taxonomy'         => 'campus',
         'field'            => 'term_id',
@@ -164,18 +149,6 @@ function populateList($options) {
   // Discard excess info, depending on post types
   $filtered_posts = array();
   switch ($type) {
-    // case 'event':
-    //   foreach ($posts as $post) {
-    //     array_push($filtered_posts, array(
-    //       'title'       => $post->title,
-    //       'link'        => $post->link,
-    //       'date'        => $post->post_date,
-    //       'term'        => $post->get_terms('event_category')[0]->name,
-    //       'teaser'      => $post->get_field('gcal')['description'],
-    //       'image'       => $post->get_field('image'),
-    //     ));
-    //   }
-    //   break;
     case 'news':
       foreach ($posts as $post) {
         array_push($filtered_posts, array(
@@ -184,7 +157,22 @@ function populateList($options) {
           'date'        => $post->post_date,
           'campus'      => $post->get_terms('campus')[0]->name,
           'teaser'      => $post->get_field('teaser'),
-          'image'       => $post->get_field('image'),
+          'image'       => serveImage($post->get_field('image')),
+        ));
+      }
+      break;
+    case 'event':
+      foreach ($posts as $post) {
+        $gcal = filterEvent($post);
+        array_push($filtered_posts, array(
+          'title'       => $post->title,
+          'link'        => $post->link,
+          'date'        => $post->post_date,
+          'campus'      => $post->get_terms('campus')[0]->name,
+          'teaser'      => $gcal['description'],
+          'location'    => $gcal['location'],
+          'image'       => serveImage($post->get_field('image')),
+          'dateTime'    => $gcal
         ));
       }
       break;
@@ -192,28 +180,123 @@ function populateList($options) {
   return $filtered_posts;
 }
 
-// //================================================
-// // Set default terms for each custom taxonomies based on locale
-// // http://www.billerickson.net/code/default-term-for-taxonomy/
-// //================================================
-// function set_default_object_terms( $post_id, $post ) {
-// 	if ( 'publish' === $post->post_status ) {
-//     $defaults = array(
-//       'event_category' => array('uncategorized'),
-//       'news_topic' => array('uncategorized'),
-//       'media_category' => array('uncategorized'),
-//       'role' => array('uncategorized'),
-//     );
-// 		$taxonomies = get_object_taxonomies( $post->post_type );
-// 		foreach ( (array) $taxonomies as $taxonomy ) {
-// 			$terms = wp_get_post_terms( $post_id, $taxonomy );
-// 			if ( empty( $terms ) && array_key_exists( $taxonomy, $defaults ) ) {
-// 				wp_set_object_terms( $post_id, $defaults[$taxonomy], $taxonomy );
-// 			}
-// 		}
-// 	}
-// }
-// add_action( 'save_post', 'set_default_object_terms', 100, 2 );
+//=============================================
+// Filter Events
+// This gets date & time based on repeats
+//=============================================
+function filterEvent($post) {
+  $gcal = $post->get_field('gcal');
+  $return = array();
+
+  // Description
+  $return['description'] = $gcal['description'];
+
+  // Location
+  $return['location'] = $gcal['location'];
+
+  ///////////////////////////////////
+  // What kind of event do we have?
+  //
+  // ALL DAY - just grab date, no time
+  if (array_key_exists('date', $gcal['start'])) {
+  	$start = date_create($gcal['start']['date']);
+  	$startDate = date_format($start, 'j F Y' );
+  	$end = date_create($gcal['end']['date']);
+  	$endDate = date_format($end, 'j F Y' );
+
+  	// End on the same day?
+  	if ($startDate == $endDate) {
+  		$return['event_date'] = $startDate;
+  	} else {
+  		$return['event_date'] = $startDate . " - " . $endDate;
+  	}
+  }
+  // RANGE EVENT
+  else if (array_key_exists('dateTime', $gcal['start'])) {
+  	$start = date_create($gcal['start']['dateTime']);
+  	$startDate = date_format($start, 'j F Y' );
+  	$startTime = date_format($start, 'H:i' );
+  	$end = date_create($gcal['end']['dateTime']);
+  	$endDate = date_format($end, 'j F Y' );
+  	$endTime = date_format($end, 'H:i' );
+
+  	// End on the same day?
+  	if ($startDate == $endDate) {
+  		$return['event_date'] = $startDate;
+  	} else {
+  		$return['event_date'] = $startDate . " - " . $endDate;
+  	}
+  	// Time
+  	$return['event_time'] = $startTime . " - " . $endTime;
+  }
+
+  ///////////////////////////////////
+  // What kind of repeats do we have?
+  //
+  if (array_key_exists('children', $gcal)) {
+  	$return['event_children_date'] = array();
+  	$return['event_children_time'] = array();
+  	foreach ($gcal['children'] as $child) {
+  		if (array_key_exists('date', $child['start'])) {
+  			// All day - just grab date, no time
+  			$start = date_create($child['start']['date']);
+  			$startDate = date_format($start, 'j F Y' );
+  			$end = date_create($child['end']['date']);
+  			$endDate = date_format($end, 'j F Y' );
+
+  			// End on the same day?
+  			if ($startDate == $endDate) {
+  				array_push($return['event_children_date'], $startDate);
+  			} else {
+  				array_push($return['event_children_date'], $startDate . " - " . $endDate);
+  			}
+  		}
+  		else if (array_key_exists('dateTime', $child['start'])) {
+  			// Range event
+  			$start = date_create($child['start']['dateTime']);
+  			$startDate = date_format($start, 'j F Y' );
+  			$startTime = date_format($start, 'H:i' );
+  			$end = date_create($child['end']['dateTime']);
+  			$endDate = date_format($end, 'j F Y' );
+  			$endTime = date_format($end, 'H:i' );
+
+  			// End on the same day?
+  			if ($startDate == $endDate) {
+  				array_push($return['event_children_date'], $startDate);
+  			} else {
+  				array_push($return['event_children_date'], $startDate . " - " . $endDate);
+  			}
+  			// Time
+  			array_push($return['event_children_time'], $startTime . " - " . $endTime);
+  		}
+  	}
+  }
+  return $return;
+}
+
+//=============================================
+// Serve Image
+//=============================================
+function serveImage($image) {
+  if(isset($image) && is_array($image)) {
+    $base = $image['base']."s";
+    $name = "/".$image['title'];
+    $xs = $base . '576' . $name;
+    $sm = $base . '800' . $name;
+    $md = $base . '1024' . $name;
+    $lg = $base . '1280' . $name;
+    $xl = $base . '1440' . $name;
+    $xxl = $base . '1600' . $name;
+    return array(
+      'xs' => $xs,
+      'sm' => $sm,
+      'md' => $md,
+      'lg' => $lg,
+      'xl' => $xl,
+      'xxl' => $xxl,
+    );
+  }
+}
 
 //=============================================
 // Set publish date according to
@@ -265,50 +348,6 @@ function wpversion_remove_version() {
   return '';
 }
 add_filter('the_generator', 'wpversion_remove_version');
-
-// //=============================================
-// // List Component
-// //=============================================
-// function listTerms($tax) {
-//   return wp_list_categories(array(
-//     'taxonomy'    => $tax,
-//     'title_li'    => '',
-//     'hide_empty'  => false,
-//     'echo'        => false,
-//   ));
-// }
-//
-// //=============================================
-// // Get/Set view count
-// //=============================================
-// function getPostViews($postID) {
-//   $count_key = 'post_views_count';
-//   $count = get_post_meta($postID, $count_key, true);
-//   if( $count == '' ){
-//     $count = 0;
-//     delete_post_meta($postID, $count_key);
-//     add_post_meta($postID, $count_key, $count);
-//   }
-//   return (int)$count;
-// }
-// function setPostViews($postID) {
-//   session_start();
-//   $count_key = 'post_views_count';
-//   $count = get_post_meta($postID, $count_key, true);
-//   if( $count == '' ){
-//     $count = 0;
-//     delete_post_meta($postID, $count_key);
-//     add_post_meta($postID, $count_key, $count);
-//   } else {
-//     if( !isset($_SESSION['post_views_count-' . $postID]) ) {
-//       $_SESSION['post_views_count-'. $postID] = "si";
-//       $count++;
-//       update_post_meta($postID, $count_key, $count);
-//     }
-//   }
-// }
-// // Remove issues with prefetching adding extra views
-// remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 //=============================================
 // Localization

@@ -1,31 +1,57 @@
 .Header {
-  box: horizontal middle;
+  width: 100%;
+
+  box: vertical;
+  background-color: $white;
   border-bottom: 1px solid $line;
 
   &-logo {
-    width: 15%;
-    box: horizontal middle;
+    box: horizontal middle right;
+    position: relative;
+    z-index: 1;
+    top: -$single*1.7;
     color: $navy;
+    background-color: $white;
+    padding: $single $threefourth;
+    border-left: 6px solid $orange;
+    // border-right: 6px solid #26487c;
+    // border-bottom: 6px solid #26487c;
+  }
+  &-seal {
+    width: 28%;
+    height: 55px;
     svg {
-      height: 3.75rem;
+      size: 100%;
     }
   }
+  &-textLogo {
+    width: 62%;
+    height: 55px;
+    margin-left: $quarter;
+    svg {
+      size: 100%;
+    }
+  }
+
   &-nav {
-    width: 85%;
+    box: horizontal middle;
+    background-color: #fafafa;
+    .flex-wrap {
+      width: 15%;
+    }
   }
 
   &-primary {
-    box: horizontal space-between middle;
-    border-left: 1px solid $line;
+    width: 85%;
     padding: 0 $single*2.75 0 $single*1.25;
   }
   &-primaryList {
     box: horizontal space-around;
-    width: 85%;
+    // width: 85%;
   }
   &-primaryLink {
     @include hover(#777, $navy);
-    padding: $single*1.75 $single;
+    padding: $single*1.25 $single;
     &.is-Active {
       @include hover($navy, $navy);
       font-weight: $font-weight-bold;
@@ -34,7 +60,7 @@
 
   &-secondary {
     color: white;
-    background-color: $navy;
+    background-color: #203667;
     box: horizontal space-between;
     .flex-wrapper {
       box: horizontal;
@@ -51,20 +77,51 @@
 
   &-languages {
     @include right-slant;
-    background-color: #26427C;
+    position: relative;
+    background-color: #26487c;
     cursor: pointer;
     box: horizontal middle space-between;
-    size: 100%;
-    padding-left: $single*1.5;
+    padding-left: $single*14;
     padding-right: $half;
-    svg:first-child { // Globe
+    svg:first-of-type { // Globe
       size: 20px;
     }
-    svg:last-child { // Chevron
+    svg:last-of-type { // Chevron
       size: 15px;
     }
     span {
       margin: 0 $half;
+    }
+    &:hover > .Header-languagesDropdown {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-slogan {
+    box: vertical middle center;
+    padding-left: $single*2;
+    line-height: 1;
+  }
+
+  &-languagesDropdown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    padding-left: $single*11;
+    background-color: #26487c;
+    border-top: 1px solid $navy;
+
+    transition: all .1s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    > a {
+      display: block;
+      padding: $half $single*2.45 $half $single*3.25;
+      &:hover {
+        background-color: #203667;
+      }
     }
   }
 
@@ -85,7 +142,7 @@
     color: white;
     background-color: $orange;
     padding-left: $quarter;
-    padding-right: $single*2;
+    padding-right: $single*1.5;
     margin-left: $single*3;
     svg {
       size: 22px;
@@ -94,4 +151,29 @@
       background-color: darken($orange, 2.5%);
     }
   }
+
+  @at-root .home #{&} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $zindex-primarynav;
+    background-color: transparent;
+    border-bottom: 0;
+    .Header-primary {
+      border-left: 0;
+      &Link {
+        @include hover($white, $white);
+      }
+    }
+    .Header-nav {
+      width: 100%;
+      background-color: transparent;
+    }
+    .Header-logo {
+      border-right: 0;
+      border-bottom: 0;
+      box-shadow: 6px 6px 0 rgba(2,42,72,0.5);
+    }
+  }
+
 }
