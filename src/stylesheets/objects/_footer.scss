@@ -2,7 +2,6 @@
   @include cover;
   position: relative;
   z-index: $zindex-footer-main;
-  // padding: $single*6 0 $single*2.25;
   padding: $single*9 0 $single*2.25;
   background-color: $white;
 
@@ -13,13 +12,11 @@
     left: 0;
     size: 100%;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9) 60%, $white);
-    // background: linear-gradient(rgba(241, 242, 238, 1), rgba(255, 255, 255, 0.82) 60%, $white);
   }
 
   &-primary {
     position: relative;
     box: horizontal space-around;
-    // z-index: $zindex-footer-main;
   }
 
   &-link {
@@ -34,11 +31,18 @@
     padding-top: $quarter;
     z-index: $zindex-footer-main;
     &Link {
-      @extend .h7, .medium;
       @include hover(#bbb, $orange);
+      @at-root .home #{&} {
+        @include hover($white, $orange);
+      }
+
       &--active {
-        @extend .bold;
+        font-weight: $font-weight-bold;
         @include hover($navy, $navy);
+
+        @at-root .home #{&} {
+          @include hover($orange, $orange);
+        }
       }
     }
   }
@@ -62,13 +66,17 @@
   &-social {
     box: horizontal;
     svg {
-      size: $single;
+      size: .925rem;
     }
     &Icon {
       @include hover(#888, $navy);
       padding: .125rem;
       margin-right: $half;
       box: horizontal middle;
+
+      @at-root .home #{&} {
+        @include hover($white, $orange);
+      }
     }
   }
 
@@ -79,6 +87,6 @@
   }
 
   @at-root .home #{&} {
-    // margin-top: 100vh;
+    display: none;
   }
 }

@@ -3,8 +3,6 @@
     "title": "General Settings",
     "fields": [
         {
-            "placement": "left",
-            "endpoint": 0,
             "key": "field_57723306c8aca",
             "label": "Organization Info",
             "name": "",
@@ -16,14 +14,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_5797979ee6efa",
             "label": "Who?",
             "name": "org_name",
@@ -36,15 +31,15 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": 150,
-            "placeholder": "",
-            "rows": 4,
             "key": "field_579797cee6efb",
             "label": "What?",
             "name": "org_description",
@@ -56,14 +51,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": 150,
+            "placeholder": "",
+            "rows": 4
         },
         {
-            "default_value": "",
-            "new_lines": "br",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": 4,
             "key": "field_579796aae6ef9",
             "label": "Where?",
             "name": "org_address",
@@ -75,11 +70,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 4
         },
         {
-            "placement": "left",
-            "endpoint": 0,
             "key": "field_5770ee878907d",
             "label": "Error Page",
             "name": "",
@@ -91,14 +89,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_57710d4a28e13",
             "label": "Title",
             "name": "error_title",
@@ -111,15 +106,15 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "tabs": "visual",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "default_value": "",
-            "delay": 0,
             "key": "field_57710d9428e14",
             "label": "Description",
             "name": "error_description",
@@ -131,11 +126,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0
         },
         {
-            "placement": "left",
-            "endpoint": 0,
             "key": "field_57710b3c28e11",
             "label": "Social",
             "name": "",
@@ -147,11 +145,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "placeholder": "https:\/\/",
             "key": "field_578fa6c0fc5ef",
             "label": "Facebook Page",
             "name": "facebook",
@@ -163,14 +161,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/"
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_57e0cdc11eeac",
             "label": "Facebook App ID",
             "name": "facebook_app_id",
@@ -182,11 +177,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "default_value": "",
-            "placeholder": "https:\/\/",
             "key": "field_578fa72ce28eb",
             "label": "Twitter",
             "name": "twitter",
@@ -198,14 +196,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/"
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_57e0ce751eead",
             "label": "Twitter Analytics",
             "name": "twitter_analytics_id",
@@ -217,11 +212,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "default_value": "",
-            "placeholder": "https:\/\/",
             "key": "field_578fa718e28ea",
             "label": "Youtube",
             "name": "youtube",
@@ -233,11 +231,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/"
         },
         {
-            "default_value": "",
-            "placeholder": "https:\/\/",
             "key": "field_578fa745e28ec",
             "label": "Instagram",
             "name": "instagram",
@@ -249,11 +247,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/"
         },
         {
-            "placement": "left",
-            "endpoint": 0,
             "key": "field_57999aabced1c",
             "label": "Privacy Policy",
             "name": "",
@@ -265,16 +263,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "allow_archives": 0,
             "key": "field_57999abdced1d",
             "label": "Privacy policy page",
             "name": "policy",
@@ -286,11 +279,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "allow_archives": 0
         },
         {
-            "placement": "left",
-            "endpoint": 0,
             "key": "field_580882e953557",
             "label": "Languages",
             "name": "",
@@ -302,19 +300,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
-            "layout": "horizontal",
-            "choices": {
-                "en": "EN",
-                "id": "ID"
-            },
-            "default_value": [],
-            "allow_custom": 0,
-            "save_custom": 0,
-            "toggle": 1,
-            "return_format": "value",
             "key": "field_5808830b53558",
             "label": "Toggle Languages",
             "name": "languages",
@@ -326,11 +316,19 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "layout": "horizontal",
+            "choices": {
+                "en": "EN",
+                "id": "ID"
+            },
+            "default_value": [],
+            "allow_custom": 0,
+            "save_custom": 0,
+            "toggle": 1,
+            "return_format": "value"
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_580cffa14e9fb",
             "label": "Search",
             "name": "",
@@ -342,50 +340,32 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_580d001a4e9fd",
-            "label": "EN Search Engine ID",
-            "name": "search_en_id",
-            "type": "text",
-            "instructions": "",
+            "key": "field_58bae3dbdff1a",
+            "label": "Popular Pages",
+            "name": "search_popular",
+            "type": "page_link",
+            "instructions": "Help your users by listing popular pages of the website. Use Google Analytics to give an idea of what's frequently visited.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 1
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_580cffb64e9fc",
-            "label": "ID Search Engine ID",
-            "name": "search_id_id",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "message": "To set up and modify the look and feel of each search engine, head over to the Google Custom Search page. Check out the <strong><a href=\"admin.php?page=service-details\">Services Page<\/a><\/strong> for details.",
-            "esc_html": 0,
-            "new_lines": "",
             "key": "field_5810542f467cd",
             "label": "Search Engine Settings",
             "name": "",
@@ -397,12 +377,50 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "To set up and modify the look and feel of each search engine, head over to the Google Custom Search page. Check out the <strong><a href=\"admin.php?page=service-details\">Services Page<\/a><\/strong> for details.",
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
-            "message": "The contents of the sidebar builder below will be shown under the search filters. Create frequently visited links here.",
-            "esc_html": 0,
-            "new_lines": "",
+            "key": "field_580d001a4e9fd",
+            "label": "EN Search Engine ID",
+            "name": "search_en_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_580cffb64e9fc",
+            "label": "ID Search Engine ID",
+            "name": "search_id_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5810c6d250535",
             "label": "Result Page Sidebar",
             "name": "",
@@ -414,13 +432,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "The contents of the sidebar builder below will be shown under the search filters. Create frequently visited links here.",
+            "esc_html": 0,
+            "new_lines": ""
         },
         {
             "key": "field_5810c614d4699",
             "label": "Result Page Sidebar",
             "name": "search",
-            "type": "reusable_field_group_field",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -429,10 +450,47 @@
                 "class": "",
                 "id": ""
             },
-            "group_key": "group_574db875805e6",
-            "name_prefix": 1,
-            "key_prefix": 1,
-            "label_prefix": 0
+            "clone": [
+                "group_574db875805e6"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58ba4f4555ec4",
+            "label": "Feedback",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58ba4f5655ec5",
+            "label": "Feedback Email",
+            "name": "feedback",
+            "type": "email",
+            "instructions": "Usually to the IT team",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -452,5 +510,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1485929504
+    "modified": 1488643265
 }

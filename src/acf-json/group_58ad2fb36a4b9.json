@@ -147,44 +147,6 @@
             "google_photos_user_id": "",
             "google_photos_access_token": "",
             "google_photos_message": ""
-        },
-        {
-            "key": "field_58b4512f1f269",
-            "label": "Voices",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_58b4513f1f26a",
-            "label": "Select Voices to feature",
-            "name": "home_voices",
-            "type": "post_object",
-            "instructions": "Click <a href=\"post-new.php?post_type=voice\">here<\/a> to create a new testimonial, or the <strong>Voices<\/strong> button in the left sidebar.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "voice"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1
         }
     ],
     "location": [
@@ -204,5 +166,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488213307
+    "modified": 1488646438
 }

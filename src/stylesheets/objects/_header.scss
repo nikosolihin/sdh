@@ -5,37 +5,45 @@
   z-index: $zindex-primarynav;
   width: 100%;
 
-  box: horizontal middle;
+  box: vertical;
   background-color: $white;
   border-bottom: 1px solid $line;
 
   &-logo {
-    width: 17%;
-    box: horizontal middle space-between;
-    color: $navy;
-    padding: 0 $single*1.25;
+    box: horizontal middle right;
+    position: relative;
+    z-index: 1;
+    top: -$single*1.7;
+    color: #0f2f6b;
+    padding: $single;
+    border-left: 6px solid $orange;
+    box-shadow: 6px 6px 0 rgba(2,42,72,0.5);
   }
   &-seal {
-    width: 35%;
+    width: 28%;
+    height: 60px;
     svg {
-      width: 100%;
-      max-height: 85px;
+      size: 100%;
     }
   }
   &-textLogo {
-    width: 60%;
+    width: 62%;
+    height: 60px;
+    margin-left: $half;
     svg {
-      width: 100%;
-      max-height: 70px;
+      size: 100%;
     }
   }
 
   &-nav {
-    width: 85%;
+    box: horizontal middle;
+    .flex-wrap {
+      width: 15%;
+    }
   }
 
   &-primary {
-    box: horizontal space-between middle;
+    width: 85%;
     border-left: 1px solid $line;
     padding: 0 $single*2.75 0 $single*1.25;
   }
@@ -54,7 +62,7 @@
 
   &-secondary {
     color: white;
-    background-color: $navy;
+    background-color: #203667;
     box: horizontal space-between;
     .flex-wrapper {
       box: horizontal;
@@ -71,20 +79,46 @@
 
   &-languages {
     @include right-slant;
-    background-color: #26427C;
+    position: relative;
+    background-color: #26487c;
     cursor: pointer;
     box: horizontal middle space-between;
     size: 100%;
-    padding-left: $single*1.5;
+    padding-left: $single*14;
     padding-right: $half;
-    svg:first-child { // Globe
+    svg:first-of-type { // Globe
       size: 20px;
     }
-    svg:last-child { // Chevron
+    svg:last-of-type { // Chevron
       size: 15px;
     }
     span {
       margin: 0 $half;
+    }
+    &:hover > .Header-languagesDropdown {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-languagesDropdown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    padding-left: $single*11;
+    background-color: #26487c;
+    border-top: 1px solid $navy;
+
+    transition: all .1s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    > a {
+      display: block;
+      padding: $half $single*2.45 $half $single*3.25;
+      &:hover {
+        background-color: #203667;
+      }
     }
   }
 
@@ -105,7 +139,7 @@
     color: white;
     background-color: $orange;
     padding-left: $quarter;
-    padding-right: $single*2;
+    padding-right: $single*1.5;
     margin-left: $single*3;
     svg {
       size: 22px;
@@ -114,4 +148,23 @@
       background-color: darken($orange, 2.5%);
     }
   }
+
+  &--transparent {
+    background-color: transparent;
+    border-bottom: 0;
+    .Header-primary {
+      border-left: 0;
+      &Link {
+        @include hover($white, $white);
+      }
+    }
+    .Header-logo {
+      color: $navy;
+      background-color: #eee;
+    }
+    .Header-nav {
+      width: 100%;
+    }
+  }
+
 }

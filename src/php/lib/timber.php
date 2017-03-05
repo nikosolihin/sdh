@@ -103,9 +103,9 @@ class StarterSite extends TimberSite {
 		// 	'link' => $this->url . "/media/"
 		// ));
 
-		// // Menu Blocks
-		// $context['mobile_blocks'] = get_field('blocks', 'option');
-		//
+		// Popular Pages
+		$context['popular'] = get_field('search_popular', 'option');
+
 		// // Audience Dropdown
 		// if (get_field('audience_dropdown', 'option')) {
 		// 	$context['audience_label'] = get_field('audience_label', 'option');
@@ -213,11 +213,13 @@ class StarterSite extends TimberSite {
 		// Locale
 		$context['locale'] = get_locale();
 
-		// // Languages
-		// $context['languages']['id'] = "https://seabs.ac.id/";
-		// $context['languages']['en'] = "https://seabs.ac.id/en";
-		// $context['languages']['zh'] = "https://seabs.ac.id/zh";
-		// $context['languages']['list'] = get_field('languages', 'option');
+		// Feedback
+		$context['feedback'] = get_field('feedback', 'option');
+
+		// Languages URLs
+		$context['languages']['en'] = "https://new.sdh.or.id/";
+		$context['languages']['id'] = "https://new.sdh.or.id/id";
+		$context['languages']['list'] = get_field('languages', 'option');
 
 		// Current URL
 		global $wp;

@@ -1,15 +1,5 @@
 {% set footer_image = footer_bg|serveImage %}
 
-<section class="Cta">
-  <div class="flex-wrapper">
-    <h3 class="h3 light white noMargin">{{cta}}</h3>
-  </div>
-  <div class="Cta-buttons">
-    <a href="" class="Button">Apply Now</a>
-    <a href="" class="Button Button--outline-light">Request a Brochure</a>
-  </div>
-</section>
-
 <footer class="Footer lazyload" data-bgset="{{footer_image.xxl}} [(min-width: {{xxl}})] | {{footer_image.xl}} [(min-width: {{xl}})] | {{footer_image.lg}} [(min-width: {{lg}})] | {{footer_image.md}} [(min-width: {{md}})] | {{footer_image.sm}} [(min-width: {{sm}})] | {{footer_image.xs}}">
   <section class="Footer-primary container">
     {% for parent in footer.parents %}
