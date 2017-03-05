@@ -3,7 +3,8 @@
     <h3 class="h3 light navy noMargin">{{cta}}</h3>
   </div>
   <div class="Cta-buttons">
-    <a href="" class="Button">Apply Now</a>
-    <a href="" class="Button Button--outline-light">Request a Brochure</a>
+    {% for button in cta_buttons %}
+      <a href="{{button.link}}" class="Button {% if loop.index != 1 %}Button--outline-light{% endif %}">{{button.label}}</a>    
+    {% endfor %}
   </div>
 </section>

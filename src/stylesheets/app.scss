@@ -62,7 +62,7 @@
 // @import "objects/single-article";
 //
 // // Event
-// @import "objects/archive-event";
+@import "objects/archive-event";
 @import "objects/single-event";
 //
 // // News
@@ -106,7 +106,7 @@
 @import "components/tabs";
 @import "components/block";
 @import "components/feed";
-// @import "components/pill";
+@import "components/pill";
 @import "components/loader";
 @import "components/download";
 @import "components/pagination";

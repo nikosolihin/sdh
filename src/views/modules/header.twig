@@ -6,7 +6,7 @@
   {% set language = __('English', 'sdh') %}
 {% endif %}
 
-<header class="Header Header--transparent">
+<header class="Header">
 
 <nav class="Header-secondary" role="navigation">
   <div class="flex-wrapper">
@@ -32,12 +32,12 @@
 
   <div class="flex-wrapper">
     <div class="flex-wrapper">
-      <a href="" class="Header-quicklinks h7 medium yellow">
+      <a href="{{site.url}}/news" class="Header-quicklinks h7 medium yellow">
         <svg aria-hidden="true" role="presentation" title="See our school news">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
         </svg>School News
       </a>
-      <a href="" class="Header-quicklinks h7 medium yellow">
+      <a href="{{site.url}}/events" class="Header-quicklinks h7 medium yellow">
         <svg aria-hidden="true" role="presentation" title="See our events">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
         </svg>Event Calendar
@@ -58,7 +58,7 @@
 
 <div class="Header-nav">
   <div class="flex-wrap">
-    <a class="Header-logo" href="">
+    <a class="Header-logo" href="{{site.url}}">
       <div class="Header-seal">
         <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>

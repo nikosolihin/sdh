@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-05 15:34+0700\n"
-"PO-Revision-Date: 2017-03-05 15:51+0700\n"
+"POT-Creation-Date: 2017-03-05 17:33+0700\n"
+"PO-Revision-Date: 2017-03-05 17:34+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -20,29 +20,15 @@ msgstr ""
 "X-Poedit-SearchPath-3: php/lib\n"
 "X-Poedit-SearchPathExcluded-0: javascripts\n"
 
-#: php/archive-event.php:9 php/lib/post-types.php:121 php/single-event.php:128
-#: views/campus/single-campus-welcome.twig:63
-#: views/page/front-page-news.twig:20
-msgid "Events"
-msgstr "Kegiatan"
+#: php/archive-event.php:9 php/archive-news.php:9 php/lib/post-types.php:187
+#: php/lib/post-types.php:188 php/lib/post-types.php:218 php/single-news.php:34
+#: views/campus/single-campus-welcome.twig:46 views/page/front-page-news.twig:3
+msgid "News"
+msgstr "Berita"
 
 #: php/archive-event.php:10
 msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
-
-#: php/archive-media.php:6
-msgid "Media Library"
-msgstr ""
-
-#: php/archive-media.php:7
-msgid "No media found. Please try again."
-msgstr ""
-
-#: php/archive-news.php:9 php/lib/post-types.php:187 php/lib/post-types.php:188
-#: php/lib/post-types.php:218 php/single-news.php:34
-#: views/campus/single-campus-welcome.twig:46 views/page/front-page-news.twig:3
-msgid "News"
-msgstr "Berita"
 
 #: php/archive-news.php:10
 msgid "No news found. Please try again."
@@ -100,8 +86,9 @@ msgstr ""
 msgid "No block found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:23 php/lib/post-types.php:135
-#: php/lib/post-types.php:201 php/lib/post-types.php:268
+#: php/lib/post-types.php:23 php/lib/post-types.php:79
+#: php/lib/post-types.php:135 php/lib/post-types.php:201
+#: php/lib/post-types.php:268
 msgid "Featured Image"
 msgstr ""
 
@@ -206,16 +193,18 @@ msgid "No voice found"
 msgstr ""
 
 #: php/lib/post-types.php:78
-msgid "Nvoicese found in trash"
-msgstr ""
-
-#: php/lib/post-types.php:79
-msgid "Fvoicesd Image"
+msgid "No voices found in trash"
 msgstr ""
 
 #: php/lib/post-types.php:91
 msgid "Custom post type for voices"
 msgstr ""
+
+#: php/lib/post-types.php:121 php/single-event.php:128
+#: views/campus/single-campus-welcome.twig:63
+#: views/page/front-page-news.twig:20
+msgid "Events"
+msgstr "Kegiatan"
 
 #: php/lib/post-types.php:122 php/lib/post-types.php:152
 msgid "Event"
@@ -322,6 +311,7 @@ msgid "Campuses"
 msgstr ""
 
 #: php/lib/post-types.php:255 php/lib/post-types.php:285
+#: views/news/archive-news.twig:34
 msgid "Campus"
 msgstr ""
 
@@ -477,21 +467,13 @@ msgstr "Persebar Galeri"
 msgid "Share"
 msgstr "Bagikan"
 
-#: views/event/archive-event.twig:18 views/news/archive-news.twig:18
-msgid "News from Our Campuses"
-msgstr "Berita di Sekolah Kami"
+#: views/event/archive-event.twig:14
+msgid "Events at Our Campuses"
+msgstr "Kegiatan Di Sekolah Kami"
 
-#: views/event/archive-event.twig:25 views/news/archive-news.twig:25
-msgid "Latest"
-msgstr "Terbaru"
-
-#: views/event/archive-event.twig:26 views/news/archive-news.twig:26
-msgid "Oldest"
-msgstr "Tertua"
-
-#: views/event/archive-event.twig:37 views/news/archive-news.twig:37
-msgid "All"
-msgstr "Semua"
+#: views/event/archive-event.twig:18
+msgid "Filter by Campus"
+msgstr "Pilih berdasar kampus"
 
 #: views/event/single-event.twig:71
 msgid "Events at SDH"
@@ -530,6 +512,26 @@ msgstr "Ketik untuk Cari Website Kami"
 #: views/modules/search.twig:13
 msgid "Popular Pages"
 msgstr "Halaman Populer"
+
+#: views/news/archive-news.twig:18
+msgid "News from Our Campuses"
+msgstr "Berita di Sekolah Kami"
+
+#: views/news/archive-news.twig:22
+msgid "Date"
+msgstr "Tanggal"
+
+#: views/news/archive-news.twig:25
+msgid "Latest"
+msgstr "Terbaru"
+
+#: views/news/archive-news.twig:26
+msgid "Oldest"
+msgstr "Tertua"
+
+#: views/news/archive-news.twig:37
+msgid "All"
+msgstr "Semua"
 
 #: views/page/front-page.twig:35
 msgid "At Our Schools"

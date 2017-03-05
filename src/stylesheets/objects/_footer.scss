@@ -1,9 +1,13 @@
 .Footer {
   @include cover;
   position: relative;
-  z-index: $zindex-footer-main;
-  padding: $single*9 0 $single*2.25;
+  z-index: $zindex-footer-bg;
+  padding: $single*7 0 $single*2.25;
   background-color: $white;
+
+  .List {
+    margin-top: $threefourth;
+  }
 
   &::after {
     content: '';
@@ -17,10 +21,11 @@
   &-primary {
     position: relative;
     box: horizontal space-around;
+    z-index: $zindex-footer-main;
   }
 
   &-link {
-    @include hover(#888, $orange);
+    @include hover(#777, $orange);
   }
 
   &-secondary {

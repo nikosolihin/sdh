@@ -89,6 +89,9 @@ class StarterSite extends TimberSite {
 			}
 		}
 
+		// Slogan
+		$context['slogan'] = get_field('slogan', 'option');
+
 		// Quicklinks
 		$qlinks = get_field('quicklinks', 'option');
 		if(isset($qlinks) && is_array($qlinks)) {
@@ -148,6 +151,13 @@ class StarterSite extends TimberSite {
 
 		// CTA
 		$context['cta'] = get_field('cta_blurb', 'option');
+		$context['cta_buttons'] = array();
+		foreach (get_field('cta_buttons', 'option') as $button) {
+			array_push($context['cta_buttons'], array(
+				'label' => $button['label'],
+				'link' => $button['link']
+			));
+		}
 
 		// Footer items
 		$context['footer_bg'] = get_field('footer_bg', 'option');

@@ -3,8 +3,8 @@
     "title": "Event Settings",
     "fields": [
         {
-            "key": "field_57da6c385914d",
-            "label": "Featured Events",
+            "key": "field_58bbe1cfa4726",
+            "label": "Page Details",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,11 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_57da6bfa5914c",
-            "label": "Select Events",
-            "name": "event_featured",
-            "type": "post_object",
-            "instructions": "Select events to be featured above the search listing. The order of events here will be the slideshow's order.",
+            "key": "field_58bbe1e2a4727",
+            "label": "Title",
+            "name": "events_title",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -31,14 +31,122 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "event"
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58bbe1fea4728",
+            "label": "Paragraph",
+            "name": "events_teaser",
+            "type": "textarea",
+            "instructions": "This is the teaser\/overview paragraph for this item. A sentence or two should suffice. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong>Don't leave this blank.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_58bbe247a4729",
+            "label": "Listing Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58bbe276a472b",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "You may add normal page components below the event listing area. Build the page here.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58bbe2a2a472c",
+            "label": "Page Builder",
+            "name": "events_content",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57a5f3d7d5bf0"
             ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58bbe2d3a472d",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "You may add sidebar components here. This will show only on listing page sidebar.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58bbe2efa472e",
+            "label": "Sidebar Builder",
+            "name": "events_listing_sidebar",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_574db875805e6"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
             "key": "field_57d10baf99267",
@@ -69,14 +177,14 @@
                 "class": "acf-instruction",
                 "id": ""
             },
-            "message": "Sometime you may need to show different sidebars on the listing page and actual event article pages. You may build a sidebar which can be inherited to any event article page here.",
+            "message": "Sometime you may need to show different sidebars on the listing page and actual news article pages. You may build a sidebar which can be inherited to any news article page here.",
             "new_lines": "",
             "esc_html": 0
         },
         {
             "key": "field_57d10b9599266",
             "label": "Sidebar Builder",
-            "name": "event_sidebar",
+            "name": "events_sidebar",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -147,5 +255,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Event Settings",
-    "modified": 1487321373
+    "modified": 1488708427
 }
