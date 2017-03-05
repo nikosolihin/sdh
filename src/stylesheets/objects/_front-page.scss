@@ -141,23 +141,23 @@
           transform: translateX(-10px);
         }
       }
-    }
-    &Top {
-      background-color: rgba(32,47,103,.8);
-      &:hover {
-        background-color: rgba(32,47,103,1);
+      &:nth-child(1) {
+        background-color: rgba(32,47,103,.8);
+        &:hover {
+          background-color: rgba(32,47,103,1);
+        }
       }
-    }
-    &Mid {
-      background-color: rgba(36,172,206,.8);
-      &:hover {
-        background-color: rgba(36,172,206,1);
+      &:nth-child(2) {
+        background-color: rgba(36,172,206,.8);
+        &:hover {
+          background-color: rgba(36,172,206,1);
+        }
       }
-    }
-    &Bottom {
-      background-color: rgba(238,177,17,.8);
-      &:hover {
-        background-color: rgba(238,177,17,1);
+      &:nth-child(3) {
+        background-color: rgba(238,177,17,.8);
+        &:hover {
+          background-color: rgba(238,177,17,1);
+        }
       }
     }
   }
