@@ -1,5 +1,4 @@
 {% extends "base.twig" %}
-
 {% block content %}
 
 {% if locale == 'id_ID' %}
@@ -7,7 +6,6 @@
 {% elseif locale == 'en_US' %}
   {% set language = __('English', 'sdh') %}
 {% endif %}
-
 {% set placeholder_image = placeholder|serveImage %}
 
 <div class="Home" data-component="home">

@@ -50,6 +50,4 @@ foreach ($news as $item) {
 //   ));
 // }
 
-var_dump($context['popular']);
-
 Timber::render( 'page/front-page.twig' , $context );

@@ -12,10 +12,9 @@
   <div class="Search-popular">
     <h5 class="h7 bold orange spaced caps">{{__('Popular Pages', 'sdh')}}</h5>
     <div class="Search-popularLinks">
-      <a href="" class="Search-popularLink light white">For Parents</a>
-      <a href="" class="Search-popularLink light white">Employment</a>
-      <a href="" class="Search-popularLink light white">Student Activities</a>
-      <a href="" class="Search-popularLink light white">Living at Dian Harapan</a>
+      {% for item in popular %}
+        <a href="{{item.link}}" class="Search-popularLink light white">{{item.title}}</a>
+      {% endfor %}
     </div>
   </div>
 </div>

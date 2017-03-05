@@ -348,7 +348,7 @@
             "key": "field_58bae3dbdff1a",
             "label": "Popular Pages",
             "name": "search_popular",
-            "type": "page_link",
+            "type": "relationship",
             "instructions": "Help your users by listing popular pages of the website. Use Google Analytics to give an idea of what's frequently visited.",
             "required": 0,
             "conditional_logic": 0,
@@ -361,9 +361,13 @@
                 "page"
             ],
             "taxonomy": [],
-            "allow_null": 0,
-            "allow_archives": 0,
-            "multiple": 1
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         },
         {
             "key": "field_5810542f467cd",
@@ -510,5 +514,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1488643265
+    "modified": 1488695877
 }

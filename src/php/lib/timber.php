@@ -90,27 +90,30 @@ class StarterSite extends TimberSite {
 		}
 
 		// Quicklinks
-		// array_push($context['secondary_menu'], array(
-		// 	'title' => __('Events', 'saat'),
-		// 	'link' => $this->url . "/events/"
-		// ));
-		// array_push($context['secondary_menu'], array(
-		// 	'title' => __('News', 'saat'),
-		// 	'link' => $this->url . "/news/"
-		// ));
-		// array_push($context['secondary_menu'], array(
-		// 	'title' => __('Media', 'saat'),
-		// 	'link' => $this->url . "/media/"
-		// ));
+		$qlinks = get_field('quicklinks', 'option');
+		if(isset($qlinks) && is_array($qlinks)) {
+			$context['quicklinks'] = array();
+			$quicklinks = Timber::get_posts($qlinks);
+			foreach ($quicklinks as $item) {
+				array_push($context['quicklinks'], array(
+					'title' => $item->title,
+					'link' => $item->link,
+				));
+			}
+		}
 
 		// Popular Pages
-		$context['popular'] = get_field('search_popular', 'option');
-
-		// // Audience Dropdown
-		// if (get_field('audience_dropdown', 'option')) {
-		// 	$context['audience_label'] = get_field('audience_label', 'option');
-		// 	$context['audience_links'] = get_field('audience_links', 'option');
-		// }
+		$pop = get_field('search_popular', 'option');
+		if(isset($pop) && is_array($pop)) {
+			$context['popular'] = array();
+			$popular = Timber::get_posts($pop);
+			foreach ($popular as $item) {
+				array_push($context['popular'], array(
+					'title' => $item->title,
+					'link' => $item->link,
+				));
+			}
+		}
 
 		// Social Links
 		$context['social'] = array(
