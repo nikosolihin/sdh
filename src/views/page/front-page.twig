@@ -1,6 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
+
+{% if locale == 'id_ID' %}
+  {% set language = __('Indonesian', 'sdh') %}
+{% elseif locale == 'en_US' %}
+  {% set language = __('English', 'sdh') %}
+{% endif %}
+
 {% set placeholder_image = placeholder|serveImage %}
 
 <div class="Home" data-component="home">
@@ -27,7 +34,7 @@
       <p>{{item.statement~'.'}}</p>
     {% endfor %}
   </div>
-  <div class="Home-statementsIntro white medium caps spaced h5">{{__('At Our Schools', 'sdh')}},</div>
+  <div class="Home-statementsIntro white medium caps spaced h5">{{__('At Our Schools', 'sdh')}}</div>
   <p class="Home-statementsItem white bold">{{__("We're commited to", 'sdh')}} <span class="Home-statementsUnderlined"></span></p>
   <div class="flex-wrapper">
     <a href="" class="Home-statementsButton Button Button--gray">{{__('Learn More', 'sdh')}}</a>
@@ -54,31 +61,69 @@
   </div>
 </div>
 
-<!-- <div class="Home-quicklinks">
-  <div class="Home-quicklinksLeft Home-quicklinksItem">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+<div class="Home-quicklinks">
+  <div class="Home-quicklinksTop Home-quicklinksItem">
+    <svg aria-hidden="true" role="presentation" title="Expand Quicklink">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
     </svg>
-    <h3 class="h5 bold white">Application Process</h3>
+    <h3 class="h5 medium white noMargin">For Parents</h3>
   </div>
   <div class="Home-quicklinksMid Home-quicklinksItem">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+    <svg aria-hidden="true" role="presentation" title="Expand Quicklink">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
     </svg>
-    <h3 class="h5 bold white">Application Process</h3>
+    <h3 class="h5 medium white noMargin">For Educators</h3>
   </div>
-  <div class="Home-quicklinksRight Home-quicklinksItem">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+  <div class="Home-quicklinksBottom Home-quicklinksItem">
+    <svg aria-hidden="true" role="presentation" title="Expand Quicklink">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
     </svg>
-    <h3 class="h5 bold white">Application Process</h3>
+    <h3 class="h5 medium white noMargin">Grant and Scholarship</h3>
   </div>
-</div> -->
-
 </div>
 
-<div class="FrontPage">
-  {% include 'components/carousel.twig' %}
+<div class="Home-footer"><div class="container">
+  <div class="Footer-essentials">
+    {% if policy %}
+      <a href="{{policy}}" class="Footer-secondaryLink h7 medium white">{{__('Privacy Policy', 'sdh')}}</a>
+      <span class="Footer-dot">●</span>
+    {% endif %}
+
+    <a href="mailto:{{feedback}}" class="Footer-secondaryLink h7 medium white">{{__('Feedback', 'sdh')}}</a>
+    <span class="Footer-dot">●</span>
+
+    <div class="Footer-languages">
+      <span class="h7 medium white">{{__('Languages', 'sdh')}}:</span>
+      <a class="Footer-secondaryLink h7 medium Footer-secondaryLink--active">{{language}}</a>
+      {% if 'en' in languages.list and locale != 'en_US' %}
+        <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">{{__('English', 'sdh')}}</a>
+      {% endif %}
+      {% if 'id' in languages.list and locale != 'id_ID' %}
+        <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">{{__('Indonesian', 'sdh')}}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="Footer-legal">
+    <span class="h7 medium white">
+      Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
+    </span>
+  </div>
+
+  <div class="Footer-social">
+    {% for name, link in social %}
+      {% if link %}
+      <a href="{{link}}" class="Footer-socialIcon">
+        <svg aria-hidden="true" role="presentation" title="{{name}}">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+        </svg>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+
 </div>
 
 {% endblock %}

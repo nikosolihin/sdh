@@ -3,21 +3,21 @@
  * The template for displaying a single event
  */
 $context = Timber::get_context();
-$post = new TimberPost();
+$post = Timber::query_post();
 $context['post'] = $post;
 $context['acf'] = get_fields();
-$context['sections'] = $context['acf']['sections'];
 $gcal = $context['acf']['gcal'];
 
-// For event, gcal description is the teaser
-$context['acf']['teaser'] = $gcal['description'];
+// For event, gcal description is the content
+$context['acf']['description'] = $gcal['description'];
 
-// Get this event's category
-$category = $post->get_terms('event_category')[0];
-$context['category'] = array(
-	'name' => $category->name,
-	'color' => $category->category_color
-);
+// Banner stuff
+$context['acf']['banner_size'] = 'small';
+
+// Get this event's campus
+$campus = $post->get_terms('campus')[0];
+$campus_id = $campus->id;
+$context['campus'] = $campus->name;
 
 // What kind of event do we have?
 if (array_key_exists('date', $gcal['start'])) {
@@ -93,12 +93,21 @@ if (array_key_exists('children', $gcal)) {
 	}
 }
 
+// Get other upcoming events at this campus
+$context['events'] = populateList( array(
+	'mode' => true,
+	'quantity' => 2,
+	'post_type' => 'event',
+	'feed_campus' => $campus_id,
+	'exclude' => $post->id
+));
+
 // Get Sidebar
-$inherit = ($context['acf']['inherit'] === 'true');
+$inherit = $context['acf']['inherit'];
 $sidebar = $post->get_field('sidebar_sections');
 if ($inherit) {
 	$order = $context['acf']['order'];
-	$parents_sidebar = get_field('event_sidebar_sections', 'option');
+	$parents_sidebar = get_field('news_sidebar', 'option')['sidebar_sections'];
 	if ($parents_sidebar) {
 		if ($sidebar) {
 			$context['sidebar_sections'] = $order == 'parent' ? array_merge($parents_sidebar, $sidebar) : array_merge($sidebar, $parents_sidebar);
@@ -116,7 +125,7 @@ if ($inherit) {
 // Breadcrumb for events
 $context['breadcrumb'] = array();
 array_push( $context['breadcrumb'], array(
-	'title' => __('Events', 'saat'),
+	'title' => __('Events', 'sdh'),
 	'link' => $context['site']->url. '/' .'events'
 ));
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );

@@ -33,21 +33,23 @@ foreach ($news as $item) {
 //   ));
 // }
 
-// Voices
-$voices = get_field('home_voices', 'option');
-$context['voices'] = array();
-foreach ($voices as $voice) {
-  $voice = Timber::get_post($voice);
-  array_push( $context['voices'], array(
-    'title' => $voice->title,
-    'campus' => $voice->get_terms('campus')[0]->name,
-    'alignment' => $voice->get_field('alignment'),
-    'quote' => $voice->get_field('quote'),
-    'info' => $voice->get_field('info'),
-    'photo' => $voice->get_field('photo'),
-    'image' => $voice->get_field('background'),
-    'link' => $voice->get_field('link')
-  ));
-}
+// // Voices
+// $voices = get_field('home_voices', 'option');
+// $context['voices'] = array();
+// foreach ($voices as $voice) {
+//   $voice = Timber::get_post($voice);
+//   array_push( $context['voices'], array(
+//     'title' => $voice->title,
+//     'campus' => $voice->get_terms('campus')[0]->name,
+//     'alignment' => $voice->get_field('alignment'),
+//     'quote' => $voice->get_field('quote'),
+//     'info' => $voice->get_field('info'),
+//     'photo' => $voice->get_field('photo'),
+//     'image' => $voice->get_field('background'),
+//     'link' => $voice->get_field('link')
+//   ));
+// }
+
+var_dump($context['popular']);
 
 Timber::render( 'page/front-page.twig' , $context );

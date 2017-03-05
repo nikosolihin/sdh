@@ -1,74 +1,75 @@
-{# {% if locale == 'id_ID' %}
-  {% set language = 'id' %}
+{% include 'modules/search.twig' %}
+
+{% if locale == 'id_ID' %}
+  {% set language = __('Indonesian', 'sdh') %}
 {% elseif locale == 'en_US' %}
-  {% set language = 'en' %}
-{% else %}
-  {% set language = 'zh' %}
-{% endif %} #}
+  {% set language = __('English', 'sdh') %}
+{% endif %}
 
-<header class="Header">
+<header class="Header Header--transparent">
 
-<!-- <div class="SearchBar">
-  <form class="SearchBar-form container" role="form" action="{{site.url}}/search" accept-charset="UTF-8" method="get">
-    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
-    <label class="SearchBar-label" for="SearchBar-input">{{__('Search events, media or keywords', 'saat')}}</label>
-  </form>
-</div> -->
-
-<div class="Header-logo">
-  <div class="Header-seal">
-    <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
-    </svg>
-  </div>
-  <div class="Header-textLogo">
-    <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
-    </svg>
-  </div>
-</div>
-
-<div class="Header-nav">
-
-  <nav class="Header-secondary" role="navigation">
-    <div class="flex-wrapper">
-      <div class="Header-languages">
-        <svg aria-hidden="true" role="presentation" title="Select Language">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-        </svg>
-        <span class="h7 medium white">English</span>
-        <svg aria-hidden="true" role="presentation" title="Select Language">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
-        </svg>
+<nav class="Header-secondary" role="navigation">
+  <div class="flex-wrapper">
+    <div class="Header-languages">
+      <svg aria-hidden="true" role="presentation" title="Select Language">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+      </svg>
+      <span class="h7 medium white">{{language|title}}</span>
+      <svg aria-hidden="true" role="presentation" title="Select Language">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+      </svg>
+      <div class="Header-languagesDropdown">
+        {% if 'en' in languages.list and locale != 'en_US' %}
+          <a href="{{languages.en}}" class="h7 medium white">{{__('English', 'sdh')}}</a>
+        {% endif %}
+        {% if 'id' in languages.list and locale != 'id_ID' %}
+          <a href="{{languages.id}}" class="h7 medium white">{{__('Indonesian', 'sdh')}}</a>
+        {% endif %}
       </div>
     </div>
+  </div>
 
+  <div class="flex-wrapper">
     <div class="flex-wrapper">
-      <div class="flex-wrapper">
-        <a href="" class="Header-quicklinks h7 medium yellow">
-          <svg aria-hidden="true" role="presentation" title="See our school news">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
-          </svg>School News
-        </a>
-        <a href="" class="Header-quicklinks h7 medium yellow">
-          <svg aria-hidden="true" role="presentation" title="See our events">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
-          </svg>Event Calendar
-        </a>
-      </div>
-      <ul class="Header-secondaryList List List--inline">
-        {% for item in secondary_menu %}
-          <li><a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a></li>
-        {% endfor %}
-      </ul>
-      <a href="" class="Header-search">
-        <svg aria-hidden="true" role="presentation" title="Search SDH Website">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
-        </svg>
+      <a href="" class="Header-quicklinks h7 medium yellow">
+        <svg aria-hidden="true" role="presentation" title="See our school news">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
+        </svg>School News
+      </a>
+      <a href="" class="Header-quicklinks h7 medium yellow">
+        <svg aria-hidden="true" role="presentation" title="See our events">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+        </svg>Event Calendar
       </a>
     </div>
-  </nav>
+    <ul class="Header-secondaryList List List--inline">
+      {% for item in secondary_menu %}
+        <li><a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a></li>
+      {% endfor %}
+    </ul>
+    <a href="" class="Header-search" data-component="search">
+      <svg aria-hidden="true" role="presentation" title="Search SDH Website">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+      </svg>
+    </a>
+  </div>
+</nav>
 
+<div class="Header-nav">
+  <div class="flex-wrap">
+    <div class="Header-logo">
+      <div class="Header-seal">
+        <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+        </svg>
+      </div>
+      <div class="Header-textLogo">
+        <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
   <nav class="Header-primary" role="navigation">
     <ul class="Header-primaryList List List--inline">
       {% for item in primary_menu %}
@@ -80,14 +81,14 @@
         <li><a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a></li>
       {% endfor %}
     </ul>
-    <div class="flex-wrapper--fixed">
+    <!-- <div class="flex-wrapper--fixed">
       <a href="" class="Button Button--icon">
         <svg aria-hidden="true" role="presentation" title="See Our Campuses">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
         </svg>
         Our Campuses
       </a>
-    </div>
+    </div> -->
   </nav>
 </div>
 

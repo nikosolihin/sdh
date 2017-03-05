@@ -244,64 +244,6 @@ function news_post_type() {
 add_action( 'init', 'news_post_type', 0 );
 
 
-// /**
-//  * Register Person Post Type
-//  */
-// function person_post_type() {
-// 	$labels = array(
-// 		'name'                  => _x( 'People', 'Post Type General Name', 'sdh' ),
-// 		'singular_name'         => _x( 'Person', 'Post Type Singular Name', 'sdh' ),
-// 		'menu_name'             => __( 'People', 'sdh' ),
-// 		'name_admin_bar'        => __( 'Person', 'sdh' ),
-// 		'archives'              => __( 'People Archives', 'sdh' ),
-// 		'parent_item_colon'     => __( 'Parent Person:', 'sdh' ),
-// 		'all_items'             => __( 'All People', 'sdh' ),
-// 		'add_new_item'          => __( 'Add New Person', 'sdh' ),
-// 		'add_new'               => __( 'New Person', 'sdh' ),
-// 		'new_item'              => __( 'New Person', 'sdh' ),
-// 		'edit_item'             => __( 'Edit Person', 'sdh' ),
-// 		'update_item'           => __( 'Update Person', 'sdh' ),
-// 		'view_item'             => __( 'View Person', 'sdh' ),
-// 		'search_items'          => __( 'Search Person', 'sdh' ),
-// 		'not_found'             => __( 'No person found', 'sdh' ),
-// 		'not_found_in_trash'    => __( 'No person found in trash', 'sdh' ),
-// 		'featured_image'        => __( 'Featured Image', 'sdh' ),
-// 		'set_featured_image'    => __( 'Set featured image', 'sdh' ),
-// 		'remove_featured_image' => __( 'Remove featured image', 'sdh' ),
-// 		'use_featured_image'    => __( 'Use as featured image', 'sdh' ),
-// 		'insert_into_item'      => __( 'Insert into item', 'sdh' ),
-// 		'uploaded_to_this_item' => __( 'Uploaded to this item', 'sdh' ),
-// 		'items_list'            => __( 'Items list', 'sdh' ),
-// 		'items_list_navigation' => __( 'Items list navigation', 'sdh' ),
-// 		'filter_items_list'     => __( 'Filter items list', 'sdh' ),
-// 	);
-// 	$args = array(
-// 		'label'                 => __( 'Person', 'sdh' ),
-// 		'description'           => __( 'Custom post type for people', 'sdh' ),
-// 		'labels'                => $labels,
-// 		'supports'              => array( 'title' ),
-// 		'taxonomies'            => array( 'role' ),
-// 		'hierarchical'          => false,
-// 		'public'                => true,
-// 		'show_ui'               => true,
-// 		'show_in_menu'          => true,
-// 		'menu_position'         => 102,
-// 		'menu_icon'             => 'dashicons-groups',
-// 		'show_in_admin_bar'     => true,
-// 		'show_in_nav_menus'     => false,
-// 		'can_export'            => true,
-// 		'has_archive'           => false,
-// 		'exclude_from_search'   => false,
-// 		'publicly_queryable'    => false, //Disable single page viewing
-// 		'rewrite'               => false,
-// 		'capability_type'       => 'page',
-// 		'show_in_rest'       		=> false,
-// 	);
-// 	register_post_type( 'person', $args );
-// }
-// add_action( 'init', 'person_post_type', 0 );
-
-
 /**
  * Register Campus Post Type
  */
@@ -364,18 +306,3 @@ function campus_post_type() {
 	register_post_type( 'campus', $args );
 }
 add_action( 'init', 'campus_post_type', 0 );
-
-/**
- * Filters to enable %custom-taxonomy% in rewrites
- * http://wordpress.stackexchange.com/questions/108642/permalinks-custom-post-type-custom-taxonomy-post
- */
-// function media_type_permalinks( $post_link, $post ){
-// 	if ( is_object( $post ) && $post->post_type == 'resource' ){
-// 		$terms = wp_get_object_terms( $post->ID, 'media_type' );
-// 		if( $terms ){
-// 			return str_replace( '%media_type%' , $terms[0]->slug , $post_link );
-// 		}
-// 	}
-// 	return $post_link;
-// }
-// add_filter( 'post_type_link', 'media_type_permalinks', 1, 2 );

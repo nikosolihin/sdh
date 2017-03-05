@@ -46,6 +46,7 @@
 @import "objects/header";
 @import "objects/subnav";
 @import "objects/sidebar";
+@import "objects/search";
 // @import "objects/dropdown";
 // @import "objects/mobile-nav"; // @import "objects/search";
 // @import "objects/burger";
@@ -62,7 +63,7 @@
 //
 // // Event
 // @import "objects/archive-event";
-// @import "objects/single-event";
+@import "objects/single-event";
 //
 // // News
 @import "objects/archive-news";

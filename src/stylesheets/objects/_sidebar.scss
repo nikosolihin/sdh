@@ -7,6 +7,10 @@
     width: 31%;
     padding: 0 $single*2;
   }
+  @at-root .SingleEvent #{&} {
+    width: 30%;
+    padding: 0 $single*2;
+  }
 
   &-section {
     font-size: $font-size-h5;

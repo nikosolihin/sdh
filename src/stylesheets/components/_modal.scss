@@ -2,7 +2,7 @@
   position: fixed 0 0 0 0;
   z-index: $zindex-modal;
   size: 100%;
-  background-color: rgba(0,0,0,.82);
+  background-color: rgba(0,0,0,.8);
   transition: all .15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   opacity: 0;
   visibility: hidden;

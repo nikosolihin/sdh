@@ -1,7 +1,4 @@
 import 'mattboldt.typed.js'
-import ScrollMagic from 'ScrollMagic'
-import 'animation.gsap'
-// import TweenLite from 'TweenLite'
 
 export default class Home {
   constructor(el) {
@@ -21,33 +18,17 @@ export default class Home {
     // News Buttons & Panel
     this.newsButtons = '.Home-newsLink'
     this.$news = this.$el.find('.Home-news')
-    this.newsOpen = 'Home-news--openViaModal'
+    this.newsOpen = 'Home-news--open'
+    this.isNewsOpen = false
 
-    this.setAnimation() // Scroll animation
     this.attachEvents()
-  }
-
-  setAnimation() {
-    const controller = new ScrollMagic.Controller()
-
-    new ScrollMagic.Scene({
-      triggerElement: ".Home-background",
-      triggerHook: 'onLeave',
-      duration: 400
-    })
-		.setTween(".Home-statements", {
-      opacity: 0,
-      y: 275,
-      ease: Linear.easeNone
-    })
-		.addTo(controller)
   }
 
   startTyping() {
     this.$holder.typed({
       stringsElement: this.$sentences,
       typeSpeed: 40,
-      startDelay: 250,
+      startDelay: 500,
       backDelay: 5000,
       backSpeed: -30,
       loop: true,
@@ -74,6 +55,8 @@ export default class Home {
 
   attachEvents() {
     this.$el.on('click', this.newsButtons, () => {
+      this.isNewsOpen = true
+      $(".Home-statements").toggleClass('Home-statements--show')
       this.$news.toggleClass(this.newsOpen)
       this.$modal.trigger('modal:toggle')
     })
@@ -87,6 +70,13 @@ export default class Home {
             this.$statements.addClass('Home-statements--static')
           }, 750)
         }, 1000)
+      }
+    })
+    this.$modal.on('click', () => {
+      if (this.isNewsOpen) {
+        $(".Home-statements").toggleClass('Home-statements--show')
+        this.$modal.trigger('modal:toggle')
+        this.$news.toggleClass(this.newsOpen)
       }
     })
   }

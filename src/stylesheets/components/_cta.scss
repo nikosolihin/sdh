@@ -2,8 +2,7 @@
   box: horizontal middle;
   position: relative;
   z-index: $zindex-footer-main;
-  background-color: #25427C;
-  // margin-top: $single*3;
+  background-color: #F6F9FC;
 
   h3.h3 {
     font-size: 1.75rem / 1.5;
@@ -20,7 +19,7 @@
     top: -8px;
     right: 0;
     width: 37%;
-    background-color: #1F2D6A;
+    background-color: $navy;
     padding-left: $single*2.5;
     padding-top: $single*5;
     padding-bottom: $single*4.75;
@@ -30,6 +29,6 @@
   }
 
   @at-root .home #{&} {
-    // margin-top: 100vh;
+    display: none;
   }
 }
