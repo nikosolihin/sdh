@@ -83,7 +83,6 @@
     background-color: #26487c;
     cursor: pointer;
     box: horizontal middle space-between;
-    size: 100%;
     padding-left: $single*14;
     padding-right: $half;
     svg:first-of-type { // Globe
@@ -99,6 +98,12 @@
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  &-slogan {
+    box: vertical middle center;
+    padding-left: $single*2;
+    line-height: 1;
   }
 
   &-languagesDropdown {
