@@ -86,6 +86,10 @@
     &Control {
       box: vertical middle center;
       width: $single*4.5;
+      position: absolute;
+      top: 50%;
+      right: -$single*4.5;
+      transform: translateY(-50%);
     }
     &Panel {
       width: $single*16;
