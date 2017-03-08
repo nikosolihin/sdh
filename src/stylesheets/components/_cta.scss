@@ -14,7 +14,7 @@
   }
 
   &-buttons {
-    @include left-slant;
+    @include left-slant(5);
     position: absolute;
     top: -8px;
     right: 0;
