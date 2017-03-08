@@ -22,10 +22,10 @@
 
   <div class="SingleCampus-news">
     <h3 class="h7 navy spaced medium caps">{{__('Upcoming Events', 'sdh')}}</h3>
-    {% if news %}
+    {% if events %}
       <div class="Feed Feed--object Feed--event">
         <div class="Feed-body">
-          {% for post in news %}
+          {% for post in events %}
             <a class="Feed-item" href="{{post.link}}">
               <div class="Feed-media">
                 <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
