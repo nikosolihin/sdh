@@ -36,6 +36,39 @@
             "esc_html": 0
         },
         {
+            "key": "field_58bea584dc04c",
+            "label": "Managing Photos",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58bec5af96443",
+            "label": "Uploading Photos to Google",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p>Head Office will set up a shared albums in your unit's google account which you can upload photos to. Head office will need to make them available for web usage before you can use the photos in your campus pages.<\/p>\r\n\r\n<h4><strong>Important Note about File Names<\/strong><\/h4>\r\n<p>Before uploading to Google Photos, make sure your image file names <strong>DO NOT<\/strong> contain:<\/p>\r\n\r\n<ol>\r\n  <li><span style=\"color: red;\">Any spaces.<\/span> <em>For example:<\/em>&nbsp;&nbsp;❌ Lomba renang 2.JPG<\/li>\r\n  <li><span style=\"color: red;\">Any symbols<\/span> such as <img src=\"https:\/\/lh3.googleusercontent.com\/fc6umFYwAafHlJd9DFj92YIIqjkuEy2LYp1YctcJ6pKXji-WtXGpx-escYbnYZLkyORuNAbhPAtKaxG2lYpJv-9ck2IGbicXtMoQKKsVcjXLoTPR2A0QqmD4FywEUmGZQ1XF_BZ6AtnvBXNpWGFwqWN5jvyRYJTitAbqdd-G59coTIeqDUDvxxbVCwZQ1-4w6bal0SbeLMaVJBkmFebP0p3BOty9z5Hr7ggxRZ59cbujh6fAOvHhdt6S2Jy_NUAwOhDaHM6Hg5cHr4uBygZx0eGOnawOZAGTs5cVmTns9LHVAKEJ8YZgclNDglzWlwqHk0r_EbLGcOTQiP6JkQUSbwI0G0RDyDJew7mwa6oSBrgRbxBjDaZfEdyq7eS7umV4Bf5Z14pbpKZjckEthFzvRLr_kJf_an0e5R8syCJZJ2qIJkrizHFTz1ar1cgjSFM45spsc45pYKt7NjPg8D6jkD7P6WPH4tqPDhJytjGZSRtK8z0Mv_GBSo0JeML8cWHis1Na33F6dGRvrQ8f7AiS-uMjdS0ZI9LtERiJ__Yn-gh2hbRd4EiD8C1WHDJ81rukobDAnQ9s=w3350-h1908\" alt=\"Illegal Symbols\" height=\"25\"><\/li>\r\n<\/ol>\r\n\r\n<p>\r\n  <strong>Hyphen (-) or underscore (_) should be used in place of spaces.<\/strong> Numbers and upper\/lower cases are okay. Some examples: <br> <br>\r\n  ✅ IMG_1234.jpg <br>\r\n  ✅ DSC_1234.JPG<br>\r\n  ✅ iMg-12_34.jpg<br>\r\n  ❌ Resize of IMG_1234.jpg<br>\r\n  ❌ Lomba renang 2.JPG\r\n<\/p>\r\n\r\n<p>If the images you upload violated the above rules, they will not appear in the website dashboard and you will not be able to use them. You need to delete them from Google Photos and reupload new images with the correct file naming.<\/p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
             "key": "field_58bea09cbd0b8",
             "label": "Managing Events",
             "name": "",
@@ -69,8 +102,8 @@
             "esc_html": 0
         },
         {
-            "key": "field_58bea584dc04c",
-            "label": "Managing Photos",
+            "key": "field_58bf9216d4ec5",
+            "label": "Managing News",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -85,10 +118,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_58bec5af96443",
-            "label": "Photos",
+            "key": "field_58bf913ba686f",
+            "label": "Managing News",
             "name": "",
-            "type": "text",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -97,11 +130,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "message": "<p>Unlike photos or events, news don't depend on any Google services. Simply click on News on the sidebar to see a list of published news in your school unit.<\/p>\r\n\r\n<p>To add new news article, click on add new news. On the right side, assign the news to your campus and follow the on-screen instructions.<\/p>",
+            "new_lines": "",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -121,5 +152,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : How-to Details",
-    "modified": 1488902864
+    "modified": 1488950283
 }
