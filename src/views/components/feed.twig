@@ -21,54 +21,58 @@
   {# Do getPosts() in php #}
   {% set posts = getPosts(data) %}
 
-  <div class="{{'Feed'|modifiers("#{style}, #{type}")}}">
-    <div class="Feed-body">
-      {% for post in posts %}
-      <a class="Feed-item" href="{{post.link}}">
-        <div class="Feed-media">
-          {% if type == 'event' %}
-            <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
-            <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
-          {% else %}
-            <div class="Feed-mediaImage lazyload" data-bgset="{{post.image.xs}}"></div>
-          {% endif %}
-        </div>
-        <div class="flex-wrapper">
-          {# Campus #}
-          {% if 'campus' in meta and post.campus %}
-            <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
-          {% endif %}
+  {% if posts %}
 
-          {# Post Heading #}
-          <p class="Feed-title h5 body medium">{{post.title}}</p>
+    <div class="{{'Feed'|modifiers("#{style}, #{type}")}}">
+      <div class="Feed-body">
+        {% for post in posts %}
+        <a class="Feed-item" href="{{post.link}}">
+          <div class="Feed-media">
+            {% if type == 'event' %}
+              <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
+              <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
+            {% else %}
+              <div class="Feed-mediaImage lazyload" data-bgset="{{post.image.xs}}"></div>
+            {% endif %}
+          </div>
+          <div class="flex-wrapper">
+            {# Campus #}
+            {% if 'campus' in meta and post.campus %}
+              <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
+            {% endif %}
 
-          {# News date OR Event details #}
-          {% if type == 'news' %}
-            <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('j M, Y')}}</span>
+            {# Post Heading #}
+            <p class="Feed-title h5 body medium">{{post.title}}</p>
 
-          {% else %}
-            <span class="Feed-meta h6 medium faint">
-              <svg aria-hidden="true" role="presentation" title="Event Date">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-              </svg>{{post.date|date('j M, Y')}}
-            </span>
-            <span class="Feed-meta h6 medium faint">
-              <svg aria-hidden="true" role="presentation" title="Event Location">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-              </svg>{{post.location|title}}
-            </span>
-          {% endif %}
+            {# News date OR Event details #}
+            {% if type == 'news' %}
+              <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('j M, Y')}}</span>
 
-          {# Teaser #}
-          {% if 'teaser' in meta and post.teaser %}
-            <p class="Feed-teaser h5 normal">{{post.teaser|slice(0,60)~'...'}}</p>
-          {% endif %}
-        </div>
-      </a>
-      {% endfor %}
+            {% else %}
+              <span class="Feed-meta h6 medium faint">
+                <svg aria-hidden="true" role="presentation" title="Event Date">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+                </svg>{{post.date|date('j M, Y')}}
+              </span>
+              <span class="Feed-meta h6 medium faint">
+                <svg aria-hidden="true" role="presentation" title="Event Location">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+                </svg>{{post.location|title}}
+              </span>
+            {% endif %}
+
+            {# Teaser #}
+            {% if 'teaser' in meta and post.teaser %}
+              <p class="Feed-teaser h5 normal">{{post.teaser|slice(0,60)~'...'}}</p>
+            {% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-
+  {% else %}
+    <p class="h5 normal gray noMargin">{{empty}}</p>
+  {% endif %}
 {% else %}
   <ul class="Feed-social juicer-feed" data-feed-id="sekolah-dian-harapan" data-columns="3" data-per="9" data-style="user" data-overlay="false">
     <h2 class="Intro-heading Intro-heading--center center h3 light navy">{{__('Stay Connected', 'sdh')}}</h3>

@@ -197,7 +197,7 @@ function filterEvent($post) {
   $return = array();
 
   // Description
-  $return['description'] = $gcal['description'];
+  $return['description'] = nl2br($gcal['description']);
 
   // Location
   $return['location'] = $gcal['location'];
