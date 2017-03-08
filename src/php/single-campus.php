@@ -24,44 +24,21 @@ $context['campus_quicklinks']['calendar'] = $post->get_field('calendar');
 $context['campus_quicklinks']['facebook'] = $post->get_field('facebook');
 
 // Campus News
-$news = getPosts( array(
+$context['news'] = array(
   'post_type' => 'news',
-	'mode' => true, // Auto
-	'quantity' => 3,
+  'quantity' => 3,
   'feed_campus' => $params['location'],
-));
-if(isset($news) && is_array($news)) {
-  $context['news'] = $news;
-}
+  'news_metadata' => array('date'),
+);
 
 // Campus Events
-$events = getPosts( array(
+$context['events'] = array(
   'post_type' => 'event',
-	'mode' => true, // Auto
-	'quantity' => 2,
+  'quantity' => 2,
   'feed_campus' => $params['location'],
-));
-if(isset($events) && is_array($events)) {
-  $context['events'] = $events;
-}
-
-// // Voices
-// $voices = get_field('home_voices', 'option');
-// $context['voices'] = array();
-// foreach ($voices as $voice) {
-//   $voice = Timber::get_post($voice);
-//   array_push( $context['voices'], array(
-//     'title' => $voice->title,
-//     'campus' => $voice->get_terms('campus')[0]->name,
-//     'alignment' => $voice->get_field('alignment'),
-//     'quote' => $voice->get_field('quote'),
-//     'info' => $voice->get_field('info'),
-//     'photo' => $voice->get_field('photo'),
-//     'image' => $voice->get_field('background'),
-//     'link' => $voice->get_field('link')
-//   ));
-// }
-
+  'event_metadata' => array('date'),
+  'style' => 'object',
+);
 
 // Generate breadcrumb. This is custom.
 $context['breadcrumb'] = array();

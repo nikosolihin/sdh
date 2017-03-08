@@ -200,7 +200,8 @@
             "allow_custom": 0,
             "save_custom": 0,
             "default_value": [
-                "date"
+                "date",
+                "campus"
             ],
             "layout": "horizontal",
             "toggle": 1,
@@ -234,12 +235,13 @@
             },
             "choices": {
                 "teaser": "Teaser",
+                "date": "Publish Date",
                 "campus": "Campus"
             },
             "allow_custom": 0,
             "save_custom": 0,
             "default_value": [
-                "teaser"
+                "campus"
             ],
             "layout": "horizontal",
             "toggle": 0,
@@ -263,5 +265,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Metadata Selector",
-    "modified": 1486993230
+    "modified": 1488956808
 }

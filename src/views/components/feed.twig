@@ -1,36 +1,39 @@
-{% if data.internal %}
-  {% set source = data.post_type %}
-  {% set style = data.style %}
-  {% if data.mode %} {# Automatic Mode #}
+{# Default: Web feeds, automatic #}
+{% set internal = data.internal is defined ? data.internal : true %}
+{% set mode = data.mode is defined ? data.mode : true %}
+
+{% if internal %}
+  {% set style = data.style is defined ? data.style : 'list' %}
+  {% if mode %} {# Automatic Mode #}
     {% set type = data.post_type %}
-    {% if data.post_type == 'event' %}
-      {% set meta = data.event_metadata %}
+    {% if type == 'event' %}
+      {# This basically mimics the default set in ACF's metadata selector field group #}
+      {% set meta = data.event_metadata is defined ? data.event_metadata : ['date', 'campus'] %}
     {% else %}
-      {% set meta = data.news_metadata %}
+      {# This basically mimics the default set in ACF's metadata selector field group #}
+      {% set meta = data.news_metadata is defined ? data.news_metadata : ['date', 'campus'] %}
     {% endif %}
   {% else %} {# Manual Mode #}
     {% set type = data.manual_posts|first.post_type %}
-    {% set meta = data.manual_metadata %}
+    {% set meta = data.manual_metadata is defined ? data.manual_metadata : ['date', 'campus'] %}
   {% endif %}
 
-  {# Do logic in PHP #}
-  {% set list = getPosts(data) %}
+  {# Do getPosts() in php #}
+  {% set posts = getPosts(data) %}
 
   <div class="{{'Feed'|modifiers("#{style}, #{type}")}}">
-    <h2 class="Feed-heading h3 normal navy">{{data.post_type|title}}</h2>
     <div class="Feed-body">
-      {% for post in list %}
+      {% for post in posts %}
       <a class="Feed-item" href="{{post.link}}">
         <div class="Feed-media">
           {% if type == 'event' %}
             <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
             <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
           {% else %}
-            <div class="Feed-mediaImage lazyload" data-bgset="{{post.image|serveImage}}"></div>
+            <div class="Feed-mediaImage lazyload" data-bgset="{{post.image.xs}}"></div>
           {% endif %}
         </div>
         <div class="flex-wrapper">
-
           {# Campus #}
           {% if 'campus' in meta and post.campus %}
             <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
@@ -41,7 +44,8 @@
 
           {# News date OR Event details #}
           {% if type == 'news' %}
-            <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('M j, Y')}}</span>
+            <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('j M, Y')}}</span>
+
           {% else %}
             <span class="Feed-meta h6 medium faint">
               <svg aria-hidden="true" role="presentation" title="Event Date">
@@ -51,7 +55,7 @@
             <span class="Feed-meta h6 medium faint">
               <svg aria-hidden="true" role="presentation" title="Event Location">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-              </svg>SDH Holland Village Auditorium
+              </svg>{{post.location|title}}
             </span>
           {% endif %}
 
@@ -59,7 +63,6 @@
           {% if 'teaser' in meta and post.teaser %}
             <p class="Feed-teaser h5 normal">{{post.teaser|slice(0,60)~'...'}}</p>
           {% endif %}
-
         </div>
       </a>
       {% endfor %}

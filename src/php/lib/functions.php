@@ -86,6 +86,14 @@ function getPosts($options) {
   $posts = array();
   $type = '';
 
+  // Sets some defaults
+  if (!array_key_exists('mode',$options)) {
+    $options['mode'] = true;
+  }
+  if (!array_key_exists('quantity',$options)) {
+    $options['quantity'] = -1;
+  }
+
   // Which mode are we on?
   if ($options['mode']) {  // Automatic
 
@@ -97,7 +105,7 @@ function getPosts($options) {
 
     // Set up basic wp_query args
     $args = array(
-      'posts_per_page'	  => $options['quantity'],
+      'posts_per_page'=> $options['quantity'],
       'post_type'		  => $options['post_type'],
       'post__not_in'  => $exclude,
     );
