@@ -3,7 +3,7 @@
     <h3 class="h7 navy spaced medium caps">{{__('Recent News', 'sdh')}}</h3>
     {% if news %}
       {% include 'components/feed.twig' with {data: news} %}
-      <a href="#" class="Button Button--gray Button--block">{{__('More News', 'sdh')}}</a>
+      <a href="{{site.url}}/news" class="Button Button--gray Button--block">{{__('More News', 'sdh')}}</a>
     {% else %}
       <p class="h5 normal gray noMargin">{{__('There are currently no news at this school.', 'sdh')}}</p>
     {% endif %}
@@ -13,7 +13,7 @@
     <h3 class="h7 navy spaced medium caps">{{__('Upcoming Events', 'sdh')}}</h3>
     {% if events %}
       {% include 'components/feed.twig' with {data: events} %}
-      <a href="#" class="Button Button--gray Button--block">{{__('Event Calendar', 'sdh')}}</a>
+      <a href="{{site.url}}/events" class="Button Button--gray Button--block">{{__('Event Calendar', 'sdh')}}</a>
     {% else %}
       <p class="h5 normal gray noMargin">{{__('There are currently no events at this school.', 'sdh')}}</p>
     {% endif %}

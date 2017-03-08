@@ -61,6 +61,7 @@ switch ($params['section']) {
 
   case 'welcome': // Welcome
     $context['photo'] = $post->get_field('photo');
+    $context['principal'] = $post->get_field('principal');
     $context['message'] = $post->get_field('message');
     Timber::render( 'campus/single-campus-welcome.twig' , $context );
 }

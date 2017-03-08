@@ -190,8 +190,8 @@
             "key": "field_58be446b10870",
             "label": "Principal Info",
             "name": "principal",
-            "type": "textarea",
-            "instructions": "Principal's full name, job titles, degrees, email & phone (if desired). Use line breaks (enter key) to separate these information.",
+            "type": "text",
+            "instructions": "Principal's full name. No need to include job title, phone, or email.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -201,9 +201,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": "br"
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_58be442d1086f",
@@ -536,5 +536,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488881613
+    "modified": 1488964875
 }
