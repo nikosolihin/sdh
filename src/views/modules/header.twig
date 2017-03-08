@@ -81,15 +81,19 @@
         {% endif %}
         <li><a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a></li>
       {% endfor %}
-    </ul>
-    <!-- <div class="flex-wrapper--fixed">
-      <a href="" class="Button Button--icon">
-        <svg aria-hidden="true" role="presentation" title="See Our Campuses">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+      {# Always display Our Campuses link #}
+      <li class="Header-ourCampuses">
+        <div class="Header-ourCampusesLink Header-primaryLink h5 medium">{{__('Our Campuses', 'sdh')}}</div>
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
         </svg>
-        Our Campuses
-      </a>
-    </div> -->
+        <div class="Header-ourCampusesDropdown">
+          {% for campus in campuses %}
+            <a href="{{campus.link}}" class="h5 medium">{{campus.name|title}}</a>
+          {% endfor %}
+        </div>
+      </li>
+    </ul>
   </nav>
 </div>
 

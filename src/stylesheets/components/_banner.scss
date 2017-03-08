@@ -29,6 +29,10 @@
     background-position: bottom center;
   }
   &--campus { // For campuses banners
+    @include overlay(false, false, true);
+    &::before {
+      background-color: rgba(13,4,0,.2);
+    }
     > .container {
       box: vertical bottom left;
     }

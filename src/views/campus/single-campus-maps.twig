@@ -1,0 +1,38 @@
+<div id="contact" class="SingleCampus-maps">
+  <div class="SingleCampus-mapsLocations">
+    {% for map in maps %}
+      <div class="SingleCampus-mapsButton">
+        <h3 class="h3 normal navy noMargin">{{map.title}}</h3>
+        <p class="h6 normal faint noMargin">{{map.address}}</p>
+        {% if map.email %}
+          <svg aria-hidden="true" role="presentation" title="Email Us">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#email"></use>
+          </svg>
+          <a href="mailto:{{map.email}}" class="h6 normal sky noMargin">{{map.email}}</a>
+        {% endif %}
+        <div class="SingleCampus-mapsButtonPhone">
+          <div class="flex-wrapper">
+            <svg aria-hidden="true" role="presentation" title="Email Us">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone"></use>
+            </svg>
+            <div class="flex-wrapper">
+              {% if map.phone %}
+                <p class="h6 normal faint noMargin">Tel: {{map.phone}}</p>
+              {% endif %}
+              {% if map.fax %}
+                <p class="h6 normal faint noMargin">Fax: {{map.fax}}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <a href="" class="Button Button--small Button--orange  Map-button" data-lat="{{map.location.lat}}" data-lng="{{map.location.lng}}">{{__('See Location', 'sdh')}}</a>
+      </div>
+    {% endfor %}
+  </div>
+  <div id="Map" class="Map noMargin" data-component="map" data-with-buttons="true">
+    {% for map in maps %}
+      <div class="marker" data-lat="{{map.location.lat}}" data-lng="{{map.location.lng}}">
+      </div>
+    {% endfor %}
+  </div>
+</div>

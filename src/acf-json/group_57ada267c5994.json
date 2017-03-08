@@ -144,35 +144,6 @@
                     "max": ""
                 },
                 {
-                    "key": "57debb92bcffd",
-                    "name": "list",
-                    "label": "List",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_57debb97bcffe",
-                            "label": "List",
-                            "name": "list",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": "",
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "57ada2fbf1f9d",
                     "name": "tabs",
                     "label": "Tabs",
@@ -347,5 +318,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1487173919
+    "modified": 1488881525
 }

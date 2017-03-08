@@ -5,38 +5,45 @@
 global $params;
 
 $context = Timber::get_context();
-$post = new TimberPost();
+$post = Timber::get_post($params['location']);
+$context['wp_title'] = __('Welcome to SDH', 'sdh') . " " . $post->title;
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
-$context['location'] = $context['acf']['maps'];
+$context['maps'] = $context['acf']['maps'];
 $context['banner'] = $context['acf']['banner'];
 
-// Get news
-$news_args = array(
-  'post_type'       => 'news',
-  'tax_query'       => array(
-    array(
-      'taxonomy'    => 'campus',
-      'field'       => 'slug',
-      'terms'       => $params['location']
-    )
-  ),
-  'posts_per_page'  => 3,
-  'orderby'         => 'date',
-  'order'           => 'DESC'
- );
-$news = Timber::get_posts($news_args);
-$context['news'] = array();
-foreach ($news as $item) {
-  array_push( $context['news'], array(
-    'title' => $item->title,
-    'date' => $item->post_date,
-    'link' => $item->link
-  ));
+// If body class was set in routes.php, set it
+if(isset($params['body_class']) && is_string($params['body_class'])) {
+  $context['body_class'] = $params['body_class'];
 }
 
-// Get events
+// Quicklinks
+$context['campus_quicklinks'] = $post->get_field('quicklinks');
+$context['campus_quicklinks']['calendar'] = $post->get_field('calendar');
+$context['campus_quicklinks']['facebook'] = $post->get_field('facebook');
+
+// Campus News
+$news = getPosts( array(
+  'post_type' => 'news',
+	'mode' => true, // Auto
+	'quantity' => 3,
+  'feed_campus' => $params['location'],
+));
+if(isset($news) && is_array($news)) {
+  $context['news'] = $news;
+}
+
+// Campus Events
+$events = getPosts( array(
+  'post_type' => 'event',
+	'mode' => true, // Auto
+	'quantity' => 2,
+  'feed_campus' => $params['location'],
+));
+if(isset($events) && is_array($events)) {
+  $context['events'] = $events;
+}
 
 // // Voices
 // $voices = get_field('home_voices', 'option');
@@ -65,15 +72,17 @@ array_push( $context['breadcrumb'], array(
 
 // Where are we going?
 switch ($params['section']) {
-  case 'about':
-    var_dump("About");
+  case 'details':
+    Timber::render( 'campus/single-campus-details.twig' , $context );
     break;
 
   case 'facilities':
-    var_dump("Facilities");
+    $context['facilities_gallery'] = $post->get_field('facilities_gallery');
+    $context['facilities_teaser'] = $post->get_field('facilities_teaser');
+    Timber::render( 'campus/single-campus-facilities.twig' , $context );
     break;
 
-  default: // Welcome
+  case 'welcome': // Welcome
     $context['photo'] = $post->get_field('photo');
     $context['message'] = $post->get_field('message');
     Timber::render( 'campus/single-campus-welcome.twig' , $context );

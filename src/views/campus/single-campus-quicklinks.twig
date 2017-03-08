@@ -1,0 +1,52 @@
+<div class="Sidebar-section Sidebar-section--callout Sidebar-section--navy SingleCampus-quicklinks">
+  <h5 class="h7 white caps medium spaced">{{__('Quicklinks', 'sdh')}}</h5>
+
+  {% if 'registration' in campus_quicklinks %}
+    <a href="{{post.link}}details" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apply"></use>
+      </svg><h3 class="h5 noMargin">{{__('Registration', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'calendar' in campus_quicklinks %}
+    <a href="{{campus_quicklinks.calendar}}" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+      </svg><h3 class="h5 noMargin">{{__('Academic Calendar', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'registration' in campus_quicklinks %}
+    <a href="{{post.link}}details" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+      </svg><h3 class="h5 noMargin">{{__('School Schedule', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'locations' in campus_quicklinks %}
+    <a href="#contact" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+      </svg><h3 class="h5 noMargin">{{__('Campus Locations', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'contact' in campus_quicklinks %}
+    <a href="#contact" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone"></use>
+      </svg><h3 class="h5 noMargin">{{__('Contact Us', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'social' in campus_quicklinks %}
+    <a href="{{campus_quicklinks.facebook}}" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+      </svg><h3 class="h5 noMargin">{{__('Stay Connected', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+</div>

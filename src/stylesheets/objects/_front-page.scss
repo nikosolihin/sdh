@@ -17,7 +17,7 @@
 
     &Item {
       @include cover;
-      @include overlay(true, rgba(5,25,45,.85));
+      @include overlay(true, rgba(5,25,45,.75));
       visibility: hidden;
       position: fixed;
       top: 0;
@@ -26,6 +26,7 @@
       width: 100vw;
       height: 100vh;
       opacity: 0;
+      will-change: transform, opacity;
       transition: opacity 1.75s cubic-bezier(0.2, 0.3, 0.25, 0.9), transform 23s cubic-bezier(0.2, 0.3, 0.25, 0.9);
       &--show {
         opacity: 1;
@@ -52,6 +53,7 @@
     transition: all .4s cubic-bezier(0.2, 0.3, 0.25, 0.9);
     opacity: 0;
     transform: scale(1.175);
+    will-change: transform, opacity;
     &Intro {
       margin-bottom: $threefourth;
     }
@@ -83,6 +85,7 @@
     z-index: $zindex-panels;
     transition: transform .19s cubic-bezier(0.2, 0.3, 0.25, 0.9);
     transform: translate3d(-$single*16,0,0);
+    will-change: transform, opacity;
     &Control {
       box: vertical middle center;
       width: $single*4.5;

@@ -3,17 +3,11 @@
 
 {% include 'campus/single-campus-banner.twig' %}
 
-{% if photo and photo is iterable %}
-  {% set principal_photo = photo|serveSquareImage %}
-{% else %}
-  {% set principal_photo = fallback.photo %}
-{% endif %}
-
 {# Create subnav manually since wp_list_pages ain't gonna help here #}
 <nav class="Subnav" role="navigation">
   <ul class="Subnav-list List">
-    <li class="is-Active"><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
-    <li><a href="{{post.link}}details">{{__('Campus Information', 'sdh')}}</a></li>
+    <li><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
+    <li class="is-Active"><a href="{{post.link}}details">{{__('Campus Information', 'sdh')}}</a></li>
     <li><a href="{{post.link}}facilities">{{__('Facilities', 'sdh')}}</a></li>
   </ul>
 </nav>
@@ -24,14 +18,12 @@
       <div class="Intro-breadcrumb">
         {% include 'components/breadcrumb.twig' %}
       </div>
+      <h1 class="Intro-heading h2 light navy">{{__('Campus Details', 'sdh')}}</h1>
+      {% if details_teaser %}
+        <p class="Intro-teaser light">{{details_teaser}}</p>
+      {% endif %}
     </div>
-    <div class="SingleCampus-message">
-      <div class="SingleCampus-photo lazyload" data-bgset="{{principal_photo.sm}}"></div>
-      <div class="SingleCampus-messageBody">
-        <h2 class="h2 light navy">{{__('Message from the Principal', 'sdh')}}</h2>
-        {{message}}
-      </div>
-    </div>
+    {% include 'layout/base.twig' %}
   </div>
 
   <div class="SinglePage-sidebar Sidebar">

@@ -1,0 +1,125 @@
+{
+    "key": "group_58be943088fb3",
+    "title": "How-Tos",
+    "fields": [
+        {
+            "key": "field_58bea08ebd0b7",
+            "label": "Introduction",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58be94308cdcf",
+            "label": "Updating the Website for each School Unit",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p>The goal of this instruction guide is to train the individuals within each school unit responsible in maintaining the website's campus page. Each school is responsible for posting and translating upcoming events, posting and translating recent news articles, maintaining its own campus page. The guide will be sectioned based on events, news, and campus page, but before jumping in make sure your school has a Google Account.<\/p>\r\n\r\n<h4><strong>Google Account<\/strong><\/h4>\r\n<p>Head over to <a href=\"https:\/\/support.google.com\/accounts\/answer\/27441?source=gsearch&hl=en\" target=\"_blank\">this page<\/a> and follow the instruction on how to create a new Google Account. Keep in mind that you don't have to own a GMail account and may use any other email address you wish. We'll be using this Google Account mainly for events and photos - and, in order to do that, you have to inform Head Office of the new account you've just created. Let Pak Dicky <<a href=\"mailto:britia.perkasa@sdh.or.id\" target=\"_blank\">britia.perkasa@sdh.or.id<\/a>> from head office know so he can get you set up.<\/p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58bea09cbd0b8",
+            "label": "Managing Events",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58bea0a5bd0b9",
+            "label": "Events",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p>In order to manage events easier across several administrators and sub-sites (EN and ID), we'll take advantage of Google Calendar to do the heavy lifting. It has a great system for managing repeating events, multiple event time zones, generating calendar exports, as well as separating events for different languages.<\/p>\r\n<p>By now, there should be 2 new calendars shared with you from head office labeled \"EN Events\" and \"ID Events\". You might get this popup which you want to choose \"Yes, add this calendar\".<br><br><img src=\"https:\/\/lh3.googleusercontent.com\/PIVyHdaQ6zfbkbFEeL2GYcRCp_hxt178l43lDUlnIaM2F4vZc4whMc39cb35eC4aRYCB9rppx4MY9_tgvsvrEMpea3_JbJjEC8ZM4PUob35PNM4KGn9pEhkADWfWgcmYeqHgI2_gkGVwZKoljSHbnns62izX17TDu1A10BdYpk6wXeQVl8OkM_ki0tc6I836rNlvpWUVjM7tAIGBJsb4OwNONXd5gf59wnMT_4cWvnIu6QVq-vN6UCeosm6QMUF3AnONHV7dZlFmgoHOILLMheWPbOaw8p4M8Hkug4Z-uxyCI9wUyPrqQVo0l6M3lBab5cb06Mlt6_kwYOjf2wXqxSjFUGPvwx7Ui2a2dCGQCOjYR7lXtTCihLGbuwQR1qK82280a4HeqkdVI_3XQIa9oevd6Powi74F9IWfKI_522aj5aRAM87z23SqZ0x3XcCZkQVKZ5bwSWZTjdoknP_bxbilK_f6lacB_LzSPgJUBZIr_1AcaK7ZR47aea4jILgxRZO9s1sw-6qaAQQYZhVaQv6-jf35daL6qvj_PxHEES4HMisVQXs4IONZRlVy0Fkqnpe23BCJ=w3350-h1908\" alt=\"\"><\/p>\r\n\r\n<h4><strong>Creating a new event<\/strong><\/h4>\r\n<ol>\r\n  <li>Head to <a href=\"https:\/\/calendar.google.com\">Google Calendar<\/a> and create an event in one of the calendars.\r\n  <br>\r\n  <img src=\"https:\/\/lh3.googleusercontent.com\/myBlTaJuKQ8BNsrFeKpUfI1d5CNSVfZwUKRVfMWCaVFJLeay_fVXEwawfu2Vfs-NayNVwIj5CcfraytXApJFhbTImhZ_-TgpvYf7JbHmh6fBWnpyeq5DXhtW1TygJV4qjo4wLCM664K0KImTIB8u4kTif3PnUDENMl-zss5tsOysQ-RZ71tfkg8EylFSx3TSAtMDpoMs3XMRFwKW-vVZmaRsrJaRU5Wgx-0fY91S5aF-MbXzYD6zYpCpJz5PvPYsJZOg0dNZ7M_BNUDmlsAS_lMQKWJAntrJ3SzlOIwsless4qMeLI27iM-Z4XnuLkSZufYmUStzHQaAMPOMqL1-_KJez352kVEc8DIeQE8Mw83xD-S0NGK7cAii3gIVjWqjxLCuo1VfrSFYiNBukPdvypG0cdDWv-u7jOUCqKYHQ3mfo94LHaaIhQXyNfpyZXRazmjhqVBZcEHicRxha-XGle1QFKKzhDy7R1eBhqNFoP9UBXYt3TpXTOsv19fbDP7nUQGqVp1q2AuWQQJRKdo-PnFmx8aTbxbdeQUJiyUno4wMcoMJS8UY5_7cfExae1FT0yHbwiNz=w3360-h1860-k?v=1476294208131\" alt=\"\"><\/li>\r\n  <li>Repeat this for each language the website has:\r\n  <br>\r\n  <img src=\"https:\/\/lh3.googleusercontent.com\/XX6QOEGMnFHl6hz-b0cCo_EVLLpckiqfnHGNymdaoSQMx_0vmKBEGl8gJEOHyeoAQKoc4T-uV3KlZlmNh_SpC1PEPkpt17GbPGNX97-L0O1xs53OIIqfT37IPvLoZ0a3H4cd0zNW6uNHc-vnZv1nGfiHVn2I909U_manm6sQ5mwCvlPGlAU8Z_rHnAl6o-x2pwGgB-IP0MdapX_w-Zc4o_TyaB1X95fHdP6Q65Qk0iK372ChEYtXeblHmplmv6UShdLZa7u8srV1hCCnWEUkiwoHaKylcUkIF3vbBBhzUIxM6uGqfltv7qU1oBXY8KNRnTnMLu8_opH1hp2RLGOSwmNtHTX9h1vrLxVIpdsMb-XuLEZbfJ0t1dwD1wfH9juJi9i54VhnY6OOeTGTAfu4-BTw3_hY0Uxwkvzi_yLpPCrPxtpC3NoC7yfmOryyz9biDs5EcZw9HqBL_UvQ-aCgFJTdV4IxW-jcVSzM_-E8Wdmnm79s1P5j-SbXu5NmFaa9JAaYccEk2-lPP5NN0Gs4Jbu4stjKVyUJh68B3MXV4kZwx4d2ohXiuHqEOxhKPwb-WKbpgfDc=w3360-h1860-k?v=1476295601605\" alt=\"\">\r\n  <\/li>\r\n  <li>In the Wordpress dashboard, click \"New Event\" and click the Google Calendar Tab.<\/li>\r\n  <li>Pick the calendar event you previously created. The dashboard will pull the correct calendar depending on the site's language.<\/li>\r\n  <li>Publish the post, to have Wordpress save the details of this event<\/li>\r\n<\/ol>\r\n<h4><strong>Modifying Events<\/strong><\/h4>\r\n<p>If in the future you use Google Calendar to change the date, time, location or description of an event that has been published, the changes will not be reflected automatically until you go back to the specific post within Wordpress and click on <strong>Sync<\/strong><\/p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58bea584dc04c",
+            "label": "Managing Photos",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58bec5af96443",
+            "label": "Photos",
+            "name": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "how-to"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : How-to Details",
+    "modified": 1488902864
+}

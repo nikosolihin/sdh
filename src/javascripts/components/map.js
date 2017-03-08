@@ -2,6 +2,8 @@ import GoogleMapsLoader from 'google-maps'
 
 export default class Map {
   constructor(el) {
+    this.$el = $(el)
+    this.withButtons = this.$el.data('withButtons')
     this.newMap(el)
   }
 
@@ -25,9 +27,12 @@ export default class Map {
         map = new google.maps.Map(el, args)
       map.markers = []
       latlng.map( (marker) => {
-        this.addMarker( marker.lat, marker.lng, marker.content, map );
+        this.addMarker( marker.lat, marker.lng, marker.content, map )
       })
-      this.centerMap(map);
+      this.centerMap(map)
+      if (this.withButtons) {
+        this.attachEvents(map)
+      }
       return map
     })
   }
@@ -59,9 +64,19 @@ export default class Map {
     })
     if( map.markers.length == 1 ) {
       map.setCenter( bounds.getCenter() )
-      map.setZoom( 17 )
+      map.setZoom( 16 )
     } else {
       map.fitBounds( bounds )
     }
+  }
+
+  attachEvents(map) {
+    $(".Map-button").on('click', (event) => {
+      event.preventDefault()
+      let lng = parseFloat( $(event.target).closest('.Map-button').data('lng') ),
+        lat = parseFloat( $(event.target).closest('.Map-button').data('lat') )
+      map.setCenter({ lat: lat, lng: lng })
+      map.setZoom( 18 )
+    })
   }
 }

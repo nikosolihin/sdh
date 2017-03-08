@@ -4,44 +4,7 @@
     "fields": [
         {
             "key": "field_58ac5dcbabdda",
-            "label": "Banner",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_58ac6a16b72dd",
-            "label": "",
-            "name": "banner",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_57bd72b2e0e2c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_58abd94fff3c7",
-            "label": "Basic Info",
+            "label": "General",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -80,11 +43,11 @@
             "return_format": "value"
         },
         {
-            "key": "field_58ac0b1c6cb46",
-            "label": "Location",
-            "name": "maps",
-            "type": "google_map",
-            "instructions": "Pin where this campus is located.",
+            "key": "field_58be43dab13b8",
+            "label": "Choose a banner Image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -92,14 +55,34 @@
                 "class": "",
                 "id": ""
             },
-            "center_lat": "-6.2187765",
-            "center_lng": "106.6258711",
-            "zoom": "",
-            "height": ""
+            "message": "For banners, always try to use images with landscape orientation whenever possible since they render better across different devices widths.",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
-            "key": "field_58abda1fff3c8",
-            "label": "Principal",
+            "key": "field_58ac6a16b72dd",
+            "label": "",
+            "name": "banner",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57bd72b2e0e2c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_58be5658bb55b",
+            "label": "Quicklinks",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -112,6 +95,132 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_58be596abb55c",
+            "label": "Choose which links you want to display",
+            "name": "quicklinks",
+            "type": "checkbox",
+            "instructions": "Keep in mind that registration and schedule will link to the Campus Details page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "registration": "Registration",
+                "calendar": "Academic Calendar",
+                "schedule": "School Schedule",
+                "locations": "Campus Locations",
+                "contact": "Contact Us",
+                "social": "Stay Connected"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58be5a32bb55d",
+            "label": "Academic Calendar File",
+            "name": "calendar",
+            "type": "google_drive_field",
+            "instructions": "Paste the link to a downloadable PDF of your school's academic calendar. You may use any Google Drive account. Click Help for more info.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58be596abb55c",
+                        "operator": "==",
+                        "value": "calendar"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_58be5acebb55e",
+            "label": "Facebook Page URL",
+            "name": "facebook",
+            "type": "url",
+            "instructions": "Paste the URL to your school's facebook page.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58be596abb55c",
+                        "operator": "==",
+                        "value": "social"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58abd94fff3c7",
+            "label": "Welcome Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58be446b10870",
+            "label": "Principal Info",
+            "name": "principal",
+            "type": "textarea",
+            "instructions": "Principal's full name, job titles, degrees, email & phone (if desired). Use line breaks (enter key) to separate these information.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_58be442d1086f",
+            "label": "Choose a principal photo",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
             "key": "field_58abdb38ff3ca",
@@ -133,10 +242,10 @@
         },
         {
             "key": "field_58abda57ff3c9",
-            "label": "Message",
+            "label": "Welcome Message",
             "name": "message",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "A brief message to welcome visitors to your SDH campus.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -151,8 +260,213 @@
             "new_lines": "wpautop"
         },
         {
+            "key": "field_58be42cfa72bb",
+            "label": "Locations",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58ac0b1c6cb46",
+            "label": "Location",
+            "name": "maps",
+            "type": "repeater",
+            "instructions": "Pin where this campus is located. This can be multiple locations.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Location",
+            "sub_fields": [
+                {
+                    "key": "field_58bd43c6d2e4c",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58bd4405d2e4d",
+                    "label": "Full Address",
+                    "name": "address",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Jalan Mentawai No. 201 Taman Imam Bonjol, Lippo Village, Tangerang, Banten 15811",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_58be4574d3ea1",
+                    "label": "Main Email Address",
+                    "name": "email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_58be458ad3ea2",
+                    "label": "Phone Number",
+                    "name": "phone",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58be45a2d3ea3",
+                    "label": "Fax Number",
+                    "name": "fax",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58bd4441d2e4e",
+                    "label": "Location",
+                    "name": "location",
+                    "type": "google_map",
+                    "instructions": "Search for your business\/organization in the search bar. If Google Maps doesn't list your business, click the map to drop a pin.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "-6.2187765",
+                    "center_lng": "106.6258711",
+                    "zoom": "",
+                    "height": ""
+                }
+            ]
+        },
+        {
+            "key": "field_58abe75fa90be",
+            "label": "Facilities",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58abe7b1a90bf",
+            "label": "Overview",
+            "name": "facilities_teaser",
+            "type": "textarea",
+            "instructions": "Write a short blurb about what facilities you have and how it can help students learning process. If there are multiple locations under this school unit, combine their photos into a single gallery.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "At SDH Lippo Village, we believe that access to a variety of facilities helps students in their learning, comfort, recreation, accommodation and access.",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_58abe853a90c0",
+            "label": "Slideshow",
+            "name": "facilities_gallery",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58a7e4ccb7e1c"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_58abddf84cef1",
-            "label": "About Page",
+            "label": "Campus Information Page",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -186,7 +500,7 @@
         {
             "key": "field_58abe2983cfe6",
             "label": "",
-            "name": "about",
+            "name": "details",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -197,67 +511,9 @@
                 "id": ""
             },
             "clone": [
-                "group_58a04d88d7cd7"
+                "group_57a5f3d7d5bf0"
             ],
             "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_58abe75fa90be",
-            "label": "Facilities",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_58abe7b1a90bf",
-            "label": "Overview",
-            "name": "facilities_teaser",
-            "type": "clone",
-            "instructions": "Write a short blurb about how great your campus' facilities are.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_574dcc3bb7c20"
-            ],
-            "display": "group",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_58abe853a90c0",
-            "label": "Slideshow",
-            "name": "facilities_gallery",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "75",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_58a7e4ccb7e1c"
-            ],
-            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
@@ -280,5 +536,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487694529
+    "modified": 1488881613
 }
