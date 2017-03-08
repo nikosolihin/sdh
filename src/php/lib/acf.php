@@ -119,27 +119,6 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url' 		=> 'dashicons-admin-home'
 	));
 
-//   // Prospective Students Sub Page ///////////
-//   acf_add_options_sub_page(array(
-//     'page_title' 	=> 'Home Page Settings',
-//     'menu_title'	=> 'Prospective Students Section',
-//     'parent_slug'	=> 'homepage',
-//   ));
-//
-//   // Stream Section Sub Page ////////////
-//   acf_add_options_sub_page(array(
-//     'page_title' 	=> 'Home Page Settings',
-//     'menu_title'	=> 'Stream',
-//     'parent_slug'	=> 'homepage',
-//   ));
-//
-//   // Blocks Carousel Sub Page //////////////////////
-//   acf_add_options_sub_page(array(
-//     'page_title' 	=> 'Home Page Settings',
-//     'menu_title'	=> 'Blocks Carousel',
-//     'parent_slug'	=> 'homepage',
-//   ));
-//
   // Site Settings //////////////////////////////
   acf_add_options_page(array(
     'page_title' 	=> '', // No page title since acf already has
@@ -185,13 +164,6 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'edit.php?post_type=news',
 	));
 
-//   // Media Settings //////////////////////
-//   acf_add_options_sub_page(array(
-// 		'page_title' 	=> 'Media Settings',
-// 		'menu_title'	=> 'Media Settings',
-// 		'parent_slug'	=> 'edit.php?post_type=resource',
-// 	));
-//
   // Services //////////////////////////////
   acf_add_options_page(array(
     'page_title' 	=> '', // No page title since acf already has
@@ -199,6 +171,15 @@ if( function_exists('acf_add_options_page') ) {
     'menu_slug' 	=> 'service-details',
     'position' 		=> '203',
     'icon_url' 		=> 'dashicons-admin-network'
+  ));
+
+  // How-to //////////////////////////////
+  acf_add_options_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'How-Tos',
+    'menu_slug' 	=> 'how-to',
+    'position' 		=> '205',
+    'icon_url' 		=> 'dashicons-editor-help'
   ));
 }
 //

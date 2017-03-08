@@ -14,7 +14,7 @@
   {% endif %}
 
   {# Do logic in PHP #}
-  {% set list = populatelist(data) %}
+  {% set list = getPosts(data) %}
 
   <div class="{{'Feed'|modifiers("#{style}, #{type}")}}">
     <h2 class="Feed-heading h3 normal navy">{{data.post_type|title}}</h2>

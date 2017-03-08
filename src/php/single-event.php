@@ -94,7 +94,7 @@ $context['campus'] = $campus->name;
 // }
 
 // Get other upcoming events at this campus
-$context['events'] = populateList( array(
+$context['events'] = getPosts( array(
 	'mode' => true,
 	'quantity' => 2,
 	'post_type' => 'event',

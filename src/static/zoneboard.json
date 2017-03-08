@@ -6,8 +6,12 @@
       "icon":"fa-home",
       "links":[
         {
-          "label":"Scheduled Feb 24, 2017",
-          "url":"https://3.basecamp.com/3212935/buckets/2235843/schedule_entries/340715552"
+          "label":"Add a commitment statement",
+          "url":"/wp-admin/admin.php?page=homepage"
+        },
+        {
+          "label":"Add a homepage quicklinks",
+          "url":"/wp-admin/admin.php?page=settings"
         }
       ]
     },

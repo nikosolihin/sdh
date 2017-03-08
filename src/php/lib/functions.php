@@ -80,9 +80,9 @@ function create_campus_terms($post_id) {
 add_action('save_post', 'create_campus_terms');
 
 //=============================================
-// Feed component
+// Get post types
 //=============================================
-function populateList($options) {
+function getPosts($options) {
   $posts = array();
   $type = '';
 
@@ -119,12 +119,12 @@ function populateList($options) {
 
     // Add selected term ids
     if (isset($options['feed_campus'])) {
-      $term_ids = $options['feed_campus'];
+      $slug = $options['feed_campus'];
       $args['tax_query'] = array();
       array_push($args['tax_query'], array(
         'taxonomy'         => 'campus',
-        'field'            => 'term_id',
-        'terms'            => $term_ids,
+        'field'            => 'slug',
+        'terms'            => $slug,
       ));
     }
 
@@ -296,6 +296,33 @@ function serveImage($image) {
       'xxl' => $xxl,
     );
   }
+}
+function serveSquareImage($image) {
+  if(isset($image) && is_array($image)) {
+    $base = $image['base']."s";
+    $name = "-c/".$image['title'];
+    $xs = $base . '160' . $name;
+    $sm = $base . '400' . $name;
+    $md = $base . '640' . $name;
+    $lg = $base . '800' . $name;
+    return array(
+      'xs' => $xs,
+      'sm' => $sm,
+      'md' => $md,
+      'lg' => $lg,
+    );
+  }
+}
+
+//=============================================
+// Return campus slugs for routes.php
+//=============================================
+function get_campuses() {
+  $campuses = array();
+  foreach (Timber::get_terms('campus') as $campus) {
+    array_push($campuses, $campus->slug);
+  }
+  return $campuses;
 }
 
 //=============================================

@@ -168,7 +168,7 @@ p#backtoblog {
 .acf-fc-popup ul li a {
 	display: -webkit-flex;
 	display: -ms-flexbox;
-	display: flex !important;
+	display: flex;
 	-webkit-flex-flow: column nowrap;
 	    -ms-flex-flow: column nowrap;
 	        flex-flow: column nowrap;
@@ -387,6 +387,13 @@ body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(6) {
 /*=============================================*/
 body.role-campus_manager #wp-admin-bar-clear-timber-cache {
 	display: none;
+}
+
+/*=============================================*/
+/* Hide feed component for campus_manager role.
+/*=============================================*/
+body.role-campus_manager .acf-fc-popup a[data-layout="feed"] {
+	display: none !important;
 }
 
 /*=============================================*/

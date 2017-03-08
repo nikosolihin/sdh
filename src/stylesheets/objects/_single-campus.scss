@@ -4,13 +4,13 @@
     box: vertical center;
     position: relative;
     width: 100%;
-    margin-top: 9rem; // must be larger than photo's top value
+    margin-top: 8rem; // must be larger than photo's top value
   }
   &-photo {
     @include cover;
     position: absolute;
-    size: 9rem;
-    top: -4.5rem; // must be half of height
+    size: 8rem;
+    top: -4rem; // must be half of height
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
@@ -47,19 +47,74 @@
     }
   }
   &-maps {
-    &Overlay {
-      // Prevent mouse wheel scroll on maps
-      // Based on: http://stackoverflow.com/questions/21992498/disable-mouse-scroll-wheel-zoom-on-embedded-google-maps
-      background: transparent;
-      position: relative;
-      width: 100%;
-      height: $single*25;
-      top: $single*25;
-      margin-top: -$single*25;
-      z-index: 1;
+    position: relative;
+    &Locations {
+      position: absolute;
+      top: 50%;
+      left: 12%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      min-width: $single*16;
+      border-radius: 4px;
+      background-color: #fafafa;
+      box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    }
+    &Button {
+      display: block;
+      padding: $single $single*1.5;
+      border-bottom: 1px solid $line;
+      .Button {
+        cursor: pointer;
+      }
+      a {
+        margin-left: $half;
+      }
+      h3 {
+        font-size: 1.4rem;
+      }
+      p {
+        line-height: 1.5;
+      }
+      svg {
+        size: $threefourth;
+        fill: #999;
+      }
+      &:hover {
+        background-color: $white;
+      }
+      &Phone {
+        margin-bottom: $single;
+        svg {
+          size: $single;
+        }
+        > .flex-wrapper {
+          box: horizontal top;
+          > .flex-wrapper {
+            margin-left: $half;
+          }
+        }
+      }
     }
     #Map {
-      height: $single*25;
+      height: $single*30;
     }
   }
+
+  &-quicklinks {
+    margin-bottom: $single*3;
+    svg {
+      size: $single;
+      fill: $orange;
+      margin-right: $threefourth;
+    }
+  }
+  &-quicklink {
+    display: block;
+    box: horizontal middle;
+    margin-bottom: $half;
+    &:first-of-type {
+      margin-top: $threefourth;
+    }
+  }
+
 }

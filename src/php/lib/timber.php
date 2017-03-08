@@ -31,9 +31,19 @@ class StarterSite extends TimberSite {
 		$context['short'] = '601px';
 	  $context['tall'] = '700px';
 
-		//=============================================
-		// Layout Modules
-		//=============================================
+		// Fallback Image
+		$context['fallback']['image'] = serveImage(get_field('fallback_image', 'option'));
+		$context['fallback']['photo'] = serveSquareImage(get_field('fallback_photo', 'option'));
+
+		// Campuses
+		$context['campuses'] = array();
+		$campuses = Timber::get_posts('post_type=campus');
+		foreach ($campuses as $campus) {
+			array_push($context['campuses'], array(
+				'name' => $campus->title,
+				'link' => $campus->link,
+			));
+		}
 
 		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
@@ -251,8 +261,8 @@ class StarterSite extends TimberSite {
 		//=============================================
 		// LIST COMPONENT & TERMS
 		//=============================================
-		$listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
-			return populateList($options);
+		$listfunction = new Twig_SimpleFunction('getPosts', function ($options) {
+			return getPosts($options);
 		});
 		$twig->addFunction($listfunction);
 
@@ -285,11 +295,8 @@ class StarterSite extends TimberSite {
 		});
 		$twig->addFilter($classfilter);
 
-		$classfilter = new Twig_SimpleFilter('serveSquareImage', function ($image, $size) {
-			if(isset($image) && is_array($image)) {
-				$width = strval($size);
-				return $image['base'].'s'.$width.'-c/'.$image['title'];
-			}
+		$classfilter = new Twig_SimpleFilter('serveSquareImage', function ($image) {
+			return serveSquareImage($image);
 		});
 		$twig->addFilter($classfilter);
 

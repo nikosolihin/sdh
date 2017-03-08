@@ -392,35 +392,6 @@
                     "max": ""
                 },
                 {
-                    "key": "589b52b879057",
-                    "name": "list",
-                    "label": "List",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_589b52b879058",
-                            "label": "List",
-                            "name": "list",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "589b5620e6a83",
                     "name": "download",
                     "label": "Download",
@@ -502,5 +473,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Components Parent",
-    "modified": 1487398761
+    "modified": 1488881513
 }

@@ -11,7 +11,7 @@
   {% endif %}
 
   {% set alignment = voice.alignment %}
-  {% set photo = voice.photo|serveSquareImage(94) %}
+  {% set photo = voice.photo|serveSquareImage %}
   {% set image = voice.image|serveImage %}
 
   <div class="{{'Carousel-item'|modifiers("#{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
@@ -30,7 +30,7 @@
             <div class="h5 normal white">{{voice.info}}</div>
             <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
           </div>
-          <div class="Carousel-photo lazyload" data-bgset="{{photo}}"></div>
+          <div class="Carousel-photo lazyload" data-bgset="{{photo.xs}}"></div>
         </div>
       </div>
     </div>
@@ -40,10 +40,10 @@
 
 <div class="Carousel-nav container">
 {% for voice in voices %}
-  {% set photo = voice.photo|serveSquareImage(94) %}
+  {% set photo = voice.photo|serveSquareImage %}
   <div class="Carousel-navItem{% if loop.first %} Carousel-navItem--active{% endif %}" data-nth="{{loop.index0}}">
     <div class="flex-wrapper">
-      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo}}"></div>
+      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo.xs}}"></div>
     </div>
     <div class="Carousel-navCopy">
       <div class="h5 bold white">{{voice.title}}</div>

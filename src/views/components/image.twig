@@ -1,18 +1,18 @@
 {% set image = data.figure|serveImage %}
-{% set imageSquare = data.figure|serveSquareImage(512) %}
+{% set imageSquare = data.figure|serveSquareImage %}
 
 {% if data.crop %}
   {# Square Image #}
   <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
     <picture>
       <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="(min-width: {{lg}})" data-srcset="{{imageSquare}}">
-        <source media="(min-width: {{md}})" data-srcset="{{imageSquare}}">
-        <source media="(min-width: {{sm}})" data-srcset="{{imageSquare}}">
-        <source data-srcset="{{imageSquare}}">
+        <source media="(min-width: {{lg}})" data-srcset="{{imageSquare.lg}}">
+        <source media="(min-width: {{md}})" data-srcset="{{imageSquare.lg}}">
+        <source media="(min-width: {{sm}})" data-srcset="{{imageSquare.md}}">
+        <source data-srcset="{{imageSquare.sm}}">
       <!--[if IE 9]></video><![endif]-->
       {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{imageSquare}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <img alt="{{image.title}}" class="lazyload" data-src="{{imageSquare.lg}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     </picture>
     <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>
   </figure>

@@ -28,7 +28,7 @@ module.exports = function(env) {
         'window.jQuery': 'jquery'
       }),
       // Disable moment.js locale languages requires
-      // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
     resolve: {
       root: jsSrc,
@@ -37,15 +37,7 @@ module.exports = function(env) {
         'eventEmitter/EventEmitter': 'wolfy87-eventemitter/EventEmitter',
         'get-style-property': 'desandro-get-style-property',
         'matches-selector': 'desandro-matches-selector',
-        'classie': 'desandro-classie',
-
-        'TweenLite': 'gsap/src/uncompressed/TweenLite.js',
-        'TweenMax': 'gsap/src/uncompressed/TweenMax.js',
-        'TimelineLite': 'gsap/src/uncompressed/TimelineLite.js',
-        'TimelineMax': 'gsap/src/uncompressed/TimelineMax.js',
-        'ScrollMagic': 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
-        'animation.gsap': 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
-        'debug.addIndicators': 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
+        'classie': 'desandro-classie'
       }
     },
     module: {

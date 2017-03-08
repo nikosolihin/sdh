@@ -3,8 +3,8 @@
 <div class="Gallery-preview">
   {# Get first 3 photos as previews #}
   {% for photo in data.gallery | slice(0,3) %}
-    {% set image = photo|serveSquareImage(400) %}
-    <div class="Gallery-previewImage lazyload" data-bgset="{{image}}"></div>
+    {% set image = photo|serveSquareImage %}
+    <div class="Gallery-previewImage lazyload" data-bgset="{{image.sm}}"></div>
   {% endfor %}
   <div class="Gallery-previewButton Button">
     <svg aria-hidden="true" role="presentation" title="">

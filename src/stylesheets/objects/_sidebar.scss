@@ -15,9 +15,11 @@
   &-section {
     font-size: $font-size-h5;
     margin-bottom: $single;
-    > * {
-      margin-bottom: $single !important;
-    }
+
+    // DO WE NEED THIS??????
+    // > * {
+    //   margin-bottom: $single !important;
+    // }
 
     // Style
     &--callout {

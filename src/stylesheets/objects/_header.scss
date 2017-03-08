@@ -152,7 +152,59 @@
     }
   }
 
-  @at-root .home #{&} {
+  &-ourCampuses {
+    position: relative;
+    box: horizontal middle;
+    &Link {
+      padding-right: $half;
+      cursor: pointer;
+    }
+    svg {
+      size: $single;
+      fill: $white;
+    }
+    &Dropdown {
+      box: vertical;
+      position: absolute;
+      top: $single*3.75;
+      left: 0;
+      min-width: $single*10.5;
+      background-color: rgba(255,255,255,.9);
+      border-radius: 3px;
+      border-bottom: 3px solid $orange;
+      padding: $threefourth 0;
+      will-change: opacity, visibility, transform;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all .125s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+      a {
+        @include hover($navy, $orange);
+        padding: $half $single*1.25;
+        line-height: 1;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left:6px solid transparent;
+        border-right:6px solid transparent;
+        border-bottom:6px solid rgba(255,255,255,.9);
+      }
+    }
+    &:hover .Header-ourCampusesDropdown {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @at-root .home #{&},
+  .single-campus #{&} {
     position: absolute;
     top: 0;
     left: 0;

@@ -34,8 +34,8 @@ function blocks_post_type() {
 		'label'                 => __( 'Block', 'sdh' ),
 		'description'           => __( 'Custom post type for blocks', 'sdh' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', ),
-		'taxonomies'            => array( 'block_type' ),
+		'supports'              => array( 'title' ),
+		'taxonomies'            => array(),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -49,7 +49,8 @@ function blocks_post_type() {
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false, //Disable single page viewing
 		'rewrite'               => false,
-		'capability_type'       => 'page',
+		'capability_type'       => array('campus','campuses'),
+		'map_meta_cap'        	=> true,
 	);
 	register_post_type( 'block', $args );
 }

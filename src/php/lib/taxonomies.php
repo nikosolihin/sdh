@@ -46,7 +46,7 @@ function campus_taxonomy() {
 		'rewrite'                   => false,
 		'query_var'									=> true, // must be true if doing filter[xxx] api call
 		'publicly_queryable'				=> true, // must be true if doing filter[xxx] api call
-		'public'                    => false,
+		'public'                    => true,
     'capabilities'               => $caps,
 		'show_in_rest'               => true,
 		'rest_base'                  => 'campus',
