@@ -1,5 +1,5 @@
 .SingleCampus {
-  padding-bottom: $single*3;
+  padding-bottom: $single*4;
 
   &-message {
     box: vertical center;
@@ -36,6 +36,23 @@
         width: 2.75rem;
         background-color: $yellow;
       }
+    }
+  }
+  &-messageShare {
+    box: horizontal middle center;
+    margin-top: $single*3;
+    .Share-title {
+      margin-bottom: 0;
+      margin-right: $threefourth;
+    }
+    .Share-button {
+      margin-bottom: 0;
+      svg {
+        size: $single;
+      }
+    }
+    .Share-socialMedia {
+      box: horizontal middle;
     }
   }
   &-news {

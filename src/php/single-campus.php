@@ -49,6 +49,14 @@ array_push( $context['breadcrumb'], array(
 
 // Where are we going?
 switch ($params['section']) {
+  case 'welcome': // Welcome
+    $context['photo'] = $post->get_field('photo');
+    $context['principal'] = $post->get_field('principal');
+    $context['message'] = $post->get_field('message');
+    $context['og_desc'] = strip_tags(substr($context['message'], 0, 300));
+    Timber::render( 'campus/single-campus-welcome.twig' , $context );
+    break;
+
   case 'details':
     Timber::render( 'campus/single-campus-details.twig' , $context );
     break;
@@ -58,10 +66,4 @@ switch ($params['section']) {
     $context['facilities_teaser'] = $post->get_field('facilities_teaser');
     Timber::render( 'campus/single-campus-facilities.twig' , $context );
     break;
-
-  case 'welcome': // Welcome
-    $context['photo'] = $post->get_field('photo');
-    $context['principal'] = $post->get_field('principal');
-    $context['message'] = $post->get_field('message');
-    Timber::render( 'campus/single-campus-welcome.twig' , $context );
 }

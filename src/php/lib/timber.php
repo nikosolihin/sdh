@@ -312,38 +312,6 @@ class StarterSite extends TimberSite {
 		});
 		$twig->addFilter($classfilter);
 
-		// //=============================================
-		// // Hide youtube controls
-		// //=============================================
-		// $classfilter = new Twig_SimpleFilter('modest', function ($embed) {
-		// 	return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0&rel=0", $embed);
-		// });
-		// $twig->addFilter($classfilter);
-		//
-		// //=============================================
-		// // Choose largest image for FB Share
-		// //=============================================
-		// $classfilter = new Twig_SimpleFilter('getLargest', function ($image) {
-		// 	if ($image) {
-		// 		// Get just the url addresses of images
-		// 		$images = array();
-		// 		foreach($image as $key => $value) {
-		// 			if(strpos($key, 'url_') !== false) {
-		// 				$images[$key] = $value;
-		// 			}
-		// 		}
-		// 		if (array_key_exists('url_h', $images)) {
-		// 			// If large 1600 exists, trash original and use that
-		// 			unset($images['url_o']);
-		// 			return $images['url_h'];
-		// 		} else {
-		// 			// If large 1600 doesn't exist, grab original
-		// 			return $images['url_o'];
-		// 		}
-		// 	}
-		// });
-		// $twig->addFilter($classfilter);
-
 		return $twig;
 	}
 }
