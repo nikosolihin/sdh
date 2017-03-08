@@ -32,8 +32,8 @@
                 "id": ""
             },
             "choices": {
-                "english": "Engligh",
-                "indonesian": "Indonesian"
+                "en_US": "Engligh",
+                "id_ID": "Indonesian"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -536,5 +536,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488964875
+    "modified": 1488989011
 }

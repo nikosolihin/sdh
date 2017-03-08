@@ -12,6 +12,22 @@ $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 $context['maps'] = $context['acf']['maps'];
 $context['banner'] = $context['acf']['banner'];
+$campus_language = $context['acf']['language'];
+
+// Client requested this.
+// Switch subsites when campus language is different
+// than locale
+if ($context['locale'] != $campus_language) {
+  if ($campus_language == 'en_US') {
+    $campus_language = '/';
+  } else {
+    $campus_language = '/id';
+  }
+  $head = $context['site']->url;
+  $tail = explode($context['site']->url, $post->link)[1];
+  $targetURL = $head . $campus_language . $tail;
+  wp_redirect(clean_url($targetURL), 302);
+}
 
 // If body class was set in routes.php, set it
 if(isset($params['body_class']) && is_string($params['body_class'])) {
