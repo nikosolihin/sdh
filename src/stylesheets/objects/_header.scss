@@ -14,8 +14,7 @@
     background-color: $white;
     padding: $single $threefourth;
     border-left: 6px solid $orange;
-    // border-right: 6px solid #26487c;
-    // border-bottom: 6px solid #26487c;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.075);
   }
   &-seal {
     width: 28%;
