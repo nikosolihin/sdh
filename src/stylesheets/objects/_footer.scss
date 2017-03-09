@@ -2,11 +2,65 @@
   @include cover;
   position: relative;
   z-index: $zindex-footer-bg;
-  padding: $single*7 0 $single*2.25;
+  padding: $single*5 0 $single*2.25;
   background-color: $white;
 
   .List {
     margin-top: $threefourth;
+  }
+
+  &-info {
+    position: relative;
+    z-index: $zindex-footer-main;
+    box: horizontal left middle;
+    margin-bottom: $single*2.5;
+    padding-bottom: $single*2.5;
+    border-bottom: 1px solid $line;
+    &Logo {
+      box: horizontal left;
+      width: 18%;
+      svg {
+        fill: $navy;
+      }
+    }
+    &Address {
+      box: horizontal space-between;
+      flex: 1;
+      padding-left: $half;
+      p {
+        line-height: 1.4;
+      }
+      > .flex-wrapper {
+        padding-right: $single;
+        &:nth-child(1) {
+          width: 50%;
+        }
+        &:nth-child(2) {
+          width: 25%;
+        }
+        &:nth-child(3) {
+          width: 25%;
+        }
+      }
+    }
+    &Social {
+      box: horizontal middle right;
+      width: 20%;
+      a {
+        box: vertical middle center;
+        background-color: $navy;
+        border-radius: 50%;
+        size: $single*2.25;
+        margin-right: .65rem;
+        svg {
+          fill: $white;
+          size: $single;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   &::after {
@@ -15,13 +69,25 @@
     top: 0;
     left: 0;
     size: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9) 60%, $white);
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.9) 60%, $white);
   }
 
   &-primary {
     position: relative;
-    box: horizontal space-around;
+    box: horizontal space-between;
     z-index: $zindex-footer-main;
+  }
+
+  &-column:last-child {
+    width: 20%;
+    .Footer-link {
+      width: 50%;
+      margin-bottom: .3rem;
+    }
+    > .flex-wrapper {
+      box: horizontal wrap;
+      padding-top: $threefourth;
+    }
   }
 
   &-link {
@@ -32,7 +98,7 @@
     position: relative;
     box: horizontal middle space-between;
     border-top: 1px solid #dedede;
-    margin-top: $single*5;
+    margin-top: $single*3.5;
     padding-top: $quarter;
     z-index: $zindex-footer-main;
     &Link {
@@ -62,12 +128,6 @@
     }
   }
 
-  &-legal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   &-social {
     box: horizontal;
     svg {
@@ -93,5 +153,10 @@
 
   @at-root .home #{&} {
     display: none;
+    &-legal {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

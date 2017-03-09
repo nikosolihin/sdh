@@ -114,7 +114,12 @@
       }
     }
     #Map {
-      height: $single*30;
+      height: $single*26;
+    }
+    &--tall {
+      #Map {
+        height: $single*35;
+      }
     }
   }
 

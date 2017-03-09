@@ -1,4 +1,4 @@
-<div id="contact" class="SingleCampus-maps">
+<div id="contact" class="SingleCampus-maps{% if maps|length > 1%} SingleCampus-maps--tall{% endif %}">
   <div class="SingleCampus-mapsLocations">
     {% for map in maps %}
       <div class="SingleCampus-mapsButton">
