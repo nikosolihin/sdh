@@ -120,7 +120,7 @@ function getPosts($options) {
         array( 'after'  => array(
           'year'        => $today['year'],
           'month'       => $today['mon'],
-          'day'         => $today['mday'],
+          'day'         => $today['mday']-1,
         ))
       );
     }
