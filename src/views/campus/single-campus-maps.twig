@@ -25,7 +25,9 @@
             </div>
           </div>
         </div>
-        <a href="" class="Button Button--small Button--orange  Map-button" data-lat="{{map.location.lat}}" data-lng="{{map.location.lng}}">{{__('See Location', 'sdh')}}</a>
+        <a href="" class="Button Button--small Button--orange  Map-button SingleCampus-mapsLaunch" data-lat="{{map.location.lat}}" data-lng="{{map.location.lng}}">{{__('See Location', 'sdh')}}</a>
+
+        <a href="geo:{{map.location.lat}},{{map.location.lng}}" class="Button Button--small Button--orange  SingleCampus-mapsLaunchMobile">{{__('See Location', 'sdh')}}</a>
       </div>
     {% endfor %}
   </div>

@@ -69,13 +69,27 @@
     &Locations {
       position: absolute;
       top: 50%;
-      left: 12%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
       z-index: 1000;
       min-width: $single*16;
       border-radius: 4px;
       background-color: #fafafa;
       box-shadow: 0 5px 10px rgba(0,0,0,.15);
+      @include from(md) {
+        top: 50%;
+        left: 3%;
+        transform: translate3d(0, -50%, 0);
+      }
+      @include from(lg) {
+        left: 6%;
+      }
+      @include from(xl) {
+        left: 8%;
+      }
+      @include from(xxl) {
+        left: 12%;
+      }
     }
     &Button {
       display: block;
@@ -140,4 +154,16 @@
     }
   }
 
+  &-mapsLaunch {
+    display: none !important;
+    @include from(md) {
+      display: inline-block !important;
+    }
+  }
+  &-mapsLaunchMobile {
+    display: inline-block !important;
+    @include from(md) {
+      display: none !important;
+    }
+  }
 }
