@@ -240,9 +240,8 @@ class StarterSite extends TimberSite {
 		$context['feedback'] = get_field('feedback', 'option');
 
 		// Languages URLs
-		$context['languages']['en'] = "https://new.sdh.or.id/";
-		$context['languages']['id'] = "https://new.sdh.or.id/id";
-		$context['languages']['list'] = get_field('languages', 'option');
+		$context['languages']['en'] = get_field('language_en', 'option');
+		$context['languages']['id'] = get_field('language_id', 'option');
 
 		// Current URL
 		global $wp;

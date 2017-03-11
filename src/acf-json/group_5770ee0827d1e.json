@@ -375,11 +375,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_5808830b53558",
-            "label": "Toggle Languages",
-            "name": "languages",
-            "type": "checkbox",
-            "instructions": "Enable\/disable different language sub-sites. This will not delete it in the network - just hiding them. Mainly for a staggered launch. Checked = ON.",
+            "key": "field_58c39cea8569c",
+            "label": "EN",
+            "name": "language_en",
+            "type": "url",
+            "instructions": "What's the URL for the English site?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -387,16 +387,24 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "horizontal",
-            "choices": {
-                "en": "EN",
-                "id": "ID"
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58c39cc38569b",
+            "label": "ID",
+            "name": "language_id",
+            "type": "url",
+            "instructions": "What's the URL for the Indonesian site?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
             },
-            "default_value": [],
-            "allow_custom": 0,
-            "save_custom": 0,
-            "toggle": 1,
-            "return_format": "value"
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_580cffa14e9fb",
@@ -584,5 +592,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1488781102
+    "modified": 1489214725
 }

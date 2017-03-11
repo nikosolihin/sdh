@@ -111,20 +111,40 @@
 
   &-secondaryLink {
     display: block;
-    color: rgba(255,255,255,.625);
     padding: .125rem 0;
   }
 
+  &-misc {
+    box: horizontal space-between;
+  }
+
   &-social {
-    box: horizontal space-around;
+    width: 50%;
+    .flex-wrapper {
+      box: horizontal wrap;
+    }
+    a {
+      box: vertical middle center;
+      size: $single*2.5;
+      background-color: #eee;
+      border-radius: 50%;
+      margin-right: $threefourth;
+      margin-bottom: $threefourth;
+    }
     svg {
       fill: $navy;
       size: $threefourth;
     }
-    a {
-      background-color: #eee;
-      border-radius: 50%;
-      padding: $threefourth;
+  }
+
+  &-language {
+    width: 50%;
+    &Link {
+      display: block;
+      @include hover($white, $orange);
+      &--active {
+        @include hover($orange, $orange);
+      }
     }
   }
 
