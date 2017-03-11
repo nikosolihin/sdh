@@ -87,26 +87,15 @@
     <div class="MobileHeader-social">
       <h3 class="h7 medium caps spaced orange">{{__('Stay Connected', 'sdh')}}</h3>
       <div class="flex-wrapper">
-        <a href="" class="flex">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fbook"></use>
-          </svg>
-        </a>
-        <a href="" class="flex">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-          </svg>
-        </a>
-        <a href="" class="flex">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
-          </svg>
-        </a>
-        <a href="" class="flex">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
-          </svg>
-        </a>
+        {% for name, link in social %}
+          {% if link %}
+          <a href="{{link}}" class="flex">
+            <svg aria-hidden="true" role="presentation" title="{{name}}">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+            </svg>
+          </a>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
