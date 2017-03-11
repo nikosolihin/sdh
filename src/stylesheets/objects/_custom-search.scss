@@ -1,0 +1,276 @@
+.CustomSearch {
+  margin-top: $single*3;
+  margin-bottom: $single*5;
+  box: vertical;
+  @include from(lg) {
+    box: horizontal;
+  }
+  &-sidebar {
+    border-right: 1px solid #eee;
+    padding-top: $single*3;
+    padding-right: $single*1.5;
+  }
+  &-sidebarBody {
+    margin-top: $single*8;
+    border-top: 1px solid #eee;
+    padding-top: $single;
+  }
+  &-result {
+    position: relative;
+    @include from(md) {
+      padding-left: $single*4;
+      padding-right: $single*4;
+    }
+  }
+
+  // Style GCSE
+  .gsc-control-cse.gsc-control-cse-id,
+  .gsc-webResult.gsc-result,
+  .gsc-search-box {
+    font-family: $font-family;
+    font-size: $font-size-h5;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    padding: 0;
+  }
+  .gsc-search-box {
+    margin-bottom: $single;
+  }
+  .gsc-adBlock,
+  .gsc-clear-button {
+    display: none !important;
+  }
+  .gsc-above-wrapper-area {
+    @include to(md) {
+      margin-bottom: $single*4.5;
+    }
+  }
+  .gsc-refinementsArea {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    position: absolute;
+    top: $single*15.5;
+    // left: -$single*16.75;
+    @include from(lg) {
+      width: 250px;
+      top: $single*6.5;
+      left: -$single*16.75;
+    }
+    @include from(xl) {
+      left: -$single*19.75;
+    }
+    div {
+      box: horizontal;
+      @include from(lg) {
+        box: horizontal wrap space-between;
+      }
+    }
+    .gsc-refinementHeader {
+      line-height: 1;
+      text-decoration: none !important;
+      font-size: $font-size-h6;
+      font-weight: $font-weight-bold;
+      padding: $half $threefourth !important;
+      margin-bottom: $half;
+      border-radius: 3px;
+      margin-right: $threefourth;
+      @include from(lg) {
+        width: 47%;
+        margin-right: 0;
+      }
+      &.gsc-refinementhInactive {
+        color: #555 !important;
+        background-color: #eee;
+      }
+      &.gsc-refinementhActive {
+        color: $white !important;
+        background-color: pink;
+      }
+    }
+  }
+  td.gsc-input {
+    position: relative;
+    padding-right: 0 !important;
+    input {
+      width: 100%;
+      padding: $single*1.125;
+      font-size: 20px;
+      border-color: #f5f5f5;
+      color: #222;
+      background-color: #f5f5f5 !important;
+      background-image: none !important;
+    }
+  }
+  td.gsc-search-button {
+    position: relative;
+    left: -10px;
+    input {
+      cursor: pointer;
+      color: transparent;
+      font-size: 0;
+      border: 0;
+      background-color: $navy;
+      size: 71px;
+      margin: 0;
+      padding: 0;
+      border-radius: 2px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &::before{
+      content:url('../search.svg');
+      display: block;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      pointer-events: none;
+      transform: translate3d(-50%, -42%, 0);
+    }
+  }
+  div.gs-title {
+    margin-bottom: 7px;
+  }
+  div.gs-snippet {
+    margin-bottom: 3px;
+    font-family: $font-family;
+    font-size: $font-size-h5;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    line-height: 1.45;
+    b {
+      font-weight: $font-weight-medium !important;
+      background-color: #e6f4ff;
+    }
+  }
+  a.gs-title[href] {
+    font-family: $font-family;
+    font-size: $font-size-h5 !important;
+    font-weight: $font-weight-medium !important;
+    color: $body-color;
+    &:hover {
+      color: $navy-light !important;
+    }
+    b {
+      font-size: $font-size-h5 !important;
+      color: $headings-color;
+      &:hover {
+        color: $navy-light !important;
+      }
+    }
+  }
+  .cse .gs-result .gs-title,
+  .gs-result .gs-title,
+  .cse .gs-result .gs-title *,
+  .gs-result .gs-title *,
+  .cse .gs-promotion a.gs-title,
+  .gs-promotion a.gs-title,
+  .cse .gs-promotion a.gs-title *,
+  .gs-promotion a.gs-title *,
+  .cse .gs-promotion .gs-snippet a,
+  .gs-promotion .gs-snippet a,
+  .cse .gs-spelling a,
+  .gs-spelling a {
+    text-decoration: none;
+  }
+
+  .gs-webResult.gs-result.gs-no-results-result .gs-snippet {
+    border: 1px solid #eeeeee;
+    font-size: $font-size-h5;
+    text-align: center;
+    padding: $single;
+    background-color: $white;
+  }
+
+  .gsc-expansionArea>.gsc-result {
+    margin-top: $single*1.5;
+  }
+
+  .gs-per-result-labels {
+    margin-top: 5px;
+  }
+
+  .gs-per-result-labels {
+    span:nth-child(1) {
+      display: none;
+    }
+    .gs-label {
+      border-radius: 3px;
+      color: #555 !important;
+      display: inline-block;
+      background-color: #eee;
+      text-decoration: none !important;
+      font-size: $font-size-h7;
+      font-weight: $font-weight-bold;
+      padding: $quarter $half !important;
+    }
+  }
+  .gsc-table-cell-thumbnail {
+    padding-right: $single;
+  }
+  .gsc-cursor-box {
+    padding: 0;
+    margin: 0;
+    margin-top: $single*2.5;
+  }
+  .gsc-cursor {
+    display: block !important;
+    .gsc-cursor-page {
+      border: 0 !important;
+      background-color: transparent !important;
+      color: #aaa !important;
+      font-family: $font-family;
+      font-size: $font-size-h6;
+      font-weight: $font-weight-medium;
+      line-height: 1.625;
+      padding: $quarter $half;
+      margin: 0 $half;
+      text-decoration: none !important;
+      border-radius: 2px;
+      &.gsc-cursor-current-page {
+        position: relative;
+        color: $navy !important;
+        font-weight: $font-weight-bold;
+        text-shadow: none !important;
+        background-color: transparent !important;
+        padding: $quarter $half;
+        margin: 0 $half;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -3px;
+          height: 3px;
+          width: 65%;
+          transform: translateX(-50%);
+          background-color: rgb(255, 210, 0);
+        }
+      }
+    }
+  }
+  .gsc-results.gsc-webResult {
+    position: relative;
+  }
+  .gcsc-branding {
+    font-family: $font-family;
+    font-size: $font-size-h7;
+    position: absolute;
+    top: -77px;
+    right: 0;
+  }
+  .gsc-result-info {
+    font-family: $font-family;
+    font-size: $font-size-h7;
+    padding-left: 0;
+  }
+  .gsc-wrapper {
+    padding-top: $single*2;
+  }
+  .gs-bidi-start-align.gs-visibleUrl {
+    font-family: $font-family;
+    font-size: $font-size-h6;
+  }
+}
