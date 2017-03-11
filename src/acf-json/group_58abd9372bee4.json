@@ -218,7 +218,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "When adding a new Head of School photo, make sure it's a square photo of 800x800px with the person's face in the center. Upload it to your unit's Google Photo and inform SDH Head Office.",
             "new_lines": "",
             "esc_html": 0
         },
@@ -536,5 +536,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489072103
+    "modified": 1489209744
 }
