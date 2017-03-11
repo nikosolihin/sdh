@@ -8,18 +8,22 @@ $context = Timber::get_context();
 $context['hero'] = get_field('hero', 'option');
 $context['placeholder'] = get_field('hero_placeholder', 'option');
 
-// News
-$context['news'] = getPosts( array(
-	'mode' => true, // Auto
-	'quantity' => 4,
-	'post_type' => 'news'
-));
+// Blocks - Only mobile
+$context['home_blocks'] = get_field('home_blocks', 'option');
 
-// Events
-$context['events'] = getPosts( array(
-	'mode' => true, // Auto
-	'quantity' => 2,
-	'post_type' => 'event'
-));
+// News
+$context['news'] = array(
+  'post_type' => 'news',
+  'quantity' => 4,
+  'news_metadata' => array('date','campus'),
+);
+
+// Campus Events
+$context['events'] = array(
+  'post_type' => 'event',
+  'quantity' => 3,
+  'event_metadata' => array('date','campus'),
+  'style' => 'object',
+);
 
 Timber::render( 'page/front-page.twig' , $context );

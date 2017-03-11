@@ -71,6 +71,8 @@
   }
 
   @at-root .home #{&} {
-    display: none;
+    @include from(lg) {
+      display: none;  
+    }
   }
 }

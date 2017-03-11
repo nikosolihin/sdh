@@ -9,7 +9,6 @@
 {% set placeholder_image = placeholder|serveImage %}
 
 <div class="Home" data-component="home">
-
 {% include 'components/loader.twig' with {'style': 'light'} %}
 
 <div class="Home-background" style="background-image: url({{placeholder_image.sm}})">
@@ -111,7 +110,8 @@
   </div>
 </div>
 </div>
-
 </div>
+
+{% include 'page/front-page-mobile.twig' %}
 
 {% endblock %}

@@ -10,19 +10,25 @@ $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 $context['children'] = array();
+$exclude_all = $post->get_field('landing_exclude_all');
 $exception = $post->get_field('landing_layout_exception');
 
-foreach ($post->get_children() as $child) {
-  // Skip if this page in the exception list
-  if ($exception && in_array($child->id, $exception)) {
-    continue;
+// If excluding all, don't fetch children, just set children to false
+if ($exclude_all) {
+  $context['children'] = false;
+} else {
+  foreach ($post->get_children() as $child) {
+    // Skip if this page in the exception list
+    if ($exception && in_array($child->id, $exception)) {
+      continue;
+    }
+    array_push($context['children'], array(
+      'title' => $child->title(),
+      'link' => $child->link(),
+      'teaser' => $child->get_field('teaser'),
+      'image' => $child->get_field('banner')['image']
+    ));
   }
-  array_push($context['children'], array(
-    'title' => $child->title(),
-    'link' => $child->link(),
-    'teaser' => $child->get_field('teaser'),
-    'image' => $child->get_field('banner')['image']
-  ));
 }
 
 Timber::render( 'page/landing-page.twig' , $context );

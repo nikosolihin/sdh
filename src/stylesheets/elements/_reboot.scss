@@ -188,16 +188,29 @@ svg {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #777;
+  color: rgba(255,255,255,.65);
+  @include from(lg) {
+    color: #777;
+  }
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #777;
   opacity: 1;
+  color: rgba(255,255,255,.65);
+  @include from(lg) {
+    color: #777;
+  }
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #777;
   opacity: 1;
+  color: rgba(255,255,255,.65);
+  @include from(lg) {
+    color: #777;
+  }
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #777;
+  opacity: 1;
+  color: rgba(255,255,255,.65);
+  @include from(lg) {
+    color: #777;
+  }
 }

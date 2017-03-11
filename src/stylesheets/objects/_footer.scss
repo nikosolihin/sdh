@@ -250,7 +250,10 @@
   }
 
   @at-root .home #{&} {
-    display: none;
+    display: block;
+    @include from(lg) {
+      display: none;
+    }
     &-legal {
       position: absolute;
       left: 50%;

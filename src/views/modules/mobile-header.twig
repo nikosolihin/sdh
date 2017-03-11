@@ -1,0 +1,104 @@
+{% if locale == 'id_ID' %}
+  {% set language = __('Indonesian', 'sdh') %}
+{% elseif locale == 'en_US' %}
+  {% set language = __('English', 'sdh') %}
+{% endif %}
+
+<a href="" class="MobileHeader-burger">
+  <div class="Burger">
+    <div class="Burger-box">
+      <div class="Burger-inner"></div>
+    </div>
+  </div>
+</a>
+
+<a class="MobileHeader-logo" href="{{site.url}}">
+  <div class="Header-seal">
+    <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+    </svg>
+  </div>
+  <div class="Header-textLogo">
+    <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+    </svg>
+  </div>
+</a>
+
+<header class="MobileHeader" data-component="mobile-header">
+  <div class="MobileHeader-wrapper">
+
+  <div class="MobileHeader-topbar">
+    <form class="MobileSearch-form " role="form" action="{{site.url}}/search" accept-charset="UTF-8" method="get">
+      <input class="MobileSearch-input h6 normal white" id="Search-input" type="text" name="q" autocomplete="off" placeholder="{{__('What can we help you find?', 'sdh')}}">
+      <div class="MobileSearch-icon">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+      </div>
+    </form>
+  </div>
+
+  <nav class="MobileHeader-nav" role="navigation">
+    {% for item in primary_menu %}
+      <div class="MobileHeader-links">
+        <div class="flex-wrapper MobileHeader-link">
+          <span class="h4 medium white">{{item.title}}</span>
+          <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+        <div class="MobileHeader-sub">
+          {% for child in children %}
+            <a href="{{child.link}}" class="MobileHeader-subLink h6 normal white">{{child.title}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+  </nav>
+
+  <nav class="MobileHeader-secondaryNav">
+    <div class="flex-wrapper">
+      <h3 class="h7 medium caps spaced orange">{{__('Audiences', 'sdh')}}</h3>
+      {% for item in secondary_menu %}
+        <a href="{{item.link}}" class="MobileHeader-secondaryLink h6 medium">{{item.title}}</a>
+      {% endfor %}
+    </div>
+    <div class="flex-wrapper">
+      <h3 class="h7 medium caps spaced orange">{{__('Quicklinks', 'sdh')}}</h3>
+      <a href="" class="MobileHeader-secondaryLink h6 medium">For Parents</a>
+      <a href="" class="MobileHeader-secondaryLink h6 medium">For Alumni</a>
+      <a href="" class="MobileHeader-secondaryLink h6 medium">For Students</a>
+    </div>
+  </nav>
+
+  <div class="MobileHeader-social">
+    <a href="" class="flex">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fbook"></use>
+      </svg>
+    </a>
+    <a href="" class="flex">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+      </svg>
+    </a>
+    <a href="" class="flex">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+      </svg>
+    </a>
+    <a href="" class="flex">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+<div class="MobileHeader-watermark">
+  <svg aria-hidden="true" role="presentation" title="">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+  </svg>
+</div>
+</header>

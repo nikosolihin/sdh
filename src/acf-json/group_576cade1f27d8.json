@@ -3,14 +3,6 @@
     "title": "Landing Page Options",
     "fields": [
         {
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1,
             "key": "field_580f8cc599745",
             "label": "Exception List",
             "name": "landing_layout_exception",
@@ -22,19 +14,36 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
         },
         {
-            "layout": "horizontal",
-            "choices": {
-                "before": "Before",
-                "after": "After"
+            "key": "field_58c37b7ca2247",
+            "label": "Exclude All",
+            "name": "landing_exclude_all",
+            "type": "true_false",
+            "instructions": "Exclude all children pages - in other words, don't show the landing page grid at all.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
             },
-            "default_value": "",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_577206d248af1",
             "label": "Content Position",
             "name": "position",
@@ -46,12 +55,19 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "layout": "horizontal",
+            "choices": {
+                "before": "Before",
+                "after": "After"
+            },
+            "default_value": "",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value"
         },
         {
-            "message": "Unlike the default page template, the landing page template will not display any sidebar. You may still build a sidebar using the builder on the left so that children of this landing page can inherit it, saving you time from defining repeated sidebar modules across children pages.",
-            "esc_html": 0,
-            "new_lines": "wpautop",
             "key": "field_57cc59f577305",
             "label": "Sidebar",
             "name": "",
@@ -63,7 +79,10 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "Unlike the default page template, the landing page template will not display any sidebar. You may still build a sidebar using the builder on the left so that children of this landing page can inherit it, saving you time from defining repeated sidebar modules across children pages.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -88,5 +107,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Landing Page",
-    "modified": 1486305975
+    "modified": 1489206346
 }

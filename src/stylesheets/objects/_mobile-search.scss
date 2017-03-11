@@ -1,0 +1,26 @@
+.MobileSearch {
+
+  &-form {
+    position: relative;
+    flex: 1;
+  }
+
+  &-input {
+    width: 100%;
+    border: 0;
+    padding: $quarter $half;
+    margin: 0 0 0 $single;
+  }
+
+  &-icon {
+    box: vertical middle center;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    svg {
+      fill: $white;
+      size: $threefourth;
+    }
+  }
+
+}

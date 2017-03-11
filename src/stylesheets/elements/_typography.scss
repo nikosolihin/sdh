@@ -93,13 +93,6 @@ a[href^="mailto"]:not([class]) {
   display: inline;
 }
 
-// No margin for only-child paragraph
-// p:only-child,
-// p:last-child,
-// p:last-of-type {
-//   margin-bottom: 0;
-// }
-
 hr {
   position: relative;
   display: block;

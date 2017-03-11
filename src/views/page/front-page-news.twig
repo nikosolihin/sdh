@@ -1,55 +1,12 @@
 <div class="Sidebar-section Sidebar-section--framed">
   <div class="SingleCampus-news">
-    <h3 class="h7 navy spaced medium caps">{{__('News', 'sdh')}}</h3>
-    <div class="Feed Feed--list Feed--news">
-      <div class="Feed-body">
-        {% for post in news %}
-          <a class="Feed-item" href="{{post.link}}">
-            <div class="flex-wrapper">
-              <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
-              <p class="Feed-title h5 bold">{{post.title}}</p>
-              <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('M j, Y')}}</span>
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-    <a href="{{site.url}}/news" class="Button Button--gray Button--block">{{__('More News', 'sdh')}}</a>
+    <h3 class="h6 navy spaced medium caps">{{__('Recent News', 'sdh')}}</h3>
+    {% include 'components/feed.twig' with {data: news, empty: __('There are currently no news at this school.', 'sdh')} %}
+    <a href="{{site.url}}/news" class="Button Button--gray Button--block Button--withMargin">{{__('More News', 'sdh')}}</a>
   </div>
   <div class="SingleCampus-news">
-    <h3 class="h7 navy spaced medium caps">{{__('Events', 'sdh')}}</h3>
-    <div class="Feed Feed--object Feed--event">
-      <div class="Feed-body">
-        {% for post in events %}
-          <a class="Feed-item" href="{{post.link}}">
-            <div class="Feed-media">
-              <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
-              <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
-            </div>
-            <div class="flex-wrapper">
-              <span class="h7 medium caps spaced  faint">{{post.campus}}</span>
-              <p class="Feed-title h5 bold">{{post.title}}</p>
-
-            {% if post.dateTime.event_time %}
-              <span class="Feed-meta h6 medium faint">
-                <svg aria-hidden="true" role="presentation" title="Event Time">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-                </svg>{{post.dateTime.event_time}}
-              </span>
-            {% endif %}
-            {% if post.location %}
-              <span class="Feed-meta h6 medium faint">
-                <svg aria-hidden="true" role="presentation" title="Event Location">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-                </svg>{{post.location|title}}
-              </span>
-            {% endif %}
-
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-    <a href="{{site.url}}/events" class="Button Button--gray Button--block">{{__('Event Calendar', 'sdh')}}</a>
+    <h3 class="h6 navy spaced medium caps">{{__('Upcoming Events', 'sdh')}}</h3>
+    {% include 'components/feed.twig' with {data: events, empty: __('There are currently no events at this school.', 'sdh')} %}
+    <a href="{{site.url}}/events" class="Button Button--gray Button--block Button--withMargin">{{__('Event Calendar', 'sdh')}}</a>
   </div>
 </div>

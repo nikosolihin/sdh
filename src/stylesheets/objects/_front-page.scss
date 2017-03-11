@@ -1,6 +1,40 @@
+.MobileHome {
+  @include from(lg) {
+    display: none;
+  }
+  .Hero {
+    width: 100%;
+    height: $single*20;
+    .flickity-slider {
+      transform: none !important;
+    }
+    &-cell {
+      @include cover;
+      @include overlay(true, rgba(5,25,45,.7));
+      size: 100%;
+      left: 0 !important;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+      z-index: -1;
+      &.is-selected {
+        opacity: 1;
+        z-index: 0;
+      }
+    }
+  }
+  &-about {
+    box: vertical middle center;
+    background-color: #F5F9FC;
+    padding: $single*2.25 $single;
+  }
+}
+
 .Home {
+  display: none;
+  @include from(lg) {
+    box: vertical;
+  }
   position: relative;
-  box: vertical;
   size: 100%;
   width: 100vw;
   height: 100vh;
@@ -17,7 +51,7 @@
 
     &Item {
       @include cover;
-      @include overlay(true, rgba(5,25,45,.75));
+      @include overlay(true, rgba(5,25,45,.7));
       visibility: hidden;
       position: fixed;
       top: 0;

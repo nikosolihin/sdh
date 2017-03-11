@@ -1,0 +1,24 @@
+<div class="MobileHome" data-component="mobile-home">
+
+  <div class="Hero">
+    {% for item in hero %}
+      {% if item.type == "single" %}
+        {% set url = item.single_url %}
+      {% elseif item.type == "external" %}
+        {% set url = item.external_url %}
+      {% else %}
+        {% set url = item.search_url %}
+      {% endif %}
+      {% set image = item.photo|serveImage %}
+      <div class="Hero-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
+    {% endfor %}
+  </div>
+
+  {% include 'page/front-page-news.twig' %}
+
+  <div class="MobileHome-about">
+    <h2 class="h3 light navy">Our Programs</h2>
+    {% include 'components/block.twig' with {data: home_blocks} %}
+  </div>
+
+</div>

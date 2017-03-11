@@ -1,9 +1,11 @@
 .Header {
+  display: none;
   width: 100%;
-
-  box: vertical;
   background-color: $white;
   border-bottom: 1px solid $line;
+  @include from(lg) {
+    box: vertical;
+  }
 
   &-logo {
     box: horizontal middle right;
@@ -229,7 +231,7 @@
 
   @at-root .single-campus #{&} {
     .Header-logo {
-      box-shadow: 2px 2px 10px rgba(0,0,0,.075);  
+      box-shadow: 2px 2px 10px rgba(0,0,0,.075);
     }
   }
 
