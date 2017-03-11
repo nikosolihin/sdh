@@ -88,6 +88,10 @@
       <h3 class="h7 medium caps spaced orange">{{__('Stay Connected', 'sdh')}}</h3>
       <div class="flex-wrapper">
         {% for name, link in social %}
+          {% if name == 'facebook' %}
+            {# Use the plain facebook icon #}
+            {% set name = 'fbook' %}
+          {% endif %}
           {% if link %}
           <a href="{{link}}" class="flex">
             <svg aria-hidden="true" role="presentation" title="{{name}}">
