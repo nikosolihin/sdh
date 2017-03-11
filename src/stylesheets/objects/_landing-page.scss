@@ -10,7 +10,9 @@
     @include overlay(false);
     position: relative;
     width: 100%;
-    padding: $single*5 0;
+    @include from(md) {
+      padding: $single*5 0;
+    }
     @include from(xl) {
       box: vertical top left;
       width: 45%;
@@ -21,7 +23,7 @@
     &Copy {
       padding: $single*1.5 $single*2.75 $single*2;
       background-color: rgba(255, 255, 255, 0.85);
-      @include from(sm) {
+      @include from(md) {
         width: 80%;
       }
       @include from(xl) {
@@ -29,6 +31,12 @@
         top: 65%;
         left: 0;
         transform: translateY(-50%);
+      }
+      p {
+        font-size: 1rem / 1.65;
+        @include from(md) {
+          font-size: 1.1rem / 1.65;
+        }
       }
     }
   }
