@@ -17,6 +17,9 @@
   &--open {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    > .MobileHeader-watermark {
+      visibility: visible;
+    }
   }
 
   &-burger {
@@ -25,6 +28,9 @@
     top: 7px;
     right: 7px;
     z-index: $zindex-burger;
+    @include from(lg) {
+      display: none;
+    }
   }
 
   &-logo {
@@ -36,6 +42,9 @@
     z-index: $zindex-mobile-header;
     color: $white;
     padding: $threefourth;
+    @include from(lg) {
+      display: none;
+    }
   }
 
   &-wrapper {
@@ -149,6 +158,7 @@
   }
 
   &-watermark {
+    visibility: hidden;
     position: fixed;
     bottom: -$single*2.75;
     right: -$single*3.5;
