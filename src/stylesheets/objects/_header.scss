@@ -161,16 +161,17 @@
       cursor: pointer;
     }
     svg {
-      size: $single;
-      fill: $white;
+      size: .9rem;
+      fill: #aaa;
     }
     &Dropdown {
       box: vertical;
       position: absolute;
-      top: $single*3.75;
+      top: $single*3.65;
       left: 0;
+      z-index: 1;
       min-width: $single*10.5;
-      background-color: rgba(255,255,255,.9);
+      background-color: $white;
       border-radius: 3px;
       border-bottom: 3px solid $orange;
       padding: $threefourth 0;
@@ -226,6 +227,12 @@
       border-right: 0;
       border-bottom: 0;
       box-shadow: 6px 6px 0 rgba(2,42,72,0.5);
+    }
+    .Header-ourCampuses svg {
+      fill: $white;
+    }
+    .Header-ourCampusesDropdown {
+      background-color: rgba(255,255,255,.9);
     }
   }
 
