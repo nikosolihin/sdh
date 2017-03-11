@@ -4,6 +4,10 @@
 
   &-content {
     flex: 1;
+    padding: 0 $single*1.25;
+    @include from(md) {
+      padding: 0;
+    }
   }
 
   &--noSidebar {

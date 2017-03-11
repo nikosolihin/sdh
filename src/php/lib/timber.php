@@ -199,20 +199,6 @@ class StarterSite extends TimberSite {
 			}
 		}
 
-		// // Add post types archives to single footer list
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('Events', 'saat'),
-		// 	'link' => $this->url . "/events/"
-		// ));
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('News', 'saat'),
-		// 	'link' => $this->url . "/news/"
-		// ));
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('Media', 'saat'),
-		// 	'link' => $this->url . "/media/"
-		// ));
-
 		// Site Announcement
 		if ( get_field('announcement_status', 'option') == 'on' ) {
 			$link_type = get_field('announcement_link_type', 'option');

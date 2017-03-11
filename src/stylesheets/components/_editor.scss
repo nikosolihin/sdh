@@ -1,6 +1,6 @@
 .Editor {
   font-size: $font-size-h5;
-  @include from($desktop) {
+  @include from(md) {
     font-size: $font-size-h4;
   }
   h2 {
