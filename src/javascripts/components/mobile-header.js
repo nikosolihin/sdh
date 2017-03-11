@@ -15,6 +15,7 @@ export default class MobileHeader {
       this.$el.toggleClass('MobileHeader--open')
     })
     this.$el.on('click', this.target, (event) => {
+      $('.' + this.on).removeClass(this.on)
       $(event.target).closest(this.parent).toggleClass(this.on)
     })
   }
