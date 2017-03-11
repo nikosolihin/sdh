@@ -20,7 +20,7 @@
         },
         {
             "key": "field_58be94308cdcf",
-            "label": "Updating the Website for each School Unit",
+            "label": "Browser Requirements",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<p>The goal of this instruction guide is to train the individuals within each school unit responsible in maintaining the website's campus page. Each school is responsible for posting and translating upcoming events, posting and translating recent news articles, maintaining its own campus page. The guide will be sectioned based on events, news, and campus page, but before jumping in make sure your school has a Google Account.<\/p>\r\n\r\n<h4><strong>Google Account<\/strong><\/h4>\r\n<p>Head over to <a href=\"https:\/\/support.google.com\/accounts\/answer\/27441?source=gsearch&hl=en\" target=\"_blank\">this page<\/a> and follow the instruction on how to create a new Google Account. Keep in mind that you don't have to own a GMail account and may use any other email address you wish. We'll be using this Google Account mainly for events and photos - and, in order to do that, you have to inform Head Office of the new account you've just created. Let Pak Dicky <<a href=\"mailto:britia.perkasa@sdh.or.id\" target=\"_blank\">britia.perkasa@sdh.or.id<\/a>> from head office know so he can get you set up.<\/p>",
+            "message": "<p>The admin area of the website, the Dashboard, is well tested in the latest version of the Google Chrome browser. We highly recommend using Chrome when updating the website. If you're using any other browser or think your version of Chrome is outdated, head over to the <a href=\"https:\/\/www.google.com\/chrome\/\">Chrome download page<\/a>.<\/p>\r\n\r\n<h4><strong>Updating the Website for each School Unit<\/strong><\/h4>\r\n<p>The goal of this instruction guide is to train the individuals within each school unit responsible in maintaining the website's campus page. Each school is responsible for posting and translating upcoming events, posting and translating recent news articles, maintaining its own campus page. The guide will be sectioned based on events, news, and campus page, but before jumping in make sure your school has a Google Account.<\/p>\r\n\r\n<h4><strong>Google Account<\/strong><\/h4>\r\n<p>Head over to <a href=\"https:\/\/support.google.com\/accounts\/answer\/27441?source=gsearch&hl=en\" target=\"_blank\">this page<\/a> and follow the instruction on how to create a new Google Account. Keep in mind that you don't have to own a GMail account and may use any other email address you wish. We'll be using this Google Account mainly for events and photos - and, in order to do that, you have to inform Head Office of the new account you've just created. Let Pak Dicky <<a href=\"mailto:britia.perkasa@sdh.or.id\" target=\"_blank\">britia.perkasa@sdh.or.id<\/a>> from head office know so he can get you set up.<\/p>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -152,5 +152,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : How-to Details",
-    "modified": 1488950283
+    "modified": 1489210104
 }
