@@ -1,34 +1,56 @@
 .LandingPage {
-  box: horizontal space-between;
-
+  @include from(md) {
+    box: vertical;
+  }
+  @include from(xl) {
+    box: horizontal space-between;
+  }
   &-banner {
     @include cover;
     @include overlay(false);
-    width: 45%;
-    border: 3px solid $white;
-    border-left: 0;
-    box: vertical top left;
+    position: relative;
+    width: 100%;
+    padding: $single*5 0;
+    @include from(xl) {
+      box: vertical top left;
+      width: 45%;
+      padding: 0;
+      border: 3px solid $white;
+      border-left: 0;
+    }
     &Copy {
-      position: absolute;
-      top: 65%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 80%;
       padding: $single*1.5 $single*2.75 $single*2;
       background-color: rgba(255, 255, 255, 0.85);
+      @include from(sm) {
+        width: 80%;
+      }
+      @include from(xl) {
+        position: absolute;
+        top: 65%;
+        left: 0;
+        transform: translateY(-50%);
+      }
     }
   }
 
   &-content {
     box: vertical;
-    width: 55%;
+    width: 100%;
+    @include from(xl) {
+      width: 55%;
+    }
   }
 
   &-item {
     width: 100%;
-    box: horizontal space-between;
+    box: vertical;
+    @include from(md) {
+      box: horizontal space-between;
+    }
     &--alt {
-      box: horizontal-reverse space-between;
+      @include from(md) {
+        box: horizontal-reverse space-between;
+      }
     }
 
     // Colors
@@ -45,17 +67,28 @@
 
   &-itemImage {
     @include cover;
-    width: 50%;
-    border: 3px solid white;
+    width: 100%;
+    height: 10rem;
+    order: 1;
+    @include from(md) {
+      width: 50%;
+      height: auto;
+      min-height: $single*17.5;
+      border: 3px solid white;
+    }
   }
 
   &-itemBody {
     box: vertical middle;
     position: relative;
-    width: 50%;
+    width: 100%;
     padding: $single*2;
-    border: 3px solid white;
+    order: 2;
     overflow: hidden;
+    @include from(md) {
+      width: 50%;
+      border: 3px solid white;
+    }
     .Button {
       margin-top: $single*1.25;
     }

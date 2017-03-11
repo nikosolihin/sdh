@@ -20,10 +20,14 @@
 
   //=== Spacing ===
   &--spacedTop {
-    margin-top: $single*4;
+    @include from(md) {
+      margin-top: $single*4;
+    }
   }
   &--spacedBottom {
-    margin-bottom: $single*4;
+    @include from(md) {
+      margin-bottom: $single*4;  
+    }
   }
 }
 
