@@ -21,6 +21,9 @@ export default class Home {
     this.newsOpen = 'Home-news--open'
     this.isNewsOpen = false
 
+    // Initialize loader
+    this.$loader.toggleClass('Loader--fadeIn')
+
     this.attachEvents()
   }
 
@@ -63,7 +66,7 @@ export default class Home {
     .on('lazybeforeunveil', (image) => {
       if ($(image.target).is('.Home-backgroundItem:nth-child(1)')) {
         setTimeout(() => {
-          this.$loader.addClass('Loader--fadeOut')
+          this.$loader.toggleClass('Loader--fadeIn')
           this.startTyping()
           this.$statements.addClass('Home-statements--show')
           setTimeout(() => {
