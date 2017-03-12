@@ -5,6 +5,7 @@
 $context = Timber::get_context();
 
 $context['title'] = get_field('news_title', 'option');
+$context['subtitle'] = get_field('news_subtitle', 'option');
 $context['teaser'] = get_field('news_teaser', 'option');
 $context['wp_title'] = __('News', 'sdh');
 $context['empty_msg'] = __('No news found. Please try again.', 'sdh');
