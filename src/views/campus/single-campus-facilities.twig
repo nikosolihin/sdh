@@ -12,9 +12,9 @@
     </svg>
   </div>
   <ul class="Subnav-list List">
-    <li class="is-Active"><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
+    <li><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
     <li><a href="{{ post.link|trim('/') }}/details">{{__('Campus Information', 'sdh')}}</a></li>
-    <li><a href="{{ post.link|trim('/') }}/facilities">{{__('Facilities', 'sdh')}}</a></li>
+    <li class="is-Active"><a href="{{ post.link|trim('/') }}/facilities">{{__('Facilities', 'sdh')}}</a></li>
   </ul>
 </nav>
 

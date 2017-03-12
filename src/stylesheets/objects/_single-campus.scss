@@ -34,7 +34,12 @@
     @include from(lg) {
       padding: $single*7 $single*5 $single*3;
     }
-
+    p:not([class]) {
+      font-size: $font-size-h5;
+      @include from(lg) {
+        font-size: $font-size-h4;  
+      }
+    }
     h2 {
       display: block;
       position: relative;
