@@ -15,9 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<p class=\"essentials-description\">This is a list of ongoing services associated with the Sekolah Dian Harapan website. Note: passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
-            "esc_html": 0,
-            "new_lines": ""
+            "message": "<p class=\"essentials-description\">This is a list of ongoing services associated with the Sekolah Dian Harapan website. The info below will allow you to perform technical troubleshooting in-house. However, we do recommend coming back to us for regular technical maintenance. We'll make sure you're running the latest updates and that you site is performing as optimally as the day we handed the project over to you.\r\n<br>\r\n<strong>Note:<\/strong> Passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
             "key": "field_589aca1c5dcbc",
@@ -32,7 +32,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Note<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Database (MariaDB)<\/td>\r\n      <td>Database: <em>SDHWeb_WP<\/em>\r\n        <br>\r\n        DB User: <em>sdh-sqladmin<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em><\/td>\r\n      <td>Root user also available with the same default password.<\/td>\r\n     <\/tr>\r\n    <tr>\r\n      <td>Backup<\/td>\r\n      <td>SQL backup happens weekly via cron and stored in \/var\/www\/backups\/. Email notification will be sent after each successful backup.<\/td>\r\n      <td><strong>Use SSH to copy dump files to a local machine:<\/strong><br><pre>scp -r -i .ssh\/path\/to\/private\/key webteam@sdh.or.id:\/var\/www\/backups\/ ~<\/pre><\/td>\r\n     <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Note<\/th>\r\n          <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Database (MariaDB)<\/td>\r\n      <td>Database: <em>SDHWeb_WP<\/em>\r\n        <br>\r\n        DB User: <em>sdh-sqladmin<\/em>\r\n        <br>\r\n        Password: <em>TidfuK4y2=<\/em><\/td>\r\n      <td>Root user also available with the same default password.<\/td>\r\n     <\/tr>\r\n    <tr>\r\n      <td>Backup<\/td>\r\n      <td>SQL backup happens weekly via cron and stored in \/var\/www\/backups\/. Email notification will be sent after each successful backup. <strong>Note:<\/strong> This backup only covers database not the wordpress custom theme.<\/td>\r\n      <td><strong>Use SSH to copy dump files to a local machine:<\/strong><br><pre>scp -r -i .ssh\/path\/to\/private\/key webteam@sdh.or.id:\/var\/www\/backups\/ ~<\/pre><\/td>\r\n     <\/tr>\r\n    <tr>\r\n      <td>Restoring Theme<\/td>\r\n      <td>The custom theme developed for SDH can be restored to the last working copy before the project ended. There is a bare repo set up at <tt>\/var\/www\/.git<\/tt> from which you may simply <tt>git checkout<\/tt> back to <tt>\/var\/www\/html\/wp-content\/themes\/sdh<\/tt> or backup to your local machine.<\/td>\r\n      <td><strong>Checkout the last working copy into Wordpress' theme folder:<\/strong><br><pre>sudo git --work-tree=\/var\/www\/html\/wp-content\/themes\/sdh --git-dir=\/var\/www\/.git\/ checkout -f<\/pre><\/td>\r\n     <\/tr>\r\n  <\/tbody>\r\n<\/table>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -190,5 +190,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Service Details",
-    "modified": 1486609428
+    "modified": 1489042632
 }

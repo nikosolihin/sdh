@@ -3,48 +3,62 @@
 {% block content %}
 
 {% if acf.position == 'before' %}
-  <div class="container container--landing container--spacedBottom">
-    {% include 'layout/base.twig' %}
+  <div class="SinglePage--noSidebar container container--spacedBottom">
+    <div class="SinglePage-content">
+      {% include 'layout/base.twig' %}
+    </div>
   </div>
 {% endif %}
 
-<div class="LandingPage">
-  {% set image = acf.banner.image|serveImage %}
-  <div class="LandingPage-banner lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
-    <div class="LandingPage-bannerCopy">
-      <h1 class="h2 light navy">{{post.title}}</h1>
-      {% if acf.teaser %}
-        <p class="h4 normal body">{{acf.teaser}}</p>
-      {% endif %}
-    </div>
-
-  </div>
-  <div class="LandingPage-content">
-    {% for child in children %}
-      {% set childImage = child.image|serveImage %}
-      <div class="LandingPage-item{% if loop.index is even %} LandingPage-item--alt{% endif %}">
-        <a href="{{child.link}}" class="LandingPage-itemBody">
-          <div class="flex-wrapper">
-            <h2 class="h4 navy">{{child.title}}</h2>
-            <p class="h5 normal body">{{child.teaser}}</p>
-            <div class="Button Button--small">{{__('Learn More', 'sdh')}}</div>
-          </div>
-          <div class="LandingPage-itemBodyIcon">
-            <svg aria-hidden="true" role="presentation" title="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
-            </svg>
-          </div>
-        </a>
-        <div class="LandingPage-itemImage lazyload" data-bgset="{{childImage.sm}}">
-        </div>
+{% if children %}
+  <div class="LandingPage">
+    {% if acf.banner.image and acf.banner.image is iterable %}
+      {% set image = acf.banner.image|serveImage %}
+    {% else %}
+      {% set image = fallback.image %}
+    {% endif %}
+    <div class="LandingPage-banner lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
+      <div class="LandingPage-bannerCopy">
+        <h1 class="h2 light navy">{{post.title}}</h1>
+        {% if acf.teaser %}
+          <p class="h4 light noMargin">{{acf.teaser}}</p>
+        {% endif %}
       </div>
-    {% endfor %}
+
+    </div>
+    <div class="LandingPage-content">
+      {% for child in children %}
+        {% if child.image and child.image is iterable %}
+          {% set childImage = child.image|serveImage %}
+        {% else %}
+          {% set childImage = fallback.image %}
+        {% endif %}
+        <div class="LandingPage-item{% if loop.index is even %} LandingPage-item--alt{% endif %}">
+          <a href="{{child.link}}" class="LandingPage-itemBody">
+            <div class="flex-wrapper">
+              <h2 class="h4 navy">{{child.title}}</h2>
+              <p class="h5 normal body noMargin">{{child.teaser}}</p>
+              <div class="Button Button--small">{{__('Learn More', 'sdh')}}</div>
+            </div>
+            <div class="LandingPage-itemBodyIcon">
+              <svg aria-hidden="true" role="presentation" title="">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+              </svg>
+            </div>
+          </a>
+          <div class="LandingPage-itemImage lazyload" data-bgset="{{childImage.sm}}">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
+{% endif %}
 
 {% if acf.position == 'after' %}
-  <div class="container container--landing container--spacedTop">
-    {% include 'layout/base.twig' %}
+  <div class="SinglePage--noSidebar container container--spacedTop">
+    <div class="SinglePage-content">
+      {% include 'layout/base.twig' %}
+    </div>
   </div>
 {% endif %}
 {% endblock %}

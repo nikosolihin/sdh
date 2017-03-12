@@ -1,34 +1,78 @@
 .Cta {
-  box: horizontal middle;
   position: relative;
   z-index: $zindex-cta;
-  background-color: #F6F9FC;
+  background-color: $navy;
+  @include from(lg) {
+    background-color: #26487c; // ligher navy for desktop
+  }
 
-  h3.h3 {
-    font-size: 1.75rem / 1.5;
+  .container {
+    text-align: center;
+    padding: $single*2.75 $single*1.5;
+    @include from(lg) {
+      box: horizontal left;
+      text-align: left;
+      padding: 0;
+    }
+    @include from(xl) {
+      padding: 0;
+    }
+  }
+
+  .h3 {
+    font-size: 1.4rem / 1.4;
+    margin-bottom: $single;
+    @include from(md) {
+      font-size: 1.55rem / 1.45;
+    }
+    @include from(lg) {
+      font-size: 1.75rem / 1.5;
+      margin-bottom: 0;
+    }
   }
 
   .flex-wrapper {
-    width: 63%;
-    padding: $single*3 $single*3 $single*3 $single*13;
+    @include from(lg) {
+      padding: $single*2.75 0 $single*2.75 $single*1.5;
+    }
   }
 
   &-buttons {
-    @include left-slant;
-    position: absolute;
-    top: -8px;
-    right: 0;
-    width: 37%;
-    background-color: $navy;
-    padding-left: $single*2.5;
-    padding-top: $single*5;
-    padding-bottom: $single*4.75;
+    box: horizontal middle center;
+    @include from(lg) {
+      @include left-slant(5);
+      box: vertical middle left;
+      flex: 1;
+      background-color: $navy;
+      margin-left: $single*3.5;
+      padding-left: $single*2;
+    }
+    @include from(xl) {
+      box: horizontal middle left;
+      position: absolute;
+      top: -8px;
+      right: 0;
+      width: 37%;
+      padding-left: $single*2.5;
+      padding-top: $single*4.5;
+      padding-bottom: $single*4.5;
+    }
     .Button:first-child {
       margin-right: $threefourth;
+      @include from(lg) {
+        margin-right: 0;
+        margin-bottom: $single;
+      }
+      @include from(xl) {
+        margin-right: $threefourth;
+        margin-bottom: 0;
+      }
     }
   }
 
   @at-root .home #{&} {
-    display: none;
+    @include from(lg) {
+      display: none;  
+    }
   }
 }

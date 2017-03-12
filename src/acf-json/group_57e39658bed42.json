@@ -38,6 +38,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_58c502645f16e",
+            "label": "Subtitle",
+            "name": "news_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_58a07e1cf76f1",
             "label": "Paragraph",
             "name": "news_teaser",
@@ -241,5 +260,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : News Settings",
-    "modified": 1488708431
+    "modified": 1489306312
 }

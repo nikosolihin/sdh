@@ -64,7 +64,7 @@
     }
   }
 }
-@mixin left-slant {
+@mixin left-slant($angle: 7.5, $left: -.8rem) {
   position: relative;
   z-index: 1;
   &::after {
@@ -72,15 +72,15 @@
     display: block;
     position: absolute;
     top: 0;
-    left: -.8rem;
+    left: #{$left};
     width: 50%;
     height: 100%;
-    transform: skewX(-7.5deg);
+    transform: skewX(-#{$angle}deg);
     background: inherit;
     z-index: -1;
   }
 }
-@mixin right-slant {
+@mixin right-slant($angle: 7.5, $right: -.8rem) {
   position: relative;
   z-index: 1;
   &::after {
@@ -88,10 +88,10 @@
     display: block;
     position: absolute;
     top: 0;
-    right: -.8rem;
+    right: #{$right};
     width: 50%;
     height: 100%;
-    transform: skewX(-7.5deg);
+    transform: skewX(-#{$angle}deg);
     background: inherit;
     z-index: -1;
   }

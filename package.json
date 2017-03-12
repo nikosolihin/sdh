@@ -1,6 +1,6 @@
 {
   "name": "sekolah-dian-harapan",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A website redesign project for Sekolah Dian Harapan",
   "engines": {
     "node": ">=0.12.0 ~6.9.0",
@@ -33,7 +33,7 @@
     "del": "2.2.0",
     "express": "4.13.4",
     "flickity": "^2.0.5",
-    "fontfaceobserver": "^2.0.8",
+    "fontfaceobserver": "^2.0.9",
     "google-maps": "^3.2.1",
     "gsap": "^1.19.1",
     "gulp": "3.9.1",
@@ -103,7 +103,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "fontfaceobserver": "^2.0.8",
     "normalize.css": "^5.0.0"
   }
 }

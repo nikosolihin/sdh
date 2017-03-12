@@ -2,58 +2,60 @@
 
 {% if locale == 'id_ID' %}
   {% set language = __('Indonesian', 'sdh') %}
+  {% set language_link = languages.id %}
+  {% set language_other = __('English', 'sdh') %}
+  {% set language_other_link = languages.en %}
 {% elseif locale == 'en_US' %}
   {% set language = __('English', 'sdh') %}
+  {% set language_link = languages.en %}
+  {% set language_other = __('Indonesian', 'sdh') %}
+  {% set language_other_link = languages.id %}
 {% endif %}
-
 <header class="Header">
 
 <nav class="Header-secondary" role="navigation">
-  <div class="flex-wrapper">
-    <div class="Header-languages">
-      <svg aria-hidden="true" role="presentation" title="Select Language">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-      </svg>
-      <span class="h7 medium white">{{language|title}}</span>
-      <svg aria-hidden="true" role="presentation" title="Select Language">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
-      </svg>
-      <div class="Header-languagesDropdown">
-        {% if 'en' in languages.list and locale != 'en_US' %}
-          <a href="{{languages.en}}" class="h7 medium white">{{__('English', 'sdh')}}</a>
-        {% endif %}
-        {% if 'id' in languages.list and locale != 'id_ID' %}
-          <a href="{{languages.id}}" class="h7 medium white">{{__('Indonesian', 'sdh')}}</a>
-        {% endif %}
-      </div>
+
+  <div class="Header-pusher"></div>
+
+  <div class="Header-languages">
+    <svg aria-hidden="true" role="presentation" title="Select Language">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+    </svg>
+    <span class="h7 medium white">{{language|title}}</span>
+    <svg aria-hidden="true" role="presentation" title="Select Language">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+    </svg>
+    <div class="Header-languagesDropdown">
+      <a href="{{language_other_link}}" class="h7 medium white">{{language_other}}</a>
     </div>
-    <div class="Header-slogan h7 medium">{{slogan}}</div>
   </div>
 
-  <div class="flex-wrapper">
-    <div class="flex-wrapper">
-      <a href="{{site.url}}/news" class="Header-quicklinks h7 medium yellow">
-        <svg aria-hidden="true" role="presentation" title="See our school news">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
-        </svg>School News
-      </a>
-      <a href="{{site.url}}/events" class="Header-quicklinks h7 medium yellow">
-        <svg aria-hidden="true" role="presentation" title="See our events">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
-        </svg>Event Calendar
-      </a>
-    </div>
-    <ul class="Header-secondaryList List List--inline">
-      {% for item in secondary_menu %}
-        <li><a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a></li>
-      {% endfor %}
-    </ul>
-    <a href="" class="Header-search" data-component="search">
-      <svg aria-hidden="true" role="presentation" title="Search SDH Website">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
-      </svg>
+  <div class="Header-slogan h7 medium white">{{slogan}}</div>
+
+  <div class="Header-quicklinks">
+    <a href="{{site.url}}/news" class="Header-quicklink h7 medium yellow">
+      <svg aria-hidden="true" role="presentation" title="See our school news">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
+      </svg><span>{{__('School News', 'sdh')}}</span>
+    </a>
+    <a href="{{site.url}}/events" class="Header-quicklink h7 medium yellow">
+      <svg aria-hidden="true" role="presentation" title="See our events">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+      </svg><span>{{__('Event Calendar', 'sdh')}}</span>
     </a>
   </div>
+
+  <div class="Header-secondaryList">
+    {% for item in secondary_menu %}
+      <a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a>
+    {% endfor %}
+  </div>
+
+  <a href="" class="Header-search" data-component="search">
+    <svg aria-hidden="true" role="presentation" title="Search SDH Website">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+    </svg>
+  </a>
 </nav>
 
 <div class="Header-nav">

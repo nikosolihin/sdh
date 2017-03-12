@@ -2,7 +2,7 @@
   <h5 class="h7 white caps medium spaced">{{__('Quicklinks', 'sdh')}}</h5>
 
   {% if 'registration' in campus_quicklinks %}
-    <a href="{{post.link}}details" class="SingleCampus-quicklink">
+    <a href="{{post.link|trim('/')}}/details#info" class="SingleCampus-quicklink">
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apply"></use>
       </svg><h3 class="h5 noMargin">{{__('Registration', 'sdh')}}</h3>
@@ -18,7 +18,7 @@
   {% endif %}
 
   {% if 'registration' in campus_quicklinks %}
-    <a href="{{post.link}}details" class="SingleCampus-quicklink">
+    <a href="{{post.link|trim('/')}}/details#info" class="SingleCampus-quicklink">
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
       </svg><h3 class="h5 noMargin">{{__('School Schedule', 'sdh')}}</h3>

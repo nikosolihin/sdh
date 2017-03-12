@@ -1,10 +1,21 @@
 .SingleCampus {
+  padding-bottom: $single*4;
 
+  &-facilities {
+    font-size: 1.2rem / 1.45;
+    margin-bottom: $single*2;
+    @include from(lg) {
+      font-size: 1.3rem / 1.45;
+    }
+  }
   &-message {
     box: vertical center;
     position: relative;
     width: 100%;
-    margin-top: 8rem; // must be larger than photo's top value
+    margin-top: 5.5rem;
+    @include from(lg) {
+      margin-top: 8rem; // must be larger than photo's top value
+    }
   }
   &-photo {
     @include cover;
@@ -18,23 +29,57 @@
   &-messageBody {
     background-color: #F5F9FC;
     border-radius: 4px;
-    padding: $single*7 $single*5 $single*3;
+
+    padding: $single*5 $single*1.25 $single*3;
+    @include from(lg) {
+      padding: $single*7 $single*5 $single*3;
+    }
+    p:not([class]) {
+      font-size: $font-size-h5;
+      @include from(lg) {
+        font-size: $font-size-h4;  
+      }
+    }
     h2 {
       display: block;
       position: relative;
-      font-size: 42px;
       text-align: center;
-      margin-bottom: $single*5.5;
+      font-size: 32px;
+      margin-bottom: $single*3;
+      @include from(lg) {
+        font-size: 42px;
+        margin-bottom: $single*5.5;
+      }
       &::after {
         content: '';
         position: absolute;
         left: 50%;
-        bottom: -$single*2.5;
         transform: translateX(-50%);
         height: 3px;
         width: 2.75rem;
         background-color: $yellow;
+        bottom: -$single*1.5;
+        @include from(lg) {
+          bottom: -$single*2.5;
+        }
       }
+    }
+  }
+  &-messageShare {
+    box: horizontal middle center;
+    margin-top: $single*3;
+    .Share-title {
+      margin-bottom: 0;
+      margin-right: $threefourth;
+    }
+    .Share-button {
+      margin-bottom: 0;
+      svg {
+        size: $single;
+      }
+    }
+    .Share-socialMedia {
+      box: horizontal middle;
     }
   }
   &-news {
@@ -45,19 +90,40 @@
     &:last-child {
       padding-top: $single;
     }
+    // If on mobile, only display 1 news and event item
+    .Feed-item:nth-child(n+2) {
+      display: none;
+      @include from(lg) {
+        display: inherit;
+      }
+    }
   }
   &-maps {
     position: relative;
     &Locations {
       position: absolute;
       top: 50%;
-      left: 12%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
       z-index: 1000;
       min-width: $single*16;
       border-radius: 4px;
       background-color: #fafafa;
       box-shadow: 0 5px 10px rgba(0,0,0,.15);
+      @include from(md) {
+        top: 50%;
+        left: 3%;
+        transform: translate3d(0, -50%, 0);
+      }
+      @include from(lg) {
+        left: 6%;
+      }
+      @include from(xl) {
+        left: 8%;
+      }
+      @include from(xxl) {
+        left: 12%;
+      }
     }
     &Button {
       display: block;
@@ -96,7 +162,12 @@
       }
     }
     #Map {
-      height: $single*30;
+      height: $single*26;
+    }
+    &--tall {
+      #Map {
+        height: $single*35;
+      }
     }
   }
 
@@ -117,4 +188,16 @@
     }
   }
 
+  &-mapsLaunch {
+    display: none !important;
+    @include from(md) {
+      display: inline-block !important;
+    }
+  }
+  &-mapsLaunchMobile {
+    display: inline-block !important;
+    @include from(md) {
+      display: none !important;
+    }
+  }
 }

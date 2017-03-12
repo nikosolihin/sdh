@@ -3,10 +3,6 @@
     "title": "Maps",
     "fields": [
         {
-            "height": "",
-            "center_lat": "",
-            "center_lng": "",
-            "zoom": "",
             "key": "field_576048fbed8e9",
             "label": "",
             "name": "map",
@@ -18,14 +14,13 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "center_lat": "-6.2187765",
+            "center_lng": "106.6258711",
+            "zoom": "",
+            "height": ""
         },
         {
-            "default_value": 0,
-            "message": "Show an info bubble for the pinned location?",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
             "key": "field_5761764a3565e",
             "label": "",
             "name": "with_info",
@@ -37,21 +32,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 0,
+            "message": "Show an info bubble for the pinned location?",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
-            "standard_buttons": [
-                "bold",
-                "italic",
-                "underline",
-                "removeFormat"
-            ],
-            "other_options": [
-                "disableDoubleReturn",
-                "disableExtraSpaces"
-            ],
-            "placeholder": "",
-            "default_value": "",
             "key": "field_576176af3565f",
             "label": "Bubble Content",
             "name": "info",
@@ -72,6 +60,18 @@
                 "class": "",
                 "id": ""
             },
+            "standard_buttons": [
+                "bold",
+                "italic",
+                "underline",
+                "removeFormat"
+            ],
+            "other_options": [
+                "disableDoubleReturn",
+                "disableExtraSpaces"
+            ],
+            "placeholder": "",
+            "default_value": "",
             "custom_buttons": "",
             "delay": 0
         }
@@ -93,5 +93,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Maps",
-    "modified": 1486047835
+    "modified": 1488952216
 }

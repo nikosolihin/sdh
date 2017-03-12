@@ -1,9 +1,19 @@
+{% if wp_title %}
+  {% set title = wp_title ~ ' | ' ~ site.name %}
+{% else %}
+  {% set title = site.name %}
+{% endif %}
+
+{% set description = acf.teaser is defined ? acf.teaser : og_desc %}
+{% set image = acf.image|serveImage %}
+{% set imageSquare = acf.image|serveSquareImage %}
+
 <meta property="og:locale" content="{{locale}}" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="{{post.title}} | {{ site.name }}">
-<meta property="og:description" content="{{acf.teaser}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
 {# Follow Facebook's recommendation of a minimum dimension of 1200x630 pixels and an aspect ratio of 1.91:1, but adhere to Twitter's file size requirement of less than 1MB #}
-<meta property="og:image" content="{{acf.image|serveImage['xxl']}}">
+<meta property="og:image" content="{{image.xl}}">
 <meta property="og:url" content="{{post.link}}">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -18,4 +28,4 @@
 <meta name="twitter:image:alt" content="{{post.title}}">
 
 {# Chrome Mobile Theme #}
-<meta name="theme-color" content="#202F67">
+<!-- <meta name="theme-color" content="#162231"> -->

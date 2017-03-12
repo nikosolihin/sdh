@@ -110,6 +110,9 @@ $headings-line-height:         1.25 !default;
 //=============================================
 
 // Z-Index ///////////////////////////////////
+$zindex-burger:                  7500 !default;
+$zindex-mobile-header:           7000 !default;
+
 $zindex-announcement:            6100 !default;
 $zindex-loader:                  6000 !default;
 
@@ -132,12 +135,6 @@ $zindex-hero:                    3000 !default;
 // Components
 //=============================================
 
-// // Sidebar ////////////////////////////////////
-// $sidebar-font-size:             .925rem !default;
-// $sidebar-color:                 lighten($body-color, 10%) !default;
-// $sidebar-heading-color:         $body-color !default;
-// $sidebar-border-top:            8px solid #ddd;
-//
 // // Callout ///////////////////////////////////
 $callout-bg:                    lighten($black, 97%) !default;
 // $callout-padding:               $single*3.5 !default;
@@ -154,30 +151,7 @@ $loader-color:                 $orange !default;
 $banner-small-height:          450px !default;
 $banner-large-height:          650px !default;
 
-// // Gallery //////////////////////////////////
-// $gallery-color:                 #ccc !default;
-// $gallery-bg-color:              #181818 !default;
-// $gallery-thumbnail-size:        60px !default;
-// $gallery-selected-border:       3px solid $white !default;
-
 // Figures //////////////////////////////////
 $figure-caption-font-size:      90% !default;
 $figure-caption-line-height:    1.4 !default;
 $figure-caption-color:          #ababab !default;
-
-// // Footer ////////////////////////////////
-// $footer-bg-color:               #171717 !default;
-// $footer-parent-color:           $white !default;
-// $footer-children-color:         #ccc !default;
-// $footer-legal-bg:               #690000 !default;
-//
-// // Pills ///////////////////////////////////
-// $pill-color:                   #fff !default;
-// $pill-font-weight:             $font-weight-bold !default;
-// $pill-line-height:             1 !default;
-// $pill-font-size:               .8rem !default;
-// $pill-padding:                 .35rem $half !default;
-// $pill-padding-outline:         ($quarter - .105rem) ($threefourth - .105rem) !default;
-//
-// // Cards ///////////////////////////////////
-// $card-height:               $single*10.5 !default;

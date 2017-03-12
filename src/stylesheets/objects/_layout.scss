@@ -1,12 +1,6 @@
 .wrapper {
-  // max-width: $wrapper-width; //1600px
   position: relative;
   margin: 0 auto;
-  // padding-left: 8%;
-  // padding-right: 8%;
-  // &--narrow {
-  //   max-width: $wrapper-narrow-width; // 1440px
-  // }
 }
 
 .flex-wrapper {
@@ -24,43 +18,16 @@
     max-width: $container-landing-width;
   }
 
-  // &--max {
-  //   @include from($desktop) {
-  //     // min-width: $container-width;
-  //   }
-  // }
-  // &--nopadding {
-  //   padding: 0;
-  // }
-  //
-  // //=== Text Containers ===
-  // &--text {
-  //   // max-width: $container-text-width;
-  //   width: $container-text-width;
-  // }
-  // &--text-max {
-  //   @include from(lg) {
-  //     min-width: $container-text-width;
-  //   }
-  // }
-  // &--text-nosidebar {
-  //   max-width: $container-text-nosidebar-width;
-  // }
-  //
-  // //=== Container Alignment ===
-  // &--left {
-  //   margin: 0 auto 0 0;
-  // }
-  // &--right {
-  //   margin: 0 0 0 auto;
-  // }
-  //
   //=== Spacing ===
   &--spacedTop {
-    margin-top: $single*4;
+    @include from(md) {
+      margin-top: $single*4;
+    }
   }
   &--spacedBottom {
-    margin-bottom: $single*4;
+    @include from(md) {
+      margin-bottom: $single*4;  
+    }
   }
 }
 
@@ -130,9 +97,4 @@
     // Single column dont need borders
     border: 0;
   }
-}
-
-.four-o-four {
-  // Dont know where else to put this
-  margin: $single*4 auto;
 }

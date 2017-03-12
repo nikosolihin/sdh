@@ -1,5 +1,13 @@
 <?php
 //=============================================
+// Search Page -
+// so /search doesn't lead to a page.
+//=============================================
+Routes::map('search', function($params){
+  Routes::load('search.php');
+});
+
+//=============================================
 // Campus
 //=============================================
 Routes::map('campuses/:location/', function($params){

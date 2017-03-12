@@ -10,16 +10,22 @@
 {% endif %}
 
 {# Create subnav manually since wp_list_pages ain't gonna help here #}
-<nav class="Subnav" role="navigation">
+<nav class="Subnav" role="navigation" data-component="subnav">
+  <div class="Subnav-explore">
+    <span class="h6 medium">{{__('Explore This Section', 'sdh')}}</span>
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+    </svg>
+  </div>
   <ul class="Subnav-list List">
     <li class="is-Active"><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
-    <li><a href="{{post.link}}details">{{__('Campus Information', 'sdh')}}</a></li>
-    <li><a href="{{post.link}}facilities">{{__('Facilities', 'sdh')}}</a></li>
+    <li><a href="{{ post.link|trim('/') }}/details">{{__('Campus Information', 'sdh')}}</a></li>
+    <li><a href="{{ post.link|trim('/') }}/facilities">{{__('Facilities', 'sdh')}}</a></li>
   </ul>
 </nav>
 
-<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
-  <div class="SinglePage-content content-body">
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container SingleCampus">
+  <div class="SinglePage-content">
     <div class="Intro">
       <div class="Intro-breadcrumb">
         {% include 'components/breadcrumb.twig' %}
@@ -30,6 +36,10 @@
       <div class="SingleCampus-messageBody">
         <h2 class="h2 light navy">{{__('Message from the Principal', 'sdh')}}</h2>
         {{message}}
+        <p class="h7 spaced caps medium orange">{{principal}}</p>
+        <div class="SingleCampus-messageShare">
+          {% include 'components/social-share.twig' %}
+        </div>
       </div>
     </div>
   </div>

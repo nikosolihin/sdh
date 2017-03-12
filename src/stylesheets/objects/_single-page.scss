@@ -1,18 +1,59 @@
 .SinglePage {
-  box: horizontal;
-  padding: $single*5 0;
+  padding: $single*1.5 0;
+  box: vertical;
+  @include from(lg) {
+    padding: $single*5 0;
+    box: horizontal;
+  }
 
   &-content {
     flex: 1;
+    padding: $single*1.25;
+    @include to(md) {
+      order: 2;
+    }
+  }
+
+  &-sidebar {
+    @include to(md) {
+      order: 1;
+    }
   }
 
   &--noSidebar {
     // Some components need smaller width when using the without-sidebar template
-
     [class="row"] > .column > .Editor {
       // In a one column layout, slim out editor
       max-width: $container-text-width;
       margin: 0 auto;
+    }
+  }
+
+  @at-root .single-news #{&} {
+    padding-top: 0;
+    padding-bottom: $single*4;
+    border-top: 1px solid $line;
+    @include from(lg) {
+      padding: $single*1.5 0;
+      border-top: 0;
+    }
+
+    &-content {
+      @include to(md) {
+        order: 1;
+        padding-bottom: 0;
+      }
+    }
+    &-share {
+      @include to(md) {
+        order: 2;
+      }
+    }
+    &-sidebar {
+      display: none;
+      @include from(lg) {
+        display: block;
+      }
     }
   }
 }

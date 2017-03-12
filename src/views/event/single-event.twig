@@ -5,11 +5,11 @@
 
 <div class="SingleEvent">
   <div class="container">
-    <div class="Share">
+    <div class="Share Share--horizontal">
       {% include 'components/social-share.twig' %}
     </div>
 
-    <div class="SingleEvent-content content-body">
+    <div class="SingleEvent-content">
       <div class="Intro Intro--withMeta">
         <div class="Intro-breadcrumb">
           {% include 'components/breadcrumb.twig' %}
@@ -17,8 +17,8 @@
         <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
         <div class="Intro-meta h7 caps spaced medium faint">{{campus}}</div>
 
-        {% if acf.gcal.description %}
-          <p>{{acf.description}}</p>
+        {% if gcal.description %}
+          <p>{{gcal.description}}</p>
         {% endif %}
       </div>
     </div>
@@ -29,16 +29,15 @@
       </div>
 
       <div class="SingleEvent-meta">
-
         {# Set up repeating event #}
         {% set eventDate = "" %}
-        {% if event_children_date %}
+        {% if gcal.event_children_date %}
           {# If this event is repeating forever, only grab 4 repetitions (one month) #}
-          {% for repeat in event_children_date|slice(0, 4) %}
+          {% for repeat in gcal.event_children_date|slice(0, 4) %}
             {% set eventDate = eventDate ~ repeat ~ "<br>"%}
           {% endfor %}
         {% else %}
-          {% set eventDate = event_date %}
+          {% set eventDate = gcal.event_date %}
         {% endif %}
 
         <div class="SingleEvent-metaItem">
@@ -48,49 +47,31 @@
           <span class="h5 medium faint">{{eventDate}}</span>
         </div>
 
-        {% if event_time %}
+        {% if gcal.event_time %}
           <div class="SingleEvent-metaItem">
             <svg aria-hidden="true" role="presentation" title="Event Time">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
             </svg>
-            <span class="h5 medium faint">{{event_time}}</span>
+            <span class="h5 medium faint">{{gcal.event_time}}</span>
           </div>
         {% endif %}
 
-        {% if acf.gcal.location %}
+        {% if gcal.location %}
           <div class="SingleEvent-metaItem">
             <svg aria-hidden="true" role="presentation" title="Event School">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
             </svg>
-            <span class="h5 medium faint">SDH {{campus}}<br>{{acf.gcal.location}}</span>
+            <span class="h5 medium faint">SDH {{campus}}<br>{{gcal.location}}</span>
           </div>
         {% endif %}
       </div>
 
-      {% if events %}
-      <h3 class="h7 navy spaced medium caps">{{__('Events at SDH', 'sdh')}} {{campus}}</h3>
-      <div class="Feed Feed--object Feed--event">
-        <div class="Feed-body">
-          {% for post in events %}
-            <a class="Feed-item" href="{{post.link}}">
-              <div class="Feed-media">
-                <div class="Feed-mediaMonth h7 medium caps white center">{{post.date|date('d M')[3:3]|upper}}</div>
-                <div class="Feed-mediaDay medium white center">{{post.date|date('d M')[0:2]}}</div>
-              </div>
-              <div class="flex-wrapper">
-                <p class="Feed-title h5 bold">{{post.title}}</p>
-                <span class="Feed-meta h6 medium faint">
-                  <svg aria-hidden="true" role="presentation" title="Event Location">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-                  </svg>{{post.teaser|slice(0,60)~'...'}}
-                </span>
-              </div>
-            </a>
-          {% endfor %}
-        </div>
+      {# Other events at this school #}
+      <div class="SingleEvent-others">
+        <h3 class="h7 navy spaced medium caps">{{__('Events at', 'sdh')}} {{campus}}</h3>
+        {% include 'components/feed.twig' with {data: events, empty: __('There are currently no events at this school.', 'sdh')} %}
+        <a href="{{site.url}}/events" class="Button Button--gray Button--block Button--withMargin">{{__('See All', 'sdh')}}</a>
       </div>
-      <a href="#" class="Button Button--gray Button--block">{{__('See All', 'sdh')}}</a>
-      {% endif %}
 
     </div>
   </div>

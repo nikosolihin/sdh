@@ -10,7 +10,7 @@ export default class News {
     this.$control = $(el).find('.ArchiveNews-control')
 
     // Others
-    this.$loader = $("#Loader")
+    this.$loader = $(".Loader")
     this.resultArea = ".ArchiveNews-content"
     this.$resultArea = $(".ArchiveNews-content")
     this.$pagination = $(".Pagination-pages")
@@ -133,13 +133,13 @@ export default class News {
       dataType : "json",
       beforeSend: () => {
         this.$resultArea.toggleClass('ArchiveNews-content--fadeOut')
-        this.$loader.toggleClass('Loader--show')
+        this.$loader.toggleClass('Loader--fadeIn')
       }
     })
     .always( () => {
       this.$resultArea.empty()
       this.$pagination.empty()
-      this.$loader.toggleClass('Loader--show')
+      this.$loader.toggleClass('Loader--fadeIn')
       this.$resultArea.toggleClass('ArchiveNews-content--fadeOut')
     })
     .done( (data, status, xhr) => {

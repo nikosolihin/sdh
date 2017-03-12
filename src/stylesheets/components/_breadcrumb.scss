@@ -1,6 +1,10 @@
 .Breadcrumb {
   @include normalist;
   margin-bottom: $single;
+  display: none;
+  @include from(lg) {
+    display: block;
+  }
   &-item {
     position: relative;
     display: inline-block;

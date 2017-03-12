@@ -1,8 +1,10 @@
-{% set image = data.figure|serveImage %}
-{% set imageSquare = data.figure|serveSquareImage %}
-
 {% if data.crop %}
   {# Square Image #}
+  {% if data.figure and data.figure is iterable %}
+    {% set imageSquare = data.figure|serveSquareImage %}
+  {% else %}
+    {% set imageSquare = fallback.image %}
+  {% endif %}
   <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
     <picture>
       <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -12,12 +14,19 @@
         <source data-srcset="{{imageSquare.sm}}">
       <!--[if IE 9]></video><![endif]-->
       {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{imageSquare.lg}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <img alt="{{data.figure.title}}" class="lazyload" data-src="{{imageSquare.lg}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     </picture>
-    <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>
+    {% if data.caption %}
+      <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>
+    {% endif %}
   </figure>
 {% else %}
   {# Normal Image #}
+  {% if data.figure and data.figure is iterable %}
+    {% set image = data.figure|serveImage %}
+  {% else %}
+    {% set image = fallback.image %}
+  {% endif %}
   <figure class="{{'Figure'|modifiers("#{data.direction}")}}">
     <picture>
       <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -29,7 +38,7 @@
         <source data-srcset="{{image.xs}}">
       <!--[if IE 9]></video><![endif]-->
       {# Fallback with transparent LQIP #}
-      <img alt="{{image.title}}" class="lazyload" data-src="{{image.xl}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <img alt="{{data.figure.title}}" class="lazyload" data-src="{{image.xl}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     </picture>
     {% if data.caption %}
       <figcaption class="Figure-caption h6">{{data.caption}}</figcaption>

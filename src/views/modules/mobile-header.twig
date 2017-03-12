@@ -1,0 +1,130 @@
+{% if locale == 'id_ID' %}
+  {% set language = __('Indonesian', 'sdh') %}
+  {% set language_link = languages.id %}
+  {% set language_other = __('English', 'sdh') %}
+  {% set language_other_link = languages.en %}
+{% elseif locale == 'en_US' %}
+  {% set language = __('English', 'sdh') %}
+  {% set language_link = languages.en %}
+  {% set language_other = __('Indonesian', 'sdh') %}
+  {% set language_other_link = languages.id %}
+{% endif %}
+
+<div class="MobileHeader-container">
+  <a class="MobileHeader-logo" href="{{site.url}}">
+    <div class="Header-seal">
+      <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+      </svg>
+    </div>
+    <div class="Header-textLogo">
+      <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+      </svg>
+    </div>
+  </a>
+  <div class="MobileHeader-burger">
+    <span class="h7 spaced caps medium white MobileHeader-burgerLabel">Menu</span>
+    <div class="Burger">
+      <div class="Burger-box">
+        <div class="Burger-inner"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="MobileHeader" data-component="mobile-header">
+  <div class="MobileHeader-wrapper">
+
+  <div class="MobileHeader-topbar">
+    <form class="MobileSearch-form " role="form" action="{{site.url}}/search" accept-charset="UTF-8" method="get">
+      <input class="MobileSearch-input h6 normal white" id="Search-input" type="text" name="q" autocomplete="off" placeholder="{{__('What can we help you find?', 'sdh')}}">
+      <div class="MobileSearch-icon">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+      </div>
+    </form>
+  </div>
+
+  <nav class="MobileHeader-nav" role="navigation">
+    {% for item in primary_menu %}
+      <div class="MobileHeader-links">
+        <div class="flex-wrapper MobileHeader-link">
+          <span class="h4 medium white">{{item.title}}</span>
+          <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+        <div class="MobileHeader-sub">
+          {% for child in item.children %}
+            <a href="{{child.link}}" class="MobileHeader-subLink h6 normal white">{{child.title}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    {# Our Campuses #}
+    <div class="MobileHeader-links">
+      <div class="flex-wrapper MobileHeader-link">
+        <span class="h4 medium white">{{__('Our Campuses', 'sdh')}}</span>
+        <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+        </svg>
+      </div>
+      <div class="MobileHeader-sub">
+        {% for campus in campuses %}
+          <a href="{{campus.link}}" class="MobileHeader-subLink h6 normal white">{{campus.name|title}}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <nav class="MobileHeader-secondaryNav">
+    <div class="flex-wrapper">
+      <h3 class="h7 medium caps spaced orange">{{__('Audiences', 'sdh')}}</h3>
+      {% for item in secondary_menu %}
+        <a href="{{item.link}}" class="MobileHeader-secondaryLink h6 medium white">{{item.title}}</a>
+      {% endfor %}
+    </div>
+    <div class="flex-wrapper">
+      <h3 class="h7 medium caps spaced orange">{{__('Quicklinks', 'sdh')}}</h3>
+      <a href="" class="MobileHeader-secondaryLink h6 medium white">For Parents</a>
+      <a href="" class="MobileHeader-secondaryLink h6 medium white">For Alumni</a>
+      <a href="" class="MobileHeader-secondaryLink h6 medium white">For Students</a>
+    </div>
+  </nav>
+
+  <div class="MobileHeader-misc">
+    <div class="MobileHeader-language">
+      <h3 class="h7 medium caps spaced orange">{{__('Languages', 'sdh')}}</h3>
+      <a href="{{language_link}}" class="MobileHeader-languageLink h6 medium MobileHeader-languageLink--active">{{language}}</a>
+      <a href="{{language_other_link}}" class="MobileHeader-languageLink h6 medium">{{language_other}}</a>
+    </div>
+    <div class="MobileHeader-social">
+      <h3 class="h7 medium caps spaced orange">{{__('Stay Connected', 'sdh')}}</h3>
+      <div class="flex-wrapper">
+        {% for name, link in social %}
+          {% if name == 'facebook' %}
+            {# Use the plain facebook icon #}
+            {% set name = 'fbook' %}
+          {% endif %}
+          {% if link %}
+          <a href="{{link}}" class="flex">
+            <svg aria-hidden="true" role="presentation" title="{{name}}">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+            </svg>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="MobileHeader-watermark">
+  <svg aria-hidden="true" role="presentation" title="">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+  </svg>
+</div>
+</header>

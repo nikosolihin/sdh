@@ -15,7 +15,6 @@
 
   <div class="CustomSearch container">
     <div class="CustomSearch-sidebar Sidebar">
-      <h3 class="Lead">{{__('Filter Search', 'saat')}}</h3>
       <div class="CustomSearch-sidebarBody">
         {# Sidebar Builder #}
         {% if sidebar_sections %}
@@ -23,11 +22,13 @@
         {% endif %}
       </div>
     </div>
+
     <div class="CustomSearch-result">
       {# Breadcrumb #}
-      {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
-
-      <h2 class="Lead Lead--section brand">{{__('Search', 'saat')}}</h2>
+      {% include 'components/breadcrumb.twig' %}
+      <div class="Intro">
+        <h1 class="Intro-heading h2 light navy">{{__('Search', 'sdh')}}</h1>
+      </div>
       <gcse:search linktarget="_parent"></gcse:search>
     </div>
   </div>

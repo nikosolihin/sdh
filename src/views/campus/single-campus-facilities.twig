@@ -4,16 +4,22 @@
 {% include 'campus/single-campus-banner.twig' %}
 
 {# Create subnav manually since wp_list_pages ain't gonna help here #}
-<nav class="Subnav" role="navigation">
+<nav class="Subnav" role="navigation" data-component="subnav">
+  <div class="Subnav-explore">
+    <span class="h6 medium">{{__('Explore This Section', 'sdh')}}</span>
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+    </svg>
+  </div>
   <ul class="Subnav-list List">
     <li><a href="{{post.link}}">{{__('Welcome', 'sdh')}}</a></li>
-    <li><a href="{{post.link}}details">{{__('Campus Information', 'sdh')}}</a></li>
-    <li class="is-Active"><a href="{{post.link}}facilities">{{__('Facilities', 'sdh')}}</a></li>
+    <li><a href="{{ post.link|trim('/') }}/details">{{__('Campus Information', 'sdh')}}</a></li>
+    <li class="is-Active"><a href="{{ post.link|trim('/') }}/facilities">{{__('Facilities', 'sdh')}}</a></li>
   </ul>
 </nav>
 
 <div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
-  <div class="SinglePage-content content-body">
+  <div class="SinglePage-content">
     <div class="Intro">
       <div class="Intro-breadcrumb">
         {% include 'components/breadcrumb.twig' %}
@@ -21,7 +27,7 @@
       <h1 class="Intro-heading h2 light navy">{{__('Facilities', 'sdh')}}</h1>
     </div>
     <div class="row row--of-2">
-      <div class="column column-left h3 gray light">{{facilities_teaser}}</div>
+      <div class="SingleCampus-facilities column column-left h3 gray light">{{facilities_teaser}}</div>
       <div class="column column-right">
         {% include 'components/gallery.twig' with
           { 'data': facilities_gallery }

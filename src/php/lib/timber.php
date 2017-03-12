@@ -48,41 +48,20 @@ class StarterSite extends TimberSite {
 		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
 		$context['primary_menu'] = array();
+
 		foreach ($primary_menu as $menu) {
 			$parent = Timber::get_post($menu['parent']);
-
-			// At level 1, assume children
 			$children = array();
-			$singles = array();
 			foreach ($parent->get_children() as $child) {
-
-				// See if there are grand children
-				$grandchildren = array();
-				if ( !empty($child->get_children()) ) {
-					foreach ($child->get_children() as $grandchild) {
-						array_push($grandchildren, array(
-							'title' => $grandchild->title,
-							'link' => $grandchild->link
-						));
-					}
-					array_push($children, array(
-						'title' => $child->title,
-						'link' => $child->link,
-						'grandchildren' => $grandchildren
-					));
-				} else {
-					// If empty put it in a different bucket
-					array_push($singles, array(
-						'title' => $child->title,
-						'link' => $child->link
-					));
-				}
+				array_push($children, array(
+					'title' => $child->title,
+					'link' => $child->link
+				));
 			}
 			array_push($context['primary_menu'], array(
 				'title' => $parent->title,
 				'link' => $parent->link,
-				'children' => $children,
-				'singles' => $singles
+				'children' => $children
 			));
 		}
 
@@ -199,20 +178,6 @@ class StarterSite extends TimberSite {
 			}
 		}
 
-		// // Add post types archives to single footer list
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('Events', 'saat'),
-		// 	'link' => $this->url . "/events/"
-		// ));
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('News', 'saat'),
-		// 	'link' => $this->url . "/news/"
-		// ));
-		// array_push($context['footer']['singles'], array(
-		// 	'title' => __('Media', 'saat'),
-		// 	'link' => $this->url . "/media/"
-		// ));
-
 		// Site Announcement
 		if ( get_field('announcement_status', 'option') == 'on' ) {
 			$link_type = get_field('announcement_link_type', 'option');
@@ -240,9 +205,8 @@ class StarterSite extends TimberSite {
 		$context['feedback'] = get_field('feedback', 'option');
 
 		// Languages URLs
-		$context['languages']['en'] = "https://new.sdh.or.id/";
-		$context['languages']['id'] = "https://new.sdh.or.id/id";
-		$context['languages']['list'] = get_field('languages', 'option');
+		$context['languages']['en'] = get_field('language_en', 'option');
+		$context['languages']['id'] = get_field('language_id', 'option');
 
 		// Current URL
 		global $wp;
@@ -311,38 +275,6 @@ class StarterSite extends TimberSite {
 			}
 		});
 		$twig->addFilter($classfilter);
-
-		// //=============================================
-		// // Hide youtube controls
-		// //=============================================
-		// $classfilter = new Twig_SimpleFilter('modest', function ($embed) {
-		// 	return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0&rel=0", $embed);
-		// });
-		// $twig->addFilter($classfilter);
-		//
-		// //=============================================
-		// // Choose largest image for FB Share
-		// //=============================================
-		// $classfilter = new Twig_SimpleFilter('getLargest', function ($image) {
-		// 	if ($image) {
-		// 		// Get just the url addresses of images
-		// 		$images = array();
-		// 		foreach($image as $key => $value) {
-		// 			if(strpos($key, 'url_') !== false) {
-		// 				$images[$key] = $value;
-		// 			}
-		// 		}
-		// 		if (array_key_exists('url_h', $images)) {
-		// 			// If large 1600 exists, trash original and use that
-		// 			unset($images['url_o']);
-		// 			return $images['url_h'];
-		// 		} else {
-		// 			// If large 1600 doesn't exist, grab original
-		// 			return $images['url_o'];
-		// 		}
-		// 	}
-		// });
-		// $twig->addFilter($classfilter);
 
 		return $twig;
 	}

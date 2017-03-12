@@ -2,11 +2,119 @@
   @include cover;
   position: relative;
   z-index: $zindex-footer-bg;
-  padding: $single*7 0 $single*2.25;
   background-color: $white;
-
+  padding: $single*3 $single*1.25 $single;
+  @include from(lg) {
+    padding: $single*3.5 $single*1.25 $single;
+  }
+  @include from(xl) {
+    padding: $single*5 $single*1.25 $single;
+  }
+  @include from(xxl) {
+    padding: $single*5 0 $single;
+  }
   .List {
     margin-top: $threefourth;
+  }
+  &-info {
+    position: relative;
+    z-index: $zindex-footer-main;
+    margin-bottom: $single*1.25;
+    padding-bottom: $single*1.5;
+    border-bottom: 1px solid $line;
+    @include from(lg) {
+      box: horizontal left middle;
+      margin-bottom: $single*2.5;
+      padding-bottom: $single*1.5;
+    }
+    @include from(xl) {
+      padding-bottom: $single*1.75;
+      margin-bottom: $single*3.25;
+    }
+    &Logo {
+      box: horizontal center middle;
+      margin-bottom: $single;
+      @include from(lg) {
+        width: 18%;
+      }
+      svg {
+        fill: $navy;
+      }
+      .Header-seal {
+        height: $single*4;
+      }
+      .Header-textLogo {
+        display: none;
+        @include from(lg) {
+          display: block;
+        }
+      }
+    }
+    &Address {
+      flex: 1;
+      margin-bottom: $single*2;
+      @include from(md) {
+        box: horizontal wrap;
+      }
+      @include from(lg) {
+        padding-left: $single*2;
+        margin-bottom: 0;
+      }
+      @include from(xl) {
+        padding-left: $single;
+      }
+      p {
+        line-height: 1.4;
+      }
+      > .flex-wrapper {
+        text-align: center;
+        margin-bottom: $single;
+        @include from(lg) {
+          text-align: left;
+          padding-right: $single;
+        }
+        &:nth-child(1) {
+          @include from(md) {
+            width: 100%;
+            padding-right: $single*3;
+          }
+          @include from(xl) {
+            width: 50%;
+            padding-right: $single;
+          }
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          @include from(md) {
+            width: 50%;
+          }
+          @include from(xl) {
+            width: 25%;
+          }
+        }
+      }
+    }
+    &Social {
+      box: horizontal middle center;
+      @include from(xl) {
+        box: horizontal middle right;
+        align-self: flex-start;
+      }
+      a {
+        box: vertical middle center;
+        background-color: $navy;
+        border-radius: 50%;
+        size: $single*2.25;
+        margin-right: .65rem;
+        svg {
+          fill: $white;
+          size: $single;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   &::after {
@@ -15,26 +123,68 @@
     top: 0;
     left: 0;
     size: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9) 60%, $white);
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.9) 60%, $white);
   }
 
   &-primary {
     position: relative;
-    box: horizontal space-around;
+    box: horizontal wrap;
     z-index: $zindex-footer-main;
+    @include from(xl) {
+      box: horizontal space-between;
+    }
+  }
+
+  &-column {
+    display: none;
+    @include from(md) {
+      display: block;
+      width: 33.333%;
+      margin-bottom: $single*2;
+    }
+    @include from(lg) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      display: block;
+      width: 100%;
+      text-align: center;
+      @include from(md) {
+        width: 33.333%;
+        text-align: center;
+      }
+      @include from(lg) {
+        width: 20%;
+      }
+      .Footer-link {
+        width: 50%;
+        margin-bottom: .3rem;
+      }
+      > .flex-wrapper {
+        box: horizontal wrap;
+        padding-top: $threefourth;
+      }
+    }
   }
 
   &-link {
-    @include hover(#777, $orange);
+    @include hover(#666, $orange);
   }
 
   &-secondary {
     position: relative;
     box: horizontal middle space-between;
-    border-top: 1px solid #dedede;
-    margin-top: $single*5;
+    border-top: 1px solid #eee;
+    margin-top: $single*2;
     padding-top: $quarter;
     z-index: $zindex-footer-main;
+    @include from(md) {
+      margin-top: $half;
+    }
+    @include from(lg) {
+      border-top: 1px solid #dedede;
+      margin-top: $single*3.5;
+    }
     &Link {
       @include hover(#bbb, $orange);
       @at-root .home #{&} {
@@ -52,8 +202,21 @@
     }
   }
 
+  &-legal {
+    width: 100%;
+    text-align: center;
+    @include from(md) {
+      width: auto;
+    }
+  }
+
   &-essentials {
-    box: horizontal middle space-between;
+    display: none;
+    @include from(md) {
+      display: block;
+      box: horizontal middle;
+      // flex: 1;
+    }
   }
 
   &-languages {
@@ -62,12 +225,7 @@
     }
   }
 
-  &-legal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
+  // This is only for the homepage!
   &-social {
     box: horizontal;
     svg {
@@ -92,6 +250,17 @@
   }
 
   @at-root .home #{&} {
-    display: none;
+    display: block;
+    @include from(lg) {
+      display: none;
+    }
+    &-legal {
+      margin: 0 auto 0 $single;
+      @include from(xl) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 }

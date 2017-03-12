@@ -3,13 +3,19 @@
 
 {% if locale == 'id_ID' %}
   {% set language = __('Indonesian', 'sdh') %}
+  {% set language_link = languages.id %}
+  {% set language_other = __('English', 'sdh') %}
+  {% set language_other_link = languages.en %}
 {% elseif locale == 'en_US' %}
   {% set language = __('English', 'sdh') %}
+  {% set language_link = languages.en %}
+  {% set language_other = __('Indonesian', 'sdh') %}
+  {% set language_other_link = languages.id %}
 {% endif %}
+
 {% set placeholder_image = placeholder|serveImage %}
 
 <div class="Home" data-component="home">
-
 {% include 'components/loader.twig' with {'style': 'light'} %}
 
 <div class="Home-background" style="background-image: url({{placeholder_image.sm}})">
@@ -82,13 +88,8 @@
 
     <div class="Footer-languages">
       <span class="h7 medium white">{{__('Languages', 'sdh')}}:</span>
-      <a class="Footer-secondaryLink h7 medium Footer-secondaryLink--active">{{language}}</a>
-      {% if 'en' in languages.list and locale != 'en_US' %}
-        <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">{{__('English', 'sdh')}}</a>
-      {% endif %}
-      {% if 'id' in languages.list and locale != 'id_ID' %}
-        <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">{{__('Indonesian', 'sdh')}}</a>
-      {% endif %}
+      <a href="{{language_link}}" class="Footer-secondaryLink h7 medium Footer-secondaryLink--active">{{language}}</a>
+      <a href="{{language_other_link}}" class="Footer-secondaryLink h7 medium">{{language_other}}</a>
     </div>
   </div>
 
@@ -111,7 +112,8 @@
   </div>
 </div>
 </div>
-
 </div>
+
+{% include 'page/front-page-mobile.twig' %}
 
 {% endblock %}

@@ -1,6 +1,6 @@
 .Editor {
   font-size: $font-size-h5;
-  @include from($desktop) {
+  @include from(md) {
     font-size: $font-size-h4;
   }
   h2 {
@@ -18,8 +18,10 @@
   @at-root .Sidebar-section #{&} {
     font-size: $font-size-h5;
     h2 {
-      @extend .medium;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+    h3 {
+      @extend .h7, .medium, .caps, .spaced, .orange;
     }
   }
 

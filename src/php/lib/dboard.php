@@ -187,3 +187,12 @@ add_filter( 'http_request_args', function( $request, $url ) {
   }
   return $request;
 }, 10, 2 );
+
+/*=============================================*/
+/* Removing an erroneous upgrade notice
+/* when upgrade are managed through SVN
+/* https://codex.wordpress.org/Installing/Updating_WordPress_with_Subversion
+/*=============================================*/
+add_action( 'admin_menu', function() {
+  remove_action( 'admin_notices', 'update_nag', 3 );
+});

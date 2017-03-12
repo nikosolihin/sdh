@@ -1,20 +1,22 @@
 .Header {
+  display: none;
   width: 100%;
-
-  box: vertical;
   background-color: $white;
   border-bottom: 1px solid $line;
+  @include from(lg) {
+    box: vertical;
+  }
 
   &-logo {
     box: horizontal middle right;
     position: relative;
     z-index: 1;
-    top: -$single*1.7;
+    top: -$single*1.85;
     color: $navy;
     background-color: $white;
-    padding: $single $threefourth;
     border-left: 6px solid $orange;
     box-shadow: 2px 2px 10px rgba(0,0,0,.075);
+    padding: $threefourth;
   }
   &-seal {
     width: 28%;
@@ -46,7 +48,6 @@
   }
   &-primaryList {
     box: horizontal space-around;
-    // width: 85%;
   }
   &-primaryLink {
     @include hover(#777, $navy);
@@ -58,30 +59,81 @@
   }
 
   &-secondary {
-    color: white;
-    background-color: #203667;
-    box: horizontal space-between;
-    .flex-wrapper {
-      box: horizontal;
-    }
+    background-color: #26487c;
+    box: horizontal;
   }
   &-secondaryList {
-    border-left: 1px solid #26427C;
+    @include right-slant($right: -3.75rem);
+    box: horizontal;
+    background-color: $navy;
+    padding-right: $single;
+    overflow: hidden;
   }
   &-secondaryLink {
     @include hover(inherit, $yellow);
-    padding: .6rem $half;
-    margin: 0 $half;
+    box: horizontal middle;
+    padding: 0 $half;
+    height: 100%;
+  }
+
+  &-pusher {
+    width: 16.5%;
+  }
+
+  &-quicklinks {
+    @include left-slant();
+    box: horizontal right middle;
+    flex: 1;
+    background-color: $navy;
+    @include from(xl) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &-quicklink {
+    box: horizontal right middle;
+    color: $yellow;
+    padding: 0 $half;
+    height: 100%;
+    svg {
+      size: .85rem;
+      margin-right: $half;
+      @include from(xl) {
+        margin-right: 0;
+      }
+      @include from(xxl) {
+        margin-right: $half;
+      }
+    }
+    span {
+      line-height: 1;
+      @include from(xl) {
+        display: none;
+      }
+      @include from(xxl) {
+        display: inline;
+      }
+    }
+  }
+
+  &-slogan {
+    @include left-slant();
+    display: none;
+    line-height: 1;
+    padding-left: $half;
+    @include from(xl) {
+      box: vertical middle;
+      background-color: $navy;
+    }
   }
 
   &-languages {
-    @include right-slant;
     position: relative;
-    background-color: #26487c;
+    color: $white;
     cursor: pointer;
     box: horizontal middle space-between;
-    padding-left: $single*14;
-    padding-right: $half;
+    padding-right: $single*1.75;
     svg:first-of-type { // Globe
       size: 20px;
     }
@@ -97,52 +149,35 @@
     }
   }
 
-  &-slogan {
-    box: vertical middle center;
-    padding-left: $single*2;
-    line-height: 1;
-  }
-
   &-languagesDropdown {
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 18px;
     transform: translateY(100%);
-    padding-left: $single*11;
     background-color: #26487c;
     border-top: 1px solid $navy;
-
     transition: all .1s ease-in-out;
     visibility: hidden;
     opacity: 0;
     > a {
       display: block;
-      padding: $half $single*2.45 $half $single*3.25;
+      padding: $half $single*2.25 $half $single*3.5;
       &:hover {
         background-color: #203667;
       }
     }
   }
 
-  &-quicklinks {
-    box: horizontal middle;
-    color: $yellow;
-    margin-right: $single*1.25;
-    svg {
-      size: 17px;
-      margin-right: $half;
-    }
-  }
-
   &-search {
-    @include left-slant;
+    @include left-slant($left: -.3rem);
     box: horizontal middle center;
     transition: background-color .15s ease-in-out;
     color: white;
     background-color: $orange;
-    padding-left: $quarter;
-    padding-right: $single*1.5;
-    margin-left: $single*3;
+    padding: .65rem $single .65rem $threefourth;
+    @include from(xxl) {
+      margin-left: $single;
+    }
     svg {
       size: 22px;
     }
@@ -159,19 +194,20 @@
       cursor: pointer;
     }
     svg {
-      size: $single;
-      fill: $white;
+      size: .9rem;
+      fill: #aaa;
     }
     &Dropdown {
       box: vertical;
       position: absolute;
-      top: $single*3.75;
+      top: $single*3.65;
       left: 0;
+      z-index: $zindex-modal;
       min-width: $single*10.5;
-      background-color: rgba(255,255,255,.9);
+      background-color: $white;
       border-radius: 3px;
-      border-bottom: 3px solid $orange;
       padding: $threefourth 0;
+      box-shadow: 0 2px 7px rgba(0,0,0,.15);
       will-change: opacity, visibility, transform;
       visibility: hidden;
       opacity: 0;
@@ -224,6 +260,15 @@
       border-right: 0;
       border-bottom: 0;
       box-shadow: 6px 6px 0 rgba(2,42,72,0.5);
+    }
+    .Header-ourCampuses svg {
+      fill: $white;
+    }
+  }
+
+  @at-root .single-campus #{&} {
+    .Header-logo {
+      box-shadow: 2px 2px 10px rgba(0,0,0,.075);
     }
   }
 

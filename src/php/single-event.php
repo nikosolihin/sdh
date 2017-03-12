@@ -6,27 +6,25 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 $context['acf'] = get_fields();
-$gcal = $context['acf']['gcal'];
-
-// For event, gcal description is the content
-$context['acf']['description'] = $gcal['description'];
+$context['gcal'] = filterEvent($post);
+$context['og_desc'] = preg_replace('/\s+/', ' ', strip_tags(substr($context['gcal']['description'], 0, 300)));
 
 // Banner stuff
 $context['acf']['banner_size'] = 'small';
 
 // Get this event's campus
 $campus = $post->get_terms('campus')[0];
-$campus_id = $campus->id;
 $context['campus'] = $campus->name;
 
 // Get other upcoming events at this campus
-$context['events'] = getPosts( array(
-	'mode' => true,
-	'quantity' => 2,
-	'post_type' => 'event',
-	'feed_campus' => $campus_id,
-	'exclude' => $post->id
-));
+$context['events'] = array(
+  'post_type' => 'event',
+  'quantity' => 2,
+  'feed_campus' => $campus->slug,
+  'event_metadata' => array('date'),
+	// 'exclude' => $post->id,
+  'style' => 'object',
+);
 
 // Get Sidebar
 $inherit = $context['acf']['inherit'];

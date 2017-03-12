@@ -10,18 +10,18 @@
   transition-timing-function: linear;
   font: inherit;
   text-transform: none;
-  background-color: $brand-secondary;
+  background-color: transparent;
   border: 0;
   margin: 0;
   overflow: visible;
 
   &:hover {
-    background-color: $brand-highlight;
+    background-color: transparent;
   }
 
   &-box {
     width: 20px;
-    height: 25px;
+    height: 20px;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -66,9 +66,9 @@
 
   // State
   &--morph {
-    background-color: $brand-highlight;
+    background-color: transparent;
     &:hover {
-      background-color: $brand-highlight;
+      background-color: transparent;
     }
     .Burger-inner {
       transform: rotate(45deg);

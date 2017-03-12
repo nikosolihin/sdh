@@ -1,0 +1,186 @@
+.MobileHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-mobile-header;
+  width: 100%;
+  height: 100%;
+  padding: $single $single*1.5;
+  background-color: $navy;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  will-change: transform, opacity;
+  transition: transform .2s cubic-bezier(.175,.885,.24,1.11), opacity .2s ease-in;
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+  &--open {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    > .MobileHeader-watermark {
+      visibility: visible;
+    }
+  }
+
+  &-container {
+    box: horizontal space-between;
+    position: relative;
+    background-color: $navy;
+    height: $single*3.25;
+    @include from(lg) {
+      display: none;
+    }
+  }
+
+  &-burger {
+    @include left-slant($left:-.5rem);
+    cursor: pointer;
+    box: horizontal middle;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $zindex-burger;
+    padding-left: $threefourth;
+    // padding: 0 $single*3.25 0 $threefourth;
+    background-color: $navy;
+  }
+
+  &-logo {
+    @include right-slant($right:-.3rem);
+    width: $single*10;
+    box: horizontal middle;
+    // z-index: $zindex-mobile-header;
+    color: $navy;
+    padding: $threefourth;
+    background-color: $white;
+    border-left: 5px solid $orange;
+  }
+
+  &-extender {
+    background-color: $white;
+  }
+
+  &-wrapper {
+    position: relative;
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  &-topbar {
+    box: horizontal middle space-between;
+    width: 95%;
+    margin-bottom: $single;
+  }
+
+  &-close {
+    box: vertical middle center;
+    padding: $quarter;
+    svg {
+      size: $single*1.25;
+      fill: $white;
+    }
+  }
+
+  &-sub {
+    overflow: hidden;
+    max-height: 0;
+    will-change: max-height;
+    @at-root .MobileHeader-links--open #{&} {
+      max-height: $single*25;
+    }
+  }
+  &-subLink {
+    display: block;
+    padding: 0 $quarter;
+    margin-top: $quarter;
+  }
+
+  &-links {
+    padding: $single*1.125 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    .flex-wrapper {
+      box: horizontal middle space-between;
+    }
+  }
+
+  &-link {
+    cursor: pointer;
+    * { user-select: none }
+  }
+
+  &-chevron {
+    size: $threefourth;
+    fill: $orange;
+    margin-left: $single;
+    will-change: transform;
+    transition: transform .1s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    @at-root .MobileHeader-links--open #{&} {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  &-nav {
+    margin-bottom: $single*2;
+  }
+
+  &-secondaryNav {
+    box: horizontal;
+    margin-bottom: $single*2;
+    .flex-wrapper {
+      width: 50%;
+    }
+  }
+
+  &-secondaryLink {
+    display: block;
+    padding: .125rem 0;
+  }
+
+  &-misc {
+    box: horizontal space-between;
+  }
+
+  &-social {
+    width: 50%;
+    .flex-wrapper {
+      box: horizontal wrap;
+    }
+    a {
+      box: vertical middle center;
+      size: $single*2.5;
+      background-color: #eee;
+      border-radius: 50%;
+      margin-right: $threefourth;
+      margin-bottom: $threefourth;
+    }
+    svg {
+      fill: $navy;
+      size: $threefourth;
+    }
+  }
+
+  &-language {
+    width: 50%;
+    &Link {
+      display: block;
+      @include hover($white, $orange);
+      &--active {
+        @include hover($orange, $orange);
+      }
+    }
+  }
+
+  &-watermark {
+    visibility: hidden;
+    position: fixed;
+    bottom: -$single*2.75;
+    right: -$single*3.5;
+    z-index: 0;
+    svg {
+      size: $single*14;
+      fill: rgba(255,255,255,.06);
+      transform: rotateZ(8deg);
+    }
+  }
+}
