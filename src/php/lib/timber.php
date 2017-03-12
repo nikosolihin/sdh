@@ -48,41 +48,20 @@ class StarterSite extends TimberSite {
 		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
 		$context['primary_menu'] = array();
+
 		foreach ($primary_menu as $menu) {
 			$parent = Timber::get_post($menu['parent']);
-
-			// At level 1, assume children
 			$children = array();
-			$singles = array();
 			foreach ($parent->get_children() as $child) {
-
-				// See if there are grand children
-				$grandchildren = array();
-				if ( !empty($child->get_children()) ) {
-					foreach ($child->get_children() as $grandchild) {
-						array_push($grandchildren, array(
-							'title' => $grandchild->title,
-							'link' => $grandchild->link
-						));
-					}
-					array_push($children, array(
-						'title' => $child->title,
-						'link' => $child->link,
-						'grandchildren' => $grandchildren
-					));
-				} else {
-					// If empty put it in a different bucket
-					array_push($singles, array(
-						'title' => $child->title,
-						'link' => $child->link
-					));
-				}
+				array_push($children, array(
+					'title' => $child->title,
+					'link' => $child->link
+				));
 			}
 			array_push($context['primary_menu'], array(
 				'title' => $parent->title,
 				'link' => $parent->link,
-				'children' => $children,
-				'singles' => $singles
+				'children' => $children
 			));
 		}
 
