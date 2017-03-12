@@ -6,6 +6,7 @@
 
 {% set description = acf.teaser is defined ? acf.teaser : og_desc %}
 {% set image = acf.image|serveImage %}
+{% set imageSquare = acf.image|serveSquareImage %}
 
 <meta property="og:locale" content="{{locale}}" />
 <meta property="og:type" content="website" />

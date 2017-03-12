@@ -1,15 +1,13 @@
 {# Google Search Console Verification #}
-<meta name="google-site-verification" content="" />
+<meta name="google-site-verification" content="TWvKCElSD0ubcstw3neRjFRIT5wMWZdEu54jy5cfG7M" />
 
 {# https://moz.com/blog/seo-cheat-sheet #}
 <link href="{{current_url}}" rel="canonical" />
 
 {# Annotate alternate language & region versions of content #}
-<link rel="alternate" hreflang="en" href="https://sdh.or.id" />
-<link rel="alternate" hreflang="x-default" href="https://sdh.or.id" />
-<link rel="alternate" hreflang="id" href="https://sdh.or.id/id" />
+<link rel="alternate" hreflang="en" href="{{languages.en}}" />
+<link rel="alternate" hreflang="x-default" href="{{languages.en}}" />
+<link rel="alternate" hreflang="id" href="{{languages.id}}" />
 
 {# Google Custom Search Thumbnail #}
-{% if media_type %}
-  <meta name="thumbnail" content="{{acf.image|serveImage(94)}}" />
-{% endif %}
+<meta name="thumbnail" content="{{imageSquare.xs}}" />
