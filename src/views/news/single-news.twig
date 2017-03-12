@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
-  <div class="SinglePage-share Share">
+  <div class="SinglePage-share Share Share--horizontal">
     {% include 'components/social-share.twig' %}
   </div>
   <div class="SinglePage-content">
@@ -10,7 +10,7 @@
       <div class="Intro-breadcrumb">
         {% include 'components/breadcrumb.twig' %}
       </div>
-      <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+      <h1 class="Intro-heading light navy">{{post.title}}</h1>
       <div class="Intro-meta h7 caps spaced medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('j M, Y')}}</div>
       {% if acf.teaser %}
         <p class="Intro-teaser light">{{acf.teaser}}</p>

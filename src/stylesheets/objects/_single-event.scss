@@ -1,39 +1,77 @@
 .SingleEvent {
   background-color: $white;
-  padding-bottom: $single*7;
+  padding-bottom: $single*3;
+  @include from(lg) {
+    padding-bottom: $single*7;
+  }
 
   .container {
     box: horizontal;
     max-width: 55rem;
+    box: vertical;
+    @include from(lg) {
+      box: horizontal;
+    }
   }
 
   .Share {
-    padding-top: $single*6.5;
+    @include to(md) {
+      order: 3;
+    }
+    @include from(lg) {
+      padding-top: $single*6.5;
+    }
   }
 
   .Sidebar {
     position: relative;
-    background-color: #fbfbfb;
-    padding-top: $single*3;
+    background-color: #f9f9f9;
+    @include to(md) {
+      order: 1;
+      padding: $single*1.25;
+      width: 100%;
+    }
+    @include from(lg) {
+      width: 30%;
+      padding: $single*3 $single*2 0;
+    }
   }
 
   &-content {
-    padding-top: $single*3.5;
-    padding-right: $single*4;
+    @include to(md) {
+      order: 2;
+      padding: $single*2 $single*1.25 0;
+    }
+    @include from(lg) {
+      padding-top: $single*3.5;
+      padding-right: $single*4;
+    }
   }
 
   &-details {
     position: absolute;
     top: -$single*3.55;
-    left: 0;
     padding: $single*1.125 $single*1.5;
     background-color: #26427c;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    left: $single;
+    @include from(lg) {
+      left: 0;
+    }
+  }
+
+  &-others {
+    display: none;
+    @include from(lg) {
+      display: block;
+    }
   }
 
   &-meta {
-    margin-bottom: $single*2.25;
+    @include from(lg) {
+      margin-bottom: $single*2.25;
+    }
   }
 
   &-metaItem {

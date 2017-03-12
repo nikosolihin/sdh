@@ -3,6 +3,7 @@
   width: 100%;
   background-color: $white;
   border-bottom: 1px solid $line;
+  overflow: hidden;
   @include from(lg) {
     box: vertical;
   }
@@ -106,6 +107,7 @@
       }
     }
     span {
+      line-height: 1;
       @include from(xl) {
         display: none;
       }

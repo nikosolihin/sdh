@@ -3,6 +3,10 @@
     position: relative;
     padding-bottom: $single*1.75;
     margin-bottom: $single*3;
+    font-size: 1.75rem / 1.25;
+    @include from(md) {
+      font-size: $font-size-h2;
+    }
 
     &::after {
       content: '';
@@ -24,13 +28,16 @@
     @extend .light;
     color: #888;
     margin-bottom: $single*2;
-    font-size: 1.35rem / 1.45;
+    font-size: 1.1rem / 1.45;
+    @include from(md) {
+      font-size: 1.35rem / 1.45;
+    }
   }
 
   &--withMeta {
     .Intro-heading {
       padding-bottom: 0;
-      margin-bottom: 0;
+      margin-bottom: $half;
       &::after {
         display: none;
       }
