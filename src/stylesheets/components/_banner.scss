@@ -1,18 +1,27 @@
 .Banner {
   @include cover(50% 27%);
   @include overlay(false);
-  height: 675px;
 
   &-container {
-    box: vertical bottom right;
+    box: vertical bottom;
+    padding-bottom: $single*2;
     size: 100%;
-    padding-bottom: $single*3;
+    @include from(lg) {
+      padding-bottom: $single*3;
+    }
   }
 
   &-copy {
-    width: 60%;
+    width: 100%;
+    padding: 0 $single*1.25;
     font-size: 1.5rem;
     line-height: 1.375;
+    @include from(md) {
+      width: 75%;
+    }
+    @include from(lg) {
+      width: 60%;
+    }
     span {
       margin-bottom: $half;
     }
@@ -20,8 +29,18 @@
 
   // Styles
   &--hidden { display: none; }
-  &--small { height: $banner-small-height; }
-  &--large { height: $banner-large-height; }
+  &--small {
+    height: $banner-small-height/1.75;
+    @include from(lg) {
+      height: $banner-small-height;
+    }
+  }
+  &--large {
+    height: $banner-large-height/1.75;
+    @include from(lg) {
+      height: $banner-large-height;
+    }
+  }
   &--top {
     background-position: top center;
   }
@@ -33,11 +52,18 @@
     &::before {
       background-color: rgba(13,4,0,.2);
     }
-    > .container {
-      box: vertical bottom left;
-    }
     .Banner-copy {
-      @extend .h2, .white;
+      // @extend .h2, .white;
+      font-size: 1.6rem / 1.25;
+      @include from(sm) {
+        font-size: 1.8rem / 1.25;
+      }
+      @include from(md) {
+        font-size: 2.25rem / 1.25;
+      }
+      @include from(lg) {
+        font-size: 2.4rem / 1.25;
+      }
     }
   }
 }

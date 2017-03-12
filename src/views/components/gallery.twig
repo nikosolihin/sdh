@@ -1,10 +1,12 @@
-{% set image = acf.image|serveImage %}
-
 <div class="Gallery-preview">
   {# Get first 3 photos as previews #}
   {% for photo in data.gallery | slice(0,3) %}
-    {% set image = photo|serveSquareImage %}
-    <div class="Gallery-previewImage lazyload" data-bgset="{{image.sm}}"></div>
+    {% if photo and photo is iterable %}
+      {% set image = photo|serveSquareImage %}
+    {% else %}
+      {% set image = fallback.image %}
+    {% endif %}
+    <div class="Gallery-previewImage lazyload" data-bgset="{{image.sm}} [(min-width: {{xxl}})] | {{image.sm}} [(min-width: {{xl}})] | {{image.sm}} [(min-width: {{lg}})] | {{image.xs}} [(min-width: {{md}})] | {{image.xs}} [(min-width: {{sm}})] | {{image.xs}}"></div>
   {% endfor %}
   <div class="Gallery-previewButton Button">
     <svg aria-hidden="true" role="presentation" title="">
@@ -42,7 +44,11 @@
 
   <div class="Gallery-body">
     {% for photo in data.gallery %}
-      {% set image = photo|serveImage %}
+      {% if photo and photo is iterable %}
+        {% set image = photo|serveImage %}
+      {% else %}
+        {% set image = fallback.image %}
+      {% endif %}
       <div class="Gallery-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
     {% endfor %}
   </div>

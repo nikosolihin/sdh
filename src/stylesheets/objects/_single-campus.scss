@@ -1,11 +1,21 @@
 .SingleCampus {
   padding-bottom: $single*4;
 
+  &-facilities {
+    font-size: 1.2rem / 1.45;
+    margin-bottom: $single*2;
+    @include from(lg) {
+      font-size: 1.3rem / 1.45;
+    }
+  }
   &-message {
     box: vertical center;
     position: relative;
     width: 100%;
-    margin-top: 8rem; // must be larger than photo's top value
+    margin-top: 5.5rem;
+    @include from(lg) {
+      margin-top: 8rem; // must be larger than photo's top value
+    }
   }
   &-photo {
     @include cover;
@@ -19,22 +29,34 @@
   &-messageBody {
     background-color: #F5F9FC;
     border-radius: 4px;
-    padding: $single*7 $single*5 $single*3;
+
+    padding: $single*5 $single*1.25 $single*3;
+    @include from(lg) {
+      padding: $single*7 $single*5 $single*3;
+    }
+
     h2 {
       display: block;
       position: relative;
-      font-size: 42px;
       text-align: center;
-      margin-bottom: $single*5.5;
+      font-size: 32px;
+      margin-bottom: $single*3;
+      @include from(lg) {
+        font-size: 42px;
+        margin-bottom: $single*5.5;
+      }
       &::after {
         content: '';
         position: absolute;
         left: 50%;
-        bottom: -$single*2.5;
         transform: translateX(-50%);
         height: 3px;
         width: 2.75rem;
         background-color: $yellow;
+        bottom: -$single*1.5;
+        @include from(lg) {
+          bottom: -$single*2.5;
+        }
       }
     }
   }
@@ -62,6 +84,13 @@
     }
     &:last-child {
       padding-top: $single;
+    }
+    // If on mobile, only display 1 news and event item
+    .Feed-item:nth-child(n+2) {
+      display: none;
+      @include from(lg) {
+        display: inherit;
+      }
     }
   }
   &-maps {

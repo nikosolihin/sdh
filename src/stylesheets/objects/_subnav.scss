@@ -8,7 +8,7 @@
     color: $navy;
     padding: .925rem $single*1.125;
     border-top: 3px solid $yellow;
-    @include from(md) {
+    @include from(lg) {
       display: none;
     }
     svg {
@@ -18,15 +18,17 @@
 
   &-list {
     display: none;
-    @include from(md) {
+    @include from(lg) {
       box: horizontal middle center;
     }
     > li {
       display: block;
       width: 100%;
-      @include from(md) {
+      border-top: 1px solid $line;
+      @include from(lg) {
         display: list-item;
         width: auto;
+        border-top: 0;
       }
     }
 
@@ -42,7 +44,7 @@
       color: $white !important;
       background-color: $navy;
 
-      @include from(md) {
+      @include from(lg) {
         color: $navy !important;
         background-color: transparent;
         position: relative;
@@ -61,7 +63,7 @@
 
     @at-root .Subnav--open #{&} {
       box: vertical center;
-      @include from(md) {
+      @include from(lg) {
         box: horizontal middle center;
       }
     }

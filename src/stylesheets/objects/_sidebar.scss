@@ -1,7 +1,16 @@
 .Sidebar {
   flex: 0 0 auto;
-  width: 33.333%;
-  padding: $single*3;
+  width: 100%;
+  padding: 0 $single*1.25;
+  @include from(lg) {
+    width: 33.333%;
+  }
+  @include from(xl) {
+    padding: 0 $single*2;
+  }
+  @include from(xxl) {
+    padding: 0 $single*3;
+  }
 
   @at-root .ArchivePage #{&} {
     width: 31%;
@@ -15,11 +24,6 @@
   &-section {
     font-size: $font-size-h5;
     margin-bottom: $single;
-
-    // DO WE NEED THIS??????
-    // > * {
-    //   margin-bottom: $single !important;
-    // }
 
     // Style
     &--callout {
