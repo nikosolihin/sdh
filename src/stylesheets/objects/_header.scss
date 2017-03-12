@@ -3,7 +3,6 @@
   width: 100%;
   background-color: $white;
   border-bottom: 1px solid $line;
-  overflow: hidden;
   @include from(lg) {
     box: vertical;
   }
@@ -68,6 +67,7 @@
     box: horizontal;
     background-color: $navy;
     padding-right: $single;
+    overflow: hidden;
   }
   &-secondaryLink {
     @include hover(inherit, $yellow);
