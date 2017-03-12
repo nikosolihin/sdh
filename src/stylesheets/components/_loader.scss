@@ -13,9 +13,13 @@
   top: 47%;
   left: 48%;
   z-index: $zindex-loader;
-  opacity: 1;
-  visibility: visible;
-  transition: all .2s ease-in-out;
+
+  // Always do loader in an OFF state initially
+  transition: all .2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+  will-change: transform, opacity, visibility;
+  transform: scale(1.25);
+  opacity: 0;
+  visibility: hidden;
 
   &-eagle {
     position: absolute;
@@ -48,9 +52,9 @@
     }
   }
 
-  &--fadeOut {
-    transform: scale(1.25);
-    opacity: 0;
-    visibility: hidden;
+  &--fadeIn {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
   }
 }
