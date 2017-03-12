@@ -27,6 +27,4 @@ foreach (Timber::get_terms('campus') as $topic) {
 }
 $context['campuses_json'] = json_encode($context['campuses']);
 
-var_dump($context['primary_menu']);
-
-// Timber::render( 'news/archive-news.twig' , $context );
+Timber::render( 'news/archive-news.twig' , $context );

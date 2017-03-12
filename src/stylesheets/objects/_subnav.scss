@@ -1,27 +1,68 @@
 .Subnav {
   background-color: #fbfbfb;
   border-bottom: 1px solid $line;
+
+  &-explore {
+    cursor: pointer;
+    box: horizontal space-between middle;
+    color: $navy;
+    padding: .925rem $single*1.125;
+    border-top: 3px solid $yellow;
+    @include from(md) {
+      display: none;
+    }
+    svg {
+      size: .9rem;
+    }
+  }
+
   &-list {
-    box: horizontal middle center;
-    a {
+    display: none;
+    @include from(md) {
+      box: horizontal middle center;
+    }
+    > li {
+      display: block;
+      width: 100%;
+      @include from(md) {
+        display: list-item;
+        width: auto;
+      }
+    }
+
+    > li > a {
       @extend .h6, .medium;
+      display: block !important;
       color: #888 !important;
       padding: .925rem $single*1.125;
     }
+
     .is-Active a {
-      display: block;
-      position: relative;
       font-weight: $font-weight-bold;
-      color: $navy !important;
-      &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: -1px;
-        height: 3px;
-        width: 90%;
-        transform: translate3d(-50%,0,0);
-        background-color: $yellow;
+      color: $white !important;
+      background-color: $navy;
+
+      @include from(md) {
+        color: $navy !important;
+        background-color: transparent;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -1px;
+          height: 3px;
+          width: 90%;
+          transform: translate3d(-50%,0,0);
+          background-color: $yellow;
+        }
+      }
+    }
+
+    @at-root .Subnav--open #{&} {
+      box: vertical center;
+      @include from(md) {
+        box: horizontal middle center;
       }
     }
   }
