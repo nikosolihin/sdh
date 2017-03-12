@@ -10,26 +10,28 @@
   {% set language_other_link = languages.id %}
 {% endif %}
 
-<a href="" class="MobileHeader-burger">
-  <div class="Burger">
-    <div class="Burger-box">
-      <div class="Burger-inner"></div>
+<div class="MobileHeader-container">
+  <a class="MobileHeader-logo" href="{{site.url}}">
+    <div class="Header-seal">
+      <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+      </svg>
+    </div>
+    <div class="Header-textLogo">
+      <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+      </svg>
+    </div>
+  </a>
+  <div class="MobileHeader-burger">
+    <span class="h7 spaced caps medium white MobileHeader-burgerLabel">Menu</span>
+    <div class="Burger">
+      <div class="Burger-box">
+        <div class="Burger-inner"></div>
+      </div>
     </div>
   </div>
-</a>
-
-<a class="MobileHeader-logo" href="{{site.url}}">
-  <div class="Header-seal">
-    <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
-    </svg>
-  </div>
-  <div class="Header-textLogo">
-    <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
-    </svg>
-  </div>
-</a>
+</div>
 
 <header class="MobileHeader" data-component="mobile-header">
   <div class="MobileHeader-wrapper">
@@ -55,12 +57,27 @@
           </svg>
         </div>
         <div class="MobileHeader-sub">
-          {% for child in children %}
+          {% for child in item.children %}
             <a href="{{child.link}}" class="MobileHeader-subLink h6 normal white">{{child.title}}</a>
           {% endfor %}
         </div>
       </div>
     {% endfor %}
+
+    {# Our Campuses #}
+    <div class="MobileHeader-links">
+      <div class="flex-wrapper MobileHeader-link">
+        <span class="h4 medium white">{{__('Our Campuses', 'sdh')}}</span>
+        <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+        </svg>
+      </div>
+      <div class="MobileHeader-sub">
+        {% for campus in campuses %}
+          <a href="{{campus.link}}" class="MobileHeader-subLink h6 normal white">{{campus.name|title}}</a>
+        {% endfor %}
+      </div>
+    </div>
   </nav>
 
   <nav class="MobileHeader-secondaryNav">

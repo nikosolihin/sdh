@@ -8,9 +8,9 @@ export default class MobileHeader {
   }
 
   attachEvents() {
-    $(".Burger").on('click', (event) => {
-      event.preventDefault()
+    $(".MobileHeader-burger").on('click', (event) => {
       $(".Burger").toggleClass('Burger--morph')
+      $(".MobileHeader-burgerLabel").toggle()
       $("body").toggleClass('noScroll')
       this.$el.toggleClass('MobileHeader--open')
     })

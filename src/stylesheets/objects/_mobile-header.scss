@@ -22,29 +22,42 @@
     }
   }
 
-  &-burger {
-    size: $single*3.25;
-    position: absolute;
-    top: 7px;
-    right: 7px;
-    z-index: $zindex-burger;
+  &-container {
+    box: horizontal space-between;
+    position: relative;
+    background-color: $navy;
+    height: $single*3.25;
     @include from(lg) {
       display: none;
     }
   }
 
-  &-logo {
-    width: $single*10;
+  &-burger {
+    @include left-slant($left:-.5rem);
+    cursor: pointer;
     box: horizontal middle;
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: $zindex-mobile-header;
-    color: $white;
+    right: 0;
+    z-index: $zindex-burger;
+    padding-left: $threefourth;
+    // padding: 0 $single*3.25 0 $threefourth;
+    background-color: $navy;
+  }
+
+  &-logo {
+    @include right-slant($right:-.3rem);
+    width: $single*10;
+    box: horizontal middle;
+    // z-index: $zindex-mobile-header;
+    color: $navy;
     padding: $threefourth;
-    @include from(lg) {
-      display: none;
-    }
+    background-color: $white;
+    border-left: 5px solid $orange;
+  }
+
+  &-extender {
+    background-color: $white;
   }
 
   &-wrapper {
@@ -56,6 +69,7 @@
 
   &-topbar {
     box: horizontal middle space-between;
+    width: 95%;
     margin-bottom: $single;
   }
 
