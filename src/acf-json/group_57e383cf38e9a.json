@@ -23,7 +23,7 @@
             "label": "Paragraph",
             "name": "teaser",
             "type": "textarea",
-            "instructions": "This is the teaser\/overview paragraph for this item. A sentence or two should suffice. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong>Don't leave this blank.<\/strong>",
+            "instructions": "This is the teaser\/overview paragraph for this item. One sentence is enough. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong>Don't leave this blank.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -67,7 +67,9 @@
                 "id": ""
             },
             "google_photos_limit": 1,
-            "google_photos_user_id": ""
+            "google_photos_user_id": "",
+            "google_photos_access_token": "",
+            "google_photos_message": ""
         }
     ],
     "location": [
@@ -102,5 +104,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New News",
-    "modified": 1486900379
+    "modified": 1489400361
 }

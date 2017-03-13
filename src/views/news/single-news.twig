@@ -15,9 +15,7 @@
       {% if acf.teaser %}
         <p class="Intro-teaser light">{{acf.teaser}}</p>
       {% endif %}
-      {% if acf.image %}
-        {% include 'components/image.twig' with {'data': {'figure': acf.image}} %}
-      {% endif %}
+      {% include 'components/image.twig' with {'data': {'figure': image, 'crop': false}} %}
     </div>
     {% include 'layout/base.twig' %}
   </div>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-05 17:33+0700\n"
-"PO-Revision-Date: 2017-03-05 17:34+0700\n"
+"POT-Creation-Date: 2017-03-13 17:51+0700\n"
+"PO-Revision-Date: 2017-03-13 18:02+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -20,17 +20,21 @@ msgstr ""
 "X-Poedit-SearchPath-3: php/lib\n"
 "X-Poedit-SearchPathExcluded-0: javascripts\n"
 
-#: php/archive-event.php:9 php/archive-news.php:9 php/lib/post-types.php:187
-#: php/lib/post-types.php:188 php/lib/post-types.php:218 php/single-news.php:34
-#: views/campus/single-campus-welcome.twig:46 views/page/front-page-news.twig:3
-msgid "News"
-msgstr "Berita"
+#: php/archive-event.php:9 views/campus/single-campus-news-events.twig:11
+#: views/modules/header.twig:44 views/page/front-page-news.twig:10
+msgid "Event Calendar"
+msgstr "Kalender Acara"
 
 #: php/archive-event.php:10
 msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
 
-#: php/archive-news.php:10
+#: php/archive-news.php:10 php/lib/post-types.php:188
+#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:47
+msgid "News"
+msgstr "Berita"
+
+#: php/archive-news.php:11
 msgid "No news found. Please try again."
 msgstr "Berita tidak ditemukan. Silakan coba lagi."
 
@@ -86,57 +90,57 @@ msgstr ""
 msgid "No block found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:23 php/lib/post-types.php:79
-#: php/lib/post-types.php:135 php/lib/post-types.php:201
-#: php/lib/post-types.php:268
+#: php/lib/post-types.php:23 php/lib/post-types.php:80
+#: php/lib/post-types.php:136 php/lib/post-types.php:202
+#: php/lib/post-types.php:269
 msgid "Featured Image"
 msgstr ""
 
-#: php/lib/post-types.php:24 php/lib/post-types.php:80
-#: php/lib/post-types.php:136 php/lib/post-types.php:202
-#: php/lib/post-types.php:269
+#: php/lib/post-types.php:24 php/lib/post-types.php:81
+#: php/lib/post-types.php:137 php/lib/post-types.php:203
+#: php/lib/post-types.php:270
 msgid "Set featured image"
 msgstr ""
 
-#: php/lib/post-types.php:25 php/lib/post-types.php:81
-#: php/lib/post-types.php:137 php/lib/post-types.php:203
-#: php/lib/post-types.php:270
+#: php/lib/post-types.php:25 php/lib/post-types.php:82
+#: php/lib/post-types.php:138 php/lib/post-types.php:204
+#: php/lib/post-types.php:271
 msgid "Remove featured image"
 msgstr ""
 
-#: php/lib/post-types.php:26 php/lib/post-types.php:82
-#: php/lib/post-types.php:138 php/lib/post-types.php:204
-#: php/lib/post-types.php:271
+#: php/lib/post-types.php:26 php/lib/post-types.php:83
+#: php/lib/post-types.php:139 php/lib/post-types.php:205
+#: php/lib/post-types.php:272
 msgid "Use as featured image"
 msgstr ""
 
-#: php/lib/post-types.php:27 php/lib/post-types.php:83
-#: php/lib/post-types.php:139 php/lib/post-types.php:205
-#: php/lib/post-types.php:272
+#: php/lib/post-types.php:27 php/lib/post-types.php:84
+#: php/lib/post-types.php:140 php/lib/post-types.php:206
+#: php/lib/post-types.php:273
 msgid "Insert into item"
 msgstr ""
 
-#: php/lib/post-types.php:28 php/lib/post-types.php:84
-#: php/lib/post-types.php:140 php/lib/post-types.php:206
-#: php/lib/post-types.php:273
+#: php/lib/post-types.php:28 php/lib/post-types.php:85
+#: php/lib/post-types.php:141 php/lib/post-types.php:207
+#: php/lib/post-types.php:274
 msgid "Uploaded to this item"
 msgstr ""
 
-#: php/lib/post-types.php:29 php/lib/post-types.php:85
-#: php/lib/post-types.php:141 php/lib/post-types.php:207
-#: php/lib/post-types.php:274 php/lib/taxonomies.php:25
+#: php/lib/post-types.php:29 php/lib/post-types.php:86
+#: php/lib/post-types.php:142 php/lib/post-types.php:208
+#: php/lib/post-types.php:275 php/lib/taxonomies.php:25
 msgid "Items list"
 msgstr ""
 
-#: php/lib/post-types.php:30 php/lib/post-types.php:86
-#: php/lib/post-types.php:142 php/lib/post-types.php:208
-#: php/lib/post-types.php:275 php/lib/taxonomies.php:26
+#: php/lib/post-types.php:30 php/lib/post-types.php:87
+#: php/lib/post-types.php:143 php/lib/post-types.php:209
+#: php/lib/post-types.php:276 php/lib/taxonomies.php:26
 msgid "Items list navigation"
 msgstr ""
 
-#: php/lib/post-types.php:31 php/lib/post-types.php:87
-#: php/lib/post-types.php:143 php/lib/post-types.php:209
-#: php/lib/post-types.php:276
+#: php/lib/post-types.php:31 php/lib/post-types.php:88
+#: php/lib/post-types.php:144 php/lib/post-types.php:210
+#: php/lib/post-types.php:277
 msgid "Filter items list"
 msgstr ""
 
@@ -144,222 +148,220 @@ msgstr ""
 msgid "Custom post type for blocks"
 msgstr ""
 
-#: php/lib/post-types.php:65
+#: php/lib/post-types.php:66
 msgid "Voices"
 msgstr ""
 
-#: php/lib/post-types.php:66 php/lib/post-types.php:90
+#: php/lib/post-types.php:67 php/lib/post-types.php:91
 msgid "Voice"
 msgstr ""
 
-#: php/lib/post-types.php:67
+#: php/lib/post-types.php:68
 msgid "Voice Archives"
 msgstr ""
 
-#: php/lib/post-types.php:68
+#: php/lib/post-types.php:69
 msgid "Parent Voice:"
 msgstr ""
 
-#: php/lib/post-types.php:69
+#: php/lib/post-types.php:70
 msgid "All Voices"
 msgstr ""
 
-#: php/lib/post-types.php:70
+#: php/lib/post-types.php:71
 msgid "Add New Voice"
 msgstr ""
 
-#: php/lib/post-types.php:71 php/lib/post-types.php:72
+#: php/lib/post-types.php:72 php/lib/post-types.php:73
 msgid "New Voice"
 msgstr ""
 
-#: php/lib/post-types.php:73
+#: php/lib/post-types.php:74
 msgid "Edit Voice"
 msgstr ""
 
-#: php/lib/post-types.php:74
+#: php/lib/post-types.php:75
 msgid "Update Voice"
 msgstr ""
 
-#: php/lib/post-types.php:75
+#: php/lib/post-types.php:76
 msgid "View Voice"
 msgstr ""
 
-#: php/lib/post-types.php:76
+#: php/lib/post-types.php:77
 msgid "Search Voices"
 msgstr ""
 
-#: php/lib/post-types.php:77
+#: php/lib/post-types.php:78
 msgid "No voice found"
 msgstr ""
 
-#: php/lib/post-types.php:78
+#: php/lib/post-types.php:79
 msgid "No voices found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:91
+#: php/lib/post-types.php:92
 msgid "Custom post type for voices"
 msgstr ""
 
-#: php/lib/post-types.php:121 php/single-event.php:128
-#: views/campus/single-campus-welcome.twig:63
-#: views/page/front-page-news.twig:20
+#: php/lib/post-types.php:122 php/single-event.php:52
 msgid "Events"
 msgstr "Kegiatan"
 
-#: php/lib/post-types.php:122 php/lib/post-types.php:152
+#: php/lib/post-types.php:123 php/lib/post-types.php:153
 msgid "Event"
-msgstr ""
+msgstr "Kegiatan"
 
-#: php/lib/post-types.php:123
+#: php/lib/post-types.php:124
 msgid "Event Archives"
 msgstr ""
 
-#: php/lib/post-types.php:124
+#: php/lib/post-types.php:125
 msgid "Parent Event:"
 msgstr ""
 
-#: php/lib/post-types.php:125
+#: php/lib/post-types.php:126
 msgid "All Events"
 msgstr ""
 
-#: php/lib/post-types.php:126
+#: php/lib/post-types.php:127
 msgid "Add New Events"
 msgstr ""
 
-#: php/lib/post-types.php:127 php/lib/post-types.php:128
+#: php/lib/post-types.php:128 php/lib/post-types.php:129
 msgid "New Event"
 msgstr ""
 
-#: php/lib/post-types.php:129
+#: php/lib/post-types.php:130
 msgid "Edit Event"
 msgstr ""
 
-#: php/lib/post-types.php:130
+#: php/lib/post-types.php:131
 msgid "Update Event"
 msgstr ""
 
-#: php/lib/post-types.php:131
+#: php/lib/post-types.php:132
 msgid "View Event"
 msgstr ""
 
-#: php/lib/post-types.php:132
+#: php/lib/post-types.php:133
 msgid "Search Events"
 msgstr ""
 
-#: php/lib/post-types.php:133
+#: php/lib/post-types.php:134
 msgid "No event found"
 msgstr ""
 
-#: php/lib/post-types.php:134
+#: php/lib/post-types.php:135
 msgid "No event found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:153
+#: php/lib/post-types.php:154
 msgid "Custom post type for event"
 msgstr ""
 
-#: php/lib/post-types.php:189
+#: php/lib/post-types.php:190
 msgid "News Archives"
 msgstr ""
 
-#: php/lib/post-types.php:190
+#: php/lib/post-types.php:191
 msgid "Parent News:"
 msgstr ""
 
-#: php/lib/post-types.php:191
+#: php/lib/post-types.php:192
 msgid "All News"
 msgstr ""
 
-#: php/lib/post-types.php:192
+#: php/lib/post-types.php:193
 msgid "Add New News"
 msgstr ""
 
-#: php/lib/post-types.php:193 php/lib/post-types.php:194
+#: php/lib/post-types.php:194 php/lib/post-types.php:195
 msgid "New News"
 msgstr ""
 
-#: php/lib/post-types.php:195
+#: php/lib/post-types.php:196
 msgid "Edit News"
 msgstr ""
 
-#: php/lib/post-types.php:196
+#: php/lib/post-types.php:197
 msgid "Update News"
 msgstr ""
 
-#: php/lib/post-types.php:197
+#: php/lib/post-types.php:198
 msgid "View News"
 msgstr ""
 
-#: php/lib/post-types.php:198
+#: php/lib/post-types.php:199
 msgid "Search News"
 msgstr ""
 
-#: php/lib/post-types.php:199
+#: php/lib/post-types.php:200
 msgid "No news found"
 msgstr ""
 
-#: php/lib/post-types.php:200
+#: php/lib/post-types.php:201
 msgid "No news found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:219
+#: php/lib/post-types.php:220
 msgid "Custom post type for news"
 msgstr ""
 
-#: php/lib/post-types.php:254 php/lib/taxonomies.php:9
+#: php/lib/post-types.php:255 php/lib/taxonomies.php:9
 msgid "Campuses"
 msgstr ""
 
-#: php/lib/post-types.php:255 php/lib/post-types.php:285
+#: php/lib/post-types.php:256 php/lib/post-types.php:286
 #: views/news/archive-news.twig:34
 msgid "Campus"
-msgstr ""
+msgstr "Kampus"
 
-#: php/lib/post-types.php:256
+#: php/lib/post-types.php:257
 msgid "Campus Archives"
 msgstr ""
 
-#: php/lib/post-types.php:257 php/lib/taxonomies.php:12
+#: php/lib/post-types.php:258 php/lib/taxonomies.php:12
 msgid "Parent Campus:"
 msgstr ""
 
-#: php/lib/post-types.php:258 php/lib/taxonomies.php:10
+#: php/lib/post-types.php:259 php/lib/taxonomies.php:10
 msgid "All Campuses"
 msgstr ""
 
-#: php/lib/post-types.php:259 php/lib/taxonomies.php:14
+#: php/lib/post-types.php:260 php/lib/taxonomies.php:14
 msgid "Add New Campus"
 msgstr ""
 
-#: php/lib/post-types.php:260 php/lib/post-types.php:261
+#: php/lib/post-types.php:261 php/lib/post-types.php:262
 msgid "New Campus"
 msgstr ""
 
-#: php/lib/post-types.php:262 php/lib/taxonomies.php:15
+#: php/lib/post-types.php:263 php/lib/taxonomies.php:15
 msgid "Edit Campus"
 msgstr ""
 
-#: php/lib/post-types.php:263 php/lib/taxonomies.php:16
+#: php/lib/post-types.php:264 php/lib/taxonomies.php:16
 msgid "Update Campus"
 msgstr ""
 
-#: php/lib/post-types.php:264 php/lib/taxonomies.php:17
+#: php/lib/post-types.php:265 php/lib/taxonomies.php:17
 msgid "View Campus"
 msgstr ""
 
-#: php/lib/post-types.php:265
+#: php/lib/post-types.php:266
 msgid "Search Campuses"
 msgstr ""
 
-#: php/lib/post-types.php:266
+#: php/lib/post-types.php:267
 msgid "No campus found"
 msgstr ""
 
-#: php/lib/post-types.php:267
+#: php/lib/post-types.php:268
 msgid "No campus found in trash"
 msgstr ""
 
-#: php/lib/post-types.php:286
+#: php/lib/post-types.php:287
 msgid "Custom post type for campus"
 msgstr ""
 
@@ -399,47 +401,113 @@ msgstr ""
 msgid "No items"
 msgstr ""
 
-#: php/search.php:13 php/search.php:40 views/page/search.twig:30
+#: php/search.php:3 php/search.php:27 views/page/search.twig:30
 msgid "Search"
 msgstr "Cari"
 
-#: views/campus/single-campus-welcome.twig:13
+#: php/single-campus.php:9 views/campus/single-campus-banner.twig:13
 msgid "Welcome to SDH"
 msgstr "Selamat Datang di SDH"
 
+#: views/campus/single-campus-details.twig:9
+#: views/campus/single-campus-facilities.twig:9
+#: views/campus/single-campus-welcome.twig:15 views/components/subnav.twig:3
+msgid "Explore This Section"
+msgstr "Telusuri Bagian Ini"
+
+#: views/campus/single-campus-details.twig:15
+#: views/campus/single-campus-facilities.twig:15
 #: views/campus/single-campus-welcome.twig:21
 msgid "Welcome"
 msgstr "Selamat Datang"
 
+#: views/campus/single-campus-details.twig:16
+#: views/campus/single-campus-facilities.twig:16
 #: views/campus/single-campus-welcome.twig:22
-msgid "Campus Details"
-msgstr "Rincian Kampus"
+msgid "Campus Information"
+msgstr "Informasi Kampus"
 
+#: views/campus/single-campus-details.twig:17
+#: views/campus/single-campus-facilities.twig:17
+#: views/campus/single-campus-facilities.twig:27
 #: views/campus/single-campus-welcome.twig:23
 msgid "Facilities"
 msgstr "Fasilitas"
+
+#: views/campus/single-campus-details.twig:27
+msgid "Campus Details"
+msgstr "Rincian Kampus"
+
+#: views/campus/single-campus-maps.twig:28
+#: views/campus/single-campus-maps.twig:30
+msgid "See Location"
+msgstr "Lihat Lokasi"
+
+#: views/campus/single-campus-news-events.twig:3
+#: views/page/front-page-news.twig:3
+msgid "Recent News"
+msgstr "Berita Terbaru"
+
+#: views/campus/single-campus-news-events.twig:4
+#: views/page/front-page-news.twig:4
+msgid "There are currently no news at this school."
+msgstr "Saat ini tidak ada acara di sekolah ini."
+
+#: views/campus/single-campus-news-events.twig:5
+#: views/page/front-page-news.twig:5
+msgid "More News"
+msgstr "Berita Lainnya"
+
+#: views/campus/single-campus-news-events.twig:9
+#: views/page/front-page-news.twig:8
+msgid "Upcoming Events"
+msgstr "Acara Mendatang"
+
+#: views/campus/single-campus-news-events.twig:10
+#: views/event/single-event.twig:72 views/page/front-page-news.twig:9
+msgid "There are currently no events at this school."
+msgstr "Saat ini tidak ada acara di sekolah ini."
+
+#: views/campus/single-campus-quicklinks.twig:2
+#: views/modules/mobile-header.twig:91
+msgid "Quicklinks"
+msgstr "Tautan Cepat"
+
+#: views/campus/single-campus-quicklinks.twig:8
+msgid "Request Info"
+msgstr "Permintaan Info"
+
+#: views/campus/single-campus-quicklinks.twig:16
+msgid "Academic Calendar"
+msgstr "Kalender Akademik"
+
+#: views/campus/single-campus-quicklinks.twig:24
+msgid "School Schedule"
+msgstr "Jadwal Sekolah"
+
+#: views/campus/single-campus-quicklinks.twig:32
+msgid "School Activities"
+msgstr "Kegiatan Sekolah"
+
+#: views/campus/single-campus-quicklinks.twig:40
+msgid "Campus Locations"
+msgstr "Lokasi Kampus"
+
+#: views/campus/single-campus-quicklinks.twig:48
+msgid "Contact Us"
+msgstr "Hubungi Kami"
+
+#: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:78
+#: views/modules/mobile-header.twig:105
+msgid "Stay Connected"
+msgstr "Tetap Terhubung"
 
 #: views/campus/single-campus-welcome.twig:37
 msgid "Message from the Principal"
 msgstr "Pesan dari kepala sekolah"
 
-#: views/campus/single-campus-welcome.twig:53 views/components/feed.twig:44
-#: views/page/front-page-news.twig:11
-msgid "Posted on"
-msgstr "Tanggal"
-
-#: views/campus/single-campus-welcome.twig:59
-#: views/page/front-page-news.twig:17
-msgid "More News"
-msgstr "Berita Lainnya"
-
-#: views/campus/single-campus-welcome.twig:89
-#: views/page/front-page-news.twig:53
-msgid "Event Calendar"
-msgstr "Kalender Acara"
-
-#: views/components/block.twig:21 views/page/front-page.twig:38
-#: views/page/landing-page.twig:29
+#: views/components/block.twig:21 views/page/front-page.twig:44
+#: views/page/landing-page.twig:41
 msgid "Learn More"
 msgstr "Selengkapnya"
 
@@ -455,11 +523,11 @@ msgstr "Diposting"
 msgid "Read More"
 msgstr "Selengkapnya"
 
-#: views/components/feed.twig:71
-msgid "Stay Connected"
-msgstr "Tetap Terhubung"
+#: views/components/feed.twig:49 views/news/single-news.twig:14
+msgid "Posted on"
+msgstr "Tanggal"
 
-#: views/components/gallery.twig:12
+#: views/components/gallery.twig:14
 msgid "Launch Gallery"
 msgstr "Persebar Galeri"
 
@@ -467,43 +535,79 @@ msgstr "Persebar Galeri"
 msgid "Share"
 msgstr "Bagikan"
 
-#: views/event/archive-event.twig:14
+#: views/event/archive-event.twig:18
 msgid "Events at Our Campuses"
 msgstr "Kegiatan Di Sekolah Kami"
 
-#: views/event/archive-event.twig:18
+#: views/event/archive-event.twig:21
 msgid "Filter by Campus"
 msgstr "Pilih berdasar kampus"
 
-#: views/event/single-event.twig:71
-msgid "Events at SDH"
-msgstr "Acara di SDH"
+#: views/event/archive-event.twig:57
+msgid "See Event"
+msgstr "Lihat"
 
-#: views/event/single-event.twig:92
+#: views/event/single-event.twig:71
+msgid "Events at"
+msgstr "Kegiatan di"
+
+#: views/event/single-event.twig:73
 msgid "See All"
 msgstr "Lihat Semua"
 
-#: views/modules/footer.twig:20 views/page/front-page.twig:76
+#: views/layout/empty.twig:2
+msgid "Our Apologies"
+msgstr "Kami meminta maaf"
+
+#: views/layout/empty.twig:4
+msgid ""
+"We seem to have forgotten to create the content body of this page. Please "
+"email our webteam at"
+msgstr ""
+"Kita tampaknya telah lupa untuk membuat tubuh isi halaman ini. Silahkan "
+"email webteam kami di"
+
+#: views/layout/empty.twig:4
+msgid "and let us know about this"
+msgstr "beritahu kami tentang ini"
+
+#: views/modules/footer.twig:75 views/modules/header.twig:88
+#: views/modules/mobile-header.twig:70
+msgid "Our Campuses"
+msgstr "Kampus Kami"
+
+#: views/modules/footer.twig:92 views/page/front-page.twig:82
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
-#: views/modules/footer.twig:24 views/page/front-page.twig:80
+#: views/modules/footer.twig:96 views/page/front-page.twig:86
 msgid "Feedback"
 msgstr "Komentar"
 
-#: views/modules/footer.twig:28 views/page/front-page.twig:84
+#: views/modules/footer.twig:100 views/modules/mobile-header.twig:100
+#: views/page/front-page.twig:90
 msgid "Languages"
 msgstr "Bahasa"
 
-#: views/modules/header.twig:4 views/modules/header.twig:26
-#: views/page/front-page.twig:5 views/page/front-page.twig:90
+#: views/modules/header.twig:4 views/modules/header.twig:11
+#: views/modules/mobile-header.twig:2 views/modules/mobile-header.twig:9
+#: views/page/front-page.twig:5 views/page/front-page.twig:12
 msgid "Indonesian"
 msgstr "Bahasa Indonesia"
 
-#: views/modules/header.twig:6 views/modules/header.twig:23
-#: views/page/front-page.twig:7 views/page/front-page.twig:87
+#: views/modules/header.twig:6 views/modules/header.twig:9
+#: views/modules/mobile-header.twig:4 views/modules/mobile-header.twig:7
+#: views/page/front-page.twig:7 views/page/front-page.twig:10
 msgid "English"
 msgstr "Inggris"
+
+#: views/modules/header.twig:39
+msgid "School News"
+msgstr "Berita Sekolah"
+
+#: views/modules/mobile-header.twig:85
+msgid "Audiences"
+msgstr "Pembaca"
 
 #: views/modules/search.twig:3
 msgid "Type to Search Our Website"
@@ -533,14 +637,16 @@ msgstr "Tertua"
 msgid "All"
 msgstr "Semua"
 
-#: views/page/front-page.twig:35
+#: views/page/front-page.twig:41
 msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
 
-#: views/page/front-page.twig:36
+#: views/page/front-page.twig:42
 msgid "We're commited to"
 msgstr "Kami berkomitmen untuk"
 
-#: views/page/search.twig:18
-msgid "Filter Search"
-msgstr "Pilih Label Pencarian"
+#~ msgid "Events at SDH"
+#~ msgstr "Acara di SDH"
+
+#~ msgid "Filter Search"
+#~ msgstr "Pilih Label Pencarian"

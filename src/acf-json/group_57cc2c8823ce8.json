@@ -3,6 +3,21 @@
     "title": "Accordion Components",
     "fields": [
         {
+            "key": "field_57cc2c882c32f",
+            "label": "Accordion Components",
+            "name": "accordion_components",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": "",
             "layouts": [
                 {
                     "key": "57ada76eb1d3b",
@@ -11,13 +26,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_577225311bff5"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882ed04",
                             "label": "Link",
                             "name": "link",
@@ -29,7 +37,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_577225311bff5"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -42,13 +57,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_57622c6ac297f"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882eda2",
                             "label": "Spacer",
                             "name": "spacer",
@@ -60,7 +68,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_57622c6ac297f"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -73,13 +88,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_576048fbe7bc8"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882ee15",
                             "label": "Maps",
                             "name": "map",
@@ -91,7 +99,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_576048fbe7bc8"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -104,13 +119,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_57603593863e7"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882ef4a",
                             "label": "Embed",
                             "name": "embed",
@@ -122,7 +130,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_57603593863e7"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -135,13 +150,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_574dcc3bb7c20"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882efe3",
                             "label": "Text Editor",
                             "name": "editor",
@@ -153,7 +161,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_574dcc3bb7c20"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -166,13 +181,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_576013cd18088"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882f07c",
                             "label": "Image",
                             "name": "image",
@@ -184,7 +192,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_576013cd18088"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -197,13 +212,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": [
-                                "group_57a2f7584db3a"
-                            ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57cc2c882f115",
                             "label": "Table",
                             "name": "table",
@@ -215,7 +223,14 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": [
+                                "group_57a2f7584db3a"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
                         }
                     ],
                     "min": "",
@@ -228,11 +243,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "clone": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "display": "seamless",
-                            "layout": "block",
                             "key": "field_57eba1aeb952b",
                             "label": "Feed",
                             "name": "feed",
@@ -244,28 +254,80 @@
                                 "width": "",
                                 "class": "",
                                 "id": ""
-                            }
+                            },
+                            "clone": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "58c641857d78f",
+                    "name": "tabs",
+                    "label": "Tabs",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58c641857d790",
+                            "label": "Tabs",
+                            "name": "tabs",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57623550ee5a3"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "58c6413bcd0f6",
+                    "name": "download",
+                    "label": "Download",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58c6413bcd0f7",
+                            "label": "Download",
+                            "name": "download",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_589b54f499100"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
-            ],
-            "min": "",
-            "max": "",
-            "button_label": "Add Component",
-            "key": "field_57cc2c882c32f",
-            "label": "Accordion Components",
-            "name": "accordion_components",
-            "type": "flexible_content",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            ]
         }
     ],
     "location": [
@@ -285,5 +347,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Accordion Components Parent",
-    "modified": 1486024628
+    "modified": 1489387972
 }
