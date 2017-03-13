@@ -1,11 +1,11 @@
 <div class="Sidebar-section Sidebar-section--callout Sidebar-section--navy SingleCampus-quicklinks">
   <h5 class="h7 white caps medium spaced">{{__('Quicklinks', 'sdh')}}</h5>
 
-  {% if 'registration' in campus_quicklinks %}
+  {% if 'request' in campus_quicklinks %}
     <a href="{{post.link|trim('/')}}/details#info" class="SingleCampus-quicklink">
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apply"></use>
-      </svg><h3 class="h5 noMargin">{{__('Registration', 'sdh')}}</h3>
+      </svg><h3 class="h5 noMargin">{{__('Request Info', 'sdh')}}</h3>
     </a>
   {% endif %}
 
@@ -17,11 +17,19 @@
     </a>
   {% endif %}
 
-  {% if 'registration' in campus_quicklinks %}
+  {% if 'schedule' in campus_quicklinks %}
     <a href="{{post.link|trim('/')}}/details#info" class="SingleCampus-quicklink">
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
       </svg><h3 class="h5 noMargin">{{__('School Schedule', 'sdh')}}</h3>
+    </a>
+  {% endif %}
+
+  {% if 'activity' in campus_quicklinks %}
+    <a href="{{post.link|trim('/')}}/details#info" class="SingleCampus-quicklink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#art"></use>
+      </svg><h3 class="h5 noMargin">{{__('School Activities', 'sdh')}}</h3>
     </a>
   {% endif %}
 
