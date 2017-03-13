@@ -7,10 +7,24 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['gcal'] = filterEvent($post);
-$context['og_desc'] = preg_replace('/\s+/', ' ', strip_tags(substr($context['gcal']['description'], 0, 300)));
 
 // Banner stuff
 $context['acf']['banner_size'] = 'small';
+
+// Default image
+$image = $context['acf']['image'];
+if(isset($image) && is_array($image)) {
+	$context['image'] = $image;
+} else {
+	$context['image'] = false;
+}
+
+// Default teaser
+if ($context['gcal']['description'] == '') {
+	$context['gcal']['description'] = $context['org']['description'];
+}
+
+$context['og_desc'] = preg_replace('/\s+/', ' ', strip_tags(substr($context['gcal']['description'], 0, 300)));
 
 // Get this event's campus
 $campus = $post->get_terms('campus')[0];
@@ -19,10 +33,10 @@ $context['campus'] = $campus->name;
 // Get other upcoming events at this campus
 $context['events'] = array(
   'post_type' => 'event',
-  'quantity' => 2,
+  'quantity' => 3,
   'feed_campus' => $campus->slug,
   'event_metadata' => array('date'),
-	// 'exclude' => $post->id,
+	'exclude' => $post->id,
   'style' => 'object',
 );
 
