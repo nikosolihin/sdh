@@ -30,7 +30,7 @@ export default class News {
     // Get filters from URL & store them
     this.queryString = location.search
     let filters = getQueryParams()
-    this.page = filters.page === undefined ? '1' : filters.page
+    this.page = filters.pg === undefined ? '1' : filters.pg
     this.date = filters.date === undefined ? 'desc' : 'asc'
     this.campus = filters.campus === undefined ? 'all' : filters.campus
     this.willJump = this.queryString === "" ? false : true
@@ -79,7 +79,7 @@ export default class News {
   updateQueryStrings() {
     this.campus = this.$campusFilter.val()
     this.date = this.$dateFilter.val()
-    window.history.pushState(null, document.title, `?utf8=✓&date=${this.date}&campus=${this.campus}&page=${this.page}` )
+    window.history.pushState(null, document.title, `?utf8=✓&date=${this.date}&campus=${this.campus}&pg=${this.page}` )
   }
 
   renderNews(data) {

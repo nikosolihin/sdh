@@ -27,8 +27,33 @@ Routes::map('events/:campus', function($params){
     header("Location: $url");
     exit();
   } else {
-    // If what comes after events/ is a post, load it
-    Routes::load('single-event.php');
+    // If what comes after events/ is gibberish, 404
+    Routes::load('404.php');
+  }
+});
+
+//=============================================
+// News Archive
+//=============================================
+Routes::map('news', function($params){
+  Routes::load('archive-news.php');
+});
+Routes::map('news/:campus', function($params){
+  // Get all campuses
+  $routesCampuses = array();
+  foreach (Timber::get_terms('campus') as $campus) {
+    array_push($routesCampuses, $campus->slug);
+  }
+
+  // If what comes after news/ is a campus,
+  // go to bookmarkable archive
+  if ( in_array($params['campus'], $routesCampuses) ) {
+    $url = get_bloginfo('url').'/news/?utf8=%E2%9C%93&date=desc&pg=1&campus=' . $params['campus'];
+    header("Location: $url");
+    exit();
+  } else {
+    // If what comes after news/ is gibberish, 404
+    Routes::load('404.php');
   }
 });
 
