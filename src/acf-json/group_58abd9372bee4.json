@@ -192,11 +192,11 @@
             "label": "Principal Info",
             "name": "principal",
             "type": "text",
-            "instructions": "Principal's full name. No need to include job title, phone, or email.",
+            "instructions": "Principal's full name. No need to include job title, phone, or email. Degree is okay (Ph.D, M.Pd., etc..)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -205,6 +205,30 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_58c76b5c49758",
+            "label": "Position",
+            "name": "position",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Head of School": "Head of School",
+                "Principal": "Principal"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
         },
         {
             "key": "field_58be442d1086f",
@@ -537,5 +561,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489382109
+    "modified": 1489464434
 }

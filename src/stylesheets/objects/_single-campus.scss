@@ -25,6 +25,14 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
+    @include from(md) {
+      size: 9rem;
+      top: -4.5rem;
+    }
+    @include from(lg) {
+      size: 10rem;
+      top: -5rem;
+    }
   }
   &-messageBody {
     background-color: #F5F9FC;
@@ -37,7 +45,7 @@
     p:not([class]) {
       font-size: $font-size-h5;
       @include from(lg) {
-        font-size: $font-size-h4;  
+        font-size: $font-size-h4;
       }
     }
     h2 {
