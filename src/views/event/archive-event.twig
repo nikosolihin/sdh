@@ -14,53 +14,33 @@
     </div>
 
     {# ----------------- Events Archive ----------------- #}
-    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "appId": "{{analytics.facebook_app_id}}", "handle": "{{analytics.twitter_analytics_id}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}" }'>
+    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}", "buttonLabel": "{{__('See Event', 'sdh')}}" }'>
       <h2 class="h3 normal navy">{{__('Events at Our Campuses', 'sdh')}}</h2>
-
       <div class="ArchiveEvents-control">
         <span class="h7 medium caps spaced faint">{{__('Filter by Campus', 'sdh')}}</span>
         <div class="ArchiveEvents-filter">
+          <div class="Pill Pill--all h6 medium" data-campus="all">{{__('All', 'sdh')}}</div>
           {% for campus in campuses %}
             <div class="Pill h6 medium" data-campus="{{campus.slug}}">{{campus.name |title}}</div>
           {% endfor %}
         </div>
       </div>
-
-      {# include 'components/loader.twig' #}
-
-      <div class="ArchiveEvents-content" data-component="share">
-
-        <a href="" class="EventObject">
-          <div class="EventObject-date">
-            <div class="Feed-mediaMonth h7 medium caps white center">Jan</div>
-            <div class="Feed-mediaDay medium white center">15</div>
-          </div>
-          <div class="EventObject-body">
-            <div class="h7 medium spaced caps faint">Holland Village</div>
-            <h3 class="h3 normal navy noMargin">This is a long event</h3>
-            <div class="EventObject-meta">
-              <div class="flex-wrapper">
-                <svg aria-hidden="true" role="presentation" title="">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-                </svg>
-                <span class="h6 medium faint">8:00am - 10:00am</span>
-              </div>
-              <div class="flex-wrapper">
-                <svg aria-hidden="true" role="presentation" title="">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-                </svg>
-                <span class="h6 medium faint">Basketball Court</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex-wrapper">
-            <div href="" class="Button Button--small">{{__('See Event', 'sdh')}}</div>
-          </div>
-        </a>
-
+      <div class="ArchiveEvents-nav">
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--prev h7 spaced caps medium navy">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
+          </svg><span></span>
+        </div>
+        <div class="ArchiveEvents-navNow h5 medium navy"><span></span></div>
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--next h7 spaced caps medium navy"><span></span>
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
       </div>
-
-
+      {% include 'components/loader.twig' %}
+      <div class="ArchiveEvents-notification h3 light navy center">No events found. Please try again.</div>
+      <div class="ArchiveEvents-result"></div>
     </div>
     {% include 'layout/base.twig' %}
   </div>

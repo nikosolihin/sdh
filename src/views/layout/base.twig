@@ -1,34 +1,41 @@
-{% for section in sections %}
+{% if sections %}
 
-  {% if section.acf_fc_layout == 'one_column' %}
-    {% include 'layout/columns.twig' with {
-      'column': 'one',
-      'full': section.full.components
-    } %}
+  {% for section in sections %}
+    {% if section.acf_fc_layout == 'one_column' %}
+      {% include 'layout/columns.twig' with {
+        'column': 'one',
+        'full': section.full.components
+      } %}
 
-  {% elseif section.acf_fc_layout == 'two_columns' %}
-    {% include 'layout/columns.twig' with {
-      'column': 'two',
-      'left': section.left.components,
-      'right': section.right.components
-    } %}
+    {% elseif section.acf_fc_layout == 'two_columns' %}
+      {% include 'layout/columns.twig' with {
+        'column': 'two',
+        'left': section.left.components,
+        'right': section.right.components
+      } %}
 
-  {% elseif section.acf_fc_layout == 'three_columns' %}
-    {% include 'layout/columns.twig' with {
-      'column': 'three',
-      'left': section.left.components,
-      'mid': section.mid.components,
-      'right': section.right.components
-    } %}
+    {% elseif section.acf_fc_layout == 'three_columns' %}
+      {% include 'layout/columns.twig' with {
+        'column': 'three',
+        'left': section.left.components,
+        'mid': section.mid.components,
+        'right': section.right.components
+      } %}
 
-  {% else %}
-    {% include 'layout/columns.twig' with {
-      'column': 'four',
-      'left': section.left.components,
-      'mid_left': section.mid_left.components,
-      'mid_right': section.mid_right.components,
-      'right': section.right.components,
-    } %}
+    {% else %}
+      {% include 'layout/columns.twig' with {
+        'column': 'four',
+        'left': section.left.components,
+        'mid_left': section.mid_left.components,
+        'mid_right': section.mid_right.components,
+        'right': section.right.components,
+      } %}
+    {% endif %}
+  {% endfor %}
 
-  {% endif %}
-{% endfor %}
+{% else %}
+
+  {# If client did not put any content body, yell hard #}
+  {% include 'layout/empty.twig' %}
+
+{% endif %}

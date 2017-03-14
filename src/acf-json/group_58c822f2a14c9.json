@@ -1,0 +1,46 @@
+{
+    "key": "group_58c822f2a14c9",
+    "title": "Default Template (With Sidebar)",
+    "fields": [
+        {
+            "key": "field_58c822f2a465a",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The default page template includes a sidebar. When building a page with sidebar, we suggest not using more than 2 columns. You can build a sidebar using the sidebar builder on the left, below the page builder.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : Default",
+    "modified": 1489511448
+}

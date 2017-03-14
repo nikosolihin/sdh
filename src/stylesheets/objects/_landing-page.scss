@@ -4,6 +4,7 @@
   }
   @include from(xl) {
     box: horizontal space-between;
+    border-bottom: 2px solid $white;
   }
   &-banner {
     @include cover;

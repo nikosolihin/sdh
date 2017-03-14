@@ -1,13 +1,22 @@
 .Pill {
-  color: #888;
+  color: #777;
   line-height: 1;
-  background-color: #f5f5f5;
+  background-color: #e7e7e7;
   border-radius: 3px;
   padding: .4rem $threefourth;
   margin: 0 $half $half 0;
   cursor: pointer;
   transition: all .075s ease-in-out;
   &:hover {
+    color: $white;
+    background-color: $orange;
+
+    &.Pill--on {
+      background-color: darken($orange, 3%);
+    }
+  }
+
+  &--on {
     color: $white;
     background-color: $orange;
   }

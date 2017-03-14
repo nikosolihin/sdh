@@ -7,6 +7,19 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
+$image = $context['acf']['image'];
+
+// Default teaser
+if ($context['acf']['teaser'] == '') {
+	$context['acf']['teaser'] = $context['org']['description'];
+}
+
+// Default image
+if(isset($image) && is_array($image)) {
+	$context['image'] = $image;
+} else {
+	$context['image'] = false;
+}
 
 // Get Sidebar
 $inherit = $context['acf']['inherit'];

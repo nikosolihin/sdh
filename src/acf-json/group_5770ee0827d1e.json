@@ -72,10 +72,86 @@
                 "id": ""
             },
             "default_value": "",
-            "new_lines": "br",
-            "maxlength": "",
             "placeholder": "",
-            "rows": 4
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_58c7a5f71f969",
+            "label": "Additional Contact Department",
+            "name": "org_add_contact_dept_one",
+            "type": "text",
+            "instructions": "For example: General Inquiries, Admissions, or Events",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58c7a6951f96a",
+            "label": "Additional Contact Details",
+            "name": "org_add_contact_details_one",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_58c7a70e1f96b",
+            "label": "Additional Contact Department",
+            "name": "org_add_contact_dept_two",
+            "type": "text",
+            "instructions": "For example: General Inquiries, Admissions, or Events",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58c7a7131f96c",
+            "label": "Additional Contact Details",
+            "name": "org_add_contact_details_two",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
         },
         {
             "key": "field_5770ee878907d",
@@ -573,6 +649,36 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_58c7a40e7743d",
+            "label": "Misc",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58c7a4167743e",
+            "label": "Academic Calendar",
+            "name": "calendar",
+            "type": "google_drive_field",
+            "instructions": "Point to a PDF of SDH Academic Calendar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -592,5 +698,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1489214725
+    "modified": 1489479531
 }

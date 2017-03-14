@@ -2,24 +2,93 @@
   position: relative;
   margin-top: $single*3;
 
+  .Loader {
+    top: 75%;
+  }
+
+  &-notification {
+    display: none;
+    padding-top: $single*2.25;
+  }
+
   &-control {
-    // box: horizontal middle left;
-    margin: $single*2 0 $single*3;
-    padding: $single 0;
-    border-top: 1px solid $line;
-    border-bottom: 1px solid $line;
+    background-color: #f9f9f9;
+    margin: $single*2 0 $single*2;
+    padding: $single $single*1.5;
   }
 
   &-filter {
     box: horizontal wrap;
-    margin-top: $threefourth;
+    margin-top: $half;
   }
 
-  &-content {
-    box: horizontal wrap top left;
-    min-height: 500px; // So loader don't overlap control area
+  &-result {
+    min-height: $single*10;
     &--fadeOut {
       opacity: .3;
+    }
+  }
+
+  &-resultGroup {
+    display: none;
+    &--current {
+      display: block;
+    }
+  }
+
+  &-nav {
+    box: horizontal space-between;
+    border-bottom: 1px solid $line;
+    > * {
+      width: 33.333%;
+    }
+    &Now {
+      box: horizontal center middle;
+      span {
+        line-height: 1.7;
+        border-bottom: 3px solid #ffd200;
+      }
+    }
+    &Button {
+      padding: $single $single*1.25;
+      cursor: pointer;
+      background-color: transparent;
+      will-change: background-color, color;
+      transition: all .125s ease-in-out;
+      * { user-select: none }
+      svg {
+        color: $navy;
+        size: .65rem;
+        transition: all .125s ease-in-out;
+      }
+      &:hover {
+        background-color: $navy;
+        svg, span {
+          color: $white;
+        }
+      }
+      &:first-child {
+        box: horizontal left middle;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        span {
+          margin-left: $threefourth;
+        }
+        &:hover svg {
+          transform: translateX(-7px);
+        }
+      }
+      &:last-child {
+        box: horizontal right middle;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        span {
+          margin-right: $threefourth;
+        }
+        &:hover svg {
+          transform: translateX(7px);
+        }
+      }
     }
   }
 }
@@ -29,7 +98,12 @@
   width: 100%;
   border-bottom: 1px solid $line;
   padding: $single*1.75 $single*1.25;
-  transition: all .125s ease-in-out;
+  opacity: 1;
+  max-height: 275px;
+  overflow: hidden;
+
+  will-change: opacity, padding, background-color, max-height;
+  transition: all .125s ease-in-out, opacity .1s ease-in-out;
 
   svg {
     size: $threefourth;
@@ -69,5 +143,11 @@
   &:hover {
     background-color: #fafafa;
     border-radius: 5px;
+  }
+
+  &--collapse {
+    max-height: 0;
+    padding: 0 $single*1.25;
+    opacity: 0;
   }
 }

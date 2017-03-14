@@ -4,7 +4,6 @@
 {% include 'components/banner.twig' %}
 {% include 'components/subnav.twig' %}
 
-{% set banner = acf.banner_size %}
 {% set sidebar = no_sidebar ? 'noSidebar' : '' %}
 
 <div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
@@ -17,22 +16,15 @@
         {% include 'components/breadcrumb.twig' %}
       </div>
       <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
-      {% if banner == 'hidden' %}
-        <p class="Intro-teaser light">{{acf.teaser}}</p>
-      {% endif %}
+      <p class="Intro-teaser light">{{acf.teaser}}</p>
     </div>
     {% include 'layout/base.twig' %}
   </div>
 
   {% if not no_sidebar %}
     <div class="SinglePage-sidebar Sidebar">
-      <div class="Toc">
-        <h5 class="h7 caps spaced navy bold">In This Section</h5>
-        <ul class="List">
-          <li><a href="" class="Toc-link h6 medium">Core Values</a></li>
-          <li><a href="" class="Toc-link h6 medium">Essential Characteristics</a></li>
-          <li><a href="" class="Toc-link h6 medium">Who to Contact</a></li>
-        </ul>
+      <div class="Toc" data-component="toc">
+        <h5 class="h7 caps spaced navy bold">{{__('In This Section', 'sdh')}}</h5>
       </div>
       {% if sidebar_sections %}
         {% include 'layout/sidebar-base.twig' %}

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% if acf.position == 'before' %}
+{% if sections and acf.position == 'before' %}
   <div class="SinglePage--noSidebar container container--spacedBottom">
     <div class="SinglePage-content">
       {% include 'layout/base.twig' %}
@@ -54,11 +54,12 @@
   </div>
 {% endif %}
 
-{% if acf.position == 'after' %}
+{% if sections and acf.position == 'after' %}
   <div class="SinglePage--noSidebar container container--spacedTop">
     <div class="SinglePage-content">
       {% include 'layout/base.twig' %}
     </div>
   </div>
 {% endif %}
+
 {% endblock %}
