@@ -10,5 +10,14 @@
   &:hover {
     color: $white;
     background-color: $orange;
+
+    &.Pill--on {
+      background-color: darken($orange, 3%);  
+    }
+  }
+
+  &--on {
+    color: $white;
+    background-color: $orange;
   }
 }

@@ -26,7 +26,7 @@ if ($context['locale'] != $campus_language) {
   $head = $context['site']->url;
   $tail = explode($context['site']->url, $post->link)[1];
   $targetURL = $head . $campus_language . $tail;
-  wp_redirect(clean_url($targetURL), 302);
+  wp_redirect(esc_url($targetURL), 302);
 }
 
 // If body class was set in routes.php, set it
@@ -68,6 +68,7 @@ switch ($params['section']) {
   case 'welcome': // Welcome
     $context['photo'] = $post->get_field('photo');
     $context['principal'] = $post->get_field('principal');
+    $context['position'] = $post->get_field('position');
     $context['message'] = $post->get_field('message');
     $context['og_desc'] = strip_tags(substr($context['message'], 0, 300));
     Timber::render( 'campus/single-campus-welcome.twig' , $context );

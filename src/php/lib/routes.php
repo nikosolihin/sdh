@@ -1,5 +1,17 @@
 <?php
 //=============================================
+// Event Archive
+//=============================================
+Routes::map('events', function($params){
+  Routes::load('archive-event.php');
+});
+Routes::map('events/:campus', function($params){
+  $url = get_bloginfo('url').'/events/?utf8=%E2%9C%93&campus=' . $params['campus'];
+  header("Location: $url");
+  exit();
+});
+
+//=============================================
 // Search Page -
 // so /search doesn't lead to a page.
 //=============================================
