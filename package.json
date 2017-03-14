@@ -1,6 +1,6 @@
 {
   "name": "sekolah-dian-harapan",
-  "version": "0.6.0",
+  "version": "0.6.3",
   "description": "A website redesign project for Sekolah Dian Harapan",
   "engines": {
     "node": ">=0.12.0 ~6.9.0",

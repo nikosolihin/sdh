@@ -63,6 +63,9 @@ export default class Events {
         } else {
           $(".ArchiveEvents-notification").hide()
         }
+      } else {
+        // If all is clicked, make sure we hide notification
+        $(".ArchiveEvents-notification").hide()
       }
       this.updateQueryStrings()
     })

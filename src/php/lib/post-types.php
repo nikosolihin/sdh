@@ -144,7 +144,7 @@ function events_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'sdh' ),
 	);
 	$rewrite = array(
-		'slug'                  => 'events',
+		'slug'                  => 'events/%campus%',
 		'with_front'            => true,
 		'pages'                 => true,
 		'feeds'                 => false,
@@ -210,7 +210,7 @@ function news_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'sdh' ),
 	);
 	$rewrite = array(
-		'slug'                  => 'news',
+		'slug'                  => 'news/%campus%',
 		'with_front'            => true,
 		'pages'                 => true,
 		'feeds'                 => false,
@@ -307,3 +307,29 @@ function campus_post_type() {
 	register_post_type( 'campus', $args );
 }
 add_action( 'init', 'campus_post_type', 0 );
+
+/**
+ * Filters to enable %custom-taxonomy% in rewrites
+ * http://wordpress.stackexchange.com/questions/108642/permalinks-custom-post-type-custom-taxonomy-post
+ */
+function campus_news_permalinks( $post_link, $post ){
+	if ( is_object( $post ) && $post->post_type == 'news' ){
+		$terms = wp_get_object_terms( $post->ID, 'campus' );
+		if( $terms ){
+			return str_replace( '%campus%' , $terms[0]->slug , $post_link );
+		}
+	}
+	return $post_link;
+}
+add_filter( 'post_type_link', 'campus_news_permalinks', 1, 2 );
+
+function campus_event_permalinks( $post_link, $post ){
+	if ( is_object( $post ) && $post->post_type == 'event' ){
+		$terms = wp_get_object_terms( $post->ID, 'campus' );
+		if( $terms ){
+			return str_replace( '%campus%' , $terms[0]->slug , $post_link );
+		}
+	}
+	return $post_link;
+}
+add_filter( 'post_type_link', 'campus_event_permalinks', 1, 2 );
