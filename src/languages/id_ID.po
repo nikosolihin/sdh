@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-13 17:51+0700\n"
-"PO-Revision-Date: 2017-03-13 18:02+0700\n"
+"POT-Creation-Date: 2017-03-14 13:04+0700\n"
+"PO-Revision-Date: 2017-03-14 13:05+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Event Calendar"
 msgstr "Kalender Acara"
 
-#: php/archive-event.php:10
+#: php/archive-event.php:11
 msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
 
@@ -204,7 +204,7 @@ msgstr ""
 msgid "Custom post type for voices"
 msgstr ""
 
-#: php/lib/post-types.php:122 php/single-event.php:52
+#: php/lib/post-types.php:122 php/single-event.php:66
 msgid "Events"
 msgstr "Kegiatan"
 
@@ -503,8 +503,8 @@ msgid "Stay Connected"
 msgstr "Tetap Terhubung"
 
 #: views/campus/single-campus-welcome.twig:37
-msgid "Message from the Principal"
-msgstr "Pesan dari kepala sekolah"
+msgid "Message from the"
+msgstr "Pesan dari"
 
 #: views/components/block.twig:21 views/page/front-page.twig:44
 #: views/page/landing-page.twig:41
@@ -539,13 +539,13 @@ msgstr "Bagikan"
 msgid "Events at Our Campuses"
 msgstr "Kegiatan Di Sekolah Kami"
 
-#: views/event/archive-event.twig:21
+#: views/event/archive-event.twig:20
 msgid "Filter by Campus"
 msgstr "Pilih berdasar kampus"
 
-#: views/event/archive-event.twig:57
-msgid "See Event"
-msgstr "Lihat"
+#: views/event/archive-event.twig:22 views/news/archive-news.twig:37
+msgid "All"
+msgstr "Semua"
 
 #: views/event/single-event.twig:71
 msgid "Events at"
@@ -633,10 +633,6 @@ msgstr "Terbaru"
 msgid "Oldest"
 msgstr "Tertua"
 
-#: views/news/archive-news.twig:37
-msgid "All"
-msgstr "Semua"
-
 #: views/page/front-page.twig:41
 msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
@@ -644,6 +640,12 @@ msgstr "Di Sekolah Kami"
 #: views/page/front-page.twig:42
 msgid "We're commited to"
 msgstr "Kami berkomitmen untuk"
+
+#~ msgid "Message from the Principal"
+#~ msgstr "Pesan dari kepala sekolah"
+
+#~ msgid "See Event"
+#~ msgstr "Lihat"
 
 #~ msgid "Events at SDH"
 #~ msgstr "Acara di SDH"

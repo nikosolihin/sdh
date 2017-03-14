@@ -1,22 +1,35 @@
 <?php
 //=============================================
+// Search Page -
+// so /search doesn't lead to a page.
+//=============================================
+Routes::map('search', function($params){
+  Routes::load('search.php');
+});
+
+//=============================================
 // Event Archive
 //=============================================
 Routes::map('events', function($params){
   Routes::load('archive-event.php');
 });
 Routes::map('events/:campus', function($params){
-  $url = get_bloginfo('url').'/events/?utf8=%E2%9C%93&campus=' . $params['campus'];
-  header("Location: $url");
-  exit();
-});
+  // Get all campuses
+  $routesCampuses = array();
+  foreach (Timber::get_terms('campus') as $campus) {
+    array_push($routesCampuses, $campus->slug);
+  }
 
-//=============================================
-// Search Page -
-// so /search doesn't lead to a page.
-//=============================================
-Routes::map('search', function($params){
-  Routes::load('search.php');
+  // If what comes after events/ is a campus,
+  // go to bookmarkable archive
+  if ( in_array($params['campus'], $routesCampuses) ) {
+    $url = get_bloginfo('url').'/events/?utf8=%E2%9C%93&campus=' . $params['campus'];
+    header("Location: $url");
+    exit();
+  } else {
+    // If what comes after events/ is a post, load it
+    Routes::load('single-event.php');
+  }
 });
 
 //=============================================

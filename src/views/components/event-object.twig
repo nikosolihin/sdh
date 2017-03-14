@@ -2,38 +2,45 @@
 {% verbatim %}
 
 {{#error}}
-  <h3 class="h4 light navy ArchiveNews-error">{{error}}</h3>
+  <h3 class="h4 light navy">{{error}}</h3>
 {{/error}}
 {{#empty}}
-  <h3 class="h4 light navy ArchiveNews-error">{{empty}}</h3>
+  <h3 class="h4 light navy">{{empty}}</h3>
 {{/empty}}
 
 {{#title}}
-  <a href="" class="EventObject">
+  <a href="{{link}}" class="EventObject" data-campus="{{slug}}">
     <div class="EventObject-date">
-      <div class="Feed-mediaMonth h7 medium caps white center">Jan</div>
-      <div class="Feed-mediaDay medium white center">15</div>
+      <div class="Feed-mediaMonth h7 medium caps white center">{{month}}</div>
+      <div class="Feed-mediaDay medium white center">{{day}}</div>
     </div>
     <div class="EventObject-body">
-      <div class="h7 medium spaced caps faint">Holland Village</div>
-      <h3 class="h3 normal navy noMargin">This is a long event</h3>
+      {{#campus}}
+        <div class="h7 medium spaced caps faint">{{campus}}</div>
+      {{/campus}}
+      <h3 class="h3 normal navy noMargin">{{title}}</h3>
       <div class="EventObject-meta">
-        <div class="flex-wrapper">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-          </svg>
-          <span class="h6 medium faint">8:00am - 10:00am</span>
-        </div>
-        <div class="flex-wrapper">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-          </svg>
-          <span class="h6 medium faint">Basketball Court</span>
-        </div>
+        {{#start}}
+          <div class="flex-wrapper">
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+            </svg>
+            <span class="h6 medium faint">{{start}} - {{end}}</span>
+          </div>
+        {{/start}}
+
+        {{#location}}
+          <div class="flex-wrapper">
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+            </svg>
+            <span class="h6 medium faint">{{location}}</span>
+          </div>
+        {{/location}}
       </div>
     </div>
     <div class="flex-wrapper">
-      <div href="" class="Button Button--small">{{__('See Event', 'sdh')}}</div>
+      <div href="" class="Button Button--small">{{label}}</div>
     </div>
   </a>
 {{/title}}

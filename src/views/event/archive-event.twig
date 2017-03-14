@@ -14,18 +14,33 @@
     </div>
 
     {# ----------------- Events Archive ----------------- #}
-    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}" }'>
+    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}", "buttonLabel": "{{__('See Event', 'sdh')}}" }'>
       <h2 class="h3 normal navy">{{__('Events at Our Campuses', 'sdh')}}</h2>
       <div class="ArchiveEvents-control">
         <span class="h7 medium caps spaced faint">{{__('Filter by Campus', 'sdh')}}</span>
         <div class="ArchiveEvents-filter">
+          <div class="Pill Pill--all h6 medium" data-campus="all">{{__('All', 'sdh')}}</div>
           {% for campus in campuses %}
             <div class="Pill h6 medium" data-campus="{{campus.slug}}">{{campus.name |title}}</div>
           {% endfor %}
         </div>
       </div>
+      <div class="ArchiveEvents-nav">
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--prev h7 spaced caps medium gray">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
+          </svg>
+          <span>February</span>
+        </div>
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--next h7 spaced caps medium gray">
+          <span>April</span>
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+          </svg>
+        </div>
+      </div>
       {% include 'components/loader.twig' %}
-      <div class="ArchiveEvents-content"></div>
+      <div class="ArchiveEvents-result"></div>
     </div>
     {% include 'layout/base.twig' %}
   </div>
