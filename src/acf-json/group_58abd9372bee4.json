@@ -126,28 +126,6 @@
             "return_format": "value"
         },
         {
-            "key": "field_58be5a32bb55d",
-            "label": "Academic Calendar File",
-            "name": "calendar",
-            "type": "google_drive_field",
-            "instructions": "Paste the link to a downloadable PDF of your school's academic calendar. You may use any Google Drive account. Click Help for more info.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58be596abb55c",
-                        "operator": "==",
-                        "value": "calendar"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
             "key": "field_58be5acebb55e",
             "label": "Facebook Page URL",
             "name": "facebook",
@@ -561,5 +539,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489464434
+    "modified": 1489478116
 }

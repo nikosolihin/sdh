@@ -130,9 +130,12 @@ class StarterSite extends TimberSite {
 		// Org Info
 		$context['org'] = array(
 			'name' => get_field('org_name', 'option'),
-			// 'address' => get_field('org_address', 'option'),
-			'description' => get_field('org_description', 'option')
-			// 'contacts' => get_field('org_contacts', 'option')
+			'address' => get_field('org_address', 'option'),
+			'description' => get_field('org_description', 'option'),
+			'dept_one' => get_field('org_add_contact_dept_one', 'option'),
+			'details_one' => get_field('org_add_contact_details_one', 'option'),
+			'dept_two' => get_field('org_add_contact_dept_two', 'option'),
+			'details_two' => get_field('org_add_contact_details_two', 'option'),
 		);
 
 		// Policy Page

@@ -36,8 +36,8 @@ if(isset($params['body_class']) && is_string($params['body_class'])) {
 
 // Quicklinks
 $context['campus_quicklinks'] = $post->get_field('quicklinks');
-$context['campus_quicklinks']['calendar'] = $post->get_field('calendar');
 $context['campus_quicklinks']['facebook'] = $post->get_field('facebook');
+$context['campus_quicklinks']['calendar'] = get_field('calendar', 'option');
 
 // Campus News
 $context['news'] = array(
