@@ -2,7 +2,11 @@
   margin: $single*4 auto;
 
   &--empty {
-    @at-root .archive #{&} {
+    p {
+      font-size: 1.2rem / 1.65;
+    }
+    @at-root .archive #{&},
+    .page-template-landing-page #{&} {
       display: none;
     }
   }

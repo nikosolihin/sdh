@@ -6,6 +6,8 @@
   margin-bottom: $single*2.25;
 
   &-link {
-    @include hover(#888, $gray);
+    @include hover(#777, #777);
+    display: block;
+    padding: .2rem 0;
   }
 }

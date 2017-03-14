@@ -73,6 +73,27 @@
             "endpoint": 0
         },
         {
+            "key": "field_58c7f526d64b6",
+            "label": "How many months worth of events should be fetched?",
+            "name": "events_listing_ppp",
+            "type": "number",
+            "instructions": "For example, setting this number to 6 means the website will fetch half a year worth of events, future and past - all relative from today's date.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 6,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 2,
+            "max": 20,
+            "step": 1
+        },
+        {
             "key": "field_58bbe276a472b",
             "label": "",
             "name": "",
@@ -255,5 +276,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Event Settings",
-    "modified": 1488708427
+    "modified": 1489499643
 }

@@ -14,7 +14,7 @@
     </div>
 
     {# ----------------- Events Archive ----------------- #}
-    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}", "buttonLabel": "{{__('See Event', 'sdh')}}" }'>
+    <div class="ArchiveEvents" data-component="events" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}", "buttonLabel": "{{__('See Event', 'sdh')}}" }'>
       <h2 class="h3 normal navy">{{__('Events at Our Campuses', 'sdh')}}</h2>
       <div class="ArchiveEvents-control">
         <span class="h7 medium caps spaced faint">{{__('Filter by Campus', 'sdh')}}</span>
@@ -26,20 +26,20 @@
         </div>
       </div>
       <div class="ArchiveEvents-nav">
-        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--prev h7 spaced caps medium gray">
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--prev h7 spaced caps medium navy">
           <svg aria-hidden="true" role="presentation" title="">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
-          </svg>
-          <span>February</span>
+          </svg><span></span>
         </div>
-        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--next h7 spaced caps medium gray">
-          <span>April</span>
+        <div class="ArchiveEvents-navNow h5 medium navy"><span></span></div>
+        <div class="ArchiveEvents-navButton ArchiveEvents-navButton--next h7 spaced caps medium navy"><span></span>
           <svg aria-hidden="true" role="presentation" title="">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
           </svg>
         </div>
       </div>
       {% include 'components/loader.twig' %}
+      <div class="ArchiveEvents-notification h3 light navy center">No events found. Please try again.</div>
       <div class="ArchiveEvents-result"></div>
     </div>
     {% include 'layout/base.twig' %}

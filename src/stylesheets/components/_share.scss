@@ -23,6 +23,26 @@
     }
   }
 
+  @include to(lg) {
+    box: horizontal middle center;
+    width: 100%;
+    padding: 0;
+    margin: $single 0;
+    .Share-title {
+      margin-bottom: 0;
+      margin-right: $threefourth;
+    }
+    .Share-button {
+      margin-bottom: 0;
+      svg {
+        size: $single;
+      }
+    }
+    .Share-socialMedia {
+      box: horizontal middle;
+    }
+  }
+
   &--horizontal {
     @include to(md) {
       box: horizontal middle center;
@@ -42,7 +62,7 @@
       }
       .Share-socialMedia {
         box: horizontal middle;
-      }  
+      }
     }
   }
 }

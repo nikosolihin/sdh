@@ -27,16 +27,34 @@
     }
   }
 
+  @at-root .page #{&} {
+    &-container {
+      box: vertical bottom right;
+    }
+    &-copy {
+      display: none;
+      @include from(lg) {
+        display: block;
+      }
+    }
+  }
+
   // Styles
   &--hidden { display: none; }
   &--small {
     height: $banner-small-height/1.75;
+    @include from(md) {
+      height: $banner-small-height/1.25;
+    }
     @include from(lg) {
       height: $banner-small-height;
     }
   }
   &--large {
     height: $banner-large-height/1.75;
+    @include from(md) {
+      height: $banner-large-height/1.25;
+    }
     @include from(lg) {
       height: $banner-large-height;
     }

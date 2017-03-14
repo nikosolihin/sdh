@@ -9,11 +9,13 @@ export default class Events {
     this.$el = $(el)
     this.$loader = $(".Loader")
     this.$resultArea = $(".ArchiveEvents-result")
-    this.$current = $('.ArchiveEvents-resultGroup--current')
+    this.allMonths = []
+    this.now = moment(new Date()).format('MMMM YYYY')
 
     // Data attribute options
     let options = this.$el.data('options')
     this.domain = options.domain
+    this.ppp = options.ppp
     this.allCampuses = options.campuses
     this.emptyMsg = options.emptyMsg
     this.buttonLabel = options.buttonLabel
@@ -25,15 +27,15 @@ export default class Events {
     this.willJump = this.queryString === "" ? false : true
 
     this.prepPills()
-    this.attachEvents()
     this.fetchEvents()
+    this.attachEvents()
   }
 
   prepPills() {
     if (this.campus == 'all') {
       this.$el.find(".Pill--all").toggleClass('Pill--on')
     } else {
-      this.$el.find(".Pill[data-campus='" + campus + "']").toggleClass('Pill--on')
+      this.$el.find(".Pill[data-campus='" + this.campus + "']").toggleClass('Pill--on')
     }
     if (this.willJump) {
       window.scrollTo(0, 1520)
@@ -46,27 +48,59 @@ export default class Events {
       $(".Pill--on").removeClass('Pill--on')
       $(event.target).toggleClass('Pill--on')
 
-      // Result area side
-      this.$current.find('.EventObject--collapse').toggleClass('EventObject--collapse')
+      // Uncollapse everything
+      $('.ArchiveEvents-resultGroup--current').find('.EventObject--collapse').toggleClass('EventObject--collapse')
 
+      // Which campus are we filtering for?
       let campus = $(event.target).data('campus')
       if (campus !== 'all') {
-        this.$current.find(".EventObject[data-campus!='" + campus + "']").toggleClass('EventObject--collapse')
+        $('.ArchiveEvents-resultGroup--current').find(".EventObject[data-campus!='" + campus + "']").toggleClass('EventObject--collapse')
+        let quantity = $('.ArchiveEvents-resultGroup--current').find(".EventObject[data-campus='" + campus + "']").length
+
+        // If after filtering, we're empty, write a note
+        if (!quantity) {
+          $(".ArchiveEvents-notification").show()
+        } else {
+          $(".ArchiveEvents-notification").hide()
+        }
       }
       this.updateQueryStrings()
     })
     .on('click', '.ArchiveEvents-navButton--prev', (event) => {
       let currentGroup = $('.ArchiveEvents-resultGroup--current'),
-      prevGroup = $('.ArchiveEvents-resultGroup--current').prev()
+      prevGroup = currentGroup.prev().length ? currentGroup.prev() : $(".ArchiveEvents-resultGroup:last"),
+      prevMonth = prevGroup.data('month')
+
+      // Take care of nav
+      this.setupNav(prevMonth)
+
+      // Take care of grouping
       currentGroup.removeClass('ArchiveEvents-resultGroup--current')
       prevGroup.addClass('ArchiveEvents-resultGroup--current')
     })
     .on('click', '.ArchiveEvents-navButton--next', (event) => {
       let currentGroup = $('.ArchiveEvents-resultGroup--current'),
-      nextGroup = $('.ArchiveEvents-resultGroup--current').next()
+      nextGroup = currentGroup.next().length ? currentGroup.next() : $(".ArchiveEvents-resultGroup:first"),
+      nextMonth = nextGroup.data('month')
+
+      // Take care of nav
+      this.setupNav(nextMonth)
+
+      // Take care of grouping
       currentGroup.removeClass('ArchiveEvents-resultGroup--current')
       nextGroup.addClass('ArchiveEvents-resultGroup--current')
     })
+  }
+
+  setupNav(current) {
+    // Grab index of current month and get the months sandwiching it
+    let now = parseInt(this.allMonths.indexOf(current)),
+      before = this.allMonths[now-1] || this.allMonths[this.allMonths.length-1],
+      after = this.allMonths[now+1] || this.allMonths[0]
+
+    $(".ArchiveEvents-navButton--prev span").text(before)
+    $(".ArchiveEvents-navButton--next span").text(after)
+    $(".ArchiveEvents-navNow span").text(current)
   }
 
   updateQueryStrings() {
@@ -86,7 +120,7 @@ export default class Events {
     dataObject.order = 'asc'
 
     // Set retreive 3 months back and forward
-    let numMonths = 3
+    let numMonths = 8
 
     let today = new Date(),
       year = today.getFullYear(),
@@ -126,6 +160,15 @@ export default class Events {
           })
           .value()
 
+        // Collect the months we have
+        _.forEach(groupedData, (month) => {
+          this.allMonths[this.allMonths.length] = month.month
+        })
+
+        // Then use that to setup our nav
+        this.setupNav(this.now)
+
+        // Now render stuff
         _.forEach(groupedData, (month) => {
           let today = new Date(),
             current = moment(today).format('MMMM YYYY'),

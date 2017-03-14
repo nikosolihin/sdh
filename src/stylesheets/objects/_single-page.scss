@@ -1,7 +1,10 @@
 .SinglePage {
   padding: $single*1.5 0;
   box: vertical;
-  @include from(lg) {
+  @include from(md) {
+    padding-bottom: $single*3;
+  }
+  @include from(xl) {
     padding: $single*5 0;
     box: horizontal;
   }
@@ -10,6 +13,13 @@
     flex: 1;
     padding: $single*1.25;
     @include to(md) {
+      // order: 2;
+      order: 1;
+    }
+  }
+
+  &-share {
+    @include to(lg) {
       order: 2;
     }
   }
@@ -26,6 +36,16 @@
       // In a one column layout, slim out editor
       max-width: $container-text-width;
       margin: 0 auto;
+    }
+  }
+
+  @at-root .page #{&} {
+    &-sidebar {
+      display: none;
+      @include from(xl) {
+        display: block;
+        padding-top: $single*5;
+      }
     }
   }
 
