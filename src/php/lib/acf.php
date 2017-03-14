@@ -8,12 +8,12 @@
 // Change local JSON path for load and save
 // to /src folder. Turn this on only in dev.
 //=============================================
-add_filter('acf/settings/save_json', 'acf_json_save_point');
+// add_filter('acf/settings/save_json', 'acf_json_save_point');
 function acf_json_save_point( $path ) {
   $path = dirname(get_stylesheet_directory(), 4) . '/src/acf-json';
   return $path;
 }
-add_filter('acf/settings/load_json', 'acf_json_load_point');
+// add_filter('acf/settings/load_json', 'acf_json_load_point');
 function acf_json_load_point( $paths ) {
   unset($paths[0]);
   $paths[] = dirname(get_stylesheet_directory(), 4) . '/src/acf-json';
