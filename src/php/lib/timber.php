@@ -211,6 +211,7 @@ class StarterSite extends TimberSite {
 		// Languages URLs
 		$context['languages']['en'] = get_field('language_en', 'option');
 		$context['languages']['id'] = get_field('language_id', 'option');
+		$context['languages']['solo'] = get_field('language_solo', 'option');
 
 		// Current URL
 		global $wp;

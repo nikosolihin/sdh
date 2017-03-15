@@ -25,9 +25,11 @@
     <svg aria-hidden="true" role="presentation" title="Select Language">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
     </svg>
-    <div class="Header-languagesDropdown">
-      <a href="{{language_other_link}}" class="h7 medium white">{{language_other}}</a>
-    </div>
+    {% if not languages.solo %}
+      <div class="Header-languagesDropdown">
+        <a href="{{language_other_link}}" class="h7 medium white">{{language_other}}</a>
+      </div>
+    {% endif %}
   </div>
 
   <div class="Header-slogan h7 medium white">{{slogan}}</div>

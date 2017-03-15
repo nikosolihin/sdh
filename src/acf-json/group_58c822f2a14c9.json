@@ -18,6 +18,87 @@
             "message": "The default page template includes a sidebar. When building a page with sidebar, we suggest not using more than 2 columns. You can build a sidebar using the sidebar builder on the left, below the page builder.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_58c8dafc66305",
+            "label": "Include a Table of Contents?",
+            "name": "toc",
+            "type": "true_false",
+            "instructions": "If within this page you have a long content with several H2s, toggle this to include an automatically generated Table of Contents. <strong>Note: Only H2s will get converted as TOC items.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_58c8db8566306",
+            "label": "Include a block?",
+            "name": "toc_block",
+            "type": "post_object",
+            "instructions": "Under the TOC, you may select one block",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58c8dafc66305",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "block"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_58c91df2e3704",
+            "label": "Alignment",
+            "name": "toc_block_alignment",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58c8dafc66305",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "left",
+            "layout": "horizontal",
+            "return_format": "value"
         }
     ],
     "location": [
@@ -42,5 +123,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Default",
-    "modified": 1489511448
+    "modified": 1489601305
 }

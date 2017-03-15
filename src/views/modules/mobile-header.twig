@@ -82,15 +82,19 @@
 
   <nav class="MobileHeader-secondaryNav">
     <div class="flex-wrapper">
+      <h3 class="h7 medium caps spaced orange">{{__('Quicklinks', 'sdh')}}</h3>
+      <a href="{{site.url}}/news" class="MobileHeader-secondaryLink h6 medium white">{{__('School News', 'sdh')}}</a>
+      <a href="{{site.url}}/events" class="MobileHeader-secondaryLink h6 medium white">{{__('Event Calendar', 'sdh')}}</a>
+      {% for button in cta_buttons %}
+        <a href="{{button.link}}" class="MobileHeader-secondaryLink h6 medium white">{{button.label}}</a>
+      {% endfor %}
+      <a href="{{feedback}}" class="MobileHeader-secondaryLink h6 medium white">{{__('Feedback', 'sdh')}}</a>
+    </div>
+    <div class="flex-wrapper">
       <h3 class="h7 medium caps spaced orange">{{__('Audiences', 'sdh')}}</h3>
       {% for item in secondary_menu %}
         <a href="{{item.link}}" class="MobileHeader-secondaryLink h6 medium white">{{item.title}}</a>
       {% endfor %}
-    </div>
-    <div class="flex-wrapper">
-      <h3 class="h7 medium caps spaced orange">{{__('Quicklinks', 'sdh')}}</h3>
-      <a href="{{site.url}}/news" class="MobileHeader-secondaryLink h6 medium white">{{__('School News', 'sdh')}}</a>
-      <a href="{{site.url}}/events" class="MobileHeader-secondaryLink h6 medium white">{{__('Event Calendar', 'sdh')}}</a>
     </div>
   </nav>
 
@@ -98,7 +102,9 @@
     <div class="MobileHeader-language">
       <h3 class="h7 medium caps spaced orange">{{__('Languages', 'sdh')}}</h3>
       <a href="{{language_link}}" class="MobileHeader-languageLink h6 medium MobileHeader-languageLink--active">{{language}}</a>
-      <a href="{{language_other_link}}" class="MobileHeader-languageLink h6 medium">{{language_other}}</a>
+      {% if not languages.solo %}
+        <a href="{{language_other_link}}" class="MobileHeader-languageLink h6 medium">{{language_other}}</a>
+      {% endif %}
     </div>
     <div class="MobileHeader-social">
       <h3 class="h7 medium caps spaced orange">{{__('Stay Connected', 'sdh')}}</h3>
