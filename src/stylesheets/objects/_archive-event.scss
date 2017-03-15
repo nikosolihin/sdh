@@ -3,6 +3,7 @@
   margin-top: $single*3;
   @include to(md) {
     @include fullwidth;
+    margin-bottom: $single*3;
     > .h3 {
       padding: 0 $single;
     }

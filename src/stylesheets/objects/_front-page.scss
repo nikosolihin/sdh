@@ -78,16 +78,24 @@
 
   &-statements {
     position: absolute;
-    top: $single*25;
-    left: $single*10;
+    bottom: 16%;
+    left: 17%;
     box: vertical space-between left;
     z-index: $zindex-hero-copy;
     width: 55%;
-    font-size: $single*2;
     transition: all .4s cubic-bezier(0.2, 0.3, 0.25, 0.9);
     opacity: 0;
     transform: scale(1.175);
     will-change: transform, opacity;
+
+    @include from(xl) {
+      // bottom: 20%;
+    }
+    @include from(xxl) {
+      width: 50%;
+      left: 12%;
+    }
+
     &Intro {
       margin-bottom: $threefourth;
     }
@@ -95,8 +103,14 @@
       margin-top: $single*1.75;
     }
     &Item {
-      line-height: 1.6;
       margin-bottom: $half;
+      font-size: 1.6rem / 1.65;
+      @include from(xl) {
+        font-size: 1.75rem / 1.7;
+      }
+      @include from(xxl) {
+        font-size: 1.925rem / 1.7;
+      }
     }
     &Underlined {
       border-bottom: 5px solid $orange;
@@ -162,12 +176,22 @@
     z-index: $zindex-hero-copy;
     &Item {
       box: horizontal middle left;
-      padding: $single $single*2.5 $single $single*1.5;
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
       margin-bottom: $half;
       cursor: pointer;
+      will-change: background-color;
       transition: background-color .1s ease-in-out;
+      @include at(lg) {
+        max-width: $single*8;
+        padding: $single;
+      }
+      @include from(xl) {
+        padding: $single $single*2.5 $single $single*1.5;
+      }
+      .h5 {
+        line-height: 1.35;
+      }
       svg {
         position: absolute;
         left: -$half;
