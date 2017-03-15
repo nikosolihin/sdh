@@ -39,7 +39,8 @@
     }
   }
 
-  @at-root .page #{&} {
+  @at-root .page #{&},
+  .archive #{&} {
     &-sidebar {
       display: none;
       @include from(xl) {

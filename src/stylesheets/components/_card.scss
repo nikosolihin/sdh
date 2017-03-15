@@ -1,8 +1,15 @@
 .Card {
-  // Remove this
-  width: 33.333%;
-  border-right: $single*1.5 solid transparent;
-  border-bottom: $single*1.75 solid transparent;
+  width: 100%;
+  margin-bottom: $single*2.5;
+  @include from(md) {
+    width: 50%;
+    border-right: $single*1.5 solid transparent;
+    border-bottom: $single*1.75 solid transparent;
+    margin-bottom: 0;
+  }
+  @include from(lg) {
+    width: 33.333%;
+  }
 
   &-image {
     @include cover;
