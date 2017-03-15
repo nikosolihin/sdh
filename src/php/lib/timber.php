@@ -33,6 +33,7 @@ class StarterSite extends TimberSite {
 
 		// Fallback Image
 		$context['fallback']['image'] = serveImage(get_field('fallback_image', 'option'));
+		$context['fallback']['square'] = serveSquareImage(get_field('fallback_image', 'option'));
 		$context['fallback']['photo'] = serveSquareImage(get_field('fallback_photo', 'option'));
 
 		// Campuses

@@ -2,10 +2,12 @@
   {% set image = acf.image|serveImage %}
   {% set size = acf.banner_size %}
   {% set alignment = acf.alignment %}
-{% else %}
+{% elseif acf.banner_size != 'hidden' %}
   {% set image = fallback.image %}
   {% set size = 'small' %}
   {% set alignment = '' %}
+{% else %}
+  {% set size = 'hidden' %}
 {% endif %}
 
 <section class="{{'Banner'|modifiers("#{size}, #{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}" style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
