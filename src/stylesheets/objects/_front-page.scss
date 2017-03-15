@@ -88,9 +88,6 @@
     transform: scale(1.175);
     will-change: transform, opacity;
 
-    @include from(xl) {
-      // bottom: 20%;
-    }
     @include from(xxl) {
       width: 50%;
       left: 12%;
