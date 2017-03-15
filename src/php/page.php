@@ -7,6 +7,30 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
+$context['toc'] = $post->get_field('toc');
+$context['with_toc_block'] = $post->get_field('toc_block');
+
+// Get TOC block if set
+if ($context['with_toc_block']) {
+	$context['toc_block'] = array();
+	$block = Timber::get_post($context['with_toc_block']);
+	$context['toc_block']['alignment'] = $post->get_field('toc_block_alignment');
+	$context['toc_block']['title'] = $block->title;
+	$link_type = $block->get_field('type');
+	if ($link_type == "single") {
+		$context['toc_block']['link'] = $block->get_field('single_url');
+	} elseif ($link_type == "external") {
+		$context['toc_block']['link'] = $block->get_field('external_url');
+	} else {
+		$context['toc_block']['link'] = $block->get_field('search_url');
+	}
+	$image = $block->get_field('image');
+	if(isset($image) && is_array($image)) {
+		$context['toc_block']['image'] = serveImage($image);
+	} else {
+		$context['toc_block']['image'] = $context['fallback']['image'];
+	}
+}
 
 // Get Sidebar
 $inherit = ($context['acf']['inherit']);

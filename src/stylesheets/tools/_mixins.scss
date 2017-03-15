@@ -96,6 +96,22 @@
     z-index: -1;
   }
 }
+@mixin bottom-slant($angle: 6.75, $bottom: -.8rem) {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: #{$bottom};
+    left: 0;
+    height: 50%;
+    width: 100%;
+    transform: skewY(-#{$angle}deg);
+    background: inherit;
+    z-index: -1;
+  }
+}
 @mixin line-divider($space) {
   margin-bottom: $space;
   position: relative;
