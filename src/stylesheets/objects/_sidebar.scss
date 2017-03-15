@@ -13,7 +13,7 @@
   }
   @at-root .ArchivePage #{&} {
     width: 31%;
-    padding: 0 $single*2;
+    padding: $single*6 $single*2 0;
   }
 
   &-section {

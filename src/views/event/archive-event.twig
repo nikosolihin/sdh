@@ -46,6 +46,13 @@
   </div>
 
   <div class="SinglePage-sidebar Sidebar">
+    <div class="Sidebar-section Sidebar-section--callout Sidebar-section--navy">
+      <div class="Editor">
+        <h3>{{__('Download Calendar', 'sdh')}}</h3>
+        <p>{{__('If you use your own calendar app, click here to download and import all of our events', 'sdh')}}</p>
+        <a href="{{ics}}" class="Button Button--block Button--gray">{{__('Download', 'sdh')}}</a>
+      </div>
+    </div>
     {% if sidebar_sections %}
       {% include 'layout/sidebar-base.twig' %}
     {% endif %}

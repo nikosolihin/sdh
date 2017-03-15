@@ -34,6 +34,9 @@
     }
     @include from(lg) {
       display: none;
+      @at-root .archive #{&} {
+        display: block;
+      }
     }
   }
 

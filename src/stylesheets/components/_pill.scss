@@ -7,6 +7,10 @@
   margin: 0 $half $half 0;
   cursor: pointer;
   transition: all .075s ease-in-out;
+  @include to(md) {
+    font-size: .7rem;
+    padding: .325rem .425rem;
+  }
   &:hover {
     color: $white;
     background-color: $orange;
