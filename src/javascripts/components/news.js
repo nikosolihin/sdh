@@ -26,6 +26,7 @@ export default class News {
     this.appID = options.appId
     this.handle = options.handle
     this.emptyMsg = options.emptyMsg
+    this.emptyImg = options.emptyImg
 
     // Get filters from URL & store them
     this.queryString = location.search
@@ -164,7 +165,10 @@ export default class News {
           }
 
           // Do we have a teaser image selected?
-          if (image !== "") {
+          if (image == "") {
+            // Fallback
+            templateVars['image'] = this.emptyImg
+          } else {
             templateVars['image'] = imageBase + 's400/' + imageTitle
           }
           this.renderNews(templateVars)

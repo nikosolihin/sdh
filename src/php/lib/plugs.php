@@ -13,8 +13,8 @@ add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-add_action( 'init', 'ac_custom_column_settings_c9cc5d77' );
-function ac_custom_column_settings_c9cc5d77() {
+function ac_custom_column_settings_be6a174b() {
+
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
 			array(
@@ -24,17 +24,17 @@ function ac_custom_column_settings_c9cc5d77() {
 						'type' => 'column-order',
 						'clone' => '',
 						'label' => 'Order',
-						'width' => '4',
+						'width' => '6',
 						'width_unit' => '%',
 						'edit' => 'on',
-						'sort' => 'on'
+						'sort' => 'off'
 					),
 			'title' => array(
 						'column-name' => 'title',
 						'type' => 'title',
 						'clone' => '',
 						'label' => 'Title',
-						'width' => '20',
+						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
 						'sort' => 'on'
@@ -44,11 +44,11 @@ function ac_custom_column_settings_c9cc5d77() {
 						'type' => 'column-page_template',
 						'clone' => '',
 						'label' => 'Template',
-						'width' => '12',
+						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
@@ -58,9 +58,19 @@ function ac_custom_column_settings_c9cc5d77() {
 						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_576ce022e631e',
-						'excerpt_length' => '15',
+						'excerpt_length' => '10',
 						'edit' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
+					),
+			'column-modified' => array(
+						'column-name' => 'column-modified',
+						'type' => 'column-modified',
+						'clone' => '',
+						'label' => 'Last modified',
+						'width' => '',
+						'width_unit' => '%',
+						'date_format' => 'd M y',
+						'sort' => 'off'
 					)
 				),
 			)
@@ -73,22 +83,73 @@ function ac_custom_column_settings_c9cc5d77() {
 						'type' => 'title',
 						'clone' => '',
 						'label' => 'Title',
-						'width' => '25',
+						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
 						'sort' => 'on'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_589c3344f996c',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'off'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'voice', array(
+			array(
+				'columns' => array(
+					'title' => array(
+						'column-name' => 'title',
+						'type' => 'title',
+						'clone' => '',
+						'label' => 'Title',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'sort' => 'on'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Testimony',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_58b44c2ede82b',
+						'excerpt_length' => '10',
+						'edit' => 'off',
+						'sort' => 'off'
 					),
 			'column-acf_field-1' => array(
 						'column-name' => 'column-acf_field-1',
 						'type' => 'column-acf_field',
 						'clone' => '1',
-						'label' => 'Description',
+						'label' => 'Author Info',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57715bb61788a',
-						'excerpt_length' => '15',
+						'field' => 'field_58b44c6cde82d',
 						'edit' => 'off',
+						'filter' => 'off',
 						'sort' => 'off'
+					),
+			'date' => array(
+						'column-name' => 'date',
+						'type' => 'date',
+						'clone' => '',
+						'label' => 'Date',
+						'width' => '10',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'on'
 					)
 				),
 			)
@@ -101,39 +162,34 @@ function ac_custom_column_settings_c9cc5d77() {
 						'type' => 'title',
 						'clone' => '',
 						'label' => 'Title',
-						'width' => '20',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
-					),
-			'taxonomy-event_category' => array(
-						'column-name' => 'taxonomy-event_category',
-						'type' => 'taxonomy-event_category',
-						'clone' => '',
-						'label' => 'Categories',
-						'width' => '10',
-						'width_unit' => '%'
-					),
-			'date' => array(
-						'column-name' => 'date',
-						'type' => 'date',
-						'clone' => '',
-						'label' => 'Start Date',
-						'width' => '10',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Advanced Custom Fields',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57ceadbc0b1c6_57bd72f5f6804',
+						'edit' => 'off',
 						'sort' => 'on'
+					),
+			'column-taxonomy' => array(
+						'column-name' => 'column-taxonomy',
+						'type' => 'column-taxonomy',
+						'clone' => '',
+						'label' => 'Campus',
+						'width' => '',
+						'width_unit' => '%',
+						'taxonomy' => 'campus',
+						'edit' => 'off',
+						'enable_term_creation' => 'off',
+						'filter' => 'off',
+						'sort' => 'off'
+					),
+			'column-date_published' => array(
+						'column-name' => 'column-date_published',
+						'type' => 'column-date_published',
+						'clone' => '',
+						'label' => 'Event Start Date',
+						'width' => '',
+						'width_unit' => '%',
+						'date_format' => 'd M Y',
+						'edit' => 'off',
+						'sort' => 'off'
 					)
 				),
 			)
@@ -151,13 +207,18 @@ function ac_custom_column_settings_c9cc5d77() {
 						'edit' => 'off',
 						'sort' => 'on'
 					),
-			'taxonomy-news_topic' => array(
-						'column-name' => 'taxonomy-news_topic',
-						'type' => 'taxonomy-news_topic',
+			'column-taxonomy' => array(
+						'column-name' => 'column-taxonomy',
+						'type' => 'column-taxonomy',
 						'clone' => '',
-						'label' => 'News Topics',
+						'label' => 'Campus',
 						'width' => '',
-						'width_unit' => '%'
+						'width_unit' => '%',
+						'taxonomy' => 'campus',
+						'edit' => 'off',
+						'enable_term_creation' => 'off',
+						'filter' => 'off',
+						'sort' => 'off'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
@@ -166,16 +227,16 @@ function ac_custom_column_settings_c9cc5d77() {
 						'label' => 'Overview',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57e383efb2d6e',
+						'field' => 'field_576ce022e631e',
 						'excerpt_length' => '15',
 						'edit' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
 					),
 			'date' => array(
 						'column-name' => 'date',
 						'type' => 'date',
 						'clone' => '',
-						'label' => 'Published On',
+						'label' => 'Date',
 						'width' => '10',
 						'width_unit' => '%',
 						'edit' => 'off',
@@ -185,36 +246,16 @@ function ac_custom_column_settings_c9cc5d77() {
 				),
 			)
 		) );
-		ac_register_columns( 'person', array(
+		ac_register_columns( 'campus', array(
 			array(
 				'columns' => array(
 					'title' => array(
 						'column-name' => 'title',
 						'type' => 'title',
 						'clone' => '',
-						'label' => 'Title',
+						'label' => 'Unit',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
-					),
-			'taxonomy-role' => array(
-						'column-name' => 'taxonomy-role',
-						'type' => 'taxonomy-role',
-						'clone' => '',
-						'label' => 'Roles',
-						'width' => '',
-						'width_unit' => '%'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Title',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_575faacb00736',
-						'excerpt_length' => '15',
 						'edit' => 'off',
 						'sort' => 'on'
 					),
@@ -222,207 +263,63 @@ function ac_custom_column_settings_c9cc5d77() {
 						'column-name' => 'column-acf_field-1',
 						'type' => 'column-acf_field',
 						'clone' => '1',
-						'label' => 'Email',
+						'label' => 'Leadership',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_575faa4800735',
+						'field' => 'field_58be446b10870',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'on'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'resource', array(
-			array(
-				'columns' => array(
-					'title' => array(
-						'column-name' => 'title',
-						'type' => 'title',
-						'clone' => '',
-						'label' => 'Title',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
-					),
-			'taxonomy-media_type' => array(
-						'column-name' => 'taxonomy-media_type',
-						'type' => 'taxonomy-media_type',
-						'clone' => '',
-						'label' => 'Media Type',
-						'width' => '',
-						'width_unit' => '%'
-					),
-			'taxonomy-media_category' => array(
-						'column-name' => 'taxonomy-media_category',
-						'type' => 'taxonomy-media_category',
-						'clone' => '',
-						'label' => 'Media Categories',
-						'width' => '',
-						'width_unit' => '%'
-					),
-			'date' => array(
-						'column-name' => 'date',
-						'type' => 'date',
-						'clone' => '',
-						'label' => 'Published On',
-						'width' => '10',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'wp-taxonomy_event_category', array(
-			array(
-				'columns' => array(
-					'name' => array(
-						'column-name' => 'name',
-						'type' => 'name',
-						'clone' => '',
-						'label' => 'Name',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'description' => array(
-						'column-name' => 'description',
-						'type' => 'description',
-						'clone' => '',
-						'label' => 'Description',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
+						'sort' => 'off'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
 						'type' => 'column-acf_field',
 						'clone' => '',
-						'label' => 'Color',
+						'label' => 'Primary Language',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57d64fab2d7a8',
-						'edit' => 'off'
+						'field' => 'field_58abe5ad7bc56',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'off'
 					),
-			'posts' => array(
-						'column-name' => 'posts',
-						'type' => 'posts',
-						'clone' => '',
-						'label' => 'Count',
-						'width' => '',
-						'width_unit' => '%'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'wp-taxonomy_media_type', array(
-			array(
-				'columns' => array(
-					'name' => array(
-						'column-name' => 'name',
-						'type' => 'name',
-						'clone' => '',
-						'label' => 'Name',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'description' => array(
-						'column-name' => 'description',
-						'type' => 'description',
-						'clone' => '',
-						'label' => 'Description',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
+			'column-acf_field-2' => array(
+						'column-name' => 'column-acf_field-2',
 						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Color',
+						'clone' => '2',
+						'label' => 'Address',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57fb61974f758',
-						'edit' => 'off'
+						'field' => 'field_58ac0b1c6cb46',
+						'sub_field' => 'field_58bd4405d2e4d',
+						'sub_field_display' => '',
+						'excerpt_length' => '8',
+						'sort' => 'off'
 					),
-			'posts' => array(
-						'column-name' => 'posts',
-						'type' => 'posts',
-						'clone' => '',
-						'label' => 'Count',
-						'width' => '',
-						'width_unit' => '%'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'wp-taxonomy_media_category', array(
-			array(
-				'columns' => array(
-					'name' => array(
-						'column-name' => 'name',
-						'type' => 'name',
-						'clone' => '',
-						'label' => 'Name',
+			'column-acf_field-3' => array(
+						'column-name' => 'column-acf_field-3',
+						'type' => 'column-acf_field',
+						'clone' => '3',
+						'label' => 'Quicklink Items',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'off'
+						'field' => 'field_58be596abb55c',
+						'edit' => 'off',
+						'sort' => 'off'
 					),
-			'description' => array(
-						'column-name' => 'description',
-						'type' => 'description',
+			'column-modified' => array(
+						'column-name' => 'column-modified',
+						'type' => 'column-modified',
 						'clone' => '',
-						'label' => 'Description',
+						'label' => 'Last modified',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'posts' => array(
-						'column-name' => 'posts',
-						'type' => 'posts',
-						'clone' => '',
-						'label' => 'Count',
-						'width' => '',
-						'width_unit' => '%'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'wp-taxonomy_role', array(
-			array(
-				'columns' => array(
-					'name' => array(
-						'column-name' => 'name',
-						'type' => 'name',
-						'clone' => '',
-						'label' => 'Name',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'description' => array(
-						'column-name' => 'description',
-						'type' => 'description',
-						'clone' => '',
-						'label' => 'Description',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off'
-					),
-			'posts' => array(
-						'column-name' => 'posts',
-						'type' => 'posts',
-						'clone' => '',
-						'label' => 'Count',
-						'width' => '',
-						'width_unit' => '%'
+						'date_format' => 'd M Y',
+						'sort' => 'off'
 					)
 				),
 			)
 		) );
 	}
 }
+add_action( 'init', 'ac_custom_column_settings_be6a174b' );

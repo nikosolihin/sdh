@@ -5,16 +5,17 @@
 {% endblock %}
 
 {% block content %}
+{% set image = fallback.image %}
 
 <div class="SinglePage ArchivePage container">
   <div class="SinglePage-content">
     <div class="Intro">
       <h1 class="Intro-heading h2 light navy">{{title|title}}</h1>
-      <p class="Intro-teaser light faint">{{teaser}}</p>
+      <p class="Intro-teaser light gray">{{teaser}}</p>
     </div>
 
     {# ----------------- News Archive ----------------- #}
-    <div class="ArchiveNews" data-component="news" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "appId": "{{analytics.facebook_app_id}}", "handle": "{{analytics.twitter_analytics_id}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}" }'>
+    <div class="ArchiveNews" data-component="news" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "appId": "{{analytics.facebook_app_id}}", "handle": "{{analytics.twitter_analytics_id}}", "campuses": {{campuses_json}}, "emptyMsg": "{{empty_msg}}", "emptyImg": "{{image.xs}}" }'>
       <h2 class="h3 normal navy">{{__('News from Our Campuses', 'sdh')}}</h2>
 
       <div class="ArchiveNews-control">

@@ -483,6 +483,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_58c984f5c594d",
+            "label": "Temporarily disable IN",
+            "name": "language_solo",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_580cffa14e9fb",
             "label": "Search",
             "name": "",
@@ -634,10 +653,10 @@
         },
         {
             "key": "field_58ba4f5655ec5",
-            "label": "Feedback Email",
+            "label": "Feedback Page",
             "name": "feedback",
-            "type": "email",
-            "instructions": "Usually to the IT team",
+            "type": "page_link",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -645,10 +664,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
         },
         {
             "key": "field_58c7a40e7743d",
@@ -698,5 +720,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1489479531
+    "modified": 1489601487
 }

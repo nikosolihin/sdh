@@ -5,8 +5,12 @@
 {% endif %}
 
 {% set description = acf.teaser is defined ? acf.teaser : og_desc %}
-{% set image = acf.image|serveImage %}
-{% set imageSquare = acf.image|serveSquareImage %}
+
+{% if acf.image and acf.image is iterable %}
+  {% set image = acf.image|serveImage %}
+{% else %}
+  {% set image = fallback.image %}
+{% endif %}
 
 <meta property="og:locale" content="{{locale}}" />
 <meta property="og:type" content="website" />

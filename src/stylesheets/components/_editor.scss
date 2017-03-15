@@ -18,7 +18,8 @@
   @at-root .Sidebar-section #{&} {
     font-size: $font-size-h5;
     h2 {
-      font-size: 1.2rem;
+      @extend .medium;
+      font-size: 1.125rem;
     }
     h3 {
       @extend .h7, .medium, .caps, .spaced, .orange;

@@ -1,8 +1,14 @@
 {% for block in data.blocks %}
   {% set post = TimberPost(block) %}
-  {% set image = post.get_field('image')|serveImage %}
+  {% set block_image = post.get_field('image') %}
   {% set description = post.get_field('description') %}
   {% set link_type = post.get_field('type') %}
+
+  {% if block_image and block_image is iterable %}
+    {% set image = block_image|serveImage %}
+  {% else %}
+    {% set image = fallback.image %}
+  {% endif %}
 
   {% if link_type == "single" %}
     {% set url = post.get_field('single_url') %}

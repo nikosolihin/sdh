@@ -63,11 +63,15 @@
     box: horizontal;
   }
   &-secondaryList {
-    @include right-slant($right: -3.75rem);
     box: horizontal;
     background-color: $navy;
     padding-right: $single;
-    overflow: hidden;
+    @include from(xxl) {
+      @include right-slant($angle: 0, $right: -2.5rem);
+    }
+    &::after {
+      width: 75px;
+    }
   }
   &-secondaryLink {
     @include hover(inherit, $yellow);

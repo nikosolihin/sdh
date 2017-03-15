@@ -41,7 +41,7 @@
   <div class="Home-statementsIntro white medium caps spaced h5">{{__('At Our Schools', 'sdh')}}</div>
   <p class="Home-statementsItem white bold">{{__("We're commited to", 'sdh')}} <span class="Home-statementsUnderlined"></span></p>
   <div class="flex-wrapper">
-    <a href="" class="Home-statementsButton Button Button--gray">{{__('Learn More', 'sdh')}}</a>
+    <a href="" class="Home-statementsButton Button Button--gray Button--small">{{__('Learn More', 'sdh')}}</a>
   </div>
 </div>
 
@@ -54,13 +54,13 @@
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
       </svg>
-      <span class="h7 bold caps spaced navy">News</span>
+      <span class="h7 bold caps spaced navy">{{__('News', 'sdh')}}</span>
     </div>
     <div class="Home-newsLink">
       <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
       </svg>
-      <span class="h7 bold caps spaced navy">Events</span>
+      <span class="h7 bold caps spaced navy">{{__('Events', 'sdh')}}</span>
     </div>
   </div>
 </div>
@@ -83,13 +83,15 @@
       <span class="Footer-dot">●</span>
     {% endif %}
 
-    <a href="mailto:{{feedback}}" class="Footer-secondaryLink h7 medium white">{{__('Feedback', 'sdh')}}</a>
+    <a href="{{feedback}}" class="Footer-secondaryLink h7 medium white">{{__('Feedback', 'sdh')}}</a>
     <span class="Footer-dot">●</span>
 
     <div class="Footer-languages">
       <span class="h7 medium white">{{__('Languages', 'sdh')}}:</span>
-      <a href="{{language_link}}" class="Footer-secondaryLink h7 medium Footer-secondaryLink--active">{{language}}</a>
-      <a href="{{language_other_link}}" class="Footer-secondaryLink h7 medium">{{language_other}}</a>
+      <a href="{{language_link}}" class="Footer-secondaryLink h7 medium  Footer-secondaryLink--active">{{language}}</a>
+      {% if not languages.solo %}
+        <a href="{{language_other_link}}" class="Footer-secondaryLink h7 medium">{{language_other}}</a>
+      {% endif %}
     </div>
   </div>
 

@@ -4,10 +4,48 @@
   border-radius: 3px;
   padding: $single*2;
   margin-bottom: $single*2.25;
+  background-color: $white;
 
   &-link {
     @include hover(#777, #777);
     display: block;
     padding: .2rem 0;
+  }
+
+  &--withBlock {
+    margin-bottom: 0;
+    @include bottom-slant($bottom:-1.125rem);
+  }
+
+  &-block {
+    position: relative;
+    border: 1px solid $line;
+    height: $single*10.75;
+    z-index: 0;
+    margin-bottom: $single*1.5;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    &Image {
+      @include cover;
+      position: absolute;
+      size: 100%;
+      filter: grayscale(1);
+      z-index: 1;
+    }
+    &Wrapper {
+      @include overlay(true, rgba(36, 154, 206, .7));
+      position: absolute;
+      box: vertical right space-around;
+      size: 100%;
+      z-index: 2;
+      padding: $single*2.75 $single*1.5 $single*1.5 $single*1.5;
+      .h3 {
+        font-size: 1.35rem / 1.25;
+      }
+      &--left {
+        box: vertical left space-around;
+      }
+    }
   }
 }

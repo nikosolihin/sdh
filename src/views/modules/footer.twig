@@ -4,6 +4,18 @@
   {% set footer_image = fallback.image %}
 {% endif %}
 
+{% if locale == 'id_ID' %}
+  {% set language = 'Indonesian' %}
+  {% set language_link = languages.id %}
+  {% set language_other = 'English' %}
+  {% set language_other_link = languages.en %}
+{% elseif locale == 'en_US' %}
+  {% set language = 'English' %}
+  {% set language_link = languages.en %}
+  {% set language_other = 'Indonesian' %}
+  {% set language_other_link = languages.id %}
+{% endif %}
+
 <footer class="Footer lazyload" data-bgset="{{footer_image.xxl}} [(min-width: {{xxl}})] | {{footer_image.xl}} [(min-width: {{xl}})] | {{footer_image.lg}} [(min-width: {{lg}})] | {{footer_image.md}} [(min-width: {{md}})] | {{footer_image.sm}} [(min-width: {{sm}})] | {{footer_image.xs}}">
 
   <section class="Footer-info container">
@@ -91,14 +103,14 @@
         <span class="Footer-dot">●</span>
       {% endif %}
 
-      <a href="mailto:sdh.webteam@sdh.or.id" class="Footer-secondaryLink h7 medium">{{__('Feedback', 'sdh')}}</a>
+      <a href="{{feedback}}" class="Footer-secondaryLink h7 medium">{{__('Feedback', 'sdh')}}</a>
       <span class="Footer-dot">●</span>
 
       <div class="Footer-languages">
         <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
-        <a href="{{languages.en}}" class="Footer-secondaryLink h7 medium  Footer-secondaryLink--active">English</a>
-        {% if 'id' in languages.list %}
-          <a href="{{languages.id}}" class="Footer-secondaryLink h7 medium">Indonesian</a>
+        <a href="{{language_link}}" class="Footer-secondaryLink h7 medium  Footer-secondaryLink--active">{{language}}</a>
+        {% if not languages.solo %}
+          <a href="{{language_other_link}}" class="Footer-secondaryLink h7 medium">{{language_other}}</a>
         {% endif %}
       </div>
     </div>
