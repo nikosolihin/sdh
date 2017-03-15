@@ -1,14 +1,14 @@
 {% include 'modules/search.twig' %}
 
 {% if locale == 'id_ID' %}
-  {% set language = __('Indonesian', 'sdh') %}
+  {% set language = 'Indonesian' %}
   {% set language_link = languages.id %}
-  {% set language_other = __('English', 'sdh') %}
+  {% set language_other = 'English' %}
   {% set language_other_link = languages.en %}
 {% elseif locale == 'en_US' %}
-  {% set language = __('English', 'sdh') %}
+  {% set language = 'English' %}
   {% set language_link = languages.en %}
-  {% set language_other = __('Indonesian', 'sdh') %}
+  {% set language_other = 'Indonesian' %}
   {% set language_other_link = languages.id %}
 {% endif %}
 <header class="Header">
