@@ -19,13 +19,13 @@ $context['sidebar_sections'] = get_field('news_listing_sidebar', 'option')['side
 $context['sections'] = get_field('news_content', 'option')['sections'];
 
 // Get all campuses to be passed to news.js
-$context['campuses'] = array();
+$context['all_campuses'] = array();
 foreach (Timber::get_terms('campus') as $topic) {
-  $context['campuses'][$topic->id] = array(
+  $context['all_campuses'][$topic->id] = array(
     'name' => $topic->name,
     'slug' => $topic->slug
   );
 }
-$context['campuses_json'] = json_encode($context['campuses']);
+$context['campuses_json'] = json_encode($context['all_campuses']);
 
 Timber::render( 'news/archive-news.twig' , $context );
