@@ -19,6 +19,7 @@
             "placeholder": "",
             "standard_buttons": [
                 "bold",
+                "italic",
                 "underline",
                 "anchor",
                 "quote",
@@ -30,7 +31,19 @@
                 "h2",
                 "h3"
             ],
-            "custom_buttons": "",
+            "custom_buttons": [
+                {
+                    "name": "lead",
+                    "label": "<span class=\"dashicons dashicons-editor-textcolor\"><\/span>",
+                    "tag": "div",
+                    "attributes": [
+                        {
+                            "name": "class",
+                            "value": "Lead"
+                        }
+                    ]
+                }
+            ],
             "other_options": [
                 "disableDoubleReturn",
                 "disableExtraSpaces"
@@ -55,5 +68,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Text Editor",
-    "modified": 1487172555
+    "modified": 1489677999
 }

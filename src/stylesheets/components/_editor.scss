@@ -46,6 +46,15 @@
     }
   }
 
+  .Lead {
+    @extend .light;
+    color: #666;
+    font-size: 1.1rem / 1.45;
+    @include from(md) {
+      font-size: 1.35rem / 1.6;
+    }
+  }
+
   // General Sidebar
   @at-root .Sidebar-section #{&} {
     font-size: $font-size-h5;
