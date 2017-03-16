@@ -49,16 +49,20 @@
               <span class="Feed-meta h6 medium faint">{{__('Posted on', 'sdh')}} {{post.date|date('j M, Y')}}</span>
 
             {% else %}
-              <span class="Feed-meta h6 medium faint">
-                <svg aria-hidden="true" role="presentation" title="Event Date">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-                </svg>{{post.date|date('j M, Y')}}
-              </span>
-              <span class="Feed-meta h6 medium faint">
-                <svg aria-hidden="true" role="presentation" title="Event Location">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-                </svg>{{post.location|title}}
-              </span>
+              {% if post.time %}
+                <span class="Feed-meta h6 medium faint">
+                  <svg aria-hidden="true" role="presentation" title="Event Date">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+                  </svg>{{post.time}}
+                </span>
+              {% endif %}
+              {% if post.location %}
+                <span class="Feed-meta h6 medium faint">
+                  <svg aria-hidden="true" role="presentation" title="Event Location">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+                  </svg>{{post.location|title}}
+                </span>
+              {% endif %}
             {% endif %}
 
             {# Teaser #}

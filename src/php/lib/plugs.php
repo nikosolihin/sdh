@@ -24,7 +24,7 @@ function ac_custom_column_settings_be6a174b() {
 						'type' => 'column-order',
 						'clone' => '',
 						'label' => 'Order',
-						'width' => '6',
+						'width' => '8',
 						'width_unit' => '%',
 						'edit' => 'on',
 						'sort' => 'off'
