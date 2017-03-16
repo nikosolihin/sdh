@@ -10,17 +10,25 @@
     {% set url = voice.link.search_url %}
   {% endif %}
 
-  {% set alignment = voice.alignment %}
-  {% set photo = voice.photo|serveSquareImage %}
-  {% set image = voice.image|serveImage %}
+  {% if voice.photo and voice.photo is iterable %}
+    {% set photo = voice.photo|serveSquareImage %}
+  {% else %}
+    {% set photo = fallback.square %}
+  {% endif %}
 
-  <div class="{{'Carousel-item'|modifiers("#{alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
+  {% if voice.image and voice.image is iterable %}
+    {% set image = voice.image|serveImage %}
+  {% else %}
+    {% set image = fallback.image %}
+  {% endif %}
+
+  <div class="{{'Carousel-item'|modifiers("#{voice.alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
     <div class="Carousel-container">
       <div class="Carousel-copy">
         <svg aria-hidden="true" role="presentation" title="Testimonials">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quotes"></use>
         </svg>
-        <blockquote class="white light">{{voice.quote}}</blockquote>
+        <blockquote class="white normal">{{voice.quote}}</blockquote>
         <div class="Carousel-author">
           {% if url %}
             <a href="{{url}}" class="Carousel-button Button Button--small">{{__('Read More', 'sdh')}}</a>

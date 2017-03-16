@@ -9,6 +9,7 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
+$context['is_voice'] = false;
 $context['children'] = array();
 $exclude_all = $post->get_field('landing_exclude_all');
 $exception = $post->get_field('landing_layout_exception');

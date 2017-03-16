@@ -54,6 +54,10 @@
   </div>
 {% endif %}
 
+{% if is_voice %}
+  {% include 'components/carousel.twig' with {voices: voices} %}
+{% endif %}
+
 {% if sections and acf.position == 'after' %}
   <div class="SinglePage--noSidebar container container--spacedTop">
     <div class="SinglePage-content">
