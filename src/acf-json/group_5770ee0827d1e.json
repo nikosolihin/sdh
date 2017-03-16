@@ -673,6 +673,24 @@
             "multiple": 0
         },
         {
+            "key": "field_58caa83ed5fb0",
+            "label": "Webmaster's email",
+            "name": "webmaster",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_58c7a40e7743d",
             "label": "Misc",
             "name": "",
@@ -720,5 +738,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1489601487
+    "modified": 1489676386
 }

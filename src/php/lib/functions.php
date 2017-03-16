@@ -112,7 +112,7 @@ function getPosts($options) {
 
     // If events, get upcoming posts instead of past
     if ($options['post_type'] == 'event') {
-      $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
+      $args['post_status'] = ['publish', 'future'];
       $args['order'] = 'ASC';
       $args['orderby'] = 'date';
       $today = getdate();
@@ -180,6 +180,7 @@ function getPosts($options) {
           'teaser'      => $gcal['description'],
           'location'    => $gcal['location'],
           'image'       => serveImage($post->get_field('image')),
+          'time'        => $gcal['event_time'],
           'dateTime'    => $gcal
         ));
       }

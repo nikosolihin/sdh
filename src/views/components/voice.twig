@@ -1,0 +1,36 @@
+{% set voice = data.voices %}
+
+  {% set post = TimberPost(voice) %}
+  {% set name = post.title %}
+  {% set info = post.get_field('info') %}
+  {% set campus = (post.get_terms('campus')|first).name %}
+  {% set quote = post.get_field('quote') %}
+  {% set link_type = post.get_field('type') %}
+
+  {% if link_type == "single" %}
+    {% set url = post.get_field('single_url') %}
+  {% elseif link_type == "external" %}
+    {% set url = post.get_field('external_url') %}
+  {% else %}
+    {% set url = post.get_field('search_url') %}
+  {% endif %}
+
+  {% if post.get_field('photo') and post.get_field('photo') is iterable %}
+    {% set photo = post.get_field('photo')|serveImage %}
+  {% else %}
+    {% set photo = fallback.square %}
+  {% endif %}
+
+  <div class="Spotlight">
+    <div class="Spotlight-quote h5 white normal">"{{quote}}"</div>
+    <div class="Spotlight-person">
+      <div class="flex-wrapper">
+        <div class="Spotlight-photo lazyload" data-bgset="{{photo.xs}}"></div>
+      </div>
+      <div class="flex-wrapper">
+        <div class="h5 bold orange">{{name}}</div>
+        <div class="h6 normal gray">{{info}}</div>
+        <div class="h7 caps spaced medium faint">{{campus}}</div>
+      </div>
+    </div>
+  </div>

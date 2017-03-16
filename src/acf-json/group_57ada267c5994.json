@@ -297,6 +297,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "58cac55129c9b",
+                    "name": "voice",
+                    "label": "Voices",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58cac55129c9c",
+                            "label": "Voices",
+                            "name": "voice",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_58cac23a62a71"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -318,5 +349,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1488881525
+    "modified": 1489683820
 }

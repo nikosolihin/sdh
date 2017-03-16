@@ -1,0 +1,46 @@
+{
+    "key": "group_58cac23a62a71",
+    "title": "Voices",
+    "fields": [
+        {
+            "key": "field_58cac23a65894",
+            "label": "",
+            "name": "voices",
+            "type": "post_object",
+            "instructions": "Click <a href=\"post-new.php?post_type=voice\">here<\/a> to create a new voice, or the <strong>Voices<\/strong> button in the left sidebar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "voice"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Voices",
+    "modified": 1489686724
+}

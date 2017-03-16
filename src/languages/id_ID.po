@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-14 13:04+0700\n"
-"PO-Revision-Date: 2017-03-14 13:05+0700\n"
+"POT-Creation-Date: 2017-03-16 23:11+0700\n"
+"PO-Revision-Date: 2017-03-16 23:11+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -21,7 +21,8 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: javascripts\n"
 
 #: php/archive-event.php:9 views/campus/single-campus-news-events.twig:11
-#: views/modules/header.twig:44 views/page/front-page-news.twig:10
+#: views/modules/header.twig:46 views/modules/mobile-header.twig:87
+#: views/page/front-page-news.twig:10
 msgid "Event Calendar"
 msgstr "Kalender Acara"
 
@@ -31,10 +32,11 @@ msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
 
 #: php/archive-news.php:10 php/lib/post-types.php:188
 #: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:47
+#: views/page/front-page.twig:57
 msgid "News"
 msgstr "Berita"
 
-#: php/archive-news.php:11
+#: php/archive-news.php:12
 msgid "No news found. Please try again."
 msgstr "Berita tidak ditemukan. Silakan coba lagi."
 
@@ -205,6 +207,7 @@ msgid "Custom post type for voices"
 msgstr ""
 
 #: php/lib/post-types.php:122 php/single-event.php:66
+#: views/page/front-page.twig:63
 msgid "Events"
 msgstr "Kegiatan"
 
@@ -313,7 +316,7 @@ msgid "Campuses"
 msgstr ""
 
 #: php/lib/post-types.php:256 php/lib/post-types.php:286
-#: views/news/archive-news.twig:34
+#: views/news/archive-news.twig:35
 msgid "Campus"
 msgstr "Kampus"
 
@@ -469,7 +472,7 @@ msgid "There are currently no events at this school."
 msgstr "Saat ini tidak ada acara di sekolah ini."
 
 #: views/campus/single-campus-quicklinks.twig:2
-#: views/modules/mobile-header.twig:91
+#: views/modules/mobile-header.twig:85
 msgid "Quicklinks"
 msgstr "Tautan Cepat"
 
@@ -497,8 +500,8 @@ msgstr "Lokasi Kampus"
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
-#: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:78
-#: views/modules/mobile-header.twig:105
+#: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:82
+#: views/modules/mobile-header.twig:110
 msgid "Stay Connected"
 msgstr "Tetap Terhubung"
 
@@ -506,7 +509,7 @@ msgstr "Tetap Terhubung"
 msgid "Message from the"
 msgstr "Pesan dari"
 
-#: views/components/block.twig:21 views/page/front-page.twig:44
+#: views/components/block.twig:27 views/page/front-page.twig:44
 #: views/page/landing-page.twig:41
 msgid "Learn More"
 msgstr "Selengkapnya"
@@ -519,11 +522,11 @@ msgstr "Home"
 msgid "Posted"
 msgstr "Diposting"
 
-#: views/components/carousel.twig:26
+#: views/components/carousel.twig:26 views/page/single-page.twig:35
 msgid "Read More"
 msgstr "Selengkapnya"
 
-#: views/components/feed.twig:49 views/news/single-news.twig:14
+#: views/components/feed.twig:49 views/news/single-news.twig:17
 msgid "Posted on"
 msgstr "Tanggal"
 
@@ -543,9 +546,25 @@ msgstr "Kegiatan Di Sekolah Kami"
 msgid "Filter by Campus"
 msgstr "Pilih berdasar kampus"
 
-#: views/event/archive-event.twig:22 views/news/archive-news.twig:37
+#: views/event/archive-event.twig:22 views/news/archive-news.twig:38
 msgid "All"
 msgstr "Semua"
+
+#: views/event/archive-event.twig:51
+msgid "Download Calendar"
+msgstr "Unduh Kalender"
+
+#: views/event/archive-event.twig:52
+msgid ""
+"If you use your own calendar app, click here to download and import all of "
+"our events"
+msgstr ""
+"Jika anda menggunakan aplikasi kalender sendiri, klik di sini untuk "
+"mengunduh semua kegiatan kami"
+
+#: views/event/archive-event.twig:53
+msgid "Download"
+msgstr "Unduh"
 
 #: views/event/single-event.twig:71
 msgid "Events at"
@@ -569,43 +588,46 @@ msgstr ""
 
 #: views/layout/empty.twig:4
 msgid "and let us know about this"
-msgstr "beritahu kami tentang ini"
+msgstr "dan beritahu kami tentang ini"
 
-#: views/modules/footer.twig:75 views/modules/header.twig:88
+#: views/modules/footer.twig:36
+msgid "Head Office"
+msgstr "Kantor Pusat"
+
+#: views/modules/footer.twig:85 views/modules/header.twig:90
 #: views/modules/mobile-header.twig:70
 msgid "Our Campuses"
 msgstr "Kampus Kami"
 
-#: views/modules/footer.twig:92 views/page/front-page.twig:82
+#: views/modules/footer.twig:102 views/page/front-page.twig:82
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
-#: views/modules/footer.twig:96 views/page/front-page.twig:86
+#: views/modules/footer.twig:106 views/modules/mobile-header.twig:91
+#: views/page/front-page.twig:86
 msgid "Feedback"
 msgstr "Komentar"
 
-#: views/modules/footer.twig:100 views/modules/mobile-header.twig:100
+#: views/modules/footer.twig:110 views/modules/mobile-header.twig:103
 #: views/page/front-page.twig:90
 msgid "Languages"
 msgstr "Bahasa"
 
-#: views/modules/header.twig:4 views/modules/header.twig:11
+#: views/modules/header.twig:41 views/modules/mobile-header.twig:86
+msgid "School News"
+msgstr "Berita Sekolah"
+
 #: views/modules/mobile-header.twig:2 views/modules/mobile-header.twig:9
 #: views/page/front-page.twig:5 views/page/front-page.twig:12
 msgid "Indonesian"
 msgstr "Bahasa Indonesia"
 
-#: views/modules/header.twig:6 views/modules/header.twig:9
 #: views/modules/mobile-header.twig:4 views/modules/mobile-header.twig:7
 #: views/page/front-page.twig:7 views/page/front-page.twig:10
 msgid "English"
 msgstr "Inggris"
 
-#: views/modules/header.twig:39
-msgid "School News"
-msgstr "Berita Sekolah"
-
-#: views/modules/mobile-header.twig:85
+#: views/modules/mobile-header.twig:94
 msgid "Audiences"
 msgstr "Pembaca"
 
@@ -617,19 +639,19 @@ msgstr "Ketik untuk Cari Website Kami"
 msgid "Popular Pages"
 msgstr "Halaman Populer"
 
-#: views/news/archive-news.twig:18
+#: views/news/archive-news.twig:19
 msgid "News from Our Campuses"
 msgstr "Berita di Sekolah Kami"
 
-#: views/news/archive-news.twig:22
+#: views/news/archive-news.twig:23
 msgid "Date"
 msgstr "Tanggal"
 
-#: views/news/archive-news.twig:25
+#: views/news/archive-news.twig:26
 msgid "Latest"
 msgstr "Terbaru"
 
-#: views/news/archive-news.twig:26
+#: views/news/archive-news.twig:27
 msgid "Oldest"
 msgstr "Tertua"
 
@@ -640,6 +662,10 @@ msgstr "Di Sekolah Kami"
 #: views/page/front-page.twig:42
 msgid "We're commited to"
 msgstr "Kami berkomitmen untuk"
+
+#: views/page/single-page.twig:28
+msgid "In This Section"
+msgstr "Di Bagian Ini"
 
 #~ msgid "Message from the Principal"
 #~ msgstr "Pesan dari kepala sekolah"

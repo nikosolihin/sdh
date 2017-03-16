@@ -1,8 +1,3 @@
-// DELETE THIS
-.xdebug-var-dump {
-  font-size: 14px;
-}
-
 // // =====================================================
 // // SETTINGS
 // // Preprocessor vars
@@ -21,9 +16,7 @@
 // // Reset/normalize, first layer which gnerates actual CSS.
 // // =====================================================
 @import "normalize";
-// @import "pikaday";
 @import "flickity";
-// @import "generic/datepicker";
 @import "generic/fontface";
 @import "generic/keyframes";
 //
@@ -65,7 +58,6 @@
 //
 // // News
 @import "objects/archive-news";
-// @import "objects/single-news";
 //
 // 404 Error
 @import "objects/four-o-four";
@@ -87,10 +79,9 @@
 @import "components/modal";
 @import "components/banner";
 @import "components/announcement";
-// @import "components/searchbar";
+@import "components/spotlight";
 @import "components/link";
 @import "components/spacer";
-// @import "components/callout";
 @import "components/carousel";
 @import "components/embed";
 @import "components/figure";
@@ -105,12 +96,8 @@
 @import "components/loader";
 @import "components/download";
 @import "components/pagination";
-// @import "components/arrows";
-// @import "components/feed-person";
-// @import "components/feed-event";
 @import "components/gallery";
 @import "components/select";
-// @import "components/toggle";
 
 // // Mustache Templates
 // @import "components/media-object";
