@@ -208,6 +208,9 @@ class StarterSite extends TimberSite {
 		// Feedback
 		$context['feedback'] = get_field('feedback', 'option');
 
+		// Webmaster's Email
+		$context['webmaster'] = get_field('webmaster', 'option');
+
 		// Languages URLs
 		$context['languages']['en'] = get_field('language_en', 'option');
 		$context['languages']['id'] = get_field('language_id', 'option');
