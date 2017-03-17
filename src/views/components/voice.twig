@@ -1,5 +1,6 @@
-{% set voice = data.voices %}
+<div class="Spotlight" data-component="spotlight">
 
+{% for voice in data.voices %}
   {% set post = TimberPost(voice) %}
   {% set name = post.title %}
   {% set info = post.get_field('info') %}
@@ -20,9 +21,23 @@
   {% else %}
     {% set photo = fallback.square %}
   {% endif %}
-
-  <div class="Spotlight">
-    <div class="Spotlight-quote h5 white normal">"{{quote}}"</div>
+  <div class="Spotlight-cell">
+    <div class="Spotlight-bubble h5 white normal">
+      <a href="" class="Spotlight-button Spotlight-buttonPrev">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use>
+        </svg>
+      </a>
+      <div class="flex-wrapper">
+        <div class="Spotlight-quote">"{{quote}}"</div>
+        <a href="#" class="Spotlight-link h7 caps spaced bold white underline noMargin">{{__('See Story', 'sdh')}}</a>
+      </div>
+      <a href="" class="Spotlight-button Spotlight-buttonNext">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+        </svg>
+      </a>
+    </div>
     <div class="Spotlight-person">
       <div class="flex-wrapper">
         <div class="Spotlight-photo lazyload" data-bgset="{{photo.xs}}"></div>
@@ -34,3 +49,6 @@
       </div>
     </div>
   </div>
+{% endfor %}
+
+</div>
