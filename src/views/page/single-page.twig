@@ -2,7 +2,10 @@
 {% block content %}
 
 {% include 'components/banner.twig' %}
-{% include 'components/subnav.twig' %}
+
+{% if not is_stories %}
+  {% include 'components/subnav.twig' %}
+{% endif %}
 
 {% set sidebar = no_sidebar ? 'noSidebar' : '' %}
 

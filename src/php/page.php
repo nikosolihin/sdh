@@ -78,4 +78,8 @@ while( $post->get_parent ) {
 }
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-Timber::render( 'page/single-page.twig' , $context );
+if($context['breadcrumb'][0]['title'] == 'Stories') {
+	$context['is_stories'] = true;
+}
+
+// Timber::render( 'page/single-page.twig' , $context );

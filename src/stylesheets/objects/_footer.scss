@@ -128,7 +128,7 @@
 
   &-primary {
     position: relative;
-    box: horizontal wrap;
+    box: horizontal top wrap;
     z-index: $zindex-footer-main;
     @include from(xl) {
       box: horizontal space-between;
@@ -143,7 +143,10 @@
       margin-bottom: $single*2;
     }
     @include from(lg) {
-      // margin-bottom: 0;
+      width: 25%;
+    }
+    @include from(xl) {
+      width: 20%;
     }
     &:last-child {
       display: block;
@@ -154,6 +157,9 @@
         text-align: center;
       }
       @include from(lg) {
+        width: 25%;
+      }
+      @include from(xl) {
         width: 20%;
       }
       .Footer-link {

@@ -78,6 +78,11 @@
 
 <div class="Home-footer"><div class="container">
   <div class="Footer-essentials">
+    {% if career %}
+      <a href="{{career}}" class="Footer-secondaryLink h7 medium white">{{__('Career', 'sdh')}}</a>
+      <span class="Footer-dot">●</span>
+    {% endif %}
+
     {% if policy %}
       <a href="{{policy}}" class="Footer-secondaryLink h7 medium white">{{__('Privacy Policy', 'sdh')}}</a>
       <span class="Footer-dot">●</span>
