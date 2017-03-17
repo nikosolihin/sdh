@@ -279,7 +279,9 @@ class StarterSite extends TimberSite {
 			if(isset($text) && is_string($text)) {
 				$removeHyphen = str_replace("-", " ", $text);
 				$removeUnderscore = str_replace("_", " ", $removeHyphen);
-				return preg_replace('/\\.[^.\\s]{3,4}$/', '', $removeUnderscore);
+				$removeExtension = preg_replace('/\\.[^.\\s]{3,4}$/', '', $removeUnderscore);
+				$removeNumbers = preg_replace('/[0-9]+/', '', $removeExtension);
+				return $removeNumbers;
 			}
 		});
 		$twig->addFilter($classfilter);
