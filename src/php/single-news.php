@@ -21,6 +21,10 @@ if(isset($image) && is_array($image)) {
 	$context['image'] = false;
 }
 
+// Get this event's campus
+$campus = $post->get_terms('campus')[0];
+$context['campus'] = $campus->name;
+
 // Get Sidebar
 $inherit = $context['acf']['inherit'];
 $sidebar = $post->get_field('sidebar_sections');
