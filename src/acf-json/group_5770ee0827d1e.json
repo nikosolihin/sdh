@@ -435,6 +435,43 @@
             "allow_archives": 0
         },
         {
+            "key": "field_58cb9d51f2bed",
+            "label": "Career",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58cb9d55f2bee",
+            "label": "Career page",
+            "name": "career",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
+        },
+        {
             "key": "field_580882e953557",
             "label": "Languages",
             "name": "",
@@ -738,5 +775,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1489676386
+    "modified": 1489739569
 }

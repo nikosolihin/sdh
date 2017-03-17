@@ -142,6 +142,9 @@ class StarterSite extends TimberSite {
 		// Policy Page
 		$context['policy'] = get_field('policy', 'option');
 
+		// Career Page
+		$context['career'] = get_field('career', 'option');
+
 		// CTA
 		$context['cta'] = get_field('cta_blurb', 'option');
 		$context['cta_buttons'] = array();
