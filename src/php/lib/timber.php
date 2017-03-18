@@ -46,7 +46,7 @@ class StarterSite extends TimberSite {
 			));
 		}
 
-		// Primary - get 3 levels deep
+		// Primary
 		$primary_menu = get_field('primary_menu', 'option');
 		$context['primary_menu'] = array();
 
@@ -62,7 +62,8 @@ class StarterSite extends TimberSite {
 			array_push($context['primary_menu'], array(
 				'title' => $parent->title,
 				'link' => $parent->link,
-				'children' => $children
+				'children' => $children,
+				'image' => serveSquareImage($menu['image'])
 			));
 		}
 

@@ -44,17 +44,108 @@
 
   &-primary {
     width: 85%;
-    padding: 0 $single*2.75 0 $single*1.25;
-  }
-  &-primaryList {
-    box: horizontal space-around;
-  }
-  &-primaryLink {
-    @include hover(#777, $navy);
-    padding: $single*1.25 $single;
-    &.is-Active {
-      @include hover($navy, $navy);
-      font-weight: $font-weight-bold;
+    box: horizontal space-around middle;
+    @include from(xl) {
+      padding: 0 $single*2.75 0 $single*1.25;
+    }
+
+    &Item {
+      position: relative;
+      &:hover > .Header-primaryDropdown {
+        transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      // Last dropdown needs to reposition top arrow
+      &:last-child .Header-primaryDropdown {
+        left: auto;
+        right: 0;
+        transform: translate3d(0, -10px, 0);
+        // Up Arrow
+        &::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: 85%;
+          width: 0;
+          height: 0;
+          border-left:8px solid transparent;
+          border-right:8px solid transparent;
+          border-bottom:8px solid rgba(255,255,255,.9);
+        }
+      }
+      &:last-child:hover .Header-primaryDropdown {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &Link {
+      @include hover(#777, $navy);
+      padding: $single*1.25 $single;
+      &.is-Active {
+        @include hover($navy, $navy);
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &Dropdown {
+      box: horizontal;
+      position: absolute;
+      top: $single*2.65;
+      left: 50%;
+      width: $single*24;
+      background-color: $white;
+      border-radius: 3px;
+      box-shadow: 0 2px 7px rgba(0,0,0,.15);
+
+      will-change: opacity, visibility, transform;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate3d(-50%, -10px, 0);
+      transition: all .125s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+      // Up Arrow
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left:8px solid transparent;
+        border-right:8px solid transparent;
+        border-bottom:8px solid rgba(255,255,255,.9);
+      }
+    }
+
+    &Image {
+      @include cover;
+      position: relative;
+      width: 55%;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        size: 100%;
+        background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(255,255,255,.45) 65%, $white 100%);
+      }
+    }
+
+    &List {
+      width: 45%;
+      padding: $single*2 $single*1.5 $single*2 $single;
+      a {
+        @include hover($navy, $orange);
+        display: block;
+        text-align: right;
+        font-size: .85rem / 1.5;
+        margin-bottom: $quarter;
+      }
     }
   }
 

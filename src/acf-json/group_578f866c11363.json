@@ -58,6 +58,24 @@
                     "multiple": 0,
                     "return_format": "id",
                     "ui": 1
+                },
+                {
+                    "key": "field_58cd037581926",
+                    "label": "Dropdown Image",
+                    "name": "image",
+                    "type": "acf_google_photos_browser",
+                    "instructions": "Shown to the left of list of sub menu items.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "google_photos_limit": 1,
+                    "google_photos_user_id": "",
+                    "google_photos_access_token": "",
+                    "google_photos_message": ""
                 }
             ]
         },
@@ -179,5 +197,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1488713820
+    "modified": 1489830841
 }
