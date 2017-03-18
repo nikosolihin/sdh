@@ -400,6 +400,15 @@ body.role-campus_manager .acf-fc-popup a[data-layout="feed"] {
 }
 
 /*=============================================*/
+/* Hide "Head Office" term of campus tax for
+/* Events and Voices
+/*=============================================*/
+.post-type-event #campuschecklist #campus-0,
+.post-type-voice #campuschecklist #campus-0 {
+	display: none !important;
+}
+
+/*=============================================*/
 /* Modalize Flex Content
 /*=============================================*/
 /*.acf-layout-builder > .acf-input > .acf-flexible-content > .values > .layout[data-layout='two_columns'] > .acf-fields > .acf-field-clone[data-type='clone'] > .acf-label {

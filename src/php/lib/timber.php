@@ -134,9 +134,7 @@ class StarterSite extends TimberSite {
 			'address' => get_field('org_address', 'option'),
 			'description' => get_field('org_description', 'option'),
 			'dept_one' => get_field('org_add_contact_dept_one', 'option'),
-			'details_one' => get_field('org_add_contact_details_one', 'option'),
-			'dept_two' => get_field('org_add_contact_dept_two', 'option'),
-			'details_two' => get_field('org_add_contact_details_two', 'option'),
+			'details_one' => get_field('org_add_contact_details_one', 'option')
 		);
 
 		// Policy Page
