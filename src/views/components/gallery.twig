@@ -20,7 +20,7 @@
     {% for photo in data.gallery %}
       <div class="Gallery-caption-item{% if loop.index == 1 %} Gallery-caption-item--show{% endif %}" data-caption-id="{{loop.index}}">
         {% if photo.title %}
-          {% set title = photo.title|spacify %}
+          {% set title = photo.title|spacify|title %}
           <h4 class="h4 bold orange noMargin">{{title}}</h4>
         {% endif %}
         {% if photo.description %}
