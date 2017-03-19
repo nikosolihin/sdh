@@ -123,7 +123,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -373,5 +373,5 @@
     ],
     "active": 1,
     "description": "Landing Page Builder",
-    "modified": 1489854950
+    "modified": 1489906108
 }

@@ -15,14 +15,17 @@
 
   {% if callout %}
     </div>
-    <div class="Callout-image lazyload" data-bgset="{{callout_image|serveImage['xs']}}">
+    {% set image = callout_image|serveImage %}
+    <div class="Callout-image lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
   {% else %}
 
-    {% if right %}
-      {% if not callout %}<div class="column column-right">{% endif %}
-        {% block right %}{% endblock %}
-      {% if not callout %}</div>{% endif %}
-    {% endif %}
+  {% if right and not callout %}
+    <div class="column column-right">
+  {% endif %}
+    {% block right %}{% endblock %}
+  {% if right and not callout %}
+    </div>
+  {% endif %}
 
   {% endif %}
 
