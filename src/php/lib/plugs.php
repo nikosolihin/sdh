@@ -14,7 +14,7 @@
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-function ac_custom_column_settings_be6a174b() {
+function ac_custom_column_settings_d84402da() {
 
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
@@ -25,7 +25,7 @@ function ac_custom_column_settings_be6a174b() {
 						'type' => 'column-order',
 						'clone' => '',
 						'label' => 'Order',
-						'width' => '8',
+						'width' => '6',
 						'width_unit' => '%',
 						'edit' => 'on',
 						'sort' => 'off'
@@ -179,7 +179,7 @@ function ac_custom_column_settings_be6a174b() {
 						'edit' => 'off',
 						'enable_term_creation' => 'off',
 						'filter' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
 					),
 			'column-date_published' => array(
 						'column-name' => 'column-date_published',
@@ -219,7 +219,7 @@ function ac_custom_column_settings_be6a174b() {
 						'edit' => 'off',
 						'enable_term_creation' => 'off',
 						'filter' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
@@ -323,4 +323,4 @@ function ac_custom_column_settings_be6a174b() {
 		) );
 	}
 }
-add_action( 'init', 'ac_custom_column_settings_be6a174b' );
+add_action( 'init', 'ac_custom_column_settings_d84402da' );

@@ -110,7 +110,7 @@
                 "id": ""
             },
             "choices": {
-                "registration": "Registration",
+                "request": "Request Info",
                 "calendar": "Academic Calendar",
                 "schedule": "School Schedule",
                 "activity": "School Activities",
@@ -539,5 +539,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489478116
+    "modified": 1489947358
 }

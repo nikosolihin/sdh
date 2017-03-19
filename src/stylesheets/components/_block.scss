@@ -1,6 +1,6 @@
 .Block {
 	@include cover;
-	@include overlay(false, "to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.65) 15%, transparent 50%, transparent 100%");
+	@include overlay(false, "to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 27%, transparent 50%, transparent 100%");
 	box: vertical bottom center;
 	position: relative;
 	height: $single*13;
@@ -9,8 +9,8 @@
 	width: 100%;
 
 	&-title {
-		line-height: 1.3;
-		padding: $single $single*1.5 $single*1.25;
+		font-size: 1.25rem / 1.4;
+		padding: $single $single*1.5 $single*1.75;
 	}
 
 	&-body {

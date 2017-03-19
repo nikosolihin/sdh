@@ -1,7 +1,8 @@
 <div class="Tabs" data-component="tabs">
   <ul role="tablist" class="Tabs-list">
     {% for tab in data.tabs %}
-      {% set name = tab.title|replace({' ': "-"})|replace({'.': "-"})|lower %}
+      {# Get rid of bad characters or symbols #}
+      {% set name = tab.title|replace({' ': "-"})|replace({'.': "-"})|replace({"'": ""})|lower %}
       <li><a role="tab" aria-controls="{{name}}" class="Tabs-tab medium navy" href="#{{name}}">{{tab.title}}</a></li>
     {% endfor %}
   </ul>

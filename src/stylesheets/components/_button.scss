@@ -75,4 +75,9 @@
   &--withMargin {
     margin-top: $single;
   }
+
+  // Within the sidebar, use small buttons
+  @at-root .Sidebar-section #{&} {
+    @extend .Button--small;
+  }
 }
