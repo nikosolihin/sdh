@@ -1,7 +1,7 @@
 .Callout {
   @include fullwidth;
   box: horizontal;
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
 
   &-content {
     width: 35%;
@@ -22,5 +22,9 @@
     .Callout-image {
       order: 1;
     }
+  }
+
+  &:nth-child(even) {
+    @extend .Callout--reverse;
   }
 }

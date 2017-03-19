@@ -70,12 +70,12 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_57622c6ac297f"
+                                "group_589ae2575c1b9"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 0,
                             "display": "seamless",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -347,5 +347,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Tabs Components Parent",
-    "modified": 1489773529
+    "modified": 1489947419
 }

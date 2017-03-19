@@ -7,35 +7,24 @@
   <div class="row row--of-2">
 {% endif %}
 
-    {% if left %}
-      {% if not callout %}<div class="column column-left">{% endif %}
-        {% block left %}{% endblock %}
-      {% if not callout %}</div>{% endif %}
-    {% endif %}
+  {% if left and not callout %}
+    <div class="column column-left">
+  {% endif %}
+    {% block left %}{% endblock %}
+  {% if left and not callout %}
+    </div>
+  {% endif %}
 
   {% if callout %}
     </div>
     {% set image = callout_image|serveImage %}
-    <div class="Callout-image lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
-  {% else %}
+    <div class="Callout-image lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
+  {% endif %}
 
   {% if right and not callout %}
     <div class="column column-right">
-  {% endif %}
-    {% block right %}{% endblock %}
-  {% if right and not callout %}
+      {% block right %}{% endblock %}
     </div>
   {% endif %}
 
-  {% endif %}
-
-  {% if callout %}
-    </div>
-  {% endif %}
-
-{% if callout %}
-    </div>
-  </div>
-{% else %}
-  </div>
-{% endif %}
+</div>

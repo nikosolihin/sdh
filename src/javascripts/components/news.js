@@ -152,14 +152,15 @@ export default class News {
           twitter = encodeURI(`https://twitter.com/intent/tweet?text=${newsTitle}&url=${newsLink}&via=${this.handle}`),
           image = news.acf.image,
           imageBase = image.base,
-          imageTitle = image.title
+          imageTitle = image.title,
+          campusName = this.allCampuses[news.campus] === undefined ? 'Head Office' : this.allCampuses[news.campus]['name']
 
           let templateVars = {
             id: news.id,
             title: news.title.rendered,
             link: news.link,
             date: moment(news.date).format('D MMM, Y'),
-            campus: this.allCampuses[news.campus]['name'],
+            campus: campusName,
             facebook: facebook,
             twitter: twitter
           }

@@ -21,7 +21,7 @@ if(isset($image) && is_array($image)) {
 	$context['image'] = false;
 }
 
-// Get this event's campus
+// Get this news campus
 if(isset($post->get_terms('campus')[0]) && is_array($post->get_terms('campus')[0])) {
 	$context['campus'] = $post->get_terms('campus')[0]->name;
 } else {

@@ -272,8 +272,11 @@
   }
 
   &-association {
-    box: vertical left middle;
     padding: $quarter 0;
+    box: horizontal middle center;
+    @include from(lg) {
+      box: vertical left middle;
+    }
     svg {
       fill: #bbb;
       width: $single*4.7;

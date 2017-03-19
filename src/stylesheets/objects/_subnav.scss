@@ -61,6 +61,12 @@
       }
     }
 
+    // No need to show third level children
+    .is-Active > .List,
+    > li > .List {
+      display: none;
+    }
+
     @at-root .Subnav--open #{&} {
       box: vertical center;
       @include from(lg) {

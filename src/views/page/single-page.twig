@@ -19,7 +19,9 @@
         {% include 'components/breadcrumb.twig' %}
       </div>
       <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
-      <p class="Intro-teaser light">{{acf.teaser}}</p>
+
+      {# If banner is disabled, move teaser to here #}
+      <p class="Intro-teaser light{% if acf.banner_size == 'hidden' %} Intro-teaser--show{% endif %}">{{acf.teaser}}</p>
     </div>
     {% include 'layout/base.twig' %}
   </div>

@@ -38,6 +38,9 @@
         display: block;
       }
     }
+    &--show {
+      display: block !important;
+    }
   }
 
   &--withMeta {
