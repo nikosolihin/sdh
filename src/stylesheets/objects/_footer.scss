@@ -36,6 +36,7 @@
       margin-bottom: $single;
       @include from(lg) {
         width: 18%;
+        margin-bottom: 0;
       }
       svg {
         fill: $navy;
@@ -64,7 +65,7 @@
         padding-left: $single;
       }
       p {
-        line-height: 1.4;
+        line-height: 1.45;
       }
       > .flex-wrapper {
         text-align: center;
@@ -267,6 +268,16 @@
         left: 50%;
         transform: translateX(-50%);
       }
+    }
+  }
+
+  &-association {
+    box: vertical left middle;
+    padding: $quarter 0;
+    svg {
+      fill: #bbb;
+      width: $single*4.7;
+      height: $single*1.6;
     }
   }
 }

@@ -22,8 +22,11 @@ if(isset($image) && is_array($image)) {
 }
 
 // Get this event's campus
-$campus = $post->get_terms('campus')[0];
-$context['campus'] = $campus->name;
+if(isset($post->get_terms('campus')[0]) && is_array($post->get_terms('campus')[0])) {
+	$context['campus'] = $post->get_terms('campus')[0]->name;
+} else {
+	$context['campus'] = __('Head Office', 'sdh');
+}
 
 // Get Sidebar
 $inherit = $context['acf']['inherit'];

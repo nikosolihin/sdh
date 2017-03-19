@@ -1,21 +1,11 @@
-{% if landingCallout %}
-<div class="Callout Callout--landing">
-  <div class="container">
-{% endif %}
-    <div class="row">
-
-      <div class="column">
-        {% if fullCallout %}
-          <div class="Callout Callout--column">
-        {% endif %}
-        {% block full %}{% endblock %}
-        {% if fullCallout %}
-          </div>
-        {% endif %}
+<div class="row">
+  <div class="column">
+    {% if fullCallout %}
+      <div class="Callout Callout--column">
+    {% endif %}
+    {% block full %}{% endblock %}
+    {% if fullCallout %}
       </div>
-
-    </div>
-{% if landingCallout %}
+    {% endif %}
   </div>
 </div>
-{% endif %}

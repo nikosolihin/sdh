@@ -75,30 +75,36 @@
       </div>
     </a>
   </div>
+
   <nav class="Header-primary" role="navigation">
-    <ul class="Header-primaryList List List--inline">
-      {% for item in primary_menu %}
-        {% if item.link in current_url %}
-          {% set is_active = ' is-Active' %}
-        {% else %}
-          {% set is_active = '' %}
-        {% endif %}
-        <li><a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a></li>
-      {% endfor %}
-      {# Always display Our Campuses link #}
-      <li class="Header-ourCampuses">
-        <div class="Header-ourCampusesLink Header-primaryLink h5 medium">{{__('Our Campuses', 'sdh')}}</div>
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
-        </svg>
-        <div class="Header-ourCampusesDropdown">
-          {% for campus in campuses %}
-            <a href="{{campus.link}}" class="h5 medium">{{campus.name|title}}</a>
-          {% endfor %}
+    {% for item in primary_menu %}
+      {% if item.link in current_url %}
+        {% set is_active = ' is-Active' %}
+      {% else %}
+        {% set is_active = '' %}
+      {% endif %}
+      <div class="Header-primaryItem">
+        <a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a>
+        <div class="Header-primaryDropdown">
+          <div class="Header-primaryImage lazyload" data-bgset="{{item.image.sm}}"></div>
+          <div class="Header-primaryList">
+            {% if item.title == __('Our Campuses', 'sdh') %}
+              {# Our Campuses #}
+              {% for campus in campuses %}
+                <a href="{{campus.link}}" class="h6 medium">{{campus.name|title}}</a>
+              {% endfor %}
+            {% else %}
+              {# Other menu #}
+              {% for child in item.children %}
+                <a href="{{child.link}}" class="h6 medium">{{child.title|title}}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    {% endfor %}
   </nav>
+
 </div>
 
 </header>

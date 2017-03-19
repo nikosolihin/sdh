@@ -10,7 +10,7 @@
   &-logo {
     box: horizontal middle right;
     position: relative;
-    z-index: 1;
+    z-index: $zindex-primarynav;
     top: -$single*1.85;
     color: $navy;
     background-color: $white;
@@ -44,17 +44,109 @@
 
   &-primary {
     width: 85%;
-    padding: 0 $single*2.75 0 $single*1.25;
-  }
-  &-primaryList {
-    box: horizontal space-around;
-  }
-  &-primaryLink {
-    @include hover(#777, $navy);
-    padding: $single*1.25 $single;
-    &.is-Active {
-      @include hover($navy, $navy);
-      font-weight: $font-weight-bold;
+    box: horizontal space-around middle;
+    @include from(xl) {
+      padding: 0 $single*2.75 0 $single*1.25;
+    }
+
+    &Item {
+      position: relative;
+      &:hover > .Header-primaryDropdown {
+        transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      // Last dropdown needs to reposition top arrow
+      &:last-child .Header-primaryDropdown {
+        left: auto;
+        right: 0;
+        transform: translate3d(0, -10px, 0);
+        // Up Arrow
+        &::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: 85%;
+          width: 0;
+          height: 0;
+          border-left:8px solid transparent;
+          border-right:8px solid transparent;
+          border-bottom:8px solid rgba(255,255,255,.9);
+        }
+      }
+      &:last-child:hover .Header-primaryDropdown {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &Link {
+      @include hover(#777, $navy);
+      padding: $single*1.25 $single;
+      &.is-Active {
+        @include hover($navy, $navy);
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &Dropdown {
+      box: horizontal;
+      position: absolute;
+      top: $single*2.65;
+      left: 50%;
+      width: $single*24;
+      background-color: $white;
+      border-radius: 3px;
+      box-shadow: 0 2px 7px rgba(0,0,0,.15);
+      z-index: $zindex-primarynav;
+
+      will-change: opacity, visibility, transform;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate3d(-50%, -10px, 0);
+      transition: all .125s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+      // Up Arrow
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left:8px solid transparent;
+        border-right:8px solid transparent;
+        border-bottom:8px solid rgba(255,255,255,.9);
+      }
+    }
+
+    &Image {
+      @include cover;
+      position: relative;
+      width: 55%;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        size: 100%;
+        background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(255,255,255,.45) 65%, $white 100%);
+      }
+    }
+
+    &List {
+      width: 45%;
+      padding: $single*2 $single*1.5 $single*2 $single;
+      a {
+        @include hover($navy, $orange);
+        display: block;
+        text-align: right;
+        font-size: .85rem / 1.5;
+        margin-bottom: $quarter;
+      }
     }
   }
 
@@ -163,6 +255,7 @@
     transition: all .1s ease-in-out;
     visibility: hidden;
     opacity: 0;
+    z-index: $zindex-primarynav;
     > a {
       display: block;
       padding: $half $single*2.25 $half $single*3.5;
@@ -187,58 +280,6 @@
     }
     &:hover {
       background-color: darken($orange, 2.5%);
-    }
-  }
-
-  &-ourCampuses {
-    position: relative;
-    box: horizontal middle;
-    &Link {
-      padding-right: $half;
-      cursor: pointer;
-    }
-    svg {
-      size: .9rem;
-      fill: #aaa;
-    }
-    &Dropdown {
-      box: vertical;
-      position: absolute;
-      top: $single*3.65;
-      left: 0;
-      z-index: $zindex-modal;
-      min-width: $single*10.5;
-      background-color: $white;
-      border-radius: 3px;
-      padding: $threefourth 0;
-      box-shadow: 0 2px 7px rgba(0,0,0,.15);
-      will-change: opacity, visibility, transform;
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all .125s cubic-bezier(0.2, 0.3, 0.25, 0.9);
-      a {
-        @include hover($navy, $orange);
-        padding: $half $single*1.25;
-        line-height: 1;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: -6px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left:6px solid transparent;
-        border-right:6px solid transparent;
-        border-bottom:6px solid rgba(255,255,255,.9);
-      }
-    }
-    &:hover .Header-ourCampusesDropdown {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
     }
   }
 
@@ -273,6 +314,15 @@
   @at-root .single-campus #{&} {
     .Header-logo {
       box-shadow: 2px 2px 10px rgba(0,0,0,.075);
+    }
+  }
+
+  // If we have a white background primary header,
+  // change the top arrow to darker color
+  @at-root .page-template #{&} {
+    &-primaryDropdown::before,
+    &-primaryItem:last-child .Header-primaryDropdown::before {
+      border-bottom:8px solid #bbb;
     }
   }
 

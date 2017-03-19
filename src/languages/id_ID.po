@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-16 23:11+0700\n"
-"PO-Revision-Date: 2017-03-16 23:11+0700\n"
+"POT-Creation-Date: 2017-03-19 11:49+0700\n"
+"PO-Revision-Date: 2017-03-19 11:49+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -31,7 +31,7 @@ msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
 
 #: php/archive-news.php:10 php/lib/post-types.php:188
-#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:47
+#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:54
 #: views/page/front-page.twig:57
 msgid "News"
 msgstr "Berita"
@@ -39,6 +39,11 @@ msgstr "Berita"
 #: php/archive-news.php:12
 msgid "No news found. Please try again."
 msgstr "Berita tidak ditemukan. Silakan coba lagi."
+
+#: php/lib/functions.php:165 php/single-news.php:28
+#: views/modules/footer.twig:36
+msgid "Head Office"
+msgstr "Kantor Pusat"
 
 #: php/lib/post-types.php:9
 msgid "Blocks"
@@ -501,7 +506,7 @@ msgid "Contact Us"
 msgstr "Hubungi Kami"
 
 #: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:82
-#: views/modules/mobile-header.twig:110
+#: views/modules/mobile-header.twig:111
 msgid "Stay Connected"
 msgstr "Tetap Terhubung"
 
@@ -522,7 +527,7 @@ msgstr "Home"
 msgid "Posted"
 msgstr "Diposting"
 
-#: views/components/carousel.twig:26 views/page/single-page.twig:35
+#: views/components/carousel.twig:34 views/page/single-page.twig:38
 msgid "Read More"
 msgstr "Selengkapnya"
 
@@ -537,6 +542,10 @@ msgstr "Persebar Galeri"
 #: views/components/social-share.twig:10
 msgid "Share"
 msgstr "Bagikan"
+
+#: views/components/voice.twig:33
+msgid "See Story"
+msgstr "Selengkapnya"
 
 #: views/event/archive-event.twig:18
 msgid "Events at Our Campuses"
@@ -580,36 +589,39 @@ msgstr "Kami meminta maaf"
 
 #: views/layout/empty.twig:4
 msgid ""
-"We seem to have forgotten to create the content body of this page. Please "
-"email our webteam at"
+"The content of this page is still in progress. Please email our web team at"
 msgstr ""
-"Kita tampaknya telah lupa untuk membuat tubuh isi halaman ini. Silahkan "
-"email webteam kami di"
+"Isi dari halaman ini masih dalam proses. Silahkan email tim web kami di"
 
 #: views/layout/empty.twig:4
-msgid "and let us know about this"
-msgstr "dan beritahu kami tentang ini"
+msgid "if you have any questions"
+msgstr "jika Anda memiliki pertanyaan"
 
-#: views/modules/footer.twig:36
-msgid "Head Office"
-msgstr "Kantor Pusat"
+#: views/modules/footer.twig:44
+msgid "Associations"
+msgstr "asosiasi"
 
-#: views/modules/footer.twig:85 views/modules/header.twig:90
+#: views/modules/footer.twig:89 views/modules/header.twig:91
 #: views/modules/mobile-header.twig:70
 msgid "Our Campuses"
 msgstr "Kampus Kami"
 
-#: views/modules/footer.twig:102 views/page/front-page.twig:82
+#: views/modules/footer.twig:106 views/modules/mobile-header.twig:91
+#: views/page/front-page.twig:82
+msgid "Career"
+msgstr "Karier"
+
+#: views/modules/footer.twig:111 views/page/front-page.twig:87
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
-#: views/modules/footer.twig:106 views/modules/mobile-header.twig:91
-#: views/page/front-page.twig:86
+#: views/modules/footer.twig:115 views/modules/mobile-header.twig:92
+#: views/page/front-page.twig:91
 msgid "Feedback"
 msgstr "Komentar"
 
-#: views/modules/footer.twig:110 views/modules/mobile-header.twig:103
-#: views/page/front-page.twig:90
+#: views/modules/footer.twig:119 views/modules/mobile-header.twig:104
+#: views/page/front-page.twig:95
 msgid "Languages"
 msgstr "Bahasa"
 
@@ -627,7 +639,7 @@ msgstr "Bahasa Indonesia"
 msgid "English"
 msgstr "Inggris"
 
-#: views/modules/mobile-header.twig:94
+#: views/modules/mobile-header.twig:95
 msgid "Audiences"
 msgstr "Pembaca"
 
@@ -660,12 +672,30 @@ msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
 
 #: views/page/front-page.twig:42
-msgid "We're commited to"
+msgid "We're committed to"
 msgstr "Kami berkomitmen untuk"
 
-#: views/page/single-page.twig:28
+#: views/page/single-page.twig:31
 msgid "In This Section"
 msgstr "Di Bagian Ini"
+
+#~ msgid ""
+#~ "The content of this page is still in progress. Please email our webteam at"
+#~ msgstr ""
+#~ "Isi dari halaman ini masih dalam proses. Silahkan email webteam kami di"
+
+#~ msgid "We're commited to"
+#~ msgstr "Kami berkomitmen untuk"
+
+#~ msgid ""
+#~ "We seem to have forgotten to create the content body of this page. Please "
+#~ "email our webteam at"
+#~ msgstr ""
+#~ "Kita tampaknya telah lupa untuk membuat tubuh isi halaman ini. Silahkan "
+#~ "email webteam kami di"
+
+#~ msgid "and let us know about this"
+#~ msgstr "dan beritahu kami tentang ini"
 
 #~ msgid "Message from the Principal"
 #~ msgstr "Pesan dari kepala sekolah"

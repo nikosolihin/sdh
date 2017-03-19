@@ -46,7 +46,7 @@ class StarterSite extends TimberSite {
 			));
 		}
 
-		// Primary - get 3 levels deep
+		// Primary
 		$primary_menu = get_field('primary_menu', 'option');
 		$context['primary_menu'] = array();
 
@@ -62,7 +62,8 @@ class StarterSite extends TimberSite {
 			array_push($context['primary_menu'], array(
 				'title' => $parent->title,
 				'link' => $parent->link,
-				'children' => $children
+				'children' => $children,
+				'image' => serveSquareImage($menu['image'])
 			));
 		}
 
@@ -134,9 +135,7 @@ class StarterSite extends TimberSite {
 			'address' => get_field('org_address', 'option'),
 			'description' => get_field('org_description', 'option'),
 			'dept_one' => get_field('org_add_contact_dept_one', 'option'),
-			'details_one' => get_field('org_add_contact_details_one', 'option'),
-			'dept_two' => get_field('org_add_contact_dept_two', 'option'),
-			'details_two' => get_field('org_add_contact_details_two', 'option'),
+			'details_one' => get_field('org_add_contact_details_one', 'option')
 		);
 
 		// Policy Page

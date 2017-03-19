@@ -1,9 +1,10 @@
 <?php
+
 //=============================================
 // Radio Button for Taxonomies
 //=============================================
 // Disable the "No term" option on a the "resource_type" taxonomy
-add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
+// add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 
 //==========================================================
 // Admin Columns Pro
