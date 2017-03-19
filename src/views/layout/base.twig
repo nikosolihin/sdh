@@ -11,7 +11,9 @@
       {% include 'layout/columns.twig' with {
         'column': 'two',
         'left': section.left.components,
-        'right': section.right.components
+        'right': section.right.components,
+        'callout': section.is_callout,
+        'callout_image': section.callout_image
       } %}
 
     {% elseif section.acf_fc_layout == 'three_columns' %}

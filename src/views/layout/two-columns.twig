@@ -1,50 +1,38 @@
-{% set isLandingCallout = landingCallout ? 'landing' : '' %}
-{% set withCalloutTheme = landingCalloutTheme ? landingCalloutTheme ~ 'Theme' : '' %}
-
-{% if landingCalloutBg %}
-  {% set withBg = true %}
-  {% set withCalloutBg = 'fullbleed' %}
-  {% set bgset = 'data-bgset="' ~
-    landingCalloutBg[xlarge] ~
-    ' [(min-width: ' ~ lg ~ ')] | ' ~
-    landingCalloutBg[large] ~
-    ' [(min-width: ' ~ md ~ ')] | ' ~
-    landingCalloutBg[medium] ~ '"' %}
+{% if callout %}
+  {# Callout two columns #}
+  <div class="Callout">
+    <div class="Callout-content">
+{% else %}
+  {# Normal two columns #}
+  <div class="row row--of-2">
 {% endif %}
 
-{% if landingCallout %}
-<div class="{{'Callout'|modifiers("#{isLandingCallout}, #{withCalloutBg}, #{withCalloutTheme}")}}{{withBg ? ' lazyload' : ''}}" {{withBg ? bgset : ''}}>
-  <div class="container">
-{% endif %}
-    <div class="row row--of-2">
-
-      {# Don't create column div if there's no content #}
-      {% if left %}
-      <div class="column column-left">
-        {% if leftCallout %}
-          <div class="Callout Callout--column">
-        {% endif %}
+    {% if left %}
+      {% if not callout %}<div class="column column-left">{% endif %}
         {% block left %}{% endblock %}
-        {% if leftCallout %}
-          </div>
-        {% endif %}
-      </div>
-      {% endif %}
+      {% if not callout %}</div>{% endif %}
+    {% endif %}
 
-      {% if right %}
-      <div class="column column-right">
-        {% if rightCallout %}
-          <div class="Callout Callout--column">
-        {% endif %}
-        {% block right %}{% endblock %}
-        {% if rightCallout %}
-          </div>
-        {% endif %}
-      </div>
-      {% endif %}
-
+  {% if callout %}
     </div>
-{% if landingCallout %}
+    <div class="Callout-image lazyload" data-bgset="{{callout_image|serveImage['xs']}}">
+  {% else %}
+
+    {% if right %}
+      {% if not callout %}<div class="column column-right">{% endif %}
+        {% block right %}{% endblock %}
+      {% if not callout %}</div>{% endif %}
+    {% endif %}
+
+  {% endif %}
+
+  {% if callout %}
+    </div>
+  {% endif %}
+
+{% if callout %}
+    </div>
   </div>
-</div>
+{% else %}
+  </div>
 {% endif %}

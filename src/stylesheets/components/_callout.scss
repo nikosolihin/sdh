@@ -1,67 +1,25 @@
 .Callout {
-  background-color: $callout-bg;
-  padding: $callout-padding;
-  margin-bottom: $single*1.75;
-  &--landing {
-    @include fullwidth;
-    padding: $single*5 0;
-    + .Callout--landing {
-      // margin-top: -$callout-padding*1.5;
-      padding-top: 0;
-    }
+  @include fullwidth;
+  box: horizontal;
+  background-color: #f5f5f5;
+
+  &-content {
+    width: 40%;
+    padding: $single*3;
+    padding-left: $single*5;
   }
-  &--column {
-    margin-right: -$single*1.25;
-    padding: $callout-padding*.75;
-  }
-  &--single {
-    > * {
-      margin: 0;
-    }
-  }
-  &--sidebar {
-    > .Sidebar-section {
-      margin-bottom: 0;
-    }
-    &:first-of-type {
-      border-top: 6px solid #eee;
-    }
-  }
-  &--fullbleed {
+
+  &-image {
     @include cover;
-    padding: 0;
-    margin-bottom: 0;
-    .column {
-      padding: $single*1.5;
-      @include from(lg) {
-        padding: $single*6.5 $single*2;
-      }
-    }
+    width: 60%
   }
-  &--transparentTheme {
-    .column {
-      background-color: rgba(255,255,255,0);
+
+  &--reverse {
+    .Callout-content {
+      order: 2;
     }
-  }
-  &--lightTheme {
-    .column {
-      background-color: rgba(255,255,255,0.87);
-    }
-  }
-  &--darkTheme {
-    .column {
-      background-color: rgba(0,0,0,0.4);
-      h2, h4, p {
-        color: $white !important;
-      }
-    }
-  }
-  &--redTheme {
-    .column {
-      background-color: rgba(138,0,0,.9);
-      h2, h4, p {
-        color: $white !important;
-      }
+    .Callout-image {
+      order: 1;
     }
   }
 }

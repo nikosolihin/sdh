@@ -84,7 +84,15 @@
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_58cd59cc6ef2f",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -93,10 +101,55 @@
                             "clone": [
                                 "group_575fe9b36d7ca"
                             ],
-                            "prefix_label": 0,
-                            "prefix_name": 1,
                             "display": "group",
-                            "layout": "block"
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
+                            "key": "field_58cd61b190b48",
+                            "label": "Choose a callout image",
+                            "name": "callout_image",
+                            "type": "acf_google_photos_browser",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_58cd59cc6ef2f",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "google_photos_limit": 1,
+                            "google_photos_user_id": "",
+                            "google_photos_access_token": "",
+                            "google_photos_message": ""
+                        },
+                        {
+                            "key": "field_58cd59cc6ef2f",
+                            "label": "Make this section a callout?",
+                            "name": "is_callout",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -320,5 +373,5 @@
     ],
     "active": 1,
     "description": "Landing Page Builder",
-    "modified": 1489679919
+    "modified": 1489854950
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-18 23:04+0700\n"
-"PO-Revision-Date: 2017-03-18 23:07+0700\n"
+"POT-Creation-Date: 2017-03-19 11:49+0700\n"
+"PO-Revision-Date: 2017-03-19 11:49+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -589,9 +589,9 @@ msgstr "Kami meminta maaf"
 
 #: views/layout/empty.twig:4
 msgid ""
-"The content of this page is still in progress. Please email our webteam at"
+"The content of this page is still in progress. Please email our web team at"
 msgstr ""
-"Isi dari halaman ini masih dalam proses. Silahkan email webteam kami di"
+"Isi dari halaman ini masih dalam proses. Silahkan email tim web kami di"
 
 #: views/layout/empty.twig:4
 msgid "if you have any questions"
@@ -672,12 +672,20 @@ msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
 
 #: views/page/front-page.twig:42
-msgid "We're commited to"
+msgid "We're committed to"
 msgstr "Kami berkomitmen untuk"
 
 #: views/page/single-page.twig:31
 msgid "In This Section"
 msgstr "Di Bagian Ini"
+
+#~ msgid ""
+#~ "The content of this page is still in progress. Please email our webteam at"
+#~ msgstr ""
+#~ "Isi dari halaman ini masih dalam proses. Silahkan email webteam kami di"
+
+#~ msgid "We're commited to"
+#~ msgstr "Kami berkomitmen untuk"
 
 #~ msgid ""
 #~ "We seem to have forgotten to create the content body of this page. Please "
