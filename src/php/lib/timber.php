@@ -42,6 +42,7 @@ class StarterSite extends TimberSite {
 		foreach ($campuses as $campus) {
 			array_push($context['campuses'], array(
 				'name' => $campus->title,
+				'slug' => $campus->slug,
 				'link' => $campus->link,
 			));
 		}

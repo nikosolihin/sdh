@@ -400,11 +400,18 @@ body.role-campus_manager .acf-fc-popup a[data-layout="feed"] {
 }
 
 /*=============================================*/
-/* Hide "Head Office" term of campus tax for
-/* Events and Voices
+/* Hide Head Office campus term for campus_manager role.
 /*=============================================*/
-.post-type-event #campuschecklist #campus-0,
-.post-type-voice #campuschecklist #campus-0 {
+body.role-campus_manager #campuschecklist #campus-6,
+body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
+	display: none !important;
+}
+
+/*=============================================*/
+/* Hide "Most Used" campus term, "Add New Campus"
+/*=============================================*/
+#campus-tabs > li.hide-if-no-js,
+#campus-adder {
 	display: none !important;
 }
 

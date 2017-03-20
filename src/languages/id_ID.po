@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-19 11:49+0700\n"
-"PO-Revision-Date: 2017-03-19 11:49+0700\n"
+"POT-Creation-Date: 2017-03-21 01:10+0700\n"
+"PO-Revision-Date: 2017-03-21 01:12+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: javascripts\n"
 
 #: php/archive-event.php:9 views/campus/single-campus-news-events.twig:11
-#: views/modules/header.twig:46 views/modules/mobile-header.twig:87
+#: views/modules/header.twig:46 views/modules/mobile-header.twig:89
 #: views/page/front-page-news.twig:10
 msgid "Event Calendar"
 msgstr "Kalender Acara"
@@ -31,7 +31,7 @@ msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
 
 #: php/archive-news.php:10 php/lib/post-types.php:188
-#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:54
+#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:63
 #: views/page/front-page.twig:57
 msgid "News"
 msgstr "Berita"
@@ -39,11 +39,6 @@ msgstr "Berita"
 #: php/archive-news.php:12
 msgid "No news found. Please try again."
 msgstr "Berita tidak ditemukan. Silakan coba lagi."
-
-#: php/lib/functions.php:165 php/single-news.php:28
-#: views/modules/footer.twig:36
-msgid "Head Office"
-msgstr "Kantor Pusat"
 
 #: php/lib/post-types.php:9
 msgid "Blocks"
@@ -211,7 +206,7 @@ msgstr ""
 msgid "Custom post type for voices"
 msgstr ""
 
-#: php/lib/post-types.php:122 php/single-event.php:66
+#: php/lib/post-types.php:122 php/single-event.php:68
 #: views/page/front-page.twig:63
 msgid "Events"
 msgstr "Kegiatan"
@@ -317,8 +312,10 @@ msgid "Custom post type for news"
 msgstr ""
 
 #: php/lib/post-types.php:255 php/lib/taxonomies.php:9
+#: views/modules/footer.twig:83 views/modules/header.twig:91
+#: views/modules/mobile-header.twig:52 views/modules/mobile-header.twig:72
 msgid "Campuses"
-msgstr ""
+msgstr "Kampus"
 
 #: php/lib/post-types.php:256 php/lib/post-types.php:286
 #: views/news/archive-news.twig:35
@@ -451,12 +448,12 @@ msgstr "Rincian Kampus"
 msgid "See Location"
 msgstr "Lihat Lokasi"
 
-#: views/campus/single-campus-news-events.twig:3
+#: views/campus/single-campus-news-events.twig:3 views/news/single-news.twig:31
 #: views/page/front-page-news.twig:3
 msgid "Recent News"
 msgstr "Berita Terbaru"
 
-#: views/campus/single-campus-news-events.twig:4
+#: views/campus/single-campus-news-events.twig:4 views/news/single-news.twig:32
 #: views/page/front-page-news.twig:4
 msgid "There are currently no news at this school."
 msgstr "Saat ini tidak ada acara di sekolah ini."
@@ -477,7 +474,7 @@ msgid "There are currently no events at this school."
 msgstr "Saat ini tidak ada acara di sekolah ini."
 
 #: views/campus/single-campus-quicklinks.twig:2
-#: views/modules/mobile-header.twig:85
+#: views/modules/mobile-header.twig:87
 msgid "Quicklinks"
 msgstr "Tautan Cepat"
 
@@ -506,7 +503,7 @@ msgid "Contact Us"
 msgstr "Hubungi Kami"
 
 #: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:82
-#: views/modules/mobile-header.twig:111
+#: views/modules/mobile-header.twig:113
 msgid "Stay Connected"
 msgstr "Tetap Terhubung"
 
@@ -527,7 +524,7 @@ msgstr "Home"
 msgid "Posted"
 msgstr "Diposting"
 
-#: views/components/carousel.twig:34 views/page/single-page.twig:38
+#: views/components/carousel.twig:34 views/page/single-page.twig:40
 msgid "Read More"
 msgstr "Selengkapnya"
 
@@ -597,35 +594,34 @@ msgstr ""
 msgid "if you have any questions"
 msgstr "jika Anda memiliki pertanyaan"
 
+#: views/modules/footer.twig:36
+msgid "Head Office"
+msgstr "Kantor Pusat"
+
 #: views/modules/footer.twig:44
 msgid "Associations"
 msgstr "asosiasi"
 
-#: views/modules/footer.twig:89 views/modules/header.twig:91
-#: views/modules/mobile-header.twig:70
-msgid "Our Campuses"
-msgstr "Kampus Kami"
-
-#: views/modules/footer.twig:106 views/modules/mobile-header.twig:91
+#: views/modules/footer.twig:100 views/modules/mobile-header.twig:93
 #: views/page/front-page.twig:82
 msgid "Career"
 msgstr "Karier"
 
-#: views/modules/footer.twig:111 views/page/front-page.twig:87
+#: views/modules/footer.twig:105 views/page/front-page.twig:87
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
-#: views/modules/footer.twig:115 views/modules/mobile-header.twig:92
+#: views/modules/footer.twig:109 views/modules/mobile-header.twig:94
 #: views/page/front-page.twig:91
 msgid "Feedback"
 msgstr "Komentar"
 
-#: views/modules/footer.twig:119 views/modules/mobile-header.twig:104
+#: views/modules/footer.twig:113 views/modules/mobile-header.twig:106
 #: views/page/front-page.twig:95
 msgid "Languages"
 msgstr "Bahasa"
 
-#: views/modules/header.twig:41 views/modules/mobile-header.twig:86
+#: views/modules/header.twig:41 views/modules/mobile-header.twig:88
 msgid "School News"
 msgstr "Berita Sekolah"
 
@@ -639,7 +635,7 @@ msgstr "Bahasa Indonesia"
 msgid "English"
 msgstr "Inggris"
 
-#: views/modules/mobile-header.twig:95
+#: views/modules/mobile-header.twig:97
 msgid "Audiences"
 msgstr "Pembaca"
 
@@ -667,6 +663,10 @@ msgstr "Terbaru"
 msgid "Oldest"
 msgstr "Tertua"
 
+#: views/news/single-news.twig:33
+msgid "More From"
+msgstr "Lebih Dari"
+
 #: views/page/front-page.twig:41
 msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
@@ -675,9 +675,12 @@ msgstr "Di Sekolah Kami"
 msgid "We're committed to"
 msgstr "Kami berkomitmen untuk"
 
-#: views/page/single-page.twig:31
+#: views/page/single-page.twig:33
 msgid "In This Section"
 msgstr "Di Bagian Ini"
+
+#~ msgid "Our Campuses"
+#~ msgstr "Kampus Kami"
 
 #~ msgid ""
 #~ "The content of this page is still in progress. Please email our webteam at"

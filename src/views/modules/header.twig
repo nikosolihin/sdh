@@ -88,7 +88,7 @@
         <div class="Header-primaryDropdown">
           <div class="Header-primaryImage lazyload" data-bgset="{{item.image.sm}}"></div>
           <div class="Header-primaryList">
-            {% if item.title == __('Our Campuses', 'sdh') %}
+            {% if item.title == __('Campuses', 'sdh') %}
               {# Our Campuses #}
               {% for campus in campuses %}
                 <a href="{{campus.link}}" class="h6 medium">{{campus.name|title}}</a>

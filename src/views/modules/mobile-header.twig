@@ -49,25 +49,27 @@
 
   <nav class="MobileHeader-nav" role="navigation">
     {% for item in primary_menu %}
-      <div class="MobileHeader-links">
-        <div class="flex-wrapper MobileHeader-link">
-          <span class="h4 medium white">{{item.title}}</span>
-          <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
-          </svg>
+      {% if item.title != __('Campuses', 'sdh') %}
+        <div class="MobileHeader-links">
+          <div class="flex-wrapper MobileHeader-link">
+            <span class="h4 medium white">{{item.title}}</span>
+            <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+            </svg>
+          </div>
+          <div class="MobileHeader-sub">
+            {% for child in item.children %}
+              <a href="{{child.link}}" class="MobileHeader-subLink h6 normal white">{{child.title}}</a>
+            {% endfor %}
+          </div>
         </div>
-        <div class="MobileHeader-sub">
-          {% for child in item.children %}
-            <a href="{{child.link}}" class="MobileHeader-subLink h6 normal white">{{child.title}}</a>
-          {% endfor %}
-        </div>
-      </div>
+      {% endif %}
     {% endfor %}
 
     {# Our Campuses #}
     <div class="MobileHeader-links">
       <div class="flex-wrapper MobileHeader-link">
-        <span class="h4 medium white">{{__('Our Campuses', 'sdh')}}</span>
+        <span class="h4 medium white">{{__('Campuses', 'sdh')}}</span>
         <svg class="MobileHeader-chevron" aria-hidden="true" role="presentation" title="Expand Menu">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
         </svg>

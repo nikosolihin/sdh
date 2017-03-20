@@ -45,12 +45,12 @@
 		location.hash='#'+$(this).text().toLowerCase().replace(' ', '-');
 	});
 
-  // There only an option to disable the "No Campus" option on // readio-button-for-taxonomies, but what SDH needs is to
-  // change the text to "Head Office". JS to the rescue.
-  var $headOffice = $("#campuschecklist.categorychecklist #campus-0 label");
-
-	if ( $headOffice.length ) {
-  	$headOffice.html( $headOffice.html().replace("No Campus", "Head Office") );
-	}
+  // // There only an option to disable the "No Campus" option on // readio-button-for-taxonomies, but what SDH needs is to
+  // // change the text to "Head Office". JS to the rescue.
+  // var $headOffice = $("#campuschecklist.categorychecklist #campus-0 label");
+	//
+	// if ( $headOffice.length ) {
+  // 	$headOffice.html( $headOffice.html().replace("No Campus", "Head Office") );
+	// }
 });
 })(jQuery);

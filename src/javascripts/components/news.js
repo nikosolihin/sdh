@@ -33,7 +33,7 @@ export default class News {
     let filters = getQueryParams()
     this.page = filters.pg === undefined ? '1' : filters.pg
     this.date = filters.date === undefined ? 'desc' : 'asc'
-    this.campus = filters.campus === undefined ? 'all' : filters.campus
+    this.campus = (filters.campus === undefined || filters.campus === 'head-office') ? 'all' : filters.campus
     this.willJump = this.queryString === "" ? false : true
 
     this.prepDropdown()
@@ -152,15 +152,14 @@ export default class News {
           twitter = encodeURI(`https://twitter.com/intent/tweet?text=${newsTitle}&url=${newsLink}&via=${this.handle}`),
           image = news.acf.image,
           imageBase = image.base,
-          imageTitle = image.title,
-          campusName = this.allCampuses[news.campus] === undefined ? 'Head Office' : this.allCampuses[news.campus]['name']
+          imageTitle = image.title
 
           let templateVars = {
             id: news.id,
             title: news.title.rendered,
             link: news.link,
             date: moment(news.date).format('D MMM, Y'),
-            campus: campusName,
+            campus: this.allCampuses[news.campus]['name'],
             facebook: facebook,
             twitter: twitter
           }

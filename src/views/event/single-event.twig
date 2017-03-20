@@ -70,7 +70,7 @@
       <div class="SingleEvent-others">
         <h3 class="h7 navy spaced medium caps">{{__('Events at', 'sdh')}} {{campus}}</h3>
         {% include 'components/feed.twig' with {data: events, empty: __('There are currently no events at this school.', 'sdh')} %}
-        <a href="{{site.url}}/events" class="Button Button--gray Button--block Button--withMargin">{{__('See All', 'sdh')}}</a>
+        <a href="{{site.url}}/events/?utf8=%E2%9C%93&campus={{campus_slug}}" class="Button Button--gray Button--block Button--withMargin">{{__('See All', 'sdh')}}</a>
       </div>
 
     </div>
