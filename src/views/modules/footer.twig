@@ -42,7 +42,7 @@
       </div>
       <div class="flex-wrapper">
         <h3 class="h7 medium caps spaced orange noMargin">{{__('Associations', 'sdh')}}</h3>
-        <a href="https://www.acsi.org/" class="Footer-association">
+        <a href="http://acsi.or.id/member-16-17/" class="Footer-association">
           <svg aria-hidden="true" role="presentation" title="">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#asci"></use>
           </svg>
@@ -77,9 +77,10 @@
         </ul>
       </div>
     {% endfor %}
+
     {# Campuses #}
     <div class="Footer-column">
-      <a href="{{site.url}}/campuses" class="h7 caps spaced navy medium">{{__('Our Campuses', 'sdh')}}</a>
+      <div class="h7 caps spaced navy medium">{{__('Campuses', 'sdh')}}</div>
       <div class="flex-wrapper">
         {% for campus in campuses %}
           <a href="{{campus.link}}" class="Footer-link h6 normal gray">{{campus.name}}</a>

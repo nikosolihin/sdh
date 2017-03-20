@@ -27,14 +27,16 @@ if ($context['gcal']['description'] == '') {
 $context['og_desc'] = preg_replace('/\s+/', ' ', strip_tags(substr($context['gcal']['description'], 0, 300)));
 
 // Get this event's campus
-$campus = $post->get_terms('campus')[0];
-$context['campus'] = $campus->name;
+if(isset($post->get_terms('campus')[0]) && is_object($post->get_terms('campus')[0])) {
+	$context['campus'] = $post->get_terms('campus')[0]->name;
+	$context['campus_slug'] = $post->get_terms('campus')[0]->slug;
+}
 
 // Get other upcoming events at this campus
 $context['events'] = array(
   'post_type' => 'event',
   'quantity' => 3,
-  'feed_campus' => $campus->slug,
+  'feed_campus' => $context['campus_slug'],
   'event_metadata' => array('date'),
 	'exclude' => $post->id,
   'style' => 'object',

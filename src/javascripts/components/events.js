@@ -15,7 +15,7 @@ export default class Events {
     // Data attribute options
     let options = this.$el.data('options')
     this.domain = options.domain
-    this.ppp = options.ppp
+    // this.ppp = options.ppp
     this.allCampuses = options.campuses
     this.emptyMsg = options.emptyMsg
     this.buttonLabel = options.buttonLabel
@@ -38,7 +38,7 @@ export default class Events {
       this.$el.find(".Pill[data-campus='" + this.campus + "']").toggleClass('Pill--on')
     }
     if (this.willJump) {
-      window.scrollTo(0, 1520)
+      window.scrollTo(0, 500)
     }
   }
 
@@ -181,14 +181,18 @@ export default class Events {
           this.$resultArea.append(`<div class="ArchiveEvents-resultGroup ${isCurrent}" data-month="${month.month}">`)
 
           _.forEach(month.events, (event) => {
+
+            let eventStart = event.acf.gcal.start.dateTime === undefined ? false : moment(event.acf.gcal.start.dateTime).format('kk:mm'),
+            eventEnd = event.acf.gcal.end.dateTime === undefined ? false : moment(event.acf.gcal.end.dateTime).format('kk:mm')
+
             let templateVars = {
               id: event.acf.gcal.id,
               title: event.title.rendered,
               link: event.link,
               month: moment(event.date).format('MMM'),
               day: moment(event.date).format('DD'),
-              start: moment(event.acf.gcal.start.dateTime).format('kk:mm'),
-              end: moment(event.acf.gcal.end.dateTime).format('kk:mm'),
+              start: eventStart,
+              end: eventEnd,
               campus: this.allCampuses[event['campus']]['name'],
               slug: this.allCampuses[event['campus']]['slug'],
               location: event.acf.gcal.location,

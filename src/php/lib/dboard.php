@@ -13,63 +13,6 @@ function my_medium_editor_theme_function($theme) {
   return $theme;
 }
 
-// /*=============================================*/
-// /* Prevent TinyMCE format dropdown
-// /* from including unnecessary headings
-// /*=============================================*/
-// function custom_format_TinyMCE( $in ) {
-//   $in['block_formats'] = "";
-// 	return $in;
-// }
-// add_filter( 'tiny_mce_before_init', 'custom_format_TinyMCE' );
-//
-// /*=============================================*/
-// /* Activate TinyMCE style dropdown
-// /* and add text styles to it
-// /*=============================================*/
-// function custom_style_TinyMCE($buttons) {
-//   array_unshift($buttons, 'styleselect');
-//   return $buttons;
-// }
-// add_filter('mce_buttons_2', 'custom_style_TinyMCE');
-//
-// function myplugin_tinymce_buttons($buttons) {
-// 	$remove = array('formatselect','forecolor');
-// 	return array_diff($buttons,$remove);
-//  }
-// add_filter('mce_buttons_2','myplugin_tinymce_buttons');
-//
-// function custom_style_def_TinyMCE( $init_array ) {
-// 	$style_formats = array(
-// 		array(
-// 			'title' => 'Heading',
-// 			'block' => 'h2',
-//       'classes' => ['brand']
-// 		),
-// 		array(
-// 			'title' => 'Sub-Heading',
-// 			'block' => 'h4',
-// 		),
-// 		array(
-// 			'title' => 'Paragraph',
-// 			'block' => 'p',
-// 		),
-//     array(
-// 			'title' => 'Lead Text',
-// 			'block' => 'p',
-// 			'classes' => ['Lead', 'Lead--body']
-// 		),
-//     array(
-// 			'title' => 'Caps',
-// 			'block' => 'p',
-// 			'classes' => ['caps', 'caps--body']
-// 		),
-// 	);
-// 	$init_array['style_formats'] = json_encode( $style_formats );
-// 	return $init_array;
-// }
-// add_filter( 'tiny_mce_before_init', 'custom_style_def_TinyMCE' );
-
 /*=============================================*/
 /* Hide admin bar on the front-end for all users
 /*=============================================*/

@@ -24,6 +24,15 @@
     {% include 'layout/base.twig' %}
   </div>
   <div class="SinglePage-sidebar Sidebar">
+    <div class="Sidebar-section Sidebar-section--plain">
+      <div class="Spacer"></div>
+      <div class="Spacer"></div>
+      <div class="Spacer"></div>
+      <h3 class="h7 navy spaced medium caps">{{__('Recent News', 'sdh')}}</h3>
+      {% include 'components/feed.twig' with {data: news, empty: __('There are currently no news at this school.', 'sdh')} %}
+      <a href="{{site.url}}/news/?utf8=%E2%9C%93&date=desc&pg=1&campus={{campus_slug}}" class="Button Button--gray Button--block Button--withMargin">{{__('More From', 'sdh')}} {{campus}}</a>
+      <div class="Spacer"></div>
+    </div>
     {% if sidebar_sections %}
       {% include 'layout/sidebar-base.twig' %}
     {% endif %}

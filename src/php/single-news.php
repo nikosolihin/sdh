@@ -22,11 +22,20 @@ if(isset($image) && is_array($image)) {
 }
 
 // Get this news campus
-if(isset($post->get_terms('campus')[0]) && is_array($post->get_terms('campus')[0])) {
+if(isset($post->get_terms('campus')[0]) && is_object($post->get_terms('campus')[0])) {
 	$context['campus'] = $post->get_terms('campus')[0]->name;
-} else {
-	$context['campus'] = __('Head Office', 'sdh');
+	$context['campus_slug'] = $post->get_terms('campus')[0]->slug;
 }
+
+// Get other upcoming news at this campus
+$context['news'] = array(
+  'post_type' => 'news',
+  'quantity' => 3,
+  'feed_campus' => $context['campus_slug'],
+  'news_metadata' => array('date'),
+	'exclude' => $post->id,
+  'style' => 'list',
+);
 
 // Get Sidebar
 $inherit = $context['acf']['inherit'];

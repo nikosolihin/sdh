@@ -159,17 +159,11 @@ function getPosts($options) {
   switch ($type) {
     case 'news':
       foreach ($posts as $post) {
-        if(isset($post->get_terms('campus')[0]) && is_array($post->get_terms('campus')[0])) {
-          $campus_name = $post->get_terms('campus')[0]->name;
-        } else {
-          $campus_name = __('Head Office', 'sdh');
-        }
-
         array_push($filtered_posts, array(
           'title'       => $post->title,
           'link'        => $post->link,
           'date'        => $post->post_date,
-          'campus'      => $campus_name,
+          'campus'      => $post->get_terms('campus')[0]->name,
           'teaser'      => $post->get_field('teaser'),
           'image'       => serveImage($post->get_field('image')),
         ));

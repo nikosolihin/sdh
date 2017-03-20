@@ -141,7 +141,7 @@
             "label": "Footer",
             "name": "footer",
             "type": "relationship",
-            "instructions": "Pick parent pages to show in footers. Children of these pages as well as dynamic post types will automatically be pulled.",
+            "instructions": "Pick parent pages to show in footers. Children of these pages as well as dynamic post types will automatically be pulled. Campuses page does not need to be included here -- it will be pulled automatically.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -153,12 +153,12 @@
                 "page"
             ],
             "taxonomy": [],
-            "min": 1,
-            "max": 7,
             "filters": [
                 "search"
             ],
             "elements": "",
+            "min": 1,
+            "max": 7,
             "return_format": "id"
         },
         {
@@ -197,5 +197,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1489830841
+    "modified": 1490032530
 }

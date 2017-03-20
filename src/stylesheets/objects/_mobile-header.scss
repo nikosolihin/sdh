@@ -40,8 +40,7 @@
     top: 0;
     right: 0;
     z-index: $zindex-burger;
-    padding-left: $threefourth;
-    // padding: 0 $single*3.25 0 $threefourth;
+    padding-left: $single*1.75;
     background-color: $navy;
   }
 
@@ -93,10 +92,11 @@
   &-subLink {
     display: block;
     padding: 0 $quarter;
-    margin-top: $quarter;
+    padding-top: $quarter;
   }
 
   &-links {
+    cursor: pointer;
     padding: $single*1.125 0;
     border-bottom: 1px solid rgba(255,255,255,.1);
     .flex-wrapper {
