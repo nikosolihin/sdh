@@ -84,7 +84,7 @@
         {% set is_active = '' %}
       {% endif %}
       <div class="Header-primaryItem">
-        <a href="{{item.link}}" class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a>
+        <a {% if item.title != __('Campuses', 'sdh') %}href="{{item.link}}"{% endif %} class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a>
         <div class="Header-primaryDropdown">
           <div class="Header-primaryImage lazyload" data-bgset="{{item.image.sm}}"></div>
           <div class="Header-primaryList">
