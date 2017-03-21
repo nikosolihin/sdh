@@ -14,7 +14,7 @@ add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-function ac_custom_column_settings_d84402da() {
+function ac_custom_column_settings_50f8d8c3() {
 
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
@@ -38,7 +38,7 @@ function ac_custom_column_settings_d84402da() {
 						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
 					),
 			'column-page_template' => array(
 						'column-name' => 'column-page_template',
@@ -323,4 +323,4 @@ function ac_custom_column_settings_d84402da() {
 		) );
 	}
 }
-add_action( 'init', 'ac_custom_column_settings_d84402da' );
+add_action( 'init', 'ac_custom_column_settings_50f8d8c3' );

@@ -11,10 +11,10 @@ export default class Carousel {
     this.count = $(".Carousel-item").length
     this.flickity = this.initializeFlickity( this.count, this.$body, {
       wrapAround: true,
-      pageDots: false,
+      pageDots: true,
       prevNextButtons: false,
       adaptiveHeight: false,
-      autoPlay: false
+      autoPlay: 6000
     })
     this.attachEvents()
   }

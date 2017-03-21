@@ -1,6 +1,19 @@
 .Carousel {
   background-color: #162231;
 
+  .flickity-page-dots {
+    bottom: $single;
+    @include from(lg) {
+      display: none;
+    }
+    > .dot {
+      background: rgba(255,255,255,.98);
+      &.is-selected {
+        background: $white;
+      }
+    }
+  }
+
   &-container {
     width: 100%;
     margin: 0 auto;
@@ -21,7 +34,6 @@
     }
 
     &--right {
-      @include overlay(false);
       .Carousel-container {
         box: vertical right middle;
       }
@@ -43,6 +55,12 @@
         order: 2;
         margin-left: $single;
       }
+      @include to(md) {
+        @include overlay(true);
+      }
+      @include from(lg) {
+        @include overlay(false);
+      }
     }
     &--left {
       @include overlay(false, null, true);
@@ -52,6 +70,12 @@
       svg {
         top: -$single*2.125;
         left: -$single*3;
+      }
+      @include to(md) {
+        @include overlay(true);
+      }
+      @include from(lg) {
+        @include overlay(false, null, true);
       }
     }
   }
@@ -87,14 +111,29 @@
       fill: rgba(255,255,255,.25);
     }
     blockquote {
-      font-size: 1.3rem / 1.5;
       margin: $single*1.5 0;
+      font-size: 1rem / 1.5;
+      @include from(sm) {
+        font-size: 1.125rem / 1.5;
+      }
+      @include from(md) {
+        font-size: 1.25rem / 1.5;
+      }
+      @include from(lg) {
+        font-size: 1.275rem / 1.5;
+      }
+      @include from(xl) {
+        font-size: 1.3rem / 1.5;
+      }
     }
   }
 
   &-nav {
-    box: horizontal;
+    display: none;
     padding-bottom: $single;
+    @include from(lg) {
+      box: horizontal;
+    }
 
     &Photo {
       @include cover;

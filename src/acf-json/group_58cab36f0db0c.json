@@ -23,8 +23,8 @@
             "key": "field_58cab417d79cf",
             "label": "Choose Voices to feature",
             "name": "voices",
-            "type": "post_object",
-            "instructions": "Click <a href=\"post-new.php?post_type=voice\">here<\/a> to create a new testimony, or the <strong>Voices<\/strong> button in the left sidebar.",
+            "type": "relationship",
+            "instructions": "Click <a href=\"post-new.php?post_type=voice\">here<\/a> to create a new testimony, or the <strong>Voices<\/strong> button in the left sidebar. Maximum 6 voices.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,10 +36,13 @@
                 "voice"
             ],
             "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 0,
+            "max": 6,
+            "return_format": "id"
         },
         {
             "key": "field_58cab36f10a33",
@@ -88,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Voice Page",
-    "modified": 1489679630
+    "modified": 1490097723
 }
