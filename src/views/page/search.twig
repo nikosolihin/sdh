@@ -16,6 +16,10 @@
   <div class="CustomSearch container">
     <div class="CustomSearch-sidebar Sidebar">
       <div class="CustomSearch-sidebarBody">
+        <div class="CustomSearch-filter">
+          <span class="h7 medium caps spaced faint">{{__('Filter by Campus', 'sdh')}}</span>
+        </div>
+
         {# Sidebar Builder #}
         {% if sidebar_sections %}
           {% include 'layout/sidebar-base.twig' %}

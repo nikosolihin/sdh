@@ -43,10 +43,13 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: $orange;
-    padding: $half;
     border-radius: 50%;
     z-index: 1;
     transition: all .1s ease-in-out;
+    padding: $quarter;
+    @include from(md) {
+      padding: $half;
+    }
     svg {
       fill: $white;
       size: $single*2.25;
@@ -58,16 +61,26 @@
   }
 
   &-left {
-    left: $single*2.25;
+    left: $half;
+    @include from(md) {
+      left: $single*2.25;
+    }
   }
 
   &-right {
-    right: $single*2.25;
+    right: $half;
+    @include from(md) {
+      right: $single*2.25;
+    }
   }
 
   &-close {
     top: $single*3;
-    right: $single*2.75;
+    right: $single;
+    @include from(md) {
+      top: $single*3;
+      right: $single*2.75;
+    }
     svg {
       size: $single*2;
     }
@@ -85,23 +98,29 @@
 
   &-caption {
     position: absolute;
-    top: $single*3.75;
-    left: $single*3;
-    width: 25%;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: $navy;
-    padding: $single*2;
+    padding: $single*1.25;
     z-index: 1;
-    &::after {
-      content: '';
-      display: block;
+    @include from(md) {
+      @include right-slant(6.5, -1rem);
       position: absolute;
-      top: 0;
-      right: -1rem;
+      top: $single*3.75;
+      left: $single;
+      padding: $single*2;
       width: 50%;
-      height: 100%;
-      transform: skewX(-6.5deg);
-      background: inherit;
-      z-index: -1;
+    }
+    @include from(lg) {
+      width: 25%;
+      left: $single*1.5;
+    }
+    @include from(xl) {
+      left: $single*2;
+    }
+    @include from(xxl) {
+      left: $single*3;
     }
     &-item {
       display: none;

@@ -7,13 +7,15 @@
   }
   &-sidebar {
     border-right: 1px solid #eee;
-    padding-top: $single*3;
+    padding-top: $single*4;
     padding-right: $single*1.5;
   }
   &-sidebarBody {
-    margin-top: $single*8;
     border-top: 1px solid #eee;
     padding-top: $single;
+    > .Sidebar-section:first-of-type {
+      margin-top: $single*20;
+    }
   }
   &-result {
     position: relative;
@@ -21,6 +23,11 @@
       padding-left: $single*4;
       padding-right: $single*4;
     }
+  }
+  &-filter {
+    height: 310px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: $single*2;
   }
 
   // Style GCSE
@@ -50,44 +57,48 @@
     padding: 0;
     margin: 0;
     border: 0;
-    width: 100%;
     position: absolute;
-    top: $single*15.5;
-    // left: -$single*16.75;
+    top: $single*7.75;
+    left: -$single*18.25;
+
     @include from(lg) {
-      width: 250px;
-      top: $single*6.5;
-      left: -$single*16.75;
+      width: 335px;
     }
     @include from(xl) {
-      left: -$single*19.75;
+      // left: -$single*18.35;
     }
-    div {
+    > div {
       box: horizontal;
       @include from(lg) {
-        box: horizontal wrap space-between;
+        box: horizontal wrap;
       }
     }
     .gsc-refinementHeader {
+      display: inline-block;
+      font-family: $font-family;
       line-height: 1;
       text-decoration: none !important;
       font-size: $font-size-h6;
-      font-weight: $font-weight-bold;
-      padding: $half $threefourth !important;
-      margin-bottom: $half;
+      font-weight: $font-weight-medium;
+      padding: .4rem $threefourth !important;
+      margin: 0 $threefourth $threefourth 0;
       border-radius: 3px;
-      margin-right: $threefourth;
-      @include from(lg) {
-        width: 47%;
-        margin-right: 0;
-      }
+      cursor: pointer;
+      transition: all .075s ease-in-out;
       &.gsc-refinementhInactive {
-        color: #555 !important;
-        background-color: #eee;
+        color: #777 !important;
+        background-color: #e7e7e7;
       }
       &.gsc-refinementhActive {
         color: $white !important;
-        background-color: pink;
+        background-color: $orange;
+        &:hover {
+          background-color: darken($orange, 3%);
+        }
+      }
+      &:hover {
+        color: $white !important;
+        background-color: $orange;
       }
     }
   }

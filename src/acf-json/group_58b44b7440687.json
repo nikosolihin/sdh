@@ -113,6 +113,23 @@
             "maxlength": ""
         },
         {
+            "key": "field_58d0bd60074fc",
+            "label": "Choose a photo for this author",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "When adding a new author photo, make sure it's a square photo of 400x400px with the person's face in the center. Upload it to the Google Photo's album called Testimonials.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_58b44d2ede82f",
             "label": "Author Photo",
             "name": "photo",
@@ -219,5 +236,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Voices Builder",
-    "modified": 1488301964
+    "modified": 1490075121
 }

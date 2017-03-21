@@ -1,6 +1,19 @@
 .Carousel {
   background-color: #162231;
 
+  .flickity-page-dots {
+    bottom: $single;
+    @include from(lg) {
+      display: none;
+    }
+    > .dot {
+      background: rgba(255,255,255,.98);
+      &.is-selected {
+        background: $white;
+      }
+    }
+  }
+
   &-container {
     width: 100%;
     margin: 0 auto;
@@ -13,14 +26,14 @@
     @include cover;
     box: vertical left middle;
     width: 100%;
-    min-height: $single*30;
+    height: $single*30;
+    overflow: hidden;
     padding: 0 $single*1.25;
     @include from(lg) {
       padding: 0 $single*4;
     }
 
     &--right {
-      @include overlay(false);
       .Carousel-container {
         box: vertical right middle;
       }
@@ -34,22 +47,19 @@
       .Carousel-copy {
         box: vertical right middle;
       }
-      .Carousel-author {
-        text-align: right;
-        width: 100%;
-      }
-      .Carousel-button {
-        order: 1;
-        @include from(lg) {
-          margin: 0 auto 0 $single*4.25;
-        }
-      }
       .flex-wrapper {
-        order: 2;
+        order: 1;
+        text-align: right;
       }
       .Carousel-photo {
-        order: 3;
+        order: 2;
         margin-left: $single;
+      }
+      @include to(md) {
+        @include overlay(true);
+      }
+      @include from(lg) {
+        @include overlay(false);
       }
     }
     &--left {
@@ -57,35 +67,30 @@
       .Carousel-container {
         box: vertical left middle;
       }
-      .Carousel-photo {
-        order: 1;
-        margin-right: $single;
-      }
-      .flex-wrapper {
-        order: 2;
-      }
-      .Carousel-button {
-        order: 3;
-        margin-left: $single;
-        @include from(md) {
-          margin: 0 $single*4.25 0 auto;
-        }
-      }
       svg {
         top: -$single*2.125;
         left: -$single*3;
+      }
+      @include to(md) {
+        @include overlay(true);
+      }
+      @include from(lg) {
+        @include overlay(false, null, true);
       }
     }
   }
 
   &-author {
     box: horizontal middle;
+    margin-bottom: $single*1.25;
   }
 
   &-photo {
     @include cover;
     border-radius: 50%;
     size: $single*2.5;
+    margin-right: $single;
+    flex: 0 0 auto;
   }
 
   &-copy {
@@ -95,6 +100,9 @@
       width: 75%;
     }
     @include from(xl) {
+      width: 55%;
+    }
+    @include from(xxl) {
       width: 50%;
     }
     svg {
@@ -103,14 +111,29 @@
       fill: rgba(255,255,255,.25);
     }
     blockquote {
-      font-size: 1.3rem / 1.5;
       margin: $single*1.5 0;
+      font-size: 1rem / 1.5;
+      @include from(sm) {
+        font-size: 1.125rem / 1.5;
+      }
+      @include from(md) {
+        font-size: 1.25rem / 1.5;
+      }
+      @include from(lg) {
+        font-size: 1.275rem / 1.5;
+      }
+      @include from(xl) {
+        font-size: 1.3rem / 1.5;
+      }
     }
   }
 
   &-nav {
-    box: horizontal;
+    display: none;
     padding-bottom: $single;
+    @include from(lg) {
+      box: horizontal;
+    }
 
     &Photo {
       @include cover;
@@ -121,6 +144,7 @@
       border: 2px solid transparent;
       transition: border-color .13s ease-in-out;
       cursor: pointer;
+      flex: 0 0 auto;
     }
 
     &Item {
