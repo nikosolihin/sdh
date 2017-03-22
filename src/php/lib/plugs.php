@@ -14,7 +14,7 @@ add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-function ac_custom_column_settings_50f8d8c3() {
+function ac_custom_column_settings_e2b9aab8() {
 
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
@@ -321,6 +321,72 @@ function ac_custom_column_settings_50f8d8c3() {
 				),
 			)
 		) );
+		ac_register_columns( 'wp-users', array(
+			array(
+				'columns' => array(
+					'column-user_id' => array(
+						'column-name' => 'column-user_id',
+						'type' => 'column-user_id',
+						'clone' => '',
+						'label' => 'User ID',
+						'width' => '4',
+						'width_unit' => '%',
+						'sort' => 'off'
+					),
+			'username' => array(
+						'column-name' => 'username',
+						'type' => 'username',
+						'clone' => '',
+						'label' => 'Username',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'on'
+					),
+			'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'sort' => 'on'
+					),
+			'email' => array(
+						'column-name' => 'email',
+						'type' => 'email',
+						'clone' => '',
+						'label' => 'Email',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'on'
+					),
+			'role' => array(
+						'column-name' => 'role',
+						'type' => 'role',
+						'clone' => '',
+						'label' => 'Role',
+						'width' => '15',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Posts',
+						'width' => '74',
+						'width_unit' => 'px',
+						'sort' => 'off'
+					)
+				),
+			)
+		) );
 	}
 }
-add_action( 'init', 'ac_custom_column_settings_50f8d8c3' );
+add_action( 'init', 'ac_custom_column_settings_e2b9aab8' );

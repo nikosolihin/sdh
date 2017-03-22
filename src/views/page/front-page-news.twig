@@ -1,10 +1,10 @@
 <div class="Sidebar-section Sidebar-section--framed">
-  <div class="SingleCampus-news">
+  <div class="">
     <h3 class="h6 navy spaced medium caps">{{__('Recent News', 'sdh')}}</h3>
     {% include 'components/feed.twig' with {data: news, empty: __('There are currently no news at this school.', 'sdh')} %}
     <a href="{{site.url}}/news" class="Button Button--gray Button--block Button--withMargin">{{__('More News', 'sdh')}}</a>
   </div>
-  <div class="SingleCampus-news">
+  <div class="">
     <h3 class="h6 navy spaced medium caps">{{__('Upcoming Events', 'sdh')}}</h3>
     {% include 'components/feed.twig' with {data: events, empty: __('There are currently no events at this school.', 'sdh')} %}
     <a href="{{site.url}}/events" class="Button Button--gray Button--block Button--withMargin">{{__('Event Calendar', 'sdh')}}</a>

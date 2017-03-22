@@ -1,4 +1,9 @@
 <?php
+
+// if( get_role('campus_manager') ){
+// 	remove_role( 'campus_manager' );
+// }
+
 //=============================================
 // Create the campus manager role
 //=============================================
@@ -33,6 +38,10 @@ function add_campus_caps() {
 		$role->add_cap( 'publish_campuses' );
 		$role->add_cap( 'delete_private_campuses' );
 		$role->add_cap( 'delete_published_campuses' );
+
+		// So campus manager show up in author dropdown
+		// https://core.trac.wordpress.org/ticket/16841#comment:2
+		$role->add_cap( 'level_1' );
 	}
 
 	// Admin can see other users campus posts, but not
