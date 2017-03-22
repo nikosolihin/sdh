@@ -40,8 +40,8 @@
                 "search"
             ],
             "elements": "",
-            "min": 0,
-            "max": 6,
+            "min": "",
+            "max": 5,
             "return_format": "id"
         },
         {
@@ -91,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Voice Page",
-    "modified": 1490097723
+    "modified": 1490202531
 }

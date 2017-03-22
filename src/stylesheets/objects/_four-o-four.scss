@@ -1,5 +1,12 @@
 .Four-o-four {
   margin: $single*4 auto;
+  padding: $single*1.25;
+
+  h1 {
+    @include to(md) {
+      font-size: 1.65rem / 1.35;  
+    }
+  }
 
   &--empty {
     p {

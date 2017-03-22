@@ -1,24 +1,41 @@
 <div class="MobileHome" data-component="mobile-home">
 
-  <div class="Hero">
-    {% for item in hero %}
-      {% if item.type == "single" %}
-        {% set url = item.single_url %}
-      {% elseif item.type == "external" %}
-        {% set url = item.external_url %}
+  <div class="MobileHero" style="background-image: url({{placeholder_image.sm}})">
+
+    {% for item in mobile_hero %}
+
+      {% if item.image and item.image is iterable %}
+        {% set image = item.image|serveImage %}
       {% else %}
-        {% set url = item.search_url %}
+        {% set image = fallback.image %}
       {% endif %}
-      {% set image = item.photo|serveImage %}
-      <div class="Hero-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
+
+      <a class="MobileHero-item" href="google.com">
+        <div class="MobileHero-image lazyload" data-bgset="{{image.md}} [(min-width: {{md}})] | {{image.sm}}"></div>
+        <div class="MobileHero-copy light white noMargin center">
+          {% for word in item.title|split(' ', 7) %}
+            {% if loop.index < 7 %} {# Limit to 6 words #}
+              <span>{{word}}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </a>
+
     {% endfor %}
+
+    <div class="MobileHero-link">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#touch"></use>
+      </svg>
+      <a href="google.com" class="spaced caps medium white">Touch to Learn More</a>
+    </div>
   </div>
 
   {% include 'page/front-page-news.twig' %}
 
   <div class="MobileHome-about">
-    <h2 class="h3 light navy">Our Programs</h2>
-    {% include 'components/block.twig' with {data: home_blocks} %}
+    <h2 class="h3 normal navy">{{home_blocks.title}}</h2>
+    {% include 'components/block.twig' with {data: home_blocks.blocks} %}
   </div>
 
 </div>

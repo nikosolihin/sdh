@@ -190,8 +190,8 @@
             "google_photos_message": ""
         },
         {
-            "key": "field_58ce23e0f030a",
-            "label": "Mobile View",
+            "key": "field_58d2bb5f0b249",
+            "label": "Mobile Hero",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -204,6 +204,120 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_58d2bb680b24a",
+            "label": "Create Hero Items",
+            "name": "mobile_hero",
+            "type": "repeater",
+            "instructions": "A different hero unit will be shown on mobile. Build it here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 5,
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_58d2bc4b0b24b",
+                    "label": "Headline",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Keep this very short. Up to 6 words maximum - anything more will be discarded. The nature of this sentence is to call visitors to an action, so start with a verb.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58d2bcc20b24d",
+                    "label": "Link To",
+                    "name": "link",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5773382ac6cac"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_58d2bcab0b24c",
+                    "label": "Choose a background",
+                    "name": "image",
+                    "type": "acf_google_photos_browser",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "google_photos_limit": 1,
+                    "google_photos_user_id": "",
+                    "google_photos_access_token": "",
+                    "google_photos_message": ""
+                }
+            ]
+        },
+        {
+            "key": "field_58ce23e0f030a",
+            "label": "Mobile Blocks",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58d2bd0bfaab6",
+            "label": "Section Title",
+            "name": "home_blocks_title",
+            "type": "text",
+            "instructions": "Choose blocks to feature on the home page. Choose the most important sections of the website. This section should always be catered to users behaviors. Depend on Google Analytics to see users behaviors.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_58ce24194c023",
@@ -244,5 +358,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Home Page Optionsa",
-    "modified": 1489904765
+    "modified": 1490206401
 }
