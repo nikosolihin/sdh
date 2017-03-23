@@ -1,14 +1,19 @@
 .CustomSearch {
-  margin-top: $single*3;
-  margin-bottom: $single*5;
+  margin: $single*2 auto $single*3;
   box: vertical;
   @include from(lg) {
     box: horizontal;
+    margin-top: $single*3;
+    margin-bottom: $single*5;
   }
   &-sidebar {
     border-right: 1px solid #eee;
     padding-top: $single*4;
     padding-right: $single*1.5;
+    display: none;
+    @include from(lg) {
+      display: block;
+    }
   }
   &-sidebarBody {
     border-top: 1px solid #eee;
@@ -23,11 +28,17 @@
       padding-left: $single*4;
       padding-right: $single*4;
     }
+    @include to(md) {
+      padding: $single;
+    }
   }
   &-filter {
-    height: 360px;
     border-bottom: 1px solid #eee;
     margin-bottom: $single*2;
+    height: 360px;
+    @include from(xl) {
+      height: 320px;
+    }
   }
 
   // Style GCSE
@@ -41,15 +52,24 @@
     text-size-adjust: 100%;
     padding: 0;
   }
+  .gsc-control-cse {
+    padding: 0 !important;
+    @include from(lg) {
+      padding: $single;
+    }
+  }
   .gsc-search-box {
-    margin-bottom: $single;
+    @include from(md) {
+      margin-bottom: $single;
+    }
   }
   .gsc-adBlock,
   .gsc-clear-button {
     display: none !important;
   }
   .gsc-above-wrapper-area {
-    @include to(md) {
+    margin-bottom: $single*3;
+    @include from(md) {
       margin-bottom: $single*4.5;
     }
   }
@@ -58,20 +78,25 @@
     margin: 0;
     border: 0;
     position: absolute;
-    top: $single*7.75;
-    left: -$single*18.25;
-
+    top: $single*16.5;
+    left: $single;
+    @include from(md) {
+      top: $single*17.5;
+    }
     @include from(lg) {
-      width: 335px;
+      width: 285px;
+      top: $single*7.75;
+      left: -$single*17;
     }
     @include from(xl) {
-      // left: -$single*18.35;
+      width: 335px;
+      left: -$single*19.5;
+    }
+    @include from(xxl) {
+      left: -$single*18.25;
     }
     > div {
-      box: horizontal;
-      @include from(lg) {
-        box: horizontal wrap;
-      }
+      box: horizontal wrap;
     }
     .gsc-refinementHeader {
       display: inline-block;
@@ -81,10 +106,13 @@
       font-size: $font-size-h6;
       font-weight: $font-weight-medium;
       padding: .4rem $threefourth !important;
-      margin: 0 $threefourth $threefourth 0;
+      margin: 0 $half $half 0;
       border-radius: 3px;
       cursor: pointer;
       transition: all .075s ease-in-out;
+      @include from(md) {
+        margin: 0 $threefourth $threefourth 0;
+      }
       &.gsc-refinementhInactive {
         color: #777 !important;
         background-color: #e7e7e7;
@@ -228,7 +256,10 @@
     margin-top: $single*2.5;
   }
   .gsc-cursor {
-    display: block !important;
+    box: horizontal wrap;
+    @include from(lg) {
+      display: block !important;
+    }
     .gsc-cursor-page {
       border: 0 !important;
       background-color: transparent !important;
@@ -278,7 +309,16 @@
     padding-left: 0;
   }
   .gsc-wrapper {
-    padding-top: $single*2;
+    padding-top: $single*12;
+    @include from(sm) {
+      padding-top: $single*9.5;
+    }
+    @include from(md) {
+      padding-top: $single*5.5;
+    }
+    @include from(lg) {
+      padding-top: $single*2;
+    }
   }
   .gs-bidi-start-align.gs-visibleUrl {
     font-family: $font-family;
