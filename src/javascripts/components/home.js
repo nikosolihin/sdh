@@ -58,7 +58,7 @@ export default class Home {
 
   attachEvents() {
     this.$el.on('click', this.newsButtons, () => {
-      this.isNewsOpen = true
+      this.isNewsOpen = !this.isNewsOpen
       $(".Home-statements").toggleClass('Home-statements--show')
       this.$news.toggleClass(this.newsOpen)
       this.$modal.trigger('modal:toggle')
@@ -77,10 +77,22 @@ export default class Home {
     })
     this.$modal.on('click', () => {
       if (this.isNewsOpen) {
-        $(".Home-statements").toggleClass('Home-statements--show')
-        this.$modal.trigger('modal:toggle')
-        this.$news.toggleClass(this.newsOpen)
+        this.closeNews()
       }
     })
+
+    // Escape out
+    $(document).keyup( (event) => {
+      if(event.keyCode == 27 && this.isNewsOpen) {
+        this.closeNews()
+      }
+    })
+  }
+
+  closeNews() {
+    this.isNewsOpen = !this.isNewsOpen
+    $(".Home-statements").toggleClass('Home-statements--show')
+    this.$modal.trigger('modal:toggle')
+    this.$news.toggleClass(this.newsOpen)
   }
 }

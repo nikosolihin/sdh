@@ -37,6 +37,6 @@ export default class MobileHome {
   playFirst() {
     setTimeout(() => {
       $(".MobileHero-item").eq(0).addClass('MobileHero-item--appear')
-    }, 825)
+    }, 1000)
   }
 }

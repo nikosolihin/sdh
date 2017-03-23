@@ -7,12 +7,17 @@ export default class Search {
     this.$form = $(".Search-form")
     this.$popular = $(".Search-popular")
     this.$modal = $(".Modal")
+
+    this.isSearchOpen = false
+
     this.attachEvents()
   }
 
   attachEvents() {
     this.$el.on('click', (event) => {
       event.preventDefault()
+      this.isSearchOpen = !this.isSearchOpen
+
       $(".Home-statements").removeClass('Home-statements--show')
       $(".Home-news").css('display', 'none')
 
@@ -31,21 +36,35 @@ export default class Search {
     })
 
     $(".Search-close").on('click', (event) => {
-      event.preventDefault()
-      this.$close.removeClass('Search-close--open')
-      this.$form.removeClass('Search-form--open')
-      this.$popular.removeClass('Search-popular--open')
+      if (this.isSearchOpen) {
+        this.closeSearch(event)
+      }
+    })
 
-      setTimeout( () => {
-        this.$modal.trigger('modal:toggle')
-      }, 100)
-      setTimeout( () => {
-        this.$search.removeClass('Search--open')
-      }, 200)
-
-      $(".Home-statements").addClass('Home-statements--show')
-      $(".Home-news").css('display', 'flex')
+    // Escape out
+    $(document).keyup( (event) => {
+      if(event.keyCode == 27 && this.isSearchOpen) {
+        this.closeSearch(event)
+      }
     })
   }
 
+  closeSearch(event) {
+    event.preventDefault()
+    this.isSearchOpen = !this.isSearchOpen
+
+    this.$close.removeClass('Search-close--open')
+    this.$form.removeClass('Search-form--open')
+    this.$popular.removeClass('Search-popular--open')
+
+    setTimeout( () => {
+      this.$modal.trigger('modal:toggle')
+    }, 100)
+    setTimeout( () => {
+      this.$search.removeClass('Search--open')
+    }, 200)
+
+    $(".Home-statements").addClass('Home-statements--show')
+    $(".Home-news").css('display', 'flex')
+  }
 }
