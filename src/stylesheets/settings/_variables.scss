@@ -39,9 +39,6 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 $image-breakpoints: (
-  // Available Sizes: 94, 110, 128, 200, 220,
-  // 288, 320, 400, 512, 576, 640, 720, 800,
-  // 912, 1024, 1152, 1280, 1440, 1600.
   xs: 576,
   sm: 800,
   md: 1024,
@@ -137,7 +134,6 @@ $zindex-hero:                    3000 !default;
 
 // // Callout ///////////////////////////////////
 $callout-bg:                    lighten($black, 97%) !default;
-// $callout-padding:               $single*3.5 !default;
 
 // Buttons ///////////////////////////////////
 $button-bg:                     $orange !default;
