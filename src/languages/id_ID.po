@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-21 01:10+0700\n"
-"PO-Revision-Date: 2017-03-21 01:12+0700\n"
+"POT-Creation-Date: 2017-03-24 12:17+0700\n"
+"PO-Revision-Date: 2017-03-24 12:18+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: php/archive-event.php:9 views/campus/single-campus-news-events.twig:11
 #: views/modules/header.twig:46 views/modules/mobile-header.twig:89
-#: views/page/front-page-news.twig:10
+#: views/page/front-page-news.twig:11
 msgid "Event Calendar"
 msgstr "Kalender Acara"
 
@@ -312,8 +312,9 @@ msgid "Custom post type for news"
 msgstr ""
 
 #: php/lib/post-types.php:255 php/lib/taxonomies.php:9
-#: views/modules/footer.twig:83 views/modules/header.twig:91
-#: views/modules/mobile-header.twig:52 views/modules/mobile-header.twig:72
+#: views/modules/footer.twig:83 views/modules/header.twig:87
+#: views/modules/header.twig:91 views/modules/mobile-header.twig:52
+#: views/modules/mobile-header.twig:72
 msgid "Campuses"
 msgstr "Kampus"
 
@@ -406,7 +407,7 @@ msgstr ""
 msgid "No items"
 msgstr ""
 
-#: php/search.php:3 php/search.php:27 views/page/search.twig:30
+#: php/search.php:3 php/search.php:27 views/page/search.twig:34
 msgid "Search"
 msgstr "Cari"
 
@@ -464,12 +465,12 @@ msgid "More News"
 msgstr "Berita Lainnya"
 
 #: views/campus/single-campus-news-events.twig:9
-#: views/page/front-page-news.twig:8
+#: views/page/front-page-news.twig:9
 msgid "Upcoming Events"
 msgstr "Acara Mendatang"
 
 #: views/campus/single-campus-news-events.twig:10
-#: views/event/single-event.twig:72 views/page/front-page-news.twig:9
+#: views/event/single-event.twig:72 views/page/front-page-news.twig:10
 msgid "There are currently no events at this school."
 msgstr "Saat ini tidak ada acara di sekolah ini."
 
@@ -524,7 +525,7 @@ msgstr "Home"
 msgid "Posted"
 msgstr "Diposting"
 
-#: views/components/carousel.twig:34 views/page/single-page.twig:40
+#: views/components/carousel.twig:41 views/page/single-page.twig:40
 msgid "Read More"
 msgstr "Selengkapnya"
 
@@ -548,7 +549,7 @@ msgstr "Selengkapnya"
 msgid "Events at Our Campuses"
 msgstr "Kegiatan Di Sekolah Kami"
 
-#: views/event/archive-event.twig:20
+#: views/event/archive-event.twig:20 views/page/search.twig:20
 msgid "Filter by Campus"
 msgstr "Pilih berdasar kampus"
 
@@ -672,12 +673,15 @@ msgid "At Our Schools"
 msgstr "Di Sekolah Kami"
 
 #: views/page/front-page.twig:42
-msgid "We're committed to"
+msgid "We are committed to"
 msgstr "Kami berkomitmen untuk"
 
 #: views/page/single-page.twig:33
 msgid "In This Section"
 msgstr "Di Bagian Ini"
+
+#~ msgid "We're committed to"
+#~ msgstr "Kami berkomitmen untuk"
 
 #~ msgid "Our Campuses"
 #~ msgstr "Kampus Kami"

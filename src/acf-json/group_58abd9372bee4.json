@@ -150,6 +150,28 @@
             "placeholder": ""
         },
         {
+            "key": "field_58d7f33cf89fc",
+            "label": "Calendar URL",
+            "name": "calendar",
+            "type": "google_drive_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58be596abb55c",
+                        "operator": "==",
+                        "value": "calendar"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_58abd94fff3c7",
             "label": "Welcome Page",
             "name": "",
@@ -539,5 +561,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489947358
+    "modified": 1490546852
 }

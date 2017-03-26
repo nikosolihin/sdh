@@ -688,36 +688,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_58c7a40e7743d",
-            "label": "Misc",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_58c7a4167743e",
-            "label": "Academic Calendar",
-            "name": "calendar",
-            "type": "google_drive_field",
-            "instructions": "Point to a PDF of SDH Academic Calendar.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
         }
     ],
     "location": [
@@ -737,5 +707,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1489828411
+    "modified": 1490546840
 }
