@@ -6,16 +6,21 @@ export default class Block {
   }
 
   attachEvents() {
-    this.$el.on('touchstart', (event) => {
-      // Mobile touch hover
+    // this.$el.on('touchstart', (event) => {
+    //   // Mobile touch hover
+    //   event.preventDefault()
+    //   if (this.$el.hasClass('Block--hover')) {
+    //     window.location = this.url
+    //   } else {
+    //     $(".Block--hover").removeClass('Block--hover')
+    //     this.$el.toggleClass('Block--hover')
+    //   }
+    // })
+    this.$el.on('click touch', (event) => {
       event.preventDefault()
-      if (this.$el.hasClass('Block--hover')) {
-        window.location = this.url
-      } else {
-        $(".Block--hover").removeClass('Block--hover')
-        this.$el.toggleClass('Block--hover')
-      }
+      console.log(event.type)
     })
+
     .hover(() => {
       // Desktop hover
       this.$el.toggleClass('Block--hover')

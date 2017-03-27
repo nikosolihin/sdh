@@ -319,21 +319,6 @@ p#backtoblog {
 }
 
 /*=============================================*/
-/* Hide weird Network dropdown menu items
-/*=============================================*/
-#wp-admin-bar-blog-1-n,
-#wp-admin-bar-blog-1-c,
-#wp-admin-bar-blog-2-n,
-#wp-admin-bar-blog-2-c,
-#wp-admin-bar-blog-3-n,
-#wp-admin-bar-blog-3-c,
-#wp-admin-bar-new-media,
-#wp-admin-bar-new-post,
-#wp-admin-bar-new-user, {
-  display: none;
-}
-
-/*=============================================*/
 /* Medium Editor Styling
 /*=============================================*/
 #poststuff .medium-editor-element > * {
@@ -413,6 +398,21 @@ body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
 #campus-tabs > li.hide-if-no-js,
 #campus-adder {
 	display: none !important;
+}
+
+/*=============================================*/
+/* Hide weird Network dropdown menu items
+/*=============================================*/
+#wp-admin-bar-wp-logo,
+#wp-admin-bar-blog-1-n,
+#wp-admin-bar-blog-1-c,
+#wp-admin-bar-blog-2-n,
+#wp-admin-bar-blog-2-c,
+#wp-admin-bar-comments,
+#wp-admin-bar-new-post,
+#wp-admin-bar-new-media,
+#wp-admin-bar-new-user {
+  display: none !important;
 }
 
 /*=============================================*/
