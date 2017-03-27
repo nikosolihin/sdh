@@ -127,10 +127,9 @@ export default class Events {
 
     let today = new Date(),
       year = today.getFullYear(),
-      pastMonth = today.getMonth() - numMonths,
       futureMonth = today.getMonth() + (numMonths + 1),
       past = new Date(year, futureMonth, 0),
-      future = new Date(year, pastMonth, 1)
+      future = today.setDate(today.getDate()-1)
 
     dataObject.before = moment(past).format()
     dataObject.after = moment(future).format()

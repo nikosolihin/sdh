@@ -2,28 +2,28 @@ export default class Block {
   constructor(el) {
     this.$el = $(el)
     this.url = this.$el.data('url')
+    this.isHovered = false
     this.attachEvents()
   }
 
   attachEvents() {
-    // this.$el.on('touchstart', (event) => {
-    //   // Mobile touch hover
-    //   event.preventDefault()
-    //   if (this.$el.hasClass('Block--hover')) {
-    //     window.location = this.url
-    //   } else {
-    //     $(".Block--hover").removeClass('Block--hover')
-    //     this.$el.toggleClass('Block--hover')
-    //   }
-    // })
     this.$el.on('click touch', (event) => {
       event.preventDefault()
-      console.log(event.type)
+
+      // Check if this block is hovered
+      if (this.isHovered) {
+        window.location.href = $(event.target).closest('.Block-body').attr('href');
+      }
     })
 
-    .hover(() => {
-      // Desktop hover
+    this.$el.hover(() => {
       this.$el.toggleClass('Block--hover')
+
+      // This timeout is the key to detecting whether
+      // block has been hovered or not
+      setTimeout(() => {
+        this.isHovered = !this.isHovered
+      }, 200)
     })
   }
 }
