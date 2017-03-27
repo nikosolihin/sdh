@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-24 12:17+0700\n"
-"PO-Revision-Date: 2017-03-24 12:18+0700\n"
+"POT-Creation-Date: 2017-03-27 10:41+0700\n"
+"PO-Revision-Date: 2017-03-27 10:42+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -546,8 +546,8 @@ msgid "See Story"
 msgstr "Selengkapnya"
 
 #: views/event/archive-event.twig:18
-msgid "Events at Our Campuses"
-msgstr "Kegiatan Di Sekolah Kami"
+msgid "Upcoming Events at Our Campuses"
+msgstr "Kegiatan Mendatang Di Sekolah Kami"
 
 #: views/event/archive-event.twig:20 views/page/search.twig:20
 msgid "Filter by Campus"
@@ -679,6 +679,9 @@ msgstr "Kami berkomitmen untuk"
 #: views/page/single-page.twig:33
 msgid "In This Section"
 msgstr "Di Bagian Ini"
+
+#~ msgid "Events at Our Campuses"
+#~ msgstr "Kegiatan Di Sekolah Kami"
 
 #~ msgid "We're committed to"
 #~ msgstr "Kami berkomitmen untuk"
