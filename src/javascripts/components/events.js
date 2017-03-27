@@ -122,7 +122,7 @@ export default class Events {
     let dataObject = {}
     dataObject.order = 'asc'
 
-    // Set retreive 3 months back and forward
+    // Set retreive 8 months back and forward
     let numMonths = 8
 
     let today = new Date(),
