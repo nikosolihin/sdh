@@ -52,5 +52,4 @@
 	// if ( $headOffice.length ) {
   // 	$headOffice.html( $headOffice.html().replace("No Campus", "Head Office") );
 	// }
-});
 })(jQuery);

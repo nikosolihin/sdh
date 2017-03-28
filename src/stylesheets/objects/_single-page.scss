@@ -12,8 +12,8 @@
   &-content {
     flex: 1;
     padding: $single*1.25;
+    padding-bottom: 0;
     @include to(md) {
-      // order: 2;
       order: 1;
     }
   }
