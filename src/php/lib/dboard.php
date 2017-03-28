@@ -1,5 +1,15 @@
 <?php
 /*=============================================*/
+/* Show favicon in the dashboard
+/*=============================================*/
+add_action('admin_head', 'show_favicon');
+function show_favicon() {
+  echo '<link href="FAVICON IMAGE URL" rel="icon" type="image/x-icon">';
+  echo '<link rel="icon" type="image/png" href="https://sdh.or.id/wp-content/themes/sdh/favicon-32x32.png?v=bOv5Xbx3PO" sizes="32x32">';
+  echo '<link rel="icon" type="image/png" href="https://sdh.or.id/wp-content/themes/sdh/favicon-16x16.png?v=bOv5Xbx3PO" sizes="16x16">';
+}
+
+/*=============================================*/
 /* Remove nag from acf plugins
 /*=============================================*/
 add_filter('remove_hube2_nag', '__return_true');

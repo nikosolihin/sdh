@@ -140,6 +140,7 @@
     display: none;
     @include from(md) {
       display: block;
+      text-align: center;
       width: 33.333%;
       margin-bottom: $single*2;
     }

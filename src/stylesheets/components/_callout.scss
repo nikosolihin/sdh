@@ -1,26 +1,45 @@
 .Callout {
   @include fullwidth;
-  box: horizontal;
   background-color: #f8f8f8;
+  box: vertical;
+  @include from(md) {
+    box: horizontal;
+  }
 
   &-content {
-    width: 35%;
-    padding: $single*3;
-    padding-left: $single*5;
+    padding: $single*2 $single*1.25;
+    @include from(md) {
+      padding: $single*3;
+      width: 50%;
+    }
+    @include from(lg) {
+      padding-left: $single*5;
+    }
+    @include from(xl) {
+      width: 35%;
+    }
   }
 
   &-image {
     @include cover;
-    width: 65%;
-    min-height: $single*25;
+    min-height: $single*17;
+    @include from(md) {
+      width: 50%;
+      min-height: $single*27.5;
+    }
+    @include from(xl) {
+      width: 65%;
+    }
   }
 
   &--reverse {
-    .Callout-content {
-      order: 2;
-    }
-    .Callout-image {
-      order: 1;
+    @include from(md) {
+      .Callout-content {
+        order: 2;
+      }
+      .Callout-image {
+        order: 1;
+      }
     }
   }
 
