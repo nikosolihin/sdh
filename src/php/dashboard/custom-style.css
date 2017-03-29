@@ -38,17 +38,6 @@ p#backtoblog {
 }
 
 /*=============================================*/
-/* Make text editor bigger
-/*=============================================*/
-/*.medium-editor-element,
-.medium-editor-placeholder {
-	min-height: 150px;
-}*/
-[data-type="medium_editor"] .acf-input span {
-	display: none;
-}
-
-/*=============================================*/
 /* Use icomoon in the dashboard
 /*=============================================*/
 @font-face {
@@ -416,8 +405,51 @@ body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
 }
 
 /*=============================================*/
-/* Modalize Flex Content
+/* Medium Editor
 /*=============================================*/
-/*.acf-layout-builder > .acf-input > .acf-flexible-content > .values > .layout[data-layout='two_columns'] > .acf-fields > .acf-field-clone[data-type='clone'] > .acf-label {
-  display: none;
-}*/
+[data-type="medium_editor"] > .acf-input > span {
+	display: none !important;
+}
+[data-type="medium_editor"] .acf-input span {
+  font-style: normal !important;
+}
+.medium-editor-toolbar > .medium-editor-toolbar-actions .medium-editor-button-active {
+  background-color: #000;
+  color: #ff2424;
+}
+.medium-editor-element > blockquote {
+	font-size: 17px;
+	font-weight: 100;
+	font-style: normal !important;
+	border-left: 4px solid #eee;
+	margin-left: 1em !important;
+	color: #666;
+	line-height: 1.6;
+}
+.medium-editor-element > h2,
+.medium-editor-element > h2 > span {
+	font-size: 18px !important;
+	font-weight: bold !important;
+	font-style: normal !important;
+}
+.medium-editor-element > h3,
+.medium-editor-element > h3 > span {
+	color: #999;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+}
+.medium-editor-element > p {
+	font-size: 16px !important;
+}
+.medium-editor-element > p > b {
+	font-weight: bolder !important;
+}
+.medium-editor-element .Lead {
+	font-weight: 100;
+	font-size: 20px;
+	letter-spacing: .75px;
+	line-height: 1.4;
+}
