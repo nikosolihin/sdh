@@ -135,7 +135,7 @@
   }
 
   &-quicklinks {
-    box: vertical;
+    box: vertical right;
     position: absolute;
     top: 32%;
     right: 0;
@@ -148,11 +148,12 @@
       cursor: pointer;
       will-change: background-color;
       transition: background-color .1s ease-in-out;
-      @include at(lg) {
-        max-width: $single*8;
+      @include from(lg) {
+        width: $single*9;
         padding: $single;
       }
       @include from(xl) {
+        width: $single*10;
         padding: $single $single*2.5 $single $single*1.5;
       }
       .h5 {
@@ -160,16 +161,19 @@
       }
       svg {
         position: absolute;
-        left: -$half;
+        left: $half;
         fill: rgba(255,255,255,.75);
         size: .65rem;
         opacity: 0;
         transition: all .2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+        @include from(xl) {
+          left: $single*2;
+        }
       }
       &:hover {
         svg {
           opacity: 1;
-          transform: translateX(-10px);
+          transform: translateX(-$half);
         }
       }
       &:nth-child(1) {
@@ -190,6 +194,49 @@
           background-color: rgba(238,177,17,1);
         }
       }
+    }
+
+    &Welcome {
+      display: none;
+      background-color: rgba(32,47,103,.8);
+      padding: 0;
+      width: $single*12.5;
+      margin-bottom: 0;
+      margin-top: $single;
+      transform: translateX(8px);
+      transition: transform .175s ease-in-out;
+      .h7 {
+        font-size: .6rem;
+      }
+      .flex-wrapper {
+        padding: $single;
+      }
+      &:hover {
+        background-color: rgba(32,47,103,1);
+        transform: translateX(0);
+      }
+      @include at(lg) {
+        width: $single*10;
+      }
+      @media (min-height: 601px) {
+        box: vertical;
+      }
+    }
+    &WelcomeImage {
+      @include cover;
+      width: 100%;
+      height: $single*5;
+      display: none;
+      @media (min-height: 701px) {
+        display: block;
+      }
+      @media (min-height: 800px) {
+        height: $single*8;
+      }
+    }
+
+    &--withWelcome {
+      top: 26%;
     }
   }
 

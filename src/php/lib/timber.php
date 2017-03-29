@@ -84,6 +84,15 @@ class StarterSite extends TimberSite {
 		// Slogan
 		$context['slogan'] = get_field('slogan', 'option');
 
+		// Welcome Page
+		if(get_field('welcome_page', 'option')) {
+			$welcome_page = Timber::get_post(get_field('welcome_page', 'option'));
+			$context['welcome_page']['image'] = serveImage($welcome_page->get_field('image'));
+			$context['welcome_page']['link'] = $welcome_page->link;
+			$context['welcome_page']['title'] = get_field('welcome_caption', 'option');
+			$context['welcome_page']['subtitle'] = get_field('welcome_subtitle', 'option');
+		}
+
 		// Quicklinks
 		$qlinks = get_field('quicklinks', 'option');
 		if(isset($qlinks) && is_array($qlinks)) {
