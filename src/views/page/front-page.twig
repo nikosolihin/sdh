@@ -65,7 +65,7 @@
   </div>
 </div>
 
-<div class="Home-quicklinks">
+<div class="Home-quicklinks {% if welcome_page %}Home-quicklinks--withWelcome{% endif %}">
   {% for item in quicklinks %}
     <a href="{{item.link}}" class="Home-quicklinksItem">
       <svg aria-hidden="true" role="presentation" title="Expand Quicklink">
@@ -74,6 +74,20 @@
       <h3 class="h5 medium white noMargin">{{item.title}}</h3>
     </a>
   {% endfor %}
+  {% if welcome_page %}
+    <a href="{{welcome_page.link}}" class="Home-quicklinksItem Home-quicklinksWelcome">
+      {% if welcome_page.image and welcome_page.image is iterable %}
+        {% set image = welcome_page.image.xs %}
+      {% else %}
+        {% set image = fallback.image.xs %}
+      {% endif %}
+      <div class="Home-quicklinksWelcomeImage lazyload" data-bgset="{{image}}"></div>
+      <div class="flex-wrapper">
+        <h3 class="h5 medium white noMargin">{{welcome_page.title}}</h3>
+        <h4 class="h7 medium white yellow spaced caps noMargin">{{welcome_page.subtitle}}</h4>
+      </div>
+    </a>
+  {% endif %}
 </div>
 
 <div class="Home-footer"><div class="container">
