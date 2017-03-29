@@ -19,7 +19,6 @@
             "placeholder": "",
             "standard_buttons": [
                 "bold",
-                "italic",
                 "underline",
                 "anchor",
                 "quote",
@@ -29,9 +28,16 @@
                 "justifyCenter",
                 "justifyRight",
                 "h2",
-                "h3"
+                "h3",
+                "removeFormat"
             ],
             "custom_buttons": [
+                {
+                    "name": "italic-two",
+                    "label": "<span class=\"dashicons dashicons-editor-italic\"><\/span>",
+                    "tag": "em",
+                    "attributes": ""
+                },
                 {
                     "name": "lead",
                     "label": "<span class=\"dashicons dashicons-editor-textcolor\"><\/span>",
@@ -46,7 +52,8 @@
             ],
             "other_options": [
                 "disableDoubleReturn",
-                "disableExtraSpaces"
+                "disableExtraSpaces",
+                "allowBreakInSingleLineInput"
             ],
             "delay": 0
         }
@@ -68,5 +75,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Text Editor",
-    "modified": 1489677999
+    "modified": 1490802559
 }
