@@ -36,4 +36,4 @@ while( $post->get_parent ) {
 }
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-Timber::render( 'page/single-page.twig' , $context );
+Timber::render( 'page/single-page.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

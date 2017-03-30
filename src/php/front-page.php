@@ -30,4 +30,4 @@ $context['events'] = array(
   'style' => 'object',
 );
 
-Timber::render( 'page/front-page.twig' , $context );
+Timber::render( 'page/front-page.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

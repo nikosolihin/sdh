@@ -70,4 +70,4 @@ array_push( $context['breadcrumb'], array(
 ));
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-Timber::render( 'event/single-event.twig' , $context );
+Timber::render( 'event/single-event.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

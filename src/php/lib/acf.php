@@ -2,7 +2,7 @@
 //=============================================
 // Uncomment to hide ACF from client
 //=============================================
-// add_filter('acf/settings/show_admin', '__return_false');
+add_filter('acf/settings/show_admin', '__return_false');
 
 //=============================================
 // Change local JSON path for load and save

@@ -84,4 +84,4 @@ if(isset($context['breadcrumb'][0]) && is_array($context['breadcrumb'][0])) {
 	}
 }
 
-Timber::render( 'page/single-page.twig' , $context );
+Timber::render( 'page/single-page.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
