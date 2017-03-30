@@ -29,4 +29,4 @@ array_push( $context['breadcrumb'], array(
 ));
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-Timber::render( 'page/search.twig', $context );
+Timber::render( 'page/search.twig', $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

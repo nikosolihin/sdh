@@ -60,6 +60,7 @@
   .Lead {
     @extend .light;
     color: #666;
+    margin-bottom: $single*1.5;
     font-size: 1.1rem / 1.45;
     @include from(md) {
       font-size: 1.35rem / 1.6;

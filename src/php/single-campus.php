@@ -71,16 +71,16 @@ switch ($params['section']) {
     $context['position'] = $post->get_field('position');
     $context['message'] = $post->get_field('message');
     $context['og_desc'] = strip_tags(substr($context['message'], 0, 300));
-    Timber::render( 'campus/single-campus-welcome.twig' , $context );
+    Timber::render( 'campus/single-campus-welcome.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
     break;
 
   case 'details':
-    Timber::render( 'campus/single-campus-details.twig' , $context );
+    Timber::render( 'campus/single-campus-details.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
     break;
 
   case 'facilities':
     $context['facilities_gallery'] = $post->get_field('facilities_gallery');
     $context['facilities_teaser'] = $post->get_field('facilities_teaser');
-    Timber::render( 'campus/single-campus-facilities.twig' , $context );
+    Timber::render( 'campus/single-campus-facilities.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
     break;
 }

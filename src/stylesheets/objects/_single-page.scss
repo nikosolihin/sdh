@@ -77,4 +77,14 @@
       }
     }
   }
+
+  @at-root .single-campus #{&} {
+    &-content {
+      margin-bottom: $single*2;
+    }
+    @include from(lg) {
+      padding: $single*5 0;
+      box: horizontal;
+    }
+  }
 }

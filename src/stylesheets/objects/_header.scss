@@ -155,7 +155,7 @@
     box: horizontal;
   }
   &-secondaryList {
-    box: horizontal;
+    box: horizontal middle;
     background-color: $navy;
     padding-right: $single;
     @include from(xxl) {
@@ -167,7 +167,7 @@
   }
   &-secondaryLink {
     @include hover(inherit, $yellow);
-    box: horizontal middle;
+    box: horizontal left middle;
     padding: 0 $half;
     height: 100%;
   }

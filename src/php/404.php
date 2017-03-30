@@ -10,4 +10,4 @@
  */
 
 $context = Timber::get_context();
-Timber::render( 'page/404.twig', $context );
+Timber::render( 'page/404.twig', $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

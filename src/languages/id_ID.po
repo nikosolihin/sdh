@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SDH\n"
-"POT-Creation-Date: 2017-03-27 10:41+0700\n"
-"PO-Revision-Date: 2017-03-27 10:42+0700\n"
+"POT-Creation-Date: 2017-03-31 00:32+0700\n"
+"PO-Revision-Date: 2017-03-31 00:32+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,21 +20,311 @@ msgstr ""
 "X-Poedit-SearchPath-3: php/lib\n"
 "X-Poedit-SearchPathExcluded-0: javascripts\n"
 
-#: php/archive-event.php:9 views/campus/single-campus-news-events.twig:11
-#: views/modules/header.twig:46 views/modules/mobile-header.twig:89
-#: views/page/front-page-news.twig:11
+#: views/campus/single-campus-banner.twig:13 php/single-campus.php:9
+msgid "Welcome to SDH"
+msgstr "Selamat Datang di SDH"
+
+#: views/campus/single-campus-details.twig:9
+#: views/campus/single-campus-facilities.twig:9
+#: views/campus/single-campus-welcome.twig:15 views/components/subnav.twig:3
+msgid "Explore This Section"
+msgstr "Telusuri Bagian Ini"
+
+#: views/campus/single-campus-details.twig:15
+#: views/campus/single-campus-facilities.twig:15
+#: views/campus/single-campus-welcome.twig:21
+msgid "Welcome"
+msgstr "Selamat Datang"
+
+#: views/campus/single-campus-details.twig:16
+#: views/campus/single-campus-facilities.twig:16
+#: views/campus/single-campus-welcome.twig:22
+msgid "Campus Information"
+msgstr "Informasi Kampus"
+
+#: views/campus/single-campus-details.twig:17
+#: views/campus/single-campus-facilities.twig:17
+#: views/campus/single-campus-facilities.twig:27
+#: views/campus/single-campus-welcome.twig:23
+msgid "Facilities"
+msgstr "Fasilitas"
+
+#: views/campus/single-campus-details.twig:27
+msgid "Campus Details"
+msgstr "Rincian Kampus"
+
+#: views/campus/single-campus-maps.twig:28
+#: views/campus/single-campus-maps.twig:30
+msgid "See Location"
+msgstr "Lihat Lokasi"
+
+#: views/campus/single-campus-news-events.twig:3 views/news/single-news.twig:31
+#: views/page/front-page-news.twig:3
+msgid "Recent News"
+msgstr "Berita Terbaru"
+
+#: views/campus/single-campus-news-events.twig:4 views/news/single-news.twig:32
+#: views/page/front-page-news.twig:4
+msgid "There are currently no news at this school."
+msgstr "Saat ini tidak ada acara di sekolah ini."
+
+#: views/campus/single-campus-news-events.twig:5
+#: views/page/front-page-news.twig:5
+msgid "More News"
+msgstr "Berita Lainnya"
+
+#: views/campus/single-campus-news-events.twig:9
+#: views/page/front-page-news.twig:9
+msgid "Upcoming Events"
+msgstr "Acara Mendatang"
+
+#: views/campus/single-campus-news-events.twig:10
+#: views/event/single-event.twig:72 views/page/front-page-news.twig:10
+msgid "There are currently no events at this school."
+msgstr "Saat ini tidak ada acara di sekolah ini."
+
+#: views/campus/single-campus-news-events.twig:11 views/modules/header.twig:46
+#: views/modules/mobile-header.twig:89 views/page/front-page-news.twig:11
+#: php/archive-event.php:9
 msgid "Event Calendar"
 msgstr "Kalender Acara"
+
+#: views/campus/single-campus-quicklinks.twig:2
+#: views/modules/mobile-header.twig:87
+msgid "Quicklinks"
+msgstr "Tautan Cepat"
+
+#: views/campus/single-campus-quicklinks.twig:8
+msgid "Request Info"
+msgstr "Permintaan Info"
+
+#: views/campus/single-campus-quicklinks.twig:16
+msgid "Academic Calendar"
+msgstr "Kalender Akademik"
+
+#: views/campus/single-campus-quicklinks.twig:24
+msgid "School Schedule"
+msgstr "Jadwal Sekolah"
+
+#: views/campus/single-campus-quicklinks.twig:32
+msgid "School Activities"
+msgstr "Kegiatan Sekolah"
+
+#: views/campus/single-campus-quicklinks.twig:40
+msgid "Campus Locations"
+msgstr "Lokasi Kampus"
+
+#: views/campus/single-campus-quicklinks.twig:48
+msgid "Contact Us"
+msgstr "Hubungi Kami"
+
+#: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:82
+#: views/modules/mobile-header.twig:113
+msgid "Stay Connected"
+msgstr "Tetap Terhubung"
+
+#: views/campus/single-campus-welcome.twig:37
+msgid "Message from the"
+msgstr "Pesan dari"
+
+#: views/components/block.twig:27 views/page/front-page-mobile.twig:30
+#: views/page/front-page.twig:44 views/page/landing-page.twig:41
+msgid "Learn More"
+msgstr "Selengkapnya"
+
+#: views/components/breadcrumb.twig:3
+msgid "Home"
+msgstr "Home"
+
+#: views/components/card.twig:22
+msgid "Posted"
+msgstr "Diposting"
+
+#: views/components/carousel.twig:41 views/page/single-page.twig:40
+msgid "Read More"
+msgstr "Selengkapnya"
+
+#: views/components/feed.twig:49 views/news/single-news.twig:17
+msgid "Posted on"
+msgstr "Tanggal"
+
+#: views/components/gallery.twig:14
+msgid "Launch Gallery"
+msgstr "Persebar Galeri"
+
+#: views/components/social-share.twig:10
+msgid "Share"
+msgstr "Bagikan"
+
+#: views/components/voice.twig:33
+msgid "See Story"
+msgstr "Selengkapnya"
+
+#: views/event/archive-event.twig:18
+msgid "Upcoming Events at Our Campuses"
+msgstr "Kegiatan Mendatang Di Sekolah Kami"
+
+#: views/event/archive-event.twig:20 views/page/search.twig:20
+msgid "Filter by Campus"
+msgstr "Pilih berdasar kampus"
+
+#: views/event/archive-event.twig:22 views/news/archive-news.twig:38
+msgid "All"
+msgstr "Semua"
+
+#: views/event/archive-event.twig:51
+msgid "Download Calendar"
+msgstr "Unduh Kalender"
+
+#: views/event/archive-event.twig:52
+msgid ""
+"If you use your own calendar app, click here to download and import all of "
+"our events"
+msgstr ""
+"Jika anda menggunakan aplikasi kalender sendiri, klik di sini untuk "
+"mengunduh semua kegiatan kami"
+
+#: views/event/archive-event.twig:53
+msgid "Download"
+msgstr "Unduh"
+
+#: views/event/single-event.twig:71
+msgid "Events at"
+msgstr "Kegiatan di"
+
+#: views/event/single-event.twig:73
+msgid "See All"
+msgstr "Lihat Semua"
+
+#: views/layout/empty.twig:2
+msgid "Our Apologies"
+msgstr "Kami meminta maaf"
+
+#: views/layout/empty.twig:4
+msgid ""
+"The content of this page is still in progress. Please email our web team at"
+msgstr ""
+"Isi dari halaman ini masih dalam proses. Silahkan email tim web kami di"
+
+#: views/layout/empty.twig:4
+msgid "if you have any questions"
+msgstr "jika Anda memiliki pertanyaan"
+
+#: views/modules/footer.twig:36
+msgid "Head Office"
+msgstr "Kantor Pusat"
+
+#: views/modules/footer.twig:44
+msgid "Associations"
+msgstr "asosiasi"
+
+#: views/modules/footer.twig:83 views/modules/header.twig:87
+#: views/modules/header.twig:91 views/modules/mobile-header.twig:52
+#: views/modules/mobile-header.twig:72 php/lib/post-types.php:255
+#: php/lib/taxonomies.php:9
+msgid "Campuses"
+msgstr "Kampus"
+
+#: views/modules/footer.twig:100 views/modules/mobile-header.twig:93
+#: views/page/front-page.twig:96
+msgid "Career"
+msgstr "Karier"
+
+#: views/modules/footer.twig:105 views/page/front-page.twig:101
+msgid "Privacy Policy"
+msgstr "Kebijakan Privasi"
+
+#: views/modules/footer.twig:109 views/modules/mobile-header.twig:94
+#: views/page/front-page.twig:105
+msgid "Feedback"
+msgstr "Komentar"
+
+#: views/modules/footer.twig:113 views/modules/mobile-header.twig:106
+#: views/page/front-page.twig:109
+msgid "Languages"
+msgstr "Bahasa"
+
+#: views/modules/header.twig:41 views/modules/mobile-header.twig:88
+msgid "School News"
+msgstr "Berita Sekolah"
+
+#: views/modules/mobile-header.twig:2 views/modules/mobile-header.twig:9
+#: views/page/front-page.twig:5 views/page/front-page.twig:12
+msgid "Indonesian"
+msgstr "Bahasa Indonesia"
+
+#: views/modules/mobile-header.twig:4 views/modules/mobile-header.twig:7
+#: views/page/front-page.twig:7 views/page/front-page.twig:10
+msgid "English"
+msgstr "Inggris"
+
+#: views/modules/mobile-header.twig:97
+msgid "Audiences"
+msgstr "Pembaca"
+
+#: views/modules/search.twig:3
+msgid "Type to Search Our Website"
+msgstr "Ketik untuk Cari Website Kami"
+
+#: views/modules/search.twig:13
+msgid "Popular Pages"
+msgstr "Halaman Populer"
+
+#: views/news/archive-news.twig:19
+msgid "News from Our Campuses"
+msgstr "Berita di Sekolah Kami"
+
+#: views/news/archive-news.twig:23
+msgid "Date"
+msgstr "Tanggal"
+
+#: views/news/archive-news.twig:26
+msgid "Latest"
+msgstr "Terbaru"
+
+#: views/news/archive-news.twig:27
+msgid "Oldest"
+msgstr "Tertua"
+
+#: views/news/archive-news.twig:35 php/lib/post-types.php:256
+#: php/lib/post-types.php:286
+msgid "Campus"
+msgstr "Kampus"
+
+#: views/news/single-news.twig:33
+msgid "More From"
+msgstr "Lebih Dari"
+
+#: views/page/front-page.twig:41
+msgid "At Our Schools"
+msgstr "Di Sekolah Kami"
+
+#: views/page/front-page.twig:42
+msgid "We are committed to"
+msgstr "Kami berkomitmen untuk"
+
+#: views/page/front-page.twig:57 php/archive-news.php:10
+#: php/lib/post-types.php:188 php/lib/post-types.php:189
+#: php/lib/post-types.php:219 php/single-news.php:63
+msgid "News"
+msgstr "Berita"
+
+#: views/page/front-page.twig:63 php/lib/post-types.php:122
+#: php/single-event.php:68
+msgid "Events"
+msgstr "Kegiatan"
+
+#: views/page/search.twig:34 php/search.php:3 php/search.php:27
+msgid "Search"
+msgstr "Cari"
+
+#: views/page/single-page.twig:33
+msgid "In This Section"
+msgstr "Di Bagian Ini"
 
 #: php/archive-event.php:11
 msgid "No events found. Please try again."
 msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
-
-#: php/archive-news.php:10 php/lib/post-types.php:188
-#: php/lib/post-types.php:189 php/lib/post-types.php:219 php/single-news.php:63
-#: views/page/front-page.twig:57
-msgid "News"
-msgstr "Berita"
 
 #: php/archive-news.php:12
 msgid "No news found. Please try again."
@@ -206,11 +496,6 @@ msgstr ""
 msgid "Custom post type for voices"
 msgstr ""
 
-#: php/lib/post-types.php:122 php/single-event.php:68
-#: views/page/front-page.twig:63
-msgid "Events"
-msgstr "Kegiatan"
-
 #: php/lib/post-types.php:123 php/lib/post-types.php:153
 msgid "Event"
 msgstr "Kegiatan"
@@ -311,18 +596,6 @@ msgstr ""
 msgid "Custom post type for news"
 msgstr ""
 
-#: php/lib/post-types.php:255 php/lib/taxonomies.php:9
-#: views/modules/footer.twig:83 views/modules/header.twig:87
-#: views/modules/header.twig:91 views/modules/mobile-header.twig:52
-#: views/modules/mobile-header.twig:72
-msgid "Campuses"
-msgstr "Kampus"
-
-#: php/lib/post-types.php:256 php/lib/post-types.php:286
-#: views/news/archive-news.twig:35
-msgid "Campus"
-msgstr "Kampus"
-
 #: php/lib/post-types.php:257
 msgid "Campus Archives"
 msgstr ""
@@ -406,279 +679,6 @@ msgstr ""
 #: php/lib/taxonomies.php:24
 msgid "No items"
 msgstr ""
-
-#: php/search.php:3 php/search.php:27 views/page/search.twig:34
-msgid "Search"
-msgstr "Cari"
-
-#: php/single-campus.php:9 views/campus/single-campus-banner.twig:13
-msgid "Welcome to SDH"
-msgstr "Selamat Datang di SDH"
-
-#: views/campus/single-campus-details.twig:9
-#: views/campus/single-campus-facilities.twig:9
-#: views/campus/single-campus-welcome.twig:15 views/components/subnav.twig:3
-msgid "Explore This Section"
-msgstr "Telusuri Bagian Ini"
-
-#: views/campus/single-campus-details.twig:15
-#: views/campus/single-campus-facilities.twig:15
-#: views/campus/single-campus-welcome.twig:21
-msgid "Welcome"
-msgstr "Selamat Datang"
-
-#: views/campus/single-campus-details.twig:16
-#: views/campus/single-campus-facilities.twig:16
-#: views/campus/single-campus-welcome.twig:22
-msgid "Campus Information"
-msgstr "Informasi Kampus"
-
-#: views/campus/single-campus-details.twig:17
-#: views/campus/single-campus-facilities.twig:17
-#: views/campus/single-campus-facilities.twig:27
-#: views/campus/single-campus-welcome.twig:23
-msgid "Facilities"
-msgstr "Fasilitas"
-
-#: views/campus/single-campus-details.twig:27
-msgid "Campus Details"
-msgstr "Rincian Kampus"
-
-#: views/campus/single-campus-maps.twig:28
-#: views/campus/single-campus-maps.twig:30
-msgid "See Location"
-msgstr "Lihat Lokasi"
-
-#: views/campus/single-campus-news-events.twig:3 views/news/single-news.twig:31
-#: views/page/front-page-news.twig:3
-msgid "Recent News"
-msgstr "Berita Terbaru"
-
-#: views/campus/single-campus-news-events.twig:4 views/news/single-news.twig:32
-#: views/page/front-page-news.twig:4
-msgid "There are currently no news at this school."
-msgstr "Saat ini tidak ada acara di sekolah ini."
-
-#: views/campus/single-campus-news-events.twig:5
-#: views/page/front-page-news.twig:5
-msgid "More News"
-msgstr "Berita Lainnya"
-
-#: views/campus/single-campus-news-events.twig:9
-#: views/page/front-page-news.twig:9
-msgid "Upcoming Events"
-msgstr "Acara Mendatang"
-
-#: views/campus/single-campus-news-events.twig:10
-#: views/event/single-event.twig:72 views/page/front-page-news.twig:10
-msgid "There are currently no events at this school."
-msgstr "Saat ini tidak ada acara di sekolah ini."
-
-#: views/campus/single-campus-quicklinks.twig:2
-#: views/modules/mobile-header.twig:87
-msgid "Quicklinks"
-msgstr "Tautan Cepat"
-
-#: views/campus/single-campus-quicklinks.twig:8
-msgid "Request Info"
-msgstr "Permintaan Info"
-
-#: views/campus/single-campus-quicklinks.twig:16
-msgid "Academic Calendar"
-msgstr "Kalender Akademik"
-
-#: views/campus/single-campus-quicklinks.twig:24
-msgid "School Schedule"
-msgstr "Jadwal Sekolah"
-
-#: views/campus/single-campus-quicklinks.twig:32
-msgid "School Activities"
-msgstr "Kegiatan Sekolah"
-
-#: views/campus/single-campus-quicklinks.twig:40
-msgid "Campus Locations"
-msgstr "Lokasi Kampus"
-
-#: views/campus/single-campus-quicklinks.twig:48
-msgid "Contact Us"
-msgstr "Hubungi Kami"
-
-#: views/campus/single-campus-quicklinks.twig:56 views/components/feed.twig:82
-#: views/modules/mobile-header.twig:113
-msgid "Stay Connected"
-msgstr "Tetap Terhubung"
-
-#: views/campus/single-campus-welcome.twig:37
-msgid "Message from the"
-msgstr "Pesan dari"
-
-#: views/components/block.twig:27 views/page/front-page.twig:44
-#: views/page/landing-page.twig:41
-msgid "Learn More"
-msgstr "Selengkapnya"
-
-#: views/components/breadcrumb.twig:3
-msgid "Home"
-msgstr "Home"
-
-#: views/components/card.twig:22
-msgid "Posted"
-msgstr "Diposting"
-
-#: views/components/carousel.twig:41 views/page/single-page.twig:40
-msgid "Read More"
-msgstr "Selengkapnya"
-
-#: views/components/feed.twig:49 views/news/single-news.twig:17
-msgid "Posted on"
-msgstr "Tanggal"
-
-#: views/components/gallery.twig:14
-msgid "Launch Gallery"
-msgstr "Persebar Galeri"
-
-#: views/components/social-share.twig:10
-msgid "Share"
-msgstr "Bagikan"
-
-#: views/components/voice.twig:33
-msgid "See Story"
-msgstr "Selengkapnya"
-
-#: views/event/archive-event.twig:18
-msgid "Upcoming Events at Our Campuses"
-msgstr "Kegiatan Mendatang Di Sekolah Kami"
-
-#: views/event/archive-event.twig:20 views/page/search.twig:20
-msgid "Filter by Campus"
-msgstr "Pilih berdasar kampus"
-
-#: views/event/archive-event.twig:22 views/news/archive-news.twig:38
-msgid "All"
-msgstr "Semua"
-
-#: views/event/archive-event.twig:51
-msgid "Download Calendar"
-msgstr "Unduh Kalender"
-
-#: views/event/archive-event.twig:52
-msgid ""
-"If you use your own calendar app, click here to download and import all of "
-"our events"
-msgstr ""
-"Jika anda menggunakan aplikasi kalender sendiri, klik di sini untuk "
-"mengunduh semua kegiatan kami"
-
-#: views/event/archive-event.twig:53
-msgid "Download"
-msgstr "Unduh"
-
-#: views/event/single-event.twig:71
-msgid "Events at"
-msgstr "Kegiatan di"
-
-#: views/event/single-event.twig:73
-msgid "See All"
-msgstr "Lihat Semua"
-
-#: views/layout/empty.twig:2
-msgid "Our Apologies"
-msgstr "Kami meminta maaf"
-
-#: views/layout/empty.twig:4
-msgid ""
-"The content of this page is still in progress. Please email our web team at"
-msgstr ""
-"Isi dari halaman ini masih dalam proses. Silahkan email tim web kami di"
-
-#: views/layout/empty.twig:4
-msgid "if you have any questions"
-msgstr "jika Anda memiliki pertanyaan"
-
-#: views/modules/footer.twig:36
-msgid "Head Office"
-msgstr "Kantor Pusat"
-
-#: views/modules/footer.twig:44
-msgid "Associations"
-msgstr "asosiasi"
-
-#: views/modules/footer.twig:100 views/modules/mobile-header.twig:93
-#: views/page/front-page.twig:82
-msgid "Career"
-msgstr "Karier"
-
-#: views/modules/footer.twig:105 views/page/front-page.twig:87
-msgid "Privacy Policy"
-msgstr "Kebijakan Privasi"
-
-#: views/modules/footer.twig:109 views/modules/mobile-header.twig:94
-#: views/page/front-page.twig:91
-msgid "Feedback"
-msgstr "Komentar"
-
-#: views/modules/footer.twig:113 views/modules/mobile-header.twig:106
-#: views/page/front-page.twig:95
-msgid "Languages"
-msgstr "Bahasa"
-
-#: views/modules/header.twig:41 views/modules/mobile-header.twig:88
-msgid "School News"
-msgstr "Berita Sekolah"
-
-#: views/modules/mobile-header.twig:2 views/modules/mobile-header.twig:9
-#: views/page/front-page.twig:5 views/page/front-page.twig:12
-msgid "Indonesian"
-msgstr "Bahasa Indonesia"
-
-#: views/modules/mobile-header.twig:4 views/modules/mobile-header.twig:7
-#: views/page/front-page.twig:7 views/page/front-page.twig:10
-msgid "English"
-msgstr "Inggris"
-
-#: views/modules/mobile-header.twig:97
-msgid "Audiences"
-msgstr "Pembaca"
-
-#: views/modules/search.twig:3
-msgid "Type to Search Our Website"
-msgstr "Ketik untuk Cari Website Kami"
-
-#: views/modules/search.twig:13
-msgid "Popular Pages"
-msgstr "Halaman Populer"
-
-#: views/news/archive-news.twig:19
-msgid "News from Our Campuses"
-msgstr "Berita di Sekolah Kami"
-
-#: views/news/archive-news.twig:23
-msgid "Date"
-msgstr "Tanggal"
-
-#: views/news/archive-news.twig:26
-msgid "Latest"
-msgstr "Terbaru"
-
-#: views/news/archive-news.twig:27
-msgid "Oldest"
-msgstr "Tertua"
-
-#: views/news/single-news.twig:33
-msgid "More From"
-msgstr "Lebih Dari"
-
-#: views/page/front-page.twig:41
-msgid "At Our Schools"
-msgstr "Di Sekolah Kami"
-
-#: views/page/front-page.twig:42
-msgid "We are committed to"
-msgstr "Kami berkomitmen untuk"
-
-#: views/page/single-page.twig:33
-msgid "In This Section"
-msgstr "Di Bagian Ini"
 
 #~ msgid "Events at Our Campuses"
 #~ msgstr "Kegiatan Di Sekolah Kami"

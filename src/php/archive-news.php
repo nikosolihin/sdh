@@ -28,4 +28,4 @@ foreach (Timber::get_terms('campus') as $topic) {
 }
 $context['campuses_json'] = json_encode($context['all_campuses']);
 
-Timber::render( 'news/archive-news.twig' , $context );
+Timber::render( 'news/archive-news.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );

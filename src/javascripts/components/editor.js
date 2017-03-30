@@ -5,6 +5,7 @@ export default class Editor {
     this.$el = $(el)
     this.removeSpans()
     this.removeBreaks()
+    this.removeEmptyParagraphs()
   }
 
   removeSpans() {
@@ -18,5 +19,11 @@ export default class Editor {
 
   removeBreaks() {
     $('.Editor br').remove()
+  }
+
+  removeEmptyParagraphs() {
+    $('.Editor p').filter( (index, element) => {
+      return $.trim( $(element).html() ) == ''
+    }).remove()
   }
 }

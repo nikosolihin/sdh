@@ -32,4 +32,4 @@ if ($exclude_all) {
   }
 }
 
-Timber::render( 'page/landing-page.twig' , $context );
+Timber::render( 'page/landing-page.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
