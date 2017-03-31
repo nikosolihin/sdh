@@ -26,7 +26,7 @@
   }
   &--spacedBottom {
     @include from(md) {
-      margin-bottom: $single*4;  
+      margin-bottom: $single*4;
     }
   }
 }
@@ -67,6 +67,9 @@
 
 .column {
   width: 100%;
+  // On mobile give margin bottom
+  margin-bottom: $single*1.25;
+
   // The column divs act as a flex child wrapper.
   @include from($desktop) {
     border-left: 1.125rem solid transparent;

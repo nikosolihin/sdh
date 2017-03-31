@@ -17,6 +17,7 @@
   }
   td {
     display: block;
+    font-size: $font-size-h5;
     &:before {
       content: attr(data-th)": ";
       display: inline-block;

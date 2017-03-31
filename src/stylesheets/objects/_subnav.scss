@@ -14,6 +14,11 @@
     svg {
       size: .9rem;
     }
+    // If we're on mobile and banner is hidden,
+    // remove the yellow border
+    @at-root .Banner--hidden + .Subnav > .Subnav-explore {
+      border-top: 1px solid #eee;
+    }
   }
 
   &-list {

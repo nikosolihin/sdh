@@ -1,4 +1,8 @@
 .Spacer {
-  height: $single*2;
-  min-height: $single*2;
+  display: none;
+  @include from(md) {
+    display: block;
+    height: $single*2;
+    min-height: $single*2;
+  }
 }
