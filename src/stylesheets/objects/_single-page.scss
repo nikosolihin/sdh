@@ -1,6 +1,8 @@
 .SinglePage {
   padding: $single*1.5 0;
   box: vertical;
+  // flex: 1 0 auto;
+
   @include from(md) {
     padding-bottom: $single*3;
   }
@@ -10,7 +12,7 @@
   }
 
   &-content {
-    flex: 1;
+    flex: 1 0 auto;
     padding: $single*1.25;
     padding-bottom: 0;
     @include to(md) {
