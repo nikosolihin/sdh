@@ -99,7 +99,10 @@ hr {
   width: 100%;
   height: $single*3;
   border: 0;
-  margin: $single*2 0;
+  margin: $single 0;
+  @include from(md) {
+    margin: $single*2 0;
+  }
   &::after {
     display: block;
     position: absolute;
